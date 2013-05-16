@@ -623,8 +623,8 @@ function oxy_shortcode_recent_posts($atts , $content = '' ) {
 }
 add_shortcode( 'recent_posts', 'oxy_shortcode_recent_posts' );
 
-/* Staff Featured */
-function oxy_shortcode_staff_featured($atts , $content = '' ) {
+/* Content Featured */
+function oxy_shortcode_content_featured($atts , $content = '' ) {
      // setup options
     extract( shortcode_atts( array(
         'title'        => '',
@@ -638,7 +638,7 @@ function oxy_shortcode_staff_featured($atts , $content = '' ) {
         $custom_fields  = get_post_custom($item->ID);
         $img            = wp_get_attachment_image_src(get_post_thumbnail_id($item->ID), 'full' );
         $position       = (isset($custom_fields[THEME_SHORT.'_position']))? $custom_fields[THEME_SHORT.'_position'][0]:'';
-        $skills         = wp_get_post_terms( $item->ID, 'oxy_staff_skills' );
+        $skills         = wp_get_post_terms( $item->ID, 'oxy_content_skills' );
         $output.='<div class="row-fluid"><div class="span6"><img alt="'  . $item->post_title . '" class="push-bottom" src="'.$img[0].'"></div>';
         $output.='<div class="span6"><p class="lead">'.$item->post_content.'</p>';
         if ( !empty($skills) ) {
@@ -653,32 +653,32 @@ function oxy_shortcode_staff_featured($atts , $content = '' ) {
     endif;
     return oxy_shortcode_section( $atts, $output );
 }
-add_shortcode( 'staff_featured', 'oxy_shortcode_staff_featured' );
+add_shortcode( 'content_featured', 'oxy_shortcode_content_featured' );
 
-/* Staff List */
-function oxy_shortcode_staff_list($atts , $content = '' ) {
+/* Content List */
+function oxy_shortcode_content_list($atts , $content = '' ) {
      // setup options
     extract( shortcode_atts( array(
         'title'       => '',
         'count'       => 3,
         'columns'     => 3,
         'style'       => '',
-        'department'  => ''
+        'category'  => ''
     ), $atts ) );
 
     $query_options = array(
-        'post_type'      => 'oxy_staff',
+        'post_type'      => 'oxy_content',
         'numberposts'    => $count
     );
 
     $span = $columns == 3 ? 'span4' : 'span3';
 
-    if( !empty( $department ) ) {
+    if( !empty( $category ) ) {
         $query_options['tax_query'] = array(
             array(
-                'taxonomy' => 'oxy_staff_department',
+                'taxonomy' => 'oxy_content_category',
                 'field' => 'slug',
-                'terms' => $department
+                'terms' => $category
             )
         );
     }
@@ -732,7 +732,7 @@ function oxy_shortcode_staff_list($atts , $content = '' ) {
     return oxy_shortcode_section( $atts, $output );
 
 }
-add_shortcode( 'staff_list', 'oxy_shortcode_staff_list' );
+add_shortcode( 'content_list', 'oxy_shortcode_content_list' );
 
 
 /******************************************      COMPONENTS        *************************************/

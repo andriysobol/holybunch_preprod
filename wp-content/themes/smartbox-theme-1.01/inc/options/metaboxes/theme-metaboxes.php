@@ -212,7 +212,7 @@ $meta_boxes[] = array(
     'title' => 'Position',
 
     // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
-    'pages' => array( 'oxy_staff' ),
+    'pages' => array( 'oxy_content' ),
 
     // Where the meta box appear: normal (default), advanced, side. Optional.
     'context' => 'normal',
@@ -247,7 +247,7 @@ $meta_boxes[] = array(
     'title' => 'Social',
 
     // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
-    'pages' => array( 'oxy_staff'  ),
+    'pages' => array( 'oxy_content'  ),
 
     // Where the meta box appear: normal (default), advanced, side. Optional.
     'context' => 'normal',

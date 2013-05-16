@@ -228,21 +228,21 @@ register_post_type('oxy_testimonial', $args);
 
 
 
-/* --------------------- STAFF ------------------------*/
+/* --------------------- content ------------------------*/
 
 $labels = array(
-    'name'               => __('Staff', THEME_ADMIN_TD),
-    'singular_name'      => __('Staff',  THEME_ADMIN_TD),
+    'name'               => __('Content', THEME_ADMIN_TD),
+    'singular_name'      => __('Content',  THEME_ADMIN_TD),
     'add_new'            => __('Add New',  THEME_ADMIN_TD),
-    'add_new_item'       => __('Add New Staff',  THEME_ADMIN_TD),
-    'edit_item'          => __('Edit Staff',  THEME_ADMIN_TD),
-    'new_item'           => __('New Staff',  THEME_ADMIN_TD),
-    'all_items'          => __('All Staff',  THEME_ADMIN_TD),
-    'view_item'          => __('View Staff',  THEME_ADMIN_TD),
-    'search_items'       => __('Search Staff',  THEME_ADMIN_TD),
-    'not_found'          => __('No Staff found',  THEME_ADMIN_TD),
-    'not_found_in_trash' => __('No Staff found in Trash', THEME_ADMIN_TD),
-    'menu_name'          => __('Staff',  THEME_ADMIN_TD)
+    'add_new_item'       => __('Add New Content',  THEME_ADMIN_TD),
+    'edit_item'          => __('Edit Content',  THEME_ADMIN_TD),
+    'new_item'           => __('New Content',  THEME_ADMIN_TD),
+    'all_items'          => __('All Content',  THEME_ADMIN_TD),
+    'view_item'          => __('View Content',  THEME_ADMIN_TD),
+    'search_items'       => __('Search Content',  THEME_ADMIN_TD),
+    'not_found'          => __('No Content found',  THEME_ADMIN_TD),
+    'not_found_in_trash' => __('No Content found in Trash', THEME_ADMIN_TD),
+    'menu_name'          => __('Content',  THEME_ADMIN_TD)
 );
 
 $args = array(
@@ -259,7 +259,7 @@ $args = array(
     'menu_icon'          => ADMIN_ASSETS_URI . 'images/staff.png',
     'supports'           => array( 'title', 'editor', 'thumbnail' )
 );
-register_post_type('oxy_staff', $args);
+register_post_type('oxy_content', $args);
 
 $labels = array(
     'name'          => __( 'Skills', THEME_ADMIN_TD ),
@@ -273,8 +273,8 @@ $labels = array(
 );
 
 register_taxonomy(
-    'oxy_staff_skills',
-    'oxy_staff',
+    'oxy_content_skills',
+    'oxy_content',
     array(
         'hierarchical' => true,
         'labels'       => $labels,
@@ -284,19 +284,19 @@ register_taxonomy(
 );
 
 $labels = array(
-    'name'          => __( 'Departments', THEME_ADMIN_TD ),
-    'singular_name' => __( 'Department', THEME_ADMIN_TD ),
-    'search_items'  =>  __( 'Search Departments', THEME_ADMIN_TD ),
-    'all_items'     => __( 'All Departments', THEME_ADMIN_TD ),
-    'edit_item'     => __( 'Edit Department', THEME_ADMIN_TD),
-    'update_item'   => __( 'Update Department', THEME_ADMIN_TD),
-    'add_new_item'  => __( 'Add New Department', THEME_ADMIN_TD),
-    'new_item_name' => __( 'New Department Name', THEME_ADMIN_TD)
+    'name'          => __( 'Categorys', THEME_ADMIN_TD ),
+    'singular_name' => __( 'Category', THEME_ADMIN_TD ),
+    'search_items'  =>  __( 'Search Categorys', THEME_ADMIN_TD ),
+    'all_items'     => __( 'All Categorys', THEME_ADMIN_TD ),
+    'edit_item'     => __( 'Edit Category', THEME_ADMIN_TD),
+    'update_item'   => __( 'Update Category', THEME_ADMIN_TD),
+    'add_new_item'  => __( 'Add New Category', THEME_ADMIN_TD),
+    'new_item_name' => __( 'New Category Name', THEME_ADMIN_TD)
 );
 
 register_taxonomy(
-    'oxy_staff_department',
-    'oxy_staff',
+    'oxy_content_category',
+    'oxy_content',
     array(
         'hierarchical' => true,
         'labels'       => $labels,

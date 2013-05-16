@@ -713,25 +713,25 @@ return array(
                     include INCLUDES_DIR .'options/shortcodes/shortcode-section-options.php'
                 )
             ),
-            /* Staff Shortcodes */
+            /* Content Shortcodes */
             array(
-                'title' => __('Staff', THEME_ADMIN_TD),
+                'title' => __('Content', THEME_ADMIN_TD),
                 'members' => array(
                     array(
-                        'shortcode'     => 'staff_featured',
-                        'title'         => __('Featured staff member', THEME_ADMIN_TD),
+                        'shortcode'     => 'content_featured',
+                        'title'         => __('Featured Content Item', THEME_ADMIN_TD),
                         'insert_with'   => 'dialog',
                         'sections'      => array(
                             array(
-                                'title' => __('Staff', THEME_ADMIN_TD),
+                                'title' => __('Content', THEME_ADMIN_TD),
                                 'fields' => array(
                                     array(
                                         'name'    => __('Featured member', THEME_ADMIN_TD),
-                                        'desc'    => __('select the staff member that will be featured', THEME_ADMIN_TD),
+                                        'desc'    => __('select the Content Item that will be featured', THEME_ADMIN_TD),
                                         'id'      => 'member',
                                         'default' =>  '',
                                         'type'    => 'select',
-                                        'options' => 'staff_featured',
+                                        'options' => 'content_featured',
                                     ),
                                 )
                             ),
@@ -739,22 +739,22 @@ return array(
                         )
                     ),
                     array(
-                        'shortcode'     => 'staff_list',
-                        'title'         => __('Staff members list', THEME_ADMIN_TD),
+                        'shortcode'     => 'content_list',
+                        'title'         => __('Content Items list', THEME_ADMIN_TD),
                         'insert_with'   => 'dialog',
                         'sections'      => array(
                             array(
-                                'title' => __('Staff members list', THEME_ADMIN_TD),
+                                'title' => __('Content Items list', THEME_ADMIN_TD),
                                 'fields' => array(
                                     array(
-                                        'name'    => __('Choose a department', THEME_ADMIN_TD),
-                                        'desc'    => __('Populate your list from a department', THEME_ADMIN_TD),
-                                        'id'      => 'department',
+                                        'name'    => __('Choose a category', THEME_ADMIN_TD),
+                                        'desc'    => __('Populate your list from a category', THEME_ADMIN_TD),
+                                        'id'      => 'category',
                                         'default' =>  '',
                                         'type'    => 'select',
                                         'options' => 'taxonomy',
-                                        'taxonomy' => 'oxy_staff_department',
-                                        'blank_label' => __('Select a department', THEME_ADMIN_TD)
+                                        'taxonomy' => 'oxy_content_category',
+                                        'blank_label' => __('Select a category', THEME_ADMIN_TD)
                                     ),
                                     array(
                                         'name'    => __('Number Of members', THEME_ADMIN_TD),
@@ -770,7 +770,7 @@ return array(
                                     ),
                                     array(
                                         'name'    => __('List Columns', THEME_ADMIN_TD),
-                                        'desc'    => __('Number of columns to show staff in', THEME_ADMIN_TD),
+                                        'desc'    => __('Number of columns to show content in', THEME_ADMIN_TD),
                                         'id'      => 'columns',
                                         'type'    => 'radio',
                                         'default' => '3',

@@ -423,7 +423,7 @@ class Custom_Image_Header {
 			<?php
 			}
 			?>
-			onInit: function () {
+			/*onInit: function () {
 				jQuery('#width').val(xinit);
 				jQuery('#height').val(yinit);
 			},
@@ -432,7 +432,7 @@ class Custom_Image_Header {
 				jQuery('#y1').val(c.y1);
 				jQuery('#width').val(c.width);
 				jQuery('#height').val(c.height);
-			}
+			}*/
 		});
 	});
 /* ]]> */

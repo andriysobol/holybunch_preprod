@@ -133,19 +133,3 @@ abstract class HMBKP_Error {
 
 }
 
-class HMBKP_Disk_Quote_Error() {
-
-	public function match() {
-
-		if ( stripos( $this->get_error(), 'disk quota' ) )
-			return true;
-
-		return false;
-
-	}
-
-	public function message() {
-		return __( 'Your backup could not be completed because you have run out of disk space.', 'hmbkp' );
-	}
-
-}

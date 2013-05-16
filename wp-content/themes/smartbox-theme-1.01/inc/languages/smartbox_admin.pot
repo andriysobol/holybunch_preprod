@@ -96,7 +96,7 @@ msgid "Select a Slideshow"
 msgstr ""
 
 #: build/inc/core/options/fields/select/select.php:93
-msgid "Select a Staff member"
+msgid "Select a Content Item"
 msgstr ""
 
 #: build/inc/core/options/fields/select/select.php:101
@@ -379,71 +379,71 @@ msgstr ""
 #: build/inc/options/quick-uploaders/quick-uploaders.php:49
 #: build/inc/options/shortcodes/shortcode-options.php:718
 #: build/inc/options/shortcodes/shortcode-options.php:726
-msgid "Staff"
+msgid "Content"
 msgstr ""
 
 #: build/inc/custom_posts.php:237
-msgid "Add New Staff"
+msgid "Add New Content"
 msgstr ""
 
 #: build/inc/custom_posts.php:238
-msgid "Edit Staff"
+msgid "Edit Content"
 msgstr ""
 
 #: build/inc/custom_posts.php:239
-msgid "New Staff"
+msgid "New Content"
 msgstr ""
 
 #: build/inc/custom_posts.php:240
-msgid "All Staff"
+msgid "All Content"
 msgstr ""
 
 #: build/inc/custom_posts.php:241
-msgid "View Staff"
+msgid "View Content"
 msgstr ""
 
 #: build/inc/custom_posts.php:242
-msgid "Search Staff"
+msgid "Search Content"
 msgstr ""
 
 #: build/inc/custom_posts.php:243
-msgid "No Staff found"
+msgid "No Content found"
 msgstr ""
 
 #: build/inc/custom_posts.php:244
-msgid "No Staff found in Trash"
+msgid "No Content found in Trash"
 msgstr ""
 
 #: build/inc/custom_posts.php:287
-msgid "Departments"
+msgid "Categorys"
 msgstr ""
 
 #: build/inc/custom_posts.php:288
-msgid "Department"
+msgid "Category"
 msgstr ""
 
 #: build/inc/custom_posts.php:289
-msgid "Search Departments"
+msgid "Search Categorys"
 msgstr ""
 
 #: build/inc/custom_posts.php:290
-msgid "All Departments"
+msgid "All Categorys"
 msgstr ""
 
 #: build/inc/custom_posts.php:291
-msgid "Edit Department"
+msgid "Edit Category"
 msgstr ""
 
 #: build/inc/custom_posts.php:292
-msgid "Update Department"
+msgid "Update Category"
 msgstr ""
 
 #: build/inc/custom_posts.php:293
-msgid "Add New Department"
+msgid "Add New Category"
 msgstr ""
 
 #: build/inc/custom_posts.php:294
-msgid "New Department Name"
+msgid "New Category Name"
 msgstr ""
 
 #: build/inc/custom_posts.php:310 build/inc/custom_posts.php:321
@@ -1190,15 +1190,15 @@ msgid "Portfolio Images"
 msgstr ""
 
 #: build/inc/options/quick-uploaders/quick-uploaders.php:46
-msgid "Quick Staff"
+msgid "Quick Content"
 msgstr ""
 
 #: build/inc/options/quick-uploaders/quick-uploaders.php:47
-msgid "Quick Staff Creator"
+msgid "Quick Content Creator"
 msgstr ""
 
 #: build/inc/options/quick-uploaders/quick-uploaders.php:48
-msgid "Staff Member"
+msgid "Content Item"
 msgstr ""
 
 #: build/inc/options/shortcodes/shortcode-options.php:17
@@ -1658,7 +1658,7 @@ msgid "Span of a testimonial in the small layout"
 msgstr ""
 
 #: build/inc/options/shortcodes/shortcode-options.php:722
-msgid "Featured staff member"
+msgid "Featured Content Item"
 msgstr ""
 
 #: build/inc/options/shortcodes/shortcode-options.php:729
@@ -1666,24 +1666,24 @@ msgid "Featured member"
 msgstr ""
 
 #: build/inc/options/shortcodes/shortcode-options.php:730
-msgid "select the staff member that will be featured"
+msgid "select the Content Item that will be featured"
 msgstr ""
 
 #: build/inc/options/shortcodes/shortcode-options.php:743
 #: build/inc/options/shortcodes/shortcode-options.php:747
-msgid "Staff members list"
+msgid "Content Items list"
 msgstr ""
 
 #: build/inc/options/shortcodes/shortcode-options.php:750
-msgid "Choose a department"
+msgid "Choose a category"
 msgstr ""
 
 #: build/inc/options/shortcodes/shortcode-options.php:751
-msgid "Populate your list from a department"
+msgid "Populate your list from a category"
 msgstr ""
 
 #: build/inc/options/shortcodes/shortcode-options.php:757
-msgid "Select a department"
+msgid "Select a category"
 msgstr ""
 
 #: build/inc/options/shortcodes/shortcode-options.php:760
@@ -1699,7 +1699,7 @@ msgid "List Columns"
 msgstr ""
 
 #: build/inc/options/shortcodes/shortcode-options.php:773
-msgid "Number of columns to show staff in"
+msgid "Number of columns to show content in"
 msgstr ""
 
 #: build/inc/options/shortcodes/shortcode-options.php:799

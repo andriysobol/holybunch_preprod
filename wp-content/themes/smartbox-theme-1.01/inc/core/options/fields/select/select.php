@@ -89,11 +89,11 @@ class OxySelect extends OxyOption {
                 }
             break;
 
-            case 'staff_featured':
-                $this->_field['blank'] = __('Select a Staff member', THEME_ADMIN_TD);
-                $posts =  get_posts( "showposts=-1&post_type=oxy_staff" );
-                foreach ($posts as $staff):
-                    $data[$staff->post_title] = $staff->ID;
+            case 'content_featured':
+                $this->_field['blank'] = __('Select a Content Item', THEME_ADMIN_TD);
+                $posts =  get_posts( "showposts=-1&post_type=oxy_content" );
+                foreach ($posts as $content):
+                    $data[$content->post_title] = $content->ID;
                 endforeach;
             break;
 
@@ -126,7 +126,7 @@ class OxySelect extends OxyOption {
                     case 'get_option':
                         $this->_field['options'][$entry] = $key;
                     break;
-                    case 'staff_featured':
+                    case 'content_featured':
                         $this->_field['options'][$entry] = $key;
                     break;
                     case 'categories':
