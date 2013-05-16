@@ -1,0 +1,354 @@
+BPS SECURITY / HTTP ERROR LOG
+==============================
+==============================
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - March 24, 2013 - 4:45 am <<<<<<<<<<<
+REMOTE_ADDR: 180.149.33.145
+Host Name: 180.149.33.145
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - March 25, 2013 - 9:33 am <<<<<<<<<<<
+REMOTE_ADDR: 89.140.85.139
+Host Name: 89.140.85.139
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - March 25, 2013 - 4:44 pm <<<<<<<<<<<
+REMOTE_ADDR: 84.200.83.137
+Host Name: WIN-2VNSDRM38I7
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-cron.php
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.1; http://84.200.83.137
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - March 25, 2013 - 4:57 pm <<<<<<<<<<<
+REMOTE_ADDR: 84.200.83.137
+Host Name: WIN-2VNSDRM38I7
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-cron.php
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.1; http://84.200.83.137
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - March 25, 2013 - 5:14 pm <<<<<<<<<<<
+REMOTE_ADDR: 84.200.83.137
+Host Name: WIN-2VNSDRM38I7
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-cron.php
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.1; http://84.200.83.137
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - March 25, 2013 - 5:15 pm <<<<<<<<<<<
+REMOTE_ADDR: 84.200.83.137
+Host Name: WIN-2VNSDRM38I7
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-cron.php
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.1; http://84.200.83.137
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - March 25, 2013 - 5:15 pm <<<<<<<<<<<
+REMOTE_ADDR: 84.200.83.137
+Host Name: WIN-2VNSDRM38I7
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-cron.php
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.1; http://84.200.83.137
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - April 10, 2013 - 9:40 am <<<<<<<<<<<
+REMOTE_ADDR: 199.19.249.196
+Host Name: 199.19.249.196
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /awstats/awstats.pl?config=84.200.83.137
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; InfoPath.1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; MS-RTC LM 8; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - April 10, 2013 - 9:40 am <<<<<<<<<<<
+REMOTE_ADDR: 155.56.68.216
+Host Name: 155.56.68.216
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /awstats/awstats.pl?config=84.200.83.137
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - April 10, 2013 - 11:06 am <<<<<<<<<<<
+REMOTE_ADDR: 155.56.68.217
+Host Name: 155.56.68.217
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /awstats/awstats.pl
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - April 10, 2013 - 11:06 am <<<<<<<<<<<
+REMOTE_ADDR: 155.56.68.217
+Host Name: 155.56.68.217
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /awstats/awstats.pl
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - April 10, 2013 - 11:40 am <<<<<<<<<<<
+REMOTE_ADDR: ::1
+Host Name: WIN-2VNSDRM38I7
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /awstats/awstats.pl?config=84.200.83.137
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Апрель 26, 2013 - 9:51 дп <<<<<<<<<<<
+REMOTE_ADDR: 84.200.83.137
+Host Name: WIN-2VNSDRM38I7
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-cron.php
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.1; http://84.200.83.137
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Апрель 26, 2013 - 9:51 дп <<<<<<<<<<<
+REMOTE_ADDR: 84.200.83.137
+Host Name: WIN-2VNSDRM38I7
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-cron.php
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.1; http://84.200.83.137
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 7, 2013 - 12:57 пп <<<<<<<<<<<
+REMOTE_ADDR: 42.96.139.183
+Host Name: 42.96.139.183
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /vtigercrm/graph.php?current_language=../../../../../../../..//etc/elastix.conf%00&module=Accounts&action
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9) Gecko/2008052906 Firefox/3.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 9, 2013 - 2:32 пп <<<<<<<<<<<
+REMOTE_ADDR: 194.12.64.4
+Host Name: 194.12.64.4
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 11, 2013 - 11:34 пп <<<<<<<<<<<
+REMOTE_ADDR: 8.35.201.144
+Host Name: 8.35.201.144
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: AppEngine-Google; (+http://code.google.com/appengine; appid: s~researchlab-ff-1)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - 12.05.2013 - 01:09 <<<<<<<<<<<
+REMOTE_ADDR: 84.200.83.137
+Host Name: WIN-2VNSDRM38I7
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /test/wp-content/themes/smartbox-theme-1.01/images/bundled/landscape-2-1250x300.jpg
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.1; http://84.200.83.137/test
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - 12.05.2013 - 01:09 <<<<<<<<<<<
+REMOTE_ADDR: 84.200.83.137
+Host Name: WIN-2VNSDRM38I7
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /test/wp-content/themes/smartbox-theme-1.01/images/bundled/landscape-2-1250x300.jpg
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.1; http://84.200.83.137/test
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - 12.05.2013 - 01:09 <<<<<<<<<<<
+REMOTE_ADDR: 84.200.83.137
+Host Name: WIN-2VNSDRM38I7
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /test/wp-content/themes/smartbox-theme-1.01/images/bundled/landscape-2-1250x300.jpg
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.1; http://84.200.83.137/test
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - 12.05.2013 - 01:09 <<<<<<<<<<<
+REMOTE_ADDR: 84.200.83.137
+Host Name: WIN-2VNSDRM38I7
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /test/wp-content/themes/smartbox-theme-1.01/images/bundled/landscape-2-1250x300.jpg
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.1; http://84.200.83.137/test
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - 12.05.2013 - 01:09 <<<<<<<<<<<
+REMOTE_ADDR: 84.200.83.137
+Host Name: WIN-2VNSDRM38I7
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /test/wp-content/themes/smartbox-theme-1.01/images/bundled/landscape-2-1250x300.jpg
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.1; http://84.200.83.137/test
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - 12.05.2013 - 01:09 <<<<<<<<<<<
+REMOTE_ADDR: 84.200.83.137
+Host Name: WIN-2VNSDRM38I7
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /test/wp-content/themes/smartbox-theme-1.01/images/bundled/landscape-2-1250x300.jpg
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.1; http://84.200.83.137/test
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 13, 2013 - 11:10 пп <<<<<<<<<<<
+REMOTE_ADDR: 66.249.81.101
+Host Name: google-proxy-66-249-81-101.google.com
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: urlresolver
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 13, 2013 - 11:10 пп <<<<<<<<<<<
+REMOTE_ADDR: 66.249.81.101
+Host Name: google-proxy-66-249-81-101.google.com
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: urlresolver
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 13, 2013 - 11:31 пп <<<<<<<<<<<
+REMOTE_ADDR: 8.35.201.209
+Host Name: 8.35.201.209
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: AppEngine-Google; (+http://code.google.com/appengine; appid: s~researchlab-c-5)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 14, 2013 - 1:45 дп <<<<<<<<<<<
+REMOTE_ADDR: 198.23.226.218
+Host Name: host.colocrossing.com
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /vtigercrm/graph.php?current_language=../../../../../../../..//etc/elastix.conf%00&module=Accounts&action
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9) Gecko/2008052906 Firefox/3.0

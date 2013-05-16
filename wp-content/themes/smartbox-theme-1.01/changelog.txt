@@ -1,0 +1,12 @@
+SmartBox Wordpress - Changelog
+
+Version 1.0 - 18th April 2013
+    - Initial Release
+
+Version 1.01 - 19th April
+    - Fix for nested comments
+    - Fix for portfolio item text
+    - Limit excerpt in related portfolio items
+    - Fixed alignment on header and footer widgets
+    - Font size classes are irrelevant of the header
+    - Added margin on single portfolio item skills

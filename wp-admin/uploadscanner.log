@@ -1,0 +1,665 @@
+[2013-03-29 10:55:34] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Sending 406 and stopping execution
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  Fehler.png
+Type:  image/png
+Size:  203267
+Command: UPLOAD_SCANNER_ORIG_FILENAME="Fehler.png"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\phpD3E.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="203267"; UPLOAD_SCANNER_ORIG_FILETYPE="image/png"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_FILENAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-03-29 11:01:58] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Sending 406 and stopping execution
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  Fehler.png
+Type:  image/png
+Size:  203267
+Command: UPLOAD_SCANNER_ORIG_FILENAME="Fehler.png"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php3DA2.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="203267"; UPLOAD_SCANNER_ORIG_FILETYPE="image/png"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_FILENAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-03-29 11:15:52] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Sending 406 and stopping execution
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  Fehler.png
+Type:  image/png
+Size:  203267
+Command: UPLOAD_SCANNER_ORIG_FILENAME="Fehler.png"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\phpF58D.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="203267"; UPLOAD_SCANNER_ORIG_FILETYPE="image/png"; clamscan $UPLOAD_SCANNER_ORIG_FILENAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-03-29 11:31:19] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/async-upload.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/async-upload.php
+-------------------------------------------------------
+Messages:
+Sending 406 and stopping execution
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  WordPress.rtf
+Type:  application/octet-stream
+Size:  2374
+Command: UPLOAD_SCANNER_ORIG_FILENAME="WordPress.rtf"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php25B4.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="2374"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_FILENAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 19:31:58] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  Fehler.png
+Type:  image/png
+Size:  203267
+Command: UPLOAD_SCANNER_ORIG_FILENAME="Fehler.png"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php54A9.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="203267"; UPLOAD_SCANNER_ORIG_FILETYPE="image/png"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_FILENAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 19:34:11] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  virus.txt
+Type:  text/plain
+Size:  0
+Command: UPLOAD_SCANNER_ORIG_FILENAME="virus.txt"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php6656.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="0"; UPLOAD_SCANNER_ORIG_FILETYPE="text/plain"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_FILENAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 19:40:19] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  default.settings.php
+Type:  application/octet-stream
+Size:  21750
+Command: UPLOAD_SCANNER_ORIG_FILENAME="default.settings.php"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php43B.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="21750"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_FILENAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 19:41:07] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  default.settings.php
+Type:  application/octet-stream
+Size:  21750
+Command: UPLOAD_SCANNER_ORIG_FILENAME="default.settings.php"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\phpC0B3.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="21750"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_FILENAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 19:53:16] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  FileZilla.png
+Type:  image/png
+Size:  61701
+Command: UPLOAD_SCANNER_ORIG_FILENAME="FileZilla.png"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\phpDD86.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="61701"; UPLOAD_SCANNER_ORIG_FILETYPE="image/png"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_FILENAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 19:53:35] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  
+Type:  
+Size:  0
+Command: UPLOAD_SCANNER_ORIG_FILENAME=""; UPLOAD_SCANNER_ORIG_TEMPNAME=""; UPLOAD_SCANNER_ORIG_FILESIZE="0"; UPLOAD_SCANNER_ORIG_FILETYPE=""; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_FILENAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 19:54:10] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  default.settings.php
+Type:  application/octet-stream
+Size:  21750
+Command: UPLOAD_SCANNER_ORIG_FILENAME="default.settings.php"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\phpB188.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="21750"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_FILENAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 20:25:54] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  settings.php
+Type:  application/octet-stream
+Size:  22014
+Command: UPLOAD_SCANNER_ORIG_FILENAME="settings.php"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\phpBCEF.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="22014"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_FILENAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 20:27:10] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  FileZilla.png
+Type:  image/png
+Size:  61701
+Command: UPLOAD_SCANNER_ORIG_FILENAME="FileZilla.png"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\phpE3F0.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="61701"; UPLOAD_SCANNER_ORIG_FILETYPE="image/png"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_FILENAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 20:36:28] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  virus.txt
+Type:  text/plain
+Size:  0
+Command: UPLOAD_SCANNER_ORIG_FILENAME="virus.txt"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php6B87.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="0"; UPLOAD_SCANNER_ORIG_FILETYPE="text/plain"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_FILENAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 20:38:12] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php20C.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_FILENAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 20:39:41] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Sending 406 and stopping execution
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php6024.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_TEMPNAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 20:40:31] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php2039.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_TEMPNAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 20:41:43] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php3CAF.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" "C:\Windows\Temp"
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 20:56:12] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php7F2C.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" C:\Windows\Temp\eicar_com.zip
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 20:59:14] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php450A.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" C:\Windows\Temp\eicar_com.zip
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 21:17:27] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\phpF2FB.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" C:\Windows\Temp\eicar_com.zip
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-03 21:22:36] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/async-upload.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/async-upload.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\phpA8C3.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_TEMPNAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-04 06:05:14] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php26A4.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" --move="C:\ProgramData\.clamwin\quarantine" $UPLOAD_SCANNER_ORIG_TEMPNAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-04 06:07:21] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php15F3.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" --move="C:\ProgramData\.clamwin\quarantine" UPLOAD_SCANNER_ORIG_TEMPNAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-04 06:10:04] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php936C.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" --move="C:\ProgramData\.clamwin\quarantine" C:\Windows\Temp\eicar.zip
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-04 07:28:53] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     155.56.68.216
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  avatar.jpg
+Type:  image/jpeg
+Size:  19193
+Command: UPLOAD_SCANNER_ORIG_FILENAME="avatar.jpg"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\phpBB78.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="19193"; UPLOAD_SCANNER_ORIG_FILETYPE="image/jpeg"; clamscan --database="C:\ProgramData\.clamwin\db" --move="C:\ProgramData\.clamwin\quarantine" $UPLOAD_SCANNER_ORIG_TEMPNAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-04 09:41:49] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     155.56.68.214
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  BeiRempels.JPG
+Type:  
+Size:  0
+Command: UPLOAD_SCANNER_ORIG_FILENAME="BeiRempels.JPG"; UPLOAD_SCANNER_ORIG_TEMPNAME=""; UPLOAD_SCANNER_ORIG_FILESIZE="0"; UPLOAD_SCANNER_ORIG_FILETYPE=""; clamscan --database="C:\ProgramData\.clamwin\db" --move="C:\ProgramData\.clamwin\quarantine" $UPLOAD_SCANNER_ORIG_TEMPNAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-05 05:04:09] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php937C.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; C:\Program Files (x86)\ClamWin\bin\clamscan.exe --database="C:\ProgramData\.clamwin\db" --move="C:\ProgramData\.clamwin\quarantine" $UPLOAD_SCANNER_ORIG_TEMPNAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-05 05:22:30] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php616A.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; C:\Program Files (x86)\ClamWin\bin\clamscan --database="C:\ProgramData\.clamwin\db" --move="C:\ProgramData\.clamwin\quarantine" $UPLOAD_SCANNER_ORIG_TEMPNAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-06 08:44:02] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php4034.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_TEMPNAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-06 08:49:33] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php4D8E.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; %ProgramFiles(x86)%\ClamWin\bin\clamscan --database="C:\ProgramData\.clamwin\db" $UPLOAD_SCANNER_ORIG_TEMPNAME
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-06 08:50:32] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\php3416.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; %ProgramFiles(x86)%\ClamWin\bin\clamscan --database="C:\ProgramData\.clamwin\db" "C:\Windows\Temp\"
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
+[2013-04-06 08:55:33] Upload scan:
+-------------------------------------------------------
+REQUEST_URI:     http://84.200.83.137/wp-admin/media-new.php
+REMOTE_ADDR:     95.90.8.249
+SCRIPT_FILENAME: C:/Apache24/htdocs/holybunch_prep/www/wp-admin/media-new.php
+-------------------------------------------------------
+Messages:
+Emailing andriy.sobol@googlemail.com
+-------------------------------------------------------
+Scanned files:
+-------------------------------------------------------
+Original name:  eicar_com.zip
+Type:  application/octet-stream
+Size:  184
+Command: UPLOAD_SCANNER_ORIG_FILENAME="eicar_com.zip"; UPLOAD_SCANNER_ORIG_TEMPNAME="C:\Windows\Temp\phpCADA.tmp"; UPLOAD_SCANNER_ORIG_FILESIZE="184"; UPLOAD_SCANNER_ORIG_FILETYPE="application/octet-stream"; %ProgramFiles(x86)%\ClamWin\bin\clamscan.exe --database="C:\ProgramData\.clamwin\db" "C:\Windows\Temp\"
+Output: 
+Return Code: 1
+-------------------------------------------------------
+
+
