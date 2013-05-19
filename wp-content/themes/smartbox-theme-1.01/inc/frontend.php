@@ -205,6 +205,7 @@ function oxy_load_scripts() {
     wp_enqueue_style( 'font', CSS_URI . 'fonts.css', array( 'bootstrap' ), false, 'all' );
     wp_enqueue_style( 'fancybox', CSS_URI . 'fancybox.css', array( 'bootstrap' ), false, 'all' );
     wp_enqueue_style( 'style', CSS_URI . 'style.css', array( 'bootstrap' ), false, 'all' );
+    wp_enqueue_style( 'myStyle', CSS_URI . 'myStyle.css', array( 'bootstrap' ), false, 'all' );
 
 
 }
