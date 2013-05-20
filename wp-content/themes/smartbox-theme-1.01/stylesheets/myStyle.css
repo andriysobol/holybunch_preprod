@@ -6,7 +6,15 @@
         Purpose of the stylesheet follows.
 */
 
-root { 
-    display: block;
+div#blockRigthOben{
+    font-size: 14px;
+    border-left-style: dashed;
+    border-left-width: thin;
+    padding-left: 16px;
+    margin-left: 30px;
+}
+
+div#blockRigthOben h4{
+    color: orange;
 }
 
