@@ -663,15 +663,30 @@ function oxy_shortcode_content_list($atts , $content = '' ) {
         'count'       => 3,
         'columns'     => 3,
         'style'       => '',
-        'category'  => ''
+        'category'  => '',
+        'orderby' => ''
     ), $atts ) );
 
     $query_options = array(
         'post_type'      => 'oxy_content',
-        'numberposts'    => $count
+        'numberposts'    => $count,
+        'orderby' => $orderby
     );
 
-    $span = $columns == 3 ? 'span4' : 'span3';
+       //andrey: shortcode staff changed, column for value 1 added
+    switch ($columns) {
+        case 1:
+            $span = 'span8';
+            break;
+        case 3:
+            $span = 'span4';
+            break;
+        case 4:
+            $span = 'span3';
+            break;
+        default:
+            break;
+    }
 
     if( !empty( $category ) ) {
         $query_options['tax_query'] = array(
@@ -726,7 +741,7 @@ function oxy_shortcode_content_list($atts , $content = '' ) {
             $output.='</li>';
             $member_num++;
         endforeach;
-        $output .= '</ul>';
+       $output .= '</ul>';
     endif;
     wp_reset_postdata();
     return oxy_shortcode_section( $atts, $output );
@@ -734,6 +749,117 @@ function oxy_shortcode_content_list($atts , $content = '' ) {
 }
 add_shortcode( 'content_list', 'oxy_shortcode_content_list' );
 
+/* Content List */
+function oxy_content_item_with_related_taxonomy($atts , $content = '' ) {
+     // setup options
+    extract( shortcode_atts( array(
+        'title'       => '',
+        'count'       => 3,
+        'columns'     => 3,
+        'style'       => '',
+        'category'  => '',
+        'orderby' => ''
+    ), $atts ) );
+
+    $query_options = array(
+        'post_type'      => 'oxy_content',
+        'numberposts'    => $count,
+        'orderby' => $orderby
+    );
+
+       //andrey: shortcode staff changed, column for value 1 added
+    switch ($columns) {
+        case 1:
+            $span = 'span8';
+            break;
+        case 3:
+            $span = 'span4';
+            break;
+        case 4:
+            $span = 'span3';
+            break;
+        default:
+            break;
+    }
+
+    if( !empty( $category ) ) {
+        $query_options['tax_query'] = array(
+            array(
+                'taxonomy' => 'oxy_content_category',
+                'field' => 'slug',
+                'terms' => $category
+            )
+        );
+    }
+
+    // fetch posts
+    $members = get_posts( $query_options );
+    $members_count = count( $members );
+    $output = '';
+    if( $members_count > 0):
+        $members_per_row = $columns;
+        $member_num = 1;
+
+        $output .= '<ul class="unstyled row-fluid">';
+
+        foreach ($members as $member) :
+            global $post;
+            $post = $member;
+            setup_postdata($post);
+            $custom_fields = get_post_custom($post->ID);
+            $position       = (isset($custom_fields[THEME_SHORT . '_position']))? $custom_fields[THEME_SHORT . '_position'][0]:'';
+            $facebook       = (isset($custom_fields[THEME_SHORT . '_facebook']))? $custom_fields[THEME_SHORT . '_facebook'][0]:'';
+            $twitter        = (isset($custom_fields[THEME_SHORT . '_twitter']))? $custom_fields[THEME_SHORT . '_twitter'][0]:'';
+            $linkedin       = (isset($custom_fields[THEME_SHORT . '_linkedin']))? $custom_fields[THEME_SHORT . '_linkedin'][0]:'';
+            $pinterest      = (isset($custom_fields[THEME_SHORT . '_pinterest']))? $custom_fields[THEME_SHORT . '_pinterest'][0]:'';
+            $googleplus     = (isset($custom_fields[THEME_SHORT . '_googleplus']))? $custom_fields[THEME_SHORT . '_googleplus'][0]:'';
+            $img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full' );
+
+            if($member_num > $members_per_row){
+                $output.='</ul><ul class="unstyled row-fluid">';
+                $member_num = 1;
+            }
+
+            $output.='<li class="'.$span.'"><div class="round-box box-big"><span class="box-inner"><img alt="' . get_the_title() . '" class="img-circle" src="'.$img[0].'">';
+            $output.='</span></div><h3 class="text-center">'.get_the_title() .'<small class="block">'.$position.'</small></h3>';
+            $output.='<p>'.get_the_content() .'</p>';
+            $output.='<ul class="inline text-center big social-icons">';
+            // must render
+            $output.=($facebook !== '')?'<li><a data-iconcolor="#3b5998" href="'. $facebook.'" style="color: rgb(66, 87, 106);"><i class="icon-facebook"></i></a></li>':'';
+            $output.=($twitter !== '')?'<li><a data-iconcolor="#00a0d1" href="'. $twitter.'" style="color: rgb(66, 87, 106);"><i class="icon-twitter"></i></a></li>':'';
+            $output.=($pinterest !== '')? '<li><a data-iconcolor="#910101" href="'.$pinterest.'" style="color: rgb(66, 87, 106);"><i class="icon-pinterest"></i></a></li>':'';
+            $output.=($googleplus !== '')? '<li><a data-iconcolor="#E45135" href="'.$googleplus.'" style="color: rgb(66, 87, 106);"><i class="icon-google-plus"></i></a></li>':'';
+            $output.=($linkedin !== '')? '<li><a data-iconcolor="#5FB0D5" href="'.$linkedin.'" style="color: rgb(66, 87, 106);"><i class="icon-linkedin"></i></a></li>':'';
+
+            $output.='</ul>';
+            $output.='</li>';
+            $member_num++;
+        endforeach;
+        
+        //list terms in a given taxonomy using wp_list_categories, it will appear reght to text
+        $output.='<li class="span4">';
+        $output.='<h3 class="text-center">Читай по этой теме<small class="block"></small></h3>';
+        $beforeTerm = "<div class=\"row-fluid\"><div class=\"span1\">
+                            <div class=\"round-box box-mini box-colored\">
+                                <a class=\"box-inner\">
+                                <img class=\"img-circle\" src=\"\">                                </a>
+                            </div>
+                        </div>
+                        <div class=\"span2\">
+                            <h3 class=\"text-center\">";
+        $afterTerm = "</h3>
+                            <h5 class=\"light\">
+                                                            </h5>
+                        </div>";
+        $separater = $afterTerm . "</li><li class=\"span3\">" . $beforeTerm ;
+        $output.='<p>' . get_the_term_list($post->ID, 'oxy_content_category', "<li class=\"span3\">" . $beforeTerm, $separater, $afterTerm. "</li>") . '</p>';
+        $output .= '</li></ul>';
+    endif;
+    wp_reset_postdata();
+    return oxy_shortcode_section( $atts, $output );
+
+}
+add_shortcode( 'content_item_with_related_taxonomy', 'oxy_content_item_with_related_taxonomy' );
 
 /******************************************      COMPONENTS        *************************************/
 

@@ -878,6 +878,51 @@ return array(
                     include INCLUDES_DIR .'options/shortcodes/shortcode-section-options.php'
                 )
             ),
+            /* Content item with related taxonomy */
+            array(
+                'shortcode'     => 'content_item_with_related_taxonomy',
+                'title'         => __('Content item with related taxonomy', THEME_ADMIN_TD),
+                'insert_with'   => 'dialog',
+                'sections'      => array(
+                    array(
+                        'title' => __('Content item with related taxonomy', THEME_ADMIN_TD),
+                        'fields' => array(
+                            array(
+                                'name'    => __('Number of posts', THEME_ADMIN_TD),
+                                'desc'    => __('Number of posts to display', THEME_ADMIN_TD),
+                                'id'      => 'count',
+                                'type'    => 'slider',
+                                'default' => 3,
+                                'attr'    => array(
+                                    'max'   => 10,
+                                    'min'   => 1,
+                                    'step'  => 1
+                                )
+                            ),
+                             array(
+                                'name'    => __('Post category', THEME_ADMIN_TD),
+                                'desc'    => __('Choose posts from a specific category', THEME_ADMIN_TD),
+                                'id'      => 'cat',
+                                'default' =>  '',
+                                'type'    => 'select',
+                                'options' => 'categories',
+                            ),
+                            array(
+                                'name'    => __('Columns', THEME_ADMIN_TD),
+                                'desc'    => __('Number of columns to show posts in', THEME_ADMIN_TD),
+                                'id'      => 'columns',
+                                'type'    => 'radio',
+                                'default' => '3',
+                                'options' => array(
+                                    '3' => __('3 Columns', THEME_ADMIN_TD),
+                                    '4' => __('4 Columns', THEME_ADMIN_TD),
+                                ),
+                            ),
+                        )
+                    ),
+                    include INCLUDES_DIR .'options/shortcodes/shortcode-section-options.php'
+                )
+            ),
         )
     ),
 );
