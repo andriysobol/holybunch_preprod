@@ -523,6 +523,7 @@ body {
   background-color: #444444;
   color: white !important;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+
 }
 .section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4, .section-dark h5, .section-dark h6, .section-dark a {
   color: white !important;
@@ -1692,7 +1693,7 @@ html[xmlns] .slides {
   background-color: #151515;
   -webkit-box-shadow: 0px 1px 0px #656565;
   -moz-box-shadow: 0px 1px 0px #656565;
-  box-shadow: 0px 1px 0px #656565;
+  box-shadow: 0px 2px 0px #656565;
 }
 
 /* - 7.4 tooltips - */
