@@ -46,6 +46,13 @@ $theme = new OxyTheme(
     )
 );
 
+//add automatic excerpt
+function excerpt_read_more_link($output) {
+ global $post;
+ return $output . '<a href="'. get_permalink($post->ID) . '"> Read More...</a>';
+}
+add_filter('the_excerpt', 'excerpt_read_more_link');
+
 // include extra theme specific code
 include INCLUDES_DIR . 'frontend.php';
 include INCLUDES_DIR . 'custom_posts.php';
