@@ -929,8 +929,8 @@ return array(
                 'title' => __('HTML-Tags', THEME_ADMIN_TD),
                 'members' => array(
                     array(
-                        'shortcode' => '<div>',
-                        'insert' => '<div> inhalt </div>',
+                        'shortcode' => '[div]',
+                        'insert' => '[div] inhalt [/div]',
                         'title' => __('div', THEME_ADMIN_TD),
                         'insert_with' => 'insert',
                     )

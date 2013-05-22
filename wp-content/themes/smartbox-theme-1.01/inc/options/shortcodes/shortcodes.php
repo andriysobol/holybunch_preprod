@@ -930,3 +930,20 @@ function oxy_shortcode_code( $atts, $content = null) {
     return '<pre>' . htmlentities( $content ) . '</pre>';
 }
 add_shortcode( 'code', 'oxy_shortcode_code' );
+
+/**
+ * @author Mischa
+ * @return string Div
+ */
+function oxy_shortcode_div( $atts, $content = null ) {
+    extract( shortcode_atts( array(
+        'id'        => '',
+        'class'     => '',
+        'style'     => '',
+    ), $atts ) );
+    $output = '<div id="'.$id.'" class="'.$class.'" style="'.$style.'">';
+    $output .= do_shortcode( $content );
+    $output .= '</div>';
+    return $output;
+}
+add_shortcode( 'div', 'oxy_shortcode_div' );
