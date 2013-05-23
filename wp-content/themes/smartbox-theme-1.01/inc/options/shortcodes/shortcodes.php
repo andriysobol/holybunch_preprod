@@ -637,7 +637,7 @@ function oxy_shortcode_content_featured($atts , $content = '' ) {
         $item = get_post( $member );
         $custom_fields  = get_post_custom($item->ID);
         $img            = wp_get_attachment_image_src(get_post_thumbnail_id($item->ID), 'full' );
-        $position       = (isset($custom_fields[THEME_SHORT.'_position']))? $custom_fields[THEME_SHORT.'_position'][0]:'';
+        $icon       = (isset($custom_fields[THEME_SHORT.'_icon']))? $custom_fields[THEME_SHORT.'_icon'][0]:'';
         $skills         = wp_get_post_terms( $item->ID, 'oxy_content_skills' );
         $output.='<div class="row-fluid"><div class="span6"><img alt="'  . $item->post_title . '" class="push-bottom" src="'.$img[0].'"></div>';
         $output.='<div class="span6"><p class="lead">'.$item->post_content.'</p>';
@@ -713,7 +713,7 @@ function oxy_shortcode_content_list($atts , $content = '' ) {
             $post = $member;
             setup_postdata($post);
             $custom_fields = get_post_custom($post->ID);
-            $position       = (isset($custom_fields[THEME_SHORT . '_position']))? $custom_fields[THEME_SHORT . '_position'][0]:'';
+            $icon       = (isset($custom_fields[THEME_SHORT . '_icon']))? $custom_fields[THEME_SHORT . '_icon'][0]:'';
             $facebook       = (isset($custom_fields[THEME_SHORT . '_facebook']))? $custom_fields[THEME_SHORT . '_facebook'][0]:'';
             $twitter        = (isset($custom_fields[THEME_SHORT . '_twitter']))? $custom_fields[THEME_SHORT . '_twitter'][0]:'';
             $linkedin       = (isset($custom_fields[THEME_SHORT . '_linkedin']))? $custom_fields[THEME_SHORT . '_linkedin'][0]:'';
@@ -727,7 +727,7 @@ function oxy_shortcode_content_list($atts , $content = '' ) {
             }
 
             $output.='<li class="'.$span.'"><div class="round-box box-big"><span class="box-inner"><img alt="' . get_the_title() . '" class="img-circle" src="'.$img[0].'">';
-            $output.='</span></div><h3 class="text-center">'.get_the_title() .'<small class="block">'.$position.'</small></h3>';
+            $output.='</span></div><h3 class="text-center">'.get_the_title() .'<small class="block">'.$icon.'</small></h3>';
             $output.='<p>'.get_the_content() .'</p>';
             $output.='<ul class="inline text-center big social-icons">';
             // must render
@@ -761,7 +761,7 @@ function oxy_content_itemlist_enhanced($atts , $content = '' ) {
         'category'    => '',
         'orderby'     => '',
         'excerpt_length' => 5,
-        'icon'        => ''
+        'addicon'        => ''
     ), $atts ) );
 
     $query_options = array(
@@ -808,7 +808,13 @@ function oxy_content_itemlist_enhanced($atts , $content = '' ) {
             //$output.='</ul><ul class="unstyled row-fluid">';
             $output .= '<li>';
             $output .= '<h4>';
-            $output .= '<i class="' . $icon . '"></i>';
+            if($addicon == 'true'){
+                $custom_fields = get_post_custom($post->ID);
+                $icon       = (isset($custom_fields[THEME_SHORT.'_icon']))? $custom_fields[THEME_SHORT.'_icon'][0]:'';
+                $output .= '<i class="' . $icon . '"></i>';
+            }  else {
+                $output .= '<i class=""></i>';
+            }
             $output .= get_the_title() . " : ";
             if($contenttype == 'excerpt'){
               $text = get_the_excerpt();
