@@ -637,7 +637,7 @@ function oxy_shortcode_content_featured($atts , $content = '' ) {
         $item = get_post( $member );
         $custom_fields  = get_post_custom($item->ID);
         $img            = wp_get_attachment_image_src(get_post_thumbnail_id($item->ID), 'full' );
-        $position       = (isset($custom_fields[THEME_SHORT.'_position']))? $custom_fields[THEME_SHORT.'_position'][0]:'';
+        $icon       = (isset($custom_fields[THEME_SHORT.'_icon']))? $custom_fields[THEME_SHORT.'_icon'][0]:'';
         $skills         = wp_get_post_terms( $item->ID, 'oxy_content_skills' );
         $output.='<div class="row-fluid"><div class="span6"><img alt="'  . $item->post_title . '" class="push-bottom" src="'.$img[0].'"></div>';
         $output.='<div class="span6"><p class="lead">'.$item->post_content.'</p>';
@@ -699,21 +699,21 @@ function oxy_shortcode_content_list($atts , $content = '' ) {
     }
 
     // fetch posts
-    $members = get_posts( $query_options );
-    $members_count = count( $members );
+    $items = get_posts( $query_options );
+    $items_count = count( $items );
     $output = '';
-    if( $members_count > 0):
-        $members_per_row = $columns;
+    if( $items_count > 0):
+        $items_per_row = $columns;
         $member_num = 1;
 
         $output .= '<ul class="unstyled row-fluid">';
 
-        foreach ($members as $member) :
+        foreach ($items as $member) :
             global $post;
             $post = $member;
             setup_postdata($post);
             $custom_fields = get_post_custom($post->ID);
-            $position       = (isset($custom_fields[THEME_SHORT . '_position']))? $custom_fields[THEME_SHORT . '_position'][0]:'';
+            $icon       = (isset($custom_fields[THEME_SHORT . '_icon']))? $custom_fields[THEME_SHORT . '_icon'][0]:'';
             $facebook       = (isset($custom_fields[THEME_SHORT . '_facebook']))? $custom_fields[THEME_SHORT . '_facebook'][0]:'';
             $twitter        = (isset($custom_fields[THEME_SHORT . '_twitter']))? $custom_fields[THEME_SHORT . '_twitter'][0]:'';
             $linkedin       = (isset($custom_fields[THEME_SHORT . '_linkedin']))? $custom_fields[THEME_SHORT . '_linkedin'][0]:'';
@@ -721,13 +721,13 @@ function oxy_shortcode_content_list($atts , $content = '' ) {
             $googleplus     = (isset($custom_fields[THEME_SHORT . '_googleplus']))? $custom_fields[THEME_SHORT . '_googleplus'][0]:'';
             $img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full' );
 
-            if($member_num > $members_per_row){
+            if($member_num > $items_per_row){
                 $output.='</ul><ul class="unstyled row-fluid">';
                 $member_num = 1;
             }
 
             $output.='<li class="'.$span.'"><div class="round-box box-big"><span class="box-inner"><img alt="' . get_the_title() . '" class="img-circle" src="'.$img[0].'">';
-            $output.='</span></div><h3 class="text-center">'.get_the_title() .'<small class="block">'.$position.'</small></h3>';
+            $output.='</span></div><h3 class="text-center">'.get_the_title() .'<small class="block">'.$icon.'</small></h3>';
             $output.='<p>'.get_the_content() .'</p>';
             $output.='<ul class="inline text-center big social-icons">';
             // must render
@@ -750,15 +750,18 @@ function oxy_shortcode_content_list($atts , $content = '' ) {
 add_shortcode( 'content_list', 'oxy_shortcode_content_list' );
 
 /* Content List */
-function oxy_content_item_with_related_taxonomy($atts , $content = '' ) {
+function oxy_content_itemlist_enhanced($atts , $content = '' ) {
      // setup options
-    extract( shortcode_atts( array(
+     extract( shortcode_atts( array(
         'title'       => '',
         'count'       => 3,
+        'contenttype' => '',
         'columns'     => 3,
         'style'       => '',
-        'category'  => '',
-        'orderby' => ''
+        'category'    => '',
+        'orderby'     => '',
+        'excerpt_length' => 5,
+        'addicon'        => ''
     ), $atts ) );
 
     $query_options = array(
@@ -767,7 +770,7 @@ function oxy_content_item_with_related_taxonomy($atts , $content = '' ) {
         'orderby' => $orderby
     );
 
-       //andrey: shortcode staff changed, column for value 1 added
+    //andrey: shortcode staff changed, column for value 1 added
     switch ($columns) {
         case 1:
             $span = 'span8';
@@ -793,73 +796,46 @@ function oxy_content_item_with_related_taxonomy($atts , $content = '' ) {
     }
 
     // fetch posts
-    $members = get_posts( $query_options );
-    $members_count = count( $members );
+    $items = get_posts($query_options);
+    $items_count = count($items);
     $output = '';
-    if( $members_count > 0):
-        $members_per_row = $columns;
-        $member_num = 1;
-
+    if ($items_count > 0):
         $output .= '<ul class="unstyled row-fluid">';
-
-        foreach ($members as $member) :
+        foreach ($items as $member) :
             global $post;
             $post = $member;
             setup_postdata($post);
-            $custom_fields = get_post_custom($post->ID);
-            $position       = (isset($custom_fields[THEME_SHORT . '_position']))? $custom_fields[THEME_SHORT . '_position'][0]:'';
-            $facebook       = (isset($custom_fields[THEME_SHORT . '_facebook']))? $custom_fields[THEME_SHORT . '_facebook'][0]:'';
-            $twitter        = (isset($custom_fields[THEME_SHORT . '_twitter']))? $custom_fields[THEME_SHORT . '_twitter'][0]:'';
-            $linkedin       = (isset($custom_fields[THEME_SHORT . '_linkedin']))? $custom_fields[THEME_SHORT . '_linkedin'][0]:'';
-            $pinterest      = (isset($custom_fields[THEME_SHORT . '_pinterest']))? $custom_fields[THEME_SHORT . '_pinterest'][0]:'';
-            $googleplus     = (isset($custom_fields[THEME_SHORT . '_googleplus']))? $custom_fields[THEME_SHORT . '_googleplus'][0]:'';
-            $img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full' );
-
-            if($member_num > $members_per_row){
-                $output.='</ul><ul class="unstyled row-fluid">';
-                $member_num = 1;
+            //$output.='</ul><ul class="unstyled row-fluid">';
+            $output .= '<li>';
+            $output .= '<h4>';
+            if($addicon == 'true'){
+                $custom_fields = get_post_custom($post->ID);
+                $icon       = (isset($custom_fields[THEME_SHORT.'_icon']))? $custom_fields[THEME_SHORT.'_icon'][0]:'';
+                $output .= '<i class="' . $icon . '"></i>';
+            }  else {
+                $output .= '<i class=""></i>';
             }
-
-            $output.='<li class="'.$span.'"><div class="round-box box-big"><span class="box-inner"><img alt="' . get_the_title() . '" class="img-circle" src="'.$img[0].'">';
-            $output.='</span></div><h3 class="text-center">'.get_the_title() .'<small class="block">'.$position.'</small></h3>';
-            $output.='<p>'.get_the_content() .'</p>';
-            $output.='<ul class="inline text-center big social-icons">';
-            // must render
-            $output.=($facebook !== '')?'<li><a data-iconcolor="#3b5998" href="'. $facebook.'" style="color: rgb(66, 87, 106);"><i class="icon-facebook"></i></a></li>':'';
-            $output.=($twitter !== '')?'<li><a data-iconcolor="#00a0d1" href="'. $twitter.'" style="color: rgb(66, 87, 106);"><i class="icon-twitter"></i></a></li>':'';
-            $output.=($pinterest !== '')? '<li><a data-iconcolor="#910101" href="'.$pinterest.'" style="color: rgb(66, 87, 106);"><i class="icon-pinterest"></i></a></li>':'';
-            $output.=($googleplus !== '')? '<li><a data-iconcolor="#E45135" href="'.$googleplus.'" style="color: rgb(66, 87, 106);"><i class="icon-google-plus"></i></a></li>':'';
-            $output.=($linkedin !== '')? '<li><a data-iconcolor="#5FB0D5" href="'.$linkedin.'" style="color: rgb(66, 87, 106);"><i class="icon-linkedin"></i></a></li>':'';
-
-            $output.='</ul>';
-            $output.='</li>';
+            $output .= get_the_title() . " : ";
+            if($contenttype == 'excerpt'){
+              $text = get_the_excerpt();
+              $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+              $excerpt_more = '<a href="' . get_permalink() . '">'. $excerpt_more .'</a>';
+              $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+              $output .= $text ;  
+            }  else {
+             $output .= get_the_content();   
+            }            
+            $output .= '</h4>';
+            $output .= '</li>';
             $member_num++;
         endforeach;
-        
-        //list terms in a given taxonomy using wp_list_categories, it will appear reght to text
-        $output.='<li class="span4">';
-        $output.='<h3 class="text-center">Читай по этой теме<small class="block"></small></h3>';
-        $beforeTerm = "<div class=\"row-fluid\"><div class=\"span1\">
-                            <div class=\"round-box box-mini box-colored\">
-                                <a class=\"box-inner\">
-                                <img class=\"img-circle\" src=\"\">                                </a>
-                            </div>
-                        </div>
-                        <div class=\"span2\">
-                            <h3 class=\"text-center\">";
-        $afterTerm = "</h3>
-                            <h5 class=\"light\">
-                                                            </h5>
-                        </div>";
-        $separater = $afterTerm . "</li><li class=\"span3\">" . $beforeTerm ;
-        $output.='<p>' . get_the_term_list($post->ID, 'oxy_content_category', "<li class=\"span3\">" . $beforeTerm, $separater, $afterTerm. "</li>") . '</p>';
-        $output .= '</li></ul>';
+
+        $output .= '</ul>';
     endif;
     wp_reset_postdata();
-    return oxy_shortcode_section( $atts, $output );
-
+    return oxy_shortcode_section($atts, $output);
 }
-add_shortcode( 'content_item_with_related_taxonomy', 'oxy_content_item_with_related_taxonomy' );
+add_shortcode( 'content_itemlist_enhanced', 'oxy_content_itemlist_enhanced' );
 
 /******************************************      COMPONENTS        *************************************/
 
@@ -921,6 +897,24 @@ function oxy_shortcode_iconitem( $atts, $content = null) {
 }
 add_shortcode( 'iconitem', 'oxy_shortcode_iconitem' );
 
+
+/**
+ * Icon Item Shortcode - for use inside an iconlist shortcode
+ *
+ * @return Icon Item HTML
+ **/
+function oxy_shortcode_div( $atts, $content = null) {
+    extract( shortcode_atts( array(
+        'class'       => '',
+        'id'        => '',
+    ), $atts ) );
+
+    $output = '<div id="'.$id.'" class="'.$class.'">';
+    $output .= $content;
+    $output .= '</div>';
+    return $output;
+}
+add_shortcode( 'div', 'oxy_shortcode_div' );
 /**
  * Code shortcode - for showing code!
  *
@@ -930,20 +924,3 @@ function oxy_shortcode_code( $atts, $content = null) {
     return '<pre>' . htmlentities( $content ) . '</pre>';
 }
 add_shortcode( 'code', 'oxy_shortcode_code' );
-
-/**
- * @author Mischa
- * @return string Div
- */
-function oxy_shortcode_div( $atts, $content = null ) {
-    extract( shortcode_atts( array(
-        'id'        => '',
-        'class'     => '',
-        'style'     => '',
-    ), $atts ) );
-    $output = '<div id="'.$id.'" class="'.$class.'" style="'.$style.'">';
-    $output .= do_shortcode( $content );
-    $output .= '</div>';
-    return $output;
-}
-add_shortcode( 'div', 'oxy_shortcode_div' );

@@ -206,10 +206,10 @@ $meta_boxes[] = array(
 
 $meta_boxes[] = array(
     // Meta box id, UNIQUE per meta box. Optional since 4.1.5
-    'id' => 'Position',
+    'id' => 'Icon',
 
     // Meta box title - Will appear at the drag and drop handle bar. Required.
-    'title' => 'Position',
+    'title' => 'Icon',
 
     // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
     'pages' => array( 'oxy_content' ),
@@ -225,9 +225,9 @@ $meta_boxes[] = array(
        // TAXONOMY
        array(
             // Field name - Will be used as label
-            'name'  => 'Position',
+            'name'  => 'Icon',
             // Field ID, i.e. the meta key
-            'id'    => "{$prefix}position",
+            'id'    => "{$prefix}icon",
 
             'type'  => 'text',
             // Default value (optional)
