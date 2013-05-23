@@ -38,3 +38,8 @@ margin-left: 40px;
 i.icon_right{
     padding-left: 8px;
 }
+
+p.no_li{
+    line-height: 1.5em;
+    font-size: 0.9em;
+}

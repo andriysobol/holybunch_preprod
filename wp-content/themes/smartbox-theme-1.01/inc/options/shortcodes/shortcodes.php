@@ -741,7 +741,7 @@ function oxy_shortcode_content_list($atts, $content = '') {
 
             $output.='<li class="' . $span . '"><div class="round-box box-big"><span class="box-inner"><img alt="' . get_the_title() . '" class="img-circle" src="' . $img[0] . '">';
             $output.='</span></div><h3 class="text-center">' . get_the_title() . '<small class="block">' . $icon . '</small></h3>';
-            $output.='<p>' . get_the_content() . '</p>';
+            $output.='<p class="no_li">' . get_the_content() . '</p>';
             $output.='<ul class="inline text-center big social-icons">';
             // must render
             $output.=($facebook !== '') ? '<li><a data-iconcolor="#3b5998" href="' . $facebook . '" style="color: rgb(66, 87, 106);"><i class="icon-facebook"></i></a></li>' : '';

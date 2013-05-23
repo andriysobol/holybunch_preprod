@@ -1667,10 +1667,10 @@ html[xmlns] .slides {
   width: 30%;
   height: 1px;
   background-color: #f2f2f4;
-  -webkit-box-shadow: 0px 1px 0px white;
-  -moz-box-shadow: 0px 1px 0px white;
-  box-shadow: 0px 1px 0px white;
-  top: 50%;
+  -webkit-box-shadow: 0px 2px 0px white;
+  -moz-box-shadow: 0px 2px 0px white;
+  box-shadow: 0px 2px 0px white;
+  top: 40%;
   z-index: 0;
 }
 .section-alt .section-header:before, .section-alt .section-header:after {
@@ -1691,8 +1691,8 @@ html[xmlns] .slides {
 }
 .section-dark .section-header:before, .section-dark .section-header:after {
   background-color: #151515;
-  -webkit-box-shadow: 0px 1px 0px #656565;
-  -moz-box-shadow: 0px 1px 0px #656565;
+  -webkit-box-shadow: 0px 2px 0px #656565;
+  -moz-box-shadow: 0px 2px 0px #656565;
   box-shadow: 0px 2px 0px #656565;
 }
 
