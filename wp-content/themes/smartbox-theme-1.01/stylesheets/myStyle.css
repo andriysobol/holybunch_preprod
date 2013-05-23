@@ -14,6 +14,27 @@ div#blockRigthOben{
     margin-left: 30px;
 }
 
+ul#blockRigthBlack{
+    font-size: 18px;
+    padding-top: 60px;
+    padding-left: 10px;
+}
+ul#blockRigthBlack h3{
+    padding-bottom: 15px;
+}
+
 div#blockRigthOben h4{
     color: orange;
+}
+
+blockquote.block{
+font-family: "cambria", sans-serif;
+font-weight: 400;
+font-size: 19px;
+line-height: 1.5em;
+margin-left: 40px;
+}
+
+i.icon_right{
+    padding-left: 8px;
 }
