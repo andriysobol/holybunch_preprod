@@ -206,10 +206,10 @@ $meta_boxes[] = array(
 
 $meta_boxes[] = array(
     // Meta box id, UNIQUE per meta box. Optional since 4.1.5
-    'id' => 'Icon',
+    'id' => 'summary',
 
     // Meta box title - Will appear at the drag and drop handle bar. Required.
-    'title' => 'Icon',
+    'title' => 'Summary',
 
     // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
     'pages' => array( 'oxy_content' ),
@@ -225,9 +225,9 @@ $meta_boxes[] = array(
        // TAXONOMY
        array(
             // Field name - Will be used as label
-            'name'  => 'Icon',
+            'name'  => 'Summary',
             // Field ID, i.e. the meta key
-            'id'    => "{$prefix}icon",
+            'id'    => "{$prefix}summary",
 
             'type'  => 'text',
             // Default value (optional)
@@ -236,82 +236,7 @@ $meta_boxes[] = array(
 
     ),
 );
-
-
-
-$meta_boxes[] = array(
-    // Meta box id, UNIQUE per meta box. Optional since 4.1.5
-    'id' => 'Social',
-
-    // Meta box title - Will appear at the drag and drop handle bar. Required.
-    'title' => 'Social',
-
-    // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
-    'pages' => array( 'oxy_content'  ),
-
-    // Where the meta box appear: normal (default), advanced, side. Optional.
-    'context' => 'normal',
-
-    // Order of meta box: high (default), low. Optional.
-    'priority' => 'high',
-
-    // List of meta fields
-    'fields' => array(
-       // TAXONOMY
-       array(
-            // Field name - Will be used as label
-            'name'  => 'Facebook',
-            // Field ID, i.e. the meta key
-            'id'    => "{$prefix}facebook",
-
-            'type'  => 'text',
-            // Default value (optional)
-            'std'   => '',
-        ),
-        array(
-            // Field name - Will be used as label
-            'name'  => 'Twitter',
-            // Field ID, i.e. the meta key
-            'id'    => "{$prefix}twitter",
-
-            'type'  => 'text',
-            // Default value (optional)
-            'std'   => '',
-        ),
-         array(
-            // Field name - Will be used as label
-            'name'  => 'Linkedin',
-            // Field ID, i.e. the meta key
-            'id'    => "{$prefix}linkedin",
-
-            'type'  => 'text',
-            // Default value (optional)
-            'std'   => '',
-        ),
-        array(
-            // Field name - Will be used as label
-            'name'  => 'Pinterest',
-            // Field ID, i.e. the meta key
-            'id'    => "{$prefix}pinterest",
-
-            'type'  => 'text',
-            // Default value (optional)
-            'std'   => '',
-        ),
-         array(
-            // Field name - Will be used as label
-            'name'  => 'GooglePlus',
-            // Field ID, i.e. the meta key
-            'id'    => "{$prefix}googleplus",
-
-            'type'  => 'text',
-            // Default value (optional)
-            'std'   => '',
-        ),
-
-    ),
-);
-
+            
 $meta_boxes[] = array(
     // Meta box id, UNIQUE per meta box. Optional since 4.1.5
     'id' => 'services_meta',

@@ -798,7 +798,10 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
         default:
             break;
     }
-
+    
+    //it is possible to provide several categories, split them and do array
+    $category = empty($category) ? explode(',', $category) : '';
+      
     if (!empty($category)) {
         $query_options['tax_query'] = array(
             array(
@@ -822,9 +825,22 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
             //$output.='</ul><ul class="unstyled row-fluid">';
             $output .= '<li>';
             $output .= '<h4>';
+            //add icon which refers to category
             if ($addicon == 'true') {
-                $custom_fields = get_post_custom($post->ID);
-                $icon = (isset($custom_fields[THEME_SHORT . '_icon'])) ? $custom_fields[THEME_SHORT . '_icon'][0] : '';
+                $assignedCategory = wp_get_post_terms( $post->ID, 'oxy_content_category', array("fields" => "slugs") );
+                switch ($assignedCategory[0]) {
+                    case 'video':
+                        $icon = 'icon-facetime-video';
+                        break;
+                    case 'music':
+                        $icon = 'icon-music';
+                        break;
+                    case 'text':
+                        $icon = 'icon-book';
+                        break;
+                    default:
+                        break;
+                }
                 $output .= '<i class="' . $icon . '"></i>';
             } else {
                 $output .= '<i class=""></i>';
@@ -834,9 +850,18 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
                 $text = get_the_excerpt();
                 $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
                 $excerpt_more = '<a href="' . get_permalink() . '">' . $excerpt_more . '</a>';
+                $excerpt_length = $excerpt_length == 0 ? 999 : $excerpt_length;
                 $text = wp_trim_words($text, $excerpt_length, $excerpt_more);
                 $output .= $text;
-            } else {
+            } else if($contenttype == 'summary') {
+                $custom_fields = get_post_custom($post->ID);
+                $summary = (isset($custom_fields[THEME_SHORT . '_summary'])) ? $custom_fields[THEME_SHORT . '_summary'][0] : '';
+                $summary_more = apply_filters('summary_more', ' ' . '[...]');
+                $summary_more = '<a href="' . get_permalink() . '">' . $summary_more . '</a>';
+                $excerpt_length = empty($excerpt_length) ? 999 : $excerpt_length;
+                $text = wp_trim_words($summary, $excerpt_length);
+                $output .= $text . $summary_more;
+            } else if($contenttype == 'excerpt'){
                 $output .= get_the_content();
             }
             $output .= '</h4>';
