@@ -775,7 +775,8 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
         'category' => '',
         'orderby' => '',
         'excerpt_length' => 5,
-        'addicon' => ''
+        'addicon' => '',
+        'style' => ''
                     ), $atts));
 
     $query_options = array(
@@ -817,6 +818,7 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
     $items_count = count($items);
     $output = '';
     if ($items_count > 0):
+        $output .= '<div id="'.$style.'">';
         $output .= '<ul class="unstyled row-fluid">';
         foreach ($items as $member) :
             global $post;
@@ -846,6 +848,8 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
                 $output .= '<i class=""></i>';
             }
             $output .= get_the_title() . " : ";
+            $output .= '</h4>';
+            $output .= '<p>';
             if ($contenttype == 'excerpt') {
                 $text = get_the_excerpt();
                 $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
@@ -864,12 +868,13 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
             } else if($contenttype == 'excerpt'){
                 $output .= get_the_content();
             }
-            $output .= '</h4>';
+            $output .= '<p>';
             $output .= '</li>';
             $member_num++;
         endforeach;
 
         $output .= '</ul>';
+        $output .= '</div>';
     endif;
     wp_reset_postdata();
     return oxy_shortcode_section($atts, $output);
