@@ -776,14 +776,9 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
         'orderby' => '',
         'excerpt_length' => 5,
         'addicon' => '',
+        'addtitle' => '',
         'style' => ''
                     ), $atts));
-
-    $query_options = array(
-        'post_type' => 'oxy_content',
-        'numberposts' => $count,
-        'orderby' => $orderby
-    );
 
     //andrey: shortcode staff changed, column for value 1 added
     switch ($columns) {
@@ -801,8 +796,15 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
     }
     
     //it is possible to provide several categories, split them and do array
-    $category = empty($category) ? explode(',', $category) : '';
-      
+    $category = trim( preg_replace( "/[\n\r\t ]+/", '', $category ), '' );
+    $category = empty($category) ? '' : explode(',', $category) ;
+   
+     $query_options = array(
+        'post_type' => 'oxy_content',
+        'numberposts' => $count,
+        'orderby' => $orderby
+    );
+    //add taxonomy for query if needed
     if (!empty($category)) {
         $query_options['tax_query'] = array(
             array(
@@ -847,7 +849,7 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
             } else {
                 $output .= '<i class=""></i>';
             }
-            $output .= get_the_title() . " : ";
+            if($addtitle) $output .= get_the_title() . " : ";
             $output .= '</h4>';
             $output .= '<p>';
             if ($contenttype == 'excerpt') {
@@ -865,10 +867,10 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
                 $excerpt_length = empty($excerpt_length) ? 999 : $excerpt_length;
                 $text = wp_trim_words($summary, $excerpt_length);
                 $output .= $text . $summary_more;
-            } else if($contenttype == 'excerpt'){
+            } else if($contenttype == 'content'){
                 $output .= get_the_content();
             }
-            $output .= '<p>';
+            $output .= '</p>';
             $output .= '</li>';
             $member_num++;
         endforeach;
