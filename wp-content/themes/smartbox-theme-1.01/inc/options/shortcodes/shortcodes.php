@@ -762,6 +762,72 @@ function oxy_shortcode_content_list($atts, $content = '') {
 
 add_shortcode('content_list', 'oxy_shortcode_content_list');
 
+function oxy_content_taxonomy_topic($atts, $content = '') {
+    // setup options
+    extract(shortcode_atts(array(
+        'title' => '',
+        'topic' => ''
+        ), $atts));
+    //verify that term exists and get term id in order to get fields(description, video) value
+    $taxonomy_name = 'teaching_topics';
+    $term_details = term_exists($topic, $taxonomy_name);
+    if ( is_array($term_details) ){
+        $term_id = $term_details['term_id'];
+        $termDiscription = term_description( $term_id, $taxonomy_name );
+    }else{
+        return 'Темы('. $topic . '), которую ты указал в shortcode не существует, используй существующую тему';
+    }
+    
+    //in order to get custom field 'main_video' from taxonomy we have 
+    //to call advanced custom fields plugin api and provide id of post which 
+    //is combination of taxonomy name and id of term e.g. term 'god' => id = 39
+    $video = get_field('main_video', 'teaching_topics_' . $term_id);
+    if(is_array($video)){
+        global $wp_embed;
+        $video_content = $video[0]->post_content;
+        $video_content = $wp_embed->run_shortcode( $video_content );
+    }  else {
+        return 'Ты не указал видео для это темы. Укажи видео в таксономии: ' . $taxonomy_name;
+    }
+
+    $atts[title] = 'Новости';
+    $atts[style] = 'dark';
+    
+    //add video to taxonomy topic and related links
+    $content .= '[row]';
+    $content .= '[span1]';
+    $content .= '[/span1]';
+    $content .= '[span7]';
+    $content .= $video_content;
+    $content .= '[/span7]';
+    $content .= '[span1]';
+    $content .= '[/span1]';
+    
+    $content .= '[span3]';
+    $content .= '[iconlist id="blockRigthBlack"]';
+    $content .= '<h3>а также по теме...</h3>';
+    $content .= '[iconitem icon="icon-facetime-video" title="null"]<a href="/oxy_content_category?topic='. $taxonomy_name .'">Видео</a>[/iconitem]';
+    $content .= '[iconitem icon="icon-book" title="null"]<a href="/oxy_content_category?topic='. $taxonomy_name .'">Текстовые проповеди</a>[/iconitem]';
+    $content .= '[iconitem icon="icon-headphones" title="null"]<a href="/oxy_content_category?topic='. $taxonomy_name .'">Аудиопроповеди</a>[/iconitem]';
+    $content .= '[iconitem icon="icon-music" title="null"]Псалмы[/iconitem]';
+    $content .= '[/iconlist]';
+    $content .= '[iconlist id="blockRigthBlack"]';
+    $content .= '[/span3]';
+    $content .= '[/row]';
+    
+    //add description of taxonomy
+    $content .= '[row]';
+    $content .= '[span11]';
+    $content .= $termDiscription;
+    $content .= '[/span11]';
+    $content .= '[/row]';
+       
+    $output = oxy_shortcode_section($atts, $content);
+    return $output;
+}
+
+add_shortcode('content_taxonomy_topic', 'oxy_content_taxonomy_topic');
+
 /* Content List */
 
 function oxy_content_itemlist_enhanced($atts, $content = '') {
@@ -820,17 +886,15 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
     $items_count = count($items);
     $output = '';
     if ($items_count > 0):
-        $output .= '<div id="'.$style.'">';
-        $output .= '<ul class="unstyled row-fluid">';
+        if(!empty($style)) $output .= '<div id="'.$style.'">';
+        if($addicon) $output .= '<ul class="icons " id="">';
         foreach ($items as $member) :
             global $post;
             $post = $member;
             setup_postdata($post);
-            //$output.='</ul><ul class="unstyled row-fluid">';
-            $output .= '<li>';
-            $output .= '<h4>';
+            if($contenttype != 'content') $output .= '<li>';            
             //add icon which refers to category
-            if ($addicon == 'true') {
+            if ($addicon) {
                 $assignedCategory = wp_get_post_terms( $post->ID, 'oxy_content_category', array("fields" => "slugs") );
                 switch ($assignedCategory[0]) {
                     case 'video':
@@ -845,13 +909,16 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
                     default:
                         break;
                 }
+                $output .= '<h4>';
                 $output .= '<i class="' . $icon . '"></i>';
-            } else {
-                $output .= '<i class=""></i>';
+                if(!$addtitle) $output .= '</h4>';
+            } 
+            
+            if($addtitle) {
+                if (!$addicon) $output .= '<h4>';
+                $output .= get_the_title() . " : ";
+                $output .= '</h4>';
             }
-            if($addtitle) $output .= get_the_title() . " : ";
-            $output .= '</h4>';
-            $output .= '<p>';
             if ($contenttype == 'excerpt') {
                 $text = get_the_excerpt();
                 $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
@@ -860,6 +927,7 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
                 $text = wp_trim_words($text, $excerpt_length, $excerpt_more);
                 $output .= $text;
             } else if($contenttype == 'summary') {
+                $output .= '<p>';
                 $custom_fields = get_post_custom($post->ID);
                 $summary = (isset($custom_fields[THEME_SHORT . '_summary'])) ? $custom_fields[THEME_SHORT . '_summary'][0] : '';
                 $summary_more = apply_filters('summary_more', ' ' . '[...]');
@@ -867,19 +935,18 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
                 $excerpt_length = empty($excerpt_length) ? 999 : $excerpt_length;
                 $text = wp_trim_words($summary, $excerpt_length);
                 $output .= $text . $summary_more;
+                $output .= '</p>';
             } else if($contenttype == 'content'){
                 $output .= get_the_content();
             }
-            $output .= '</p>';
-            $output .= '</li>';
             $member_num++;
+            if($contenttype != 'content') $output .= '</li>';
         endforeach;
-
-        $output .= '</ul>';
-        $output .= '</div>';
+        if ($addicon) $output .= '</ul>';
+        if(!empty($style)) $output .= '</div>';
     endif;
     wp_reset_postdata();
-    return oxy_shortcode_section($atts, $output);
+    return $output;
 }
 
 add_shortcode('content_itemlist_enhanced', 'oxy_content_itemlist_enhanced');
