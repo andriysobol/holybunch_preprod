@@ -766,7 +766,10 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     // setup options
     extract(shortcode_atts(array(
         'title' => '',
-        'topic' => ''
+        'topic' => '', 
+        'style' => '',
+        'title' => '', 
+        'excerpt_length' => ''
         ), $atts));
     //verify that term exists and get term id in order to get fields(description, video) value
     $taxonomy_name = 'teaching_topics';
@@ -789,10 +792,7 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     }  else {
         return 'Ты не указал видео для это темы. Укажи видео в таксономии: ' . $taxonomy_name;
     }
-
-    $atts[title] = 'Новости';
-    $atts[style] = 'dark';
-    
+  
     //add video to taxonomy topic and related links
     $content .= '[row]';
     $content .= '[span1]';
@@ -809,7 +809,7 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     $content .= '[iconitem icon="icon-facetime-video" title="null"]<a href="/oxy_content_category?topic='. $taxonomy_name .'">Видео</a>[/iconitem]';
     $content .= '[iconitem icon="icon-book" title="null"]<a href="/oxy_content_category?topic='. $taxonomy_name .'">Текстовые проповеди</a>[/iconitem]';
     $content .= '[iconitem icon="icon-headphones" title="null"]<a href="/oxy_content_category?topic='. $taxonomy_name .'">Аудиопроповеди</a>[/iconitem]';
-    $content .= '[iconitem icon="icon-music" title="null"]Псалмы[/iconitem]';
+    $content .= '[iconitem icon="icon-music" title="null"]<a href="/oxy_content_category?topic='. $taxonomy_name .'">Псалмы</a>[/iconitem]';
     $content .= '[/iconlist]';
     $content .= '[iconlist id="blockRigthBlack"]';
     $content .= '[/span3]';
@@ -818,10 +818,70 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     //add description of taxonomy
     $content .= '[row]';
     $content .= '[span11]';
+    $content .= '[blockquote class="block"]';
     $content .= $termDiscription;
+    $content .= '[/blockquote]';
     $content .= '[/span11]';
     $content .= '[/row]';
-       
+
+    $atts[title] = $title;
+    if(empty($style)){
+        $atts[style] = 'dark';
+    }else{
+        $atts[style] = $style;
+    }
+    
+    //add related posts; query for all related posts except main video which is already shown
+    $wp_query = new WP_Query;
+    $args = array(
+        // post basics
+        'post_type' => 'oxy_content', // check capitalization, make sure this matches your post type slug
+        'post_status' => 'publish', // you may not need this line.
+        'posts_per_page' => 3, // set this yourself, 10 is a placeholder
+        'post__not_in' => array( $video[0]->ID ),
+        // taxonomy
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'teaching_topics', // slug for desired tag goes here
+                'field' => 'slug',
+                'terms' => 'god', // should work without a slug, try it both ways...and use a variable, don't hardcode
+            )
+        )
+    );
+    $span = 'span4';
+    $my_query = new wp_query($args);
+    if ($my_query->have_posts()) {
+        $content .= '[row]';
+        $content .= '[span11]';
+        $content .= '<ul class="unstyled row-fluid">';
+        while ($my_query->have_posts()) :
+            $post = $my_query->the_post();
+            $img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
+            $content .='<li class="' . $span . '"><div class="round-box box-big"><span class="box-inner"><img alt="' . get_the_title() . '" class="img-circle" src="' . $img[0] . '">';
+            $content .='</span></div><h3 class="text-center">' . get_the_title() . '<small class="block">' . $icon . '</small></h3>';
+            $post_content = get_the_content();
+            $content_more = apply_filters('summary_more', ' ' . '[...]');
+            $content_more = '<a href="' . get_permalink() . '">' . $content_more . '</a>';
+            $excerpt_length = empty($excerpt_length) ? 50 : $excerpt_length;
+            $text = wp_trim_words($post_content, $excerpt_length);
+            $text     = $text . $content_more;            
+            $content .='<p class="no_li">' . $text . '</p>';
+            $content .='<ul class="inline text-center big social-icons">';
+            $content .= '</p>';
+
+            $content .='</ul>';
+            $content .='</li>';
+            //$content .= '<li><a href="' . the_permalink() . '" rel="bookmark" title="Permanent Link to ' . the_title_attribute() . '">' . the_title() . ' </a></li>';
+        endwhile;
+        $content .= '</ul>';
+        $content .= '[/span11]';
+        $content .= '[/row]';
+    }
+
+    wp_reset_query();
+    $content .= '[row][span10][/span10][span2][button icon="icon-share-alt" type="warning" size="btn-default" label="далее к теме" link="/oxy_content_taxonomy?topic='.$topic.'" place="right"]';
+    $content .= '[/span2][/row]';
+
     $output = oxy_shortcode_section($atts, $content);
     return $output;
 }
