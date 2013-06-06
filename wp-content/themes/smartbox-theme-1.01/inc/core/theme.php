@@ -83,6 +83,7 @@ class OxyTheme
         //define( 'CACHE_DIR', THEME_DIR . '/cache/' );
 
         define( 'MODULES_DIR', INCLUDES_DIR . 'modules/' );
+        define( 'CUSTOM_DIR', THEME_DIR . '/custom/' );
         define( 'CORE_DIR', INCLUDES_DIR . 'core/' );
         define( 'OPTIONS_DIR', INCLUDES_DIR . 'options/' );
 

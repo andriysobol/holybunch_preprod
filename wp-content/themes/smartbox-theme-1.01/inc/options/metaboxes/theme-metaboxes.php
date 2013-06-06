@@ -201,42 +201,7 @@ $meta_boxes[] = array(
 
     ),
 );
-
-
-
-$meta_boxes[] = array(
-    // Meta box id, UNIQUE per meta box. Optional since 4.1.5
-    'id' => 'summary',
-
-    // Meta box title - Will appear at the drag and drop handle bar. Required.
-    'title' => 'Summary',
-
-    // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
-    'pages' => array( 'oxy_content' ),
-
-    // Where the meta box appear: normal (default), advanced, side. Optional.
-    'context' => 'normal',
-
-    // Order of meta box: high (default), low. Optional.
-    'priority' => 'high',
-
-    // List of meta fields
-    'fields' => array(
-       // TAXONOMY
-       array(
-            // Field name - Will be used as label
-            'name'  => 'Summary',
-            // Field ID, i.e. the meta key
-            'id'    => "{$prefix}summary",
-
-            'type'  => 'text',
-            // Default value (optional)
-            'std'   => '',
-        ),
-
-    ),
-);
-            
+           
 $meta_boxes[] = array(
     // Meta box id, UNIQUE per meta box. Optional since 4.1.5
     'id' => 'services_meta',
