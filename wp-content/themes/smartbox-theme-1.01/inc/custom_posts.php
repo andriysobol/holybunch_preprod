@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 
 /***************** SLIDESHOWS *******************/
@@ -86,12 +86,11 @@ $labels = array(
     'menu_name'          => __( 'Timelines', THEME_ADMIN_TD )
 );
 
-// fetch portfolio slug
+// fetch timeline slug
 $timeline_slug = trim( oxy_get_option( 'timeline_slug' ) );
 if( empty($timeline_slug) ) {
     $timeline_slug = 'timeline';
 }
-
 
 $args = array(
     'labels'              => $labels,
@@ -222,27 +221,47 @@ $args = array(
     'hierarchical'       => false,
     'menu_position'      => null,
     'menu_icon'          => ADMIN_ASSETS_URI . 'images/testimonials.png',
-    'supports'           => array( 'title', 'editor', 'thumbnail' )
+    'supports'           => array( 'title', 'editor', 'thumbnail', 'page-attributes' )
 );
 register_post_type('oxy_testimonial', $args);
 
+$labels = array(
+    'name'          => __( 'Groups', THEME_ADMIN_TD ),
+    'singular_name' => __( 'Group', THEME_ADMIN_TD ),
+    'search_items'  => __( 'Search Groups', THEME_ADMIN_TD ),
+    'all_items'     => __( 'All Groups', THEME_ADMIN_TD ),
+    'edit_item'     => __( 'Edit Group', THEME_ADMIN_TD),
+    'update_item'   => __( 'Update Group', THEME_ADMIN_TD),
+    'add_new_item'  => __( 'Add New Group', THEME_ADMIN_TD),
+    'new_item_name' => __( 'New Group Name', THEME_ADMIN_TD)
+);
 
+register_taxonomy(
+    'oxy_testimonial_group',
+    'oxy_testimonial',
+    array(
+        'hierarchical' => true,
+        'labels'       => $labels,
+        'show_ui'      => true,
+        'query_var'    => true,
+    )
+);
 
-/* --------------------- content ------------------------*/
+/* --------------------- STAFF ------------------------*/
 
 $labels = array(
-    'name'               => __('Content', THEME_ADMIN_TD),
-    'singular_name'      => __('Content',  THEME_ADMIN_TD),
+    'name'               => __('Staff', THEME_ADMIN_TD),
+    'singular_name'      => __('Staff',  THEME_ADMIN_TD),
     'add_new'            => __('Add New',  THEME_ADMIN_TD),
-    'add_new_item'       => __('Add New Content',  THEME_ADMIN_TD),
-    'edit_item'          => __('Edit Content',  THEME_ADMIN_TD),
-    'new_item'           => __('New Content',  THEME_ADMIN_TD),
-    'all_items'          => __('All Content',  THEME_ADMIN_TD),
-    'view_item'          => __('View Content',  THEME_ADMIN_TD),
-    'search_items'       => __('Search Content',  THEME_ADMIN_TD),
-    'not_found'          => __('No Content found',  THEME_ADMIN_TD),
-    'not_found_in_trash' => __('No Content found in Trash', THEME_ADMIN_TD),
-    'menu_name'          => __('Content',  THEME_ADMIN_TD)
+    'add_new_item'       => __('Add New Staff',  THEME_ADMIN_TD),
+    'edit_item'          => __('Edit Staff',  THEME_ADMIN_TD),
+    'new_item'           => __('New Staff',  THEME_ADMIN_TD),
+    'all_items'          => __('All Staff',  THEME_ADMIN_TD),
+    'view_item'          => __('View Staff',  THEME_ADMIN_TD),
+    'search_items'       => __('Search Staff',  THEME_ADMIN_TD),
+    'not_found'          => __('No Staff found',  THEME_ADMIN_TD),
+    'not_found_in_trash' => __('No Staff found in Trash', THEME_ADMIN_TD),
+    'menu_name'          => __('Staff',  THEME_ADMIN_TD)
 );
 
 $args = array(
@@ -257,9 +276,9 @@ $args = array(
     'hierarchical'       => false,
     'menu_position'      => null,
     'menu_icon'          => ADMIN_ASSETS_URI . 'images/staff.png',
-    'supports'           => array( 'title', 'editor', 'thumbnail' )
+    'supports'           => array( 'title', 'editor', 'thumbnail', 'page-attributes' )
 );
-register_post_type('oxy_content', $args);
+register_post_type('oxy_staff', $args);
 
 $labels = array(
     'name'          => __( 'Skills', THEME_ADMIN_TD ),
@@ -273,8 +292,8 @@ $labels = array(
 );
 
 register_taxonomy(
-    'oxy_content_skills',
-    'oxy_content',
+    'oxy_staff_skills',
+    'oxy_staff',
     array(
         'hierarchical' => true,
         'labels'       => $labels,
@@ -284,19 +303,19 @@ register_taxonomy(
 );
 
 $labels = array(
-    'name'          => __( 'Categorys', THEME_ADMIN_TD ),
-    'singular_name' => __( 'Category', THEME_ADMIN_TD ),
-    'search_items'  =>  __( 'Search Categorys', THEME_ADMIN_TD ),
-    'all_items'     => __( 'All Categorys', THEME_ADMIN_TD ),
-    'edit_item'     => __( 'Edit Category', THEME_ADMIN_TD),
-    'update_item'   => __( 'Update Category', THEME_ADMIN_TD),
-    'add_new_item'  => __( 'Add New Category', THEME_ADMIN_TD),
-    'new_item_name' => __( 'New Category Name', THEME_ADMIN_TD)
+    'name'          => __( 'Departments', THEME_ADMIN_TD ),
+    'singular_name' => __( 'Department', THEME_ADMIN_TD ),
+    'search_items'  =>  __( 'Search Departments', THEME_ADMIN_TD ),
+    'all_items'     => __( 'All Departments', THEME_ADMIN_TD ),
+    'edit_item'     => __( 'Edit Department', THEME_ADMIN_TD),
+    'update_item'   => __( 'Update Department', THEME_ADMIN_TD),
+    'add_new_item'  => __( 'Add New Department', THEME_ADMIN_TD),
+    'new_item_name' => __( 'New Department Name', THEME_ADMIN_TD)
 );
 
 register_taxonomy(
-    'oxy_content_category',
-    'oxy_content',
+    'oxy_staff_department',
+    'oxy_staff',
     array(
         'hierarchical' => true,
         'labels'       => $labels,
@@ -321,6 +340,12 @@ $labels = array(
     'menu_name'          => __('Services',  THEME_ADMIN_TD)
 );
 
+// fetch service slug
+$service_slug = trim( oxy_get_option( 'services_slug' ) );
+if( empty($service_slug) ) {
+    $service_slug = 'our-services';
+}
+
 $args = array(
     'labels'             => $labels,
     'public'             => true,
@@ -333,6 +358,28 @@ $args = array(
     'hierarchical'       => false,
     'menu_position'      => null,
     'menu_icon'          => ADMIN_ASSETS_URI . 'images/services.png',
-    'supports'           => array( 'title', 'editor', 'thumbnail', 'page-attributes' )
+    'supports'           => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
+    'rewrite'            => array( 'slug' => $service_slug, 'with_front' => true, 'pages' => true, 'feeds'=>false ),
 );
 register_post_type( 'oxy_service', $args );
+
+$labels = array(
+    'name'          => __( 'Categories', THEME_ADMIN_TD ),
+    'singular_name' => __( 'Category', THEME_ADMIN_TD ),
+    'search_items'  => __( 'Search Categories', THEME_ADMIN_TD ),
+    'all_items'     => __( 'All Categories', THEME_ADMIN_TD ),
+    'edit_item'     => __( 'Edit Category', THEME_ADMIN_TD),
+    'update_item'   => __( 'Update Category', THEME_ADMIN_TD),
+    'add_new_item'  => __( 'Add New Category', THEME_ADMIN_TD),
+    'new_item_name' => __( 'New Category Name', THEME_ADMIN_TD)
+);
+
+register_taxonomy(
+    'oxy_service_category',
+    'oxy_service',
+    array(
+        'hierarchical' => true,
+        'labels'       => $labels,
+        'show_ui'      => true,
+    )
+);

@@ -148,3 +148,46 @@ function oxy_portfolio_sortable_columns( $columns ) {
     return $columns;
 }
 add_filter( 'manage_edit-oxy_portfolio_image_sortable_columns', 'oxy_portfolio_sortable_columns' );
+
+function oxy_service_edit_columns($columns) {
+    $columns = array(
+        'cb'          => '<input type="checkbox" />',
+        'title' => __('Service Title', THEME_ADMIN_TD),
+        'menu_order'  => __('Order', THEME_ADMIN_TD),
+        'service_categories' => __('Categories', THEME_ADMIN_TD)
+    );
+    return $columns;
+}
+add_filter('manage_edit-oxy_service_columns', 'oxy_service_edit_columns' );
+
+function oxy_custom_service_column($column) {
+    global $post;
+    switch( $column ) {
+        case 'menu_order':
+            echo $post->menu_order;
+        break;
+        case 'service_categories':
+            echo get_the_term_list( $post->ID, 'oxy_service_category', '', ', ' );
+        break;
+        default:
+            // do nothing
+        break;
+    }
+}
+add_action('manage_oxy_service_posts_custom_column', 'oxy_custom_service_column' );
+
+/**
+ * Do anything we need when a new version is created
+ *
+ * @return void
+ * @author
+ **/
+function oxy_version_init() {
+    $current_version = get_option( THEME_SHORT . '_version' );
+    if( $current_version === false ) {
+        // first run of the theme better setup rev slider
+        RevSliderAdmin::createDBTables();
+        update_option( THEME_SHORT . '_version', '1.4' );
+    }
+}
+add_action( 'init', 'oxy_version_init' );

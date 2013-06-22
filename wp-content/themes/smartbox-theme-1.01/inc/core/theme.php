@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 
 /**
@@ -41,13 +41,21 @@ class OxyTheme
         // load theme defines
         $this->defines();
 
+        // load textdomains for admin / front
+        if( is_admin() ) {
+            load_theme_textdomain( THEME_ADMIN_TD, get_template_directory().'/inc/languages');
+        }
+        else {
+            load_theme_textdomain( THEME_FRONT_TD, get_template_directory().'/languages');
+        }
+
         // call init function on init
         add_action( 'init', array( &$this, 'init' ) );
         add_action( 'widgets_init', array( &$this, 'load_widgets' ) );
 
         // load admin class if we are admin
         if( is_admin() ) {
-            include CORE_DIR . 'admin/themeadmin.php';
+             require_once CORE_DIR . 'admin/themeadmin.php';
             $admin = new OxyThemeAdmin( $this );
         }
 
@@ -83,7 +91,6 @@ class OxyTheme
         //define( 'CACHE_DIR', THEME_DIR . '/cache/' );
 
         define( 'MODULES_DIR', INCLUDES_DIR . 'modules/' );
-        define( 'CUSTOM_DIR', THEME_DIR . '/custom/' );
         define( 'CORE_DIR', INCLUDES_DIR . 'core/' );
         define( 'OPTIONS_DIR', INCLUDES_DIR . 'options/' );
 
@@ -125,21 +132,26 @@ class OxyTheme
      * @since 1.0
      **/
     function init() {
-        // load textdomains for admin / front
-        if( is_admin() ) {
-            load_theme_textdomain( THEME_ADMIN_TD, get_template_directory().'/theme/languages');
-        }
-        else {
-            load_theme_textdomain( THEME_FRONT_TD, get_template_directory().'/languages');
-        }
-
         $this->load_shortcodes();
     }
 
 
     function load_sidebars() {
         foreach( $this->theme['sidebars'] as $id => $info ) {
-            $this->register_sidebar( $info[0], $info[1], '', $id );
+            if ($id == 'footer'){
+                global $oxy_theme_options;
+                $footer_columns = $oxy_theme_options['footer_columns'];
+                if( $footer_columns == 3 ){
+                    $this->register_sidebar( 'Footer middle', 'Middle footer section', '', 'footer-middle');
+                }
+                else if( $footer_columns == 4 ){
+                    $this->register_sidebar( 'Footer middle-left', 'Middle-left footer section', '', 'footer-middle-left');
+                    $this->register_sidebar( 'Footer middle-right', 'Middle-right footer section', '', 'footer-middle-right');
+                }
+            }
+            else{
+                $this->register_sidebar( $info[0], $info[1], '', $id );
+            }
         }
     }
 
@@ -162,6 +174,9 @@ class OxyTheme
     }
 
     function load_widgets() {
+        // load default overrides
+        require_once WIDGETS_DIR . 'default_overrides.php';
+        // load theme specific widgets
         if( isset( $this->theme['widgets'] ) ) {
             foreach( $this->theme['widgets'] as $class => $file ) {
                 require_once WIDGETS_DIR . $file;
@@ -171,11 +186,7 @@ class OxyTheme
     }
 
     function load_shortcodes() {
-        if( isset( $this->theme['shortcodes'] ) ) {
-            foreach( $this->theme['shortcodes']  as $file ) {
-                require_once OPTIONS_DIR . 'shortcodes/shortcodes.php';
-            }
-        }
+        require_once OPTIONS_DIR . 'shortcodes/shortcodes.php';
     }
 
     /**
@@ -184,14 +195,14 @@ class OxyTheme
      * @since 1.0
      */
     function admin_bar_menu( $wp_admin_bar ) {
-        if( !is_super_admin() || !is_admin_bar_showing() ) {
+        if( !is_super_admin() || !is_admin_bar_showing() || !current_user_can("manage_options") ) {
             return;
         }
         global $wp_admin_bar;
         // load all page data
         $pages = array();
         foreach( $this->theme['option-pages'] as $option_page_file ) {
-            $page_data = include OPTIONS_DIR . 'option-pages/' . $option_page_file . '.php';
+            $page_data =  require_once OPTIONS_DIR . 'option-pages/' . $option_page_file . '.php';
             if( $page_data !== false ) {
                 $pages[] = $page_data;
             }

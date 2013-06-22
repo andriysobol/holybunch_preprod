@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 
 get_header();
@@ -27,10 +27,18 @@ $allow_comments = oxy_get_option( 'site_comments' );
 <section class="section section-padded">
     <div class="container-fluid">
         <div class="row-fluid">
-            <div class="span9">
+            <?php if( oxy_get_option('blog_layout') == 'sidebar-left' ): ?>
+            <aside class="span3 sidebar">
+                <?php get_sidebar(); ?>
+            </aside>
+            <?php endif; ?>
+            <div class="<?php echo oxy_get_option('blog_layout') == 'full-width' ? 'span12':'span9' ; ?>">
                 <?php while ( have_posts() ) : the_post(); ?>
 
                 <?php get_template_part( 'partials/content', get_post_format() ); ?>
+
+                <?php if( oxy_get_option('author_bio') == 'on') oxy_author_bio( get_the_author_meta('ID') ); ?>
+                <?php if( oxy_get_option('related_posts') == 'on') oxy_related_posts( get_the_ID() ); ?>
 
                 <nav id="nav-below" class="post-navigation">
                     <ul class="pager">
@@ -43,9 +51,11 @@ $allow_comments = oxy_get_option( 'site_comments' );
 
                 <?php endwhile; ?>
             </div>
+            <?php if( oxy_get_option('blog_layout') == 'sidebar-right' ): ?>
             <aside class="span3 sidebar">
                 <?php get_sidebar(); ?>
             </aside>
+            <?php endif; ?>
         </div>
     </div>
 </section>

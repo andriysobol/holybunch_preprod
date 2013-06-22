@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 
 return array(
@@ -38,6 +38,15 @@ return array(
                     'id'      => 'timeline_slug',
                     'type'    => 'text',
                     'default' => 'timelines',
+                ),
+                 array(
+                    'prefix'  => '<code>' . get_site_url() . '/</code>',
+                    'postfix' => '<code>/my-service</code>',
+                    'name'    => __('Service URL slug', THEME_ADMIN_TD),
+                    'desc'    => __('Choose the url you would like your services to use', THEME_ADMIN_TD),
+                    'id'      => 'services_slug',
+                    'type'    => 'text',
+                    'default' => 'our-services',
                 ),
             )
         ),

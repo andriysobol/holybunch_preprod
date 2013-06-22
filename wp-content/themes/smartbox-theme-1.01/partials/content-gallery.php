@@ -8,24 +8,14 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 global $post;
 $author_id = get_the_author_meta('ID');
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('row-fluid'); ?>>
-    <div class="span2 post-info">
-        <div class="round-box box-small">
-            <?php echo get_avatar( $author_id, 300 ); ?>
-        </div>
-        <h5 class="text-center">
-            <?php the_author(); ?>
-        </h5>
-        <h5 class="text-center light">
-            <?php the_time(get_option('date_format')); ?>
-        </h5>
-    </div>
-    <div class="span10 post-body">
+    <?php get_template_part( 'partials/post-gutter' ); ?>
+    <div class="<?php echo  oxy_get_option( 'blog_image_size' ) == 'normal'? 'span10':'span12'; ?> post-body">
         <div class="post-head">
             <h2 class="small-screen-center">
                 <?php if ( is_single() ) : ?>
@@ -36,36 +26,42 @@ $author_id = get_the_author_meta('ID');
                     </a>
                 <?php endif; // is_single() ?>
             </h2>
-            <div class="post-extras">
-                <?php if( has_tag() ) : ?>
-                <i class="icon-tags"></i>
-                <?php the_tags( $before = null, $sep = ', ', $after = '' ); ?>
-                <?php endif; ?>
-                <?php if( has_category() ) : ?>
-                <i class="icon-bookmark"></i>
-                <?php the_category( ', ' ); ?>
-                <?php endif; ?>
-                <?php if ( comments_open() && ! post_password_required() ) : ?>
-                <i class="icon-comments"></i>
-                <?php comments_popup_link( _x( 'No comments', 'comments number', THEME_FRONT_TD ), _x( '1 comment', 'comments number', THEME_FRONT_TD ), _x( '% comments', 'comments number', THEME_FRONT_TD ) ); ?>
-            <?php endif; ?>
-            </div>
+            <?php get_template_part( 'partials/post-extras' ); ?>
         </div>
         <div class="entry-content">
             <?php
-            $gallery_ids = oxy_get_content_gallery( $post );
-            if( $gallery_ids !== null ) { ?>
-                <div class="post-media">
-                    <?php oxy_create_flexslider( $gallery_ids ); ?>
-                </div>
-            <?php
+            $gallery_shortcode = oxy_get_content_shortcode( $post, 'gallery' );
+            if( $gallery_shortcode !== null ) {
+                if( isset( $gallery_shortcode[0] ) ) {
+                    // show gallery
+                    $gallery_ids = null;
+                    if( array_key_exists( 3, $gallery_shortcode ) ) {
+                        if( array_key_exists( 0, $gallery_shortcode[3] ) ) {
+                            $gallery_attrs = shortcode_parse_atts( $gallery_shortcode[3][0] );
+                            if( array_key_exists( 'ids', $gallery_attrs) ) {
+                                $gallery_ids = explode( ',', $gallery_attrs['ids'] );
+                            }
+                        }
+                    }
+                    if( $gallery_ids !== null ) { ?>
+                        <div class="post-media">
+                            <?php oxy_create_flexslider( $gallery_ids ); ?>
+                        </div>
+                    <?php
+                    }
+                    // strip shortcode from the content
+                    $gallery_shortcode = $gallery_shortcode[0];
+                    if( isset( $gallery_shortcode[0] ) ) {
+                        $content = str_replace( $gallery_shortcode[0], '', get_the_content() );
+                    }
+                }
             }
             else if ( has_post_thumbnail() ) {
                 $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
                 echo '<figure><img alt="featured image" src="'.$img[0].'"></figure>';
             }
-            ?>
-            <?php the_content(); ?>
+            echo apply_filters( 'the_content', isset( $content ) ? $content : get_the_content() );
+            get_template_part( 'partials/social-links', null ); ?>
         </div>
 
     </div>

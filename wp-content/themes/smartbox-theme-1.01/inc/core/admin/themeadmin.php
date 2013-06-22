@@ -8,12 +8,13 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 
-include ADMIN_OPTIONS_DIR . 'options.php';
-include ADMIN_OPTIONS_DIR . 'option.php';
-include INCLUDES_DIR . 'backend.php';
+ require_once ADMIN_OPTIONS_DIR . 'options.php';
+ require_once ADMIN_OPTIONS_DIR . 'option.php';
+ require_once INCLUDES_DIR . 'backend.php';
+ require_once CORE_DIR . 'admin/theme-update.php';
 /**
  * Main theme admin bootstrap class
  *
@@ -44,6 +45,9 @@ class OxyThemeAdmin
      * @param array $options array of all theme options to use in construction this theme
      */
     function __construct( $theme ) {
+        global $oxy_theme_version;
+        $oxy_theme_version = '1.4';
+
         $this->theme = $theme;
         // load admin defines
         $this->defines();
@@ -55,6 +59,9 @@ class OxyThemeAdmin
         $this->options = new OxyOptions( $theme->theme['option-pages'] );
 
         $this->register_metaboxes();
+
+        // create theme update page
+        $theme_update = new OxyThemeUpdate( $theme );
     }
 
     /**
@@ -104,8 +111,23 @@ class OxyThemeAdmin
         if( 'admin.php' == $pagenow || 'post-new.php' == $pagenow || 'post.php' == $pagenow ) {
             $screen = get_current_screen();
             // enqueue script only for pages.
-            if( $screen->id == 'page' ) {
-                wp_enqueue_script( 'oxy-ajax-metaboxes', INCLUDES_URI . 'options/metaboxes/ajax-metaboxes.js' , array('jquery' , 'rwmb-map') );
+            switch( $screen->id ) {
+                case 'page':
+                case 'oxy_service':
+                case 'oxy_timeline':
+                    wp_enqueue_script( 'oxy-ajax-metaboxes-page', INCLUDES_URI . 'options/metaboxes/ajax-metaboxes-page.js' , array('jquery', 'rwmb-map') );
+                    wp_localize_script( 'oxy-ajax-metaboxes-page', 'theme', THEME_SHORT );
+                break;
+                case 'oxy_slideshow_image':
+                    wp_enqueue_script( 'oxy-ajax-metaboxes-slideshow', INCLUDES_URI . 'options/metaboxes/ajax-metaboxes-slideshow.js' , array('jquery') );
+                    wp_localize_script( 'oxy-ajax-metaboxes-slideshow', 'theme', THEME_SHORT );
+                break;
+                case 'oxy_portfolio_image':
+                    wp_enqueue_script( 'oxy-ajax-metaboxes-page', INCLUDES_URI . 'options/metaboxes/ajax-metaboxes-page.js' , array('jquery', 'rwmb-map') );
+                    wp_enqueue_script( 'oxy-ajax-metaboxes-portfolio-image', INCLUDES_URI . 'options/metaboxes/ajax-metaboxes-portfolio-image.js' , array('jquery') );
+                    wp_localize_script( 'oxy-ajax-metaboxes-page', 'theme', THEME_SHORT );
+                    wp_localize_script( 'oxy-ajax-metaboxes-portfolio-image', 'theme', THEME_SHORT );
+                break;
             }
         }
     }
@@ -120,11 +142,8 @@ class OxyThemeAdmin
     }
 
     function register_metaboxes(){
-        define( 'RWMB_URL', trailingslashit( get_stylesheet_directory_uri() . '/inc/modules/meta-box' ) );
-        define( 'RWMB_DIR', trailingslashit( get_template_directory() . '/inc/modules/meta-box' ) );
-
         // Include the meta box script
-        require_once RWMB_DIR . 'meta-box.php';
-        include OPTIONS_DIR . '/metaboxes/theme-metaboxes.php';
+        require_once MODULES_DIR . 'meta-box/meta-box.php';
+         require_once OPTIONS_DIR . '/metaboxes/theme-metaboxes.php';
     }
 }

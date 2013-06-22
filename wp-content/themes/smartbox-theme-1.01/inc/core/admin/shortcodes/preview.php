@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 
 if ( !defined('ABSPATH') )
@@ -32,6 +32,10 @@ if ( !defined('ABSPATH') )
         <script src="<?php echo JS_URI ?>selectivizr-min.js" type="text/javascript" ></script>
         <script src="<?php echo JS_URI ?>custom-ie.js" type="text/javascript" ></script>
      <![endif]-->
+     <script src="<?php echo JS_URI ?>bootstrap.js" type="text/javascript" ></script>
+     <script src="<?php echo JS_URI ?>jquery.flexslider-min.js" type="text/javascript" ></script>
+     <script src="<?php echo JS_URI ?>script.js" type="text/javascript" ></script>
+     <script src="<?php echo JS_URI ?>wpscript.js" type="text/javascript" ></script>
 </head>
 <body>
     <div id="wrapper">

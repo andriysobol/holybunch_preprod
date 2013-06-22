@@ -21,14 +21,14 @@ $bps_email_from = $options['bps_send_email_from'];
 $bps_email_cc = $options['bps_send_email_cc'];
 $bps_email_bcc = $options['bps_send_email_bcc'];
 $justUrl = get_site_url();
-$timestamp = date_i18n(get_option('date_format'), strtotime("11/15-1976")) . ' - ' . date_i18n(get_option('time_format'), strtotime($date));
+$timestamp = date_i18n(get_option('date_format'), strtotime("11/15-1976")) . ' - ' . date_i18n(get_option('time_format'), $timeNow + $gmt_offset);
 
 	$headers = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 	$headers .= "From: $bps_email_from" . "\r\n";
 	$headers .= "Cc: $bps_email_cc" . "\r\n";
 	$headers .= "Bcc: $bps_email_bcc" . "\r\n";	
-	$subject = " BPS Pro Login Security Alert - $timestamp ";
+	$subject = " BPS Login Security Alert - $timestamp ";
 
 /*
 ***************************************************************
@@ -60,7 +60,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 			
 			if ( $options['bps_login_security_email'] == 'anyUserLoginLock') {
 				$message = '<p><font color="blue"><strong>A User Has Logged in</strong></font></p>';
-				$message .=  '<p>To take further action go to the BPS Pro Login Security page. If you do not want to receive further email alerts go to S-Monitor and change or turn off Login Security Email Alerts.</p>';
+				$message .=  '<p>To take further action go to the Login Security page. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
 				$message .= '<p><strong>Username:</strong> '.$user->user_login.'</p>'; 
 				$message .= '<p><strong>Status:</strong> '.$status.'</p>'; 
 				$message .= '<p><strong>Role:</strong> '.$user->roles[0].'</p>'; 
@@ -76,7 +76,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 			// Option adminLoginOnly - Send Email Alert if an Administrator Logs in
 			if ( $options['bps_login_security_email'] == 'adminLoginOnly' || $options['bps_login_security_email'] == 'adminLoginLock' && $user->roles[0] == 'administrator') {
 				$message = '<p><font color="blue"><strong>An Administrator Has Logged in</strong></font></p>';
-				$message .=  '<p>To take further action go to the BPS Pro Login Security page. If you do not want to receive further email alerts go to S-Monitor and change or turn off Login Security Email Alerts.</p>';
+				$message .=  '<p>To take further action go to the Login Security page. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
 				$message .= '<p><strong>Username:</strong> '.$user->user_login.'</p>'; 
 				$message .= '<p><strong>Status:</strong> '.$status.'</p>'; 
 				$message .= '<p><strong>Role:</strong> '.$user->roles[0].'</p>'; 
@@ -101,7 +101,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 			
 			if ( $options['bps_login_security_email'] == 'anyUserLoginLock') {
 				$message = '<p><font color="blue"><strong>A User Has Logged in</strong></font></p>';
-				$message .=  '<p>To take further action go to the BPS Pro Login Security page. If you do not want to receive further email alerts go to S-Monitor and change or turn off Login Security Email Alerts.</p>';
+				$message .=  '<p>To take further action go to the Login Security page. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
 				$message .= '<p><strong>Username:</strong> '.$user->user_login.'</p>'; 
 				$message .= '<p><strong>Status:</strong> '.$status.'</p>'; 
 				$message .= '<p><strong>Role:</strong> '.$user->roles[0].'</p>'; 
@@ -117,7 +117,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 			// Option adminLoginOnly - Send Email Alert if an Administrator Logs in
 			if ( $options['bps_login_security_email'] == 'adminLoginOnly' || $options['bps_login_security_email'] == 'adminLoginLock' && $user->roles[0] == 'administrator') {
 				$message = '<p><font color="blue"><strong>An Administrator Has Logged in</strong></font></p>';
-				$message .=  '<p>To take further action go to the BPS Pro Login Security page. If you do not want to receive further email alerts go to S-Monitor and change or turn off Login Security Email Alerts.</p>';
+				$message .=  '<p>To take further action go to the Login Security page. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
 				$message .= '<p><strong>Username:</strong> '.$user->user_login.'</p>'; 
 				$message .= '<p><strong>Status:</strong> '.$status.'</p>'; 
 				$message .= '<p><strong>Role:</strong> '.$user->roles[0].'</p>'; 
@@ -142,7 +142,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 
 			if ( $options['bps_login_security_email'] == 'lockoutOnly' || $options['bps_login_security_email'] == 'anyUserLoginLock' || $options['bps_login_security_email'] == 'adminLoginLock') {
 				$message = '<p><font color="red"><strong>A User Account Has Been Locked</strong></font></p>';
-				$message .=  '<p>To take further action go to the BPS Pro Login Security page. If no action is taken then the User will be able to try and login again after the Lockout Time has expired. If you do not want to receive further email alerts go to S-Monitor and change or turn off Login Security Email Alerts.</p>';
+				$message .=  '<p>To take further action go to the Login Security page. If no action is taken then the User will be able to try and login again after the Lockout Time has expired. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
 				$message .= '<p><strong>Username:</strong> '.$user->user_login.'</p>'; 
 				$message .= '<p><strong>Status:</strong> '.$status.'</p>'; 
 				$message .= '<p><strong>Role:</strong> '.$user->roles[0].'</p>'; 
@@ -175,7 +175,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 			
 			if ( $options['bps_login_security_email'] == 'anyUserLoginLock') {
 				$message = '<p><font color="blue"><strong>A User Has Logged in</strong></font></p>';
-				$message .=  '<p>To take further action go to the BPS Pro Login Security page. If you do not want to receive further email alerts go to S-Monitor and change or turn off Login Security Email Alerts.</p>';
+				$message .=  '<p>To take further action go to the Login Security page. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
 				$message .= '<p><strong>Username:</strong> '.$user->user_login.'</p>'; 
 				$message .= '<p><strong>Status:</strong> '.$status.'</p>'; 
 				$message .= '<p><strong>Role:</strong> '.$user->roles[0].'</p>'; 
@@ -191,7 +191,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 			// Option adminLoginOnly - Send Email Alert if an Administrator Logs in
 			if ( $options['bps_login_security_email'] == 'adminLoginOnly' || $options['bps_login_security_email'] == 'adminLoginLock' && $user->roles[0] == 'administrator') {
 				$message = '<p><font color="blue"><strong>An Administrator Has Logged in</strong></font></p>';
-				$message .=  '<p>To take further action go to the BPS Pro Login Security page. If you do not want to receive further email alerts go to S-Monitor and change or turn off Login Security Email Alerts.</p>';
+				$message .=  '<p>To take further action go to the Login Security page. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
 				$message .= '<p><strong>Username:</strong> '.$user->user_login.'</p>'; 
 				$message .= '<p><strong>Status:</strong> '.$status.'</p>'; 
 				$message .= '<p><strong>Role:</strong> '.$user->roles[0].'</p>'; 
@@ -267,7 +267,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 
 			if ( $options['bps_login_security_email'] == 'lockoutOnly' || $options['bps_login_security_email'] == 'anyUserLoginLock' || $options['bps_login_security_email'] == 'adminLoginLock') {
 				$message = '<p><font color="red"><strong>A User Account Has Been Locked</strong></font></p>';
-				$message .=  '<p>To take further action go to the BPS Pro Login Security page. If no action is taken then the User will be able to try and login again after the Lockout Time has expired. If you do not want to receive further email alerts go to S-Monitor and change or turn off Login Security Email Alerts.</p>';
+				$message .=  '<p>To take further action go to the Login Security page. If no action is taken then the User will be able to try and login again after the Lockout Time has expired. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
 				$message .= '<p><strong>Username:</strong> '.$user->user_login.'</p>'; 
 				$message .= '<p><strong>Status:</strong> '.$status.'</p>'; 
 				$message .= '<p><strong>Role:</strong> '.$user->roles[0].'</p>'; 
@@ -322,7 +322,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 
 			if ( $options['bps_login_security_email'] == 'lockoutOnly' || $options['bps_login_security_email'] == 'anyUserLoginLock' || $options['bps_login_security_email'] == 'adminLoginLock') {
 				$message = '<p><font color="red"><strong>A User Account Has Been Locked</strong></font></p>';
-				$message .=  '<p>To take further action go to the BPS Pro Login Security page. If no action is taken then the User will be able to try and login again after the Lockout Time has expired. If you do not want to receive further email alerts go to S-Monitor and change or turn off Login Security Email Alerts.</p>';
+				$message .=  '<p>To take further action go to the Login Security page. If no action is taken then the User will be able to try and login again after the Lockout Time has expired. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
 				$message .= '<p><strong>Username:</strong> '.$user->user_login.'</p>'; 
 				$message .= '<p><strong>Status:</strong> '.$status.'</p>'; 
 				$message .= '<p><strong>Role:</strong> '.$user->roles[0].'</p>'; 
@@ -355,7 +355,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 
 			if ( $options['bps_login_security_email'] == 'anyUserLoginLock') {
 				$message = '<p><font color="blue"><strong>A User Has Logged in</strong></font></p>';
-				$message .=  '<p>To take further action go to the BPS Pro Login Security page. If you do not want to receive further email alerts go to S-Monitor and change or turn off Login Security Email Alerts.</p>';
+				$message .=  '<p>To take further action go to the Login Security page. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
 				$message .= '<p><strong>Username:</strong> '.$user->user_login.'</p>'; 
 				$message .= '<p><strong>Status:</strong> '.$status.'</p>'; 
 				$message .= '<p><strong>Role:</strong> '.$user->roles[0].'</p>'; 
@@ -371,7 +371,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 			// Option adminLoginOnly - Send Email Alert if an Administrator Logs in
 			if ( $options['bps_login_security_email'] == 'adminLoginOnly' || $options['bps_login_security_email'] == 'adminLoginLock' && $user->roles[0] == 'administrator') {
 				$message = '<p><font color="blue"><strong>An Administrator Has Logged in</strong></font></p>';
-				$message .=  '<p>To take further action go to the BPS Pro Login Security page. If you do not want to receive further email alerts go to S-Monitor and change or turn off Login Security Email Alerts.</p>';
+				$message .=  '<p>To take further action go to the Login Security page. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
 				$message .= '<p><strong>Username:</strong> '.$user->user_login.'</p>'; 
 				$message .= '<p><strong>Status:</strong> '.$status.'</p>'; 
 				$message .= '<p><strong>Role:</strong> '.$user->roles[0].'</p>'; 
@@ -447,7 +447,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 
 			if ( $options['bps_login_security_email'] == 'lockoutOnly' || $options['bps_login_security_email'] == 'anyUserLoginLock' || $options['bps_login_security_email'] == 'adminLoginLock') {
 				$message = '<p><font color="red"><strong>A User Account Has Been Locked</strong></font></p>';
-				$message .=  '<p>To take further action go to the BPS Pro Login Security page. If no action is taken then the User will be able to try and login again after the Lockout Time has expired. If you do not want to receive further email alerts go to S-Monitor and change or turn off Login Security Email Alerts.</p>';
+				$message .=  '<p>To take further action go to the Login Security page. If no action is taken then the User will be able to try and login again after the Lockout Time has expired. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
 				$message .= '<p><strong>Username:</strong> '.$user->user_login.'</p>'; 
 				$message .= '<p><strong>Status:</strong> '.$status.'</p>'; 
 				$message .= '<p><strong>Role:</strong> '.$user->roles[0].'</p>'; 

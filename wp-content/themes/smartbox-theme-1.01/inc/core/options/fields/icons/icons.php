@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 
 /**
@@ -25,6 +25,7 @@ class OxyIcons extends OxyOption {
     function __construct( $field, $value, $attr ) {
         parent::__construct( $field, $value, $attr );
         $this->set_attr( 'type', 'hidden' );
+        $this->set_attr( 'value', esc_attr( $value ) );
     }
 
     /**
@@ -34,12 +35,13 @@ class OxyIcons extends OxyOption {
      * @since 1.0
      **/
     public function render() {
-        $icons = include OPTIONS_DIR . 'icons/fontawesome.php';
+        $icons =  require_once OPTIONS_DIR . 'icons/fontawesome.php';
         ?>
         <div class="icon-container">
             <ul>
             <?php foreach( $icons as $icon ) : ?>
-                <li><i class="<?php echo $icon; ?>"></i></li>
+                <?php $active = $this->_value === $icon ? ' class="active"' : ''; ?>
+                <li<?php echo $active; ?>><i class="<?php echo $icon; ?>"></i></li>
             <?php endforeach; ?>
             </ul>
         </div>
@@ -51,8 +53,8 @@ class OxyIcons extends OxyOption {
         parent::enqueue();
         // load styles
         //wp_enqueue_style( 'jquery-ui-theme' );
-        wp_enqueue_style( 'font-awesome', CSS_URI . 'font-awesome.css', array(), false, 'all' );
-        wp_enqueue_style( 'font-icon', ADMIN_OPTIONS_URI . 'fields/icons/icons.css', array( 'font-awesome' ), false, 'all' );
+        wp_enqueue_style( 'font-awesome-all', CSS_URI . 'font-awesome-all.css', array(), false, 'all' );
+        wp_enqueue_style( 'font-icon', ADMIN_OPTIONS_URI . 'fields/icons/icons.css', array( 'font-awesome-all' ), false, 'all' );
         // load scripts
         wp_enqueue_script( 'font-icon', ADMIN_OPTIONS_URI . 'fields/icons/icons.js' );
     }

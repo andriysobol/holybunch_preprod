@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 
 /**
@@ -89,11 +89,11 @@ class OxySelect extends OxyOption {
                 }
             break;
 
-            case 'content_featured':
-                $this->_field['blank'] = __('Select a Content Item', THEME_ADMIN_TD);
-                $posts =  get_posts( "showposts=-1&post_type=oxy_content" );
-                foreach ($posts as $content):
-                    $data[$content->post_title] = $content->ID;
+            case 'staff_featured':
+                $this->_field['blank'] = __('Select a Staff member', THEME_ADMIN_TD);
+                $posts =  get_posts( "showposts=-1&post_type=oxy_staff" );
+                foreach ($posts as $staff):
+                    $data[$staff->post_title] = $staff->ID;
                 endforeach;
             break;
 
@@ -101,10 +101,15 @@ class OxySelect extends OxyOption {
                 $this->_field['blank'] = __('all categories', THEME_ADMIN_TD);
                 $data = get_categories(array('orderby' => 'name', 'hide_empty' => '0') );
             break;
-             case 'portfolios':
+            case 'portfolios':
                 $this->_field['blank'] = __('Select a Portfolio', THEME_ADMIN_TD);
                 $data = get_categories( array( 'orderby' => 'name', 'hide_empty' => '0', 'taxonomy' => 'oxy_portfolio_categories' ) );
             break;
+
+            case 'social_icons':
+                $data =  require_once OPTIONS_DIR . 'icons/social.php';
+            break;
+
             default:
                 $data = array();
             break;
@@ -117,26 +122,23 @@ class OxySelect extends OxyOption {
         if( !empty( $data ) ) {
             foreach( $data as $key => $entry ) {
                 switch ( $database ) {
-
                     case 'slideshow':
                     case 'taxonomy':
+                    case 'categories':
+                    case 'portfolios':
                         $this->_field['options'][$entry->slug] = $entry->name;
                     break;
 
                     case 'get_option':
+                    case 'staff_featured':
                         $this->_field['options'][$entry] = $key;
                     break;
-                    case 'content_featured':
-                        $this->_field['options'][$entry] = $key;
-                    break;
-                    case 'categories':
-                        $this->_field['options'][$entry->slug] = $entry->name;
-                    break;
-                     case 'portfolios':
-                        $this->_field['options'][$entry->slug] = $entry->name;
+
+                    case 'social_icons':
+                        $this->_field['options'][$key] = $entry;
                     break;
                     default:
-                        $this->option['options'][$entry] = $entry;
+                        $this->_field['options'][$entry] = $entry;
                     break;
                 }
             }

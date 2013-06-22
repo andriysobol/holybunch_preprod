@@ -1,5 +1,0 @@
-This file describes steps for update of theme: 
-1 shortcode-options.php has to be merged, file contains options and custom options can not be included and maintained sperately
-2 theme.php(inc/core) has to get constant "define( 'CUSTOM_DIR', THEME_DIR . '/custom/' );" which is used in other file for including of custom file
-3 shortcode.pgg should get "include CUSTOM_DIR . 'hb_shortcodes.php';" at the end
-4 theme-metaboxes.php has to be merged that, I've deleted some peaces of codes there e.g. custom field "position" which we don't need any more

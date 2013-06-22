@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 
 /**
@@ -40,7 +40,7 @@ class OxyOptions {
     function __construct( $option_pages ) {
         // load all page data
         foreach( $option_pages as $option_page_file ) {
-            $page_data = include OPTIONS_DIR . 'option-pages/' . $option_page_file . '.php';
+            $page_data =  require_once OPTIONS_DIR . 'option-pages/' . $option_page_file . '.php';
             if( $page_data !== false ) {
                 $this->_pages[] = $page_data;
             }
@@ -65,6 +65,10 @@ class OxyOptions {
         if( $this->_options === false ) {
             $this->create_default_options();
         }
+        else {
+            // check for missing default options
+            $this->create_missing_default_options();
+        }
 
         // register theme settings
         register_setting( THEME_SHORT . '-options', THEME_SHORT . '-options', array( &$this, 'validate_options' ) );
@@ -79,6 +83,29 @@ class OxyOptions {
                 }
             }
         }
+    }
+
+    /**
+     * Checks all default options are set for missing options
+     *
+     * @return void
+     * @since 1.1
+     **/
+    function create_missing_default_options() {
+        // create default options for missing ones
+        foreach( $this->_pages as $page ) {
+            foreach( $page['sections'] as $section ) {
+                foreach( $section['fields'] as $field ) {
+                    if( isset( $field['default'] ) ) {
+                        if( !isset( $this->_options[$field['id']] ) ) {
+                            $this->_options[$field['id']] = $field['default'];
+                        }
+                    }
+                }
+            }
+        }
+        // save default options
+        update_option( THEME_SHORT . '-options', $this->_options );
     }
 
     /**

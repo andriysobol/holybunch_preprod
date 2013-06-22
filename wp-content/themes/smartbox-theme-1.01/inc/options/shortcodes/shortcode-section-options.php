@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 
   return array(
@@ -35,10 +35,17 @@
         ),
          array(
             'name'    => '',
-            'id'      => 'section_content',
+            'id'      => 'content',
             'type'    => 'hiddentext',
             'default' => '',
             'desc'    => ''
         ),
+         array(
+            'name'    => __('Optional class', THEME_ADMIN_TD),
+            'id'      => 'class',
+            'type'    => 'text',
+            'default' => '',
+            'desc'    => __('Add an optional class to the section', THEME_ADMIN_TD),
+        )
     )
 );

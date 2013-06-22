@@ -8,10 +8,11 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 
 get_header();
+oxy_page_header();
 
 global $post;
 $custom_fields = get_post_custom($post->ID);
@@ -21,10 +22,7 @@ if ( isset ($custom_fields[THEME_SHORT.'_timeline']) ){
     else{
         $query = new WP_Query(  array( 'post_type' => 'post' ) );
     }
-    oxy_create_hero_section( null ,  get_the_title() );
-} else {
-    oxy_create_hero_section( null, get_the_title() );
-} ?>
+}  ?>
 
 <section class="section section-padded section-alt">
     <div class="container-fluid">

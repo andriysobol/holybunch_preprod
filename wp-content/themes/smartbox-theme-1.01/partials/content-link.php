@@ -8,24 +8,14 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 global $post;
 $author_id = get_the_author_meta('ID');
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('row-fluid'); ?>>
-    <div class="span2 post-info">
-        <div class="round-box box-small">
-            <?php echo get_avatar( $author_id, 300 ); ?>
-        </div>
-        <h5 class="text-center">
-            <?php the_author(); ?>
-        </h5>
-        <h5 class="text-center light">
-            <?php the_time(get_option('date_format')); ?>
-        </h5>
-    </div>
-    <div class="span10 post-body">
+    <?php get_template_part( 'partials/post-gutter' ); ?>
+    <div class="<?php echo  oxy_get_option( 'blog_image_size' ) == 'normal'? 'span10':'span12'; ?> post-body">
         <div class="post-head">
             <h2 class="small-screen-center">
                 <?php
@@ -41,20 +31,7 @@ $author_id = get_the_author_meta('ID');
                 echo empty( $title ) ? the_title() : $title;
                 ?>
             </h2>
-            <div class="post-extras">
-                <?php if( has_tag() ) : ?>
-                <i class="icon-tags"></i>
-                <?php the_tags( $before = null, $sep = ', ', $after = '' ); ?>
-                <?php endif; ?>
-                <?php if( has_category() ) : ?>
-                <i class="icon-bookmark"></i>
-                <?php the_category( ', ' ); ?>
-                <?php endif; ?>
-                <?php if ( comments_open() && ! post_password_required() ) : ?>
-                <i class="icon-comments"></i>
-                <?php comments_popup_link( _x( 'No comments', 'comments number', THEME_FRONT_TD ), _x( '1 comment', 'comments number', THEME_FRONT_TD ), _x( '% comments', 'comments number', THEME_FRONT_TD ) ); ?>
-            <?php endif; ?>
-            </div>
+            <?php get_template_part( 'partials/post-extras' ); ?>
         </div>
         <div class="entry-content">
             <?php
@@ -63,6 +40,7 @@ $author_id = get_the_author_meta('ID');
                 echo '<figure>' . '<img alt="featured image" src="'.$img[0].'">' . '</figure>';
             }
             the_content();
+            get_template_part( 'partials/social-links', null );
             ?>
         </div>
     </div>

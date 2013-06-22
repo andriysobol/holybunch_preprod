@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Smartbox Frontend Translation File 1.0\n"
+"Project-Id-Version: Smartbox Frontend Translation File 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-21 21:34+0300\n"
+"POT-Creation-Date: 2013-06-18 15:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,7 +49,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: build/inc/core/theme.php:202
+#: build/inc/core/theme.php:214
 msgid "Theme"
 msgstr ""
 
@@ -57,161 +57,184 @@ msgstr ""
 msgid "Primary Navigation"
 msgstr ""
 
-#: build/inc/frontend.php:305
+#: build/inc/frontend.php:343
 msgid "Portfolio Thumbnail Size"
 msgstr ""
 
-#: build/inc/frontend.php:413
+#: build/inc/frontend.php:491
 msgid "Landscape 1"
 msgstr ""
 
-#: build/inc/frontend.php:419
+#: build/inc/frontend.php:497
 msgid "Landscape 2"
 msgstr ""
 
-#: build/inc/frontend.php:425
+#: build/inc/frontend.php:503
 msgid "Landscape 3"
 msgstr ""
 
-#: build/inc/frontend.php:431
+#: build/inc/frontend.php:509
 msgid "Landscape 4"
 msgstr ""
 
-#: build/inc/frontend.php:437
+#: build/inc/frontend.php:515
 msgid "Landscape 5"
 msgstr ""
 
-#: build/inc/frontend.php:583
+#: build/inc/frontend.php:673
 msgid "Pingback:"
 msgstr ""
 
-#: build/inc/frontend.php:583
+#: build/inc/frontend.php:673
 msgid "(Edit)"
 msgstr ""
 
-#: build/inc/frontend.php:603
+#: build/inc/frontend.php:693
 msgid "Reply"
 msgstr ""
 
-#: build/inc/frontend.php:654
+#: build/inc/frontend.php:739
+msgid "your name"
+msgstr ""
+
+#: build/inc/frontend.php:740
+msgid "your email address"
+msgstr ""
+
+#: build/inc/frontend.php:744
 #, php-format
 msgid "Required fields are marked %s"
 msgstr ""
 
-#: build/inc/frontend.php:658
+#: build/inc/frontend.php:747
+msgid "add your comment here"
+msgstr ""
+
+#: build/inc/frontend.php:748
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: build/inc/frontend.php:659
+#: build/inc/frontend.php:749
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
 
-#: build/inc/frontend.php:665
+#: build/inc/frontend.php:755
 msgid "Add your comment"
 msgstr ""
 
-#: build/inc/frontend.php:666
+#: build/inc/frontend.php:756
 msgid "Leave a Reply"
 msgstr ""
 
-#: build/inc/frontend.php:667
+#: build/inc/frontend.php:757
 msgid "Cancel reply"
 msgstr ""
 
-#: build/inc/frontend.php:668
+#: build/inc/frontend.php:758
 msgid "Add comment"
 msgstr ""
 
-#: build/inc/frontend.php:745
+#: build/inc/frontend.php:835
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: build/inc/frontend.php:746
+#: build/inc/frontend.php:836
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: build/inc/frontend.php:818
-msgid "Recent Posts"
+#: build/inc/frontend.php:891
+msgid "search"
 msgstr ""
 
-#: build/inc/frontend.php:877
-msgid "Archives"
-msgstr ""
-
-#: build/inc/frontend.php:885
-msgid "Select Month"
-msgstr ""
-
-#: build/inc/frontend.php:906
-msgid "Categories"
-msgstr ""
-
-#: build/inc/frontend.php:918
-msgid "Select Category"
-msgstr ""
-
-#: build/inc/frontend.php:1082
+#: build/inc/frontend.php:1021
 msgid "Next page"
 msgstr ""
 
-#: build/inc/frontend.php:1083
+#: build/inc/frontend.php:1022
 msgid "Previous page"
 msgstr ""
 
-#: build/inc/options/widgets/smartbox_twitter.php:15
-msgid "Displays you latest tweets"
+#: build/inc/frontend.php:1106
+msgid "Related Posts"
 msgstr ""
 
-#: build/inc/options/widgets/smartbox_twitter.php:16
-msgid "Twitter Feed"
+#: build/inc/frontend.php:1156
+msgid "About "
 msgstr ""
 
-#: build/inc/options/widgets/smartbox_twitter.php:26
-#, php-format
-msgid ""
-"Please configure your Twitter username for the <a href=\"%s\">Twitter "
-"Widget</a>."
+#: build/inc/options/shortcodes/shortcodes.php:397
+msgid "all"
+msgstr ""
+
+#: build/inc/options/widgets/default_overrides.php:22
+msgid "Recent Posts"
+msgstr ""
+
+#: build/inc/options/widgets/default_overrides.php:88
+msgid "Archives"
+msgstr ""
+
+#: build/inc/options/widgets/default_overrides.php:96
+msgid "Select Month"
+msgstr ""
+
+#: build/inc/options/widgets/default_overrides.php:117
+msgid "Categories"
+msgstr ""
+
+#: build/inc/options/widgets/default_overrides.php:129
+msgid "Select Category"
+msgstr ""
+
+#: build/inc/options/widgets/smartbox_twitter.php:25
+msgid "Display an official Twitter Embedded Timeline widget."
+msgstr ""
+
+#: build/inc/options/widgets/smartbox_twitter.php:188
+msgid "Link Color (hex):"
+msgstr ""
+
+#: build/inc/options/widgets/smartbox_twitter.php:193
+msgid "Border Color (hex):"
+msgstr ""
+
+#: build/inc/options/widgets/smartbox_twitter.php:198
+msgid "Timeline Theme:"
 msgstr ""
 
 #: build/partials/content-404.php:26
 msgid "Go Back Home"
 msgstr ""
 
-#: build/partials/content-gallery.php:34 build/partials/content-video.php:34
-#: build/partials/content.php:33
+#: build/partials/content-gallery.php:24 build/partials/content-video.php:24
+#: build/partials/content.php:22
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: build/partials/content-gallery.php:50 build/partials/content-link.php:55
-#: build/partials/content-quote.php:40 build/partials/content-video.php:50
-#: build/partials/content.php:49
+#: build/partials/loop.php:33 build/search.php:32
+msgid "Nothing Found"
+msgstr ""
+
+#: build/partials/post-extras.php:31
 msgid "No comments"
 msgstr ""
 
-#: build/partials/content-gallery.php:50 build/partials/content-link.php:55
-#: build/partials/content-quote.php:40 build/partials/content-video.php:50
-#: build/partials/content.php:49
+#: build/partials/post-extras.php:31
 msgid "1 comment"
 msgstr ""
 
-#: build/partials/content-gallery.php:50 build/partials/content-link.php:55
-#: build/partials/content-quote.php:40 build/partials/content-video.php:50
-#: build/partials/content.php:49
+#: build/partials/post-extras.php:31
 #, php-format
 msgid "% comments"
 msgstr ""
 
 #: build/search.php:15
 msgid "Search"
-msgstr ""
-
-#: build/search.php:32
-msgid "Nothing Found"
 msgstr ""
 
 #: build/search.php:36

@@ -1,0 +1,11 @@
+/* 
+Theme Name:     Smartbox Child
+Theme URI:      http://example.com/
+Description:    Child theme for the Smartbox theme
+Author:         Mihon
+Author URI:     http://example.com/about/
+Template:       smartbox-theme-1.01                             
+Version:        0.1.0
+*/
+@import url("stylesheets/hb_fonts.css");
+@import url("stylesheets/hb_styles.css");

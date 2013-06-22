@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WordPress package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WordPress 3.5.1\n"
+"Project-Id-Version: WordPress 3.5.2\n"
 "Report-Msgid-Bugs-To: http://wppolyglots.wordpress.com\n"
-"POT-Creation-Date: 2013-01-10 08:19:39+00:00\n"
-"PO-Revision-Date: 2013-01-25 00:45+0400\n"
+"POT-Creation-Date: 2013-06-21 18:14:52+00:00\n"
+"PO-Revision-Date: 2013-06-22 00:05+0400\n"
 "Last-Translator: Sergey Biryukov <sergeybiryukov.ru@gmail.com>\n"
 "Language-Team: ru.wordpress.org <sergeybiryukov.ru@gmail.com>\n"
 "Language: ru_RU\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e;_c;_x;__ngettext_noop:1,2;__ngettext:1,2\n"
 "X-Poedit-Basepath: S:\\home\\wordpress\\trunk\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: S:\\home\\wordpress\\trunk\n"
 
 #: wp-admin/network/index.php:20 wp-admin/network/settings.php:17
@@ -222,6 +222,10 @@ msgid ""
 msgstr ""
 "<a href=\"http://codex.wordpress.org/Network_Admin_Settings_Screen\" target="
 "\"_blank\">Документация по параметрам сети</a>"
+
+#: wp-admin/network/settings.php:78
+msgid "Options saved."
+msgstr "Настройки сохранены."
 
 #: wp-admin/network/settings.php:87
 msgid "Operational Settings"

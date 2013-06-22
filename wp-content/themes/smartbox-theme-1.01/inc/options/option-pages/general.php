@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 
 return array(
@@ -21,7 +21,7 @@ return array(
     'sections'   => array(
         'general-section' => array(
             'title'   => __('Site Style', THEME_ADMIN_TD),
-            'header'  => __('Set the style of your  page', THEME_ADMIN_TD),
+            'header'  => __('Set the style of your site', THEME_ADMIN_TD),
             'fields' => array(
                 array(
                     'name'    => __('Style', THEME_ADMIN_TD),
@@ -32,6 +32,39 @@ return array(
                         ''            => __('Blue', THEME_ADMIN_TD),
                         'theme-brown' => __('Brown', THEME_ADMIN_TD),
                         'theme-red'   => __('Red', THEME_ADMIN_TD),
+                    ),
+                    'default' => '',
+                ),
+                array(
+                    'name'    => __('Width Style', THEME_ADMIN_TD),
+                    'desc'    => __('Choose a width for the site', THEME_ADMIN_TD),
+                    'id'      => 'width',
+                    'type'    => 'radio',
+                    'options' => array(
+                        '' => __('Box Model', THEME_ADMIN_TD),
+                        'fullwidth'   => __('Full Width', THEME_ADMIN_TD),
+                    ),
+                    'default' => '',
+                ),
+                array(
+                    'name'    => __('Site Font', THEME_ADMIN_TD),
+                    'desc'    => __('Choose a font for the site (Open Sans supports more charsets for translations than Lato)', THEME_ADMIN_TD),
+                    'id'      => 'main_site_font',
+                    'type'    => 'radio',
+                    'options' => array(
+                        'fonts.css'     => __('Lato', THEME_ADMIN_TD),
+                        'fonts-alt.css' => __('Open Sans', THEME_ADMIN_TD),
+                    ),
+                    'default' => 'fonts.css',
+                ),
+                array(
+                    'name'    => __('Background Text Colour', THEME_ADMIN_TD),
+                    'desc'    => __('Text colour in header and footer sections where the background is shown (choose light when using dark backgrounds)', THEME_ADMIN_TD),
+                    'id'      => 'skin',
+                    'type'    => 'radio',
+                    'options' => array(
+                        ''             => __('Dark Text', THEME_ADMIN_TD),
+                        'theme-dark'   => __('Light Text', THEME_ADMIN_TD),
                     ),
                     'default' => '',
                 ),
@@ -78,6 +111,34 @@ return array(
                     ),
                     'default' => 'off',
                 ),
+            )
+        ),
+        'header-section' => array(
+            'title'   => __('Header Options', THEME_ADMIN_TD),
+            'header'  => __('Set the header options here', THEME_ADMIN_TD),
+            'fields' => array(
+                array(
+                    'name'    => __('Menu', THEME_ADMIN_TD),
+                    'desc'    => __('Choose between standard bootstrap menu and hover menu', THEME_ADMIN_TD),
+                    'id'      => 'menu',
+                    'type'    => 'radio',
+                    'options' => array(
+                        'standard'  => __('Standard', THEME_ADMIN_TD),
+                        'hover'     => __('Hover', THEME_ADMIN_TD),
+                    ),
+                    'default' => 'standard',
+                ),
+                array(
+                    'name'    => __('Compact Menu', THEME_ADMIN_TD),
+                    'desc'    => __('Choose compact menu style if you have a lot of menu items', THEME_ADMIN_TD),
+                    'id'      => 'menu_compact',
+                    'type'    => 'radio',
+                    'options' => array(
+                        ''  => __('Standard', THEME_ADMIN_TD),
+                        'compact-nav'     => __('Compact', THEME_ADMIN_TD),
+                    ),
+                    'default' => '',
+                ),
                 array(
                     'name'      => __('Header Height', THEME_ADMIN_TD),
                     'desc'      => __('Set the height of the header in case you use a custom logo image', THEME_ADMIN_TD),
@@ -90,64 +151,36 @@ return array(
                         'step'      => 1
                     )
                 ),
-            )
-        ),
-        'blog-section' => array(
-            'title'   => __('Blog', THEME_ADMIN_TD),
-            'header'  => __('Setup your blog here', THEME_ADMIN_TD),
-            'fields' => array(
                 array(
-                    'name'    => __('Show Comments On', THEME_ADMIN_TD),
-                    'desc'    => __('Where to allow comments. All (show all), Pages (only on pages), Posts (only on posts), Off (all comments are off)', THEME_ADMIN_TD),
-                    'id'      => 'site_comments',
+                    'name'    => __('Header Style', THEME_ADMIN_TD),
+                    'desc'    => __('Choose standard light theme or darker inverse theme', THEME_ADMIN_TD),
+                    'id'      => 'header_style',
                     'type'    => 'radio',
                     'options' => array(
-                        'all'   => __('All', THEME_ADMIN_TD),
-                        'pages' => __('Pages', THEME_ADMIN_TD),
-                        'posts' => __('Posts', THEME_ADMIN_TD),
-                        'Off'   => __('Off', THEME_ADMIN_TD)
+                        ''  => __('Standard', THEME_ADMIN_TD),
+                        'navbar-inverse'     => __('Inverse', THEME_ADMIN_TD),
                     ),
-                    'default' => 'posts',
-                ),
-                array(
-                    'name' => __('Blog title', THEME_ADMIN_TD),
-                    'desc' => __('The title that appears at the top of your blog', THEME_ADMIN_TD),
-                    'id' => 'blog_title',
-                    'type' => 'text',
-                    'default' => 'Our Blog',
-                ),
-                array(
-                    'name' => __('Blog read more link', THEME_ADMIN_TD),
-                    'desc' => __('The text that will be used for your read more links', THEME_ADMIN_TD),
-                    'id' => 'blog_readmore',
-                    'type' => 'text',
-                    'default' => '<strong>Read</strong> More',
-                ),
-                array(
-                    'name'    => __('Display avatars', THEME_ADMIN_TD),
-                    'desc'    => __('toogle avatars on/off', THEME_ADMIN_TD),
-                    'id'      => 'site_avatars',
-                    'type'    => 'radio',
-                    'options' => array(
-                        'on'   => __('On', THEME_ADMIN_TD),
-                        'off'  => __('Off', THEME_ADMIN_TD),
-                    ),
-                    'default' => 'on',
+                    'default' => '',
                 ),
             )
         ),
-        'google-section' => array(
-            'title'   => __('Google', THEME_ADMIN_TD),
-            'header'  => __('Set your google options here', THEME_ADMIN_TD),
+        'footer-section' => array(
+            'title'   => __('Footer', THEME_ADMIN_TD),
+            'header'  => __('Configure the footer options here', THEME_ADMIN_TD),
             'fields' => array(
-                'google_anal' => array(
-                    'name' => __('Google Analytics', THEME_ADMIN_TD),
-                    'desc' => __('Paste your google analytics code here', THEME_ADMIN_TD),
-                    'id' => 'google_anal',
-                    'type' => 'text',
-                    'default' => 'UA-XXXXX-X',
-                )
+                array(
+                    'name'    => __('Footer Columns', THEME_ADMIN_TD),
+                    'desc'    => __('Select how many columns will the footer consist of.', THEME_ADMIN_TD),
+                    'id'      => 'footer_columns',
+                    'type'    => 'radio',
+                    'options' => array(
+                        2  => __('2', THEME_ADMIN_TD),
+                        3  => __('3', THEME_ADMIN_TD),
+                        4  => __('4', THEME_ADMIN_TD),
+                    ),
+                    'default' => 2,
+                ),
             )
-        )
+        ),
     )
 );

@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 
 // Register main menu
@@ -51,7 +51,13 @@ class OxyNavWalker extends Walker_Nav_Menu {
         parent::start_el($item_html, $item, $depth, $args);
 
         if( $item->is_dropdown && ($depth === 0) ) {
-            $item_html = str_replace('<a', '<a class="dropdown-toggle" data-toggle="dropdown" data-target="#"', $item_html);
+            $hover_attr = "";
+            $disabled = "";
+            if( oxy_get_option( 'menu' ) == 'hover' ){
+                $hover_attr = 'data-hover="dropdown" data-delay="1000"';
+                $disabled = 'disabled';
+            }
+            $item_html = str_replace('<a', '<a class="dropdown-toggle '.$disabled.'" data-toggle="dropdown" '.$hover_attr.' data-target="#"', $item_html);
             //$item_html = str_replace('</a>', ' <b class="caret"></b></a>', $item_html);
         }
         elseif( stristr($item_html, 'li class="divider') ) {
@@ -81,10 +87,16 @@ class OxyNavWalker extends Walker_Nav_Menu {
 }
 
 function oxy_create_logo() {
+    if( function_exists( 'icl_get_home_url' ) ) {
+        $home_link = icl_get_home_url();
+    }
+    else {
+        $home_link = site_url();
+    }
     switch( oxy_get_option('logo_type') ) {
         case 'text': ?>
             <h1 class="brand">
-                <a href="<?php echo site_url(); ?>">
+                <a href="<?php echo $home_link; ?>">
                     <?php echo oxy_filter_title( oxy_get_option( 'logo_text' ) ); ?>
                 </a>
             </h1>
@@ -92,7 +104,7 @@ function oxy_create_logo() {
         case 'image':
             $id = oxy_get_option( 'logo_image' ); ?>
             <!-- added class brand to float it left and add some left margins -->
-            <a class="brand" href="<?php echo site_url(); ?>">
+            <a class="brand" href="<?php echo $home_link; ?>">
                 <?php echo wp_get_attachment_image( $id, 'full' ); ?>
             </a>
 <?php
@@ -109,7 +121,7 @@ function oxy_create_logo() {
 function oxy_get_option( $name ) {
     global $oxy_theme_options;
     if( isset( $oxy_theme_options[$name] ) ) {
-        return $oxy_theme_options[$name];
+        return apply_filters ( 'oxy_option_value', $oxy_theme_options[$name],  $name );
     }
     else {
         return false;
@@ -176,49 +188,72 @@ function oxy_load_scripts() {
     );
 
     // if we are on a page and we want to display a map , enqueue the google maps scripts
-    if( is_page() ){
-         $custom_fields = get_post_custom($post->ID);
-         if ( isset($custom_fields[THEME_SHORT.'_header_type']) ){
-            if ( $custom_fields[THEME_SHORT.'_header_type'][0] == 'map' ){
-                wp_enqueue_script( 'google', 'https://maps.googleapis.com/maps/api/js?sensor=false' ,  array( 'jquery' ) );
-                wp_enqueue_script( 'map', JS_URI . 'maps.js', array( 'jquery' , 'google' ) );
+    if( isset($post) ) {
+        if( is_page() || get_post_type( get_the_ID() ) == 'oxy_service' || get_post_type( get_the_ID() ) == 'oxy_timeline'  ){
+             $custom_fields = get_post_custom($post->ID);
+             if ( isset($custom_fields[THEME_SHORT.'_header_type']) ){
+                if ( $custom_fields[THEME_SHORT.'_header_type'][0] == 'map' ){
+                    wp_enqueue_script( 'google', 'https://maps.googleapis.com/maps/api/js?sensor=false' ,  array( 'jquery' ) );
+                    wp_enqueue_script( 'map', JS_URI . 'maps.js', array( 'jquery' , 'google' ) );
 
-                // get the coordinates from the metabox value
-                $coords =  $custom_fields['loc'][0];
-                if ( $coords ){
-                    list( $lat, $lng ,$zoom) = explode( ',', $coords );
+                    // get the coordinates from the metabox value
+                    $coords =  $custom_fields['loc'][0];
+                    if ( $coords ){
+                        list( $lat, $lng ,$zoom) = explode( ',', $coords );
+                    }
+                    wp_localize_script( 'map', 'mapData', array(
+                        'lat'   =>  $lat,
+                        'lng'   =>  $lng,
+                        'zoom'  =>  $zoom
+                        )
+                    );
                 }
-                wp_localize_script( 'map', 'mapData', array(
-                    'lat'   =>  $lat,
-                    'lng'   =>  $lng,
-                    'zoom'  =>  $zoom
-                    )
-                );
             }
-         }
+        }
+    }
+
+    // check for social links on single page
+    if( is_single() ) {
+        if( oxy_get_option( 'fb_show' ) == 'show' ) {
+            wp_enqueue_script( 'facebook', JS_URI . 'facebook.js', array(), '1.0', true );
+        }
+        if( oxy_get_option( 'twitter_show' ) == 'show' ) {
+            wp_enqueue_script( 'twitter', JS_URI . 'twitter.js', array(), '1.0', true );
+        }
+        if( oxy_get_option( 'google_show' ) == 'show' ) {
+            wp_enqueue_script( 'google', JS_URI . 'google.js', array(), '1.0', true );
+        }
+    }
+
+    // add hover dropdown menus
+    if( oxy_get_option( 'menu' ) == 'hover' ) {
+        wp_enqueue_script( 'hover_menus', JS_URI . 'twitter-bootstrap-hover-dropdown.min.js',  array( 'bootstrap' , 'jquery' ), '1.0', true );
     }
 
     // load styles
-    wp_enqueue_style( 'bootstrap', CSS_URI . 'bootstrap.css', array(), false, 'all' );
-    wp_enqueue_style( 'responsive', CSS_URI . 'responsive.css', array( 'bootstrap' ), false, 'all' );
-    wp_enqueue_style( 'font-awesome', CSS_URI . 'font-awesome.css', array( 'bootstrap' ), false, 'all' );
-    wp_enqueue_style( 'font', CSS_URI . 'fonts.css', array( 'bootstrap' ), false, 'all' );
+    if( is_rtl() ) {
+        wp_enqueue_style( 'bootstrap', CSS_URI . 'rtl/bootstrap.css', array(), false, 'all' );
+        wp_enqueue_style( 'responsive', CSS_URI . 'rtl/responsive.css', array( 'bootstrap' ), false, 'all' );
+        wp_enqueue_style( 'rtl', CSS_URI . 'rtl.css', array( 'style' ), false, 'all' );
+    }
+    else {
+        wp_enqueue_style( 'bootstrap', CSS_URI . 'bootstrap.css', array(), false, 'all' );
+        wp_enqueue_style( 'responsive', CSS_URI . 'responsive.css', array( 'bootstrap' ), false, 'all' );
+    }
+    wp_enqueue_style( 'font-awesome-all', CSS_URI . 'font-awesome-all.css', array( 'bootstrap' ), false, 'all' );
+    wp_enqueue_style( 'font', CSS_URI . oxy_get_option('main_site_font'), array( 'bootstrap' ), false, 'all' );
     wp_enqueue_style( 'fancybox', CSS_URI . 'fancybox.css', array( 'bootstrap' ), false, 'all' );
     wp_enqueue_style( 'style', CSS_URI . 'style.css', array( 'bootstrap' ), false, 'all' );
-    wp_enqueue_style( 'myStyle', CSS_URI . 'myStyle.css', array( 'bootstrap' ), false, 'all' );
+
 
 
 }
 add_action( 'wp_enqueue_scripts', 'oxy_load_scripts' , 0);
 
-function printLogoScript(){
-     get_option(THEME_SHORT . '-header-css');
-}
-
 /*************** POST ***************************/
 
 // add post format support
-add_theme_support( 'post-formats', array( 'gallery', 'video', 'link', 'text' ) );
+add_theme_support( 'post-formats', array( 'gallery', 'video', 'link' ) );
 add_theme_support( 'automatic-feed-links' );
 
 // dont use default gallery styles
@@ -226,8 +261,10 @@ add_filter( 'use_default_gallery_style', '__return_false' );
 
 // use option read more link
 add_filter( 'the_content_more_link', 'oxy_read_more_link', 10, 2 );
+
 function oxy_read_more_link( $more_link, $more_link_text ) {
-    $more_link = str_replace( 'class="more-link', 'class="more-link pull-right', $more_link );
+    // remove #more
+    $more_link = preg_replace( '|#more-[0-9]+|', '', $more_link );
     return str_replace( $more_link_text, oxy_get_option('blog_readmore'), $more_link );
 }
 
@@ -273,7 +310,7 @@ add_theme_support( 'post-thumbnails' );
  **/
 function oxy_create_hero_section( $image = null, $title = null ) {
     $image = $image === null ? get_header_image() : $image;
-    $title = $title === null ? oxy_get_option( 'blog_title' ) :oxy_filter_title( $title );
+    $title = $title === null ? oxy_get_option( 'blog_title' ) : $title;
 ?>
 <section class="section section-alt">
     <div class="row-fluid">
@@ -282,7 +319,7 @@ function oxy_create_hero_section( $image = null, $title = null ) {
                 <img alt="some image" src="<?php echo $image; ?>">
                 <figcaption class="flex-caption">
                     <h1 class="super animated fadeinup delayed">
-                        <?php echo $title ?>
+                        <?php echo oxy_filter_title( $title ); ?>
                     </h1>
                 </figcaption>
             </figure>
@@ -326,6 +363,7 @@ function oxy_create_flexslider( $slug_or_ids, $options = array(), $echo = true )
         'showcontrols'     => $oxy_theme_options['showcontrols'],
         'captionanimation' => $oxy_theme_options['captionanimation'],
         'captionsize'      => $oxy_theme_options['captionsize'],
+        'autostart'        => $oxy_theme_options['autostart'],
     ), $options ) );
 
     if( is_array( $slug_or_ids ) ){
@@ -351,21 +389,32 @@ function oxy_create_flexslider( $slug_or_ids, $options = array(), $echo = true )
     $flex_itemwidth = ($itemwidth!=='')?' data-flex-itemwidth='.$itemwidth.'px':'';
     $id = 'flexslider-' . rand(1,100);
     $output = '';
-    $output .= '<div id="' . $id . '" class="flexslider flex-directions-fancy"'.$flex_itemwidth.' data-flex-animation="'.$animation.'" data-flex-controlsalign="center" data-flex-controlsposition="'.$controlsposition.'" data-flex-directions="'.$directionnav.'" data-flex-speed="'.$speed.'" data-flex-directions-position="'.$directionnavpos.'" data-flex-controls="'.$showcontrols.'">';
+    $output .= '<div id="' . $id . '" class="flexslider flex-directions-fancy"'.$flex_itemwidth.' data-flex-animation="'.$animation.'" data-flex-controlsalign="center" data-flex-controlsposition="'.$controlsposition.'" data-flex-directions="'.$directionnav.'" data-flex-speed="'.$speed.'" data-flex-directions-position="'.$directionnavpos.'" data-flex-controls="'.$showcontrols.'" data-flex-slideshow="' . $autostart . '">';
     $output .= '<ul class="slides">';
 
     global $post;
     foreach( $slides as $post ) {
         setup_postdata( $post );
         $output .= '<li><div class="super-hero-unit"><figure>';
+
         if( $post->post_type == 'attachment' ) {
+            $output .= '<a class="fancybox" rel="' . $id . '" href="' . $post->guid . '">';
             $output .= '<img src="' . $post->guid . '"/>';
+            $output .= '</a>';
         }
         else {
+            $link = oxy_get_slide_link( $post );
+            if( null !== $link ) {
+                $output .= '<a href="' . $link . '">';
+            }
             $output .= get_the_post_thumbnail( $post->ID, 'full' );
+            if( null !== $link ) {
+                $output .= '</a>';
+            }
         }
-        if( $captions == 'show')
+        if( $captions == 'show') {
             $output .= '<figcaption class="flex-caption"><p class="'.$captionsize . $xtracapsclss.'">' . oxy_filter_title( get_the_title() ) . '</p></figcaption>';
+        }
         $output .= '</figure></div></li>';
     }
     $output .=  '</ul></div>';
@@ -379,6 +428,34 @@ function oxy_create_flexslider( $slug_or_ids, $options = array(), $echo = true )
     }
     else {
         return $output;
+    }
+}
+
+/**
+ * Gets the url that a slide should link to
+ *
+ * @return url link
+ * @since 1.2
+ **/
+function oxy_get_slide_link( $post ) {
+    $link_type = get_post_meta( $post->ID, THEME_SHORT . '_link_type', true );
+    switch( $link_type ) {
+        case 'page':
+            $id = get_post_meta( $post->ID, THEME_SHORT . '_page_link', true );
+            return get_permalink( $id );
+        break;
+        case 'post':
+            $id = get_post_meta( $post->ID, THEME_SHORT . '_post_link', true );
+            return get_permalink( $id );
+        break;
+        case 'category':
+            $slug = get_post_meta( $post->ID, THEME_SHORT . '_category_link', true );
+            $cat = get_category_by_slug( $slug );
+            return get_category_link( $cat->term_id );
+        break;
+        case 'url':
+            return get_post_meta( $post->ID, THEME_SHORT . '_url_link', true );
+        break;
     }
 }
 
@@ -454,6 +531,18 @@ function oxy_page_header() {
                     ?>
                 </div>
             </section><?php
+        break;
+        case 'revslider':
+            ?>
+            <section class="section section-alt">
+                <div class="row-fluid">
+                    <?php
+                    $slideshow_alias = get_post_meta( $post->ID, THEME_SHORT . '_revslider', true );
+                    putRevSlider( $slideshow_alias );
+                    ?>
+                </div>
+            </section>
+            <?php
         break;
         case 'super_hero':
             $override_image = get_post_meta( $post->ID, THEME_SHORT . '_thickbox', true );
@@ -647,15 +736,15 @@ function oxy_comment_form( $args = array(), $post_id = null ) {
     $req = get_option( 'require_name_email' );
     $aria_req = ( $req ? " aria-required='true'" : '' );
     $fields =  array(
-        'author' => '<div class="control-group"><div class="controls"><input id="author" name="author" type="text" class="input-xlarge" value=" ' . esc_attr( $commenter['comment_author'] ) .  '"/></div></div>',
-        'email'  => '<div class="control-group"><div class="controls"><input id="email" name="email" type="text" class="input-xlarge" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" /></div></div>',
+        'author' => '<div class="control-group"><div class="controls"><input id="author" name="author" placeholder="' . __('your name', THEME_FRONT_TD) . '" type="text" class="input-xlarge" value="' . esc_attr( $commenter['comment_author'] ) .  '"/></div></div>',
+        'email'  => '<div class="control-group"><div class="controls"><input id="email" name="email" placeholder="' . __('your email address', THEME_FRONT_TD) . '" type="text" class="input-xlarge" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" /></div></div>',
         'url'    => '',
     );
 
     $required_text = sprintf( ' ' . __('Required fields are marked %s', THEME_FRONT_TD), '<span class="required"><a>*</a></span>' );
     $defaults = array(
         'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
-        'comment_field'        => '<div class="control-group message"><div class="controls"><textarea id="comment" name="comment" class="input-xxlarge" rows="3"></textarea></div></div>',
+        'comment_field'        => '<div class="control-group message"><div class="controls"><textarea id="comment" name="comment" placeholder="' . __('add your comment here', THEME_FRONT_TD) . '" class="input-xxlarge" rows="3"></textarea></div></div>',
         'must_log_in'          => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', THEME_FRONT_TD ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
         'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', THEME_FRONT_TD ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
         'comment_notes_before' => '',
@@ -799,172 +888,12 @@ function oxy_limit_excerpt($string, $word_limit) {
 function oxy_custom_search_form( $form ) {
 
     $output = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" ><div class="input-append row-fluid">';
-    $output.= '<input type="text" value="' . get_search_query() . '" name="s" id="s" class="span12" placeholder="search"/><i class="icon-search"></i>';
+    $output.= '<input type="text" value="' . get_search_query() . '" name="s" id="s" class="span12" placeholder="' . __('search', THEME_FRONT_TD) . '"/><i class="icon-search"></i>';
     $output.= '<button class="btn hide" type="submit" id="searchsubmit" value="'. esc_attr__('Search') .'" >search</button></div></form>';
 
     return $output;
 }
 add_filter( 'get_search_form', 'oxy_custom_search_form' );
-
-
-
-/* ------------------- OVERRIDE DEFAULT RECENT POSTS WIDGET ------------------*/
-
-Class Custom_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
-
-    function widget($args, $instance) {
-
-        extract( $args );
-
-        $title = apply_filters('widget_title', empty($instance['title']) ? __('Recent Posts', THEME_FRONT_TD) : $instance['title'], $instance, $this->id_base);
-
-        if( empty( $instance['number'] ) || ! $number = absint( $instance['number'] ) )
-            $number = 10;
-
-        $show_date = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
-
-        $r = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_page' => $number, 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true ) ) );
-        if( $r->have_posts() ) :
-
-            echo $before_widget;
-            if( $title ) echo $before_title . $title . $after_title; ?>
-            <ul>
-                <?php while( $r->have_posts() ) : $r->the_post(); ?>
-                <li><div class="row-fluid">
-                        <div class="span3">
-                            <div class="round-box box-mini box-colored">
-                                <a class="box-inner" href="<?php the_permalink(); ?>">
-                                <?php
-                                    if( has_post_thumbnail( get_the_ID() ) ) {
-                                        the_post_thumbnail( 'portfolio-thumb', array( 'class' => 'img-circle' ) );
-                                    }
-                                    else {
-                                        echo '<img class="img-circle" src="'.IMAGES_URI.'box-empty.gif">';
-                                    }
-                                    oxy_post_icon( get_the_ID() );
-                                ?>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="span9">
-                            <h4>
-                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-                            </h4>
-                            <h5 class="light">
-                                <?php if($show_date) the_time( 'd F Y'); ?>
-                            </h5>
-                        </div>
-                    </div>
-                </li>
-                <?php endwhile; ?>
-            </ul>
-
-            <?php
-            echo $after_widget;
-
-        wp_reset_postdata();
-
-        endif;
-    }
-}
-
-class Custom_Archives_Widget extends WP_Widget_Archives{
-
-    function widget($args, $instance) {
-
-        extract( $args );
-        $c = ! empty( $instance['count'] ) ? '1' : '0';
-        $d = ! empty( $instance['dropdown'] ) ? '1' : '0';
-        $title = apply_filters('widget_title', empty($instance['title']) ? __('Archives', THEME_FRONT_TD) : $instance['title'], $instance, $this->id_base);
-
-        echo $before_widget;
-        if ( $title )
-            echo $before_title . $title . $after_title;
-
-        if ( $d ) {
-?>
-        <select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value=""><?php echo esc_attr(__('Select Month', THEME_FRONT_TD)); ?></option> <?php wp_get_archives(apply_filters('widget_archives_dropdown_args', array('type' => 'monthly', 'format' => 'option', 'show_post_count' => $c))); ?> </select>
-<?php
-        } else {
-?>
-        <ul>
-        <?php wp_get_archives(apply_filters('widget_archives_args', array('type' => 'monthly', 'show_post_count' => $c , 'before'=> '<h4>' , 'after' => '</h4>'))); ?>
-        </ul>
-<?php
-        }
-
-        echo $after_widget;
-
-    }
-}
-
-// wordpress default Category widget override. Uses the default code but a little modified.
-class Custom_Categories_widget extends WP_Widget_Categories {
-
-    function widget( $args, $instance ) {
-        extract( $args );
-
-        $title = apply_filters('widget_title', empty( $instance['title'] ) ? __( 'Categories', THEME_FRONT_TD ) : $instance['title'], $instance, $this->id_base);
-        $c = ! empty( $instance['count'] ) ? '1' : '0';
-        $h = ! empty( $instance['hierarchical'] ) ? '1' : '0';
-        $d = ! empty( $instance['dropdown'] ) ? '1' : '0';
-
-        echo $before_widget;
-        if ( $title )
-            echo $before_title . $title . $after_title;
-
-        $cat_args = array('orderby' => 'name', 'show_count' => $c, 'hierarchical' => $h);
-
-        if ( $d ) {
-            $cat_args['show_option_none'] = __('Select Category', THEME_FRONT_TD);
-            wp_dropdown_categories(apply_filters('widget_categories_dropdown_args', $cat_args));
-?>
-
-<script type='text/javascript'>
-/* <![CDATA[ */
-    var dropdown = document.getElementById("cat");
-    function onCatChange() {
-        if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
-            location.href = "<?php echo home_url(); ?>/?cat="+dropdown.options[dropdown.selectedIndex].value;
-        }
-    }
-    dropdown.onchange = onCatChange;
-/* ]]> */
-</script>
-
-<?php
-        } else {
-     $categories = get_categories( $cat_args ); ?>
-        <ul>
-<?php
-        // $cat_args['title_li'] = '';
-        // wp_list_categories(apply_filters('widget_categories_args', $cat_args));
-        // We change default widget output to use h4 tags inside lis
-        foreach ( $categories as $category ) {
-            echo '<li><h4><a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a></h4></li>';
-        }
-?>
-        </ul>
-<?php
-        }
-
-        echo $after_widget;
-    }
-
-}
-
-function oxy_widget_overrides() {
-    unregister_widget('WP_Widget_Recent_Posts');
-    register_widget('Custom_Recent_Posts_Widget');
-    unregister_widget('WP_Widget_Archives');
-    register_widget('Custom_Archives_Widget');
-    unregister_widget('WP_Widget_Categories');
-    register_widget('Custom_Categories_widget');
-
-}
-
-add_action('widgets_init', 'oxy_widget_overrides');
-
 
 // override default tag cloud widget output
 function oxy_custom_wp_tag_cloud_filter($content, $args) {
@@ -1015,10 +944,7 @@ function oxy_post_icon( $post_id , $echo =true){
         case 'video':
             $output = '<i class="icon-play"></i>';
             break;
-        case 'text':
-            $output = '<i class="icon-picture"></i>';
-            break;
-		default:
+        default:
             $output = '';
             break;
     }
@@ -1055,13 +981,22 @@ function oxy_get_content_shortcode( $post, $shortcode_name ) {
     }
 }
 
-function oxy_fix_shortcodes($content){
+function oxy_remove_readmore_span($content) {
+    global $post;
+    if( isset( $post ) ) {
+        $content = str_replace('<span id="more-' . $post->ID . '"></span><!--noteaser-->', '', $content);
+        $content = str_replace('<span id="more-' . $post->ID . '"></span>', '', $content);
+    }
+    return $content;
+}
+add_filter('the_content', 'oxy_remove_readmore_span');
+
+function oxy_fix_shortcodes($content) {
     $array = array (
         '<p>[' => '[',
         ']</p>' => ']',
         ']<br />' => ']'
     );
-
     $content = strtr($content, $array);
     return $content;
 }
@@ -1148,4 +1083,234 @@ function oxy_wp_link_pages($args = '') {
 
 if ( ! isset( $content_width ) )  {
     $content_width = 1250;
+}
+
+
+function oxy_related_posts( $post_id ){
+    $tags = wp_get_post_tags($post_id);
+    $span = oxy_get_option('related_posts_number') == 4? 'span3':'span2';
+    if ($tags) {
+        $tag_ids = array();
+        foreach($tags as $individual_tag)
+            $tag_ids[] = $individual_tag->term_id;
+
+        $args=array(
+            'tag__in'        => $tag_ids,
+            'post__not_in'   => array($post_id),
+            'posts_per_page' => oxy_get_option('related_posts_number'),
+        );
+        global $post;
+        $saved_post = $post;
+        $related = new wp_query( $args );
+        if( $related->have_posts() ) {
+            $output = '<h3 class="text-center">'. __('Related Posts', THEME_FRONT_TD ).'</h3>';
+            $output.= '<ul class="unstyled row-fluid post-navigation">';
+            while( $related->have_posts() ) {
+                $related->the_post();
+                if('link' == get_post_format()){
+                    $post_link = oxy_get_external_link();
+                }
+                else{
+                    $post_link = get_permalink();
+                }
+                $output .= '<li class="'.$span.'">';
+                $output .= '<div class="round-box round-medium box-colored box-small-icon">';
+                $output .= '<a rel="tooltip" href="' . $post_link . '" class="box-inner" data-placement="bottom" data-toggle="tooltip" data-original-title="'.get_the_title().'">';
+                            if( has_post_thumbnail( $post->ID ) ) {
+                                $output .= get_the_post_thumbnail( $post->ID, 'portfolio-thumb', array( 'class' => 'img-circle' ) );
+                                $output .= oxy_post_icon($post->ID ,false);
+                            }
+                            else{
+                                $output .= '<img class="img-circle" src="'.IMAGES_URI.'box-empty.gif">';
+                                $output .= oxy_post_icon($post->ID ,false);
+                            }
+                $output.= '</a></div></li>';
+            }
+            $output .= '</ul>';;
+        }
+        $post = $saved_post;
+        wp_reset_query();
+        echo $output;
+    }
+}
+
+/**
+ * Apple device icons
+ *
+ * @return echos html for apple icons
+ **/
+function oxy_add_apple_icons( $option_name, $sizes = '' ) {
+    $icon = oxy_get_option( $option_name );
+    if( false !== $icon ) {
+        $rel = oxy_get_option( $option_name . '_pre', 'apple-touch-icon' );
+        echo '<link rel="' . $rel . '" href="' . $icon . '" ' . $sizes  . ' />';
+    }
+}
+
+function oxy_author_bio( $author_id ){
+    $output = '<div class="row-fluid post-navigation">';
+    $output .= '<div class="span2 post-info"><div class="round-box box-small">';
+    $output .= get_avatar( $author_id, 300 ) . '</div>';
+    $output .= '</div>';
+    $output .= '<div class="span10">';
+    $output .= '<h3 class="small-screen-center">'. __( 'About ', THEME_FRONT_TD ) . get_the_author_meta('display_name') . '</h3>';
+    $output .= get_the_author_meta('description');
+    $output .= '</div></div>';
+
+    echo $output;
+}
+
+function oxy_get_external_link(){
+    global $post;
+    $link_shortcode = oxy_get_content_shortcode( $post, 'link' );
+    if( $link_shortcode !== null ) {
+        if( isset( $link_shortcode[5] ) ) {
+            $link_shortcode = $link_shortcode[5];
+            if( isset( $link_shortcode[0] ) ) {
+                return $link_shortcode[0] ;
+            }
+            else{
+                return get_permalink();
+            }
+        }
+    }
+}
+
+function oxy_get_icon_color( $icon ) {
+    switch( $icon ) {
+        case 'icon-facebook':
+        case 'icon-facebook-sign':
+            return '#3b5998';
+        break;
+        case 'icon-twitter':
+        case 'icon-twitter-sign':
+            return '#00a0d1';
+        break;
+        case 'icon-linkedin':
+        case 'icon-linkedin-sign':
+            return '#5FB0D5';
+        break;
+        case 'icon-github':
+        case 'icon-github-sign':
+        case 'icon-github-alt':
+        case 'icon-git-fork':
+        break;
+        case 'icon-pinterest':
+        case 'icon-pinterest-sign':
+            return '#910101';
+        break;
+        case 'icon-google-plus':
+        case 'icon-google-plus-sign':
+            return '#E45135';
+        break;
+
+        case 'icon-skype':
+            return '#00aff0';
+        break;
+
+        case 'icon-youtube-sign':
+        case 'icon-youtube':
+            return '#c4302b';
+        break;
+
+        case 'icon-dropbox':
+            return '#3d9ae8';
+        break;
+        case 'icon-drupal':
+            return '#0c76ab';
+        break;
+
+        break;
+        case 'icon-instagram':
+            return '#634d40';
+        break;
+
+        case 'icon-share-this-sign':
+        break;
+        case 'icon-share-this':
+        break;
+
+        case 'icon-foursquare':
+        case 'icon-foursquare-sign':
+            return '#25a0ca';
+        break;
+
+        case 'icon-hacker-news':
+            return '#ff6600';
+        break;
+        case 'icon-spotify':
+            return '#81b71a';
+        break;
+        case 'icon-soundcloud':
+            return '#ff7700';
+        break;
+        case 'icon-paypal':
+            return '#3b7bbf';
+        break;
+
+        case 'icon-reddit':
+        break;
+
+        case 'icon-blogger':
+        case 'icon-blogger-sign':
+            return '#fc4f08';
+        break;
+
+        case 'icon-dribbble-sign':
+        case 'icon-dribbble':
+            return '#ea4c89';
+        break;
+        case 'icon-evernote-sign':
+        case 'icon-evernote':
+            return '#5ba525';
+        break;
+
+        case 'icon-flickr-sign':
+            return '#ff0084';
+        break;
+        case 'icon-flickr':
+            return '#0063dc';
+        break;
+
+        case 'icon-forrst-sign':
+        case 'icon-forrst':
+            return '#5b9a68';
+        break;
+
+        case 'icon-delicious':
+            case '#205cc0';
+        break;
+        case 'icon-lastfm':
+        case 'icon-lastfm-sign':
+            return '#c3000d';
+        break;
+
+        case 'icon-picasa-sign':
+        break;
+        case 'icon-picasa':
+        break;
+
+        case 'icon-stack-overflow':
+            return '#ef8236';
+        break;
+        case 'icon-tumblr-sign':
+        case 'icon-tumblr':
+            return '#34526f';
+        break;
+        case 'icon-vimeo':
+        case 'icon-vimeo-sign':
+            return '#86c9ef';
+        break;
+
+        case 'icon-wordpress-sign':
+            return '#464646';
+        break;
+        case 'icon-wordpress':
+            return '#21759b';
+        break;
+        case 'icon-yelp-sign':
+        case 'icon-yelp':
+            return '#c41200';
+        break;
+    }
 }

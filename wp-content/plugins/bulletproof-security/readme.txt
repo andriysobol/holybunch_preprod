@@ -4,7 +4,7 @@ Donate link: http://www.ait-pro.com/aitpro-blog/331/bulletproof-security-plugin-
 Tags: bulletproof, security, secure, htaccess, chmod, maintenance, plugin, private, privacy, protection, permissions, 503, base64, injection, code, encode, script, attack, hack, hackers, block, blocked, prevent, prevention, RFI, XSS, CRLF, CSRF, SQL Injection, vulnerability, website security, WordPress security, security log, logging, HTTP log, error log, login security, login, log, users, login alerts, lock
 Requires at least: 3.0 
 Tested up to: 3.5.1 
-Stable tag: .48.5 
+Stable tag: .48.8 
 
 WordPress Website Security Protection. Website security protection against: XSS, RFI, CRLF, CSRF, Base64, Code Injection and SQL Injection hacking... 
 
@@ -182,40 +182,42 @@ BulletProof Mode again to protect your website again.
 No, BulletProof Security will not cause a website to run slower. BulletProof Security is website performance optimized 
 and uses very little/low website resources and very little Server memory. If you would like to check your plugins to check 
 how much website resource and Server memory each of your plugins is using install the P3 (Plugin Performance Profiler) plugin.
+Both W3 Total Cache and WP Super Cache use .htaccess code to speed up your website.
 
-= When I upgraded/updated BulletProof Security I saw an Alert. What does the Alert mean? =
+= BPS Alert! Your site does not appear to be protected by BulletProof Security. What does the Alert mean? =
 
-When upgrading/updating the BulletProof Security plugin you will see this WP Dashboard Alert. <strong>BPS Alert! Your site does not 
-appear to be protected by BulletProof Security.</strong> As of BulletProof Security .47.2 WP Dashboard Alerts have been added to check 
-your Root and wp-admin .htaccess files to ensure that your website is protected. During the upgrade your .htaccess files will 
-be automatically updated and any new .htaccess security filters will be automatically added to your .htaccess files. In order 
-for BPS to automatically update your htaccess files you will need to stay current with BPS plugin updates and install the latest BPS 
-plugin updates when they are available. Any custom htaccess code or modifications that you have made to your htaccess files will not 
-be altered, modified or changed. Activating BulletProof Modes again after upgrading BPS is no longer necessary.
+When upgrading/updating the BulletProof Security plugin you may see this WP Dashboard Alert. <strong>BPS Alert! Your site does not 
+appear to be protected by BulletProof Security.</strong> There are 2 very common issues/problems that can cause this. The cPanel 
+HotLink Protection Tool issue or the WordPress flush_rewrite_rules function issue. Click this link <a href="http://wordpress.org/support/topic/bps-setup-steps-removal-steps-requirements-and-compatibility/" title="BulletProof Security Forum">Common BPS Issues</a> 
+Note: Any custom htaccess code or modifications that you have made to your htaccess files will not be altered, modified or changed 
+during the auto-update. Activating BulletProof Modes again after upgrading BPS is no longer necessary.
 
-= Where can I find BulletProof Security troubleshooting steps & support? =
+= Where can I find BulletProof Security additional troubleshooting steps & support? =
 
 Please see the <a href="http://forum.ait-pro.com/forums/forum/bulletproof-security-free/" title="BulletProof Security Forum" rel="nofollow" target="_blank">BulletProof Security Forum.</a>
 
-= BulletProof Security Server Compatibilty - Linux Hosting =
+= BulletProof Security Server Compatibilty =
 
 * Compatible with Apache CGI configured Servers
 * Compatible with Apache DSO configured Servers (May require file/folder permission and/or Ownership changes)
 * Compatible with Nginx frontend Server with Apache backend Server
 * Compatible with LiteSpeed Servers
-* NOT Compatible with Windows IIS Servers - Windows Hosting
+* Compatible with Windows IIS Servers - Windows Hosting - See IMPORTANT NOTES below.
+* If your IIS Server has ISAPI_Rewrite installed then you CAN use .htaccess files / BulletProof Modes.
+* <strong>IMPORTANT NOTES:</strong> If you have an IIS Server you may or may not be able to use .htaccess files and can only use Login Security & Monitoring. 
+If your IIS Server is using the URL Rewrite Module then you can probably use .htaccess files / BulletProof Modes. If you activate 
+BulletProof Modes and your website crashes then FTP to your website and delete the root .htaccess file and the wp-admin .htaccess file. You 
+will not be able to use .htaccess files on your Server/website and can only use Login Security and the other features in BPS.
+ 
+= Additional BulletProof Security Server Compatibilty Info =
 
 BulletProof Security uses .htaccess website security files, which are specific to Apache Linux Servers. BPS is compatible with Apache Linux Servers, 
 LiteSpeed Servers, Nginx Servers (if the Nginx Server is the frontend Server and Apache Linux Server is the backend Server). If you do not know what type of Server 
-you have you can check your Server Type and Operating System on the BPS System Info page.
+you have you can check your Server Type and Operating System on the BPS System Info page. You can install BulletProof Security if you have a Windows IIS
+hosted website to use the additional features in BPS, but may or may not be able to Activate BulletProof Modes depending on what your IIS Server does and 
+does not have installed / configured. Please see this WordPress Codex <a href="http://codex.wordpress.org/Using_Permalinks#Permalinks_without_mod_rewrite" title="Permalinks without mod_rewrite" target="_blank">Permalinks without mod_rewrite</a> for additional information regarding IIS Servers and also the Helicon Tech website <a href="http://www.isapirewrite.com/" title="Helicon Tech ISAPI_Rewrite" target="_blank"> for additional information regarding ISAPI_Rewrite.
 
-= Will BulletProof Security Work at all on Windows IIS Servers/Windows Hosting? =
-
-Yes and No. .htaccess files are only used on Linux based hosting. You can install BulletProof Security if you have a Windows IIS
-hosted website to use the additional features in BPS, but you cannot Activate BulletProof Modes and use .htaccess files on Windows Hosting.
-Please see this WordPress Codex <a href="http://codex.wordpress.org/Using_Permalinks#Permalinks_without_mod_rewrite" title="Permalinks without mod_rewrite" target="_blank">Permalinks without mod_rewrite</a> for more information.
-
-= Does BulletProof Security Work on Nginx Servers? =
+= Does BulletProof Security Work on ALL Nginx Servers / Server Configurations? =
 
 If you are using both Apache and Nginx together and Nginx is the frontend webserver and Apache is the backend Server
 used to process PHP then BulletProof Security will work on this type of combined Server Configuration. If you are only
@@ -228,7 +230,8 @@ instead you either need to build PHP with FPM (ie: php-fpm/fastcgi), or you need
 
 Occasionally issues or conflicts do occur with other plugins, but they are always quickly resolved. BPS is compatible with all
 other Plugins and Themes. An .htaccess bypass / skip rule is all that is required to allow a plugin or theme to do something that is blocked by BPS.
-Please check the BulletProof Security <a href="http://www.ait-pro.com/aitpro-blog/2252/bulletproof-security-plugin-support/checking-plugin-compatibility-with-bps-plugin-testing-to-do-list/" title="BPS Plugin Testing and Fixes" rel="nofollow" target="_blank">Plugin Compatibility Testing and Fixes</a> page for the latest plugin bypass / skip rules.
+Please check the BulletProof Security <a href="http://www.ait-pro.com/aitpro-blog/2252/bulletproof-security-plugin-support/checking-plugin-compatibility-with-bps-plugin-testing-to-do-list/" title="BPS Plugin Testing and Fixes" rel="nofollow" target="_blank">Plugin Compatibility Testing and Fixes</a> page for the latest plugin bypass / skip rules. All new plugin skip / bypass 
+rules are now being posted in the <a href="http://forum.ait-pro.com/" title="BPS Forum" rel="nofollow" target="_blank">BulletProof Security Forum</a>.
 
 = I am seeing Security Log entries in my BulletProof Security Log. What do they mean? =
 
@@ -261,7 +264,7 @@ The Security Log logs 400 and 403 HTTP Response Status Codes by default. You can
 * Uploads Folder Anti-Exploit Guard
 * .htaccess Website Security
 * Custom php.ini Website Security
-* Login Security & Monitoring w/Dashboard Alerting and Status Display
+* Login Security & Monitoring w/Dashboard Alerting / Status Display & additional options/features
 * F-Lock - Read Only File Locking
 * Security Logging
 * HTTP Error Logging
@@ -334,6 +337,24 @@ Yes, BulletProof Security works with Git, but does require some additional set u
 5. BulletProof Security - Login Security and Monitoring
 
 == Changelog ==
+
+= .48.8 =
+* Code / Help Text Corrections
+* Corrected Help Text typos in Custom Code. Code Correction for the Network/Multisite menus / pluggable.php issue
+* Enjoy!
+
+= .48.7 =
+* Auto-update now displays ONLY - The BPS Automatic htaccess File Update Completed Successfully!
+* The old Dashboard Alert has caused a lot of confusion so it is now history
+* Enjoy!
+
+= .48.6 =
+* Custom Code Additions: Custom Code now includes additional Text Areas/Text Boxes for every possible section of code in the Root and wp-admin .htaccess files
+* A jQuery Accordian has been added to Custom Code to ensure that the correct Custom Code Text Areas/Text Boxes are being used, better functionality and visual enhancement.
+* Windows IIS check/dismiss notice. Displays a dismissable alert for folks who have Windows IIS Servers that allow .htaccess rewriting or have ISAPI_Rewrite installed which allows/converts .htaccess rewriting.
+* Reset / Recheck Dismiss Notices added to Security Status page
+* Lots of other improvements
+* Enjoy!
 
 = .48.5 =
 * Bug fix: Conditional wrap added to /includes/login-security.php
@@ -674,6 +695,24 @@ Create new Master .htaccess files with AutoMagic and activate all BulletProof Mo
 
 == Upgrade Notice ==
 
+= .48.8 =
+* Code / Help Text Corrections
+* Corrected Help Text typos in Custom Code. Code Correction for the Network/Multisite menus / pluggable.php issue
+* Enjoy!
+
+= .48.7 =
+* Auto-update now displays ONLY - The BPS Automatic htaccess File Update Completed Successfully!
+* The old Dashboard Alert has caused a lot of confusion so it is now history
+* Enjoy!
+
+= .48.6 =
+* Custom Code Additions: Custom Code now includes additional Text Areas/Text Boxes for every possible section of code in the Root and wp-admin .htaccess files
+* A jQuery Accordian has been added to Custom Code to ensure that the correct Custom Code Text Areas/Text Boxes are being used, better functionality and visual enhancement.
+* Windows IIS check/dismiss notice. Displays a dismissable alert for folks who have Windows IIS Servers that allow .htaccess rewriting or have ISAPI_Rewrite installed which allows/converts .htaccess rewriting.
+* Reset / Recheck Dismiss Notices added to Security Status page
+* Lots of other improvements
+* Enjoy!
+
 = .48.5 =
 * Bug fix: Conditional wrap added to /includes/login-security.php
 * Enjoy!
@@ -760,20 +799,22 @@ the particular section or page of the BulletProof Security plugin that you are i
 Help and FAQ page contains links to Help pages that will load in a new browser tab so
 that you are not redirected away from your WordPress Dashboard. 
 
-What's New in .48.5
+What's New in .48.8
 
-= .48.5 =
-* Bug fix: Conditional wrap added to /includes/login-security.php
+= .48.8 =
+* Code / Help Text Corrections
+* Corrected Help Text typos in Custom Code. Code Correction for the Network/Multisite menus / pluggable.php issue
 * Enjoy!
 
-= .48.4 =
-* Login Security & Monitoring
-* Log All User Account Logins or Log Only User Account Lockouts
-* Logged DB Fields: User ID, Username, Display Name, Email, Role, Login Time, Lockout Expires, IP Address, Hostname, Request URI
-* Email Alerting Options: User Account is locked out, An Administrator Logs in, An Administrator Logs in and when a User Account is locked out, Any User logs in when a User Account is locked out, Do Not Send Email Alerts
-* Login Security Additional Options: Max Login Attempts, Automatic Lockout Time, Manual Lockout Time, Max DB Rows To Show, Turn On/Turn Off
-* Dynamic DB Form: Lock, Unlock, Delete
-* Enhanced Search: Allows you to search all of the Login Security database rows/Fields
-* Stand-alone Unlock Form bpsunlock.php: Unlock User Accounts without having to be logged into the WP Dashboard
-* Please click the Login Security Blue Read Me help button for full descriptions of all features and options.
+= .48.7 =
+* Auto-update now displays ONLY - The BPS Automatic htaccess File Update Completed Successfully!
+* The old Dashboard Alert has caused a lot of confusion so it is now history
+* Enjoy!
+
+= .48.6 =
+* Custom Code Additions: Custom Code now includes additional Text Areas/Text Boxes for every possible section of code in the Root and wp-admin .htaccess files
+* A jQuery Accordian has been added to Custom Code to ensure that the correct Custom Code Text Areas/Text Boxes are being used, better functionality and visual enhancement.
+* Windows IIS check/dismiss notice. Displays a dismissable alert for folks who have Windows IIS Servers that allow .htaccess rewriting or have ISAPI_Rewrite installed which allows/converts .htaccess rewriting.
+* Reset / Recheck Dismiss Notices added to Security Status page
+* Lots of other improvements
 * Enjoy!

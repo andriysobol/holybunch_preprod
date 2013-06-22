@@ -34,7 +34,7 @@ $meta_boxes[] = array(
     'title' => 'Custom header image',
 
     // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
-    'pages' => array( 'page' ),
+    'pages' => array( 'page', 'oxy_service', 'oxy_portfolio_image', 'oxy_timeline' ),
 
     // Where the meta box appear: normal (default), advanced, side. Optional.
     'context' => 'normal',
@@ -55,7 +55,8 @@ $meta_boxes[] = array(
             'type' => 'select',
             'options' => array(
                 'none'       => __('Nothing', THEME_ADMIN_TD),
-                'slideshow'  => __('Slideshow', THEME_ADMIN_TD),
+                'slideshow'  => __('FlexSlider', THEME_ADMIN_TD),
+                'revslider'  => __('Revolution Slider', THEME_ADMIN_TD),
                 'super_hero' => __('Super Hero', THEME_ADMIN_TD),
                 'map'        => __('Map',THEME_ADMIN_TD)
             )
@@ -79,11 +80,23 @@ $meta_boxes[] = array(
             ),
         ),
         array(
-                'id'            => 'address',
-                'name'          => 'Address',
-                'type'          => 'text',
-                'std'           => 'Hanoi, Vietnam',
+            'name'    => __('Select Revolution slideshow', THEME_ADMIN_TD),
+            'id'      => "{$prefix}revslider",
+            'type'    => 'taxonomy',
+            'settax'  =>  false,
+            'options' => array(
+                // Taxonomy name
+                'taxonomy' => 'revslider',
+                // How to show taxonomy: 'checkbox_list' (default) or 'checkbox_tree', 'select_tree' or 'select'. Optional
+                'type' => 'checkbox_advanced',
             ),
+        ),
+        array(
+            'id'            => 'address',
+            'name'          => 'Address',
+            'type'          => 'text',
+            'std'           => 'Hanoi, Vietnam',
+        ),
         array(
             'id'            => 'loc',
             'name'          => 'Location',
@@ -126,7 +139,7 @@ $meta_boxes[] = array(
                 // How to show taxonomy: 'checkbox_list' (default) or 'checkbox_tree', 'select_tree' or 'select'. Optional
                 'type' => 'checkbox_advanced',
             ),
-            'blank' => __('all categories',THEME_ADMIN_TD),
+            'blank' => __('All categories',THEME_ADMIN_TD),
         ),
 
     ),
@@ -167,6 +180,108 @@ $meta_boxes[] = array(
     ),
 );
 
+$meta_boxes[] = array(
+    // Meta box title - Will appear at the drag and drop handle bar. Required.
+    'title' => 'Portfolio Template',
+
+    // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
+    'pages' => array( 'oxy_portfolio_image' ),
+
+    // Where the meta box appear: normal (default), advanced, side. Optional.
+    'context' => 'normal',
+
+    // Order of meta box: high (default), low. Optional.
+    'priority' => 'high',
+
+    // List of meta fields
+    'fields' => array(
+        array(
+            'name' => __('Portfolio Item Template', THEME_ADMIN_TD),
+            'id'   => "{$prefix}template",
+            'type' => 'select',
+            'options' => array(
+                'partials/content-portfolio-single.php' => __('Default Template', THEME_ADMIN_TD),
+                'template-full-nopad.php'               => __('Full Width - No Padding', THEME_ADMIN_TD),
+                'template-full-padded.php'              => __('Full Width - Padded', THEME_ADMIN_TD),
+                'page.php'                              => __('Right Sidebar', THEME_ADMIN_TD),
+                'template-leftsidebar.php'              => __('Left Sidebar', THEME_ADMIN_TD),
+            ),
+            'desc' => __('Select a portfolio template to use for this portfolio item', THEME_ADMIN_TD),
+        )
+    )
+);
+
+/*************************META BOXES FOR PORTFOLIO*************************/
+
+$meta_boxes[] = array(
+    // Meta box id, UNIQUE per meta box. Optional since 4.1.5
+    // 'id' => 'portfolio_meta',
+
+    // Meta box title - Will appear at the drag and drop handle bar. Required.
+    'title' => 'Slide Link',
+
+    // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
+    'pages' => array( 'oxy_slideshow_image' ),
+
+    // Where the meta box appear: normal (default), advanced, side. Optional.
+    'context' => 'normal',
+
+    // Order of meta box: high (default), low. Optional.
+    'priority' => 'high',
+
+    // List of meta fields
+    'fields' => array(
+        array(
+            'name' => __('Link Type', THEME_ADMIN_TD),
+            'id'   => "{$prefix}link_type",
+            'type' => 'select',
+            'options' => array(
+                'none'     => __('No Link', THEME_ADMIN_TD),
+                'page'     => __('Page', THEME_ADMIN_TD),
+                'post'     => __('Post', THEME_ADMIN_TD),
+                'category' => __('Category',THEME_ADMIN_TD),
+                'url'      => __('URL',THEME_ADMIN_TD)
+            ),
+            'std' => 'none',
+            'desc' => __('Make this slide linn to something', THEME_ADMIN_TD),
+        ),
+        array(
+            'name'    => 'Page Link',
+            'id'      => "{$prefix}page_link",
+            'type'    => 'taxonomy',
+            'settax'  =>  false,
+            'options' => array(
+                'taxonomy' => 'pages',
+                'type' => 'select_advanced',
+            ),
+        ),
+        array(
+            'name'    => 'Post Link',
+            'id'      => "{$prefix}post_link",
+            'type'    => 'taxonomy',
+            'settax'  =>  false,
+            'options' => array(
+                'taxonomy' => 'posts',
+                'type' => 'select_advanced',
+            ),
+        ),
+        array(
+            'name'    => 'Category Link',
+            'id'      => "{$prefix}category_link",
+            'type'    => 'taxonomy',
+            'settax'  =>  false,
+            'options' => array(
+                'taxonomy' => 'category',
+                'type' => 'select_advanced',
+            ),
+        ),
+        array(
+            'name'    => 'URL Link',
+            'id'      => "{$prefix}url_link",
+            'type'    => 'text',
+        ),
+    ),
+);
 
 $meta_boxes[] = array(
     // Meta box id, UNIQUE per meta box. Optional since 4.1.5
@@ -201,7 +316,85 @@ $meta_boxes[] = array(
 
     ),
 );
-           
+
+
+
+$meta_boxes[] = array(
+    // Meta box id, UNIQUE per meta box. Optional since 4.1.5
+    'id' => 'Position',
+
+    // Meta box title - Will appear at the drag and drop handle bar. Required.
+    'title' => 'Position',
+
+    // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
+    'pages' => array( 'oxy_staff' ),
+
+    // Where the meta box appear: normal (default), advanced, side. Optional.
+    'context' => 'normal',
+
+    // Order of meta box: high (default), low. Optional.
+    'priority' => 'high',
+
+    // List of meta fields
+    'fields' => array(
+       // TAXONOMY
+       array(
+            // Field name - Will be used as label
+            'name'  => 'Position',
+            // Field ID, i.e. the meta key
+            'id'    => "{$prefix}position",
+
+            'type'  => 'text',
+            // Default value (optional)
+            'std'   => '',
+        ),
+
+    ),
+);
+
+
+$meta_boxes[] = array(
+    // Meta box id, UNIQUE per meta box. Optional since 4.1.5
+    'id' => 'Social',
+
+    // Meta box title - Will appear at the drag and drop handle bar. Required.
+    'title' => 'Social',
+
+    // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
+    'pages' => array( 'oxy_staff'  ),
+
+    // Where the meta box appear: normal (default), advanced, side. Optional.
+    'context' => 'normal',
+
+    // Order of meta box: high (default), low. Optional.
+    'priority' => 'high',
+
+    // List of meta fields
+    'fields' => array(),
+);
+
+foreach ( $meta_boxes as &$meta_box ) {
+    if( isset($meta_box['id']) && $meta_box['id'] == 'Social'){
+        for( $i = 0 ; $i < 5 ; $i++ ) {
+            $meta_box['fields'][] =
+                array(
+                    'name' => __('Social Icon', THEME_ADMIN_TD),
+                    'id'   => "{$prefix}icon".$i,
+                    'type' => 'icon',
+                );
+            $meta_box['fields'][] =
+                array(
+                    'name'  => __('Social Link', THEME_ADMIN_TD),
+                    'id'    => "{$prefix}link".$i,
+                    'type'  => 'text',
+                    'std'   => '',
+                );
+        }
+    }
+}
+
+/**************** Services *********************************/
+
 $meta_boxes[] = array(
     // Meta box id, UNIQUE per meta box. Optional since 4.1.5
     'id' => 'services_meta',
@@ -229,6 +422,37 @@ $meta_boxes[] = array(
     ),
 );
 
+$meta_boxes[] = array(
+    // Meta box title - Will appear at the drag and drop handle bar. Required.
+    'title' => 'Service Template',
+
+    // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
+    'pages' => array( 'oxy_service' ),
+
+    // Where the meta box appear: normal (default), advanced, side. Optional.
+    'context' => 'normal',
+
+    // Order of meta box: high (default), low. Optional.
+    'priority' => 'high',
+
+    // List of meta fields
+    'fields' => array(
+        array(
+            'name' => __('Service Item Template', THEME_ADMIN_TD),
+            'id'   => "{$prefix}template",
+            'type' => 'select',
+            'options' => array(
+                'template-full-padded.php'              => __('Full Width - Padded (default)', THEME_ADMIN_TD),
+                'template-full-nopad.php'               => __('Full Width - No Padding', THEME_ADMIN_TD),
+                'page.php'                              => __('Right Sidebar', THEME_ADMIN_TD),
+                'template-leftsidebar.php'              => __('Left Sidebar', THEME_ADMIN_TD),
+                'partials/content-portfolio-single.php' => __('Portfolio Template', THEME_ADMIN_TD),
+            ),
+            'desc' => __('Select a portfolio template to use for this portfolio item', THEME_ADMIN_TD),
+        )
+    )
+);
+
 /********************* META BOX REGISTERING ***********************/
 
 /**
@@ -240,7 +464,7 @@ function oxy_register_meta_boxes()
 {
     global $pagenow;
     // only load this when we need it - causing bugs in list pages
-    if( $pagenow == 'post.php' || $pagenow == 'post-new.php' ) {
+    if( $pagenow == 'post.php' || $pagenow == 'post-new.php' || defined('DOING_AJAX') ) {
 
         // Make sure there's no errors when the plugin is deactivated or during upgrade
         if ( !class_exists( 'RW_Meta_Box' ) ) {

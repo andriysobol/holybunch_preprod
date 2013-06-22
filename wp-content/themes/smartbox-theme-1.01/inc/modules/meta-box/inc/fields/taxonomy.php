@@ -93,7 +93,38 @@ if ( ! class_exists( 'RWMB_Taxonomy_Field' ) )
 		{
 
 			$options = $field['options'];
-			$terms   = get_terms( $options['taxonomy'], $options['args'] );
+            switch( $options['taxonomy'] ) {
+                case 'pages':
+                    $terms = get_pages();
+                    foreach( $terms as $term ) {
+                        $term->slug = $term->ID;
+                        $term->name = $term->post_title;
+                    }
+                break;
+                case 'revslider':
+                    $slider = new RevSlider();
+                    $sliders = $slider->getArrSliders();
+                    $terms = array();
+                    foreach( $sliders as $slider ) {
+                        $term = new stdClass();
+                        $term->slug = $slider->getAlias();
+                        $term->name = $slider->getTitle();
+                        $terms[] =$term;
+                    }
+                break;
+
+                case 'posts':
+                    $terms = get_posts();
+                    foreach( $terms as $term ) {
+                        $term->slug = $term->ID;
+                        $term->name = $term->post_title;
+                    }
+                break;
+                default:
+                case 'category':
+                    $terms = get_terms( $options['taxonomy'], $options['args'] );
+                break;
+            }
 
 			$html = '';
 			// Checkbox LIST
@@ -148,7 +179,7 @@ if ( ! class_exists( 'RWMB_Taxonomy_Field' ) )
 				$html .= '</select>';
 			}
 			else
-			{	
+			{
 
 				$multiple = $field['multiple'] ? " multiple='multiple' style='height: auto;'" : '';
 				$html    .= "<select name='{$field['field_name']}'{$multiple}>";

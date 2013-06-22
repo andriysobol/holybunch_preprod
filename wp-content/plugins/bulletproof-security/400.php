@@ -54,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  	@fwrite($fh, "\r\n>>>>>>>>>>> 400 POST Request Error Logged - $timestamp <<<<<<<<<<<\r\n");
 	@fwrite($fh, 'REMOTE_ADDR: '.$_SERVER['REMOTE_ADDR']."\r\n");
 	@fwrite($fh, 'Host Name: '."$hostname\r\n");
+	@fwrite($fh, 'SERVER_PROTOCOL: '.$_SERVER['SERVER_PROTOCOL']."\r\n");
 	@fwrite($fh, 'HTTP_CLIENT_IP: '.$_SERVER['HTTP_CLIENT_IP']."\r\n");
 	@fwrite($fh, 'HTTP_FORWARDED: '.$_SERVER['HTTP_FORWARDED']."\r\n");
 	@fwrite($fh, 'HTTP_X_FORWARDED_FOR: '.$_SERVER['HTTP_X_FORWARDED_FOR']."\r\n");
@@ -71,6 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  	@fwrite($fh, "\r\n>>>>>>>>>>> 400 GET or Other Request Error Logged - $timestamp <<<<<<<<<<<\r\n");
 	@fwrite($fh, 'REMOTE_ADDR: '.$_SERVER['REMOTE_ADDR']."\r\n");
 	@fwrite($fh, 'Host Name: '."$hostname\r\n");
+	@fwrite($fh, 'SERVER_PROTOCOL: '.$_SERVER['SERVER_PROTOCOL']."\r\n");
 	@fwrite($fh, 'HTTP_CLIENT_IP: '.$_SERVER['HTTP_CLIENT_IP']."\r\n");
 	@fwrite($fh, 'HTTP_FORWARDED: '.$_SERVER['HTTP_FORWARDED']."\r\n");
 	@fwrite($fh, 'HTTP_X_FORWARDED_FOR: '.$_SERVER['HTTP_X_FORWARDED_FOR']."\r\n");

@@ -8,62 +8,45 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 
-return array(
+$options = array(
     'sections'   => array(
-        'twitter-section' => array(
-            'title'   => __('Test Option', THEME_ADMIN_TD),
-            'header'  => __('My options', THEME_ADMIN_TD),
-            'fields' => array(
-                 array(
-                    'name' => __('Facebook', THEME_ADMIN_TD),
-                    'id' => 'facebook',
-                    'type' => 'text',
-                    'default' => '',
-                    'attr'      =>  array(
-                        'class'    => 'widefat',
-                    ),
-                ),
-                array(
-                    'name' => __('Twitter', THEME_ADMIN_TD),
-                    'id' => 'twitter',
-                    'type' => 'text',
-                    'default' => '',
-                    'attr'      =>  array(
-                        'class'    => 'widefat',
-                    ),
-                ),
-                array(
-                    'name' => __('Pinterest', THEME_ADMIN_TD),
-                    'id' => 'pinterest',
-                    'type' => 'text',
-                    'default' => '',
-                    'attr'      =>  array(
-                        'class'    => 'widefat',
-                    ),
-                ),
-                array(
-                    'name' => __('Google Plus', THEME_ADMIN_TD),
-                    'id' => 'googleplus',
-                    'type' => 'text',
-                    'default' => '',
-                    'attr'      =>  array(
-                        'class'    => 'widefat',
-                    ),
-                ),
-                array(
-                    'name' => __('LinkedIn', THEME_ADMIN_TD),
-                    'id' => 'linkedin',
-                    'type' => 'text',
-                    'default' => '',
-                    'attr'      =>  array(
-                        'class'    => 'widefat',
-                    ),
-                ),
-            )//fields
-        )//section
-    )//sections
-);//array
+        'social-section' => array(
+            'fields' => array()
+        )
+    )
+);
 
+$options['sections']['social-section']['fields'][] =  array(
+        'name' => __('Open links in new window', THEME_ADMIN_TD),
+        'id' => 'social_window',
+        'type' => 'checkbox',
+        'default' => 'on'
+    );
+
+for( $i = 0 ; $i < 10 ; $i++ ) {
+    $options['sections']['social-section']['fields'][] = array(
+        'name'    => sprintf( __('Social %s Icon', THEME_ADMIN_TD), $i+1 ),
+        'id'      => 'social' . $i . '_icon',
+        'type'    => 'select',
+        'options' => 'social_icons',
+        'default' => '',
+        'blank'   => __('Choose a social network icon', THEME_ADMIN_TD),
+        'attr'    =>  array(
+            'class'    => 'widefat',
+        ),
+    );
+    $options['sections']['social-section']['fields'][] = array(
+        'name'    => sprintf( __('Social %s URL ', THEME_ADMIN_TD), $i+1 ),
+        'id'      => 'social' . $i . '_url',
+        'type'    => 'text',
+        'default' => '',
+        'attr'    =>  array(
+            'class'    => 'widefat',
+        ),
+    );
+}
+
+return $options;

@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 
 return array(
@@ -41,15 +41,15 @@ return array(
             'oxy_portfolio_categories'
         )
     ),
-    // content quick upload
-    'oxy_content' => array(
-        'menu_title' => __('Quick Content', THEME_ADMIN_TD),
-        'page_title' => __('Quick Content Creator', THEME_ADMIN_TD),
-        'item_singular'  => __('Content Item', THEME_ADMIN_TD),
-        'item_plural'  => __('Content', THEME_ADMIN_TD),
+    // staff quick upload
+    'oxy_staff' => array(
+        'menu_title' => __('Quick Staff', THEME_ADMIN_TD),
+        'page_title' => __('Quick Staff Creator', THEME_ADMIN_TD),
+        'item_singular'  => __('Staff Member', THEME_ADMIN_TD),
+        'item_plural'  => __('Staff', THEME_ADMIN_TD),
         'show_editor' => true,
         'taxonomies' => array(
-            'oxy_content_skills'
+            'oxy_staff_skills'
         )
     )
 );

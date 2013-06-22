@@ -65,6 +65,10 @@ $(window).load(function() {
         $('#timeline .timeline-item:nth-child(even) .post-arrow').css({'left': 'auto' ,'right': '100%','background-image':'url("images/timeline-arrow-left.png")'});
         $('.thumbnails > .span2:nth-child(2n+1), .thumbnails > .span3:nth-child(4n+1), .thumbnails > .span4:nth-child(3n+1)').css({'margin-left':'0','clear':'both'});
     }
+    // init bootstrap tooltips for related posts
+    $(function(){
+            $('[rel=tooltip]').tooltip();
+    });
 });
 
 function flexInit() {
@@ -205,13 +209,12 @@ function portfolioHovers() {
 function iconHovers(){
     $('[data-iconcolor]').each(function(){
         var element         = $(this);
-        var original_color  =$(element).css('color');
         element.on('mouseenter', function(){
             element.css('color' , element.attr('data-iconcolor'));
         });
         element.on('mouseleave', function(){
-            element.css('color' ,original_color);
-        });
+            element.removeAttr( 'style' );
+        })
 
     });
 }

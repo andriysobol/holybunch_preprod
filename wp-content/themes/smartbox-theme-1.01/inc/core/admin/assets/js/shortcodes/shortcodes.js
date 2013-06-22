@@ -39,7 +39,7 @@
             // start shortcode
             var sc = '[' + name;
             // fetch attribute inputs except content one
-            var inputs = $(':input[name^="' + name + '_"]').not( ':input[id="' + name + '_content"]' );
+            var inputs = $(':input[name^="' + name + '_"]').not( ':input[name="' + name + '_content"]' );
 
             // create attributes
             inputs.each( function() {
@@ -91,7 +91,8 @@
         }
 
         function createContent( name ) {
-            var content = $( '#' + name + '_content' );
+            var content = $( '[name="' + name + '_content"]' );
+            console.log(content);
             var returnVal = ']';
             if( content.length > 0 ) {
                 content = getInputValue( content );

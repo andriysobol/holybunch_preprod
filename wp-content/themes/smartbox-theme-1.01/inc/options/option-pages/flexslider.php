@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.01
+ * @version 1.4
  */
 
 return array(
@@ -61,6 +61,17 @@ return array(
                     )
                 ),
                 array(
+                    'name'      => __('Auto start', THEME_ADMIN_TD),
+                    'id'        => 'autostart',
+                    'type'      => 'radio',
+                    'default'   =>  'true',
+                    'desc'    => __('Start slideshow automatically', THEME_ADMIN_TD),
+                    'options' => array(
+                        'true'  => __('On', THEME_ADMIN_TD),
+                        'false' => __('Off', THEME_ADMIN_TD),
+                    ),
+                ),
+                array(
                     'name'      => __('Show navigation arrows', THEME_ADMIN_TD),
                     'id'        => 'directionnav',
                     'type'      => 'radio',
@@ -69,7 +80,7 @@ return array(
                     'options' => array(
                         'hide' => __('Hide', THEME_ADMIN_TD),
                         'show' => __('Show', THEME_ADMIN_TD),
-                        ),
+                    ),
                 ),
                 array(
                     'name'      => __('Navigation arrows position', THEME_ADMIN_TD),
@@ -80,7 +91,7 @@ return array(
                     'options' => array(
                         'inside'  => __('Inside', THEME_ADMIN_TD),
                         'outside' => __('Outside', THEME_ADMIN_TD),
-                        ),
+                    ),
                 ),
                 array(
                     'name'      => __('Show controls', THEME_ADMIN_TD),
@@ -91,7 +102,7 @@ return array(
                     'options' => array(
                         'hide' => __('Hide', THEME_ADMIN_TD),
                         'show' => __('Show', THEME_ADMIN_TD),
-                        ),
+                    ),
                 ),
                 array(
                     'name'      => __('Choose the place of the controls', THEME_ADMIN_TD),

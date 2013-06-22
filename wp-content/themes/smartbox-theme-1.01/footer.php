@@ -1,18 +1,22 @@
 
             </div>
         </div>
-        <footer id="footer" role="contentinfo">
+        <footer id="footer" role="contentinfo" class="<?php echo oxy_get_option('skin'); ?>">
             <div class="wrapper wrapper-transparent">
                 <div class="container-fluid">
                     <div class="row-fluid">
-                        <div class="span6 text-left">
-                            <?php  if ( !function_exists('dynamic_sidebar') || dynamic_sidebar( 'footer-left' ) ): ?>
-                            <?php  endif; ?>
-                        </div>
-                        <div class="span6 text-right">
-                            <?php  if ( !function_exists('dynamic_sidebar') || dynamic_sidebar( 'footer-right' ) ): ?>
-                            <?php  endif; ?>
-                        </div>
+            <?php   $columns = oxy_get_option('footer_columns');
+                    $span = 'span'.(12/$columns); ?>
+                        <div class="<?php echo $span; ?> text-left"><?php dynamic_sidebar("footer-left"); ?></div>
+                            <?php
+                        if( $columns == 3){ ?>
+                            <div class="<?php echo $span; ?>"><?php dynamic_sidebar("footer-middle"); ?></div><?php
+                        }
+                        else if ( $columns == 4){ ?>
+                            <div class="<?php echo $span; ?>"><?php dynamic_sidebar("footer-middle-left"); ?></div>
+                            <div class="<?php echo $span; ?>"><?php dynamic_sidebar("footer-middle-right"); ?></div><?php
+                        }?>
+                        <div class="<?php echo $span; ?> text-right"><?php dynamic_sidebar("footer-right"); ?></div>
                     </div>
                 </div>
             </div>
@@ -32,6 +36,7 @@
             })();
             //]]>
         </script>
+        <div id="fb-root"></div>
         <?php wp_footer(); ?>
     </body>
 </html>

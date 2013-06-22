@@ -59,10 +59,10 @@ $Ltable_name = $wpdb->prefix . "bpspro_login_security";
 	register_setting('bulletproof_security_options_email', 'bulletproof_security_options_email', 'bulletproof_security_options_validate_email');			
 
 	// Register BPS js
-	wp_register_script( 'bps-js', plugins_url('/bulletproof-security/admin/js/bulletproof-security-admin-3.js'));
+	wp_register_script( 'bps-js', plugins_url('/bulletproof-security/admin/js/bulletproof-security-admin-4.js'));
 				
 	// Register BPS stylesheet
-	wp_register_style('bps-css', plugins_url('/bulletproof-security/admin/css/bulletproof-security-admin-blue-3.css'));
+	wp_register_style('bps-css', plugins_url('/bulletproof-security/admin/css/bulletproof-security-admin-blue-4.css'));
 
 	// Create BPS Backup Folder structure - suppressing errors on activation - errors displayed in HUD
 	if( !is_dir (WP_CONTENT_DIR . '/bps-backup')) {
@@ -97,13 +97,20 @@ $Ltable_name = $wpdb->prefix . "bpspro_login_security";
 	add_action('load-bulletproof-security/admin/login/login.php', 'bulletproof_security_load_settings_page_login');
 }
 
+function bps_network_remove_menu_pages() {
+	remove_menu_page('bulletproof-security/admin/options.php');
+	remove_submenu_page('bulletproof-security/admin/options.php', 'bulletproof-security/admin/options.php' );
+	remove_submenu_page('bulletproof-security/admin/options.php', 'bulletproof-security/admin/login/login.php' );
+}
+
 // BPS Menu
 function bulletproof_security_admin_menu() {
-	if (is_multisite() && !is_super_admin()) {
-		$bpsSuperAdminsError = 'Only Super Admins can access BPS';
-  		return $bpsSuperAdminsError;
-		} else {
-	//if (function_exists('add_menu_page')){
+	if ( is_multisite() && !is_super_admin() ) {
+
+	add_action( 'admin_menu', 'bps_network_remove_menu_pages' );
+
+	} else {
+
 	add_menu_page(__('BulletProof Security ~ htaccess Core', 'bulletproof-security'), __('BPS Security', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/options.php', '', plugins_url('bulletproof-security/admin/images/bps-icon-small.png'));
 	add_submenu_page('bulletproof-security/admin/options.php', __('BulletProof Security ~ htaccess Core', 'bulletproof-security'), __('htaccess Core', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/options.php' );
 	add_submenu_page('bulletproof-security/admin/options.php', __('Login Security ~ BPS Pro Login Security', 'bulletproof-security'), __('Login Security', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/login/login.php' );
@@ -117,21 +124,20 @@ $plugin_var2 = 'facebook-members/facebook-members.php';
 $plugin_var3 = 'easyrotator-for-wordpress/easyrotator.php';
 $return_var = in_array( $plugin_var1 || $plugin_var2 || $plugin_var3, apply_filters('active_plugins', get_option('active_plugins')));
 
-// Loads Settings for H-Core and P-Security
-// Enqueue BPS scripts and styles
+// Loads Settings for H-Core
 function bulletproof_security_load_settings_page() {
 global $bulletproof_security, $plugin_var1, $plugin_var2, $plugin_var3, $return_var;
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('jquery-ui-tabs');
 	wp_enqueue_script('jquery-ui-dialog');
 	wp_enqueue_script('jquery-form');
-	//wp_enqueue_script('jquery-ui-accordion');
+	wp_enqueue_script('jquery-ui-accordion');
 	wp_enqueue_script('jquery-effects-core');
 	wp_enqueue_script('jquery-effects-blind');
 	wp_enqueue_script('jquery-effects-explode');
 	wp_enqueue_script('bps-js');
 	// Engueue BPS stylesheet
-	wp_enqueue_style('bps-css', plugins_url('/bulletproof-security/admin/css/bulletproof-security-admin-blue-3.css'));
+	wp_enqueue_style('bps-css', plugins_url('/bulletproof-security/admin/css/bulletproof-security-admin-blue-4.css'));
 	
 	if ( $return_var == 1) { // 1 equals active	
 	// Block SSW from loading its scripts in BPS Pro pages and breaking BPS Pro scripts/menus/etc
@@ -151,7 +157,7 @@ global $bulletproof_security, $plugin_var1, $plugin_var2, $plugin_var3, $return_
 	}
 }
 
-// Loads Settings for BPS Pro Login Security - Enqueue BPS scripts and styles
+// Loads Settings for BPS Login Security
 function bulletproof_security_load_settings_page_login() {
 global $bulletproof_security, $plugin_var1, $plugin_var2, $plugin_var3, $return_var;
 	wp_enqueue_script('jquery');
@@ -164,7 +170,7 @@ global $bulletproof_security, $plugin_var1, $plugin_var2, $plugin_var3, $return_
 	wp_enqueue_script('jquery-effects-explode');
 	wp_enqueue_script('bps-js');
 	// Enqueue BPS stylesheet
-	wp_enqueue_style('bps-css', plugins_url('/bulletproof-security/admin/css/bulletproof-security-admin-blue-3.css'));	
+	wp_enqueue_style('bps-css', plugins_url('/bulletproof-security/admin/css/bulletproof-security-admin-blue-4.css'));	
 	
 	if ( $return_var == 1) { // 1 equals active	
 	// Block SSW from loading its scripts in BPS Pro pages and breaking BPS Pro scripts/menus/etc
@@ -188,7 +194,7 @@ function bulletproof_security_install() {
 global $bulletproof_security;
 	$previous_install = get_option('bulletproof_security_options');
 	if ( $previous_install ) {
-	if ( version_compare($previous_install['version'], '.48.5', '<') )
+	if ( version_compare($previous_install['version'], '.48.8', '<') )
 	remove_role('denied');
 	}
 }
@@ -204,8 +210,8 @@ function bulletproof_security_uninstall() {
 	require_once( ABSPATH . 'wp-admin/includes/plugin.php');
 	$options = get_option('bulletproof_security_options');
 	delete_option('bulletproof_security_options');
-	delete_option('bulletproof_security_options_customcode');
-	delete_option('bulletproof_security_options_customcode_WPA');
+	//delete_option('bulletproof_security_options_customcode'); // do not delete on uninstall for Pro Upgrade Users
+	//delete_option('bulletproof_security_options_customcode_WPA'); // do not delete on uninstall for Pro Upgrade Users
 	delete_option('bulletproof_security_options_maint');
 	delete_option('bulletproof_security_options_mynotes');
 	delete_option('bulletproof_security_options_autolock');
@@ -244,18 +250,28 @@ function bulletproof_security_options_validate_autolock($input) {
 function bulletproof_security_options_validate_customcode($input) {  
 	$options = get_option('bulletproof_security_options_customcode');  
 	$options['bps_customcode_one'] = esc_html($input['bps_customcode_one']);
+	$options['bps_customcode_directory_index'] = esc_html($input['bps_customcode_directory_index']);
+	$options['bps_customcode_error_logging'] = esc_html($input['bps_customcode_error_logging']);
+	$options['bps_customcode_admin_includes'] = esc_html($input['bps_customcode_admin_includes']);
+	$options['bps_customcode_wp_rewrite_start'] = esc_html($input['bps_customcode_wp_rewrite_start']);
+	$options['bps_customcode_request_methods'] = esc_html($input['bps_customcode_request_methods']);
 	$options['bps_customcode_two'] = esc_html($input['bps_customcode_two']);
+	$options['bps_customcode_timthumb_misc'] = esc_html($input['bps_customcode_timthumb_misc']);
+	$options['bps_customcode_bpsqse'] = esc_html($input['bps_customcode_bpsqse']);
+	$options['bps_customcode_deny_files'] = esc_html($input['bps_customcode_deny_files']);
 	$options['bps_customcode_three'] = esc_html($input['bps_customcode_three']);
-		
+
 	return $options;  
 }
 
 // Validate BPS options - BPS Custom Code - WP-admin .htaccess
 function bulletproof_security_options_validate_customcode_WPA($input) {  
 	$options = get_option('bulletproof_security_options_customcode_WPA');  
+	$options['bps_customcode_deny_files_wpa'] = esc_html($input['bps_customcode_deny_files_wpa']);
 	$options['bps_customcode_one_wpa'] = esc_html($input['bps_customcode_one_wpa']);
 	$options['bps_customcode_two_wpa'] = esc_html($input['bps_customcode_two_wpa']);
-		
+	$options['bps_customcode_bpsqse_wpa'] = esc_html($input['bps_customcode_bpsqse_wpa']);		
+	
 	return $options;  
 }
 
