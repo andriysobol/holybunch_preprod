@@ -50,10 +50,11 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     $content .= '[span3]';
     $content .= '[iconlist id="blockRigthBlack"]';
     $content .= '<h3>а также по теме...</h3>';
-    $content .= '[iconitem icon="icon-facetime-video" title="null"]<a href="/oxy_content_category?topic='. $taxonomy_name .'">Видео</a>[/iconitem]';
-    $content .= '[iconitem icon="icon-book" title="null"]<a href="/oxy_content_category?topic='. $taxonomy_name .'">Текстовые проповеди</a>[/iconitem]';
-    $content .= '[iconitem icon="icon-headphones" title="null"]<a href="/oxy_content_category?topic='. $taxonomy_name .'">Аудиопроповеди</a>[/iconitem]';
-    $content .= '[iconitem icon="icon-music" title="null"]<a href="/oxy_content_category?topic='. $taxonomy_name .'">Псалмы</a>[/iconitem]';
+    $href_value = "/oxy_content_category?topic='. $taxonomy_name .'";
+    $content .= '[iconitem_enh icon="icon-facetime-video" href=$href_value ]Видео[/iconitem_enh]';
+    $content .= '[iconitem_enh icon="icon-book" href=$href_value]Текстовые проповеди[/iconitem_enh]';
+    $content .= '[iconitem_enh icon="icon-headphones" href=$href_value]Аудиопроповеди[/iconitem_enh]';
+    $content .= '[iconitem_enh icon="icon-music" href=$href_value]Псалмы[/iconitem_enh]';
     $content .= '[/iconlist]';
     $content .= '[iconlist id="blockRigthBlack"]';
     $content .= '[/span3]';
@@ -367,7 +368,30 @@ function oxy_shortcode_div($atts, $content = null) {
     $output .= '</div>';
     return $output;
 }
-
 add_shortcode('div', 'oxy_shortcode_div');
+
+/**
+ * Icon Item Shortcode - for use inside an iconlist shortcode
+ * @return Icon Item HTML
+ **/
+function oxy_shortcode_iconitem_enhanced( $atts, $content = null) {
+    extract( shortcode_atts( array(
+        'title'       => '',
+        'icon'        => '',
+        'href'        => '',  
+    ), $atts ) );
+
+    $output = '<li>';
+    $output .= '<h4>';
+    $output .= '<a href="' . $href . '"/i>';
+    $output .= '<i class="' . $icon . '"></i>';
+    $output .= $title;
+    $output .= $content;
+    $output .= '</h4>';
+    $output .= '</li>';
+    return $output;
+}
+add_shortcode( 'iconitem_enh', 'oxy_shortcode_iconitem_enhanced' );
+
 
 require_once get_template_directory() . '/inc/options/shortcodes/shortcodes.php';
