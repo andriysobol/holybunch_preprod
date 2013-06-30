@@ -1,4 +1,4 @@
-<?php
+0<?php
 /**
  * Displays a tag archive
  * @package Smartbox

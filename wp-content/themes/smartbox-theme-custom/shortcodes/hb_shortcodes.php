@@ -24,7 +24,7 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     }else{
         return 'Темы('. $topic . '), которую ты указал в shortcode не существует, используй существующую тему';
     }
-    
+   
     //in order to get custom field 'main_video' from taxonomy we have 
     //to call advanced custom fields plugin api and provide id of post which 
     //is combination of taxonomy name and id of term e.g. term 'god' => id = 39
@@ -50,11 +50,12 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     $content .= '[span3]';
     $content .= '[iconlist id="blockRigthBlack"]';
     $content .= '<h3>а также по теме...</h3>';
-    $href_value = "/oxy_content_category?topic='. $taxonomy_name .'";
-    $content .= '[iconitem_enh icon="icon-facetime-video" href=$href_value ]Видео[/iconitem_enh]';
-    $content .= '[iconitem_enh icon="icon-book" href=$href_value]Текстовые проповеди[/iconitem_enh]';
-    $content .= '[iconitem_enh icon="icon-headphones" href=$href_value]Аудиопроповеди[/iconitem_enh]';
-    $content .= '[iconitem_enh icon="icon-music" href=$href_value]Псалмы[/iconitem_enh]';
+    
+    // Get the ID of a given category
+    $content .= '[iconitem_enh icon="icon-facetime-video" href=' . get_category_term_link_for_taxonomy_topic('video', $topic) . ']Видео[/iconitem_enh]';
+    $content .= '[iconitem_enh icon="icon-book" href=' . get_category_term_link_for_taxonomy_topic('text', $topic) . ']Текстовые проповеди[/iconitem_enh]';
+    $content .= '[iconitem_enh icon="icon-headphones" href=' . get_category_term_link_for_taxonomy_topic('music', $topic) . ']Аудиопроповеди[/iconitem_enh]';
+    $content .= '[iconitem_enh icon="icon-music" href=' . get_category_term_link_for_taxonomy_topic('psalm', $topic) . ']Псалмы[/iconitem_enh]';
     $content .= '[/iconlist]';
     $content .= '[iconlist id="blockRigthBlack"]';
     $content .= '[/span3]';
@@ -63,9 +64,11 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     //add description of taxonomy
     $content .= '[row]';
     $content .= '[span11]';
-    $content .= '[blockquote class="block"]';
+    //$content .= '[blockquote class="block"]';
+    $content .= '<blockquote>';
     $content .= $termDiscription;
-    $content .= '[/blockquote]';
+    //$content .= '[/blockquote]';
+    $content .= '</blockquote>';
     $content .= '[/span11]';
     $content .= '[/row]';
 
@@ -90,7 +93,7 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
                 array(
                     'taxonomy' => 'teaching_topics', // slug for desired tag goes here
                     'field' => 'slug',
-                    'terms' => 'god', // should work without a slug, try it both ways...and use a variable, don't hardcode
+                    'terms' => $topic, // should work without a slug, try it both ways...and use a variable, don't hardcode
                 )
             )
         );
@@ -125,9 +128,11 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
         }
 
         wp_reset_query();
-        $content .= '[row][span10][/span10][span2][button icon="icon-share-alt" type="warning" size="btn-default" label="далее к теме" link="/holybunch_prep/blog/oxy_content?topic=' . $topic . '" place="right"]';
-        $content .= '[/span2][/row]';
     }
+   $content .= '[row][span10][/span10]';
+   $content .= '[span2][button icon="icon-share-alt" type="warning" size="btn-default" label="далее к теме" link="' . get_post_type_link_for_taxonomy_topic( 'oxy_content', $topic) . '" place="right"]';
+   $content .= '[/span2][/row]';
+
     $output = oxy_shortcode_section($atts, $content);
     return $output;
 }
@@ -395,3 +400,4 @@ add_shortcode( 'iconitem_enh', 'oxy_shortcode_iconitem_enhanced' );
 
 
 require_once get_template_directory() . '/inc/options/shortcodes/shortcodes.php';
+require_once CUSTOM_INCLUDES_DIR . 'hb_utility.php';
