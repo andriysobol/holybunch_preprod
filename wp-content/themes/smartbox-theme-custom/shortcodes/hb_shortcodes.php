@@ -42,7 +42,14 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     $content .= '[span1]';
     $content .= '[/span1]';
     $content .= '[span7]';
+    if($add_super_hero == true){
+        $content .= '<div class="super-hero-unit"><figure><img alt="some image" src="http://84.200.83.137/test/wp-content/uploads/sites/14/2013/03/landscape-5-1250x300.jpg" />';
+        $content .= '<figcaption class="flex-caption">';
+    }
     $content .= $video_content;
+    if($add_super_hero == true){
+        $content .= '</figcaption>';
+        $content .= '</div>';}
     $content .= '[/span7]';
     $content .= '[span1]';
     $content .= '[/span1]';
@@ -57,19 +64,24 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     $content .= '[iconitem_enh icon="icon-headphones" href=' . get_category_term_link_for_taxonomy_topic('music', $topic) . ']Аудиопроповеди[/iconitem_enh]';
     $content .= '[iconitem_enh icon="icon-music" href=' . get_category_term_link_for_taxonomy_topic('psalm', $topic) . ']Псалмы[/iconitem_enh]';
     $content .= '[/iconlist]';
-    $content .= '[iconlist id="blockRigthBlack"]';
     $content .= '[/span3]';
     $content .= '[/row]';
     
     //add description of taxonomy
     $content .= '[row]';
-    $content .= '[span11]';
-    //$content .= '[blockquote class="block"]';
-    $content .= '<blockquote>';
+    $content .= '[span12]';
+    if($add_super_hero == true){
+        $content .= '<div class="super-hero-unit"><figure><img alt="some image" src="http://84.200.83.137/test/wp-content/uploads/sites/14/2013/03/landscape-5-1250x300.jpg" />';
+        $content .= '<figcaption class="flex-caption">';}
+    $content .= '<blockquote>';    
     $content .= $termDiscription;
-    //$content .= '[/blockquote]';
     $content .= '</blockquote>';
-    $content .= '[/span11]';
+
+    if($add_super_hero == true){
+        $content .= '</figcaption>';
+        $content .= '</div>';
+    }    
+    $content .= '[/span12]';
     $content .= '[/row]';
 
     $atts[title] = $title;
@@ -110,7 +122,7 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
                 $content .='</span></div><h3 class="text-center">' . get_the_title() . '<small class="block">' . $icon . '</small></h3>';
                 $post_content = get_the_content();
                 $content_more = apply_filters('summary_more', ' ' . '[...]');
-                $content_more = '<a href="' . get_permalink() . '">' . $content_more . '</a>';
+                $content_more = '<a href="' . get_term_link($topic, $taxonomy = $taxonomy_name) . '">' . $content_more . '</a>';
                 $excerpt_length = empty($excerpt_length) ? 50 : $excerpt_length;
                 $text = wp_trim_words($post_content, $excerpt_length);
                 $text = $text . $content_more;
@@ -130,10 +142,9 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
         wp_reset_query();
     }
    $content .= '[row][span10][/span10]';
-   $content .= '[span2][button icon="icon-share-alt" type="warning" size="btn-default" label="далее к теме" link="' . get_post_type_link_for_taxonomy_topic( 'oxy_content', $topic) . '" place="right"]';
+   $content .= '[span2][button icon="icon-share-alt" type="warning" size="btn-default" label="далее к теме" link="' . get_term_link($topic, $taxonomy = $taxonomy_name) . '" place="right"]';
    $content .= '[/span2][/row]';
-
-    $output = oxy_shortcode_section($atts, $content);
+   $output = oxy_shortcode_section($atts, $content);
     return $output;
 }
 
@@ -398,6 +409,71 @@ function oxy_shortcode_iconitem_enhanced( $atts, $content = null) {
 }
 add_shortcode( 'iconitem_enh', 'oxy_shortcode_iconitem_enhanced' );
 
+function cmp($a, $b)
+{ 
+     if ($a == $b) {
+        return 0;
+    }
+    return ($a < $b) ? -1 : 1;
+}
+/**
+ * Custom shortcode functions go here
+ * @author Andriy Sobol
+ */
+function oxy_content_latest_topics($atts, $content = '') {
+    // setup options
+    extract(shortcode_atts(array(
+        'style' => '',
+        'excerpt_length' => ''
+                    ), $atts));
+    //get all taxonomy items and sort them by dates
+    $taxonomy_name = 'teaching_topics';
+    $terms = get_terms($taxonomy_name);
+    $count = count($terms);
+    $dates = array();
+    foreach ($terms as $term) {
+        $term_id = $term->term_id;
+        $date = new DateTime(get_field('taxonomy_publiched_date', 'teaching_topics_' . $term_id));
+        $date_formatted = date_format($date, 'Ymd');
+        if($date_formatted != null)
+            $dates[$term_id] = get_field('taxonomy_publiched_date', 'teaching_topics_' . $term_id);
+    }
+    
+    // Sort and print the resulting array
+    arsort($dates);
+    $output .= '<ul class="unstyled row-fluid">';
+    $i = 0;
+    while ($i < 3):
+        $term_id = key($dates);
+        $term = get_term( $term_id, $taxonomy_name );
+        $term_name = $term->name;
+        $description = term_description( $term_id, $taxonomy_name );
+        $picture = get_field('taxonomy_image', 'teaching_topics_' . $term_id);
+        $picture_url = $picture != null ? $picture[url] : null;
+        
+        $img = wp_get_attachment_image_src($picture, 'full');
+        $content .='<li class="span4"><div class="round-box box-big"><span class="box-inner"><img alt="' . $title . '" class="img-circle" src="' . $picture[url] . '">';
+        $content .='</span></div><h3 class="text-center">' . $term_name . '<small class="block">' . $icon . '</small></h3>';
+        $content_more = apply_filters('summary_more', ' ' . '[...]');
+        $content_more = '<a href="' . get_term_link($term_id, $taxonomy = $taxonomy_name) . '">' . $content_more . '</a>';
+        $excerpt_length = empty($excerpt_length) ? 50 : $excerpt_length;
+        $text = wp_trim_words($description, $excerpt_length);
+        $text = $text . $content_more;
+        $content .='<p class="no_li">' . $text . '</p>';
+        $content .='<ul class="inline text-center big social-icons">';
+        $content .= '</p>';
 
+        $content .='</ul>';
+        $content .='</li>';
+        next($dates);
+        $i++;
+    endwhile;
+    $output .= '</ul>';
+
+    $output = oxy_shortcode_section($atts, $content);
+    return $output;
+}
+
+add_shortcode('latest_taxonomy_topics', 'oxy_content_latest_topics');
 require_once get_template_directory() . '/inc/options/shortcodes/shortcodes.php';
 require_once CUSTOM_INCLUDES_DIR . 'hb_utility.php';
