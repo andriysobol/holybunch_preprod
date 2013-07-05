@@ -105,8 +105,14 @@ function my_post_updated_messages_filter($messages) {
 // Allow only 1 column option on screen options
 add_filter('screen_layout_columns', 'one_column_on_screen_options');
 function one_column_on_screen_options($columns) {
-    //$columns['post'] = 1;
     $columns['oxy_content'] = 1;
+    return $columns;
+}
+
+// Allow only 1 column option on screen options for taxonomy
+add_filter('screen_layout_columns', 'one_column_on_screen_options');
+function one_column_on_teaching_topics_screen_options($columns) {
+    $columns['teaching_topics'] = 1;
     return $columns;
 }
 

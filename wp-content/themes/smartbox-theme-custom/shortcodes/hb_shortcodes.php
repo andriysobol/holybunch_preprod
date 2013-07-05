@@ -424,7 +424,8 @@ function oxy_content_latest_topics($atts, $content = '') {
     // setup options
     extract(shortcode_atts(array(
         'style' => '',
-        'excerpt_length' => ''
+        'excerpt_length' => '', 
+        'except' => ''
                     ), $atts));
     //get all taxonomy items and sort them by dates
     $taxonomy_name = 'teaching_topics';
@@ -447,6 +448,11 @@ function oxy_content_latest_topics($atts, $content = '') {
         $term_id = key($dates);
         $term = get_term( $term_id, $taxonomy_name );
         $term_name = $term->name;
+        //don't add taxonomy name which is alreay on main page as main taxonomy topic
+        if($term->slug == $except){
+            next($dates);
+            continue;            
+        }
         $description = term_description( $term_id, $taxonomy_name );
         $picture = get_field('taxonomy_image', 'teaching_topics_' . $term_id);
         $picture_url = $picture != null ? $picture[url] : null;
