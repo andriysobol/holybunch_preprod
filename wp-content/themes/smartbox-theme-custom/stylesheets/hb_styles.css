@@ -44,3 +44,12 @@ p.no_li{
     font-size: 0.9em;
 }
 
+.super {
+  font-size: 50px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+

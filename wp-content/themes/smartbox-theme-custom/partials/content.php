@@ -9,18 +9,18 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('row-fluid'); ?>>
     <div class="<?php echo  'span12'; ?> post-body">
-        <div class="post-head">
+        <!--<div class="post-head">
             <h2 class="small-screen-center">
-                <?php if ( is_single() ) : ?>
-                    <?php the_title(); ?>
-                <?php else : ?>
-                    <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', THEME_FRONT_TD ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
-                        <?php the_title(); ?>
+                <?php// if ( is_single() ) : ?>
+                    <?php //the_title(); ?>
+                <?php //else : ?>
+                    <a href="<?php// the_permalink(); ?>" title="<?php //echo esc_attr( sprintf( __( 'Permalink to %s', THEME_FRONT_TD ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+                        <?php //the_title(); ?>
                     </a>
-                <?php endif; // is_single() ?>
+                <?php// endif; // is_single() ?>
             </h2>
-            <?php get_template_part( 'partials/post-extras' ); ?>
-        </div>
+            <?php //get_template_part( 'partials/post-extras' ); ?>
+        </div>-->
         <div class="entry-content">
             <?php
             if ( has_post_thumbnail() ) {

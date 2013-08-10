@@ -15,27 +15,17 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
         'excerpt_length' => '', 
         'addrelatedposts' => ''
         ), $atts));
-    //verify that term exists and get term id in order to get fields(description, video) value
+
+    //get taxonomy term description
     $taxonomy_name = 'teaching_topics';
-    $term_details = term_exists($topic, $taxonomy_name);
-    if ( is_array($term_details) ){
-        $term_id = $term_details['term_id'];
-        $termDiscription = term_description( $term_id, $taxonomy_name );
-    }else{
+    $termDiscription = get_taxonomy_description($taxonomy_name, $topic);
+    if(empty($termDiscription))
         return 'Темы('. $topic . '), которую ты указал в shortcode не существует, используй существующую тему';
-    }
-   
-    //in order to get custom field 'main_video' from taxonomy we have 
-    //to call advanced custom fields plugin api and provide id of post which 
-    //is combination of taxonomy name and id of term e.g. term 'god' => id = 39
-    $video = get_field('main_video', 'teaching_topics_' . $term_id);
-    if(is_array($video)){
-        global $wp_embed;
-        $video_content = $video[0]->post_content;
-        $video_content = $wp_embed->run_shortcode( $video_content );
-    }  else {
+    
+    //get taxonomy main video content
+    $video_content = get_taxonomy_video($taxonomy_name, $topic);
+    if(empty($video_content))
         return 'Ты не указал видео для это темы. Укажи видео в таксономии: ' . $taxonomy_name;
-    }
   
     //add video to taxonomy topic and related links
     $content .= '[row]';
