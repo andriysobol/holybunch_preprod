@@ -417,3 +417,29 @@ HTTP_REFERER: https://localhost/holybunch_prep/wp-admin/post.php?post=10&action=
 REQUEST_URI: /holybunch_prep/wp-admin/post.php?_ajax_linking_nonce=404d435084&href=one-faith.ru&linktitle=%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D1%82%D1%8C%3E%3E&wp-link-submit=%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C+%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D1%83
 QUERY_STRING: 
 HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 30, 2013 - 8:14 пп <<<<<<<<<<<
+REMOTE_ADDR: ::1
+Host Name: Workier
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /holybunch_prep/wp-content/uploads/2013/03/ipad.png
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.1; http://localhost/holybunch_prep
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 30, 2013 - 8:14 пп <<<<<<<<<<<
+REMOTE_ADDR: ::1
+Host Name: Workier
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /holybunch_prep/wp-content/uploads/2013/03/ipad.png
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.1; http://localhost/holybunch_prep

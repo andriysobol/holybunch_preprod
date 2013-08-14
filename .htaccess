@@ -1,6 +1,6 @@
-#   BULLETPROOF .48.5 >>>>>>> SECURE .HTACCESS     
+#   BULLETPROOF .48.8 >>>>>>> SECURE .HTACCESS     
 
-# If you edit the  BULLETPROOF .48.5 >>>>>>> SECURE .HTACCESS text above
+# If you edit the  BULLETPROOF .48.8 >>>>>>> SECURE .HTACCESS text above
 # you will see error messages on the BPS Security Status page
 # BPS is reading the version number in the htaccess file to validate checks
 # If you would like to change what is displayed above you
@@ -53,8 +53,6 @@ ErrorDocument 404 /holybunch_prep/404.php
 
 # DENY ACCESS TO PROTECTED SERVER FILES - .htaccess, .htpasswd and all file names starting with dot
 RedirectMatch 403 /\..*$
-
-
 RewriteEngine On
 RewriteBase /holybunch_prep/
 RewriteRule ^index\.php$ - [L]
@@ -63,8 +61,6 @@ RewriteRule ^([_0-9a-zA-Z-]+/)?files/(.+) wp-includes/ms-files.php?file=$2 [L]
 
 # add a trailing slash to /wp-admin
 RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
-
-
 # REQUEST METHODS FILTERED
 # This filter is for blocking junk bots and spam bots from making a HEAD request, but may also block some
 # HEAD request from bots that you want to allow in certains cases. This is not a security filter and is just
@@ -110,7 +106,11 @@ RewriteRule . - [S=4]
 RewriteCond %{QUERY_STRING} action=rp&key=(.*) [NC]
 RewriteRule . - [S=3]
 
-# TimThumb Forbid RFI By Host Name But Allow Internal Requests
+# TIMTHUMB FORBID RFI and MISC FILE SKIP/BYPASS RULE
+# Only Allow Internal File Requests From Your Website
+# To Allow Additional Websites Access to a File Use [OR] as shown below.
+# RewriteCond %{HTTP_REFERER} ^.*YourWebsite.com.* [OR]
+# RewriteCond %{HTTP_REFERER} ^.*AnotherWebsite.com.*
 RewriteCond %{QUERY_STRING} ^.*(http|https|ftp)(%3A|:)(%2F|/)(%2F|/)(w){0,3}.?(blogger|picasa|blogspot|tsunami|petapolitik|photobucket|imgur|imageshack|wordpress\.com|img\.youtube|tinypic\.com|upload\.wikimedia|kkc|start-thegame).*$ [NC,OR]
 RewriteCond %{THE_REQUEST} ^.*(http|https|ftp)(%3A|:)(%2F|/)(%2F|/)(w){0,3}.?(blogger|picasa|blogspot|tsunami|petapolitik|photobucket|imgur|imageshack|wordpress\.com|img\.youtube|tinypic\.com|upload\.wikimedia|kkc|start-thegame).*$ [NC]
 RewriteRule .* index.php [F,L]

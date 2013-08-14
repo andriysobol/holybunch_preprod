@@ -1,6 +1,6 @@
-#   BULLETPROOF .48.5 >>>>>>> SECURE .HTACCESS     
+#   BULLETPROOF .48.8 >>>>>>> SECURE .HTACCESS     
 
-# If you edit the  BULLETPROOF .48.5 >>>>>>> SECURE .HTACCESS text above
+# If you edit the  BULLETPROOF .48.8 >>>>>>> SECURE .HTACCESS text above
 # you will see error messages on the BPS Security Status page
 # BPS is reading the version number in the htaccess file to validate checks
 # If you would like to change what is displayed above you
@@ -46,24 +46,27 @@ DirectoryIndex index.php index.html /index.php
 # You can open the BPS 404.php file using the WP Plugins Editor.
 # NOTE: By default WordPress automatically looks in your Theme's folder for a 404.php template file.
 
-ErrorDocument 400 /holybunch_prep/wp-content/plugins/bulletproof-security/400.php
+ErrorDocument 400 /wp-content/plugins/bulletproof-security/400.php
 ErrorDocument 401 default
-ErrorDocument 403 /holybunch_prep/wp-content/plugins/bulletproof-security/403.php
-ErrorDocument 404 /holybunch_prep/404.php
+ErrorDocument 403 /wp-content/plugins/bulletproof-security/403.php
+ErrorDocument 404 /404.php
 
 # DENY ACCESS TO PROTECTED SERVER FILES - .htaccess, .htpasswd and all file names starting with dot
 RedirectMatch 403 /\..*$
 
-
+# WP-ADMIN/INCLUDES
 RewriteEngine On
-RewriteBase /holybunch_prep/
+RewriteBase /
+RewriteRule ^wp-admin/includes/ - [F,L]
+RewriteRule !^wp-includes/ - [S=3]
+RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
+RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
+RewriteRule ^wp-includes/theme-compat/ - [F,L]
+
+# WP REWRITE LOOP START
+RewriteEngine On
+RewriteBase /
 RewriteRule ^index\.php$ - [L]
-# uploaded files
-RewriteRule ^([_0-9a-zA-Z-]+/)?files/(.+) wp-includes/ms-files.php?file=$2 [L]
-
-# add a trailing slash to /wp-admin
-RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
-
 
 # REQUEST METHODS FILTERED
 # This filter is for blocking junk bots and spam bots from making a HEAD request, but may also block some
@@ -80,22 +83,22 @@ RewriteRule ^(.*)$ - [F,L]
 # Example: If RewriteRule S=5 is deleted than change S=6 to S=5, S=7 to S=6, etc.
 
 # Adminer MySQL management tool data populate
-RewriteCond %{REQUEST_URI} ^/holybunch_prep/wp-content/plugins/adminer/ [NC]
+RewriteCond %{REQUEST_URI} ^/wp-content/plugins/adminer/ [NC]
 RewriteRule . - [S=12]
 # Comment Spam Pack MU Plugin - CAPTCHA images not displaying 
-RewriteCond %{REQUEST_URI} ^/holybunch_prep/wp-content/mu-plugins/custom-anti-spam/ [NC]
+RewriteCond %{REQUEST_URI} ^/wp-content/mu-plugins/custom-anti-spam/ [NC]
 RewriteRule . - [S=11]
 # Peters Custom Anti-Spam display CAPTCHA Image
-RewriteCond %{REQUEST_URI} ^/holybunch_prep/wp-content/plugins/peters-custom-anti-spam-image/ [NC] 
+RewriteCond %{REQUEST_URI} ^/wp-content/plugins/peters-custom-anti-spam-image/ [NC] 
 RewriteRule . - [S=10]
 # Status Updater plugin fb connect
-RewriteCond %{REQUEST_URI} ^/holybunch_prep/wp-content/plugins/fb-status-updater/ [NC] 
+RewriteCond %{REQUEST_URI} ^/wp-content/plugins/fb-status-updater/ [NC] 
 RewriteRule . - [S=9]
 # Stream Video Player - Adding FLV Videos Blocked
-RewriteCond %{REQUEST_URI} ^/holybunch_prep/wp-content/plugins/stream-video-player/ [NC]
+RewriteCond %{REQUEST_URI} ^/wp-content/plugins/stream-video-player/ [NC]
 RewriteRule . - [S=8]
 # XCloner 404 or 403 error when updating settings
-RewriteCond %{REQUEST_URI} ^/holybunch_prep/wp-content/plugins/xcloner-backup-and-restore/ [NC]
+RewriteCond %{REQUEST_URI} ^/wp-content/plugins/xcloner-backup-and-restore/ [NC]
 RewriteRule . - [S=7]
 # BuddyPress Logout Redirect
 RewriteCond %{QUERY_STRING} action=logout&redirect_to=http%3A%2F%2F(.*) [NC]
@@ -110,12 +113,16 @@ RewriteRule . - [S=4]
 RewriteCond %{QUERY_STRING} action=rp&key=(.*) [NC]
 RewriteRule . - [S=3]
 
-# TimThumb Forbid RFI By Host Name But Allow Internal Requests
+# TIMTHUMB FORBID RFI and MISC FILE SKIP/BYPASS RULE
+# Only Allow Internal File Requests From Your Website
+# To Allow Additional Websites Access to a File Use [OR] as shown below.
+# RewriteCond %{HTTP_REFERER} ^.*YourWebsite.com.* [OR]
+# RewriteCond %{HTTP_REFERER} ^.*AnotherWebsite.com.*
 RewriteCond %{QUERY_STRING} ^.*(http|https|ftp)(%3A|:)(%2F|/)(%2F|/)(w){0,3}.?(blogger|picasa|blogspot|tsunami|petapolitik|photobucket|imgur|imageshack|wordpress\.com|img\.youtube|tinypic\.com|upload\.wikimedia|kkc|start-thegame).*$ [NC,OR]
 RewriteCond %{THE_REQUEST} ^.*(http|https|ftp)(%3A|:)(%2F|/)(%2F|/)(w){0,3}.?(blogger|picasa|blogspot|tsunami|petapolitik|photobucket|imgur|imageshack|wordpress\.com|img\.youtube|tinypic\.com|upload\.wikimedia|kkc|start-thegame).*$ [NC]
 RewriteRule .* index.php [F,L]
 RewriteCond %{REQUEST_URI} (timthumb\.php|phpthumb\.php|thumb\.php|thumbs\.php) [NC]
-RewriteCond %{HTTP_REFERER} ^.*.*
+RewriteCond %{HTTP_REFERER} ^.*demo5.local.*
 RewriteRule . - [S=1]
 
 # BPSQSE BPS QUERY STRING EXPLOITS
@@ -171,12 +178,9 @@ RewriteCond %{QUERY_STRING} \-[sdcr].*(allow_url_include|allow_url_fopen|safe_mo
 RewriteCond %{QUERY_STRING} (;|<|>|'|"|\)|%0A|%0D|%22|%27|%3C|%3E|%00).*(/\*|union|select|insert|drop|delete|update|cast|create|char|convert|alter|declare|order|script|set|md5|benchmark|encode) [NC,OR]
 RewriteCond %{QUERY_STRING} (sp_executesql) [NC]
 RewriteRule ^(.*)$ - [F,L]
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
-RewriteRule  ^[_0-9a-zA-Z-]+/(wp-(content|admin|includes).*) $1 [L]
-RewriteRule  ^[_0-9a-zA-Z-]+/(.*\.php)$ $1 [L]
-RewriteRule . index.php [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
 
 # DENY BROWSER ACCESS TO THESE FILES 
 # wp-config.php, bb-config.php, php.ini, php5.ini, readme.html

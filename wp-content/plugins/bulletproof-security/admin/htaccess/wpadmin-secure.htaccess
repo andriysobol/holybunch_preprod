@@ -1,6 +1,6 @@
-#   BULLETPROOF .48.5 WP-ADMIN SECURE .HTACCESS     
+#   BULLETPROOF .48.8 WP-ADMIN SECURE .HTACCESS     
 
-# If you edit the BULLETPROOF .48.5 WP-ADMIN SECURE .HTACCESS text above 
+# If you edit the BULLETPROOF .48.8 WP-ADMIN SECURE .HTACCESS text above 
 # you will see error messages on the BPS Security Status page
 # BPS is reading the version number in the htaccess file to validate checks
 # BPS is also checking that the string BPSQSE exists in this file - do not delete it
@@ -26,11 +26,13 @@
 # with your current IP address and remove the pound sign # from in front of the
 # Allow from line of code below.
 
+# BEGIN BPS WPADMIN DENY ACCESS TO FILES
 <FilesMatch "^(install\.php|example\.php|example2\.php|example3\.php)">
 Order allow,deny
 Deny from all
 #Allow from 88.77.66.55
 </FilesMatch>
+# END BPS WPADMIN DENY ACCESS TO FILES
 
 # BEGIN OPTIONAL WP-ADMIN ADDITIONAL SECURITY MEASURES:
 
@@ -106,6 +108,7 @@ RewriteRule ^(.*)$ - [F,L]
 RewriteCond %{REQUEST_URI} (press-this\.php) [NC]
 RewriteRule . - [S=1]
 
+# BEGIN BPSQSE-check BPS QUERY STRING EXPLOITS AND FILTERS
 # BPSQSE-check BPS QUERY STRING EXPLOITS AND FILTERS
 # WORDPRESS WILL BREAK IF ALL THE BPSQSE FILTERS ARE DELETED
 RewriteCond %{HTTP_USER_AGENT} (%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
@@ -149,3 +152,4 @@ RewriteCond %{QUERY_STRING} union([^a]*a)+ll([^s]*s)+elect [NC,OR]
 RewriteCond %{QUERY_STRING} (;|<|>|'|"|\)|%0A|%0D|%22|%27|%3C|%3E|%00).*(/\*|union|select|insert|drop|delete|update|cast|create|char|convert|alter|declare|order|script|set|md5|benchmark|encode) [NC,OR]
 RewriteCond %{QUERY_STRING} (sp_executesql) [NC]
 RewriteRule ^(.*)$ - [F,L]
+# END BPSQSE-check BPS QUERY STRING EXPLOITS AND FILTERS
