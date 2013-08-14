@@ -142,5 +142,89 @@ function get_teaching_topic_from_query() {
     return $teaching_topic;
 }
 
+function get_content_text_posts($teaching_topic){
+    $my_text_query = get_query_only_text($teaching_topic);
+    $text_content;
+    while ($my_text_query->have_posts()) {
+        $my_text_query->the_post();
+        if ($text_content == null) {
+            $text_content = get_the_content();
+            $content_more = '<a href="' . get_permalink() . '">' . '... <i>Читать далее</i>' . '</a>';
+            $output_text .= '[section]';
+            $output_text .= '[row][div style="color:#FFA500"]' . get_field('quote') . '[/div][/row]';
+            $output_text .= '[row]' . wp_trim_words($text_content, 150, $content_more) . '[/row]';
+            $output_text .= '[/section]';
+            $text_title = get_the_title();
+            $output .= oxy_shortcode_section(array('title' => $text_title, 'style' => "white"), $output_text);
+        }
+    }
+    return $output;
+}
+
+function get_content_video_posts($teaching_topic){    
+    $my_video_query = get_query_only_video($teaching_topic);
+    $video_content;
+    while ($my_video_query->have_posts()) {
+        $my_video_query->the_post();
+        if ($video_content == null) {
+            $video_title = get_the_title();
+            $video_content = get_the_content();
+            $video_content = str_replace("[embed w=800]", "", $video_content);
+            $video_content = str_replace("[embed]", "", $video_content);
+            $video_content = str_replace("[/embed]", "", $video_content);
+            $video_description = get_field('summary');
+            $output_video .= '[row]';
+            $output_video .= '[span7]';
+            $output_video .= '<a class="fancybox-media" href="' . $video_content . '">';
+            $output_video .= '<img class="aligncenter" alt="video" src="http://bible-core.com/wp-content/uploads/2013/08/forThemeGreh.png" width="444" height="325" />';
+            $output_video .='</a>';
+            $output_video .= '[/span7]';
+            if ($video_description != null) {
+                $output_video .= '[span5]' . $video_description . '[/span5]';
+            }
+            $output_video .= '[/row]';
+            $output_video .= '[row][span9][/span9]';
+            $output_video .= '[span3][button icon="icon-share-alt" type="warning" size="btn-default" label="Все видео по теме" link="' . get_category_term_link_for_taxonomy_topic('video', $teaching_topic) . '" place="right"]';
+            $output_video .= '[/span3][/row]';
+
+            $output .= oxy_shortcode_section(array('title' => $video_title, 'style' => "dark"), $output_video);
+        }
+    }    
+    return $output;
+}
+
+function get_content_for_category($taxonomy_category, $teaching_topic){
+    $my_query = get_query($taxonomy_category, $teaching_topic);
+    global $wp_embed;
+    global $post;
+    while ($my_query->have_posts()){
+        $my_query->the_post();
+        $content = get_the_content();
+        if (get_post_format($post) == 'video') {
+        $output .= '<div class="row-fluid margin-top">';
+        $output .= '<div style="text-align: center"> <h1>';
+        $output .= the_title();
+        $output .= '</h1></div>';
+        $output .= $wp_embed->run_shortcode($content);
+        $output .= '<div class="span1"></div>';
+        $output .= '<div class="span9" style="align:center">';
+        $output .= '</div> <div class="span12"><hr noshade size="4" align="center">';  
+        $output .= '</div></div>';
+        } else {
+        $output .= '<div class="row-fluid margin-top">';  
+        $output .= '<div style="text-align: center"><h1>';  
+        $output .= the_title();
+        $output .= '</h1></div><div class="span12" style = "color:#FFA500;">';  
+        $output .= get_field('quote');
+        $output .= '</div><div class="span12">';  
+        $content_more = '<a href="' . get_permalink() . '">' . '... <i>Читать далее</i>' . '</a>';
+        $output .= wp_trim_words($content, 150, $content_more);
+        $output .= '<hr noshade size="4" align="center">';   
+        $output .= '</div></div></section>';  
+        }
+    }
+    return $output;
+}
+
 ;
 ?>
