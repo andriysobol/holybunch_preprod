@@ -53,3 +53,7 @@ p.no_li{
   text-transform: uppercase;
 }
 
+section.non-padded{
+    padding: 0px;
+}
+
