@@ -4,7 +4,7 @@
     Author     : Mihon
     Description: Our custom styles
 */
-@import url(http://fonts.googleapis.com/css?family=Reenie+Beanie);
+
 
 div#blockRigthOben{
     font-size: 14px;
@@ -52,95 +52,4 @@ p.no_li{
   margin-bottom: 0;
   text-transform: uppercase;
 }
-
-body_stickit{
-  font-family: 'Reenie Beanie', cursive;
-  font-size:80%;
-  margin:3em;
-  background:#666;
-  color:#fff;
-}
-
-h2_stickit,p_stickit{
-  font-size:80%;
-  font-weight:normal;
-}
-ul_stickit,li_stickit{
-  list-style:none;
-}
-ul_stickit{
-  overflow:hidden;
-  padding:3em;
-}
-ul_stickit li_stickit a_stickit{
-  text-decoration:none;
-  color:#000;
-  background:#ffc;
-  display:block;
-  height:9em;
-  width:9em;
-  padding:1em;
-  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
-  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-  -moz-transition:-moz-transform .15s linear;
-  -o-transition:-o-transform .15s linear;
-  -webkit-transition:-webkit-transform .15s linear;
-}
-
-ul_stickit li_stickit{
-  margin:1em;
-  float:left;
-}
-
-ul_stickit li_stickit h2_stickit{
-  font-size:80%;
-  font-weight:bold;
-  padding-bottom:8px;
-}
-ul_stickit li_stickit p_stickit{
-  font-family: 'Reenie Beanie', cursive;
-  font-size:100%;
-}
-ul_stickit li_stickit a_stickit{
-  -webkit-transform: rotate(-6deg);
-  -o-transform: rotate(-6deg);
-  -moz-transform:rotate(-6deg);
-}
-ul_stickit li_stickit:nth-child(even) a_stickit{
-  -o-transform:rotate(4deg);
-  -webkit-transform:rotate(4deg);
-  -moz-transform:rotate(4deg);
-  position:relative;
-  top:5px;
-  background:#cfc;
-}
-ul_stickit li_stickit:nth-child(3n) a_stickit{
-  -o-transform:rotate(-3deg);
-  -webkit-transform:rotate(-3deg);
-  -moz-transform:rotate(-3deg);
-  position:relative;
-  top:-5px;
-  background:#ccf;
-}
-ul_stickit li_stickit:nth-child(5n) a_stickit{
-  -o-transform:rotate(5deg);
-  -webkit-transform:rotate(5deg);
-  -moz-transform:rotate(5deg);
-  position:relative;
-  top:-10px;
-}
-ul_stickit li_stickit a_stickit:hover,ul_stickit li_stickit a_stickit:focus{
-  box-shadow:10px 10px 7px rgba(0,0,0,.7);
-  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
-  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
-  -webkit-transform: scale(1.25);
-  -moz-transform: scale(1.25);
-  -o-transform: scale(1.25);
-  position:relative;
-  z-index:5;
-}
-ol_stickit{text-align:center;}
-ol_stickit li_stickit{display:inline;padding-right:1em;}
-ol_stickit li_stickit a_stickit{color:#fff;}
 
