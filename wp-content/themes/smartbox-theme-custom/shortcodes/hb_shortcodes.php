@@ -469,7 +469,17 @@ function oxy_content_latest_topics($atts, $content = '') {
     $output = oxy_shortcode_section($atts, $content);
     return $output;
 }
-
 add_shortcode('latest_taxonomy_topics', 'oxy_content_latest_topics');
+
+function oxy_shortcode_stickit(){
+    $output = '<ul_stickit> <li_stickit> <a_stickit href="www.bible-core.com"> <h2_stickit>ДЕРЕВО ЖИЗНИ И ДЕРЕВО ПОЗНАНИЯ ДОБРА И ЗЛА</h2_stickit> <p_stickit>И заповедал Господь Бог человеку, говоря… </p_stickit> </a_stickit> </li_stickit>';
+    $output .= '<li_stickit><a_stickit href="www.bible-core.com"><h2_stickit>Я БУДУ ЛИКОВАТЬ! </h2_stickit><p_stickit>Слуашайте новый псалом ...</p_stickit></a_stickit></li_stickit>';
+    $output .= '<li_stickit><a_stickit href="www.bible-core.com"><h2_stickit>МЛАДЕНЕЦ ВО ХРИСТЕ0 </h2_stickit><p_stickit>Потому отныне мы никого не знаем по плоти; если же…</p_stickit></a_stickit></li_stickit>';
+    $output .= '<li_stickit><a_stickit href="www.bible-core.com"><h2_stickit>КАК РОДИТЬСЯ ОТ БОГА? </h2_stickit><p_stickit>Как же родиться от Бога, неужели снова войти в утробу…</p_stickit></a_stickit></li_stickit></ul_stickit>';
+    return $output;
+}
+
+add_shortcode('stickit', 'oxy_shortcode_stickit');
+
 require_once get_template_directory() . '/inc/options/shortcodes/shortcodes.php';
 require_once CUSTOM_INCLUDES_DIR . 'hb_utility.php';
