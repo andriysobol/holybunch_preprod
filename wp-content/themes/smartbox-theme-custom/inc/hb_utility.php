@@ -48,12 +48,30 @@ function get_taxonomy_video($taxonomy_name, $topic) {
         $video_content = str_replace("[embed w=800]", "", $video_content);
         $video_content = str_replace("[/embed]", "", $video_content);
         return '<a class="fancybox-media" href="' . $video_content . '"> <img class="aligncenter" alt="video" src="http://bible-core.com/wp-content/uploads/2013/08/forThemeGreh.png" width="560" height="420" /></a>';
-        //return $wp_embed->run_shortcode($video_content);
-        $wp_embed->run_shortcode($video_content);
     } else {
         return 'Ты не указал видео для это темы. Укажи видео в таксономии: ' . $taxonomy_name;
     }
 }
+
+function get_video_as_fancybox($video_content, $style){
+        //post content contains embed short code, we don't need it but only video url
+        //it is ugly but I don't find any other solution as just replace short code by empty
+        $video_content = str_replace("[embed w=800]", "", $video_content);
+        $video_content = str_replace("[/embed]", "", $video_content);
+        $video_content = '<a class="fancybox-media" href="' . $video_content . '"> <img class="aligncenter" alt="video" src="http://bible-core.com/wp-content/uploads/2013/08/forThemeGreh.png" width="560" height="420" /></a>';
+        $description = get_field('summary');
+        $video_content .= '<blockquote>';    
+        $video_content .= $description;
+        $video_content .= '</blockquote>';
+        
+        $atts[title] = $title;
+        if(empty($style)){
+            $atts[style] = 'dark';
+        }else{
+            $atts[style] = $style;
+        }        
+        return oxy_shortcode_section($atts, $video_content);        
+ }
 
 function get_taxonomy_image($taxonomy_name, $topic) {
     $term_details = term_exists($topic, $taxonomy_name);
@@ -197,30 +215,28 @@ function get_content_for_category($taxonomy_category, $teaching_topic){
     $my_query = get_query($taxonomy_category, $teaching_topic);
     global $wp_embed;
     global $post;
-    while ($my_query->have_posts()){
+    $style = 'gray';
+    while ($my_query->have_posts()) {
         $my_query->the_post();
         $content = get_the_content();
         if (get_post_format($post) == 'video') {
-        $output .= '<div class="row-fluid margin-top">';
-        $output .= '<div style="text-align: center"> <h1>';
-        $output .= the_title();
-        $output .= '</h1></div>';
-        $output .= $wp_embed->run_shortcode($content);
-        $output .= '<div class="span1"></div>';
-        $output .= '<div class="span9" style="align:center">';
-        $output .= '</div> <div class="span12"><hr noshade size="4" align="center">';  
-        $output .= '</div></div>';
+            if ($style == 'dark') {
+                $style = 'gray';
+            } else {
+                $style = 'dark';
+            }
+            $output .= get_video_as_fancybox($content, $style);
         } else {
-        $output .= '<div class="row-fluid margin-top">';  
-        $output .= '<div style="text-align: center"><h1>';  
-        $output .= the_title();
-        $output .= '</h1></div><div class="span12" style = "color:#FFA500;">';  
-        $output .= get_field('quote');
-        $output .= '</div><div class="span12">';  
-        $content_more = '<a href="' . get_permalink() . '">' . '... <i>Читать далее</i>' . '</a>';
-        $output .= wp_trim_words($content, 150, $content_more);
-        $output .= '<hr noshade size="4" align="center">';   
-        $output .= '</div></div></section>';  
+            $output .= '<div class="row-fluid margin-top">';
+            $output .= '<div style="text-align: center"><h1>';
+            $output .= the_title();
+            $output .= '</h1></div><div class="span12" style = "color:#FFA500;">';
+            $output .= get_field('quote');
+            $output .= '</div><div class="span12">';
+            $content_more = '<a href="' . get_permalink() . '">' . '... <i>Читать далее</i>' . '</a>';
+            $output .= wp_trim_words($content, 150, $content_more);
+            $output .= '<hr noshade size="4" align="center">';
+            $output .= '</div></div></section>';
         }
     }
     return $output;
