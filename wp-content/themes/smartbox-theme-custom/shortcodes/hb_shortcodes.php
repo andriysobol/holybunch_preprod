@@ -33,7 +33,7 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     $content .= '[/span1]';
     $content .= '[span7]';
     if($add_super_hero == true){
-        $content .= '<div class="super-hero-unit"><figure><img alt="some image" src="http://84.200.83.137/test/wp-content/uploads/sites/14/2013/03/landscape-5-1250x300.jpg" />';
+        $content .= '<div class="super-hero-unit"><figure><img alt="some image" src="http://localhost/test/wp-content/uploads/sites/14/2013/03/landscape-5-1250x300.jpg" />';
         $content .= '<figcaption class="flex-caption">';
     }
     $content .= $video_content;
