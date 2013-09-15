@@ -3,8 +3,8 @@ Contributors: alphasis
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FF3U9VJDHT9DU
 Tags: related posts, related, category, categories, tag, tags, taxonomy, taxonomies, post, posts, custom taxonomy, custom taxonomies, custom post, custom posts, similar, similar posts, plugin
 Requires at least: 3.2
-Tested up to: 3.4
-Stable tag: 1.0.0
+Tested up to: 3.5.2
+Stable tag: 1.0.1
 License: GPLv2 or later
 
 This Plugin will display the related posts list via categories, tags and custom taxonomies.
@@ -113,6 +113,9 @@ This plugin requires jQuery 1.6 or higher.
 8. Related Posts via Taxonomies - Options &raquo; Promotion
 
 == Changelog ==
+
+= 1.0.1 =
+* Tested up to: WordPress 3.5.2
 
 = 1.0.0 =
 * Initial Release

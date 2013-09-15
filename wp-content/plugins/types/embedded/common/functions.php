@@ -141,7 +141,7 @@ function wpv_condition( $atts ) {
             $evaluate = str_replace( $matches[0][$i], $is_empty, $evaluate );
         }
     }
-
+    
     // find variables that are to be used as strings.
     // eg '$f1'
     // will replace $f1 with the actual field value
@@ -523,7 +523,7 @@ function WPV_wpcf_record_post_relationship_belongs( $content ) {
 
 /**
  * Form for Enlimbo calls for wpv-control shortcode calls
-
+ *
  * @param unknown_type $elements
  */
 function wpv_form_control( $elements ) {

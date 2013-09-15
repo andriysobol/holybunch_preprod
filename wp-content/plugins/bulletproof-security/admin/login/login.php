@@ -9,37 +9,36 @@ if ( !current_user_can('manage_options') ){
 
 <div class="wrap">
 <div id="bpsUprade"><strong>
-<a href="http://www.ait-pro.com/bulletproof-security-pro-flash/bulletproof.html" target="_blank" title="Link opens in new browser window">Why Upgrade to BulletProof Security Pro?</a></strong></div>
+<a href="http://www.ait-pro.com/bulletproof-security-pro-flash/bulletproof.html" target="_blank" title="BulletProof Security Pro Flash Movie">Upgrade to BulletProof Security Pro</a></strong></div>
 
 <!-- Begin Rating CSS - needs to be inline to load on first launch -->
 <style type="text/css">
-div.bps-star-container { float:right; position: relative; top:-55px; right:-153px; height:19px; width:100px; font-size:19px;}
+div.bps-star-container { float:right; position: relative; top:-10px; right:-100px; height:19px; width:100px; font-size:19px;}
 div.bps-star {height: 100%; position:absolute; top:0px; left:0px; background-color: transparent; letter-spacing:1ex; border:none;}
 .bps-star1 {width:20%;} .bps-star2 {width:40%;} .bps-star3 {width:60%;} .bps-star4 {width:80%;} .bps-star5 {width:100%;}
 .bps-star.bps-star-rating {background-color: #fc0;}
 .bps-star img{display:block; position:absolute; right:0px; border:none; text-decoration:none;}
 div.bps-star img {width:19px; height:19px; border-left:1px solid #fff; border-right:1px solid #fff;}
-.bps-downloaded {float:right; position: relative; top:-33px; right:0px; }
-.bps-star-link {float:right; position: relative; top:-19px; right:-253px; }
+.bps-downloaded {float:right; position: relative; top:15px; right:0px; }
+.bps-star-link {position: relative; top:43px; right:0px; font-size:12px;}
 </style>
 <!-- End Rating CSS - needs to be inline to load on first launch -->
 
-<h2 style="margin-left:70px;"><?php _e('BulletProof Security ~ Login Security & Monitoring', 'bulletproof-security'); ?></h2>
 <?php
 if (function_exists('get_transient')) {
 require_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
 
 	if (false === ($bpsapi = get_transient('bulletproof-security_info'))) {
-	$bpsapi = plugins_api('plugin_information', array('slug' => stripslashes( 'bulletproof-security' ) ));
+		$bpsapi = plugins_api('plugin_information', array('slug' => stripslashes( 'bulletproof-security' ) ));
 	
 	if ( !is_wp_error($bpsapi) ) {
-	$bpsexpire = 60 * 15; // Cache data for 15 minutes
-	set_transient('bulletproof-security_info', $bpsapi, $bpsexpire);
+		$bpsexpire = 60 * 15; // Cache data for 15 minutes
+		set_transient('bulletproof-security_info', $bpsapi, $bpsexpire);
 	}
 	}
   
 	if ( !is_wp_error($bpsapi) ) {
-	$plugins_allowedtags = array('a' => array('href' => array(), 'title' => array(), 'target' => array()),
+		$plugins_allowedtags = array('a' => array('href' => array(), 'title' => array(), 'target' => array()),
 								'abbr' => array('title' => array()), 'acronym' => array('title' => array()),
 								'code' => array(), 'pre' => array(), 'em' => array(), 'strong' => array(),
 								'div' => array(), 'p' => array(), 'ul' => array(), 'ol' => array(), 'li' => array(),
@@ -51,26 +50,31 @@ require_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
 	foreach ( array('version', 'author', 'requires', 'tested', 'homepage', 'downloaded', 'slug') as $key )
 		$bpsapi->$key = wp_kses($bpsapi->$key, $plugins_allowedtags);
 
-      if ( !empty($bpsapi->downloaded) ) {
-        echo '<div class="bps-downloaded">'.sprintf(__('Downloaded %s times', 'bulletproof-security'),number_format_i18n($bpsapi->downloaded)).'.</div>';
+	  if ( !empty($bpsapi->downloaded) ) {
+        echo '<div class="bps-downloaded">'.sprintf(__('%s Downloads', 'bulletproof-security'),number_format_i18n($bpsapi->downloaded)).'</div>';
       }
 ?>
 		<?php if ( !empty($bpsapi->rating) ) : ?>
-		<div class="bps-star-container" title="<?php echo esc_attr(sprintf(__('Average Rating (%s ratings)', 'bulletproof-security'),number_format_i18n($bpsapi->num_ratings))); ?>">
+		<div class="bps-star-container" title="<?php //echo esc_attr(sprintf(__('Average Rating (%s ratings)', 'bulletproof-security'),number_format_i18n($bpsapi->num_ratings))); ?>">
 			<div class="bps-star bps-star-rating" style="width: <?php echo esc_attr($bpsapi->rating) ?>px"></div>
 			<div class="bps-star bps-star5"><img src="<?php echo plugins_url('/bulletproof-security/admin/images/star.png'); ?>" alt="<?php _e('5 stars', 'bulletproof-security') ?>" /></div>
 			<div class="bps-star bps-star4"><img src="<?php echo plugins_url('/bulletproof-security/admin/images/star.png'); ?>" alt="<?php _e('4 stars', 'bulletproof-security') ?>" /></div>
 			<div class="bps-star bps-star3"><img src="<?php echo plugins_url('/bulletproof-security/admin/images/star.png'); ?>" alt="<?php _e('3 stars', 'bulletproof-security') ?>" /></div>
 			<div class="bps-star bps-star2"><img src="<?php echo plugins_url('/bulletproof-security/admin/images/star.png'); ?>" alt="<?php _e('2 stars', 'bulletproof-security') ?>" /></div>
 			<div class="bps-star bps-star1"><img src="<?php echo plugins_url('/bulletproof-security/admin/images/star.png'); ?>" alt="<?php _e('1 star', 'bulletproof-security') ?>" /></div>
-		</div>
-		<div class="bps-star-link"><a target="_blank" title="Link opens in new browser window" href="http://wordpress.org/extend/plugins/<?php echo $bpsapi->slug ?>/"> <?php _e('Please Rate BPS', 'bulletproof-security'); ?></a> <small><?php echo sprintf(__('%s Ratings', 'bulletproof-security'),number_format_i18n($bpsapi->num_ratings)); ?> </small></div>
+		
+        <div class="bps-star-link"><a target="_blank" title="Link opens in new browser window" href="http://wordpress.org/extend/plugins/<?php echo $bpsapi->slug ?>/"> <?php _e('Rate BPS', 'bulletproof-security'); ?></a> <small><?php //echo sprintf(__('%s Ratings', 'bulletproof-security'),number_format_i18n($bpsapi->num_ratings)); ?> </small></div>
+        
+        </div>
+		
         <br />
 		<?php endif; 
 	  } // if ( !is_wp_error($bpsapi)
  }// end if (function_exists('get_transient'
 ?>
 
+
+<h2 style="margin-left:70px;"><?php _e('BulletProof Security ~ Login Security & Monitoring', 'bulletproof-security'); ?></h2>
 <div id="message" class="updated" style="border:1px solid #999999; margin-left:70px;">
 
 <?php
@@ -115,14 +119,17 @@ $bps_wpcontent_dir = str_replace( ABSPATH, '', WP_CONTENT_DIR);
 
 <h3><?php _e('Login Security & Monitoring', 'bulletproof-security'); ?>  <button id="bps-open-modal1" class="bps-modal-button"><?php _e('Read Me', 'bulletproof-security'); ?></button></h3>
 <div id="bps-modal-content1" title="<?php _e('Login Security & Monitoring', 'bulletproof-security'); ?>">
-	<p><?php $text = '<strong>'.__('This Read Me Help window is draggable (top) and resizable (bottom right corner)', 'bulletproof-security').'</strong><br><br><strong>'.__('Click the Save Options button to save the best pre-selected Login Security settings or choose your own Login Security option settings.', 'bulletproof-security').'</strong><br><br><strong>'.__('NOTE: A stand alone Login Security Unlock User Account Form has been created that allows you to Unlock locked User Accounts outside of your WordPress Dashboard.', 'bulletproof-security').'</strong><br>'.__('To use this stand alone script download it from this BulletProof Security Pro plugin folder - /', 'bulletproof-security').$bps_plugin_dir.__('/bulletproof-security/admin/htaccess/bpsunlock.php and then upload it to your website root folder. Then type in the path to the bpsunlock.php file in your Browser. Example: http://www.example.com/bpsunlock.php. The stand alone script displays step by step instructions on how to use it.', 'bulletproof-security').'<br><br><strong>'.__('NOTE: BPS Pro Login Security email alerting options are located in S-Monitor BPS Pro Email Alerting & Log File Options instead of being on the Login Security page.', 'bulletproof-security').'</strong><br>'.__('If you upgrade to BPS Pro from BPS Free your option settings will be saved. Your Login Security Database table and rows will also be saved.', 'bulletproof-security').'<br><br><strong>'.__('Max Login Attempts: ', 'bulletproof-security').'</strong><br>'.__('Type in the maximum number of failed login attempts allowed before a User Account is automatically Locked out. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('NOTE: ', 'bulletproof-security').'</strong>'.__('The Max Login Attempts setting range is from 1 - 10. Minimum is 1 failed login attempt - Maximum is 10 failed login attempts. Setting this to 1 failed login attempt is NOT recommended. The default is 3 failed login attempts before locking the User Account.', 'bulletproof-security').'<br><br><strong>'.__('Automatic Lockout Time: ', 'bulletproof-security').'</strong><br>'.__('Type in the number of minutes that you would like the User Account to be locked out for when the maximum number of failed login attempts have been made. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Manual Lockout Time: ', 'bulletproof-security').'</strong><br>'.__('Type in the number of minutes that you would like the User Account to be locked out for when you manually lock a User Account using Lock checkbox options in the Dynamic Login Security form. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Max DB Rows To Show: ', 'bulletproof-security').'</strong><br>'.__('Type in the maximum number of database rows that you would like to display in the Dynamic Login Security form. Leaving this text box blank means display all database rows. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Turn On/Turn Off: ', 'bulletproof-security').'</strong><br>'.__('Turn On Login Security or Turn Off Login Security. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Logging Options: ', 'bulletproof-security').'</strong><br>'.__('You can choose to Log All User Account Logins or Log Only User Account Lockouts. Recommended Setting: Log Only Account Lockouts.  After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('BPS Pro ONLY - Reset / Clear Login Security Alerts: ', 'bulletproof-security').'</strong><br>'.__('If you choose to have S-Monitor Login Security Alerts displayed to you in your WP Dashboard or BPS Pro pages then to clear the alert you will need to click this button.', 'bulletproof-security').'<br><br><strong>'.__('Search feature: ', 'bulletproof-security').'</strong><br>'.__('The search feature allows you to search all of the Login Security database rows. To search for all Locked User accounts enter Locked, to search for a username enter that username, to search for an IP address enter that IP address, etc.', 'bulletproof-security').'<br><br><strong>'.__('The Dynamic Login Security Form: ', 'bulletproof-security').'</strong><br>'.__('You have 3 options: Lock, Unlock or Delete database rows. The Login Security database table is hooked into the WordPress Users database table, but they are 2 completely separate database tables. If you lock a User Account then BPS Pro will enforce that lock on that User Account and the User will not be able to log in. If you unlock a User Account then the User will be able to login. Deleting database rows in the Login Security database table does NOT delete the User Account from the WordPress Users database table. When you delete a User Account it is pretty much the same thing as unlocking a User Account. To delete actual User Accounts you would go to the WordPress Users page and delete that User Account.', 'bulletproof-security').'<br><br><strong>'.__('BPS Pro Video Tutorial links can be found in the Help & FAQ pages.', 'bulletproof-security').'</strong>'; echo $text; ?></p>
+	<p><?php $text = '<strong>'.__('This Read Me Help window is draggable (top) and resizable (bottom right corner)', 'bulletproof-security').'</strong><br><br><strong>'.__('Click both Save Options buttons to save the best pre-selected Login Security settings or choose your own Login Security option settings.', 'bulletproof-security').'</strong><br><br><strong>'.__('NOTE: A stand alone Login Security Unlock User Account Form has been created that allows you to Unlock locked User Accounts outside of your WordPress Dashboard.', 'bulletproof-security').'</strong><br>'.__('To use this stand alone script download it from this BulletProof Security Pro plugin folder - /', 'bulletproof-security').$bps_plugin_dir.__('/bulletproof-security/admin/htaccess/bpsunlock.php and then upload it to your website root folder. Then type in the path to the bpsunlock.php file in your Browser. Example: http://www.example.com/bpsunlock.php. The stand alone script displays step by step instructions on how to use it.', 'bulletproof-security').'<br><br><strong>'.__('NOTE: BPS Pro Login Security email alerting options are located in S-Monitor BPS Pro Email Alerting & Log File Options instead of being on the Login Security page.', 'bulletproof-security').'</strong><br>'.__('If you upgrade to BPS Pro from BPS Free your option settings will be saved. Your Login Security Database table and rows will also be saved.', 'bulletproof-security').'<br><br><strong>'.__('Max Login Attempts: ', 'bulletproof-security').'</strong><br>'.__('Type in the maximum number of failed login attempts allowed before a User Account is automatically Locked out. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('NOTE: ', 'bulletproof-security').'</strong>'.__('The Max Login Attempts setting range is from 1 - 10. Minimum is 1 failed login attempt - Maximum is 10 failed login attempts. Setting this to 1 failed login attempt is NOT recommended. The default is 3 failed login attempts before locking the User Account.', 'bulletproof-security').'<br><br><strong>'.__('Automatic Lockout Time: ', 'bulletproof-security').'</strong><br>'.__('Type in the number of minutes that you would like the User Account to be locked out for when the maximum number of failed login attempts have been made. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Manual Lockout Time: ', 'bulletproof-security').'</strong><br>'.__('Type in the number of minutes that you would like the User Account to be locked out for when you manually lock a User Account using Lock checkbox options in the Dynamic Login Security form. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Max DB Rows To Show: ', 'bulletproof-security').'</strong><br>'.__('Type in the maximum number of database rows that you would like to display in the Dynamic Login Security form. Leaving this text box blank means display all database rows. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Turn On/Turn Off: ', 'bulletproof-security').'</strong><br>'.__('Turn On Login Security or Turn Off Login Security. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Logging Options: ', 'bulletproof-security').'</strong><br>'.__('You can choose to Log All User Account Logins or Log Only User Account Lockouts. Recommended Setting: Log Only Account Lockouts.  After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Error Messages: ', 'bulletproof-security').'</strong><br><br><strong>'.__('Standard WP Login Errors: ', 'bulletproof-security').'</strong>'.__('will display the normal WP login errors. Example1: ERROR: The password you entered for the username X is incorrect. BPS Example2: ERROR: This user account has been locked until May 14, 2013 9:31 am due to too many failed login attempts. You can login again after the Lockout Time above has expired.', 'bulletproof-security').'<br><br><strong>'.__('User/Pass Invalid Entry Error: ', 'bulletproof-security').'</strong>'.__('will display a generic Invalid Entry error message instead of displaying normal WP login errors for incorrect username or incorrect password, but if a user account is locked out then the BPS timestamp and Lockout Time error message will be displayed. Example: ERROR: Invalid Entry for either incorrect username or incorrect password. BPS Example2: ERROR: This user account has been locked until May 14, 2013 9:31 am due to too many failed login attempts. You can login again after the Lockout Time above has expired.', 'bulletproof-security').'<br><br><strong>'.__('User/Pass/Lock Invalid Entry Error: ', 'bulletproof-security').'</strong>'.__('will display a generic Invalid Entry error message instead of displaying normal WP login errors for incorrect username, incorrect password and when the user account is locked out - the BPS Lockout Time error message will NOT be displayed. ', 'bulletproof-security').'<br><strong>'.__('CAUTION: ', 'bulletproof-security').'</strong>'.__('If the user account is locked out then no indication will be given that the user account is locked out and only a generic ERROR: Invalid Entry message will be displayed.', 'bulletproof-security').'<br><br><strong>'.__('Password Reset: ', 'bulletproof-security').'</strong><br>'.__('The Enable Password Reset option will allow the normal WP Lost Password link to be displayed and allow locked out users to reset their passwords. The Disable Password Reset option disables the WP Login reset password feature and displays this error message - Password reset is not allowed for this user. This error message is displayed for valid or invalid user accounts or email addresses. In other words, there is no indication of whether or not a valid username or email address is being entered. This of course disables a lot of cool WordPress login features, but if you want complete Login Stealth Mode then this is the option for you.', 'bulletproof-security').'<br><br><strong>'.__('BPS Pro ONLY - Reset / Clear Login Security Alerts: ', 'bulletproof-security').'</strong><br>'.__('If you choose to have S-Monitor Login Security Alerts displayed to you in your WP Dashboard or BPS Pro pages then to clear the alert you will need to click this button.', 'bulletproof-security').'<br><br><strong>'.__('Search feature: ', 'bulletproof-security').'</strong><br>'.__('The search feature allows you to search all of the Login Security database rows. To search for all Locked User accounts enter Locked, to search for a username enter that username, to search for an IP address enter that IP address, etc.', 'bulletproof-security').'<br><br><strong>'.__('The Dynamic Login Security Form: ', 'bulletproof-security').'</strong><br>'.__('You have 3 options: Lock, Unlock or Delete database rows. The Login Security database table is hooked into the WordPress Users database table, but they are 2 completely separate database tables. If you lock a User Account then BPS Pro will enforce that lock on that User Account and the User will not be able to log in. If you unlock a User Account then the User will be able to login. Deleting database rows in the Login Security database table does NOT delete the User Account from the WordPress Users database table. When you delete a User Account it is pretty much the same thing as unlocking a User Account. To delete actual User Accounts you would go to the WordPress Users page and delete that User Account.', 'bulletproof-security').'<br><br><strong>'.__('BPS Pro Video Tutorial links can be found in the Help & FAQ pages.', 'bulletproof-security').'</strong>'; echo $text; ?></p>
 </div>
 
 <?php
-if (!current_user_can('manage_options')) { _e('Permission Denied', 'bulletproof-security'); } else { ?>
+if ( !current_user_can('manage_options') ) { _e('Permission Denied', 'bulletproof-security'); } else { 
+?>
+
 <table width="800px" border="0">
   <tr>
     <td>
+    
     <div id="LoginSecurityOptions" style="margin:0px 0px 0px 0px;">
 <form name="LoginSecurityOptions" action="options.php" method="post">
 	<?php settings_fields('bulletproof_security_options_login_security'); ?> 
@@ -136,20 +143,33 @@ if (!current_user_can('manage_options')) { _e('Permission Denied', 'bulletproof-
     <label for="LSLog" style="margin:0px 9px 0px 0px;"><strong><?php _e('Max DB Rows To Show:', 'bulletproof-security'); ?></strong></label>
     <input type="text" name="bulletproof_security_options_login_security[bps_max_db_rows_display]" class="regular-text-50-fixed" style="width:50px;" value="<?php if ($BPSoptions['bps_max_db_rows_display'] != '') { echo $BPSoptions['bps_max_db_rows_display']; } else { echo ''; } ?>" /><label for="LSLog" style="margin:0px 0px 0px 5px;"><strong><?php _e('Blank = Show All Rows', 'bulletproof-security'); ?></strong></label><br /><br />
 	<label for="LSLog"><strong><?php _e('Turn On/Turn Off:', 'bulletproof-security'); ?></strong></label>
-<select name="bulletproof_security_options_login_security[bps_login_security_OnOff]" style="width:200px;margin:5px 0px 0px 0px;">
+<select name="bulletproof_security_options_login_security[bps_login_security_OnOff]" style="width:220px;margin:5px 0px 0px 0px;">
 <option value="On" <?php selected('On', $BPSoptions['bps_login_security_OnOff']); ?>><?php _e('Turn On Login Security', 'bulletproof-security'); ?></option>
 <option value="Off" <?php selected('Off', $BPSoptions['bps_login_security_OnOff']); ?>><?php _e('Turn Off Login Security', 'bulletproof-security'); ?></option>
 </select><br />
 	<label for="LSLog" style="margin:0px 2px 0px 0px;"><strong><?php _e('Logging Options:', 'bulletproof-security'); ?></strong></label>
-<select name="bulletproof_security_options_login_security[bps_login_security_logging]" style="width:200px;">
+<select name="bulletproof_security_options_login_security[bps_login_security_logging]" style="width:220px;">
 <option value="logLockouts" <?php selected('logLockouts', $BPSoptions['bps_login_security_logging']); ?>><?php _e('Log Only Account Lockouts', 'bulletproof-security'); ?></option>
 <option value="logAll" <?php selected('logAll', $BPSoptions['bps_login_security_logging']); ?>><?php _e('Log All Account Logins', 'bulletproof-security'); ?></option>
+</select><br />
+	<label for="LSLog" style="margin:0px 3px 0px 0px;"><strong><?php _e('Error Messages:', 'bulletproof-security'); ?></strong></label>
+<select name="bulletproof_security_options_login_security[bps_login_security_errors]" style="width:220px;">
+<option value="wpErrors" <?php @selected('wpErrors', $BPSoptions['bps_login_security_errors']); ?>><?php _e('Standard WP Login Errors', 'bulletproof-security'); ?></option>
+<option value="generic" <?php @selected('generic', $BPSoptions['bps_login_security_errors']); ?>><?php _e('User/Pass Invalid Entry Error', 'bulletproof-security'); ?></option>
+<option value="genericAll" <?php @selected('genericAll', $BPSoptions['bps_login_security_errors']); ?>><?php _e('User/Pass/Lock Invalid Entry Error', 'bulletproof-security'); ?></option>
+</select><br />
+	<label for="LSLog" style="margin:0px 0px 0px 0px;"><strong><?php _e('Password Reset:', 'bulletproof-security'); ?></strong></label>
+<select name="bulletproof_security_options_login_security[bps_login_security_pw_reset]" style="width:220px;">
+<option value="enable" <?php @selected('enable', $BPSoptions['bps_login_security_pw_reset']); ?>><?php _e('Enable Password Reset', 'bulletproof-security'); ?></option>
+<option value="disable" <?php @selected('disable', $BPSoptions['bps_login_security_pw_reset']); ?>><?php _e('Disable Password Reset', 'bulletproof-security'); ?></option>
 </select><br />
 <input type="submit" name="Submit-Security-Log-Options" class="bps-blue-button" style="margin:10px 0px 0px 0px;" value="<?php esc_attr_e('Save Options', 'bulletproof-security') ?>" />
 </form>
 </div>
 </td>
     <td>
+ 
+<div id="LoginSecurityEmailOptions" style="margin: -54px 0px 0px 0px;">   
     <form name="bpsEmailAlerts" action="options.php" method="post">
     <?php settings_fields('bulletproof_security_options_email'); ?>
 	<?php $options = get_option('bulletproof_security_options_email'); ?>
@@ -157,13 +177,13 @@ if (!current_user_can('manage_options')) { _e('Permission Denied', 'bulletproof-
 <strong><label for="bps-monitor-email" style="margin:0px 15px 0px 0px;vertical-align:middle;"><?php _e('Send Email Alerts To:', 'bulletproof-security'); ?> </label></strong>
 <input type="text" name="bulletproof_security_options_email[bps_send_email_to]" class="regular-text-long-fixed" style="width:200px;" value="<?php if ($options['bps_send_email_to'] != '') { echo $options['bps_send_email_to']; } else { echo $admin_email; } ?>" /><br />
 <strong><label for="bps-monitor-email" style="margin:0px 0px 0px 0px;vertical-align:middle;"><?php _e('Send Email Alerts From:', 'bulletproof-security'); ?> </label></strong>
-<input type="text" name="bulletproof_security_options_email[bps_send_email_from]" class="regular-text-long-fixed" style="width:200px;" value="<?php echo $options['bps_send_email_from']; ?>" /><br />
+<input type="text" name="bulletproof_security_options_email[bps_send_email_from]" class="regular-text-long-fixed" style="width:200px;" value="<?php if ($options['bps_send_email_from'] != '') { echo $options['bps_send_email_from']; } else { echo $admin_email; } ?>" /><br />
 <strong><label for="bps-monitor-email" style="margin:0px 14px 0px 0px;vertical-align:middle;"><?php _e('Send Email Alerts Cc:', 'bulletproof-security'); ?> </label></strong>
 <input type="text" name="bulletproof_security_options_email[bps_send_email_cc]" class="regular-text-long-fixed" style="width:200px;" value="<?php echo $options['bps_send_email_cc']; ?>" /><br />
 <strong><label for="bps-monitor-email" style="margin:0px 8px 0px 0px;vertical-align:middle;"><?php _e('Send Email Alerts Bcc:', 'bulletproof-security'); ?> </label></strong>
 <input type="text" name="bulletproof_security_options_email[bps_send_email_bcc]" class="regular-text-long-fixed" style="width:200px; margin:0px 0px 20px 0px;" value="<?php echo $options['bps_send_email_bcc']; ?>" /><br />
 <input type="hidden" name="bpsEMA" value="bps-EMA" />
-<strong><label for="bps-monitor-email" style="margin:0px 0px 0px 0px;"><?php _e('Send Email Alert When...', 'bulletproof-security'); ?></label></strong><br />
+<strong><label for="bps-monitor-email" style="margin:0px 0px 0px 0px;"><?php _e('Send Login Security Email Alert When...', 'bulletproof-security'); ?></label></strong><br />
 <select name="bulletproof_security_options_email[bps_login_security_email]" style="width:340px;">
 <option value="lockoutOnly" <?php selected( $options['bps_login_security_email'], 'lockoutOnly'); ?>><?php _e('A User Account Is Locked Out', 'bulletproof-security'); ?></option>
 <option value="adminLoginOnly" <?php selected( $options['bps_login_security_email'], 'adminLoginOnly'); ?>><?php _e('An Administrator Logs In', 'bulletproof-security'); ?></option>
@@ -171,8 +191,14 @@ if (!current_user_can('manage_options')) { _e('Permission Denied', 'bulletproof-
 <option value="anyUserLoginLock" <?php selected( $options['bps_login_security_email'], 'anyUserLoginLock'); ?>><?php _e('Any User Logs In & A User Account is Locked Out', 'bulletproof-security'); ?></option>
 <option value="no" <?php selected( $options['bps_login_security_email'], 'no'); ?>><?php _e('Do Not Send Email Alerts', 'bulletproof-security'); ?></option>
 </select><br /><br />
+<!-- <strong><label for="bps-monitor-email" style="margin:0px 0px 0px 0px;"><?php //_e('BPS Plugin Upgrade Email Notification', 'bulletproof-security'); ?></label></strong><br />
+<select name="bulletproof_security_options_email[bps_upgrade_email]" style="width:340px;">
+<option value="yes" <?php //selected( @$options['bps_upgrade_email'], 'yes'); ?>><?php //_e('Send Email Alerts', 'bulletproof-security'); ?></option>
+<option value="no" <?php //selected( @$options['bps_upgrade_email'], 'no'); ?>><?php //_e('Do Not Send Email Alerts', 'bulletproof-security'); ?></option>
+</select><br /><br /> -->
 <input type="submit" name="bpsEmailAlertSubmit" class="bps-blue-button" style="margin:5px 0px 0px 0px;" value="<?php esc_attr_e('Save Options', 'bulletproof-security') ?>" />
 </form>
+</div>
 </td>
   </tr>
   <tr>
@@ -183,8 +209,8 @@ if (!current_user_can('manage_options')) { _e('Permission Denied', 'bulletproof-
 
 <?php
 
-	// DB Login Security Search Form - style="float:right; margin:130px 50px 0px 0px;"
-	echo '<div id="LoginSecuritySearch" style="float:right;position:relative;bottom:15px;right:110px;">';
+	// DB Login Security Search Form
+	echo '<div id="LoginSecuritySearch" style="float:right;margin:-30px 110px 0px 0px;>';
 	echo '<form name="LoginSecuritySearchForm" action="admin.php?page=bulletproof-security/admin/login/login.php" method="post">';
 	wp_nonce_field('bulletproof_security_login_security_search');
 	echo '<input type="text" name="LSSearch" class="regular-text-short-fixed" style="margin: 0px 5px 0px 0px; "value="" />';

@@ -1,11 +1,19 @@
 <?php
 // Direct calls to this file are Forbidden when wp core files are not present
+/*
 if (!function_exists ('add_action')) {
 		header('Status: 403 Forbidden');
 		header('HTTP/1.1 403 Forbidden');
 		exit();
 }
+*/
+if ( !current_user_can('manage_options') ){ 
+		header('Status: 403 Forbidden');
+		header('HTTP/1.1 403 Forbidden');
+		exit();
+}
 
+/*
 // BPS Class - not doing anything with this Class in BPS Free
 if ( !class_exists('Bulletproof_Security') ) {
 	
@@ -44,4 +52,5 @@ if ( !class_exists('Bulletproof_Security') ) {
 		}
 	}
 }//end if
+*/
 ?>

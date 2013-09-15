@@ -1,6 +1,6 @@
 <?php
 $BPSoptions = get_option('bulletproof_security_options_login_security');
-	if ( $BPSoptions['bps_login_security_OnOff'] == 'On') {
+	if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && isset( $_POST['wp-submit'] ) ) {
 		add_filter('authenticate', 'bpspro_wp_authenticate_username_password', 20, 3);
 	}
 
@@ -42,11 +42,15 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 
 		foreach ( $LoginSecurityRows as $row ) {
 	
-			if ( $row->status == 'Locked' && $timeNow < $row->lockout_time && $row->failed_logins >= $BPSoptions['bps_max_logins'] ) { // greater > for testing
+			if ( $row->status == 'Locked' && $timeNow < $row->lockout_time && $row->failed_logins >= $BPSoptions['bps_max_logins'] && $BPSoptions['bps_login_security_errors'] != 'genericAll') { 
 				$error = new WP_Error();
 				$error->add('locked_account', __('<strong>ERROR</strong>: This user account has been locked until <strong>'.date_i18n(get_option('date_format').' '.get_option('time_format'), $row->lockout_time + $gmt_offset).'</strong> due to too many failed login attempts. You can login again after the Lockout Time above has expired.'));
 		
 				return $error;
+			}
+			
+			if ( $row->status == 'Locked' && $timeNow < $row->lockout_time && $row->failed_logins >= $BPSoptions['bps_max_logins'] && $BPSoptions['bps_login_security_errors'] == 'genericAll') { 
+				return new WP_Error('incorrect_password', sprintf(__('<strong>ERROR</strong>: Invalid Entry. <a href="%s" title="Password Lost and Found">Lost your password</a>?'), wp_lostpassword_url()));
 			}
 		}
 
@@ -304,14 +308,18 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 
 		foreach ( $LoginSecurityRows as $row ) {
 	
-			if ( $row->status == 'Locked' && $timeNow < $row->lockout_time && $row->failed_logins >= $BPSoptions['bps_max_logins'] ) { // greater > for testing
+			if ( $row->status == 'Locked' && $timeNow < $row->lockout_time && $row->failed_logins >= $BPSoptions['bps_max_logins'] && $BPSoptions['bps_login_security_errors'] != 'genericAll') { 
 				$error = new WP_Error();
 				$error->add('locked_account', __('<strong>ERROR</strong>: This user account has been locked until <strong>'.date_i18n(get_option('date_format').' '.get_option('time_format'), $row->lockout_time + $gmt_offset).'</strong> due to too many failed login attempts. You can login again after the Lockout Time above has expired.'));
-			
+		
 				return $error;
 			}
+			
+			if ( $row->status == 'Locked' && $timeNow < $row->lockout_time && $row->failed_logins >= $BPSoptions['bps_max_logins'] && $BPSoptions['bps_login_security_errors'] == 'genericAll') { 
+				return new WP_Error('incorrect_password', sprintf(__('<strong>ERROR</strong>: Invalid Entry. <a href="%s" title="Password Lost and Found">Lost your password</a>?'), wp_lostpassword_url()));
+			}
 		}
-		
+
 		// Bad Login - DB Row does NOT Exist - First bad login attempt = $failed_logins = '1';
 		if ( $wpdb->num_rows == 0 && $user->ID != 0 && !wp_check_password($password, $user->user_pass, $user->ID) ) {
 			$failed_logins = '1';
@@ -474,24 +482,95 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 /*
 ****************************************************
 // WordPress Standard Authentication Processing Code
+// with Generic Error Message display options
 ****************************************************
-// Custom options for error message display will be added here in a later version of BPS
 */
-if ( $BPSoptions['bps_login_security_OnOff'] == 'On') {
+if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && isset( $_POST['wp-submit'] ) ) {
 
-	if ( !$user )
+	// if a user does not set/save this option then default to WP Errors
+	if ( !$user && !$BPSoptions['bps_login_security_errors'] ) {
 		return new WP_Error('invalid_username', sprintf(__('<strong>ERROR</strong>: Invalid username. <a href="%s" title="Password Lost and Found">Lost your password</a>?'), wp_lostpassword_url()));
+	}
+
+	if ( !$user && $BPSoptions['bps_login_security_errors'] == 'wpErrors') {
+		return new WP_Error('invalid_username', sprintf(__('<strong>ERROR</strong>: Invalid username. <a href="%s" title="Password Lost and Found">Lost your password</a>?'), wp_lostpassword_url()));
+	}
+	
+	if ( !$user && $BPSoptions['bps_login_security_errors'] == 'generic') {
+		return new WP_Error('invalid_username', sprintf(__('<strong>ERROR</strong>: Invalid Entry. <a href="%s" title="Password Lost and Found">Lost your password</a>?'), wp_lostpassword_url()));
+	}
+	
+	if ( !$user && $BPSoptions['bps_login_security_errors'] == 'genericAll') {
+		return new WP_Error('invalid_username', sprintf(__('<strong>ERROR</strong>: Invalid Entry. <a href="%s" title="Password Lost and Found">Lost your password</a>?'), wp_lostpassword_url()));
+	}
 
 	$user = apply_filters('wp_authenticate_user', $user, $password);
-	if ( is_wp_error($user) )
+	if ( is_wp_error($user) ) 
 		return $user;
 
-	if ( !wp_check_password($password, $user->user_pass, $user->ID) )
+	// if a user does not set/save this option then default to WP Errors
+	if ( !wp_check_password($password, $user->user_pass, $user->ID) && !$BPSoptions['bps_login_security_errors'] ) {
+		return new WP_Error( 'incorrect_password', sprintf( __( '<strong>ERROR</strong>: The password you entered for the username <strong>%1$s</strong> is incorrect. <a href="%2$s" title="Password Lost and Found">Lost your password</a>?' ), $username, wp_lostpassword_url() ) );		
+	}
 
-		return new WP_Error( 'incorrect_password', sprintf( __( '<strong>ERROR</strong>: The password you entered for the username <strong>%1$s</strong> is incorrect. <a href="%2$s" title="Password Lost and Found">Lost your password</a>?' ),
+	if ( !wp_check_password($password, $user->user_pass, $user->ID) && $BPSoptions['bps_login_security_errors'] == 'wpErrors') {
+		return new WP_Error( 'incorrect_password', sprintf( __( '<strong>ERROR</strong>: The password you entered for the username <strong>%1$s</strong> is incorrect. <a href="%2$s" title="Password Lost and Found">Lost your password</a>?' ), $username, wp_lostpassword_url() ) );		
+	}
+	
+	if ( !wp_check_password($password, $user->user_pass, $user->ID) && $BPSoptions['bps_login_security_errors'] == 'generic') {	
+		return new WP_Error( 'incorrect_password', sprintf( __( '<strong>ERROR</strong>: Invalid Entry. <a href="%2$s" title="Password Lost and Found">Lost your password</a>?' ),
 		$username, wp_lostpassword_url() ) );
+	}
+	
+	if ( !wp_check_password($password, $user->user_pass, $user->ID) && $BPSoptions['bps_login_security_errors'] == 'genericAll') {	
+		return new WP_Error( 'incorrect_password', sprintf( __( '<strong>ERROR</strong>: Invalid Entry. <a href="%2$s" title="Password Lost and Found">Lost your password</a>?' ),
+		$username, wp_lostpassword_url() ) );
+	}
 
 	return $user;
 }
+}
+
+/******************************************
+// Disable/Enable Password Reset
+// Removes a lot of Cool WP features, but
+// if Stealth Mode is desired then oh well
+*******************************************
+*/
+if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_security_pw_reset'] == 'disable') {
+
+function bpspro_disable_password_reset() { 
+	return false; 
+}
+add_filter( 'allow_password_reset', 'bpspro_disable_password_reset' );
+
+function bpspro_show_password_fields() { 
+	return false; 
+}
+add_filter( 'show_password_fields', 'bpspro_show_password_fields' );
+
+function bpspro_remove_pw_text($text) {
+	return str_replace( array('Lost your password?', 'Lost your password'), '', trim($text, '?') ); 
+}
+add_filter( 'gettext', 'bpspro_remove_pw_text' ); 
+
+// Replace invalidcombo error - valid user account / invalid user account same exact result 
+function bpspro_login_error_invalidcombo($text) { 
+	return str_replace( '<strong>ERROR</strong>: Invalid username or e-mail.', 'Password reset is not allowed for this user', $text ); 
+}
+add_filter ( 'login_errors', 'bpspro_login_error_invalidcombo');
+
+// Replace invalid_email error - valid email / invalid email same exact result
+function bpspro_login_error_invalid_email($text) { 
+	return str_replace( '<strong>ERROR</strong>: There is no user registered with that email address.', 'Password reset is not allowed for this user', $text );
+}
+add_filter ( 'login_errors', 'bpspro_login_error_invalid_email');
+
+// Removes WP Shake It so that no indication is given of good/bad value/entry
+function bspro_remove_shake() {
+	remove_action( 'login_head', 'wp_shake_js', 12 );	
+}
+add_filter ( 'shake_error_codes', 'bspro_remove_shake');
+
 }
 ?>

@@ -1,7 +1,6 @@
-#   BULLETPROOF .48.8 MAINTENANCE  .HTACCESS     
+#   BULLETPROOF .49.1 MAINTENANCE  .HTACCESS     
 
 # BEGIN WordPress
-
 
 RewriteEngine On
 RewriteBase /

@@ -1,34 +1,36 @@
 === BulletProof Security ===
 Contributors: AITpro
 Donate link: http://www.ait-pro.com/aitpro-blog/331/bulletproof-security-plugin-support/bulletproof-security-donations-page/
-Tags: bulletproof, security, secure, htaccess, chmod, maintenance, plugin, private, privacy, protection, permissions, 503, base64, injection, code, encode, script, attack, hack, hackers, block, blocked, prevent, prevention, RFI, XSS, CRLF, CSRF, SQL Injection, vulnerability, website security, WordPress security, security log, logging, HTTP log, error log, login security, login, log, users, login alerts, lock
+Tags: bulletproof, security, secure, htaccess, chmod, maintenance, plugin, private, privacy, protection, permissions, 503, base64, injection, code, encode, script, attack, hack, hackers, block, blocked, prevent, prevention, RFI, XSS, CRLF, CSRF, SQL Injection, vulnerability, website security, WordPress security, security log, logging, HTTP log, error log, login security, login, log, users, login alerts, lock, brute force, authenticate, authentication, firewall
 Requires at least: 3.0 
-Tested up to: 3.5.1 
-Stable tag: .48.8 
+Tested up to: 3.6 
+Stable tag: .49.1
 
 WordPress Website Security Protection. Website security protection against: XSS, RFI, CRLF, CSRF, Base64, Code Injection and SQL Injection hacking... 
 
 == Description ==
 
-= htaccess Core Website Security =
+= htaccess Core Website Security (Firewalls) =
 
 WordPress Website Security Protection: BulletProof Security protects your WordPress website against XSS, RFI, CRLF, CSRF, Base64, 
-Code Injection and SQL Injection hacking attempts. One-click .htaccess WordPress security protection. Protects wp-config.php, 
+Code Injection and SQL Injection... hacking attempts. One-click .htaccess WordPress security protection. Protects wp-config.php, 
 bb-config.php, php.ini, php5.ini, install.php and readme.html with .htaccess security protection. Security Logging. HTTP Error Logging.
-One-click Website Maintenance Mode (HTTP 503). Additional website security checks: DB errors off, file and folder permissions check... 
-System Info: PHP, MySQL, OS, Server, Memory Usage, IP, SAPI, DNS, Max Upload... Built-in .htaccess file editing, uploading and downloading.
+Login Security/Login Monitoring: Log All Account Logins or Log Only Account Lockouts. Website Maintenance Mode (HTTP 503). 
+Additional website security checks: DB errors off, file and folder permissions check... System Info: PHP, MySQL, OS, Server, Memory 
+Usage, IP, SAPI, DNS, Max Upload... Built-in .htaccess file Editor.
 
 = Login Security & Monitoring Website Security =
 
-Login Security & Login Monitoring: Log All User Account Logins or Log Only User Account Lockouts (see Screenshot). Email alerting options allow you to choose 
-5 different email alerting options: Choose to have email alerts sent when a User Account is locked out, An Administrator Logs in, An Administrator 
-Logs in and when a User Account is locked out, Any User logs in when a User Account is locked out or Do Not Send Email Alerts.
-See BulletProof Security Login Security & Monitoring Features for additional features and options.
+Login Security & Login Monitoring: Log All User Account Logins or Log Only User Account Lockouts (see Screenshot). Brute Force Login Security Protection. 
+Email alerting options allow you to choose 5 different email alerting options: Choose to have email alerts sent when a User Account is locked out, 
+An Administrator Logs in, An Administrator Logs in and when a User Account is locked out, Any User logs in and when a User Account is locked out or 
+Do Not Send Email Alerts. Choose Standard WP Error Messages or Generic Error Messages for Login Security Stealth Mode. Choose to Enable or Disable 
+Login Password Reset capability for Login Security Stealth Mode. See BulletProof Security Login Security & Monitoring Features for additional features and options.
 
 = Why is .htaccess Website Security So Much Better Than Any Other Type of Website Security? =
 
 The answer is very simple - .htaccess files (distributed configuration files) are processed first before any other code on your website. In other words, 
-hackers malicious scripts are stopped by BulletProof Security .htaccess files before those scripts even have a chance to 
+hackers malicious scripts are stopped by BulletProof Security .htaccess files/Firewalls before those scripts even have a chance to 
 reach the php coding in WordPress. BulletProof Security uses .htaccess website security files, which are specific to 
 Apache Linux Servers. Please read the FAQ page for Server compatibility questions. 
 
@@ -70,25 +72,32 @@ have additional website security measures in place as a standard. BulletProof Se
 * If you would like to translate the BPS plugin to your language see this <a href="http://www.ait-pro.com/aitpro-blog/4074/wordpress-tips-tricks-fixes/wordpress-plugin-language-translation-tutorial-translating-a-wordpress-plugin-using-poedit/" title="BPS Plugin Language Translation Tutorial" rel="nofollow" target="_blank">BPS Plugin Language Translation Tutorial</a>. Please include a link to your website so that we can add it here. Thank you.
 * Tip: If you use the Google Chrome Browser you can right mouse click in plugin pages and then click on Translate to... To translate plugin text into your Language.
 
-= BulletProof Security htaccess Core Features =
+= BulletProof Security Bonus Custom Code =
 
+* <a href="http://forum.ait-pro.com/forums/topic/protect-login-page-from-brute-force-login-attacks/" title="Brute Force Login Protection .htaccess code" rel="nofollow" target="_blank">Brute Force Login Protection .htaccess code</a>
+* <a href="http://forum.ait-pro.com/forums/topic/htaccess-caching-code-speed-boost-cache-code/" title="Speed Boost Cache .htaccess code" rel="nofollow" target="_blank">Speed Boost Cache .htaccess code</a>
+* <a href="http://forum.ait-pro.com/forums/topic/hotlink-protection-do-not-block-google-bing-or-yahoo/" title="HotLink Protection .htaccess code - Google, Yahoo, Bing safe" rel="nofollow" target="_blank">HotLink Protection .htaccess code - Google, Yahoo, Bing safe</a>
+
+= BulletProof Security htaccess Core (Firewalls, etc.) Features =
+
+* Root Folder BulletProof Mode/Firewall
+* wp-admin Folder BulletProof Mode/Firewall
+* Built-in .htaccess File Editor & File Manager
+* Built-in .htaccess Backup and Restore
 * One-click .htaccess website security protection from within the WP Dashboard
-* .htaccess security protection against XSS, RFI, CRLF, CSRF, Base64, Code Injection and SQL Injection hacking attempts
-* .htaccess file backup and restore
+* .htaccess security protection against XSS, RFI, CRLF, CSRF, Base64, Code Injection and SQL Injection.......... hacking attempts
+* TimThumb Vulnerability/Exploit .htaccess security protection (Firewall)
 * .htaccess Lock / Unlock (404 Read-Only)
 * .htaccess AutoLock On or Off
 * Security / HTTP Error Logging - Log 400, 403 and 404 Errors
 * Security Log: Add / Remove User Agents/Bots to Ignore/Not Log or Allow/Log
 * Security Log: Turn On / Turn Off / Delete Log
-* Automatic .htaccess file updating on upgrade installation
+* Automatic .htaccess file updating on BPS upgrade installation
 * New .htaccess security filters automatically added during upgrade
-* No need to reactivate BulletProof Modes when upgrading
-* WP Dashboard Alerts - Root and wp-admin .htaccess file checks
+* WP Dashboard Alerts / WP Dashboard Dismiss Notices
 * Anti Comment Spam .htaccess code - works together with Akismet or other Spam plugins to keep Comment Spam at a minimum
 * Anti Comment Spambot .htaccess code - Forbid Empty Referrer Spambots
-* TimThumb Vulnerability/Exploit .htaccess coding
-* Built-in File Editing, File Downloading and File Uploading
-* Custom Code feature that permanently saves and writes your personal custom .htaccess code
+* Custom Code feature: Add, Edit, Modify, Save additional Bonus or personal custom .htaccess code
 * WordPress readme.html and /wp-admin/install.php protected with .htaccess security protection
 * wp-config.php and bb-config.php files protected with .htaccess security protection
 * php.ini and php5.ini files protected with .htaccess security protection
@@ -96,15 +105,11 @@ have additional website security measures in place as a standard. BulletProof Se
 * WordPress version is not displayed / not shown - WordPress version is removed
 * WP Generator Meta Tag filtered - not displayed / not shown
 * WP DB default admin username / account check
-* System Info: PHP, MySQL, OS, Server, Memory Usage, IP, SAPI, DNS, Max Upload, Zend Engine Version, Zend Guard/Optimizer, ionCube Loader, Suhosin, APC, eAccelerator, XCache, Varnish, cURL, Memcache and Memcached
+* System Info: PHP, MySQL, OS, Server, Memory Usage, IP, SAPI, WP Filesystem API Method, DNS, Max Upload, Zend Engine Version, Zend Guard/Optimizer, ionCube Loader, Suhosin, APC, eAccelerator, XCache, Varnish, cURL, Memcache and Memcached
 * Security Status Page - Displays website security status information
-* File and Folder Permission Checking - CGI / DSO SAPI check / display
+* File and Folder Permission Checking - CGI / DSO - SAPI check / display
 * Help & FAQ page - links to BPS Guide and other detailed Help & Info pages
 * Extensive Read Me! jQuery Dialog Help buttons throughout the BulletProof Security plugin pages
-* Backup and Restore existing .htaccess files
-* Backup and Restore customized / modified .htaccess files
-* Add to, Edit, Modify the provided BulletProof Security .htaccess Master files
-* Create your own .htaccess Master files or code and use BulletProof Security as an .htaccess file manager 
 * Website Developer Maintenance Mode (503 website open to Developer / Site Owner ONLY)
 * Log in / out of your website while in Maintenance Mode
 * Customizable 503 Website Under Maintenance page
@@ -113,10 +118,13 @@ have additional website security measures in place as a standard. BulletProof Se
 
 = BulletProof Security Login Security & Monitoring Features =
 
+* Brute Force Login Security Protection
 * Log All User Account Logins or Log Only User Account Lockouts
 * Logged DB Fields: User ID, Username, Display Name, Email, Role, Login Time, Lockout Expires, IP Address, Hostname, Request URI
 * Email Alerting Options: User Account is locked out, An Administrator Logs in, An Administrator Logs in and when a User Account is locked out, Any User logs in when a User Account is locked out, Do Not Send Email Alerts
 * Login Security Additional Options: Max Login Attempts, Automatic Lockout Time, Manual Lockout Time, Max DB Rows To Show, Turn On/Turn Off
+* Login Security Stealth Mode: Standard WP Error Messages or Generic Error Messages. 
+* Login Security Stealth Mode: Enable or Disable Login Password Reset capability and links.
 * Dynamic DB Form: Lock, Unlock, Delete
 * Enhanced Search: Allows you to search all of the Login Security database rows/Fields
 * Stand-alone Unlock Form bpsunlock.php: Unlock User Accounts without having to be logged into the WP Dashboard
@@ -133,7 +141,7 @@ have additional website security measures in place as a standard. BulletProof Se
 
 == Frequently Asked Questions ==
 
-= How does the BulletProof Security Plugin htaccess Core work? =
+= How does the BulletProof Security Plugin htaccess Core (Firewalls) work? =
 
 The BulletProof Security Plugin allows you to instantly create and activate .htaccess website security with 
 one click (ok maybe a few clicks) for your website without having to know anything about .htaccess files. The Master 
@@ -142,10 +150,10 @@ or to configure. Click the AutoMagic buttons (creates customized Master .htacces
 the customized Master .htaccess files to your root and wp-admin folders). BPS has built-in Backup and Restore and 
 an .htaccess File Editor for full manual editing control as well. BulletProof Website Security fast and simple. Enjoy!
 
-= How does the BulletProof Security Plugin Login Security & Monitoring work? =
+= How does BulletProof Security Plugin Login Security & Monitoring work? =
 
 BulletProof Security Login Security & Monitoring allows you to choose whether you want to Log All User Account Logins or 
-Log Only User Account Lockouts. The Dynamic DB Logging For has 3 options: Lock, Unlock or Delete database rows. 
+Log Only User Account Lockouts. The Dynamic DB Logging Form has 3 checkbox options: Lock, Unlock or Delete database rows. 
 The Login Security database table is hooked into the WordPress Users database table, but they are 2 completely separate 
 database tables. If you lock a User Account then BPS Pro will enforce that lock on that User Account and the User will not 
 be able to log in. If you unlock a User Account then the User will be able to login. Deleting database rows in the Login Security 
@@ -199,7 +207,8 @@ Please see the <a href="http://forum.ait-pro.com/forums/forum/bulletproof-securi
 = BulletProof Security Server Compatibilty =
 
 * Compatible with Apache CGI configured Servers
-* Compatible with Apache DSO configured Servers (May require file/folder permission and/or Ownership changes)
+* Compatible with Apache DSO configured Servers (May require CHOWN Ownership change or file/folder permission changes)
+* <a href="http://forum.ait-pro.com/forums/topic/bulletproof-security-pro-compatibility-check-upgrading-from-bps-free-to-bps-pro/" title="DSO Help Info" rel="nofollow" target="_blank">DSO Help Info</a>
 * Compatible with Nginx frontend Server with Apache backend Server
 * Compatible with LiteSpeed Servers
 * Compatible with Windows IIS Servers - Windows Hosting - See IMPORTANT NOTES below.
@@ -250,19 +259,20 @@ The Security Log logs 400 and 403 HTTP Response Status Codes by default. You can
 
 = BulletProof Security =
 
-* .htaccess Website Security Protection
+* .htaccess Website Security Protection (Firewalls)
 * Security Logging
 * HTTP Error Logging
 * Login Security & Monitoring
 
 = BulletProof Security Pro Feature Highlights =
 
+* 1 Click Setup Wizard - Setup takes less than 1 minute
 * AutoRestore - Automatic File Restore
 * Quarantine - Automatic File Quarantine
-* Real-time File Monitor (ARQ Infinity)
+* Real-time IDPS File Monitor (ARQ IDPS)
 * Plugin Firewall (true IP Based Firewall)
-* Uploads Folder Anti-Exploit Guard
-* .htaccess Website Security
+* Uploads Folder Anti-Exploit Guard (UAEG)
+* .htaccess Website Security (Firewalls)
 * Custom php.ini Website Security
 * Login Security & Monitoring w/Dashboard Alerting / Status Display & additional options/features
 * F-Lock - Read Only File Locking
@@ -272,7 +282,7 @@ The Security Log logs 400 and 403 HTTP Response Status Codes by default. You can
 * Email Alerts
 * Versatile Set of Pro-Tools...
 * Base64 Decoder / Encoder...
-* <a href="http://www.ait-pro.com/aitpro-blog/3395/bulletproof-security-pro/bps-free-vs-bps-pro-feature-comparison/" title="BulletProof Security Features" rel="nofollow" target="_blank">View All BulletProof Security Pro Feature Details</a>
+* <a href="http://www.ait-pro.com/bulletproof-security-pro-flash/bulletproof.html" title="BulletProof Security Features" rel="nofollow" target="_blank">View All BulletProof Security Pro Feature Details</a>
 
 = Is BulletProof Security Network / Multisite Compatible? =
 
@@ -333,10 +343,39 @@ Yes, BulletProof Security works with Git, but does require some additional set u
 1. BulletProof Security - Security Modes page
 2. BulletProof Security - Security Status page
 3. BulletProof Security - System Info page
-4. BulletProof Security - Edit/Upload/Download page
-5. BulletProof Security - Login Security and Monitoring
+4. BulletProof Security - htaccess File Editor page
+5. BulletProof Security - Login Security and Monitoring page
 
 == Changelog ==
+
+= .49.1 =
+* Backup folder path correction on Backup & Restore page
+* WP Filesystem API Method will display the WordPress Filesystem Method in use. For DSO Server troubleshooting additional fields will be displayed if the Script Owner and File Owner ID’s do not match.
+* Custom Code help text changes
+* Custom Code additional error checking
+* htaccess auto-writing additions
+* Additional root htaccess file placeholders/markers added
+* New Dashboard Dismiss Notices: Sucuri 1-click Hardening, Broken Link Checker, phpini handler, Speed Boost Custom Code, Custom Permalinks check
+* Dashboard Alerts are now only displayed to Administrators. Editors, Authors, etc will no longer see Alerts
+* The htaccess Core Edit/Upload/Download tab page has been renamed to htaccess File Editor.
+* The File Upload & Download features have been removed from the new htaccess File Editor page since these features/options are obsolete.
+* Visual Enhancements: AutoMagic font size increased, etc.
+* Enjoy!
+
+= .49 =
+* Security Vulnerability/Bug Fix/Patch: HTML rendered in Security Log file via Logged Header Fields 
+* Special Thanks go to <a href="http://secunia.com/" title="Jacek Sowinski via Secunia SVCRP">Jacek Sowinski via Secunia SVCRP</a> for discovering this vulnerability. 
+* Solution/Fix: Security Log logged Header Fields are now HTML escaped
+* Enjoy!
+
+= .48.9 =
+* 2 New Login Security Options Added:
+* Error Messages: Choose to display Standard WP Login Error Messages or Generic Error Messages.
+* Password Reset: Enable or Disable Login Password Reset capability. This option also includes additionl Stealth Mode capabilities. Please read the Blue Read Me help button on the BPS Login Security page for a full description and additional help information.
+* Login Security Bug Fix/Code Correction: Using the /wp-login.php URL no longer generates an initial login error.
+* New Dismiss Notice - Brute Force Login Protection Code: At some point the Brute Force Login Protection code will be standard in BPS .htaccess files. For now a dismiss notice has been added with a link to the Brute Force Login Protection code.
+* Additional error checking & Overall Code Improvements: Really too many things to list so in general BPS .48.9 is more streamlined, has better/additional error checking and overall code improvements throughout BPS.
+* Enjoy!
 
 = .48.8 =
 * Code / Help Text Corrections
@@ -671,7 +710,7 @@ Create new Master .htaccess files with AutoMagic and activate all BulletProof Mo
 * WordPress DB error on / off checking and verification status display
 * WordPress version is not displayed - remove_action('wp_head', 'wp_generator');
 * WP generator meta tag removed - remove_action('wp_head', 'wp_generator');
-* Administrator username “admin” check
+* Administrator username "admin" check
 * System information page displays PHP, MySQL, Server Info, etc. - see screenshot
 * Security Status page added - see screenshot
 * Help & FAQ page added
@@ -694,6 +733,35 @@ Create new Master .htaccess files with AutoMagic and activate all BulletProof Mo
 * Function check_perm redeclare conflict fixed
 
 == Upgrade Notice ==
+
+= .49.1 =
+* Backup folder path correction on Backup & Restore page
+* WP Filesystem API Method will display the WordPress Filesystem Method in use. For DSO Server troubleshooting additional fields will be displayed if the Script Owner and File Owner ID’s do not match.
+* Custom Code help text changes
+* Custom Code additional error checking
+* htaccess auto-writing additions
+* Additional root htaccess file placeholders/markers added
+* New Dashboard Dismiss Notices: Sucuri 1-click Hardening, Broken Link Checker, phpini handler, Speed Boost Custom Code, Custom Permalinks check
+* Dashboard Alerts are now only displayed to Administrators. Editors, Authors, etc will no longer see Alerts
+* The htaccess Core Edit/Upload/Download tab page has been renamed to htaccess File Editor.
+* The File Upload & Download features have been removed from the new htaccess File Editor page since these features/options are obsolete.
+* Visual Enhancements: AutoMagic font size increased, etc.
+* Enjoy!
+
+= .49 =
+* Security Vulnerability/Bug Fix/Patch: HTML rendered in Security Log file via Logged Header Fields 
+* Special Thanks go to Jacek Sowinski via Secunia SVCRP for discovering this vulnerability. 
+* Solution/Fix: Security Log logged Header Fields are now HTML escaped
+* Enjoy!
+
+= .48.9 =
+* 2 New Login Security Options Added:
+* Error Messages: Choose to display Standard WP Login Error Messages or Generic Error Messages.
+* Password Reset: Enable or Disable Login Password Reset capability. This option also includes additionl Stealth Mode capabilities. Please read the Blue Read Me help button on the BPS Login Security page for a full description and additional help information.
+* Login Security Bug Fix/Code Correction: Using the /wp-login.php URL no longer generates an initial login error.
+* New Dismiss Notice - Brute Force Login Protection Code: At some point the Brute Force Login Protection code will be standard in BPS .htaccess files. For now a dismiss notice has been added with a link to the Brute Force Login Protection code.
+* Additional error checking & Overall Code Improvements: Really too many things to list so in general BPS .48.9 is more streamlined, has better/additional error checking and overall code improvements throughout BPS.
+* Enjoy!
 
 = .48.8 =
 * Code / Help Text Corrections
@@ -799,22 +867,18 @@ the particular section or page of the BulletProof Security plugin that you are i
 Help and FAQ page contains links to Help pages that will load in a new browser tab so
 that you are not redirected away from your WordPress Dashboard. 
 
-What's New in .48.8
+What's New in .49.1
 
-= .48.8 =
-* Code / Help Text Corrections
-* Corrected Help Text typos in Custom Code. Code Correction for the Network/Multisite menus / pluggable.php issue
-* Enjoy!
-
-= .48.7 =
-* Auto-update now displays ONLY - The BPS Automatic htaccess File Update Completed Successfully!
-* The old Dashboard Alert has caused a lot of confusion so it is now history
-* Enjoy!
-
-= .48.6 =
-* Custom Code Additions: Custom Code now includes additional Text Areas/Text Boxes for every possible section of code in the Root and wp-admin .htaccess files
-* A jQuery Accordian has been added to Custom Code to ensure that the correct Custom Code Text Areas/Text Boxes are being used, better functionality and visual enhancement.
-* Windows IIS check/dismiss notice. Displays a dismissable alert for folks who have Windows IIS Servers that allow .htaccess rewriting or have ISAPI_Rewrite installed which allows/converts .htaccess rewriting.
-* Reset / Recheck Dismiss Notices added to Security Status page
-* Lots of other improvements
+= .49.1 =
+* Backup folder path correction on Backup & Restore page
+* WP Filesystem API Method will display the WordPress Filesystem Method in use. For DSO Server troubleshooting additional fields will be displayed if the Script Owner and File Owner ID’s do not match.
+* Custom Code help text changes
+* Custom Code additional error checking
+* htaccess auto-writing additions
+* Additional root htaccess file placeholders/markers added
+* New Dashboard Dismiss Notices: Sucuri 1-click Hardening, Broken Link Checker, phpini handler, Speed Boost Custom Code, Custom Permalinks check
+* Dashboard Alerts are now only displayed to Administrators. Editors, Authors, etc will no longer see Alerts
+* The htaccess Core Edit/Upload/Download tab page has been renamed to htaccess File Editor.
+* The File Upload & Download features have been removed from the new htaccess File Editor page since these features/options are obsolete.
+* Visual Enhancements: AutoMagic font size increased, etc.
 * Enjoy!

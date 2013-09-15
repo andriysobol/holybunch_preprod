@@ -3,7 +3,7 @@
 Plugin Name: Related Posts via Taxonomies
 Plugin URI: http://alphasis.info/developments/wordpress-plugins/related-posts-via-taxonomies/
 Description: This Plugin will display the related posts list via categories, tags and custom taxonomies. It can automatically display the related posts list after the content of any single post of selected post types by options.
-Version: 1.0.0
+Version: 1.0.1
 Author: alphasis
 Author URI: http://alphasis.info/
 */

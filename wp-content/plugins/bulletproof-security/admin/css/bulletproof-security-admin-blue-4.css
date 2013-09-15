@@ -439,7 +439,7 @@
 
 /************* BPS File Editor ************/
 #bps_file_editor {width:700px;}
-#bps-edittabs {width:700px;position:relative;left:0px;top:0px; z-index:500;}
+#bps-edittabs {width:700px;position:relative;left:0px;top:0px;}
 #bps-enable_bu_file_dl_button {position:relative; top:-15px; left:0px; }
 #bps-download_buttons_table {position:relative; top:-25px; left:0px; }
 .bps_file_editor_update { background-color:#ffffe0;border:1px solid #999999; padding:5px 0px 5px 5px;}
