@@ -29,6 +29,7 @@ $allow_comments = oxy_get_option( 'site_comments' );
         <div class="row-fluid">
             <div class="span12">
                 <?php while ( have_posts() ) : the_post(); ?>
+                
                 <div class="span12" style = "color:#FFA500;">
                     <?php echo get_field('quote'); ?>
                 </div>

@@ -178,7 +178,13 @@ function get_content_text_posts($teaching_topic){
     }
     return $output;
 }
-
+function get_custom_template_directory() {
+        $template = 'smartbox-theme-custom/';
+        $theme_root = get_theme_root($template);
+        $template_dir = "$theme_root/$template";
+        return apply_filters('template_directory', $template_dir, $template, $theme_root);
+    }
+    
 function get_content_video_posts($teaching_topic){    
     $my_video_query = get_query_only_video($teaching_topic);
     $video_content;

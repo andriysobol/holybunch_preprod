@@ -34,7 +34,7 @@ $allow_comments = oxy_get_option( 'site_comments' );
             <?php endif; ?>
             <div class="<?php echo oxy_get_option('blog_layout') == 'full-width' ? 'span12':'span9' ; ?>">
                 <?php while ( have_posts() ) : the_post(); ?>
-
+                
                 <?php get_template_part( 'partials/content', get_post_format() ); ?>
 
                 <?php if( oxy_get_option('author_bio') == 'on') oxy_author_bio( get_the_author_meta('ID') ); ?>

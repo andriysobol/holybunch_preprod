@@ -28,8 +28,8 @@ class OxyCustomTheme extends OxyTheme
                 require_once $this->get_custom_template_directory() . 'shortcodes/hb_shortcodes.php';
             }
         }
-    }
-
+    }    
+    
     function get_custom_template_directory() {
         $template = 'smartbox-theme-custom/';
         $theme_root = get_theme_root($template);
@@ -45,5 +45,6 @@ class OxyCustomTheme extends OxyTheme
         // directories
         define('CUSTOM_THEME_DIR', $this->get_custom_template_directory());
         define('CUSTOM_INCLUDES_DIR', CUSTOM_THEME_DIR . '/inc/');
+        define('CUSTOM_IMAGES_DIR', CUSTOM_THEME_DIR . '/images/');
     }
 }

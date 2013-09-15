@@ -34,5 +34,6 @@ $theme = new OxyCustomTheme(
     )
 );
 
+require_once CUSTOM_INCLUDES_DIR . 'hb_frontend.php'; 
 require_once CUSTOM_INCLUDES_DIR . 'hb_posts.php';
 require_once CUSTOM_INCLUDES_DIR . 'hb_functions.php';

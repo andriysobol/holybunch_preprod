@@ -197,9 +197,11 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
     $items = get_posts($query_options);
     $items_count = count($items);
     $output = '';
+    
     if ($items_count > 0):
         if(!empty($style)) $output .= '<div id="'.$style.'">';
         if($addicon) $output .= '<ul class="icons " id="">';
+        $counter = 0;
         foreach ($items as $member) :
             global $post;
             $post = $member;
@@ -221,33 +223,44 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
                     default:
                         break;
                 }
-                $output .= '<h4>';
+                //versetze jede zweite Zeile
+                if($counter==1)
+                    $output .= '<h4>';
+                else 
+                    $output .= '<ul><h4>';
                 $output .= '<i class="' . $icon . '"></i>';
                 if(!$addtitle) $output .= '</h4>';
             } 
             
             if($addtitle) {
                 if (!$addicon) $output .= '<h4>';
+                $output .= '<a>';
                 $output .= get_the_title() . " : ";
-                $output .= '</h4>';
+                if($counter==1){
+                    $output .= '</a></h4>';
+                    $counter = 0;
+                }else {
+                    $output .= '</a></ul></h4>';
+                    $counter = 1;
+                }
             }
             if ($contenttype == 'excerpt') {
                 $text = get_the_excerpt();
-                $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
-                $excerpt_more = '<a href="' . get_permalink() . '">' . $excerpt_more . '</a>';
+                $excerpt_more = apply_filters('excerpt_more', ' ' . '...');
+                $excerpt_more = '<i href="' . get_permalink() . '">' . '...' . '</i>';
                 $excerpt_length = $excerpt_length == 0 ? 999 : $excerpt_length;
                 $text = wp_trim_words($text, $excerpt_length, $excerpt_more);
                 $output .= $text;
             } else if($contenttype == 'summary') {
-                $output .= '<p>';
+                $output .= '<i class="infokasten">';
                 //get value of summary
                 $summary = get_field('summary', $post->ID);    
-                $summary_more = apply_filters('summary_more', ' ' . '[...]');
-                $summary_more = '<a href="' . get_permalink() . '">' . $summary_more . '</a>';
+                $summary_more = apply_filters('summary_more', ' ' . '...');
+                $summary_more = '<a href="' . get_permalink() . '">' . '...' . '</a>';
                 $excerpt_length = empty($excerpt_length) ? 999 : $excerpt_length;
                 $text = wp_trim_words($summary, $excerpt_length);
                 $output .= $text . $summary_more;
-                $output .= '</p>';
+                $output .= '</i>';
             } else if($contenttype == 'content'){
                 $output .= get_the_content();
             }

@@ -53,6 +53,7 @@ p.no_li{
   text-transform: uppercase;
 }
 
+/*stickit css begin*/
 body_stickit{
   font-family: 'Reenie Beanie', cursive;
   font-size:80%;
@@ -144,4 +145,49 @@ ul_stickit li_stickit a_stickit:hover,ul_stickit li_stickit a_stickit:focus{
 ol_stickit{text-align:center;}
 ol_stickit li_stickit{display:inline;padding-right:1em;}
 ol_stickit li_stickit a_stickit{color:#fff;}
+/*stickit css end*/
+
+.logoButtonLink {
+        padding: 25.5px 25px 21.5px;
+	background: url(../images/domikgrey50x47.png);
+}
+.logoButtonLink:hover {
+        background: url(../images/domiklight50x47.png);
+}
+
+.logoButtonLink a {
+  font-style: normal;
+}
+
+.navbar-inverse .logoButtonLink a {
+  color: white;
+}
+.logoButtonLink2 {
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 30px;
+  padding: 25.5px 20px 29.5px;
+  margin-top: 0;
+  margin-bottom: 0;
+  background: url(../images/domikgrey50x47.png);
+}
+.logoButtonLink2 a {
+  font-style: normal;
+}
+
+.navbar-inverse .logoButtonLink2 a {
+  color: white;
+}
+
+i.infokasten{
+    background:yellow; 
+    color: black; 
+    opacity: 0.3;    
+}
+
+i.infokasten:hover {
+	opacity: 1;
+	filter: alpha(opacity=100);
+ 	-webkit-transition: opacity 1s linear;
+}
 
