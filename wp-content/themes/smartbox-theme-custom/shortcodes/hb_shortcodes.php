@@ -201,7 +201,7 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
     if ($items_count > 0):
         if(!empty($style)) $output .= '<div id="'.$style.'">';
         if($addicon) $output .= '<ul class="icons " id="">';
-        $counter = 0;
+        $counter = 1;
         foreach ($items as $member) :
             global $post;
             $post = $member;
@@ -225,16 +225,16 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
                 }
                 //versetze jede zweite Zeile
                 if($counter==1)
-                    $output .= '<h4>';
+                    $output .= '<h4 class="infokasten">';
                 else 
-                    $output .= '<ul><h4>';
+                    $output .= '<ul><h4 class="infokasten">';
                 $output .= '<i class="' . $icon . '"></i>';
                 if(!$addtitle) $output .= '</h4>';
             } 
             
             if($addtitle) {
-                if (!$addicon) $output .= '<h4>';
-                $output .= '<a>';
+                if (!$addicon) $output .= '<h4 class="infokasten">';
+                $output .= '<a class="infokasten">';
                 $output .= get_the_title() . " : ";
                 if($counter==1){
                     $output .= '</a></h4>';
@@ -252,7 +252,7 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
                 $text = wp_trim_words($text, $excerpt_length, $excerpt_more);
                 $output .= $text;
             } else if($contenttype == 'summary') {
-                $output .= '<i class="infokasten">';
+                $output .= '<i>';
                 //get value of summary
                 $summary = get_field('summary', $post->ID);    
                 $summary_more = apply_filters('summary_more', ' ' . '...');
