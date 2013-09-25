@@ -1,11 +1,11 @@
-# Copyright (C) 2012 WordPress
-# This file is distributed under the same license as the WordPress package.
+# Copyright (C) 2013 the WordPress team
+# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Twenty Ten 1.5\n"
+"Project-Id-Version: Twenty Ten 1.6\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/twentyten\n"
-"POT-Creation-Date: 2013-01-01 00:19:29+00:00\n"
-"PO-Revision-Date: 2013-06-22 01:26+0400\n"
+"POT-Creation-Date: 2013-08-01 18:14:08+00:00\n"
+"PO-Revision-Date: 2013-09-11 23:12+0400\n"
 "Last-Translator: Sergey Biryukov <sergeybiryukov.ru@gmail.com>\n"
 "Language-Team: ru.wordpress.org <sergeybiryukov.ru@gmail.com>\n"
 "Language: ru_RU\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_c;__ngettext:1,2\n"
 "X-Poedit-Basepath: S:\\home\\wordpress\\trunk\\wp-content\\themes"
 "\\twentyten\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: S:\\home\\wordpress\\trunk\\wp-content\\themes"
 "\\twentyten\n"
 
@@ -98,7 +98,7 @@ msgstr "Следующие комментарии <span class=\"meta-nav\">&rarr
 msgid "Comments are closed."
 msgstr "Комментарии запрещены."
 
-#. #-#-#-#-#  twentyten.pot (Twenty Ten 1.5)  #-#-#-#-#
+#. #-#-#-#-#  twentyten.pot (Twenty Ten 1.6)  #-#-#-#-#
 #. Author URI of the plugin/theme
 #: footer.php:33
 msgid "http://wordpress.org/"
@@ -156,7 +156,7 @@ msgstr "Дорожка"
 msgid "Sunset"
 msgstr "Закат"
 
-#: functions.php:255 loop-attachment.php:104 loop.php:115 loop.php:143
+#: functions.php:255 loop-attachment.php:104 loop.php:114 loop.php:142
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Читать далее <span class=\"meta-nav\">&rarr;</span>"
 
@@ -186,48 +186,40 @@ msgid "Primary Widget Area"
 msgstr "Основная область"
 
 #: functions.php:386
-msgid "The primary widget area"
-msgstr "Основная область виджетов"
+msgid "Add widgets here to appear in your sidebar."
+msgstr "Добавьте сюда виджеты, которые вы хотите разместить в боковой колонке."
 
 #: functions.php:395
 msgid "Secondary Widget Area"
 msgstr "Дополнительная область"
 
 #: functions.php:397
-msgid "The secondary widget area"
-msgstr "Дополнительная область виджетов"
+msgid ""
+"An optional secondary widget area, displays below the primary widget area in "
+"your sidebar."
+msgstr ""
+"Дополнительная область виджетов, отображается в боковой колонке под основной "
+"областью."
 
 #: functions.php:406
 msgid "First Footer Widget Area"
 msgstr "Первая область подвала"
 
-#: functions.php:408
-msgid "The first footer widget area"
-msgstr "Первая область виджетов подвала"
+#: functions.php:408 functions.php:419 functions.php:430 functions.php:441
+msgid "An optional widget area for your site footer."
+msgstr "Дополнительная область виджетов для нижней части сайта."
 
 #: functions.php:417
 msgid "Second Footer Widget Area"
 msgstr "Вторая область подвала"
 
-#: functions.php:419
-msgid "The second footer widget area"
-msgstr "Вторая область виджетов подвала"
-
 #: functions.php:428
 msgid "Third Footer Widget Area"
 msgstr "Третья область подвала"
 
-#: functions.php:430
-msgid "The third footer widget area"
-msgstr "Третья область виджетов подвала"
-
 #: functions.php:439
 msgid "Fourth Footer Widget Area"
 msgstr "Четвёртая область подвала"
-
-#: functions.php:441
-msgid "The fourth footer widget area"
-msgstr "Четвёртая область виджетов подвала"
 
 #: functions.php:475
 msgid ""
@@ -300,11 +292,11 @@ msgid "Link to full-size image"
 msgstr "Ссылка на полноразмерное изображение"
 
 #: loop-attachment.php:63 loop-attachment.php:111 loop-page.php:30
-#: loop-single.php:56 loop.php:100 loop.php:123 loop.php:165
+#: loop-single.php:56 loop.php:99 loop.php:122 loop.php:164
 msgid "Edit"
 msgstr "Изменить"
 
-#: loop-attachment.php:105 loop-page.php:29 loop-single.php:34 loop.php:144
+#: loop-attachment.php:105 loop-page.php:29 loop-single.php:34 loop.php:143
 msgid "Pages:"
 msgstr "Страницы:"
 
@@ -322,11 +314,11 @@ msgstr "&rarr;"
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Посмотреть все записи автора %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: loop.php:25 loop.php:178
+#: loop.php:25 loop.php:177
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Предыдущие записи"
 
-#: loop.php:26 loop.php:179
+#: loop.php:26 loop.php:178
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Следующие записи <span class=\"meta-nav\">&rarr;</span>"
 
@@ -338,16 +330,12 @@ msgstr ""
 "Извините, запрошенный вами архив не найден. Попробуйте найти нужную запись с "
 "помощью поиска."
 
-#: loop.php:60 loop.php:95 loop.php:96
+#: loop.php:60 loop.php:94
 msgctxt "gallery category slug"
 msgid "gallery"
 msgstr "gallery"
 
-#: loop.php:62 loop.php:83 loop.php:131
-msgid "Permalink to %s"
-msgstr "Постоянная ссылка: %s"
-
-#: loop.php:82
+#: loop.php:81
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
 msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
 msgstr[0] "Эта галерея содержит <a %1$s>%2$s фотографию</a>."
@@ -355,40 +343,44 @@ msgstr[1] "Эта галерея содержит <a %1$s>%2$s фотограф�
 msgstr[2] "Эта галерея содержит <a %1$s>%2$s фотографий</a>."
 msgstr[3] "Эта галерея содержит <a %1$s>%2$s фотографию</a>."
 
-#: loop.php:93
+#: loop.php:82
+msgid "Permalink to %s"
+msgstr "Постоянная ссылка: %s"
+
+#: loop.php:92
 msgid "View Galleries"
 msgstr "Посмотреть галереи"
 
-#: loop.php:93 loop.php:96
+#: loop.php:92 loop.php:95
 msgid "More Galleries"
 msgstr "Другие галереи"
 
-#: loop.php:96
+#: loop.php:95
 msgid "View posts in the Gallery category"
 msgstr "Посмотреть записи в рубрике &laquo;Галерея&raquo;"
 
-#: loop.php:99 loop.php:122 loop.php:164
+#: loop.php:98 loop.php:121 loop.php:163
 msgid "Leave a comment"
 msgstr "Добавить комментарий"
 
-#: loop.php:99 loop.php:122 loop.php:164
+#: loop.php:98 loop.php:121 loop.php:163
 msgid "1 Comment"
 msgstr "1 комментарий"
 
-#: loop.php:99 loop.php:122 loop.php:164
+#: loop.php:98 loop.php:121 loop.php:163
 msgid "% Comments"
 msgstr "Комментарии (%)"
 
-#: loop.php:106
+#: loop.php:105
 msgctxt "asides category slug"
 msgid "asides"
 msgstr "asides"
 
-#: loop.php:151
+#: loop.php:150
 msgid "<span class=\"%1$s\">Posted in</span> %2$s"
 msgstr "<span class=\"%1$s\">Рубрика:</span> %2$s"
 
-#: loop.php:160
+#: loop.php:159
 msgid "<span class=\"%1$s\">Tagged</span> %2$s"
 msgstr "<span class=\"%1$s\">Метки:</span> %2$s"
 
@@ -425,8 +417,8 @@ msgid "Twenty Ten"
 msgstr "Twenty Ten"
 
 #. Theme URI of the plugin/theme
-msgid "http://wordpress.org/extend/themes/twentyten"
-msgstr "http://wordpress.org/extend/themes/twentyten"
+msgid "http://wordpress.org/themes/twentyten"
+msgstr "http://wordpress.org/themes/twentyten"
 
 #. Description of the plugin/theme
 msgid ""

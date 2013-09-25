@@ -1453,17 +1453,17 @@ $bpsSpacePop = '-------------------------------------------------------------';
   <tr>
     <td class="bps-table_cell">
 <?php 
-	echo root_htaccess_status();
-	echo denyall_htaccess_status_master();
-	echo denyall_htaccess_status_backup();
-	echo wpadmin_htaccess_status();
+	echo bps_root_htaccess_status();
+	echo bps_denyall_htaccess_status_master();
+	echo bps_denyall_htaccess_status_backup();
+	echo bps_wpadmin_htaccess_status();
 ?>
     <td>&nbsp;</td>
     <td class="bps-table_cell">
 <?php 
 	echo bps_wpdb_errors_off();
 	echo bps_wp_remove_version();
-	echo check_admin_username();
+	echo bps_check_admin_username();
 	echo bps_filesmatch_check_readmehtml();
 	echo bps_filesmatch_check_installphp();
 
@@ -1648,7 +1648,7 @@ function bpsDeleteUserMetaDismiss() {
     <td>&nbsp;</td>
     <td rowspan="4" class="bps-table_cell_file_checks">
     
-	<?php echo general_bps_file_checks(); ?>
+	<?php echo bps_general_file_checks(); ?>
    <!--  style="margin-top:38px;" -->
    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="bps-file_checks_bottom_table" style="margin-top:6px;">
       <tr>
@@ -1684,7 +1684,7 @@ function bpsDeleteUserMetaDismiss() {
 <?php
 // Get File Size of the Security Log File 
 // 1MB = 1048576 bytes - 500KB = 512000 bytes
-function getSecurityLogSize() {
+function bps_getSecurityLogSize() {
 $filename = WP_CONTENT_DIR . '/bps-backup/logs/http_error_log.txt';
 
 	if (file_exists($filename)) {
@@ -1698,7 +1698,7 @@ $filename = WP_CONTENT_DIR . '/bps-backup/logs/http_error_log.txt';
 	}
 	}
 }
-echo getSecurityLogSize();
+echo bps_getSecurityLogSize();
 
 // Echo Error Logging On or Off
 function bpsErrorLoggingOnOff() {
@@ -1717,7 +1717,7 @@ $pattern = '/#ErrorDocument\s400(.*)ErrorDocument\s404\s(.*)\/404\.php/s';
 echo bpsErrorLoggingOnOff();
 
 // Get the Current / Last Modifed Date of the Security Log File
-function getSecurityLogLastMod() {
+function bps_getSecurityLogLastMod() {
 $filename = WP_CONTENT_DIR . '/bps-backup/logs/http_error_log.txt';
 
 	if ( file_exists($filename) ) {
@@ -1728,7 +1728,7 @@ $filename = WP_CONTENT_DIR . '/bps-backup/logs/http_error_log.txt';
 	echo $text;
 	}
 }
-echo getSecurityLogLastMod();
+echo bps_getSecurityLogLastMod();
 
 // Delete Security Log
 if (isset($_POST['Submit-Delete-Log']) && current_user_can('manage_options')) {
@@ -2250,7 +2250,7 @@ jQuery(document).ready(function($){
 	echo __('MySQL Database Version', 'bulletproof-security').': ';
 	$sqlversion = $wpdb->get_var("SELECT VERSION() AS version");
 	echo '<strong>'.$sqlversion.'</strong><br>';
-	echo __('MySQL Client Version', 'bulletproof-security').': <strong>'.mysql_get_client_info().'</strong><br>';
+	echo __('MySQL Client Version', 'bulletproof-security').': <strong>'.mysqli_get_client_info().'</strong><br>';
 	echo __('Database Host', 'bulletproof-security').': <strong>'.DB_HOST.'</strong><br>';
 	echo __('Database Name', 'bulletproof-security').': <strong>'.DB_NAME.'</strong><br>';
 	echo __('Database User', 'bulletproof-security').': <strong>'.DB_USER.'</strong><br>';
@@ -2553,13 +2553,13 @@ jQuery(document).ready(function($){
     <td class="bps-table_cell">&nbsp;</td>
   </tr>
   <tr>
-    <td class="bps-table_cell"><strong><?php general_bps_file_checks_backup_restore(); ?></strong></td>
+    <td class="bps-table_cell"><strong><?php bps_general_file_checks_backup_restore(); ?></strong></td>
   </tr>
   <tr>
     <td class="bps-table_cell">&nbsp;</td>
   </tr>
   <tr>
-    <td class="bps-table_cell"><?php echo backup_restore_checks(); ?></td>
+    <td class="bps-table_cell"><?php echo bps_backup_restore_checks(); ?></td>
   </tr>
   <tr>
     <td class="bps-table_cell">&nbsp;</td>
@@ -2601,10 +2601,10 @@ jQuery(document).ready(function($){
     <div id="bps_file_editor" class="bps_file_editor_update">
 
 <?php
-echo secure_htaccess_file_check();
-echo default_htaccess_file_check();
-echo maintenance_htaccess_file_check();
-echo wpadmin_htaccess_file_check();
+echo bps_secure_htaccess_file_check();
+echo bps_default_htaccess_file_check();
+echo bps_maintenance_htaccess_file_check();
+echo bps_wpadmin_htaccess_file_check();
 
 // Perform File Open and Write test first by appending a literal blank space
 // or nothing at all to end of the htaccess files.
@@ -2940,7 +2940,7 @@ $scrollto6 = isset($_REQUEST['scrollto6']) ? (int) $_REQUEST['scrollto6'] : 0;
 <form name="template1" id="template1" action="admin.php?page=bulletproof-security/admin/options.php#bps-tabs-6" method="post">
 <?php wp_nonce_field('bulletproof_security_save_settings_1'); ?>
     <div>
-    <textarea cols="135" rows="27" name="newcontent1" id="newcontent1" tabindex="1"><?php echo get_secure_htaccess(); ?></textarea>
+    <textarea cols="135" rows="27" name="newcontent1" id="newcontent1" tabindex="1"><?php echo bps_get_secure_htaccess(); ?></textarea>
 	<input type="hidden" name="action" value="update" />
     <input type="hidden" name="filename" value="<?php echo esc_attr($secure_htaccess_file) ?>" />
 	<input type="hidden" name="scrollto1" id="scrollto1" value="<?php echo $scrollto1; ?>" />
@@ -2962,7 +2962,7 @@ jQuery(document).ready(function($){
 <form name="template2" id="template2" action="admin.php?page=bulletproof-security/admin/options.php#bps-tabs-6" method="post">
 <?php wp_nonce_field('bulletproof_security_save_settings_2'); ?>
 	<div>
-    <textarea cols="135" rows="27" name="newcontent2" id="newcontent2" tabindex="2"><?php echo get_default_htaccess(); ?></textarea>
+    <textarea cols="135" rows="27" name="newcontent2" id="newcontent2" tabindex="2"><?php echo bps_get_default_htaccess(); ?></textarea>
 	<input type="hidden" name="action" value="update" />
     <input type="hidden" name="filename" value="<?php echo esc_attr($default_htaccess_file) ?>" />
 	<input type="hidden" name="scrollto2" id="scrollto2" value="<?php echo $scrollto2; ?>" />
@@ -2984,7 +2984,7 @@ jQuery(document).ready(function($){
 <form name="template3" id="template3" action="admin.php?page=bulletproof-security/admin/options.php#bps-tabs-6" method="post">
 <?php wp_nonce_field('bulletproof_security_save_settings_3'); ?>
 	<div>
-    <textarea cols="135" rows="27" name="newcontent3" id="newcontent3" tabindex="3"><?php echo get_maintenance_htaccess(); ?></textarea>
+    <textarea cols="135" rows="27" name="newcontent3" id="newcontent3" tabindex="3"><?php echo bps_get_maintenance_htaccess(); ?></textarea>
 	<input type="hidden" name="action" value="update" />
     <input type="hidden" name="filename" value="<?php echo esc_attr($maintenance_htaccess_file) ?>" />
 	<input type="hidden" name="scrollto3" id="scrollto3" value="<?php echo $scrollto3; ?>" />
@@ -3006,7 +3006,7 @@ jQuery(document).ready(function($){
 <form name="template4" id="template4" action="admin.php?page=bulletproof-security/admin/options.php#bps-tabs-6" method="post">
 <?php wp_nonce_field('bulletproof_security_save_settings_4'); ?>
 	<div>
-    <textarea cols="135" rows="27" name="newcontent4" id="newcontent4" tabindex="4"><?php echo get_wpadmin_htaccess(); ?></textarea>
+    <textarea cols="135" rows="27" name="newcontent4" id="newcontent4" tabindex="4"><?php echo bps_get_wpadmin_htaccess(); ?></textarea>
 	<input type="hidden" name="action" value="update" />
     <input type="hidden" name="filename" value="<?php echo esc_attr($wpadmin_htaccess_file) ?>" />
 	<input type="hidden" name="scrollto4" id="scrollto4" value="<?php echo $scrollto4; ?>" />
@@ -3042,7 +3042,7 @@ $sapi_type = php_sapi_name();
 <form name="template5" id="template5" action="admin.php?page=bulletproof-security/admin/options.php#bps-tabs-6" method="post">
 <?php wp_nonce_field('bulletproof_security_save_settings_5'); ?>
 	<div>
-    <textarea cols="135" rows="27" name="newcontent5" id="newcontent5" tabindex="5"><?php echo get_root_htaccess(); ?></textarea>
+    <textarea cols="135" rows="27" name="newcontent5" id="newcontent5" tabindex="5"><?php echo bps_get_root_htaccess(); ?></textarea>
 	<input type="hidden" name="action" value="update" />
     <input type="hidden" name="filename" value="<?php echo esc_attr($root_htaccess_file) ?>" />
 	<input type="hidden" name="scrollto5" id="scrollto5" value="<?php echo $scrollto5; ?>" />
@@ -3068,7 +3068,7 @@ jQuery(document).ready(function($){
 <form name="template6" id="template6" action="admin.php?page=bulletproof-security/admin/options.php#bps-tabs-6" method="post">
 <?php wp_nonce_field('bulletproof_security_save_settings_6'); ?>
 	<div>
-    <textarea cols="135" rows="27" name="newcontent6" id="newcontent6" tabindex="6"><?php echo get_current_wpadmin_htaccess_file(); ?></textarea>
+    <textarea cols="135" rows="27" name="newcontent6" id="newcontent6" tabindex="6"><?php echo bps_get_current_wpadmin_htaccess_file(); ?></textarea>
 	<input type="hidden" name="action" value="update" />
     <input type="hidden" name="filename" value="<?php echo esc_attr($current_wpadmin_htaccess_file) ?>" />
 	<input type="hidden" name="scrollto6" id="scrollto6" value="<?php echo $scrollto6; ?>" />
@@ -3459,6 +3459,42 @@ if (isset($_POST['maintenance-mode-preview-submit']) && current_user_can('manage
    <tr>
     <td class="bps-table_cell_no_border">&nbsp;</td>
     <td class="bps-table_cell_no_border">&nbsp;</td>
+  </tr> 
+<tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><strong><?php _e('Dismiss Notice text corrections: ', 'bulletproof-security'); ?></strong><br /><?php $text = __('To Reset Dismiss Notices click the Reset/Recheck Dismiss Notices button on the S-Monitor page text has been changed to To Reset Dismiss Notices click the Reset/Recheck Dismiss Notices button on the Security Status page.', 'bulletproof-security'); echo $text; ?></td>
+  </tr>
+   <tr>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+  </tr> 
+ <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><strong><?php _e('W3TC & WPSC Alerts text corrections: ', 'bulletproof-security'); ?></strong><br /><?php _e('BPS Lock and Unlock buttons are on the Edit/Upload/Download page text has been changed to BPS Lock and Unlock buttons are on the htaccess File Editor page.', 'bulletproof-security'); ?></td>
+  </tr>
+   <tr>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+  </tr> 
+ <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><strong><?php _e('BPS functions rename: ', 'bulletproof-security'); ?></strong><br /><?php _e('Several BPS functions have been renamed to ensure uniqueness/no-conflict assurance with other plugins using the same function names.', 'bulletproof-security'); ?></td>
+  </tr>
+   <tr>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+  </tr> 
+ <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><strong><?php _e('PHP 5.5.x Deprecated function replacements: ', 'bulletproof-security'); ?></strong><br /><?php _e('options.php file:  mysql_get_client_info replaced with mysqli_get_client_info. bpsunlock.php file: Completely recoded using MySQLi instead of MySQL.', 'bulletproof-security'); ?></td>
+  </tr>
+   <tr>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+  </tr> 
+   <tr>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+    <td class="bps-table_cell_no_border"><h3><?php echo $bps_last_version; ?></h3></td>
   </tr>
 <tr>
     <td class="bps-table_cell_no_border">&bull;</td>
@@ -3511,7 +3547,7 @@ if (isset($_POST['maintenance-mode-preview-submit']) && current_user_can('manage
   </tr>
  <tr>
     <td class="bps-table_cell_no_border">&bull;</td>
-    <td class="bps-table_cell_no_border"><strong><?php _e('Obsolete Feature removal:', 'bulletproof-security'); ?></strong><br /><?php _e('DThe File Upload & Download features have been removed from the new htaccess File Editor page since these features/options are obsolete.', 'bulletproof-security'); ?></td>
+    <td class="bps-table_cell_no_border"><strong><?php _e('Obsolete Feature removal:', 'bulletproof-security'); ?></strong><br /><?php _e('The File Upload & Download features have been removed from the new htaccess File Editor page since these features/options are obsolete.', 'bulletproof-security'); ?></td>
   </tr>
    <tr>
     <td class="bps-table_cell_no_border">&nbsp;</td>

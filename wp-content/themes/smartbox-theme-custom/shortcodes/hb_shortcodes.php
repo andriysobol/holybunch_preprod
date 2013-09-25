@@ -494,5 +494,16 @@ function oxy_shortcode_stickit(){
 
 add_shortcode('stickit', 'oxy_shortcode_stickit');
 
+/* ------------ BLOCKQUOTE SHORTCODE ------------*/
+
+function oxy_shortcode_blockquote_drops( $atts, $content ) {
+    extract( shortcode_atts( array(
+        'who'   => '',
+        'cite'  => '',
+    ), $atts ) );
+    return '<blockquote_drops>"' . do_shortcode($content) . '"<small>'.$who.' <cite title="source title">'.$cite.'</cite></small></blockquote_drops>';
+}
+add_shortcode( 'blockquote_drops', 'oxy_shortcode_blockquote_drops' );
+
 require_once get_template_directory() . '/inc/options/shortcodes/shortcodes.php';
 require_once CUSTOM_INCLUDES_DIR . 'hb_utility.php';

@@ -43,10 +43,10 @@ then enter wp_ in the DB Table Prefix form field or enter the DB Table Prefix th
   <tr>
     <td colspan="2" align="center" style="color:#0000FF;">
       
-  <?php
+<?php
 // Form - Delete Login Security Database Rows based on Username
 if ( isset($_POST['Login-Security-Unlock']) ) {
-	
+
 	$DBHost = $_POST['dbhost'];
 	$DBUser = $_POST['dbuser'];
 	$DBPass = $_POST['dbpassword'];
@@ -54,40 +54,33 @@ if ( isset($_POST['Login-Security-Unlock']) ) {
 	$username = $_POST['username'];
 	$LoginSecurity = $_POST['tableprefix'] . "bpspro_login_security";	
 
-	$link = mysql_connect($DBHost, $DBUser, $DBPass);
-	if (!$link) {
-    	die('<strong><font color="red">Could Not Connect to Database: </font></strong>' . mysql_error());
-	}
-		echo '<strong><font color="green">Connected To Database: </font><font color="blue">' . $DBHost . '</font><font color="green"> Successfully.</font></strong><br>';
+	$mysqli = new mysqli($DBHost, $DBUser, $DBPass, $DBName);
 
-
-	if ( !mysql_select_db($DBName, $link) ) {
-		echo '<strong><font color="red">Unable to select: </font>' . $DBName .' </strong>' . mysql_error();
-		exit;
-	}
-	
-	$sql = "SELECT * FROM $LoginSecurity WHERE username = '$username'";
-
-	$LSDBTable = mysql_query($sql);
-
-	if ( !$LSDBTable ) {
-    	echo '<strong><font color="red">Could Not Run Query: </font></strong>'. "($sql)". '<strong><font color="red"> from DB: </font></strong>' . mysql_error();
-    	exit;
+	/* check connection */
+	if ( mysqli_connect_errno() ) {
+    	printf("Connect failed: %s\n", mysqli_connect_error());
+    //exit();
 	}
 
-	if ( mysql_num_rows($LSDBTable) == 0) {
-    	echo '<strong><font color="red">The User Account has already been unlocked or the User Account Does Not Exist.</font></strong>';
+	$query = "SELECT * FROM $LoginSecurity WHERE username = '$username'";
+
+	if ( $result = $mysqli->query($query) ) {
+
+		/* fetch associative array & delete the username Row from the Login Security DB Table */
+    	while ( $row = $result->fetch_assoc() ) {
+			$delete_query = "DELETE FROM $LoginSecurity WHERE username = '$username'";
+		
+			if ( $mysqli->query($delete_query) ) {       
+		
+				echo '<strong><font color="green">User Account: ';
+				printf ("%s", $row["username"]);
+    			echo '</font><font color="green"> Unlocked Successfully.</font></strong><br>';
+				
+			}
+		}
+	$result->free();
 	}
-
-	// While a row of data exists, put that row in $row as an associative array, echo it and then delete it
-	// Note: If you're expecting just one row, no need to use a loop
-
-	while ( $row = mysql_fetch_assoc($LSDBTable) ) {
-		echo '<strong><font color="green">User Account: </font><font color="blue">' . $row["username"] . '</font><font color="green"> Unlocked Successfully.</font></strong><br>';
-		$LSDBDelete = mysql_query("DELETE FROM $LoginSecurity WHERE username = '$username'");		
-	}
-
-mysql_free_result($LSDBTable);
+	$mysqli->close();
 }
 
 // Form - Delete the Login Security Database Option
@@ -99,41 +92,33 @@ if ( isset($_POST['Login-Security-Delete-PWR']) ) {
 	$DBName = $_POST['dbname'];
 	$wp_options = $_POST['tableprefix'] . "options";	
 
-	$link = mysql_connect($DBHost, $DBUser, $DBPass);
-	if (!$link) {
-    	die('<strong><font color="red">Could Not Connect to Database: </font></strong>' . mysql_error());
-	}
-		echo '<strong><font color="green">Connected To Database: </font>' . $DBHost . ' <font color="green">Successfully.</font></strong><br>';
+	$mysqli = new mysqli($DBHost, $DBUser, $DBPass, $DBName);
 
-
-	if ( !mysql_select_db($DBName, $link) ) {
-		echo '<strong><font color="red">Unable to select: </font>' . $DBName .' </strong>' . mysql_error();
-		exit;
+	/* check connection */
+	if ( mysqli_connect_errno() ) {
+    	printf("Connect failed: %s\n", mysqli_connect_error());
+    //exit();
 	}
 
-	$sql = "SELECT * FROM $wp_options WHERE option_name = 'bulletproof_security_options_login_security'";
+	$query = "SELECT * FROM $wp_options WHERE option_name = 'bulletproof_security_options_login_security'";
 
-	$LSDBOption = mysql_query($sql);
+	if ( $result = $mysqli->query($query) ) {
 
-	if ( !$LSDBOption ) {
-    	echo '<strong><font color="red">Could Not Run Query: </font></strong>'. "($sql)". '<strong><font color="red"> from DB: </font></strong>' . mysql_error();
-    	exit;
+		/* fetch associative array & delete the username Row from the Login Security DB Table */
+    	while ( $row = $result->fetch_assoc() ) {
+			$delete_query = "DELETE FROM $wp_options WHERE option_name = 'bulletproof_security_options_login_security'";
+		
+			if ( $mysqli->query($delete_query) ) {       
+		
+				echo '<strong><font color="green">Database option_name: ';
+				printf ("%s", $row["option_name"]);
+    			echo '</font><font color="green"> Deleted Successfully.</font></strong><br>';
+				
+			}
+		}
+	$result->free();
 	}
-
-	if ( mysql_num_rows($LSDBOption) == 0) {
-    	echo '<strong><font color="red">The Login Security DB Option Does Not Exist or it has already been deleted.</font></strong>';
-	}
-
-	// While a row of data exists, put that row in $row as an associative array, echo it and then delete it
-	// Note: If you're expecting just one row, no need to use a loop
-
-	while ( $row = mysql_fetch_assoc($LSDBOption) ) {
-		echo '<strong><font color="green">Database option_name: </font></strong>' . $row["option_name"] . '<strong><font color="green"> Deleted Successfully.</font></strong><br>';
-    	//echo '<strong><font color="green">Database option_value: </font></strong>' . $row["option_value"] . '<strong><font color="green"> Deleted Successfully.</font></strong><br>';
-		$LSDBDelete = mysql_query("DELETE FROM $wp_options WHERE option_name = 'bulletproof_security_options_login_security'");		
-	}
-
-mysql_free_result($LSDBOption);
+	$mysqli->close();	
 }
 
 ?>

@@ -1,6 +1,6 @@
-#   BULLETPROOF .49.1 >>>>>>> SECURE .HTACCESS     
+#   BULLETPROOF .49.2 >>>>>>> SECURE .HTACCESS     
 
-# If you edit the  BULLETPROOF .49.1 >>>>>>> SECURE .HTACCESS text above
+# If you edit the BULLETPROOF .49.2 >>>>>>> SECURE .HTACCESS text above
 # you will see error messages on the BPS Security Status page
 # BPS is reading the version number in the htaccess file to validate checks
 # If you would like to change what is displayed above you
@@ -125,7 +125,7 @@ RewriteCond %{REQUEST_URI} (timthumb\.php|phpthumb\.php|thumb\.php|thumbs\.php) 
 RewriteCond %{HTTP_REFERER} ^.*demo5.local.*
 RewriteRule . - [S=1]
 
-# BPSQSE BPS QUERY STRING EXPLOITS
+# BEGIN BPSQSE BPS QUERY STRING EXPLOITS
 # The libwww-perl User Agent is forbidden - Many bad bots use libwww-perl modules, but some good bots use it too.
 # Good sites such as W3C use it for their W3C-LinkChecker. 
 # Add or remove user agents temporarily or permanently from the first User Agent filter below.
@@ -178,9 +178,11 @@ RewriteCond %{QUERY_STRING} \-[sdcr].*(allow_url_include|allow_url_fopen|safe_mo
 RewriteCond %{QUERY_STRING} (;|<|>|'|"|\)|%0A|%0D|%22|%27|%3C|%3E|%00).*(/\*|union|select|insert|drop|delete|update|cast|create|char|convert|alter|declare|order|script|set|md5|benchmark|encode) [NC,OR]
 RewriteCond %{QUERY_STRING} (sp_executesql) [NC]
 RewriteRule ^(.*)$ - [F,L]
+# END BPSQSE BPS QUERY STRING EXPLOITS
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
+# WP REWRITE LOOP END
 
 # DENY BROWSER ACCESS TO THESE FILES 
 # wp-config.php, bb-config.php, php.ini, php5.ini, readme.html

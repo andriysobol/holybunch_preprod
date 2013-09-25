@@ -567,10 +567,10 @@ function bpspro_login_error_invalid_email($text) {
 add_filter ( 'login_errors', 'bpspro_login_error_invalid_email');
 
 // Removes WP Shake It so that no indication is given of good/bad value/entry
-function bspro_remove_shake() {
+function bpspro_remove_shake() {
 	remove_action( 'login_head', 'wp_shake_js', 12 );	
 }
-add_filter ( 'shake_error_codes', 'bspro_remove_shake');
+add_filter ( 'shake_error_codes', 'bpspro_remove_shake');
 
 }
 ?>

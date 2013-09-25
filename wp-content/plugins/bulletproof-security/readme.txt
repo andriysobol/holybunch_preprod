@@ -3,8 +3,8 @@ Contributors: AITpro
 Donate link: http://www.ait-pro.com/aitpro-blog/331/bulletproof-security-plugin-support/bulletproof-security-donations-page/
 Tags: bulletproof, security, secure, htaccess, chmod, maintenance, plugin, private, privacy, protection, permissions, 503, base64, injection, code, encode, script, attack, hack, hackers, block, blocked, prevent, prevention, RFI, XSS, CRLF, CSRF, SQL Injection, vulnerability, website security, WordPress security, security log, logging, HTTP log, error log, login security, login, log, users, login alerts, lock, brute force, authenticate, authentication, firewall
 Requires at least: 3.0 
-Tested up to: 3.6 
-Stable tag: .49.1
+Tested up to: 3.6.1 
+Stable tag: .49.2
 
 WordPress Website Security Protection. Website security protection against: XSS, RFI, CRLF, CSRF, Base64, Code Injection and SQL Injection hacking... 
 
@@ -348,9 +348,17 @@ Yes, BulletProof Security works with Git, but does require some additional set u
 
 == Changelog ==
 
+= .49.2 =
+* Dismiss Notice text corrections: S-Monitor page text changed to Security Status page
+* W3TC & WPSC Alerts text corrections: Edit/Upload/Download page text changed to htaccess File Editor page
+* Several BPS functions renamed for uniqueness/no-conflict assurance
+* PHP 5.5.x Deprecated function replacement file options.php: mysql_get_client_info replaced with mysqli_get_client_info
+* PHP 5.5.x Deprecated function replacements file bpsunlock.php: New code using MySQLi instead of MySQL
+* Enjoy!
+
 = .49.1 =
 * Backup folder path correction on Backup & Restore page
-* WP Filesystem API Method will display the WordPress Filesystem Method in use. For DSO Server troubleshooting additional fields will be displayed if the Script Owner and File Owner ID’s do not match.
+* WP Filesystem API Method will display the WordPress Filesystem Method in use. For DSO Server troubleshooting additional fields will be displayed if the Script Owner and File Owner ID's do not match.
 * Custom Code help text changes
 * Custom Code additional error checking
 * htaccess auto-writing additions
@@ -734,9 +742,17 @@ Create new Master .htaccess files with AutoMagic and activate all BulletProof Mo
 
 == Upgrade Notice ==
 
+= .49.2 =
+* Dismiss Notice text corrections: S-Monitor page text changed to Security Status page
+* W3TC & WPSC Alerts text corrections: Edit/Upload/Download page text changed to htaccess File Editor page
+* Several BPS functions renamed for uniqueness/no-conflict assurance
+* PHP 5.5.x Deprecated function replacement file options.php: mysql_get_client_info replaced with mysqli_get_client_info
+* PHP 5.5.x Deprecated function replacements file bpsunlock.php: New code using MySQLi instead of MySQL
+* Enjoy!
+
 = .49.1 =
 * Backup folder path correction on Backup & Restore page
-* WP Filesystem API Method will display the WordPress Filesystem Method in use. For DSO Server troubleshooting additional fields will be displayed if the Script Owner and File Owner ID’s do not match.
+* WP Filesystem API Method will display the WordPress Filesystem Method in use. For DSO Server troubleshooting additional fields will be displayed if the Script Owner and File Owner ID's do not match.
 * Custom Code help text changes
 * Custom Code additional error checking
 * htaccess auto-writing additions
@@ -867,11 +883,19 @@ the particular section or page of the BulletProof Security plugin that you are i
 Help and FAQ page contains links to Help pages that will load in a new browser tab so
 that you are not redirected away from your WordPress Dashboard. 
 
-What's New in .49.1
+What's New in .49.2
+
+= .49.2 =
+* Dismiss Notice text corrections: S-Monitor page text changed to Security Status page
+* W3TC & WPSC Alerts text corrections: Edit/Upload/Download page text changed to htaccess File Editor page
+* Several BPS functions renamed for uniqueness/no-conflict assurance
+* PHP 5.5.x Deprecated function replacement file options.php: mysql_get_client_info replaced with mysqli_get_client_info
+* PHP 5.5.x Deprecated function replacements file bpsunlock.php: New code using MySQLi instead of MySQL
+* Enjoy!
 
 = .49.1 =
 * Backup folder path correction on Backup & Restore page
-* WP Filesystem API Method will display the WordPress Filesystem Method in use. For DSO Server troubleshooting additional fields will be displayed if the Script Owner and File Owner ID’s do not match.
+* WP Filesystem API Method will display the WordPress Filesystem Method in use. For DSO Server troubleshooting additional fields will be displayed if the Script Owner and File Owner ID's do not match.
 * Custom Code help text changes
 * Custom Code additional error checking
 * htaccess auto-writing additions

@@ -1,11 +1,11 @@
-# Copyright (C) 2012 WordPress
-# This file is distributed under the same license as the WordPress package.
+# Copyright (C) 2013 the WordPress team
+# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Twenty Eleven 1.5\n"
+"Project-Id-Version: Twenty Eleven 1.6\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/twentyeleven\n"
-"POT-Creation-Date: 2013-04-26 13:58:43+00:00\n"
-"PO-Revision-Date: 2013-06-22 01:24+0400\n"
+"POT-Creation-Date: 2013-08-01 18:14:12+00:00\n"
+"PO-Revision-Date: 2013-09-11 23:12+0400\n"
 "Last-Translator: Sergey Biryukov <sergeybiryukov.ru@gmail.com>\n"
 "Language-Team: ru.wordpress.org <sergeybiryukov.ru@gmail.com>\n"
 "Language: ru_RU\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_c;__ngettext:1,2\n"
 "X-Poedit-Basepath: S:\\home\\wordpress\\trunk\\wp-content\\themes"
 "\\twentyeleven\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: S:\\home\\wordpress\\trunk\\wp-content\\themes"
 "\\twentyeleven\n"
 
@@ -124,13 +124,6 @@ msgstr "Следующие комментарии &rarr;"
 msgid "Comments are closed."
 msgstr "Комментарии запрещены."
 
-#: content-aside.php:16 content-featured.php:14 content-gallery.php:16
-#: content-gallery.php:48 content-image.php:15 content-link.php:16
-#: content-quote.php:14 content-status.php:15 content.php:15 content.php:19
-#: inc/widgets.php:89 showcase.php:120 showcase.php:199
-msgid "Permalink to %s"
-msgstr "Постоянная ссылка: %s"
-
 #: content-aside.php:17
 msgid "Aside"
 msgstr "Заметка"
@@ -158,42 +151,42 @@ msgstr "%"
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Читать далее <span class=\"meta-nav\">&rarr;</span>"
 
-#: content-aside.php:34 content-featured.php:23 content-gallery.php:54
+#: content-aside.php:34 content-featured.php:23 content-gallery.php:50
 #: content-image.php:28 content-intro.php:18 content-link.php:34
 #: content-page.php:18 content-quote.php:36 content-single.php:24
 #: content-status.php:35 content.php:42 image.php:90
 msgid "Pages:"
 msgstr "Страницы:"
 
-#: content-aside.php:42 content-gallery.php:87 content-image.php:64
+#: content-aside.php:42 content-gallery.php:83 content-image.php:64
 #: content-link.php:42 content-quote.php:69 content-status.php:43
 #: content.php:79 showcase.php:201
 msgid "Leave a reply"
 msgstr "Добавить комментарий"
 
-#: content-aside.php:42 content-gallery.php:87 content-image.php:64
+#: content-aside.php:42 content-gallery.php:83 content-image.php:64
 #: content-link.php:42 content-quote.php:69 content-status.php:43
 #: content.php:79 showcase.php:201
 msgid "<b>1</b> Reply"
 msgstr "<b>1</b> комментарий"
 
-#: content-aside.php:42 content-gallery.php:87 content-image.php:64
+#: content-aside.php:42 content-gallery.php:83 content-image.php:64
 #: content-link.php:42 content-quote.php:69 content-status.php:43
 #: content.php:79 showcase.php:201
 msgid "<b>%</b> Replies"
 msgstr "Комментарии (<b>%</b>)"
 
-#: content-aside.php:44 content-featured.php:45 content-gallery.php:90
+#: content-aside.php:44 content-featured.php:45 content-gallery.php:86
 #: content-image.php:68 content-intro.php:19 content-link.php:44
 #: content-page.php:21 content-quote.php:72 content-single.php:52
-#: content-status.php:45 content.php:82 functions.php:525 functions.php:553
+#: content-status.php:45 content.php:82 functions.php:543 functions.php:571
 #: image.php:41
 msgid "Edit"
 msgstr "Изменить"
 
 #. translators: used between list items, there is a space after the comma
-#: content-featured.php:29 content-featured.php:38 content-gallery.php:62
-#: content-gallery.php:72 content-image.php:47 content-image.php:56
+#: content-featured.php:29 content-featured.php:38 content-gallery.php:58
+#: content-gallery.php:68 content-image.php:47 content-image.php:56
 #: content-quote.php:44 content-quote.php:54 content-single.php:30
 #: content-single.php:33 content.php:51 content.php:63
 msgid ", "
@@ -220,7 +213,7 @@ msgstr ""
 msgid "Gallery"
 msgstr "Галерея"
 
-#: content-gallery.php:47
+#: content-gallery.php:43
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
 msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
 msgstr[0] "Эта галерея содержит <a %1$s>%2$s фотографию</a>."
@@ -228,12 +221,16 @@ msgstr[1] "Эта галерея содержит <a %1$s>%2$s фотограф�
 msgstr[2] "Эта галерея содержит <a %1$s>%2$s фотографий</a>."
 msgstr[3] "Эта галерея содержит <a %1$s>%2$s фотографию</a>."
 
-#: content-gallery.php:66 content-image.php:51 content-quote.php:48
+#: content-gallery.php:44 showcase.php:120
+msgid "Permalink to %s"
+msgstr "Постоянная ссылка: %s"
+
+#: content-gallery.php:62 content-image.php:51 content-quote.php:48
 #: content.php:55
 msgid "<span class=\"%1$s\">Posted in</span> %2$s"
 msgstr "<span class=\"%1$s\">Рубрика:</span> %2$s"
 
-#: content-gallery.php:78 content-image.php:59 content-quote.php:60
+#: content-gallery.php:74 content-image.php:59 content-quote.php:60
 #: content.php:69
 msgid "<span class=\"%1$s\">Tagged</span> %2$s"
 msgstr "<span class=\"%1$s\">Метки:</span> %2$s"
@@ -254,7 +251,7 @@ msgstr ""
 "\"><a class=\"url fn n\" href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</"
 "a></span></span>"
 
-#: content-image.php:39 functions.php:590
+#: content-image.php:39 functions.php:608
 msgid "View all posts by %s"
 msgstr "Посмотреть все записи автора %s"
 
@@ -306,7 +303,7 @@ msgstr "Статус"
 msgid "Featured"
 msgstr "Избранное"
 
-#. #-#-#-#-#  twentyeleven.pot (Twenty Eleven 1.5)  #-#-#-#-#
+#. #-#-#-#-#  twentyeleven.pot (Twenty Eleven 1.6)  #-#-#-#-#
 #. Author URI of the plugin/theme
 #: footer.php:27
 msgid "http://wordpress.org/"
@@ -382,7 +379,7 @@ msgstr "Область подвала 1"
 
 #: functions.php:415 functions.php:425 functions.php:435
 msgid "An optional widget area for your site footer"
-msgstr "Дополнительная область виджетов для подвала вашего сайта"
+msgstr "Дополнительная область виджетов для нижней части сайта"
 
 #: functions.php:423
 msgid "Footer Area Two"
@@ -404,29 +401,29 @@ msgstr "<span class=\"meta-nav\">&larr;</span> Предыдущие записи
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Следующие записи <span class=\"meta-nav\">&rarr;</span>"
 
-#: functions.php:525
+#: functions.php:543
 msgid "Pingback:"
 msgstr "Уведомление:"
 
 #. translators: 1: comment author, 2: date and time
-#: functions.php:542
+#: functions.php:560
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr "%1$s <span class=\"says\">говорит</span> %2$s:"
 
 #. translators: 1: date, 2: time
-#: functions.php:548
+#: functions.php:566
 msgid "%1$s at %2$s"
 msgstr "%1$s в %2$s"
 
-#: functions.php:557
+#: functions.php:575
 msgid "Your comment is awaiting moderation."
 msgstr "Ваш комментарий ожидает проверки."
 
-#: functions.php:566
+#: functions.php:584
 msgid "Reply <span>&darr;</span>"
 msgstr "Ответить <span>&darr;</span>"
 
-#: functions.php:584
+#: functions.php:602
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
 "\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></"
@@ -620,27 +617,23 @@ msgstr "Мимолётное (Twenty Eleven)"
 msgid "Ephemera"
 msgstr "Мимолётное"
 
-#: inc/widgets.php:91 inc/widgets.php:107
+#: inc/widgets.php:91 inc/widgets.php:100
 msgid "0 <span class=\"reply\">comments &rarr;</span>"
 msgstr "<span class=\"reply\">0 комментариев &rarr;</span>"
 
-#: inc/widgets.php:91 inc/widgets.php:107
+#: inc/widgets.php:91 inc/widgets.php:100
 msgid "1 <span class=\"reply\">comment &rarr;</span>"
 msgstr "<span class=\"reply\">1 комментарий &rarr;</span>"
 
-#: inc/widgets.php:91 inc/widgets.php:107
+#: inc/widgets.php:91 inc/widgets.php:100
 msgid "% <span class=\"reply\">comments &rarr;</span>"
 msgstr "<span class=\"reply\">Комментарии (%) &rarr;</span>"
 
-#: inc/widgets.php:105
-msgid "Link to %s"
-msgstr "Ссылка: %s"
-
-#: inc/widgets.php:157
+#: inc/widgets.php:150
 msgid "Title:"
 msgstr "Заголовок:"
 
-#: inc/widgets.php:160
+#: inc/widgets.php:153
 msgid "Number of posts to show:"
 msgstr "Количество записей:"
 
@@ -697,8 +690,8 @@ msgid "Twenty Eleven"
 msgstr "Twenty Eleven"
 
 #. Theme URI of the plugin/theme
-msgid "http://wordpress.org/extend/themes/twentyeleven"
-msgstr "http://wordpress.org/extend/themes/twentyeleven"
+msgid "http://wordpress.org/themes/twentyeleven"
+msgstr "http://wordpress.org/themes/twentyeleven"
 
 #. Description of the plugin/theme
 msgid ""

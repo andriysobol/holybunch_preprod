@@ -443,3 +443,59 @@ HTTP_REFERER:
 REQUEST_URI: /holybunch_prep/wp-content/uploads/2013/03/ipad.png
 QUERY_STRING: 
 HTTP_USER_AGENT: WordPress/3.5.1; http://localhost/holybunch_prep
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 19, 2013 - 11:48 пп <<<<<<<<<<<
+REMOTE_ADDR: ::1
+Host Name: Workier
+SERVER_PROTOCOL: HTTP/1.0
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /holybunch_prep/
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.2; http://localhost/holybunch_prep
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 19, 2013 - 11:48 пп <<<<<<<<<<<
+REMOTE_ADDR: ::1
+Host Name: Workier
+SERVER_PROTOCOL: HTTP/1.0
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /holybunch_prep/
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.2; http://localhost/holybunch_prep
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 19, 2013 - 11:48 пп <<<<<<<<<<<
+REMOTE_ADDR: ::1
+Host Name: Workier
+SERVER_PROTOCOL: HTTP/1.0
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /holybunch_prep/
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.5.2; http://localhost/holybunch_prep
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 24, 2013 - 11:21 пп <<<<<<<<<<<
+REMOTE_ADDR: ::1
+Host Name: Workier
+SERVER_PROTOCOL: HTTP/1.0
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /holybunch_prep/
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep

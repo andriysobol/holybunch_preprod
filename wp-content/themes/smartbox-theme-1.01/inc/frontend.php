@@ -253,7 +253,7 @@ add_action( 'wp_enqueue_scripts', 'oxy_load_scripts' , 0);
 /*************** POST ***************************/
 
 // add post format support
-add_theme_support( 'post-formats', array( 'gallery', 'video', 'link' ) );
+add_theme_support( 'post-formats', array( 'gallery', 'video', 'link', 'text'  ) );
 add_theme_support( 'automatic-feed-links' );
 
 // dont use default gallery styles
@@ -933,6 +933,9 @@ function oxy_post_icon( $post_id , $echo =true){
     $format = get_post_format( $post_id );
     switch ($format) {
         case 'gallery':
+            $output = '<i class="icon-picture"></i>';
+            break;
+        case 'text':
             $output = '<i class="icon-picture"></i>';
             break;
         case 'link':
