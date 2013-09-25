@@ -214,3 +214,20 @@ blockquote_drops {
   color : #666;
   text-indent : 30px;
 }
+
+.ex-pullquote, .pullquote {
+   float : right;
+   width : 210px;
+   border : 0;
+   color : #99cc66;
+   font-family : georgia, palatino, 'times new roman', serif;
+   font-size : 110%;
+   font-weight : bold;
+   font-style : italic;
+   margin : -5px 0 15px 10px;
+ }
+
+ .pullquote {
+   width : 250px;
+   margin : -25px 0 20px 15px;
+ }

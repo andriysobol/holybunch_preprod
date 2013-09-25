@@ -501,7 +501,7 @@ function oxy_shortcode_blockquote_drops( $atts, $content ) {
         'who'   => '',
         'cite'  => '',
     ), $atts ) );
-    return '<blockquote_drops>"' . do_shortcode($content) . '"<small>'.$who.' <cite title="source title">'.$cite.'</cite></small></blockquote_drops>';
+    return '<blockquote_drops class="pullquote"><p>' . $content . '</p><small>' . $who . '</small></blockquote_drops>';
 }
 add_shortcode( 'blockquote_drops', 'oxy_shortcode_blockquote_drops' );
 
