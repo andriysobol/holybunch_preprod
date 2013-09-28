@@ -5,7 +5,7 @@
  * @author Andriy Sobol
  */
 
-function oxy_content_taxonomy_topic($atts, $content = '') {
+function oxy_content_taxonomy_topic_old($atts, $content = '') {
     // setup options
     extract(shortcode_atts(array(
         'title' => '',
@@ -138,6 +138,64 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     return $output;
 }
 
+add_shortcode('content_taxonomy_topic_old', 'oxy_content_taxonomy_topic_old');
+
+function oxy_content_taxonomy_topic($atts, $content = '') {
+    // setup options
+    extract(shortcode_atts(array(
+        'title' => '',
+        'topic' => '', 
+        'style' => '',
+        'title' => '', 
+        'excerpt_length' => '', 
+        'addrelatedposts' => ''
+        ), $atts));
+
+    //get taxonomy term description
+    $taxonomy_name = 'teaching_topics';
+    $termDiscription = get_taxonomy_description($taxonomy_name, $topic);
+    if(empty($termDiscription))
+        return 'Темы('. $topic . '), которую ты указал в shortcode не существует, используй существующую тему';
+    
+    //get taxonomy image
+    $taxonomy_image = get_taxonomy_image($taxonomy_name, $topic);
+    
+    //get taxonomy main video content
+    $video_content = get_taxonomy_video($taxonomy_name, $topic);
+    if(empty($video_content))
+        $video_content = 'Ты не указал видео для это темы. Укажи видео в таксономии: ' . $taxonomy_name;
+  
+    //add taxonomy image
+    $content .= '[row]';
+    $content .= '[span12]';
+    $content .= '<img src="'. $taxonomy_image . '" width="348" height="256" align="left" style="margin-right: 10px; margin-top: 5px; margin-bottom: 5px;">';
+    $content .= $termDiscription;
+    $content .= '[/span12]';
+    $content .= '[/row]';
+    $content .= '[row]';
+    //add related video    
+    $content .= '[span4]';
+    $content .= $video_content;
+    $content .= '[/span4]';
+    
+    //add main predigt
+    $content .= '[span4]';
+    $content .= get_taxonomy_content_item($taxonomy_name, $topic);
+    $content .= '[/span4]';
+    $content .= '[span4]';
+    $content .= '[button icon="icon-book" type="warning" size="btn-large" label="Далее к теме" link="' . get_term_link($topic, $taxonomy = $taxonomy_name) . '" place="right"]';
+    $content .= '[/span4][/row]';
+    
+    $atts[title] = $title;
+    if(empty($style)){
+        $atts[style] = 'dark';
+    }else{
+        $atts[style] = $style;
+    }
+    $output = oxy_shortcode_section($atts, $content);
+    return $output;
+}
+
 add_shortcode('content_taxonomy_topic', 'oxy_content_taxonomy_topic');
 
 /* Content List */
@@ -223,11 +281,7 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
                     default:
                         break;
                 }
-                //versetze jede zweite Zeile
-                if($counter==1)
-                    $output .= '<h4 class="infokasten">';
-                else 
-                    $output .= '<ul><h4 class="infokasten">';
+                $output .= '<h4 class="infokasten">';
                 $output .= '<i class="' . $icon . '"></i>';
                 if(!$addtitle) $output .= '</h4>';
             } 
@@ -236,13 +290,7 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
                 if (!$addicon) $output .= '<h4 class="infokasten">';
                 $output .= '<a class="infokasten">';
                 $output .= get_the_title() . " : ";
-                if($counter==1){
-                    $output .= '</a></h4>';
-                    $counter = 0;
-                }else {
-                    $output .= '</a></ul></h4>';
-                    $counter = 1;
-                }
+                $output .= '</a></h4>';
             }
             if ($contenttype == 'excerpt') {
                 $text = get_the_excerpt();
@@ -500,8 +548,14 @@ function oxy_shortcode_blockquote_drops( $atts, $content ) {
     extract( shortcode_atts( array(
         'who'   => '',
         'cite'  => '',
+        'align' => '',
     ), $atts ) );
-    return '<blockquote_drops class="pullquote"><p>' . $content . '</p><small>' . $who . '</small></blockquote_drops>';
+    
+    $class = 'pullquote';
+    if($align == "left"){
+        $class = 'pullquote_left';
+    }
+    return '<blockquote_drops class="' . $class . '"><p>' . $content . '</p><small>' . $who . '</small></blockquote_drops>';
 }
 add_shortcode( 'blockquote_drops', 'oxy_shortcode_blockquote_drops' );
 

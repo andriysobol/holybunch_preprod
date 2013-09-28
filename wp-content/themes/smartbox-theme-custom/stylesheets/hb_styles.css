@@ -12,6 +12,7 @@ div#blockRigthOben{
     border-left-width: thin;
     padding-left: 20px;
     margin-left: 30px;
+    border : 0;
 }
 
 ul#blockRigthBlack{
@@ -179,15 +180,15 @@ ol_stickit li_stickit a_stickit{color:#fff;}
   color: white;
 }
 
-h4.infokasten{
+h4.infokasten_green{
     background:#E3FF4A; 
     display: inline; 
     line-height: 3;
-    padding:4px 8px;
+    padding: 1px;
 }
 
 a.infokasten{
-    color: #000000;
+    color: #FFA500;
 }
 
 h4.infokasten:hover {
@@ -206,7 +207,7 @@ h4.infokasten:hover {
 }
 
 blockquote_drops { 
-  background : url(../images/bb_quotes.gif) no-repeat top left;
+  background : url(../images/quotes.png) no-repeat top left;
   margin : 15px 0 0 5px;
   padding : 5px 20px 0 25px;
   border-right : 1px dotted #99cc66; 
@@ -215,11 +216,23 @@ blockquote_drops {
   text-indent : 30px;
 }
 
+.ex-pullquote_left, .pullquote_left {
+   float : left;
+   width : 210px;
+   border : 0;
+   color : #99cc66;
+   font-family : georgia, palatino, 'times new roman', serif;
+   font-size : 110%;
+   font-weight : bold;
+   font-style : italic;
+   margin : -5px 0 15px 10px;
+ }
+
 .ex-pullquote, .pullquote {
    float : right;
    width : 210px;
    border : 0;
-   color : #99cc66;
+   color:#FFA500;
    font-family : georgia, palatino, 'times new roman', serif;
    font-size : 110%;
    font-weight : bold;
@@ -231,3 +244,5 @@ blockquote_drops {
    width : 250px;
    margin : -25px 0 20px 15px;
  }
+ 
+ 

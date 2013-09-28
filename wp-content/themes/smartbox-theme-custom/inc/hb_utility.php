@@ -53,6 +53,29 @@ function get_taxonomy_video($taxonomy_name, $topic) {
     }
 }
 
+function get_taxonomy_content_item($taxonomy_name, $topic) {
+    $term_details = term_exists($topic, $taxonomy_name);
+    if (is_array($term_details)) {
+        $term_id = $term_details['term_id'];
+    } else {
+        return '';
+    }
+    //in order to get custom field 'main_video' from taxonomy we have 
+    //to call advanced custom fields plugin api and provide id of post which 
+    //is combination of taxonomy name and id of term e.g. term 'god' => id = 39
+    $text = get_field('main_text', 'teaching_topics_' . $term_id);
+    if (is_array($text)) {
+        global $wp_embed;
+        $img = wp_get_attachment_image_src(get_post_thumbnail_id($text[0]->ID), 'full');
+        $post_title = $text[0]->post_title;
+        $content .= '<img class="aligncenter" src="' . $img[0] . '"/>';
+        $content .='<p>' . $post_title . '</p>';
+        return $content;
+    } else {
+        return 'Ты не указал видео для это темы. Укажи видео в таксономии: ' . $taxonomy_name;
+    }
+}
+
 function get_video_as_fancybox($video_content, $style){
         //post content contains embed short code, we don't need it but only video url
         //it is ugly but I don't find any other solution as just replace short code by empty
