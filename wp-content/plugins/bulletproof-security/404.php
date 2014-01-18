@@ -3,8 +3,15 @@
 // Copy this logging code from BEGIN COPY CODE above to END COPY CODE below and paste it right after <?php get_header(); > in
 // your Theme's 404.php template file located in your themes folder /wp-content/themes/your-theme-folder-name/404.php.
 $bpsProLog = WP_CONTENT_DIR . '/bps-backup/logs/http_error_log.txt';
-$timestamp = date_i18n(get_option('date_format'), strtotime("11/15-1976")) . ' - ' . date_i18n(get_option('time_format'), strtotime($date)); 	
 $hostname = @gethostbyaddr($_SERVER['REMOTE_ADDR']);
+$timeNow = time();
+$gmt_offset = get_option( 'gmt_offset' ) * 3600;
+	
+	if ( !get_option( 'gmt_offset' ) ) {
+		$timestamp = date("F j, Y g:i a", time() );
+	} else {
+		$timestamp = date_i18n(get_option('date_format'), strtotime("11/15-1976")) . ' - ' . date_i18n(get_option('time_format'), $timeNow + $gmt_offset);
+	}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 

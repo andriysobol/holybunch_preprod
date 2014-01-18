@@ -104,7 +104,7 @@ if ( isset($_POST['Login-Security-Delete-PWR']) ) {
 
 	if ( $result = $mysqli->query($query) ) {
 
-		/* fetch associative array & delete the username Row from the Login Security DB Table */
+		/* fetch associative array & delete BPS Login Security DB Option */
     	while ( $row = $result->fetch_assoc() ) {
 			$delete_query = "DELETE FROM $wp_options WHERE option_name = 'bulletproof_security_options_login_security'";
 		
