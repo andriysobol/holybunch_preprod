@@ -1,6 +1,6 @@
-#   BULLETPROOF .49.2 >>>>>>> SECURE .HTACCESS     
+#   BULLETPROOF .49.8 >>>>>>> SECURE .HTACCESS     
 
-# If you edit the BULLETPROOF .49.2 >>>>>>> SECURE .HTACCESS text above
+# If you edit the BULLETPROOF .49.8 >>>>>>> SECURE .HTACCESS text above
 # you will see error messages on the BPS Security Status page
 # BPS is reading the version number in the htaccess file to validate checks
 # If you would like to change what is displayed above you
@@ -32,6 +32,13 @@ Options -Indexes
 # index.html will be ignored will not load.
 DirectoryIndex index.php index.html /index.php
 
+# BRUTE FORCE LOGIN PAGE PROTECTION
+# PLACEHOLDER ONLY
+# See this link: http://forum.ait-pro.com/forums/topic/protect-login-page-from-brute-force-login-attacks/
+# for more information before choosing to add this code to BPS Custom Code
+# Protects the Login page from SpamBots & Proxies
+# that use Server Protocol HTTP/1.0 or a blank User Agent
+
 # BPS ERROR LOGGING AND TRACKING
 # BPS has premade 403 Forbidden, 400 Bad Request and 404 Not Found files that are used 
 # to track and log 403, 400 and 404 errors that occur on your website. When a hacker attempts to
@@ -51,8 +58,9 @@ ErrorDocument 401 default
 ErrorDocument 403 /wp-content/plugins/bulletproof-security/403.php
 ErrorDocument 404 /404.php
 
-# DENY ACCESS TO PROTECTED SERVER FILES - .htaccess, .htpasswd and all file names starting with dot
-RedirectMatch 403 /\..*$
+# DENY ACCESS TO PROTECTED SERVER FILES AND FOLDERS
+# Files and folders starting with a dot: .htaccess, .htpasswd, .errordocs, .logs
+RedirectMatch 403 \.(htaccess|htpasswd|errordocs|logs)$
 
 # WP-ADMIN/INCLUDES
 RewriteEngine On
@@ -78,7 +86,7 @@ RewriteEngine On
 RewriteCond %{REQUEST_METHOD} ^(HEAD|TRACE|DELETE|TRACK|DEBUG) [NC]
 RewriteRule ^(.*)$ - [F,L]
 
-# PLUGINS AND VARIOUS EXPLOIT FILTER SKIP RULES
+# PLUGINS/THEMES AND VARIOUS EXPLOIT FILTER SKIP RULES
 # IMPORTANT!!! If you add or remove a skip rule you must change S= to the new skip number
 # Example: If RewriteRule S=5 is deleted than change S=6 to S=5, S=7 to S=6, etc.
 
@@ -142,11 +150,11 @@ RewriteCond %{REQUEST_URI} owssvr\.dll [NC,OR]
 RewriteCond %{HTTP_REFERER} (%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
 RewriteCond %{HTTP_REFERER} \.opendirviewer\. [NC,OR]
 RewriteCond %{HTTP_REFERER} users\.skynet\.be.* [NC,OR]
-RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=http:// [OR]
-RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=(\.\.//?)+ [OR]
+RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=http:// [NC,OR]
+RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=(\.\.//?)+ [NC,OR]
 RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=/([a-z0-9_.]//?)+ [NC,OR]
 RewriteCond %{QUERY_STRING} \=PHP[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} [NC,OR]
-RewriteCond %{QUERY_STRING} (\.\./|\.\.) [OR]
+RewriteCond %{QUERY_STRING} (\.\./|%2e%2e%2f|%2e%2e/|\.\.%2f|%2e\.%2f|%2e\./|\.%2e%2f|\.%2e/) [NC,OR]
 RewriteCond %{QUERY_STRING} ftp\: [NC,OR]
 RewriteCond %{QUERY_STRING} http\: [NC,OR] 
 RewriteCond %{QUERY_STRING} https\: [NC,OR]
@@ -168,7 +176,7 @@ RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2}) [OR]
 RewriteCond %{QUERY_STRING} ^.*(\(|\)|<|>|%3c|%3e).* [NC,OR]
 RewriteCond %{QUERY_STRING} ^.*(\x00|\x04|\x08|\x0d|\x1b|\x20|\x3c|\x3e|\x7f).* [NC,OR]
 RewriteCond %{QUERY_STRING} (NULL|OUTFILE|LOAD_FILE) [OR]
-RewriteCond %{QUERY_STRING} (\./|\../|\.../)+(motd|etc|bin) [NC,OR]
+RewriteCond %{QUERY_STRING} (\.{1,}/)+(motd|etc|bin) [NC,OR]
 RewriteCond %{QUERY_STRING} (localhost|loopback|127\.0\.0\.1) [NC,OR]
 RewriteCond %{QUERY_STRING} (<|>|'|%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
 RewriteCond %{QUERY_STRING} concat[^\(]*\( [NC,OR]

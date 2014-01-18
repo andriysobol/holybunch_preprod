@@ -1,10 +1,10 @@
 === BulletProof Security ===
 Contributors: AITpro
 Donate link: http://www.ait-pro.com/aitpro-blog/331/bulletproof-security-plugin-support/bulletproof-security-donations-page/
-Tags: bulletproof, security, secure, htaccess, chmod, maintenance, plugin, private, privacy, protection, permissions, 503, base64, injection, code, encode, script, attack, hack, hackers, block, blocked, prevent, prevention, RFI, XSS, CRLF, CSRF, SQL Injection, vulnerability, website security, WordPress security, security log, logging, HTTP log, error log, login security, login, log, users, login alerts, lock, brute force, authenticate, authentication, firewall
+Tags: virus, antivirus, attack, bulletproof, security, secure, htaccess, chmod, maintenance, plugin, private, privacy, protection, permissions, 503, base64, injection, code, encode, script, attack, hack, hackers, block, blocked, prevent, prevention, RFI, XSS, CRLF, CSRF, SQL Injection, vulnerability, website security, WordPress security, security log, logging, HTTP log, error log, login security, login, log, users, login alerts, lock, brute force, authenticate, authentication, firewall, User ID, Author ID, Username, enumeration, Bot, spam, spammers
 Requires at least: 3.0 
-Tested up to: 3.6.1 
-Stable tag: .49.2
+Tested up to: 3.8 
+Stable tag: .49.8
 
 WordPress Website Security Protection. Website security protection against: XSS, RFI, CRLF, CSRF, Base64, Code Injection and SQL Injection hacking... 
 
@@ -33,6 +33,13 @@ The answer is very simple - .htaccess files (distributed configuration files) ar
 hackers malicious scripts are stopped by BulletProof Security .htaccess files/Firewalls before those scripts even have a chance to 
 reach the php coding in WordPress. BulletProof Security uses .htaccess website security files, which are specific to 
 Apache Linux Servers. Please read the FAQ page for Server compatibility questions. 
+
+= Security Log File Automation - Automatically Zipped, Emailed and Replaced =
+
+Security Log files are automatically zipped, emailed and replaced with a new blank Security Log file when the log
+file reaches the maximum file size setting that you choose. By Default BulletProof Security sets this DB option to
+zip, email and replace the Security Log file when it reaches 500KB. The Security Log file is checked once per hour
+with a WordPress Cron. The optimum recommended file size setting is 500KB.
 
 = BulletProof Security Fast and Simple with No Manual Configuration Required =
 
@@ -77,6 +84,7 @@ have additional website security measures in place as a standard. BulletProof Se
 * <a href="http://forum.ait-pro.com/forums/topic/protect-login-page-from-brute-force-login-attacks/" title="Brute Force Login Protection .htaccess code" rel="nofollow" target="_blank">Brute Force Login Protection .htaccess code</a>
 * <a href="http://forum.ait-pro.com/forums/topic/htaccess-caching-code-speed-boost-cache-code/" title="Speed Boost Cache .htaccess code" rel="nofollow" target="_blank">Speed Boost Cache .htaccess code</a>
 * <a href="http://forum.ait-pro.com/forums/topic/hotlink-protection-do-not-block-google-bing-or-yahoo/" title="HotLink Protection .htaccess code - Google, Yahoo, Bing safe" rel="nofollow" target="_blank">HotLink Protection .htaccess code - Google, Yahoo, Bing safe</a>
+* <a href="http://forum.ait-pro.com/forums/topic/wordpress-author-enumeration-bot-probe-protection-author-id-user-id/" title="Author ID / Username Bot Probe Protection Code" rel="nofollow" target="_blank">Author ID / Username Bot Probe Protection Code</a>
 
 = BulletProof Security htaccess Core (Firewalls, etc.) Features =
 
@@ -92,11 +100,13 @@ have additional website security measures in place as a standard. BulletProof Se
 * Security / HTTP Error Logging - Log 400, 403 and 404 Errors
 * Security Log: Add / Remove User Agents/Bots to Ignore/Not Log or Allow/Log
 * Security Log: Turn On / Turn Off / Delete Log
+* Security Log Automation: Automatically zipped, emailed and replaced based on file size
 * Automatic .htaccess file updating on BPS upgrade installation
 * New .htaccess security filters automatically added during upgrade
 * WP Dashboard Alerts / WP Dashboard Dismiss Notices
 * Anti Comment Spam .htaccess code - works together with Akismet or other Spam plugins to keep Comment Spam at a minimum
 * Anti Comment Spambot .htaccess code - Forbid Empty Referrer Spambots
+* Author ID / User ID / Username Bot Probe Protection
 * Custom Code feature: Add, Edit, Modify, Save additional Bonus or personal custom .htaccess code
 * WordPress readme.html and /wp-admin/install.php protected with .htaccess security protection
 * wp-config.php and bb-config.php files protected with .htaccess security protection
@@ -121,7 +131,7 @@ have additional website security measures in place as a standard. BulletProof Se
 * Brute Force Login Security Protection
 * Log All User Account Logins or Log Only User Account Lockouts
 * Logged DB Fields: User ID, Username, Display Name, Email, Role, Login Time, Lockout Expires, IP Address, Hostname, Request URI
-* Email Alerting Options: User Account is locked out, An Administrator Logs in, An Administrator Logs in and when a User Account is locked out, Any User logs in when a User Account is locked out, Do Not Send Email Alerts
+* Email Alerting Options: User Account is locked out, An Administrator Logs in, An Administrator Logs in and when a User Account is locked out, Any User logs in and when a User Account is locked out, Do Not Send Email Alerts
 * Login Security Additional Options: Max Login Attempts, Automatic Lockout Time, Manual Lockout Time, Max DB Rows To Show, Turn On/Turn Off
 * Login Security Stealth Mode: Standard WP Error Messages or Generic Error Messages. 
 * Login Security Stealth Mode: Enable or Disable Login Password Reset capability and links.
@@ -191,6 +201,12 @@ No, BulletProof Security will not cause a website to run slower. BulletProof Sec
 and uses very little/low website resources and very little Server memory. If you would like to check your plugins to check 
 how much website resource and Server memory each of your plugins is using install the P3 (Plugin Performance Profiler) plugin.
 Both W3 Total Cache and WP Super Cache use .htaccess code to speed up your website.
+
+= Can BulletProof Security speed up my website and make it run faster? =
+
+Yes, BulletProof security can speed up your website and make it run faster if you use the Speed Boost Cache Bonus Code and 
+add it to BPS Custom Code. See the BulletProof Security Bonus Custom Code section on the BulletProof Security plugin Description 
+page for a link to the Speed Boost Cache Bonus Code.
 
 = BPS Alert! Your site does not appear to be protected by BulletProof Security. What does the Alert mean? =
 
@@ -271,6 +287,7 @@ The Security Log logs 400 and 403 HTTP Response Status Codes by default. You can
 * Quarantine - Automatic File Quarantine
 * Real-time IDPS File Monitor (ARQ IDPS)
 * Plugin Firewall (true IP Based Firewall)
+* JTC Anti-Spam / Anti-Hacker
 * Uploads Folder Anti-Exploit Guard (UAEG)
 * .htaccess Website Security (Firewalls)
 * Custom php.ini Website Security
@@ -279,7 +296,8 @@ The Security Log logs 400 and 403 HTTP Response Status Codes by default. You can
 * Security Logging
 * HTTP Error Logging
 * PHP Error Logging
-* Email Alerts
+* AutoRestore/Quarantine Logging
+* Displayed Alerts / Email Alerts
 * Versatile Set of Pro-Tools...
 * Base64 Decoder / Encoder...
 * <a href="http://www.ait-pro.com/bulletproof-security-pro-flash/bulletproof.html" title="BulletProof Security Features" rel="nofollow" target="_blank">View All BulletProof Security Pro Feature Details</a>
@@ -287,9 +305,16 @@ The Security Log logs 400 and 403 HTTP Response Status Codes by default. You can
 = Is BulletProof Security Network / Multisite Compatible? =
 
 Yes. BulletProof Security contains AutoMagic buttons for Network / Multisite websites. Both sub-directory and sub-domain Master .htaccess 
-code is written / created for your specific Network / Multisite site. BulletProof Modes should ONLY be Activated on the Primary site to automatically 
-protect all sub sites. Sub sites are virtual. DO NOT Activate BulletProof Modes on sub sites. BPS allows only Super Admins to see the BPS menus 
-in sub sites. BulletProof Security also works with Network / Multisite Domain Mapping.
+code is written / created for your specific Network / Multisite site based on your WordPress version. The BulletProof Security plugin can 
+be Network Activated or you can allow BulletProof Security to be activated individually on each Network / Multisite subsite or of course 
+you can choose not to Network Activate BulletProof Security or allow the BPS plugin on subsites. Only Login Security and System Info menus 
+are available on subsites. Super Admins will see BPS Dashboard Alerts and other Status displays on the Primary Site only. Administrators 
+can activate or deactivate BulletProof Security on subsites if you allow this on your Network / Multisite website. The BPS Primary Site 
+Menus will display all BPS menus. All other BulletProof Security features are not available on subsites since Network/Multisite subsites 
+are virtual and do not have separate website files of their own. All of the other standard BulletProof Security features work sitewide and 
+affect all other virtual subsites with the exception of Login Security which works individually for each specific website - Primary or 
+virtual subsites and therefore should only be available to and controlled by the Super Admin with Network Admin capabilities for the 
+Network/Multisite website. BulletProof Security also works with Network / Multisite Domain Mapping.
 
 = Is BulletProof Security BuddyPress Compatible? =
 
@@ -341,12 +366,85 @@ Yes, BulletProof Security works with Git, but does require some additional set u
 == Screenshots ==
 
 1. BulletProof Security - Security Modes page
-2. BulletProof Security - Security Status page
+2. BulletProof Security - Security Log page
 3. BulletProof Security - System Info page
 4. BulletProof Security - htaccess File Editor page
 5. BulletProof Security - Login Security and Monitoring page
 
 == Changelog ==
+
+= .49.8 =
+* Custom Code Code Correction: ENT_QUOTES flag added to Custom Code AutoMagic variables to convert Single Quote HTML entities stored in the DB back to characters during AutoMagic File writing.
+* Enjoy!
+
+= .49.7 =
+* Network / Multisite Plugin Network Activation or Single subsite Plugin Activation: As of BulletProof Security .49.7, 
+the BPS plugin can be Network Activated or you can allow the BPS plugin to be activated individually on each Network / 
+Multisite subsite or of course you can choose not to Network Activate BPS or allow the BPS plugin on subsites.
+* New AutoMagic WP 3.5+ Network / Multisite .htaccess code: 
+BPS AutoMagic buttons automatically write the correct Network / Multisite root .htaccess code for your site based on your WordPress version.
+* Network / Multisite New Feature Notice: BPS can now be Network Activated on Multisite:
+This Network / Multisite New Feature Dismiss Notice displays on Network / Multisite only to alert Network / Multisite site 
+owners about the new Network Activation capability in BPS.
+* CSS Visual Style Changes for WP 3.8+ MP6 & Pre 3.8 WP Versions:
+WordPress 3.8 is using the new MP6 GUI. A BPS 3.8 CSS stylesheet has been created to visually display things correctly 
+in WordPress 3.8. BPS will automatically load the correct CSS stylesheet for your WordPress version. CSS visual 
+enhancements were also created for pre WordPress 3.8 versions.
+* See the BPS Whats New page for more details
+* Enjoy!
+
+= .49.6 =
+* Bonus Code Dismiss Notice Added: Author ID / User ID / Username BOT Probe Protection Code: 
+Protects against hacker Bot Probes looking for WordPress author enumeration (a numbered list of Author ID's / User ID's) to exploit. 
+Generates a standard WordPress 404 Error instead of displaying Author ID's / User ID's / Usernames.
+* Root .htaccess File code modifications/changes:
+<pre><code>OLD: RedirectMatch 403 /\..*$
+NEW: RedirectMatch 403 \.(htaccess|htpasswd|errordocs|logs)$
+
+BPS Query String Exploits Code Changes
+OLD: RewriteCond %{QUERY_STRING} (\.\./|\.\.) [OR]
+NEW: RewriteCond %{QUERY_STRING} (\.\./|%2e%2e%2f|%2e%2e/|\.\.%2f|%2e\.%2f|%2e\./|\.%2e%2f|\.%2e/) [NC,OR]
+
+OLD: RewriteCond %{QUERY_STRING} (\./|\../|\.../)+(motd|etc|bin) [NC,OR]
+NEW: RewriteCond %{QUERY_STRING} (\.{1,}/)+(motd|etc|bin) [NC,OR]
+
+OLD: RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=http:// [OR]
+NEW: RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=http:// [NC,OR]
+
+OLD: RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=(\.\.//?)+ [OR]
+NEW: RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=(\.\.//?)+ [NC,OR]</code></pre>
+* See the BPS Whats New page for more details
+* Enjoy!
+
+= .49.5 =
+* Reverting: Brute Force Login Protection code is now optional/Bonus Code again
+* BPS will not automatically add this code as standard code in the root .htaccess file
+* The Brute Force Login Protection Custom Code text box will remain for folks who can use this code on their websites.
+* See the BPS Whats New page for more details
+* Enjoy!
+
+= .49.4 =
+* Code Mod to Brute Force Login Protection code to allow for the widest possible range of compatibility
+* This affected a small number of folks
+* MOD: RewriteCond %{HTTP_USER_AGENT} ^(|-?)$ [NC,OR] to RewriteCond %{HTTP_USER_AGENT} ^$ [OR] 
+* Enjoy!
+
+= .49.3 =
+* New Feature - Security Log zip, email and delete/replace option:
+Security Log files are automatically zipped, emailed and replaced with a new blank security log file when they reach the maximum file size setting on the Security Log page. During the BPS upgrade this is automatically set to zip and email log files when they reach 500KB in size.
+* Structural/Menu Changes:
+The Security Log & System Info tab pages have been moved out of htaccess Core and now have their own separate pages/menu links. 
+* New standard root .htaccess code added:
+Server Protocol HTTP/1.0 and blank User Agent htaccess BRUTE FORCE LOGIN PAGE PROTECTION code is now standard .htaccess code in the BPS root .htaccess file.
+* New BPS Custom Code Text box added:
+A new Custom Code Text box has been added: CUSTOM CODE BRUTE FORCE LOGIN PAGE PROTECTION.
+* Check Headers Tool added to the System Info page:
+This tool Allows you to check your website Headers or another website's Headers remotely.
+* New System Info page check - Public IP/X-Forwarded-For check:
+If you are using CloudFlare on your website then you will see Proxy X-Forwarded-For IP Address: instead of Public ISP IP / Your Computer IP Address: displayed to you. This additional check is for troubleshooting issues with CloudFlare, CDN, Proxy or VPN.
+* PHP mysqli_get_client_info function additional check
+Additional function checking code has been added in cases where the mysqli_get_client_info function is not available on a Host Server.
+* Enjoy!
 
 = .49.2 =
 * Dismiss Notice text corrections: S-Monitor page text changed to Security Status page
@@ -742,137 +840,24 @@ Create new Master .htaccess files with AutoMagic and activate all BulletProof Mo
 
 == Upgrade Notice ==
 
-= .49.2 =
-* Dismiss Notice text corrections: S-Monitor page text changed to Security Status page
-* W3TC & WPSC Alerts text corrections: Edit/Upload/Download page text changed to htaccess File Editor page
-* Several BPS functions renamed for uniqueness/no-conflict assurance
-* PHP 5.5.x Deprecated function replacement file options.php: mysql_get_client_info replaced with mysqli_get_client_info
-* PHP 5.5.x Deprecated function replacements file bpsunlock.php: New code using MySQLi instead of MySQL
+= .49.8 =
+* Custom Code Code Correction: ENT_QUOTES flag added to Custom Code AutoMagic variables to convert Single Quote HTML entities stored in the DB back to characters during AutoMagic File writing.
 * Enjoy!
 
-= .49.1 =
-* Backup folder path correction on Backup & Restore page
-* WP Filesystem API Method will display the WordPress Filesystem Method in use. For DSO Server troubleshooting additional fields will be displayed if the Script Owner and File Owner ID's do not match.
-* Custom Code help text changes
-* Custom Code additional error checking
-* htaccess auto-writing additions
-* Additional root htaccess file placeholders/markers added
-* New Dashboard Dismiss Notices: Sucuri 1-click Hardening, Broken Link Checker, phpini handler, Speed Boost Custom Code, Custom Permalinks check
-* Dashboard Alerts are now only displayed to Administrators. Editors, Authors, etc will no longer see Alerts
-* The htaccess Core Edit/Upload/Download tab page has been renamed to htaccess File Editor.
-* The File Upload & Download features have been removed from the new htaccess File Editor page since these features/options are obsolete.
-* Visual Enhancements: AutoMagic font size increased, etc.
-* Enjoy!
-
-= .49 =
-* Security Vulnerability/Bug Fix/Patch: HTML rendered in Security Log file via Logged Header Fields 
-* Special Thanks go to Jacek Sowinski via Secunia SVCRP for discovering this vulnerability. 
-* Solution/Fix: Security Log logged Header Fields are now HTML escaped
-* Enjoy!
-
-= .48.9 =
-* 2 New Login Security Options Added:
-* Error Messages: Choose to display Standard WP Login Error Messages or Generic Error Messages.
-* Password Reset: Enable or Disable Login Password Reset capability. This option also includes additionl Stealth Mode capabilities. Please read the Blue Read Me help button on the BPS Login Security page for a full description and additional help information.
-* Login Security Bug Fix/Code Correction: Using the /wp-login.php URL no longer generates an initial login error.
-* New Dismiss Notice - Brute Force Login Protection Code: At some point the Brute Force Login Protection code will be standard in BPS .htaccess files. For now a dismiss notice has been added with a link to the Brute Force Login Protection code.
-* Additional error checking & Overall Code Improvements: Really too many things to list so in general BPS .48.9 is more streamlined, has better/additional error checking and overall code improvements throughout BPS.
-* Enjoy!
-
-= .48.8 =
-* Code / Help Text Corrections
-* Corrected Help Text typos in Custom Code. Code Correction for the Network/Multisite menus / pluggable.php issue
-* Enjoy!
-
-= .48.7 =
-* Auto-update now displays ONLY - The BPS Automatic htaccess File Update Completed Successfully!
-* The old Dashboard Alert has caused a lot of confusion so it is now history
-* Enjoy!
-
-= .48.6 =
-* Custom Code Additions: Custom Code now includes additional Text Areas/Text Boxes for every possible section of code in the Root and wp-admin .htaccess files
-* A jQuery Accordian has been added to Custom Code to ensure that the correct Custom Code Text Areas/Text Boxes are being used, better functionality and visual enhancement.
-* Windows IIS check/dismiss notice. Displays a dismissable alert for folks who have Windows IIS Servers that allow .htaccess rewriting or have ISAPI_Rewrite installed which allows/converts .htaccess rewriting.
-* Reset / Recheck Dismiss Notices added to Security Status page
-* Lots of other improvements
-* Enjoy!
-
-= .48.5 =
-* Bug fix: Conditional wrap added to /includes/login-security.php
-* Enjoy!
-
-= .48.4 =
-* Login Security & Monitoring
-* Log All User Account Logins or Log Only User Account Lockouts
-* Logged DB Fields: User ID, Username, Display Name, Email, Role, Login Time, Lockout Expires, IP Address, Hostname, Request URI
-* Email Alerting Options: User Account is locked out, An Administrator Logs in, An Administrator Logs in and when a User Account is locked out, Any User logs in when a User Account is locked out, Do Not Send Email Alerts
-* Login Security Additional Options: Max Login Attempts, Automatic Lockout Time, Manual Lockout Time, Max DB Rows To Show, Turn On/Turn Off
-* Dynamic DB Form: Lock, Unlock, Delete
-* Enhanced Search: Allows you to search all of the Login Security database rows/Fields
-* Stand-alone Unlock Form bpsunlock.php: Unlock User Accounts without having to be logged into the WP Dashboard
-* Please click the Login Security Blue Read Me help button for full descriptions of all features and options.
-* Enjoy!
-
-= .48.3 =
-* jQuery Code changes for the new jQuery version in WordPress 3.6
-* Enjoy!
-
-= .48.2 =
-* Bug fix: Turn On/Off Error logging pattern match correction to include all possible scenarios
-* Bug fix: ErrorDocument 401 default added/removed on Turn Error Logging On/Off
-* Enjoy!
-
-= .48.1 =
-* Security Log - Add / Remove User Agents/Bots to Ignore/Not Log or Allow/Log
-* New htaccess code - ErrorDocument 401 default
-* General Coding Improvements & Enhancements
-* Enjoy!
-
-= .48 =
-* facebook externalhit_uatext.php script/error log fix
-* 400, 403 and 404 Error Logging templates modified
-* General Coding Improvements & Enhancements
-* Enjoy!
-
-= .47.9 =
-* Security Logging / HTTP Error Logging On / Off buttons added
-* Turn Security Logging / HTTP Error Logging On or Off on the Security Log page
-* Russian Translation by EyeFinity
-* General Coding Improvements & Enhancements
-* Enjoy!
-
-= .47.8 =
-* Security Logging / HTTP Error Logging - Log 400, 403 and 404 Errors
-* Security Logging / HTTP Error Logging Dashboard Alert - log file size
-* IMPORTANT: NEW root .htacess file code automatically created/modified on upgrade
-* Additional System Info Check Added: cURL Extension
-* General Coding Improvements & Enhancements
-* Enjoy!
-
-= .47.7 =
-* IMPORTANT UPDATE: .htaccess FILE UPDATE FOR WordPress 3.5
-* 3.5 BUG FIX: visual and text editor display blank boxes
-* Problem: Square Bracket filters are blocking the visual and text editor
-* Solution: Square Brackets are automatically removed from .htaccess files/filters on upgrade to .47.7
-* Enjoy!
-
-= .47.6 =
-* BPS Master htaccess Folder Deny All .htaccess security protection automated
-* BPS Backup Folder Deny All .htaccess security protection automated
-* Turn On AutoLock / Turn Off AutoLock options/buttons added
-* General Coding Improvements & Enhancements
-* Visual Improvements/Enhancements
-* Enjoy!
-
-= .47.5 =
-* General Coding Improvements & Enhancements:
-* WordPress 3.5 pre-release coding added
-* Visual Improvements/Enhancements
-* jQuery coding Improvements/Enhancements
-* .htaccess code Additions and Improvements
-* Anti-Comment Spam .htaccess coding added
-* DNS Host Name Check for htaccess file auto-lock
-* Screenshot image files moved to the assets folder to reduce plugin size = speedier upgrades
+= .49.7 =
+* Network / Multisite Plugin Network Activation or Single subsite Plugin Activation: As of BulletProof Security .49.7, 
+the BPS plugin can be Network Activated or you can allow the BPS plugin to be activated individually on each Network / 
+Multisite subsite or of course you can choose not to Network Activate BPS or allow the BPS plugin on subsites.
+* New AutoMagic WP 3.5+ Network / Multisite .htaccess code: 
+BPS AutoMagic buttons automatically write the correct Network / Multisite root .htaccess code for your site based on your WordPress version.
+* Network / Multisite New Feature Notice: BPS can now be Network Activated on Multisite:
+This Network / Multisite New Feature Dismiss Notice displays on Network / Multisite only to alert Network / Multisite site 
+owners about the new Network Activation capability in BPS.
+* CSS Visual Style Changes for WP 3.8+ MP6 & Pre 3.8 WP Versions:
+WordPress 3.8 is using the new MP6 GUI. A BPS 3.8 CSS stylesheet has been created to visually display things correctly 
+in WordPress 3.8. BPS will automatically load the correct CSS stylesheet for your WordPress version. CSS visual 
+enhancements were also created for pre WordPress 3.8 versions.
+* See the BPS Whats New page for more details
 * Enjoy!
 
 == Help Info ==
@@ -883,26 +868,31 @@ the particular section or page of the BulletProof Security plugin that you are i
 Help and FAQ page contains links to Help pages that will load in a new browser tab so
 that you are not redirected away from your WordPress Dashboard. 
 
-What's New in .49.2
+What's New in .49.8
 
-= .49.2 =
-* Dismiss Notice text corrections: S-Monitor page text changed to Security Status page
-* W3TC & WPSC Alerts text corrections: Edit/Upload/Download page text changed to htaccess File Editor page
-* Several BPS functions renamed for uniqueness/no-conflict assurance
-* PHP 5.5.x Deprecated function replacement file options.php: mysql_get_client_info replaced with mysqli_get_client_info
-* PHP 5.5.x Deprecated function replacements file bpsunlock.php: New code using MySQLi instead of MySQL
+= .49.8 =
+* Custom Code Code Correction: ENT_QUOTES flag added to Custom Code AutoMagic variables to convert Single Quote HTML entities stored in the DB back to characters during AutoMagic File writing.
 * Enjoy!
 
-= .49.1 =
-* Backup folder path correction on Backup & Restore page
-* WP Filesystem API Method will display the WordPress Filesystem Method in use. For DSO Server troubleshooting additional fields will be displayed if the Script Owner and File Owner ID's do not match.
-* Custom Code help text changes
-* Custom Code additional error checking
-* htaccess auto-writing additions
-* Additional root htaccess file placeholders/markers added
-* New Dashboard Dismiss Notices: Sucuri 1-click Hardening, Broken Link Checker, phpini handler, Speed Boost Custom Code, Custom Permalinks check
-* Dashboard Alerts are now only displayed to Administrators. Editors, Authors, etc will no longer see Alerts
-* The htaccess Core Edit/Upload/Download tab page has been renamed to htaccess File Editor.
-* The File Upload & Download features have been removed from the new htaccess File Editor page since these features/options are obsolete.
-* Visual Enhancements: AutoMagic font size increased, etc.
+= .49.7 =
+* Network / Multisite Plugin Network Activation or Single subsite Plugin Activation:
+
+* As of BulletProof Security .49.7, the BPS plugin can be Network Activated or you can allow the BPS plugin to be activated individually on each Network / Multisite subsite or of course you can choose not to Network Activate BPS or allow the BPS plugin on subsites. Super Admins will see BPS Dashboard Alerts and other Status displays on the Primary Site only. Administrators can activate or deactivate BPS on subsites if you allow this on your Network / Multisite website. 
+
+* Primary Network / Multisite Site Menus: The BPS Primary Site Menus will display all BPS menus. All other BulletProof Security features are not available on subsites since Network/Multisite subsites are virtual and do not have separate website files of their own. All of the other standard BulletProof Security features work sitewide and affect all other virtual subsites with the exception of Login Security which works individually for each specific website - Primary or virtual subsites and therefore should only be available to and controlled by the Super Admin with Network Admin capabilities for the Network/Multisite website.
+
+* Login Security and System Info menus / pages are available on Network / Multisite subsites to Super Admins and Administrators: 
+
+* Login Security has all the same functionality on Network/Multisite subsites with these exceptions: Login Security email alerting is not available for subsites.
+
+* System Info has all the same functionality on Network/Multisite subsites with these exceptions: MySQL Database information is not displayed on subsites.
+
+* New AutoMagic WP 3.5+ Network / Multisite .htaccess code: BPS AutoMagic buttons automatically write the correct Network / Multisite root .htaccess code for your site based on your WordPress version.
+
+* Network / Multisite New Feature Notice: BPS can now be Network Activated on Multisite: This Network / Multisite New Feature Dismiss Notice displays on Network / Multisite only to alert Network / Multisite site owners about the new Network Activation capability in BPS.
+ 	 
+* CSS Visual Style Changes for WP 3.8+ MP6 & Pre 3.8 WP Versions:
+
+* WordPress 3.8 is using the new MP6 GUI. A BPS 3.8 CSS stylesheet has been created to visually display things correctly in WordPress 3.8. BPS will automatically load the correct CSS stylesheet for your WordPress version. CSS visual enhancements were also created for pre WordPress 3.8 versions.
+* See the BPS Whats New page for more details
 * Enjoy!

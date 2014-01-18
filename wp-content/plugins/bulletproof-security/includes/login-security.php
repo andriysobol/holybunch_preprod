@@ -5,7 +5,7 @@ $BPSoptions = get_option('bulletproof_security_options_login_security');
 	}
 
 function bpspro_wp_authenticate_username_password( $user, $username, $password ) {
-global $wpdb;
+global $wpdb, $blog_id;
 $BPSoptions = get_option('bulletproof_security_options_login_security');
 $options = get_option('bulletproof_security_options_email');
 $bpspro_login_table = $wpdb->prefix . "bpspro_login_security";
@@ -62,6 +62,11 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 		
 			if ( $insert_rows = $wpdb->insert( $bpspro_login_table, array( 'status' => $status, 'user_id' => $user->ID, 'username' => $user->user_login, 'public_name' => $user->display_name, 'email' => $user->user_email, 'role' => $user->roles[0], 'human_time' => current_time('mysql'), 'login_time' => $login_time, 'lockout_time' => $lockout_time, 'failed_logins' => $failed_logins, 'ip_address' => $ip_address, 'hostname' => $hostname, 'request_uri' => $request_uri ) ) ) {
 			
+			// Network/Multisite subsites - logging is not used/allowed
+			if ( is_multisite() && $blog_id != 1 ) {
+				// do nothing
+			} else {			
+			
 			if ( $options['bps_login_security_email'] == 'anyUserLoginLock') {
 				$message = '<p><font color="blue"><strong>A User Has Logged in</strong></font></p>';
 				$message .=  '<p>To take further action go to the Login Security page. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
@@ -92,6 +97,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 
 				wp_mail($bps_email_to, $subject, $message, $headers);
 			}
+			} // end if ( is_multisite() && $blog_id != 1
 			} // end if ( $insert_rows = $wpdb->insert...
 		} // end if ( $wpdb->num_rows == 0...
 		
@@ -103,6 +109,11 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 			
 			if ( $insert_rows = $wpdb->insert( $bpspro_login_table, array( 'status' => $status, 'user_id' => $user->ID, 'username' => $user->user_login, 'public_name' => $user->display_name, 'email' => $user->user_email, 'role' => $user->roles[0], 'human_time' => current_time('mysql'), 'login_time' => $login_time, 'lockout_time' => $lockout_time, 'failed_logins' => $failed_logins, 'ip_address' => $ip_address, 'hostname' => $hostname, 'request_uri' => $request_uri ) ) ) {
 			
+			// Network/Multisite subsites - logging is not used/allowed
+			if ( is_multisite() && $blog_id != 1 ) {
+				// do nothing
+			} else {	
+
 			if ( $options['bps_login_security_email'] == 'anyUserLoginLock') {
 				$message = '<p><font color="blue"><strong>A User Has Logged in</strong></font></p>';
 				$message .=  '<p>To take further action go to the Login Security page. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
@@ -133,6 +144,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 				
 				wp_mail($bps_email_to, $subject, $message, $headers);
 			}
+			} // end if ( is_multisite() && $blog_id != 1
 			} // end if ( $insert_rows = $wpdb->insert...
 		} // end if ( $wpdb->num_rows != 0...
 
@@ -143,6 +155,11 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 			// Insane, but someone will do this... if max bad retries is set to 1
 			if ( $failed_logins >= $BPSoptions['bps_max_logins'] ) {
 				$status = 'Locked';
+
+			// Network/Multisite subsites - logging is not used/allowed
+			if ( is_multisite() && $blog_id != 1 ) {
+				// do nothing
+			} else {
 
 			if ( $options['bps_login_security_email'] == 'lockoutOnly' || $options['bps_login_security_email'] == 'anyUserLoginLock' || $options['bps_login_security_email'] == 'adminLoginLock') {
 				$message = '<p><font color="red"><strong>A User Account Has Been Locked</strong></font></p>';
@@ -160,6 +177,8 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 
 				wp_mail($bps_email_to, $subject, $message, $headers);
 			}
+			}
+			
 			} else {		
 				$status = 'Not Locked';			
 			}
@@ -177,6 +196,11 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 
 			if ( $update_rows = $wpdb->update( $bpspro_login_table, array( 'status' => $status, 'user_id' => $row->user_id, 'username' => $row->username, 'public_name' => $row->public_name, 'email' => $row->email, 'role' => $row->role, 'human_time' => current_time('mysql'), 'login_time' => $login_time, 'lockout_time' => $lockout_time, 'failed_logins' => $failed_logins, 'ip_address' => $row->ip_address, 'hostname' => $row->hostname, 'request_uri' => $row->request_uri ), array( 'user_id' => $row->user_id ) ) ) {	
 			
+			// Network/Multisite subsites - logging is not used/allowed
+			if ( is_multisite() && $blog_id != 1 ) {
+				// do nothing
+			} else {
+
 			if ( $options['bps_login_security_email'] == 'anyUserLoginLock') {
 				$message = '<p><font color="blue"><strong>A User Has Logged in</strong></font></p>';
 				$message .=  '<p>To take further action go to the Login Security page. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
@@ -207,6 +231,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 
 				wp_mail($bps_email_to, $subject, $message, $headers);
 			}
+			} // end if ( is_multisite() && $blog_id != 1
 			} // end if ( $update_rows = $wpdb->update...
 		} // end if ( $wpdb->num_rows != 0...
 
@@ -269,6 +294,11 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 			if ( $failed_logins >= $BPSoptions['bps_max_logins'] ) {
 				$status = 'Locked';	
 
+			// Network/Multisite subsites - logging is not used/allowed
+			if ( is_multisite() && $blog_id != 1 ) {
+				// do nothing
+			} else {
+
 			if ( $options['bps_login_security_email'] == 'lockoutOnly' || $options['bps_login_security_email'] == 'anyUserLoginLock' || $options['bps_login_security_email'] == 'adminLoginLock') {
 				$message = '<p><font color="red"><strong>A User Account Has Been Locked</strong></font></p>';
 				$message .=  '<p>To take further action go to the Login Security page. If no action is taken then the User will be able to try and login again after the Lockout Time has expired. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
@@ -285,6 +315,8 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 
 				wp_mail($bps_email_to, $subject, $message, $headers);
 			}
+			}
+			
 			} else {	
 				$status = 'Not Locked';
 			}
@@ -328,6 +360,11 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 			if ( $failed_logins >= $BPSoptions['bps_max_logins'] ) {
 				$status = 'Locked';
 
+			// Network/Multisite subsites - logging is not used/allowed
+			if ( is_multisite() && $blog_id != 1 ) {
+				// do nothing
+			} else {
+
 			if ( $options['bps_login_security_email'] == 'lockoutOnly' || $options['bps_login_security_email'] == 'anyUserLoginLock' || $options['bps_login_security_email'] == 'adminLoginLock') {
 				$message = '<p><font color="red"><strong>A User Account Has Been Locked</strong></font></p>';
 				$message .=  '<p>To take further action go to the Login Security page. If no action is taken then the User will be able to try and login again after the Lockout Time has expired. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
@@ -344,6 +381,8 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 
 				wp_mail($bps_email_to, $subject, $message, $headers);
 			}
+			}
+			
 			} else {		
 				$status = 'Not Locked';			
 			}
@@ -360,6 +399,11 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 				$failed_logins = '0';
 
 			if ( $update_rows = $wpdb->update( $bpspro_login_table, array( 'status' => $status, 'user_id' => $row->user_id, 'username' => $row->username, 'public_name' => $row->public_name, 'email' => $row->email, 'role' => $row->role, 'human_time' => current_time('mysql'), 'login_time' => $login_time, 'lockout_time' => $lockout_time, 'failed_logins' => $failed_logins, 'ip_address' => $row->ip_address, 'hostname' => $row->hostname, 'request_uri' => $row->request_uri ), array( 'user_id' => $row->user_id ) ) ) {	
+
+			// Network/Multisite subsites - logging is not used/allowed
+			if ( is_multisite() && $blog_id != 1 ) {
+				// do nothing
+			} else {
 
 			if ( $options['bps_login_security_email'] == 'anyUserLoginLock') {
 				$message = '<p><font color="blue"><strong>A User Has Logged in</strong></font></p>';
@@ -391,6 +435,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 
 				wp_mail($bps_email_to, $subject, $message, $headers);
 			}			
+			} // end if ( is_multisite() && $blog_id != 1
 			} // end if ( $update_rows = $wpdb->update...
 		} // end if ( $wpdb->num_rows != 0...
 
@@ -453,6 +498,11 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 			if ( $failed_logins >= $BPSoptions['bps_max_logins'] ) {
 				$status = 'Locked';
 
+			// Network/Multisite subsites - logging is not used/allowed
+			if ( is_multisite() && $blog_id != 1 ) {
+				// do nothing
+			} else {
+
 			if ( $options['bps_login_security_email'] == 'lockoutOnly' || $options['bps_login_security_email'] == 'anyUserLoginLock' || $options['bps_login_security_email'] == 'adminLoginLock') {
 				$message = '<p><font color="red"><strong>A User Account Has Been Locked</strong></font></p>';
 				$message .=  '<p>To take further action go to the Login Security page. If no action is taken then the User will be able to try and login again after the Lockout Time has expired. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
@@ -469,6 +519,8 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 
 				wp_mail($bps_email_to, $subject, $message, $headers);
 			}
+			}
+			
 			} else {	
 				$status = 'Not Locked';
 			}
