@@ -212,7 +212,7 @@ blockquote_drops {
   padding : 5px 20px 0 25px;
   border-right : 1px dotted #99cc66; 
   border-left : 1px dotted #99cc66; 
-  color : #666;
+  color: #FFA500;
   text-indent : 30px;
 }
 
@@ -220,7 +220,7 @@ blockquote_drops {
    float : left;
    width : 210px;
    border : 0;
-   color : #99cc66;
+   color: #FFA500;
    font-family : georgia, palatino, 'times new roman', serif;
    font-size : 110%;
    font-weight : bold;
@@ -245,4 +245,4 @@ blockquote_drops {
    margin : -25px 0 20px 15px;
  }
  
- 
+

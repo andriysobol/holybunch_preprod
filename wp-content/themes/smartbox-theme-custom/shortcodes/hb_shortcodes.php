@@ -169,6 +169,7 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     $content .= '[row]';
     $content .= '[span12]';
     $content .= '<img src="'. $taxonomy_image . '" width="348" height="256" align="left" style="margin-right: 10px; margin-top: 5px; margin-bottom: 5px;">';
+    $termDiscription = str_replace( "<p>", "<p style=\"text-align: justify\">", $termDiscription);
     $content .= $termDiscription;
     $content .= '[/span12]';
     $content .= '[/row]';
@@ -555,7 +556,7 @@ function oxy_shortcode_blockquote_drops( $atts, $content ) {
     if($align == "left"){
         $class = 'pullquote_left';
     }
-    return '<blockquote_drops class="' . $class . '"><p>' . $content . '</p><small>' . $who . '</small></blockquote_drops>';
+    return '<blockquote_drops class="' . $class . '">' . $content . '<small>' . $who . '</small></blockquote_drops>';
 }
 add_shortcode( 'blockquote_drops', 'oxy_shortcode_blockquote_drops' );
 

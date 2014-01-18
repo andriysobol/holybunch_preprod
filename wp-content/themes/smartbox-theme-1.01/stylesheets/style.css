@@ -1,5 +1,5 @@
-/*
- * Smartbox - 1.4
+/*!
+ * Smartbox - 1.5
  * http://themes.oxygenna.com/smartbox
  *
  * envato marketplace licence
@@ -147,12 +147,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 body.hyphenated {
+  -ms-word-break: break-all;
   word-break: break-all;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
   hyphens: auto;
 }
 
@@ -315,8 +314,6 @@ pre, code, var, kbd, samp, tt, dir, listing, plaintext, xmp, abbr, acronym, bloc
   word-break: normal;
   -webkit-hyphens: none;
   -moz-hyphens: none;
-  -ms-hyphens: none;
-  -o-hyphens: none;
   hyphens: none;
 }
 
@@ -459,7 +456,7 @@ body {
 }
 
 /* - 2.2 wrappers and containers - */
-.wrapper {
+ .wrapper {
   background: white;
   /*margin: 40px auto;
   width: 90%;
@@ -474,6 +471,7 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;*/
 }
+
 .fullwidth .wrapper {
   width: 100%;
   max-width: 100%;
@@ -504,11 +502,12 @@ body {
   color: #f2f2f4;
 }
 
-.container-fluid {
+ .container-fluid {
     padding: 0 40px;
     width: 1100px;
     margin: 0 auto;
-}
+ } 
+ 
 .fullwidth .container-fluid {
   border-sizing: border-box;
   max-width: 1168px;
@@ -648,6 +647,8 @@ body {
   background-color: rgba(68, 68, 68, 0.95);
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
   border-radius: 0;
   text-shadow: none;
   font-size: 14px;
@@ -761,6 +762,8 @@ body {
   border: 1px solid #d8d8d8;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
   border-radius: 0;
 }
 .post-navigation .pager i {
@@ -1145,6 +1148,8 @@ body {
   height: 4px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
   border-radius: 2px;
   background: #fff;
   -webkit-box-shadow: -1px -1px 2px #bbbbc5;
@@ -1235,6 +1240,8 @@ body {
   max-width: 100%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
   border-radius: 50%;
 }
 .round-box .box-inner:after {
@@ -1249,6 +1256,8 @@ body {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7) inset;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
   border-radius: 50%;
 }
 .round-box img {
@@ -1285,6 +1294,8 @@ body {
   height: 48px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
   border-radius: 50%;
   position: absolute;
   top: 10px;
@@ -1347,11 +1358,15 @@ body {
 .round-box.no-rounded .box-inner {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
   border-radius: 0;
 }
 .round-box.no-rounded .box-inner:after {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
   border-radius: 0;
   -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2) inset;
   -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2) inset;
@@ -1360,6 +1375,8 @@ body {
 .round-box.no-rounded .box-inner .img-circle {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
   border-radius: 0;
 }
 .round-box.box-small-icon i {
@@ -1476,7 +1493,7 @@ html[xmlns] .slides {
   margin: 0 .5em;
   cursor: pointer;
   position: relative;
-  z-index: 1000;
+  z-index: 100;
 }
 .flex-control-nav a {
   display: inline-block;
@@ -1484,6 +1501,8 @@ html[xmlns] .slides {
   height: .5em;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid #d8d8d8;
@@ -1666,6 +1685,8 @@ html[xmlns] .slides {
   height: .5em;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
   border-radius: 50%;
   background-image: none;
   background: rgba(255, 255, 255, 0.1);
@@ -1681,12 +1702,18 @@ html[xmlns] .slides {
   border-color: rgba(94, 94, 94, 0.7);
 }
 
+.tp-bullets {
+  z-index: 100 !important;
+}
+
 /* 7. BOOTSTRAP OVERRIDES */
 /* ---------------------- */
 /* - 7.1 Hero unit - */
 .hero-unit {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
   border-radius: 0;
 }
 
@@ -1834,6 +1861,8 @@ ul.inline li {
   border-color: white;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
   border-radius: 0;
   background-color: #fcfcfc;
   -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.05) inset, 0 1px 3px rgba(0, 0, 0, 0.125);
@@ -1887,6 +1916,8 @@ ul.inline li {
   margin-top: -70px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
   border-radius: 50%;
   background-color: #222222;
   background-color: rgba(34, 34, 34, 0.9);
@@ -1901,6 +1932,8 @@ ul.inline li {
   height: 36px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
   border-radius: 50%;
   position: absolute;
   top: 10px;
@@ -2186,6 +2219,8 @@ ul.inline li {
     background-color: #f2f2f4;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
     border-radius: 0px;
   }
 
@@ -2287,6 +2322,8 @@ ul.inline li {
     background-color: #f2f2f4;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
     border-radius: 0px;
   }
   #masthead .navbar-inverse .dropdown-menu {
@@ -2537,7 +2574,7 @@ ul.inline li {
 /* - 9.7 - Retina displays - */
 @media only screen and (-Webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min-device-pixel-ratio: 1.5) {
   body {
-    background-image: url(../images/backgrounds/bedge_grunge_@2X.png);
+    background-image: url(../images/backgrounds/bedge_grunge.png);
     background-size: 588px 375px;
   }
 }

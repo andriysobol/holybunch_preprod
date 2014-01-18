@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
+ * @version 1.5
  */
 
 /**
@@ -107,7 +107,7 @@ class OxySelect extends OxyOption {
             break;
 
             case 'social_icons':
-                $data =  require_once OPTIONS_DIR . 'icons/social.php';
+                $data = include OPTIONS_DIR . 'icons/social.php';
             break;
 
             default:

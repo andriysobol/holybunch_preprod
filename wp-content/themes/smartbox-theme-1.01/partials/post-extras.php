@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license **LICENSE**
- * @version 1.4
+ * @version 1.5
  */
 ?>
 <div class="post-extras">

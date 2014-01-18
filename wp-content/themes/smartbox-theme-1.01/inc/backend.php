@@ -27,7 +27,7 @@ function oxy_create_logo_css() {
     }
     update_option( THEME_SHORT . '-header-css', $css );
 }
-add_action( 'oxy-options-updated-smartbox-general', 'oxy_create_logo_css' );
+add_action( 'oxy-options-updated-' . THEME_SHORT . '-general', 'oxy_create_logo_css' );
 
 function oxy_create_header_css( $header_height, $brand_height, $retina = '' ) {
     $min_height     = $header_height.'px';
@@ -60,7 +60,7 @@ function oxy_update_permalinks() {
     //Call flush_rules() as a method of the $wp_rewrite object
     $wp_rewrite->flush_rules();
 }
-add_action( 'oxy-options-updated-smartbox-permalinks', 'oxy_update_permalinks' );
+add_action( 'oxy-options-updated-' . THEME_SHORT . '-permalinks', 'oxy_update_permalinks' );
 
 
 // add custom type columns
@@ -113,7 +113,7 @@ function oxy_portfolio_edit_columns($columns) {
         'title' => __('Image Title', THEME_ADMIN_TD),
         'port-thumb' => __('Image', THEME_ADMIN_TD),
         'menu_order' => __('Order', THEME_ADMIN_TD),
-        'categories' => __('Categories', THEME_ADMIN_TD),
+        'category' => __('Categories', THEME_ADMIN_TD),
     );
     return $columns;
 }
@@ -131,8 +131,8 @@ function oxy_custom_portfolio_column($column) {
             echo '<a href="' . $editlink . '">' . get_the_post_thumbnail( $post->ID, 'thumbnail' ) . '</a>';
         break;
 
-        case 'categories':
-            echo get_the_term_list( $post->ID, 'portfolio_categories', '', ', ' );
+        case 'category':
+            echo get_the_term_list( $post->ID, 'oxy_portfolio_categories', '', ', ' );
         break;
 
         default:
@@ -187,7 +187,7 @@ function oxy_version_init() {
     if( $current_version === false ) {
         // first run of the theme better setup rev slider
         RevSliderAdmin::createDBTables();
-        update_option( THEME_SHORT . '_version', '1.4' );
+        update_option( THEME_SHORT . '_version', '1.5' );
     }
 }
 add_action( 'init', 'oxy_version_init' );

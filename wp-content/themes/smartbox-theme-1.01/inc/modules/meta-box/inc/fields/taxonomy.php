@@ -120,6 +120,13 @@ if ( ! class_exists( 'RWMB_Taxonomy_Field' ) )
                         $term->name = $term->post_title;
                     }
                 break;
+                case 'oxy_portfolio_image':
+                    $terms = get_posts( array('posts_per_page'=> -1, 'post_type'=>'oxy_portfolio_image') );
+                    foreach( $terms as $term ) {
+                        $term->slug = $term->ID;
+                        $term->name = $term->post_title;
+                    }
+                break;
                 default:
                 case 'category':
                     $terms = get_terms( $options['taxonomy'], $options['args'] );

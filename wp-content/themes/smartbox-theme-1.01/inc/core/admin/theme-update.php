@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license **LICENSE**
- * @version 1.4
+ * @version 1.5
  */
 
 class OxyThemeUpdate {
@@ -42,7 +42,7 @@ class OxyThemeUpdate {
         // first find out the themes main menu
         $pages = $this->_theme->theme['option-pages'];
         foreach( $pages as $option_page_file ) {
-            $page_data =  require_once OPTIONS_DIR . 'option-pages/' . $option_page_file . '.php';
+            $page_data = include OPTIONS_DIR . 'option-pages/' . $option_page_file . '.php';
             if( $page_data['main_menu'] == true ) {
                 $main_menu_slug = $page_data['slug'];
             }
@@ -194,7 +194,7 @@ class OxyThemeUpdate {
         $api_key = get_option( 'oxy_theme_update_api' );
 
         if( isset( $username) && isset( $api_key ) ) {
-             require_once MODULES_DIR  . 'envato-wordpress-toolkit-library/class-envato-wordpress-theme-upgrader.php';
+            include MODULES_DIR  . 'envato-wordpress-toolkit-library/class-envato-wordpress-theme-upgrader.php';
 
             // create api upgrade checker
             $upgrader = new Envato_WordPress_Theme_Upgrader( 'oxygenna', '2ngkgj6p45u935sflddbhv8mtca8rdw3' );
@@ -220,7 +220,7 @@ class OxyThemeUpdate {
         $api_key = get_option( 'oxy_theme_update_api' );
 
         if( isset( $username) && isset( $api_key ) ) {
-             require_once MODULES_DIR  . 'envato-wordpress-toolkit-library/class-envato-wordpress-theme-upgrader.php';
+            include MODULES_DIR  . 'envato-wordpress-toolkit-library/class-envato-wordpress-theme-upgrader.php';
 
             // create api upgrade checker
             $upgrader = new Envato_WordPress_Theme_Upgrader( 'oxygenna', '2ngkgj6p45u935sflddbhv8mtca8rdw3' );

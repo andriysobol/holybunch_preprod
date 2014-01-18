@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
+ * @version 1.5
  */
 
 // create theme
@@ -49,9 +49,9 @@ if( !class_exists( 'OxyTheme' ) ) {
 }
 
 // include extra theme specific code
- require_once INCLUDES_DIR . 'frontend.php';
- require_once INCLUDES_DIR . 'custom_posts.php';
- require_once MODULES_DIR  . 'woosidebars/woosidebars.php';
+include INCLUDES_DIR . 'frontend.php';
+include INCLUDES_DIR . 'custom_posts.php';
+include MODULES_DIR  . 'woosidebars/woosidebars.php';
 if( !class_exists( 'UniteBaseClassRev' ) ) {
-     require_once MODULES_DIR  . 'revslider/revslider.php';
+    include MODULES_DIR  . 'revslider/revslider.php';
 }

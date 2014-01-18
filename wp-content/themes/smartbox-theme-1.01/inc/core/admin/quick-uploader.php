@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
+ * @version 1.5
  */
 
 /**
@@ -20,7 +20,7 @@ class OxyQuickUpload {
     function __construct() {
         if( is_admin() ) {
             // get uploader options
-            $this->_uploaders =  require_once OPTIONS_DIR . 'quick-uploaders/quick-uploaders.php';
+            $this->_uploaders = include OPTIONS_DIR . 'quick-uploaders/quick-uploaders.php';
             // set actions
             add_action( 'admin_menu', array( &$this, 'admin_menu' ), 10 );
             add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );

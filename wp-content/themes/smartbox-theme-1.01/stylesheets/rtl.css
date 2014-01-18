@@ -1,3 +1,14 @@
+/* Second level menu */
+#masthead .navbar .pull-right > li > .dropdown-menu .dropdown-menu, #masthead .navbar .nav > li > .dropdown-menu.pull-right .dropdown-menu {
+  right: 100%;
+  left: auto;
+}
+
+/* Navigation menu */
+.navbar .nav {
+  float: left;
+}
+
 /* Flexslider RTL */
 .flexslider {
   direction: ltr;
@@ -12,6 +23,19 @@
 .widget_search .input-append i {
   right: auto;
   left: 1em;
+}
+
+/* comments */
+.media-comment .round-box {
+  margin-right: 0px;
+  margin-left: 24px;
+  float: right;
+}
+
+.media-comment:after {
+  background-image: url(../images/comment-arrow-ltr.png);
+  right: 61px;
+  left: auto;
 }
 
 /* Timeline RTL */

@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
+ * @version 1.5
  */
 
 
@@ -156,15 +156,10 @@ add_shortcode( 'alert', 'oxy_shortcode_alert' );
 
 function oxy_shortcode_accordions($atts , $content = '' ) {
      // setup options
-    /*extract( shortcode_atts( array(
-        'type'        => 'primary',
-        'size'        => 'default',
-        'xclass'      => '',
-        'link'        => '#',
-        'label'       => 'button'
-    ), $atts ) );*/
+    extract( shortcode_atts( array(
+        'id'        => rand(100,999)
+    ), $atts ) );
 
-    $id = 'accordion_'.rand(100,999);
     $pattern = get_shortcode_regex();
     $count = preg_match_all( '/'. $pattern .'/s', $content, $matches );
     //var_dump($matches);
@@ -446,6 +441,18 @@ function oxy_shortcode_portfolio($atts , $content = '' ) {
                             }
                         }
                     break;
+                    case 'link':
+                        $link_shortcode = oxy_get_content_shortcode( $post, 'link' );
+                        if( $link_shortcode !== null ) {
+                            if( isset( $link_shortcode[5] ) ) {
+                                $link_shortcode = $link_shortcode[5];
+                                if( isset( $link_shortcode[0] ) ) {
+                                    $title_link = '<a href="' . $link_shortcode[0] . '">';
+                                    $image_link = '<a href="' . $link_shortcode[0] . '">';
+                                }
+                            }
+                        }
+                    break;
                     default:
                     case 'standard':
                         $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
@@ -473,6 +480,9 @@ function oxy_shortcode_portfolio($atts , $content = '' ) {
             $output .= '</a></h4>';
             if( $format !== 'link' ) {
                 $output .= '<p>' . oxy_limit_excerpt( get_the_excerpt(), oxy_get_option( 'portfolio_excerpt_words' ) ) . '</p>';
+            }
+            else{
+                $output .= '<p>' . get_the_content() . '</p>';
             }
             $output .= '</figcaption></figure>';
             foreach( $extra_gallery_images as $extra_image ) {
@@ -532,16 +542,23 @@ function oxy_shortcode_donothing() {
 add_shortcode( 'link', 'oxy_shortcode_donothing' );
 
 
-/* ------------ BLOCKQUOTE SHORTCODE ------------*/
-
 function oxy_shortcode_blockquote( $atts, $content ) {
     extract( shortcode_atts( array(
         'who'   => '',
         'cite'  => '',
     ), $atts ) );
-    return '<blockquote>"' . do_shortcode($content) . '"<small>'.$who.' <cite title="source title">'.$cite.'</cite></small></blockquote>';
-}
-add_shortcode( 'blockquote', 'oxy_shortcode_blockquote' );
+    $output = '<blockquote>"' . do_shortcode($content) . '"';
+    if( !empty( $who ) ) {
+        $output .= '<small>' . $who;
+        if( !empty( $cite ) ) {
+            $output .= ' <cite title="source title">' . $cite . '</cite>';
+        }
+        $output .= '</small>';
+    }
+    $output .= '</blockquote>';
+
+    return $output;
+}add_shortcode( 'blockquote', 'oxy_shortcode_blockquote' );
 
 
 /************************************      SECTIONS       ********************************/
@@ -619,9 +636,13 @@ function oxy_shortcode_services( $atts ) {
         $service_num = 1;
         foreach( $services as $post ) {
             setup_postdata($post);
+            global $more;
+            $more = 0;
             if( $links == 'show' ){
-                global $more;
-                $more = 0;
+                $link = oxy_get_slide_link( $post );
+                if( null == $link ) {
+                    $link = get_permalink();
+                }
             }
             if( $service_num > $services_per_row){
                 $output .='</ul><ul class="unstyled row-fluid">';
@@ -631,7 +652,7 @@ function oxy_shortcode_services( $atts ) {
             $output .= '<li class="'.$span.'">';
             $output .= '<div class="round-box '.$size.' '.$image_style.'">';
             if( $links == 'show' ) {
-                $output .= '<a href="' . get_permalink() . '" class="box-inner">';
+                $output .= '<a href="' . $link . '" class="box-inner">';
             }
             else {
                 $output .= '<span class="box-inner">';
@@ -649,14 +670,17 @@ function oxy_shortcode_services( $atts ) {
             $output .= '</span>';
             $output .= '</div>';
             if( $links == 'show' ) {
-                $output .= '<a href="' . get_permalink() . '">';
+                $output .= '<a href="' . $link . '">';
             }
             $output .= '<'.$header.' class="text-center">' . get_the_title() . '</'.$header.'>';
             if( $links == 'show' ) {
                 $output .= '</a>';
             }
-            $output .= '<p'.$text_class.'>' .  apply_filters( 'the_content', get_the_content() ) . '</p>';
-
+            $output .= '<p'.$text_class.'>' .  apply_filters( 'the_content', get_the_content('') ) . '</p>';
+             if( $links == 'show' ) {
+                $more_text = oxy_get_option('blog_readmore')? oxy_get_option('blog_readmore'): 'Read more';
+                $output .= '<a href="'.$link.'" class="more-link">'. $more_text.'</a>';
+            }
             $output .= '</li>';
             $service_num++;
         }
@@ -708,7 +732,7 @@ function oxy_shortcode_recent_posts($atts , $content = '' ) {
         'columns'      => 3
     ), $atts ) );
 
-    $span = $columns == 3 ? 'span4' : 'span3';
+    $span = $columns > 0 ? 'span'.floor(12/$columns) : 'span3';
 
     $posts = oxy_get_recent_posts( $count , $cat );
     $output = '';
@@ -734,7 +758,7 @@ function oxy_shortcode_recent_posts($atts , $content = '' ) {
             $output .='<li class="'.$span.'"><div class="row-fluid"><div class="span4">';
             $output .='<div class="round-box box-small box-colored"><a href="' . $post_link . '" class="box-inner">';
             if( has_post_thumbnail( $post->ID ) ) {
-                $output .= get_the_post_thumbnail( $post->ID, 'thumbnail', array('title'=>$post->post_title,'alt'=>$post->post_title, 'class'=>'img-circle'));
+                $output .= get_the_post_thumbnail( $post->ID, 'portfolio-thumb', array('title'=>$post->post_title,'alt'=>$post->post_title, 'class'=>'img-circle'));
                 $output .= oxy_post_icon($post->ID ,false);
             }
             else{
@@ -984,7 +1008,7 @@ function oxy_gallery_shortcode($attr) {
         $orderby = 'none';
 
     if ( !empty($include) ) {
-        $_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+        $_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby,  'posts_per_page' => -1) );
 
         $attachments = array();
         foreach ( $_attachments as $key => $val ) {
@@ -1041,9 +1065,36 @@ add_shortcode( 'gallery', 'oxy_gallery_shortcode' );
  **/
 function oxy_shortcode_icon( $atts, $content = null) {
     extract( shortcode_atts( array(
-        'size'       => 16,
+        'size'       => 0,
     ), $atts ) );
 
-    return '<i class="' . $content . '" style="font-size:' . $size . 'px"></i>';
+    $output = '<i class="' . $content . '"';
+    if( $size !== 0 ) {
+        $output .= ' style="font-size:' . $size . 'px"';
+    }
+    $output .= '></i>';
+    return $output;
 }
 add_shortcode( 'icon', 'oxy_shortcode_icon' );
+
+
+/**
+ * Categories shortcode - for showing a category dropdown
+ *
+ * @return Categories html
+ **/
+
+function oxy_shortcode_categories( $atts, $content = null) {
+    extract( shortcode_atts( array(
+        'categoriespostcount'   => 'on',
+        'categorieshierarchy'   => 'on',
+    ), $atts ) );
+
+    $h = $categorieshierarchy == 'on'? "1" : "0";
+    $c = $categoriespostcount == 'on'? "1" : "0";
+
+    $cat_args = array('orderby' => 'name', 'show_count' => $c, 'hierarchical' => $h, 'echo' => 0);
+    return wp_list_categories( $cat_args );
+}
+
+add_shortcode( 'categories', 'oxy_shortcode_categories' );

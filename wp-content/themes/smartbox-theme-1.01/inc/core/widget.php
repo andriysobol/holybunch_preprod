@@ -18,7 +18,7 @@ class OxyWidget extends WP_Widget
     }
 
     function update( $new_instance, $old_instance ) {
-        $options =  require_once WIDGETS_DIR . 'widget-options/' . $this->options_file;
+        $options = include WIDGETS_DIR . 'widget-options/' . $this->options_file;
         foreach( $options['sections'] as $section) {
             foreach( $section['fields'] as $field) {
                 $attr = array( 'name' => $this->get_field_name($field['id']) , 'id' => $this->get_field_id($field['id']) );
@@ -34,7 +34,7 @@ class OxyWidget extends WP_Widget
     }
 
     function form( $instance ) {
-        $options =  require_once WIDGETS_DIR . 'widget-options/' . $this->options_file;
+        $options = include WIDGETS_DIR . 'widget-options/' . $this->options_file;
         foreach( $options['sections'] as $section) {
             foreach( $section['fields'] as $field) {
                 $id = $this->get_field_id($field['id']);

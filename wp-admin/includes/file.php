@@ -977,7 +977,7 @@ function request_filesystem_credentials($form_post, $type = '', $error = false, 
 
 ?>
 <script type="text/javascript">
-<!--
+/*
 jQuery(function($){
 	jQuery("#ssh").click(function () {
 		jQuery("#ssh_keys").show();
@@ -987,7 +987,7 @@ jQuery(function($){
 	});
 	jQuery('form input[value=""]:first').focus();
 });
--->
+*/
 </script>
 <form action="<?php echo esc_url( $form_post ) ?>" method="post">
 <div class="wrap">

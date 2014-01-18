@@ -24,6 +24,8 @@
         // Fancybox init
         fancyboxInit();
 
+        fixEmbededVideosIndex();
+
     });
 
 $(window).load(function() {
@@ -85,6 +87,8 @@ function flexInit() {
             //data-flex-speed: defines the animation speed, 7000 (default) or any number
             sliderSpeed = !slider.attr('data-flex-speed') ? 7000 : slider.attr('data-flex-speed'),
 
+            sliderDuration = !slider.attr('data-flex-duration') ? 600 : slider.attr('data-flex-duration'),
+
             //data-flex-directions: defines the visibillity of the nanigation arrows, hide (default) or show
             sliderDirections = slider.attr('data-flex-directions') == "hide" ? false : true,
 
@@ -118,7 +122,8 @@ function flexInit() {
         slider.flexslider({
             slideshow: sliderShow,
             animation: sliderAnimation,
-            slideshowSpeed: sliderSpeed,
+            slideshowSpeed: parseInt(sliderSpeed),
+            animationSpeed: parseInt(sliderDuration),
             itemWidth: sliderItemWidth,
             minItems: sliderItemMin,
             maxItems: sliderItemMax,
@@ -327,6 +332,19 @@ function createTwitter() {
             template: '<i class="icon-twitter"></i>{text} <small class="info text-italic"> {time}</small>'
         });
     });
+}
+
+function fixEmbededVideosIndex() {
+    var frames = document.getElementsByTagName("iframe");
+    for (var i = 0; i < frames.length; i++) {
+        console.log('frame!');
+        if(frames[i].src.indexOf('?') == -1){
+            frames[i].src += "?wmode=opaque";
+        }
+        else{
+            frames[i].src += "&wmode=opaque";
+        }
+    }
 }
 
 })(jQuery);

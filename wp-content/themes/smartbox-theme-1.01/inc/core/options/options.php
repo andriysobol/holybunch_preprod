@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
+ * @version 1.5
  */
 
 /**
@@ -40,7 +40,7 @@ class OxyOptions {
     function __construct( $option_pages ) {
         // load all page data
         foreach( $option_pages as $option_page_file ) {
-            $page_data =  require_once OPTIONS_DIR . 'option-pages/' . $option_page_file . '.php';
+            $page_data = include OPTIONS_DIR . 'option-pages/' . $option_page_file . '.php';
             if( $page_data !== false ) {
                 $this->_pages[] = $page_data;
             }

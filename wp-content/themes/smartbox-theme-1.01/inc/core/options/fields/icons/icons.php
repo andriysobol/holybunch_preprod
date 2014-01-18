@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
+ * @version 1.5
  */
 
 /**
@@ -35,7 +35,7 @@ class OxyIcons extends OxyOption {
      * @since 1.0
      **/
     public function render() {
-        $icons =  require_once OPTIONS_DIR . 'icons/fontawesome.php';
+        $icons = include OPTIONS_DIR . 'icons/fontawesome.php';
         ?>
         <div class="icon-container">
             <ul>

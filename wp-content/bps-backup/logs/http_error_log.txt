@@ -513,3 +513,101 @@ HTTP_REFERER:
 REQUEST_URI: /holybunch_prep/
 QUERY_STRING: 
 HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 11, 2014 - 1:54 пп <<<<<<<<<<<
+REMOTE_ADDR: ::1
+Host Name: Workier
+SERVER_PROTOCOL: HTTP/1.0
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /holybunch_prep/wp-content/uploads/2014/01/Recording_20140108_1_2_3_4_5.mp4
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 11, 2014 - 1:54 пп <<<<<<<<<<<
+REMOTE_ADDR: ::1
+Host Name: Workier
+SERVER_PROTOCOL: HTTP/1.0
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /holybunch_prep/wp-content/uploads/2014/01/Recording_20140108_2.mp4
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 11, 2014 - 1:54 пп <<<<<<<<<<<
+REMOTE_ADDR: ::1
+Host Name: Workier
+SERVER_PROTOCOL: HTTP/1.0
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /holybunch_prep/wp-content/uploads/2014/01/Recording_20140108_3.mp4
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 11, 2014 - 1:55 пп <<<<<<<<<<<
+REMOTE_ADDR: ::1
+Host Name: Workier
+SERVER_PROTOCOL: HTTP/1.0
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /holybunch_prep/wp-content/uploads/2014/01/Recording_20140108_4.mp4
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 11, 2014 - 1:55 пп <<<<<<<<<<<
+REMOTE_ADDR: ::1
+Host Name: Workier
+SERVER_PROTOCOL: HTTP/1.0
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /holybunch_prep/wp-content/uploads/2014/01/Recording_20140111.mp4
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 18, 2014 - 8:04 пп <<<<<<<<<<<
+REMOTE_ADDR: ::1
+Host Name: Workier
+SERVER_PROTOCOL: HTTP/1.0
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /holybunch_prep/wp-content/uploads/2014/01/Recording_20140111_1.mp4
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 18, 2014 - 8:04 пп <<<<<<<<<<<
+REMOTE_ADDR: ::1
+Host Name: Workier
+SERVER_PROTOCOL: HTTP/1.0
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /holybunch_prep/wp-content/uploads/2014/01/Recording_20140111_2.mp4
+QUERY_STRING: 
+HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep

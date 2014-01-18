@@ -35,7 +35,7 @@ if ( ! class_exists( 'RWMB_Icon_Field' ) )
             );
             $option = '<option value="%s" %s>%s</option>';
 
-            $data =  require_once OPTIONS_DIR . 'icons/fontawesome.php';
+            $data = include OPTIONS_DIR . 'icons/fontawesome.php';
 
             // add blank option to start of the array
             $data = array( '' ) + $data;
