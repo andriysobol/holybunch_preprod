@@ -449,25 +449,6 @@ function types_render_usermeta( $field_id, $params, $content = null, $code = '' 
     // Get field
     $field = wpcf_fields_get_field_by_slug( $field_id, 'wpcf-usermeta' );
 
-    //If Access plugin activated
-    if ( function_exists( 'wpcf_access_register_caps' ) ) {
-        require_once WPCF_EMBEDDED_INC_ABSPATH . '/fields.php';
-        $field_groups = wpcf_admin_fields_get_groups_by_field( $field_id,
-                'wp-types-user-group' );
-        if ( !empty( $field_groups ) ) {
-            foreach ( $field_groups as $field_group ) {
-                if ( $user_id == $current_user ) {
-                    if ( !current_user_can( 'view_own_on_site_' . $field_group['slug'] ) ) {
-                        return;
-                    }
-                } else {
-                    if ( !current_user_can( 'view_others_on_site_' . $field_group['slug'] ) ) {
-                        return;
-                    }
-                }
-            }
-        }
-    }
     // If field not found return empty string
     if ( empty( $field ) ) {
 
@@ -788,15 +769,17 @@ function wpcf_admin_user_profile_save_hook( $user_id ){
 class Usermeta_Access
 {
 
+    public static $user_groups = '';
+    
     /**
      * Initialize plugin enviroment
      */
     public function __construct() {
         // setup custom capabilities
+        self::$user_groups = wpcf_admin_fields_get_groups( 'wp-types-user-group' );
         //If access plugin installed
         if ( function_exists( 'wpcf_access_register_caps' ) ) { // integrate with Types Access
-            $fields_groups = wpcf_admin_fields_get_groups( 'wp-types-user-group' );
-            if ( !empty( $fields_groups ) ) {
+            if ( !empty( self::$user_groups ) ) {
                 //Add Usermeta Fields area
                 add_filter( 'types-access-area',
                         array('Usermeta_Access', 'register_access_usermeta_area'),
@@ -823,10 +806,6 @@ class Usermeta_Access
         $default_role = 'guest'; //'administrator';
         //List of caps with default permissions
         $usermeta_caps = array(
-            array('view_own_on_site', $default_role, __( 'View own fields on site',
-                        'wpcf' )),
-            array('view_others_on_site', $default_role, __( 'View others fields on site',
-                        'wpcf' )),
             array('view_own_in_profile', $default_role, __( 'View own fields in profile',
                         'wpcf' )),
             array('modify_own', $default_role, __( 'Modify own fields', 'wpcf' )),
@@ -881,9 +860,12 @@ class Usermeta_Access
     public static function register_access_usermeta_area( $areas,
             $area_type = 'usermeta' )
     {
+    	$fields_groups = wpcf_admin_fields_get_groups( 'wp-types-user-group' );
+		if ( !empty( $fields_groups ) ) {	
         $USERMETA_ACCESS_AREA_NAME = __( 'User Meta Fields Access', 'wpcf' );
         $USERMETA_ACCESS_AREA_ID = '__USERMETA_FIELDS';
         $areas[] = array('id' => $USERMETA_ACCESS_AREA_ID, 'name' => $USERMETA_ACCESS_AREA_NAME);
+		}
         return $areas;
     }
 
@@ -902,12 +884,15 @@ class Post_Fields_Access
     /**
      * Initialize plugin enviroment
      */
+    public static $fields_groups = '';
+	
     public function __construct() {
+    	//Get list of groups
+    	self::$fields_groups = wpcf_admin_fields_get_groups();
         // setup custom capabilities
         //If access plugin installed
         if ( function_exists( 'wpcf_access_register_caps' ) ) { // integrate with Types Access
-            $fields_groups = wpcf_admin_fields_get_groups();
-            if ( !empty( $fields_groups ) ) {
+            if ( !empty( self::$fields_groups ) ) {
                 //Add Fields area
                 add_filter( 'types-access-area',
                         array('Post_Fields_Access', 'register_access_fields_area'),
@@ -916,10 +901,12 @@ class Post_Fields_Access
                 add_filter( 'types-access-group',
                         array('Post_Fields_Access', 'register_access_fields_groups'),
                         10, 2 );
+                
                 //Add Fields caps to groups
                 add_filter( 'types-access-cap',
                         array('Post_Fields_Access', 'register_access_fields_caps'),
                         10, 3 );
+				//}		
             }
         }
     }
@@ -934,17 +921,15 @@ class Post_Fields_Access
         $default_role = 'guest'; //'administrator';
         //List of caps with default permissions
         $fields_caps = array(
-            array('view_fields_on_site', $default_role, __( 'View Fields On Site',
-                        'wpcf' )),
             array('view_fields_in_edit_page', $default_role, __( 'View Fields In Edit Page',
                         'wpcf' )),
             array('modify_fields_in_edit_page', 'author', __( 'Modify Fields In Edit Page',
                         'wpcf' )),
         );
         if ( $area_id == $FIELDS_ACCESS_AREA_ID ) {
-            $fields_groups = wpcf_admin_fields_get_groups();
-            if ( !empty( $fields_groups ) ) {
-                foreach ( $fields_groups as $group ) {
+
+            if ( !empty( self::$fields_groups ) ) {
+                foreach ( self::$fields_groups as $group ) {
                     $FIELDS_ACCESS_GROUP_NAME = $group['name'] . ' Access Group';
                     $FIELDS_ACCESS_GROUP_ID = '__FIELDS_GROUP_' . $group['slug'];
                     if ( $group_id == $FIELDS_ACCESS_GROUP_ID ) {
@@ -968,11 +953,10 @@ class Post_Fields_Access
     {
         $FIELDS_ACCESS_AREA_NAME = __( 'Post Fields Frontend Access', 'wpcf' );
         $FIELDS_ACCESS_AREA_ID = '__FIELDS';
-
+		
         if ( $id == $FIELDS_ACCESS_AREA_ID ) {
-            $fields_groups = wpcf_admin_fields_get_groups();
-            if ( !empty( $fields_groups ) ) {
-                foreach ( $fields_groups as $group ) {
+            if ( !empty( self::$fields_groups ) ) {
+                foreach ( self::$fields_groups as $group ) {
                     $FIELDS_ACCESS_GROUP_NAME = $group['name'];
                     //. ' User Meta Fields Access Group'
                     $FIELDS_ACCESS_GROUP_ID = '__FIELDS_GROUP_' . $group['slug'];

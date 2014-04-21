@@ -44,7 +44,11 @@ p {
 </div>
 
 <?php
-require_once('../../../wp-load.php');
+if ( file_exists( dirname(dirname(dirname(dirname(__FILE__)))) . '/wp-load.php' ) ) {
+	require_once('../../../wp-load.php');
+}
+
+// NOTE: fwrite is faster in benchmark tests than file_put_contents for successive writes
 $bpsProLog = WP_CONTENT_DIR . '/bps-backup/logs/http_error_log.txt';
 $hostname = @gethostbyaddr($_SERVER['REMOTE_ADDR']);
 $timeNow = time();
@@ -56,47 +60,71 @@ $gmt_offset = get_option( 'gmt_offset' ) * 3600;
 		$timestamp = date_i18n(get_option('date_format'), strtotime("11/15-1976")) . ' - ' . date_i18n(get_option('time_format'), $timeNow + $gmt_offset);
 	}
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
-	$fh = @fopen($bpsProLog, 'a');
- 	@fwrite($fh, "\r\n>>>>>>>>>>> 403 POST Request Error Logged - $timestamp <<<<<<<<<<<\r\n");
-	@fwrite($fh, 'REMOTE_ADDR: '.$_SERVER['REMOTE_ADDR']."\r\n");
-	@fwrite($fh, 'Host Name: '."$hostname\r\n");
-	@fwrite($fh, 'SERVER_PROTOCOL: '.$_SERVER['SERVER_PROTOCOL']."\r\n");
-	@fwrite($fh, 'HTTP_CLIENT_IP: '.$_SERVER['HTTP_CLIENT_IP']."\r\n");
-	@fwrite($fh, 'HTTP_FORWARDED: '.$_SERVER['HTTP_FORWARDED']."\r\n");
-	@fwrite($fh, 'HTTP_X_FORWARDED_FOR: '.$_SERVER['HTTP_X_FORWARDED_FOR']."\r\n");
-	@fwrite($fh, 'HTTP_X_CLUSTER_CLIENT_IP: '.$_SERVER['HTTP_X_CLUSTER_CLIENT_IP']."\r\n");
- 	@fwrite($fh, 'REQUEST_METHOD: '.$_SERVER['REQUEST_METHOD']."\r\n");
- 	@fwrite($fh, 'HTTP_REFERER: '.$_SERVER['HTTP_REFERER']."\r\n");
- 	@fwrite($fh, 'REQUEST_URI: '.$_SERVER['REQUEST_URI']."\r\n");
- 	@fwrite($fh, 'QUERY_STRING: '.$_SERVER['QUERY_STRING']."\r\n");
-	@fwrite($fh, 'HTTP_USER_AGENT: '.$_SERVER['HTTP_USER_AGENT']."\r\n");
- 	@fclose($fh);
-}
+	if ( preg_match_all('/(.*)\/plugins\/(.*)\.js|(.*)\/plugins\/(.*)\.php|(.*)\/plugins\/(.*)\.swf/', $_SERVER['REQUEST_URI'], $matches ) ) {
+		$event = 'PSBR-HPR';
+		$solution = 'http://forum.ait-pro.com/forums/topic/security-log-event-codes/';
+	}
+	elseif ( preg_match('/(.*)\/wp-admin\/(.*)\.php/', $_SERVER['REQUEST_URI'], $matches ) || preg_match('/(.*)\/wp-admin\/(.*)\.php/', $_SERVER['HTTP_REFERER'], $matches ) ) {
+		$event = 'WPADMIN-SBR';
+		$solution = 'http://forum.ait-pro.com/forums/topic/security-log-event-codes/';	
+	
+	} else {
+		$event = 'BFHS - Blocked/Forbidden Hacker or Spammer';
+		$solution = 'N/A - Hacker/Spammer Blocked/Forbidden';
+	}
 
-if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+$log_contents = "\r\n" . '[403 POST Request: ' . $timestamp . ']' . "\r\n" . 'Event Code: ' . $event . "\r\n" . 'Solution: ' . $solution . "\r\n" . 'REMOTE_ADDR: '.$_SERVER['REMOTE_ADDR']."\r\n" . 'Host Name: ' . $hostname . "\r\n" . 'SERVER_PROTOCOL: '.$_SERVER['SERVER_PROTOCOL']."\r\n" . 'HTTP_CLIENT_IP: '.$_SERVER['HTTP_CLIENT_IP']."\r\n" . 'HTTP_FORWARDED: '.$_SERVER['HTTP_FORWARDED']."\r\n" . 'HTTP_X_FORWARDED_FOR: '.$_SERVER['HTTP_X_FORWARDED_FOR']."\r\n" . 'HTTP_X_CLUSTER_CLIENT_IP: '.$_SERVER['HTTP_X_CLUSTER_CLIENT_IP']."\r\n" . 'REQUEST_METHOD: '.$_SERVER['REQUEST_METHOD']."\r\n" . 'HTTP_REFERER: '.$_SERVER['HTTP_REFERER']."\r\n" . 'REQUEST_URI: '.$_SERVER['REQUEST_URI']."\r\n" . 'QUERY_STRING: '.$_SERVER['QUERY_STRING']."\r\n" . 'HTTP_USER_AGENT: '.$_SERVER['HTTP_USER_AGENT']."\r\n";
+
+	if ( is_writable( $bpsProLog ) ) {
+
+	if ( !$handle = fopen( $bpsProLog, 'a' ) ) {
+         exit;
+    }
+
+    if ( fwrite( $handle, $log_contents) === FALSE ) {
+        exit;
+    }
+
+    fclose($handle);
+	}
+	}
+
+	if ( $_SERVER['REQUEST_METHOD'] != 'POST' ) {
 # BEGIN USERAGENT FILTER
-if ( !preg_match('/BPSUserAgentPlaceHolder/', $_SERVER['HTTP_USER_AGENT']) ) {
+if ( !preg_match('/(.*)Assmunch(.*)/', $_SERVER['HTTP_USER_AGENT']) ) {
 # END USERAGENT FILTER
 
-	$fh = @fopen($bpsProLog, 'a');
- 	@fwrite($fh, "\r\n>>>>>>>>>>> 403 GET or Other Request Error Logged - $timestamp <<<<<<<<<<<\r\n");
-	@fwrite($fh, 'REMOTE_ADDR: '.$_SERVER['REMOTE_ADDR']."\r\n");
-	@fwrite($fh, 'Host Name: '."$hostname\r\n");
-	@fwrite($fh, 'SERVER_PROTOCOL: '.$_SERVER['SERVER_PROTOCOL']."\r\n");
-	@fwrite($fh, 'HTTP_CLIENT_IP: '.$_SERVER['HTTP_CLIENT_IP']."\r\n");
-	@fwrite($fh, 'HTTP_FORWARDED: '.$_SERVER['HTTP_FORWARDED']."\r\n");
-	@fwrite($fh, 'HTTP_X_FORWARDED_FOR: '.$_SERVER['HTTP_X_FORWARDED_FOR']."\r\n");
-	@fwrite($fh, 'HTTP_X_CLUSTER_CLIENT_IP: '.$_SERVER['HTTP_X_CLUSTER_CLIENT_IP']."\r\n");
- 	@fwrite($fh, 'REQUEST_METHOD: '.$_SERVER['REQUEST_METHOD']."\r\n");
- 	@fwrite($fh, 'HTTP_REFERER: '.$_SERVER['HTTP_REFERER']."\r\n");
- 	@fwrite($fh, 'REQUEST_URI: '.$_SERVER['REQUEST_URI']."\r\n");
- 	@fwrite($fh, 'QUERY_STRING: '.$_SERVER['QUERY_STRING']."\r\n");
-	@fwrite($fh, 'HTTP_USER_AGENT: '.$_SERVER['HTTP_USER_AGENT']."\r\n");
- 	@fclose($fh);
-}
-}
+	if ( preg_match_all('/(.*)\/plugins\/(.*)\.js|(.*)\/plugins\/(.*)\.php|(.*)\/plugins\/(.*)\.swf/', $_SERVER['REQUEST_URI'], $matches ) ) {
+		$event = 'PSBR-HPR';
+		$solution = 'http://forum.ait-pro.com/forums/topic/security-log-event-codes/';
+	}
+	elseif ( preg_match('/(.*)\/wp-admin\/(.*)\.php/', $_SERVER['REQUEST_URI'], $matches ) || preg_match('/(.*)\/wp-admin\/(.*)\.php/', $_SERVER['HTTP_REFERER'], $matches ) ) {
+		$event = 'WPADMIN-SBR';
+		$solution = 'http://forum.ait-pro.com/forums/topic/security-log-event-codes/';	
+	
+	} else {
+		$event = 'BFHS - Blocked/Forbidden Hacker or Spammer';
+		$solution = 'N/A - Hacker/Spammer Blocked/Forbidden';
+	}
+
+$log_contents = "\r\n" . '[403 GET / HEAD Request: ' . $timestamp . ']' . "\r\n" . 'Event Code: ' . $event . "\r\n" . 'Solution: ' . $solution . "\r\n" . 'REMOTE_ADDR: '.$_SERVER['REMOTE_ADDR']."\r\n" . 'Host Name: ' . $hostname . "\r\n" . 'SERVER_PROTOCOL: '.$_SERVER['SERVER_PROTOCOL']."\r\n" . 'HTTP_CLIENT_IP: '.$_SERVER['HTTP_CLIENT_IP']."\r\n" . 'HTTP_FORWARDED: '.$_SERVER['HTTP_FORWARDED']."\r\n" . 'HTTP_X_FORWARDED_FOR: '.$_SERVER['HTTP_X_FORWARDED_FOR']."\r\n" . 'HTTP_X_CLUSTER_CLIENT_IP: '.$_SERVER['HTTP_X_CLUSTER_CLIENT_IP']."\r\n" . 'REQUEST_METHOD: '.$_SERVER['REQUEST_METHOD']."\r\n" . 'HTTP_REFERER: '.$_SERVER['HTTP_REFERER']."\r\n" . 'REQUEST_URI: '.$_SERVER['REQUEST_URI']."\r\n" . 'QUERY_STRING: '.$_SERVER['QUERY_STRING']."\r\n" . 'HTTP_USER_AGENT: '.$_SERVER['HTTP_USER_AGENT']."\r\n";
+
+	if ( is_writable( $bpsProLog ) ) {
+
+	if ( !$handle = fopen( $bpsProLog, 'a' ) ) {
+         exit;
+    }
+
+    if ( fwrite( $handle, $log_contents) === FALSE ) {
+        exit;
+    }
+
+    fclose($handle);
+	}
+	}
+	}
 ?>
 </body>
 </html>

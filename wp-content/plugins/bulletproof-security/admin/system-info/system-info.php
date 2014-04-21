@@ -101,6 +101,7 @@ $bpsSpacePop = '-------------------------------------------------------------';
 $bps_plugin_dir = str_replace( ABSPATH, '', WP_PLUGIN_DIR);
 // Replace ABSPATH = wp-content
 $bps_wpcontent_dir = str_replace( ABSPATH, '', WP_CONTENT_DIR);
+
 ?>
 </div>
 
@@ -126,7 +127,7 @@ if ( is_admin() && wp_script_is( 'bps-js', $list = 'queue' ) && current_user_can
   <tr>
     <td width="49%" class="bps-table_title"><?php _e('Website / Server / Opcode Cache / Accelerators / IP Info', 'bulletproof-security'); ?></td>
     <td width="2%">&nbsp;</td>
-    <td width="49%" class="bps-table_title"><?php _e('SQL Database / Permalink Structure / WP Installation Folder', 'bulletproof-security'); ?></td>
+    <td width="49%" class="bps-table_title"><?php _e('SQL Database / Permalink Structure / WP Installation Folder / Site Type', 'bulletproof-security'); ?></td>
   </tr>
   <tr>
     <td class="bps-table_cell">&nbsp;</td>
@@ -334,16 +335,34 @@ $bpsTarget = '';
 	
 	echo __('WordPress Installation Folder', 'bulletproof-security').': <strong>';
 	echo bps_wp_get_root_folder().'</strong><br>';
+	echo __('Plugins Folder', 'bulletproof-security').': <strong>';
+	echo str_replace(ABSPATH, '', WP_PLUGIN_DIR).'</strong><br>';	
+	echo __('WordPress Installation Type', 'bulletproof-security').': ';
+	echo bps_wp_get_root_folder_display_type().'<br>';
+	echo __('Standard/GWIOD Site Type', 'bulletproof-security').': ';
+	echo bps_gwiod_site_type_check().'<br>';
+	echo __('Network/Multisite', 'bulletproof-security').': ';
+	echo bps_multsite_check().'<br>';
+	echo __('BuddyPress', 'bulletproof-security').': ';
+	echo bps_buddypress_site_type_check().'<br>';
+	echo __('bbPress', 'bulletproof-security').': ';
+	echo bps_bbpress_site_type_check().'<br>';	
+	
+/*
+	echo __('WordPress Installation Folder', 'bulletproof-security').': <strong>';
+	echo bps_wp_get_root_folder().'</strong><br>';
 	echo __('WordPress Installation Type', 'bulletproof-security').': ';
 	echo bps_wp_get_root_folder_display_type().'<br>';
 	echo __('Network/Multisite', 'bulletproof-security').': ';
 	echo bps_multsite_check().'<br>';
+*/	
 	echo __('WP Permalink Structure', 'bulletproof-security').': <strong>';
 	$permalink_structure = get_option('permalink_structure'); 
 	echo $permalink_structure.'</strong><br>';
 	echo bps_check_permalinks().'<br>';
 	echo bps_check_php_version().'<br>';
 	echo __('Browser Compression Supported', 'bulletproof-security').': <strong>'.esc_html($_SERVER['HTTP_ACCEPT_ENCODING']).'</strong>';
+	
 	?>
       </td>
   </tr>
@@ -500,10 +519,55 @@ $bpsTarget = '';
 	//echo bpsPro_sysinfo_mod_checks_phpini().'<br>';
 	//echo bpsPro_sysinfo_mod_checks_elog().'<br>';
     
+	_e('Check your website Headers or another website\'s Headers by making a GET Request', 'bulletproof-security').'<br>';
+
+// Form - wp_remote_get Headers check - GET Request Method
+function bps_sysinfo_get_headers_get() {
+	if (isset($_POST['Submit-Headers-Check-Get']) && current_user_can('manage_options')) {
+		check_admin_referer( 'bpsHeaderCheckGet' );
+
+	$url = ( isset($_POST['bpsURLGET']) ) ? $_POST['bpsURLGET'] : '';
+	$response = wp_remote_get( $url );
+
+	if ( !is_wp_error( $response ) ) {	
+
+	echo '<strong>'.__('GET Request Headers: ', 'bulletproof-security').'</strong>'.$url.'<br>';
+	echo '<pre>';
+	echo 'HTTP Status Code: ';
+	print_r($response['response']['code']);
+	echo ' ';
+	print_r($response['response']['message']);
+	echo '<br><br>';
+	echo 'Headers: ';
+	print_r($response['headers']);
+	echo '</pre>';	
+
+	} else {
+		
+		$text = '<font color="red"><strong>'.__('Error: The WordPress wp_remote_get function is not available or is blocked on your website/server.', 'bulletproof-security').'</strong></font><br>';
+		echo $text;
+	}
+	}
+}
+?>
+
+<form name="bpsHeadersGet" action="admin.php?page=bulletproof-security/admin/system-info/system-info.php" method="post">
+<?php wp_nonce_field('bpsHeaderCheckGet'); ?>
+<div><label for="bpsHeaders"><strong><?php _e('Enter a Website URL - Example: http://www.ait-pro.com/', 'bulletproof-security'); ?></strong></label><br />
+    <input type="text" name="bpsURLGET" value="" size="50" /> <br />
+    <p class="submit">
+	<input type="submit" name="Submit-Headers-Check-Get" class="bps-blue-button" value="<?php esc_attr_e('Check Headers GET Request', 'bulletproof-security') ?>" onclick="return confirm('<?php $text = __('This Headers check makes a GET Request using the WordPress wp_remote_get function.', 'bulletproof-security').'\n\n'.$bpsSpacePop.'\n\n'.__('You can use the Check Headers HEAD Request tool to check headers using HEAD instead of GET.', 'bulletproof-security').'\n\n'.$bpsSpacePop.'\n\n'.__('Click OK to proceed or click Cancel.', 'bulletproof-security'); echo $text; ?>')" /></p>
+</div>
+<?php bps_sysinfo_get_headers_get(); ?>
+</form>
+
+<?php
+_e('Check your website Headers or another website\'s Headers by making a HEAD Request', 'bulletproof-security').'<br>';
+
 // Form - cURL Headers check - HEAD Request Method
-function bps_sysinfo_get_headers() {
-	if (isset($_POST['Submit-Headers-Check']) && current_user_can('manage_options')) {
-		check_admin_referer( 'bpsHeaderCheck' );
+function bps_sysinfo_get_headers_head() {
+	if (isset($_POST['Submit-Headers-Check-Head']) && current_user_can('manage_options')) {
+		check_admin_referer( 'bpsHeaderCheckHead' );
 
 	$disabled = explode(',', ini_get('disable_functions'));	
 
@@ -525,7 +589,7 @@ function bps_sysinfo_get_headers() {
 		$ce = curl_exec($ch);
 		curl_close($ch);
 
-		echo '<strong>'.__('Headers: ', 'bulletproof-security').'</strong>'.$url.'<br>';
+		echo '<strong>'.__('HEAD Request Headers: ', 'bulletproof-security').'</strong>'.$url.'<br>';
 		echo '<pre>';
 		print_r($ce);
 		echo '</pre>';
@@ -539,14 +603,14 @@ function bps_sysinfo_get_headers() {
 }
 ?>
 
-<form name="bpsHeaders" action="admin.php?page=bulletproof-security/admin/system-info/system-info.php" method="post">
-<?php wp_nonce_field('bpsHeaderCheck'); ?>
+<form name="bpsHeadersHead" action="admin.php?page=bulletproof-security/admin/system-info/system-info.php" method="post">
+<?php wp_nonce_field('bpsHeaderCheckHead'); ?>
 <div><label for="bpsHeaders"><strong><?php _e('Enter a Website URL - Example: http://www.ait-pro.com/', 'bulletproof-security'); ?></strong></label><br />
     <input type="text" name="bpsURL" value="" size="50" /> <br />
     <p class="submit">
-	<input type="submit" name="Submit-Headers-Check" class="bps-blue-button" value="<?php esc_attr_e('Check Headers', 'bulletproof-security') ?>" onclick="return confirm('<?php $text = __('This cURL Headers check makes a HEAD Request and you will see HTTP/1.1 403 Forbidden displayed if you are blocking HEAD Requests in your BPS root .htaccess file on your website.', 'bulletproof-security').'\n\n'.$bpsSpacePop.'\n\n'.__('You can temporarily remove the HEAD Request method filter in your BPS root .htaccess file to allow a HEAD Request on your website. You should then see this HTTP/1.1 200 OK status displayed when making another cURL Headers Request to your website.', 'bulletproof-security').'\n\n'.$bpsSpacePop.'\n\n'.__('Click OK to proceed or click Cancel.', 'bulletproof-security'); echo $text; ?>')" /></p>
+	<input type="submit" name="Submit-Headers-Check-Head" class="bps-blue-button" value="<?php esc_attr_e('Check Headers HEAD Request', 'bulletproof-security') ?>" onclick="return confirm('<?php $text = __('This cURL Headers check makes a HEAD Request and you will see HTTP/1.1 403 Forbidden displayed if you are blocking HEAD Requests in your BPS root .htaccess file on your website.', 'bulletproof-security').'\n\n'.$bpsSpacePop.'\n\n'.__('Use the Check Headers GET Request tool to check your headers using GET instead of HEAD. This tool can also be used to check that your Security Log is working correctly and will generate a Security Log entry when you make a HEAD Request using this tool if you are blocking HEAD Requests in your BPS root .htaccess file on your website.', 'bulletproof-security').'\n\n'.$bpsSpacePop.'\n\n'.__('Click OK to proceed or click Cancel.', 'bulletproof-security'); echo $text; ?>')" /></p>
 </div>
-<?php bps_sysinfo_get_headers(); ?>
+<?php bps_sysinfo_get_headers_head(); ?>
 </form>
 
     </td>
@@ -573,11 +637,11 @@ function bps_sysinfo_get_headers() {
     <td colspan="2" class="bps-table_title">&nbsp;</td>
   </tr>
   <tr>
-    <td width="50%" class="bps-table_cell_help"><a href="http://forum.ait-pro.com/forums/forum/bulletproof-security-free/" target="_blank"><?php _e('BulletProof Security Forum', 'bulletproof-security'); ?></a></td>
+    <td width="50%" class="bps-table_cell_help"><a href="http://forum.ait-pro.com/forums/topic/security-log-event-codes/" target="_blank"><?php _e('Security Log Event Codes', 'bulletproof-security'); ?></a></td>
     <td width="50%" class="bps-table_cell_help"><a href="http://www.ait-pro.com/aitpro-blog/category/bulletproof-security-contributors/" target="_blank"><?php _e('Contributors Page', 'bulletproof-security'); ?></a></td>
   </tr>
   <tr>
-    <td class="bps-table_cell_help"><a href="http://www.ait-pro.com/aitpro-blog/2252/bulletproof-security-plugin-support/checking-plugin-compatibility-with-bps-plugin-testing-to-do-list/" target="_blank"><?php _e('Plugin Compatibility Testing - Recent New Permanent Plugin Fixes', 'bulletproof-security'); ?></a></td>
+    <td class="bps-table_cell_help"><a href="http://forum.ait-pro.com/forums/topic/plugin-conflicts-actively-blocked-plugins-plugin-compatibility/" target="_blank"><?php _e('Forum: Search, Troubleshooting Steps & Post Questions For Assistance', 'bulletproof-security'); ?></a></td>
     <td class="bps-table_cell_help">&nbsp;</td>
   </tr>
   <tr>

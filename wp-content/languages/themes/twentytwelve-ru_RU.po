@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Twenty Twelve 1.3\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/twentytwelve\n"
-"POT-Creation-Date: 2013-10-24 20:32:05+00:00\n"
-"PO-Revision-Date: 2013-10-29 21:51+0400\n"
+"POT-Creation-Date: 2014-03-18 19:16:25+00:00\n"
+"PO-Revision-Date: 2014-04-16 07:44+0400\n"
 "Last-Translator: Sergey Biryukov <sergeybiryukov.ru@gmail.com>\n"
 "Language-Team: ru.wordpress.org <sergeybiryukov.ru@gmail.com>\n"
 "Language: ru_RU\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_c;__ngettext:1,2\n"
 "X-Poedit-Basepath: S:\\home\\wordpress\\trunk\\wp-content\\themes"
 "\\twentytwelve\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-SearchPath-0: S:\\home\\wordpress\\trunk\\wp-content\\themes"
 "\\twentytwelve\n"
 
@@ -64,7 +64,7 @@ msgstr "Архивы"
 msgid "Author Archives: %s"
 msgstr "Архив автора: %s"
 
-#: author.php:63 content.php:59
+#: author.php:63 content.php:62
 msgid "About %s"
 msgstr "Об авторе %s"
 
@@ -97,7 +97,7 @@ msgid "Comments are closed."
 msgstr "Комментарии запрещены."
 
 #: content-aside.php:15 content-image.php:13 content-link.php:14
-#: content-quote.php:13 content-status.php:31 content.php:41
+#: content-quote.php:13 content-status.php:31 content.php:44
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Читать далее <span class=\"meta-nav\">&rarr;</span>"
 
@@ -107,23 +107,23 @@ msgid "Permalink to %s"
 msgstr "Постоянная ссылка: %s"
 
 #: content-aside.php:23 content-image.php:23 content-link.php:21
-#: content-quote.php:20 content-status.php:37 content.php:30
+#: content-quote.php:20 content-status.php:37 content.php:33
 msgid "Leave a reply"
 msgstr "Добавить комментарий"
 
 #: content-aside.php:23 content-image.php:23 content-link.php:21
-#: content-quote.php:20 content-status.php:37 content.php:30
+#: content-quote.php:20 content-status.php:37 content.php:33
 msgid "1 Reply"
 msgstr "1 комментарий"
 
 #: content-aside.php:23 content-image.php:23 content-link.php:21
-#: content-quote.php:20 content-status.php:37 content.php:30
+#: content-quote.php:20 content-status.php:37 content.php:33
 msgid "% Replies"
 msgstr "Комментарии (%)"
 
 #: content-aside.php:26 content-image.php:26 content-link.php:24
 #: content-page.php:24 content-quote.php:23 content-status.php:40
-#: content.php:48 functions.php:349 image.php:37
+#: content.php:51 functions.php:349 image.php:37
 msgid "Edit"
 msgstr "Изменить"
 
@@ -143,7 +143,7 @@ msgstr ""
 "Извините, результатов не найдено. Попробуйте найти нужную запись с помощью "
 "поиска."
 
-#: content-page.php:21 content.php:42 image.php:102
+#: content-page.php:21 content.php:45 image.php:102
 msgid "Pages:"
 msgstr "Страницы:"
 
@@ -151,11 +151,10 @@ msgstr "Страницы:"
 msgid "Featured post"
 msgstr "Избранная запись"
 
-#: content.php:63
+#: content.php:66
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Посмотреть все записи автора %s <span class=\"meta-nav\">&rarr;</span>"
 
-#. #-#-#-#-#  twentytwelve.pot (Twenty Twelve 1.3)  #-#-#-#-#
 #. Author URI of the plugin/theme
 #: footer.php:16
 msgid "http://wordpress.org/"
