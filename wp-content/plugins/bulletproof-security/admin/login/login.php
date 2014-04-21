@@ -80,12 +80,11 @@ require_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
 <?php
 // HUD - Heads Up Display - Warnings and Error messages
 echo bps_check_php_version_error();
-//echo bps_check_permalinks_error(); // this is now an admin notice w/dimiss button
-//echo bps_check_iis_supports_permalinks(); // this is now an admin notice w/dimiss button
 echo bps_hud_check_bpsbackup();
 echo bps_check_safemode();
 echo @bps_w3tc_htaccess_check($plugin_var);
 echo @bps_wpsc_htaccess_check($plugin_var);
+bps_delete_language_files();
 
 // General all purpose "Settings Saved." message for forms
 if ( current_user_can('manage_options') && wp_script_is( 'bps-js', $list = 'queue' ) ) {
@@ -672,11 +671,11 @@ if (isset($_POST['Submit-Login-Search-Radio']) && current_user_can('manage_optio
     <td colspan="2" class="bps-table_title">&nbsp;</td>
   </tr>
   <tr>
-    <td width="50%" class="bps-table_cell_help"><a href="http://forum.ait-pro.com/forums/forum/bulletproof-security-free/" target="_blank"><?php _e('BulletProof Security Forum', 'bulletproof-security'); ?></a></td>
+    <td width="50%" class="bps-table_cell_help"><a href="http://forum.ait-pro.com/forums/topic/security-log-event-codes/" target="_blank"><?php _e('Security Log Event Codes', 'bulletproof-security'); ?></a></td>
     <td width="50%" class="bps-table_cell_help"><a href="http://www.ait-pro.com/aitpro-blog/category/bulletproof-security-contributors/" target="_blank"><?php _e('Contributors Page', 'bulletproof-security'); ?></a></td>
   </tr>
   <tr>
-    <td class="bps-table_cell_help"><a href="http://www.ait-pro.com/aitpro-blog/2252/bulletproof-security-plugin-support/checking-plugin-compatibility-with-bps-plugin-testing-to-do-list/" target="_blank"><?php _e('Plugin Compatibility Testing - Recent New Permanent Plugin Fixes', 'bulletproof-security'); ?></a></td>
+    <td class="bps-table_cell_help"><a href="http://forum.ait-pro.com/forums/topic/plugin-conflicts-actively-blocked-plugins-plugin-compatibility/" target="_blank"><?php _e('Forum: Search, Troubleshooting Steps & Post Questions For Assistance', 'bulletproof-security'); ?></a></td>
     <td class="bps-table_cell_help">&nbsp;</td>
   </tr>
   <tr>

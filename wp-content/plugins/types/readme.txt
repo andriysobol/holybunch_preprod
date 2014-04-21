@@ -1,17 +1,17 @@
 === Types - Custom Fields and Custom Post Types Management ===
-Contributors: brucepearson, AmirHelzer, jozik, mihaimihai
+Contributors: brucepearson, AmirHelzer, jozik, mihaimihai, iworks
 Donate link: http://wp-types.com
 Tags: CMS, custom field, custom fields, custom post type, custom post types, post, post type, post types, cck, taxonomy, fields
 License: GPLv2
 Requires at least: 3.4
-Tested up to: 3.8
-Stable tag: 1.5.3
+Tested up to: 3.8.2
+Stable tag: 1.5.5
 
 The complete and reliable plugin for managing custom post types, custom taxonomy and custom fields.
 
 == Description ==
 
-Types let's you customize the WordPress admin by adding content types, custom fields and taxonomy. You will be able to craft the WordPress admin and turn it into your very own content management system.
+Types lets you customize the WordPress admin by adding content types, custom fields and taxonomy. You will be able to craft the WordPress admin and turn it into your very own content management system.
 
 [vimeo http://vimeo.com/43104695]
 
@@ -59,6 +59,10 @@ Types includes support for a wide list of custom fields.
 * **Phone**
 * **Skype**
 * **URL**
+* **Audio**
+* **Video**
+* **Embedded media**
+* **Colorpicker**
 * **Post reference** (using Types Parent / Child relationships management)
 
 Types custom fields use the standard WordPress post-meta table, making it cross-compatible with any theme or plugin. Additionally, all fields can be **repeating fields**.
@@ -146,6 +150,31 @@ Additionally, Types is the only plugin that lets you define parent/child relatio
 5. Bulk editing child content using Field Tables
 
 == Changelog ==
+
+= 1.5.5 =
+
+* Added file name normalization to avoid some storing problems.
+* Added post type slug check due changing.
+* Added showing hidden fields on fields control screen
+* Added "Show hidden fields" checkbox to show hidden custom fields.
+* Adjusted media file path normalization
+* Allowed choosing parent posts of all post statuses
+* Introduced TYPES_EMBEDDED_URL constant for embedded code
+* Fixed bug with child posts and WPML
+* Fixed checks if usermeta control screen have hidden fields allowed
+* Fixed conditionals are not saved when adding existing fields to group
+* Fixed missing relations between posts, after changing parent post type slug.
+* Fixed missing relations between post and custom fields, after changing parent post type slug.
+* Fixed missing relations between post and taxonomy, after changing parent post type slug.
+* Fixed missing WPML translations, after changing parent post type slug.
+* Fixed on changing parent posts select to fetch all statuses
+* Fixed order of parent form now sorted for pubblished and draft
+* Fixed saving conditional settings
+* Fixed 'wpcf-post-type' notice.
+
+= 1.5.4 =
+* Caching improvements
+* Image resizing adjustments
 
 = 1.5.3 =
 * Fixed caching field data before applying WPML filters

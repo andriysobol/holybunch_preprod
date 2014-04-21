@@ -34,6 +34,13 @@ $theme = new OxyCustomTheme(
     )
 );
 
+//add_filter( "getarchives_where","node_custom_post_type_archive",10,2);
+function node_custom_post_type_archive($where, $args) {
+    $post_type = isset($args["post_type"]) ? $args["post_type"] : "post";
+    $where = "WHERE post_type = " . $post_type . " AND post_status = \"publish\"";
+    return $where;
+}
+
 require_once CUSTOM_INCLUDES_DIR . 'hb_frontend.php'; 
 require_once CUSTOM_INCLUDES_DIR . 'hb_posts.php';
 require_once CUSTOM_INCLUDES_DIR . 'hb_functions.php';

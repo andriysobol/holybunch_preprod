@@ -560,5 +560,218 @@ function oxy_shortcode_blockquote_drops( $atts, $content ) {
 }
 add_shortcode( 'blockquote_drops', 'oxy_shortcode_blockquote_drops' );
 
+/* Show content items of category */
+function oxy_shortcode_content_items( $atts ) {
+    extract( shortcode_atts( array(
+        'category'    => '',
+        'count'       => 3,
+        'columns'     => 3,
+        'links'       => 'show',
+        'lead'        => 'hide',
+        'title'       => '',
+        'style'       => '',
+        'title_size'  => 'medium',
+        'image_style' => ''
+    ), $atts ) );
+
+    $query = array(
+        'post_type'   => 'oxy_content',
+        'posts_per_page' =>  $count,
+        'orderby'     => 'title',
+        'order'       => 'ASC'
+    );
+
+    if( !empty( $category ) ) {
+        $query['tax_query'] = array(
+            array(
+                'taxonomy' => 'oxy_content_category',
+                'field' => 'slug',
+                'terms' => $category
+            )
+        );
+    }
+
+    global $post;
+    $tmp_post = $post;
+
+    $content_items = get_posts( $query );
+    $output = '';
+    if( count( $content_items > 0 ) ) {
+        $output .= '<ul class="unstyled row-fluid">';
+        if ($title_size == 'big')
+            $header = 'h2';
+        else if ( $title_size == 'medium')
+            $header = 'h3';
+        else
+            $header = 'h4';
+        $size = ($columns == 4)? 'round-medium': 'box-big';
+        $text_class = ($lead == 'show')?' class="lead text-center"':'';
+        $items_per_row = ($columns == 3)? 3:4;
+        $span = ($columns== 4)?'span3':'span4';
+        $service_num = 1;
+        foreach( $content_items as $post ) {
+            setup_postdata($post);
+            global $more;
+            $more = 0;
+            if( $links == 'show' ){
+                $link = oxy_get_slide_link( $post );
+                if( null == $link ) {
+                    $link = get_permalink();
+                }
+            }
+            if( $service_num > $items_per_row){
+                $output .='</ul><ul class="unstyled row-fluid">';
+                $service_num = 1;
+            }
+            $icon = get_post_meta( $post->ID, THEME_SHORT. '_icon', true );
+            $output .= '<li class="'.$span.'">';
+            $output .= '<div class="round-box '.$size.' '.$image_style.'">';
+            if( $links == 'show' ) {
+                $output .= '<a href="' . $link . '" class="box-inner">';
+            }
+            else {
+                $output .= '<span class="box-inner">';
+            }
+            $output .= get_the_post_thumbnail( $post->ID, 'portfolio-thumb', array( 'class' => 'img-circle', 'alt' => get_the_title() ) );
+            if( $links == 'show' ) {
+                $output .= '</a>';
+            }
+            else {
+                $output .= '</span>';
+            }
+            if( $icon != '' ) {
+                $output .= '<i class="' . $icon . '"></i>';
+            }
+            $output .= '</span>';
+            $output .= '</div>';
+            if( $links == 'show' ) {
+                $output .= '<a href="' . $link . '">';
+            }
+            $output .= '<'.$header.' class="text-center">' . get_the_title() . '</'.$header.'>';
+            if( $links == 'show' ) {
+                $output .= '</a>';
+            }
+            //$output .= '<p'.$text_class.'>' .  apply_filters( 'the_content', get_the_content('') ) . '</p>';
+            $shortcode_value = get_field('video_shortcode', $post->ID);
+            $output .= '<p'.$text_class.'>' .  apply_filters( 'the_content', $shortcode_value ) . '</p>';
+             if( $links == 'show' ) {
+                $more_text = oxy_get_option('blog_readmore')? oxy_get_option('blog_readmore'): 'Read more';
+                $output .= '<a href="'.$link.'" class="more-link">'. $more_text.'</a>';
+            }
+            $output .= '</li>';
+            $service_num++;
+        }
+        $output .= '</ul>';
+    }
+    
+    //Always check if it's an error before continuing. get_term_link() can be finicky sometimes
+    $term = get_term_by('slug', $category, 'oxy_content_category');
+    $term_link = get_term_link( $term, 'oxy_content_category' );
+    if( is_wp_error( $term_link ) )
+        continue;
+    //We successfully got a link. Print it out.
+    $output .= '<div id="" class="span10"></div>';
+    $output .= '<div id="" class="span2" style="height: 60px;border: orange 1px solid;margin-top: 0px;width: 170px;padding: 10px;margin-left:41px;">';
+    $output .= '<span style="font-size: 15px; color: orange;"><i class="icon-signin icon-large"></i>';
+    $output .= '<a href="' . $term_link . '"> &nbsp Далее к рубрике </a>';
+    $output .= '</span><p></p></div>';
+    //$output .= '</ul>';
+    $post = $tmp_post;
+
+    return oxy_shortcode_section( $atts, $output );
+}
+add_shortcode( 'content_items', 'oxy_shortcode_content_items' );
+
+function oxy_shortcode_rtmp_player($atts) {
+    extract(shortcode_atts(array(
+        'ip' => '84.200.83.137',
+        'stream' => 'myStream'
+                    ), $atts));
+    $output = '<div class = "span4">';
+    $output .= '<strong>Начало:</strong> 12.00 Ландау (14.00 Московское время, 13.00 Киевское, 06.00 восточное сша)';
+    $output .= '</div>';
+    $output .= '<div class = "span8">';
+    $output .= '<div id = "playerygRpQJGcOwEP">';    
+    $output .= '<script src = "'.GetHostForJWScript().'"></script>';
+    $output .= '<script type = \'text/javascript\'>';
+    $output .= 'jwplayer(\'playerygRpQJGcOwEP\').setup({';
+    $output .= 'playlist: [{';
+    $output .= 'image: "'.get_theme_root_uri().'/smartbox-theme-custom/images/broadcast.jpg",';
+    $output .= 'sources: [';
+    $output .= '{ file: "rtmp://84.200.83.137/live/myStream.sdp", },';
+    $output .= '],';
+    $output .= '}],';
+    $output .= 'sources: [{';
+    $output .= 'file: "http://84.200.83.137:1935/vod/mp4:sample.mp4/manifest.f4m"';
+    $output .= '}],';
+    $output .= 'sources: [{';
+    $output .= 'file: "http://84.200.83.137:1935/vod/mp4:sample.mp4/playlist.m3u8"';
+    $output .= '}],';
+    $output .= 'height: 360,';
+    $output .= 'rtmp: {';
+    $output .= 'subscribe: true';
+    $output .= '},';
+    $output .= 'width: 640';
+    $output .= '});';
+    $output .= '</script></div></div>';
+    $atts = array(
+        'title' => 'Прямая трансляция'
+    );
+    return oxy_shortcode_section( $atts, $output );
+}
+add_shortcode( 'rtmp_player', 'oxy_shortcode_rtmp_player' );
+
+function oxy_shortcode_js_player($atts) {
+    extract(shortcode_atts(array(
+        'sources' => '',
+        'title' => '',
+        'image' => '',
+        'height' => '',
+        'width' => ''
+                    ), $atts));
+
+    if(empty($image))
+        $image = "\"". get_theme_root_uri()."/smartbox-theme-custom/images/broadcast.jpg\"";
+    
+    if(empty($height))
+        $height = "200";
+
+    if(empty($width))
+        $width = "360";
+    $uniqid = "player" . uniqid();
+    $output =  '<div id = "' . $uniqid . '">';
+    $output .= '<script src = "'.GetHostForJWScript().'"></script>';
+    //$output .= '<script src = "http://84.200.83.37/wp-content/themes/smartbox-theme-custom/inc/js_player/JS_Player.js' . '"></script>';
+    $output .= '<script type = \'text/javascript\'>';
+    $output .= 'jwplayer(\'' . $uniqid . '\').setup({';
+    $output .= ' height: '.$height.',';
+    $output .= ' width: '. $width .',';
+    $output .= 'playlist: [{';
+    $output .= 'image: '.$image.',';
+    $output .= 'sources: [';
+    $sourcesArray = explode(",", $sources);
+    $addComma = false;
+    $counter = 0;
+    foreach ( $sourcesArray as $source){        
+        if(isset($source)){
+            $counter = $counter + 1;
+            if($addComma) 
+                $output .= ',';
+            $output .= '{ file: "' . $source .'", label: "'. $counter . '" }';
+            $addComma = true;
+        }              
+    }
+    $output .= ']';
+    $output .= '}]';
+    $output .= '});';
+    $output .= '</script></div>';
+    $atts = array(
+        'title' => $title
+    );
+  
+    return $output ;
+}
+add_shortcode( 'js_player', 'oxy_shortcode_js_player' );
+
 require_once get_template_directory() . '/inc/options/shortcodes/shortcodes.php';
 require_once CUSTOM_INCLUDES_DIR . 'hb_utility.php';

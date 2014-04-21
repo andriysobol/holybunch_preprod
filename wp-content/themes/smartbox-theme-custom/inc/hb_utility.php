@@ -207,7 +207,7 @@ function get_custom_template_directory() {
         $template_dir = "$theme_root/$template";
         return apply_filters('template_directory', $template_dir, $template, $theme_root);
     }
-    
+
 function get_content_video_posts($teaching_topic){    
     $my_video_query = get_query_only_video($teaching_topic);
     $video_content;
@@ -271,5 +271,56 @@ function get_content_for_category($taxonomy_category, $teaching_topic){
     return $output;
 }
 
+function get_query_for_category($taxonomy_category) {
+    if (!empty($taxonomy_category)) {
+        $args = array(
+            // post basics
+            'post_type' => 'oxy_content', // check capitalization, make sure this matches your post type slug
+            'post_status' => 'publish', // you may not need this line.
+            'posts_per_page' => 3, // set this yourself, 10 is a placeholder
+            'post__not_in' => array($video[0]->ID),
+            // taxonomy
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'oxy_content_category', // slug for desired tag goes here
+                    'field' => 'slug',
+                    'terms' => $taxonomy_category, // should work without a slug, try it both ways...and use a variable, don't hardcode
+                    'include_children' => false,
+                )
+            )
+        );
+    } 
+    return new WP_Query($args);
+}
+
+function IsLocalEinvironment(){
+    $server_name = $_SERVER['SERVER_NAME'];
+    if(isset($server_name) && $server_name == "localhost")
+        return true;
+    return false;
+}
+
+function GetHostForJWScript(){
+    if (is_ssl() && !IsLocalEinvironment())
+        return 'https://ssl.jwpsrv.com/library/2vQezLOEEeOy_CIACi0I_Q.js';
+    else if (is_ssl() && IsLocalEinvironment())
+        return 'https://jwpsrv.com/library/2vQezLOEEeOy_CIACi0I_Q.js';
+    else if (!IsLocalEinvironment())
+        return 'https://ssl.jwpsrv.com/library/2vQezLOEEeOy_CIACi0I_Q.js';
+    else 
+        return 'http://jwpsrv.com/library/2vQezLOEEeOy_CIACi0I_Q.js';    
+}
+
+function get_label_of_source($source){
+    // Modify the last character of a string
+    $end_position = strlen($source)-4;
+    
+    //latest position of _ 
+    $begin_position = strrpos($source, "_")+1;
+    
+    if($end_position > $begin_position)
+        return substr($source, $begin_position, $end_position-$begin_position);
+    return "unknow";
+}
 ;
 ?>
