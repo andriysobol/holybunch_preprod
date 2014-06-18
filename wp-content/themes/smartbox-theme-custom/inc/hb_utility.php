@@ -116,6 +116,26 @@ function get_taxonomy_image($taxonomy_name, $topic) {
     }
 }
 
+function get_taxonomy_banner_image($taxonomy_name, $topic) {
+    $term_details = term_exists($topic, $taxonomy_name);
+    if (is_array($term_details)) {
+        $term_id = $term_details['term_id'];
+    } else {
+        return '';
+    }
+    //in order to get custom field 'taxonomy_image' from taxonomy we have 
+    //to call advanced custom fields plugin api and provide id of post which 
+    //is combination of taxonomy name and id of term e.g. term 'god' => id = 39
+    $image = get_field('taxonomy_banner_image', 'teaching_topics_' . $term_id);
+    $image_url = $image[url];
+    if (!empty($image_url)) {
+        global $wp_embed;
+        return $image_url;
+    } else {
+        return null;
+    }
+}
+
 function get_query($taxonomy_category, $teaching_topic) {
     if (!empty($taxonomy_category)) {
         $args = array(
