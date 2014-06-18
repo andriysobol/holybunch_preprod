@@ -38,8 +38,6 @@
                 echo '</figure>';
             } ?>
             <?php the_content(); ?>
-            <?php get_template_part( 'partials/social-links', null ); ?>
-            <?php oxy_wp_link_pages(array('before' => '<div class="pagination pagination-centered">', 'after' => '</div>')); ?>
         </div>
     </div>
 </article>

@@ -12,11 +12,15 @@
         var $select = $( '#' + theme + '_link_type' );
         var $selectContainer = $select.parents( '.rwmb-field' );
         var $toggleOptions = $selectContainer.siblings( '.rwmb-field' );
+        console.log($toggleOptions);
+        // hide all controls after the select
+        //$selectContainer.nextAll().hide();
 
         $select.change(function(){
             // hide all controls after the select
             $toggleOptions.hide();
             // show selected options
+            console.log($(this).val());
             switch( $(this).val() ) {
                 case 'page':
                     $( $toggleOptions[0] ).show();
@@ -24,14 +28,11 @@
                 case 'post':
                     $( $toggleOptions[1] ).show();
                 break;
-                case 'portfolio':
-                    $( $toggleOptions[2] ).show();
-                break
                 case 'category':
-                    $( $toggleOptions[3] ).show();
+                    $( $toggleOptions[2] ).show();
                 break;
                 case 'url':
-                    $( $toggleOptions[4] ).show();
+                    $( $toggleOptions[3] ).show();
                 break;
             }
         }).trigger('change');

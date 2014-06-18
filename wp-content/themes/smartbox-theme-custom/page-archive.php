@@ -6,7 +6,6 @@ get_header();
 oxy_page_header();
 $allow_comments = oxy_get_option( 'site_comments' );
 ?>
-
 <div id="primary" class="site-content">
 <div id="content" role="main">
 

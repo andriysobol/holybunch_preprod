@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.5
+ * @version 1.4
  */
 ?><!DOCTYPE html>
 <!--[if IE 8 ]> <html <?php language_attributes(); ?> class="ie8"> <![endif]-->
@@ -19,6 +19,7 @@
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
         <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
         <title><?php wp_title( '|', true, 'right' );  bloginfo('name'); ?></title>
+        <meta content="Bootsrap based theme" name="description" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
         <link href="<?php echo oxy_get_option( 'favicon' ); ?>" rel="shortcut icon" />
@@ -31,7 +32,7 @@
 
         <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-          <script src="<?php echo JS_URI. 'PIE.js' ; ?>"></script>
+          <script src="javascripts/PIE.js"></script>
         <![endif]-->
         <?php wp_head(); ?>
     </head>

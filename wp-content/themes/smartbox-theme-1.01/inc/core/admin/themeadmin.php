@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.5
+ * @version 1.4
  */
 
 include ADMIN_OPTIONS_DIR . 'options.php';
@@ -46,7 +46,7 @@ class OxyThemeAdmin
      */
     function __construct( $theme ) {
         global $oxy_theme_version;
-        $oxy_theme_version = '1.5';
+        $oxy_theme_version = '1.4';
 
         $this->theme = $theme;
         // load admin defines
@@ -113,6 +113,7 @@ class OxyThemeAdmin
             // enqueue script only for pages.
             switch( $screen->id ) {
                 case 'page':
+                case 'oxy_service':
                 case 'oxy_timeline':
                     wp_enqueue_script( 'oxy-ajax-metaboxes-page', INCLUDES_URI . 'options/metaboxes/ajax-metaboxes-page.js' , array('jquery', 'rwmb-map') );
                     wp_localize_script( 'oxy-ajax-metaboxes-page', 'theme', THEME_SHORT );
@@ -126,12 +127,6 @@ class OxyThemeAdmin
                     wp_enqueue_script( 'oxy-ajax-metaboxes-portfolio-image', INCLUDES_URI . 'options/metaboxes/ajax-metaboxes-portfolio-image.js' , array('jquery') );
                     wp_localize_script( 'oxy-ajax-metaboxes-page', 'theme', THEME_SHORT );
                     wp_localize_script( 'oxy-ajax-metaboxes-portfolio-image', 'theme', THEME_SHORT );
-                break;
-                case 'oxy_service':
-                    wp_enqueue_script( 'oxy-ajax-metaboxes-page', INCLUDES_URI . 'options/metaboxes/ajax-metaboxes-page.js' , array('jquery', 'rwmb-map') );
-                    wp_localize_script( 'oxy-ajax-metaboxes-page', 'theme', THEME_SHORT );
-                    wp_enqueue_script( 'oxy-ajax-metaboxes-slideshow', INCLUDES_URI . 'options/metaboxes/ajax-metaboxes-slideshow.js' , array('jquery') );
-                    wp_localize_script( 'oxy-ajax-metaboxes-slideshow', 'theme', THEME_SHORT );
                 break;
             }
         }

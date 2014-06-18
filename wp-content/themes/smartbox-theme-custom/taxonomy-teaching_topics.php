@@ -1,20 +1,47 @@
 <?php
 /**
- * Displays content items which belongs to taxonomy topic
- * @Author: tomik_b
+ * Displays a tag archive
+ * @package Smartbox
+ * @subpackage Frontend
+ * @since 0.1
+ *
+ * @copyright (c) 2013 Oxygenna.com
+ * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
+ * @version 1.5
  */
 get_header();
-global $post;
-$teaching_topic = get_teaching_topic_from_query();
-$category = get_query_var("oxy_content_category");
-if(empty($category)){
-    $output = get_content_text_posts($teaching_topic);
-    $output .= get_content_video_posts($teaching_topic);
-}  else {
-    $output = get_content_for_category($category, $teaching_topic);
+if (is_day()) {
+    $title = __('Day', THEME_FRONT_TD);
+    $sub = get_the_date('j M Y');
+} elseif (is_month()) {
+    $title = __('Month', THEME_FRONT_TD);
+    $sub = get_the_date('F Y');
+} elseif (is_year()) {
+    $title = __('Year', THEME_FRONT_TD);
+    $sub = get_the_date('Y');
+} else {
+    $title = __('Blog', THEME_FRONT_TD);
+    $sub = 'Archives';
 }
-echo $output;
-wp_reset_postdata();
-get_footer(); 
-
 ?>
+<?php 
+$term =	$wp_query->queried_object;
+$title = "Тема: " . $term->name;
+oxy_create_hero_section(null, $title); ?>
+<section class="section section-padded">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <?php get_taxonomy_terms_cloud('') ?>
+        </div>
+    </div>
+</section>
+<section class="section section-padded">
+    <div class="container-fluid">
+        <div class="row-fluid">
+<?php get_template_part('partials/hb_loop_all'); ?>
+        </div>
+    </div>
+</section>
+<?php get_footer();
+
+            

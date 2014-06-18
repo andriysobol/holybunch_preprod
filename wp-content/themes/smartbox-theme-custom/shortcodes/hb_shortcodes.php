@@ -4,50 +4,50 @@
  * Custom shortcode functions go here
  * @author Andriy Sobol
  */
-
 function oxy_content_taxonomy_topic_old($atts, $content = '') {
     // setup options
     extract(shortcode_atts(array(
         'title' => '',
-        'topic' => '', 
+        'topic' => '',
         'style' => '',
-        'title' => '', 
-        'excerpt_length' => '', 
+        'title' => '',
+        'excerpt_length' => '',
         'addrelatedposts' => ''
-        ), $atts));
+                    ), $atts));
 
     //get taxonomy term description
     $taxonomy_name = 'teaching_topics';
     $termDiscription = get_taxonomy_description($taxonomy_name, $topic);
-    if(empty($termDiscription))
-        return 'Темы('. $topic . '), которую ты указал в shortcode не существует, используй существующую тему';
-    
+    if (empty($termDiscription))
+        return 'Темы(' . $topic . '), которую ты указал в shortcode не существует, используй существующую тему';
+
     //get taxonomy main video content
     $video_content = get_taxonomy_video($taxonomy_name, $topic);
-    if(empty($video_content))
+    if (empty($video_content))
         return 'Ты не указал видео для это темы. Укажи видео в таксономии: ' . $taxonomy_name;
-  
+
     //add video to taxonomy topic and related links
     $content .= '[row]';
     $content .= '[span1]';
     $content .= '[/span1]';
     $content .= '[span7]';
-    if($add_super_hero == true){
+    if ($add_super_hero == true) {
         $content .= '<div class="super-hero-unit"><figure><img alt="some image" src="http://localhost/test/wp-content/uploads/sites/14/2013/03/landscape-5-1250x300.jpg" />';
         $content .= '<figcaption class="flex-caption">';
     }
     $content .= $video_content;
-    if($add_super_hero == true){
+    if ($add_super_hero == true) {
         $content .= '</figcaption>';
-        $content .= '</div>';}
+        $content .= '</div>';
+    }
     $content .= '[/span7]';
     $content .= '[span1]';
     $content .= '[/span1]';
-    
+
     $content .= '[span3]';
     $content .= '[iconlist id="blockRigthBlack"]';
     $content .= '<h3>а также по теме...</h3>';
-    
+
     // Get the ID of a given category
     $content .= '[iconitem_enh icon="icon-facetime-video" href=' . get_category_term_link_for_taxonomy_topic('video', $topic) . ']Видео[/iconitem_enh]';
     $content .= '[iconitem_enh icon="icon-book" href=' . get_category_term_link_for_taxonomy_topic('text', $topic) . ']Текстовые проповеди[/iconitem_enh]';
@@ -56,33 +56,34 @@ function oxy_content_taxonomy_topic_old($atts, $content = '') {
     $content .= '[/iconlist]';
     $content .= '[/span3]';
     $content .= '[/row]';
-    
+
     //add description of taxonomy
     $content .= '[row]';
     $content .= '[span12]';
-    if($add_super_hero == true){
+    if ($add_super_hero == true) {
         $content .= '<div class="super-hero-unit"><figure><img alt="some image" src="http://84.200.83.137/test/wp-content/uploads/sites/14/2013/03/landscape-5-1250x300.jpg" />';
-        $content .= '<figcaption class="flex-caption">';}
-    $content .= '<blockquote>';    
+        $content .= '<figcaption class="flex-caption">';
+    }
+    $content .= '<blockquote>';
     $content .= $termDiscription;
     $content .= '</blockquote>';
 
-    if($add_super_hero == true){
+    if ($add_super_hero == true) {
         $content .= '</figcaption>';
         $content .= '</div>';
-    }    
+    }
     $content .= '[/span12]';
     $content .= '[/row]';
 
     $atts[title] = $title;
-    if(empty($style)){
+    if (empty($style)) {
         $atts[style] = 'dark';
-    }else{
+    } else {
         $atts[style] = $style;
     }
-    
+
     //add related posts; query for all related posts except main video which is already shown
-    if ($addrelatedposts == true) {
+    if ($addrelatedposts == '1') {
         $wp_query = new WP_Query;
         $args = array(
             // post basics
@@ -131,10 +132,10 @@ function oxy_content_taxonomy_topic_old($atts, $content = '') {
 
         wp_reset_query();
     }
-   $content .= '[row][span10][/span10]';
-   $content .= '[span2][button icon="icon-share-alt" type="warning" size="btn-default" label="далее к теме" link="' . get_term_link($topic, $taxonomy = $taxonomy_name) . '" place="right"]';
-   $content .= '[/span2][/row]';
-   $output = oxy_shortcode_section($atts, $content);
+    $content .= '[row][span10][/span10]';
+    $content .= '[span2][button icon="icon-share-alt" type="warning" size="btn-default" label="далее к теме" link="' . get_term_link($topic, $taxonomy = $taxonomy_name) . '" place="right"]';
+    $content .= '[/span2][/row]';
+    $output = oxy_shortcode_section($atts, $content);
     return $output;
 }
 
@@ -144,53 +145,73 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     // setup options
     extract(shortcode_atts(array(
         'title' => '',
-        'topic' => '', 
+        'topic' => '',
         'style' => '',
-        'title' => '', 
-        'excerpt_length' => '', 
+        'title' => '',
+        'excerpt_length' => '',
         'addrelatedposts' => ''
-        ), $atts));
+                    ), $atts));
 
     //get taxonomy term description
     $taxonomy_name = 'teaching_topics';
     $termDiscription = get_taxonomy_description($taxonomy_name, $topic);
-    if(empty($termDiscription))
-        return 'Темы('. $topic . '), которую ты указал в shortcode не существует, используй существующую тему';
-    
+    if (empty($termDiscription))
+        return 'Темы(' . $topic . '), которую ты указал в shortcode не существует, используй существующую тему';
+
     //get taxonomy image
     $taxonomy_image = get_taxonomy_image($taxonomy_name, $topic);
-    
+
     //get taxonomy main video content
     $video_content = get_taxonomy_video($taxonomy_name, $topic);
-    if(empty($video_content))
+    if (empty($video_content))
         $video_content = 'Ты не указал видео для это темы. Укажи видео в таксономии: ' . $taxonomy_name;
-  
+
     //add taxonomy image
     $content .= '[row]';
     $content .= '[span12]';
-    $content .= '<img src="'. $taxonomy_image . '" width="348" height="256" align="left" style="margin-right: 10px; margin-top: 5px; margin-bottom: 5px;">';
-    $termDiscription = str_replace( "<p>", "<p style=\"text-align: justify\">", $termDiscription);
+    $content .= '<img src="' . $taxonomy_image . '" width="348" height="256" align="left" style="margin-right: 10px; margin-top: 5px; margin-bottom: 5px;">';
+    $termDiscription = str_replace("<p>", "<p style=\"text-align: justify\">", $termDiscription);
     $content .= $termDiscription;
     $content .= '[/span12]';
     $content .= '[/row]';
+   
+    //add links to video, audio and predigts
+    $propoved_link = get_term_link($topic, $taxonomy = $taxonomy_name) . "?post_type=oxy_content";
+    $video_link = get_term_link($topic, $taxonomy = $taxonomy_name) . "?post_type=oxy_audio";
+    $audio_link = get_term_link($topic, $taxonomy = $taxonomy_name) . "?post_type=oxy_audio";
     $content .= '[row]';
+    $content .= '[span12]';
+    $content .= '[div style="text-align: center; margin-top: 0px; color: orange; margin-bottom: 30px;"] ';
+    $content .= '<a href='.$propoved_link.'><span style="margin-right: 50px;">[[ПРОПОВЕДИ]]</span></a>';
+    $content .= '<a href='.$video_link.'><span style="margin-right: 50px;">[[ВИДЕО]]</span>';
+    $content .= '<a href='.$audio_link.'><span style="margin-right: 50px;">[[ПСАЛМЫ]]</span>  ';
+    $content .= '[/div]';
+    $content .= '[/span12]';
+    $content .= '[/row]';
+   
     //add related video    
+    $content .= '[row]';
     $content .= '[span4]';
     $content .= $video_content;
     $content .= '[/span4]';
-    
+
     //add main predigt
     $content .= '[span4]';
     $content .= get_taxonomy_content_item($taxonomy_name, $topic);
     $content .= '[/span4]';
     $content .= '[span4]';
-    $content .= '[button icon="icon-book" type="warning" size="btn-large" label="Далее к теме" link="' . get_term_link($topic, $taxonomy = $taxonomy_name) . '" place="right"]';
+    $content .= '<div class="text-right">';
+    $content .= '<a href="'. get_term_link($topic, $taxonomy = $taxonomy_name) .'" class="btn btn-primary btn-large pull-center">';
+    $content .= '<i class="icon-arrow-right">Читать Далее</i>';
+    //$content .= _e('Читать Далее', THEME_FRONT_TD);
+    //$content .= '[button icon="icon-book" type="warning" size="btn-large" label="Далее к теме" link="' . get_term_link($topic, $taxonomy = $taxonomy_name) . '" place="right"]';
+    $content .= '</a></div>';
     $content .= '[/span4][/row]';
-    
+    $content .= get_related_posts_by_term($topic);
     $atts[title] = $title;
-    if(empty($style)){
+    if (empty($style)) {
         $atts[style] = 'dark';
-    }else{
+    } else {
         $atts[style] = $style;
     }
     $output = oxy_shortcode_section($atts, $content);
@@ -231,12 +252,12 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
         default:
             break;
     }
-    
+
     //it is possible to provide several categories, split them and do array
-    $category = trim( preg_replace( "/[\n\r\t ]+/", '', $category ), '' );
-    $category = empty($category) ? '' : explode(',', $category) ;
-   
-     $query_options = array(
+    $category = trim(preg_replace("/[\n\r\t ]+/", '', $category), '');
+    $category = empty($category) ? '' : explode(',', $category);
+
+    $query_options = array(
         'post_type' => 'oxy_content',
         'numberposts' => $count,
         'orderby' => $orderby
@@ -256,19 +277,22 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
     $items = get_posts($query_options);
     $items_count = count($items);
     $output = '';
-    
+
     if ($items_count > 0):
-        if(!empty($style)) $output .= '<div id="'.$style.'">';
-        if($addicon) $output .= '<ul class="icons " id="">';
+        if (!empty($style))
+            $output .= '<div id="' . $style . '">';
+        if ($addicon)
+            $output .= '<ul class="icons " id="">';
         $counter = 1;
         foreach ($items as $member) :
             global $post;
             $post = $member;
             setup_postdata($post);
-            if($contenttype != 'content') $output .= '<li>';            
+            if ($contenttype != 'content')
+                $output .= '<li>';
             //add icon which refers to category
             if ($addicon) {
-                $assignedCategory = wp_get_post_terms( $post->ID, 'oxy_content_category', array("fields" => "slugs") );
+                $assignedCategory = wp_get_post_terms($post->ID, 'oxy_content_category', array("fields" => "slugs"));
                 switch ($assignedCategory[0]) {
                     case 'video':
                         $icon = 'icon-facetime-video';
@@ -284,11 +308,13 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
                 }
                 $output .= '<h4 class="infokasten">';
                 $output .= '<i class="' . $icon . '"></i>';
-                if(!$addtitle) $output .= '</h4>';
-            } 
-            
-            if($addtitle) {
-                if (!$addicon) $output .= '<h4 class="infokasten">';
+                if (!$addtitle)
+                    $output .= '</h4>';
+            }
+
+            if ($addtitle) {
+                if (!$addicon)
+                    $output .= '<h4 class="infokasten">';
                 $output .= '<a class="infokasten">';
                 $output .= get_the_title() . " : ";
                 $output .= '</a></h4>';
@@ -300,24 +326,27 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
                 $excerpt_length = $excerpt_length == 0 ? 999 : $excerpt_length;
                 $text = wp_trim_words($text, $excerpt_length, $excerpt_more);
                 $output .= $text;
-            } else if($contenttype == 'summary') {
+            } else if ($contenttype == 'summary') {
                 $output .= '<i>';
                 //get value of summary
-                $summary = get_field('summary', $post->ID);    
+                $summary = get_field('summary', $post->ID);
                 $summary_more = apply_filters('summary_more', ' ' . '...');
                 $summary_more = '<a href="' . get_permalink() . '">' . '...' . '</a>';
                 $excerpt_length = empty($excerpt_length) ? 999 : $excerpt_length;
                 $text = wp_trim_words($summary, $excerpt_length);
                 $output .= $text . $summary_more;
                 $output .= '</i>';
-            } else if($contenttype == 'content'){
+            } else if ($contenttype == 'content') {
                 $output .= get_the_content();
             }
             $member_num++;
-            if($contenttype != 'content') $output .= '</li>';
+            if ($contenttype != 'content')
+                $output .= '</li>';
         endforeach;
-        if ($addicon) $output .= '</ul>';
-        if(!empty($style)) $output .= '</div>';
+        if ($addicon)
+            $output .= '</ul>';
+        if (!empty($style))
+            $output .= '</div>';
     endif;
     wp_reset_postdata();
     return $output;
@@ -326,6 +355,7 @@ function oxy_content_itemlist_enhanced($atts, $content = '') {
 add_shortcode('content_itemlist_enhanced', 'oxy_content_itemlist_enhanced');
 
 /* Content List */
+
 function oxy_shortcode_content_list($atts, $content = '') {
     // setup options
     extract(shortcode_atts(array(
@@ -436,18 +466,19 @@ function oxy_shortcode_div($atts, $content = null) {
     $output .= '</div>';
     return $output;
 }
+
 add_shortcode('div', 'oxy_shortcode_div');
 
 /**
  * Icon Item Shortcode - for use inside an iconlist shortcode
  * @return Icon Item HTML
- **/
-function oxy_shortcode_iconitem_enhanced( $atts, $content = null) {
-    extract( shortcode_atts( array(
-        'title'       => '',
-        'icon'        => '',
-        'href'        => '',  
-    ), $atts ) );
+ * */
+function oxy_shortcode_iconitem_enhanced($atts, $content = null) {
+    extract(shortcode_atts(array(
+        'title' => '',
+        'icon' => '',
+        'href' => '',
+                    ), $atts));
 
     $output = '<li>';
     $output .= '<h4>';
@@ -459,15 +490,16 @@ function oxy_shortcode_iconitem_enhanced( $atts, $content = null) {
     $output .= '</li>';
     return $output;
 }
-add_shortcode( 'iconitem_enh', 'oxy_shortcode_iconitem_enhanced' );
 
-function cmp($a, $b)
-{ 
-     if ($a == $b) {
+add_shortcode('iconitem_enh', 'oxy_shortcode_iconitem_enhanced');
+
+function cmp($a, $b) {
+    if ($a == $b) {
         return 0;
     }
     return ($a < $b) ? -1 : 1;
 }
+
 /**
  * Custom shortcode functions go here
  * @author Andriy Sobol
@@ -476,7 +508,7 @@ function oxy_content_latest_topics($atts, $content = '') {
     // setup options
     extract(shortcode_atts(array(
         'style' => '',
-        'excerpt_length' => '', 
+        'excerpt_length' => '',
         'except' => ''
                     ), $atts));
     //get all taxonomy items and sort them by dates
@@ -488,27 +520,27 @@ function oxy_content_latest_topics($atts, $content = '') {
         $term_id = $term->term_id;
         $date = new DateTime(get_field('taxonomy_publiched_date', 'teaching_topics_' . $term_id));
         $date_formatted = date_format($date, 'Ymd');
-        if($date_formatted != null)
+        if ($date_formatted != null)
             $dates[$term_id] = get_field('taxonomy_publiched_date', 'teaching_topics_' . $term_id);
     }
-    
+
     // Sort and print the resulting array
     arsort($dates);
     $output .= '<ul class="unstyled row-fluid">';
     $i = 0;
     while ($i < 3):
         $term_id = key($dates);
-        $term = get_term( $term_id, $taxonomy_name );
+        $term = get_term($term_id, $taxonomy_name);
         $term_name = $term->name;
         //don't add taxonomy name which is alreay on main page as main taxonomy topic
-        if($term->slug == $except){
+        if ($term->slug == $except) {
             next($dates);
-            continue;            
+            continue;
         }
-        $description = term_description( $term_id, $taxonomy_name );
+        $description = term_description($term_id, $taxonomy_name);
         $picture = get_field('taxonomy_image', 'teaching_topics_' . $term_id);
         $picture_url = $picture != null ? $picture[url] : null;
-        
+
         $img = wp_get_attachment_image_src($picture, 'full');
         $content .='<li class="span4"><div class="round-box box-big"><span class="box-inner"><img alt="' . $title . '" class="img-circle" src="' . $picture[url] . '">';
         $content .='</span></div><h3 class="text-center">' . $term_name . '<small class="block">' . $icon . '</small></h3>';
@@ -531,9 +563,10 @@ function oxy_content_latest_topics($atts, $content = '') {
     $output = oxy_shortcode_section($atts, $content);
     return $output;
 }
+
 add_shortcode('latest_taxonomy_topics', 'oxy_content_latest_topics');
 
-function oxy_shortcode_stickit(){
+function oxy_shortcode_stickit() {
     $output = '<ul_stickit> <li_stickit> <a_stickit href="www.bible-core.com"> <h2_stickit>ДЕРЕВО ЖИЗНИ И ДЕРЕВО ПОЗНАНИЯ ДОБРА И ЗЛА</h2_stickit> <p_stickit>И заповедал Господь Бог человеку, говоря… </p_stickit> </a_stickit> </li_stickit>';
     $output .= '<li_stickit><a_stickit href="www.bible-core.com"><h2_stickit>Я БУДУ ЛИКОВАТЬ! </h2_stickit><p_stickit>Слуашайте новый псалом ...</p_stickit></a_stickit></li_stickit>';
     $output .= '<li_stickit><a_stickit href="www.bible-core.com"><h2_stickit>МЛАДЕНЕЦ ВО ХРИСТЕ0 </h2_stickit><p_stickit>Потому отныне мы никого не знаем по плоти; если же…</p_stickit></a_stickit></li_stickit>';
@@ -543,45 +576,47 @@ function oxy_shortcode_stickit(){
 
 add_shortcode('stickit', 'oxy_shortcode_stickit');
 
-/* ------------ BLOCKQUOTE SHORTCODE ------------*/
+/* ------------ BLOCKQUOTE SHORTCODE ------------ */
 
-function oxy_shortcode_blockquote_drops( $atts, $content ) {
-    extract( shortcode_atts( array(
-        'who'   => '',
-        'cite'  => '',
+function oxy_shortcode_blockquote_drops($atts, $content) {
+    extract(shortcode_atts(array(
+        'who' => '',
+        'cite' => '',
         'align' => '',
-    ), $atts ) );
-    
+                    ), $atts));
+
     $class = 'pullquote';
-    if($align == "left"){
+    if ($align == "left") {
         $class = 'pullquote_left';
     }
     return '<blockquote_drops class="' . $class . '">' . $content . '<small>' . $who . '</small></blockquote_drops>';
 }
-add_shortcode( 'blockquote_drops', 'oxy_shortcode_blockquote_drops' );
+
+add_shortcode('blockquote_drops', 'oxy_shortcode_blockquote_drops');
 
 /* Show content items of category */
-function oxy_shortcode_content_items( $atts ) {
-    extract( shortcode_atts( array(
-        'category'    => '',
-        'count'       => 3,
-        'columns'     => 3,
-        'links'       => 'show',
-        'lead'        => 'hide',
-        'title'       => '',
-        'style'       => '',
-        'title_size'  => 'medium',
+
+function oxy_shortcode_content_items($atts) {
+    extract(shortcode_atts(array(
+        'category' => '',
+        'count' => 3,
+        'columns' => 3,
+        'links' => 'show',
+        'lead' => 'hide',
+        'title' => '',
+        'style' => '',
+        'title_size' => 'medium',
         'image_style' => ''
-    ), $atts ) );
+                    ), $atts));
 
     $query = array(
-        'post_type'   => 'oxy_content',
-        'posts_per_page' =>  $count,
-        'orderby'     => 'title',
-        'order'       => 'ASC'
+        'post_type' => 'oxy_content',
+        'posts_per_page' => $count,
+        'orderby' => 'title',
+        'order' => 'ASC'
     );
 
-    if( !empty( $category ) ) {
+    if (!empty($category)) {
         $query['tax_query'] = array(
             array(
                 'taxonomy' => 'oxy_content_category',
@@ -594,80 +629,78 @@ function oxy_shortcode_content_items( $atts ) {
     global $post;
     $tmp_post = $post;
 
-    $content_items = get_posts( $query );
+    $content_items = get_posts($query);
     $output = '';
-    if( count( $content_items > 0 ) ) {
+    if (count($content_items > 0)) {
         $output .= '<ul class="unstyled row-fluid">';
         if ($title_size == 'big')
             $header = 'h2';
-        else if ( $title_size == 'medium')
+        else if ($title_size == 'medium')
             $header = 'h3';
         else
             $header = 'h4';
-        $size = ($columns == 4)? 'round-medium': 'box-big';
-        $text_class = ($lead == 'show')?' class="lead text-center"':'';
-        $items_per_row = ($columns == 3)? 3:4;
-        $span = ($columns== 4)?'span3':'span4';
+        $size = ($columns == 4) ? 'round-medium' : 'box-big';
+        $text_class = ($lead == 'show') ? ' class="lead text-center"' : '';
+        $items_per_row = ($columns == 3) ? 3 : 4;
+        $span = ($columns == 4) ? 'span3' : 'span4';
         $service_num = 1;
-        foreach( $content_items as $post ) {
+        foreach ($content_items as $post) {
             setup_postdata($post);
             global $more;
             $more = 0;
-            if( $links == 'show' ){
-                $link = oxy_get_slide_link( $post );
-                if( null == $link ) {
+            if ($links == 'show') {
+                $link = oxy_get_slide_link($post);
+                if (null == $link) {
                     $link = get_permalink();
                 }
             }
-            if( $service_num > $items_per_row){
+            if ($service_num > $items_per_row) {
                 $output .='</ul><ul class="unstyled row-fluid">';
                 $service_num = 1;
             }
-            $icon = get_post_meta( $post->ID, THEME_SHORT. '_icon', true );
-            $output .= '<li class="'.$span.'">';
-            $output .= '<div class="round-box '.$size.' '.$image_style.'">';
-            if( $links == 'show' ) {
+            $icon = get_post_meta($post->ID, THEME_SHORT . '_icon', true);
+            $output .= '<li class="' . $span . '">';
+            $output .= '<div class="round-box ' . $size . ' ' . $image_style . '">';
+            if ($links == 'show') {
                 $output .= '<a href="' . $link . '" class="box-inner">';
-            }
-            else {
+            } else {
                 $output .= '<span class="box-inner">';
             }
-            $output .= get_the_post_thumbnail( $post->ID, 'portfolio-thumb', array( 'class' => 'img-circle', 'alt' => get_the_title() ) );
-            if( $links == 'show' ) {
+            $output .= get_the_post_thumbnail($post->ID, 'portfolio-thumb', array('class' => 'img-circle', 'alt' => get_the_title()));
+            if ($links == 'show') {
                 $output .= '</a>';
-            }
-            else {
+            } else {
                 $output .= '</span>';
             }
-            if( $icon != '' ) {
+            if ($icon != '') {
                 $output .= '<i class="' . $icon . '"></i>';
             }
             $output .= '</span>';
             $output .= '</div>';
-            if( $links == 'show' ) {
+            if ($links == 'show') {
                 $output .= '<a href="' . $link . '">';
             }
-            $output .= '<'.$header.' class="text-center">' . get_the_title() . '</'.$header.'>';
-            if( $links == 'show' ) {
+            $output .= '<' . $header . ' class="text-center">' . get_the_title() . '</' . $header . '>';
+            if ($links == 'show') {
                 $output .= '</a>';
             }
             //$output .= '<p'.$text_class.'>' .  apply_filters( 'the_content', get_the_content('') ) . '</p>';
             $shortcode_value = get_field('video_shortcode', $post->ID);
-            $output .= '<p'.$text_class.'>' .  apply_filters( 'the_content', $shortcode_value ) . '</p>';
-             if( $links == 'show' ) {
-                $more_text = oxy_get_option('blog_readmore')? oxy_get_option('blog_readmore'): 'Read more';
-                $output .= '<a href="'.$link.'" class="more-link">'. $more_text.'</a>';
+            $output .= '<p' . $text_class . '>' . apply_filters('the_content', $shortcode_value) . '</p>';
+            if ($links == 'show') {
+                $more_text = oxy_get_option('blog_readmore') ? oxy_get_option('blog_readmore') : 'Read more';
+                $output .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
             }
             $output .= '</li>';
             $service_num++;
         }
         $output .= '</ul>';
     }
-    
+
     //Always check if it's an error before continuing. get_term_link() can be finicky sometimes
     $term = get_term_by('slug', $category, 'oxy_content_category');
-    $term_link = get_term_link( $term, 'oxy_content_category' );
-    if( is_wp_error( $term_link ) )
+    $term_link = get_term_link($term, 'oxy_content_category');
+    if (is_wp_error($term_link))
         continue;
     //We successfully got a link. Print it out.
     $output .= '<div id="" class="span10"></div>';
@@ -678,9 +711,10 @@ function oxy_shortcode_content_items( $atts ) {
     //$output .= '</ul>';
     $post = $tmp_post;
 
-    return oxy_shortcode_section( $atts, $output );
+    return oxy_shortcode_section($atts, $output);
 }
-add_shortcode( 'content_items', 'oxy_shortcode_content_items' );
+
+add_shortcode('content_items', 'oxy_shortcode_content_items');
 
 function oxy_shortcode_rtmp_player($atts) {
     extract(shortcode_atts(array(
@@ -691,12 +725,12 @@ function oxy_shortcode_rtmp_player($atts) {
     $output .= '<strong>Начало:</strong> 12.00 Ландау (14.00 Московское время, 13.00 Киевское, 06.00 восточное сша)';
     $output .= '</div>';
     $output .= '<div class = "span8">';
-    $output .= '<div id = "playerygRpQJGcOwEP">';    
-    $output .= '<script src = "'.GetHostForJWScript().'"></script>';
+    $output .= '<div id = "playerygRpQJGcOwEP">';
+    $output .= '<script src = "' . GetHostForJWScript() . '"></script>';
     $output .= '<script type = \'text/javascript\'>';
     $output .= 'jwplayer(\'playerygRpQJGcOwEP\').setup({';
     $output .= 'playlist: [{';
-    $output .= 'image: "'.get_theme_root_uri().'/smartbox-theme-custom/images/broadcast.jpg",';
+    $output .= 'image: "' . get_theme_root_uri() . '/smartbox-theme-custom/images/broadcast.jpg",';
     $output .= 'sources: [';
     $output .= '{ file: "rtmp://84.200.83.137/live/myStream.sdp", },';
     $output .= '],';
@@ -717,9 +751,10 @@ function oxy_shortcode_rtmp_player($atts) {
     $atts = array(
         'title' => 'Прямая трансляция'
     );
-    return oxy_shortcode_section( $atts, $output );
+    return oxy_shortcode_section($atts, $output);
 }
-add_shortcode( 'rtmp_player', 'oxy_shortcode_rtmp_player' );
+
+add_shortcode('rtmp_player', 'oxy_shortcode_rtmp_player');
 
 function oxy_shortcode_js_player($atts) {
     extract(shortcode_atts(array(
@@ -730,36 +765,36 @@ function oxy_shortcode_js_player($atts) {
         'width' => ''
                     ), $atts));
 
-    if(empty($image))
-        $image = "\"". get_theme_root_uri()."/smartbox-theme-custom/images/broadcast.jpg\"";
-    
-    if(empty($height))
+    if (empty($image))
+        $image = "\"" . get_theme_root_uri() . "/smartbox-theme-custom/images/broadcast.jpg\"";
+
+    if (empty($height))
         $height = "200";
 
-    if(empty($width))
+    if (empty($width))
         $width = "360";
     $uniqid = "player" . uniqid();
-    $output =  '<div id = "' . $uniqid . '">';
-    $output .= '<script src = "'.GetHostForJWScript().'"></script>';
+    $output = '<div id = "' . $uniqid . '">';
+    $output .= '<script src = "' . GetHostForJWScript() . '"></script>';
     //$output .= '<script src = "http://84.200.83.37/wp-content/themes/smartbox-theme-custom/inc/js_player/JS_Player.js' . '"></script>';
     $output .= '<script type = \'text/javascript\'>';
     $output .= 'jwplayer(\'' . $uniqid . '\').setup({';
-    $output .= ' height: '.$height.',';
-    $output .= ' width: '. $width .',';
+    $output .= ' height: ' . $height . ',';
+    $output .= ' width: ' . $width . ',';
     $output .= 'playlist: [{';
-    $output .= 'image: '.$image.',';
+    $output .= 'image: ' . $image . ',';
     $output .= 'sources: [';
     $sourcesArray = explode(",", $sources);
     $addComma = false;
     $counter = 0;
-    foreach ( $sourcesArray as $source){        
-        if(isset($source)){
+    foreach ($sourcesArray as $source) {
+        if (isset($source)) {
             $counter = $counter + 1;
-            if($addComma) 
+            if ($addComma)
                 $output .= ',';
-            $output .= '{ file: "' . $source .'", label: "'. $counter . '" }';
+            $output .= '{ file: "' . $source . '", label: "' . $counter . '" }';
             $addComma = true;
-        }              
+        }
     }
     $output .= ']';
     $output .= '}]';
@@ -768,10 +803,11 @@ function oxy_shortcode_js_player($atts) {
     $atts = array(
         'title' => $title
     );
-  
-    return $output ;
+
+    return $output;
 }
-add_shortcode( 'js_player', 'oxy_shortcode_js_player' );
+
+add_shortcode('js_player', 'oxy_shortcode_js_player');
 
 require_once get_template_directory() . '/inc/options/shortcodes/shortcodes.php';
 require_once CUSTOM_INCLUDES_DIR . 'hb_utility.php';

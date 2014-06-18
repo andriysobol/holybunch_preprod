@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license **LICENSE**
- * @version 1.5
+ * @version 1.4
  */
 if ( is_single() && (oxy_get_option( 'fb_show' ) == 'show' || oxy_get_option( 'twitter_show' ) == 'show' || oxy_get_option( 'google_show' ) == 'show' ) ) { ?>
     <div class="blog-social-buttons small-screen-center">

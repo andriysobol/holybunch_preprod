@@ -5,6 +5,7 @@
  * $Copyright:: *(COPYRIGHT)*
  * $Licence:: *(LICENCE)*
  */
+console.log(theme);
 (function( $ ){
     $(document).ready(function($){
         // get the select box we need to toggle options with

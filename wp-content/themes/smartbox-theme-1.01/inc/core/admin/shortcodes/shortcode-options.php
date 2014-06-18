@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.5
+ * @version 1.4
  */
 
 class OxyShortcodeOptions
@@ -89,9 +89,6 @@ class OxyShortcodeOptions
                         echo '<label for="' . $field['id'] . '">'. $field['name'] . '</label>';
                         $option->render();
                         echo '</div>';
-                    }
-                    if( isset( $field['desc'] ) ) {
-                        echo '<p>' . $field['desc'] . '</p>';
                     }
                 }
                 echo '</div>';

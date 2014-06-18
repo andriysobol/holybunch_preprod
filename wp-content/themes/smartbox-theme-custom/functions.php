@@ -41,6 +41,17 @@ function node_custom_post_type_archive($where, $args) {
     return $where;
 }
 
+// Debug info
+function onlygood_debug() {
+ $info = '<div style="position: fixed; bottom: 10px; width: 120px; padding: 5px; line-height: 15px; color: #fff; font-size: 11px; background: rgba(0,0,0,.7);">';
+  $info .= get_num_queries() . ' queries in ';
+  $info .= timer_stop();
+  $info .= ' sec.<br />memory: '.round(memory_get_usage()/1024/1024, 2).'mb';
+ $info .= '</div>';
+
+ echo $info;
+}
+
 require_once CUSTOM_INCLUDES_DIR . 'hb_frontend.php'; 
 require_once CUSTOM_INCLUDES_DIR . 'hb_posts.php';
 require_once CUSTOM_INCLUDES_DIR . 'hb_functions.php';

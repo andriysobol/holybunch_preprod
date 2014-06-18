@@ -10,7 +10,7 @@ function oxy_load_child_scripts() {
 add_action( 'wp_enqueue_scripts', 'oxy_load_child_scripts');
 
 //validation for custom taxonomy
-add_action('save_post', 'completion_validator', 10, 2);
+//add_action('save_post', 'completion_validator', 10, 2);
 
 function completion_validator($pid, $post) {
     // don't do on autosave or when new posts are first created
@@ -102,10 +102,10 @@ function my_post_updated_messages_filter($messages) {
   return $messages;
 }
 
-// Allow only 1 column option on screen options
+/* Allow only 1 column option on screen options
 add_filter('screen_layout_columns', 'one_column_on_screen_options');
 function one_column_on_screen_options($columns) {
-    $columns['oxy_content'] = 1;
+    $columns['oxy_video'] = 1;
     return $columns;
 }
 
@@ -120,5 +120,5 @@ function one_column_on_teaching_topics_screen_options($columns) {
 add_filter('get_user_option_screen_layout_oxy_content', 'one_column_layout');
 function one_column_layout($option) {
     return 1;
-}
+}*/
 ?>

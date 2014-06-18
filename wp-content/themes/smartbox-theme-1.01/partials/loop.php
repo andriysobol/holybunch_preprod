@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license **LICENSE**
- * @version 1.5
+ * @version 1.4
  */
 ?>
 
@@ -35,19 +35,19 @@
 
             <div class="entry-content">
             <?php   if( is_category() ) {
-                        $message = __('Sorry, no posts were found for this category.',THEME_FRONT_TD);
+                        $message = 'Sorry, no posts were found for this category.';
                     }
                     else if( is_date()  ){
-                        $message = __('Sorry, no posts found in that timeframe',THEME_FRONT_TD);
+                        $message = 'Sorry, no posts found in that timeframe';
                     }
                     else if ( is_author() ){
-                        $message = __('Sorry, no posts from that author were found',THEME_FRONT_TD);
+                        $message = 'Sorry, no posts from that author were found';
                     }
                     else if ( is_tag() ){
-                        $message = sprintf( __('Sorry, no posts were tagged with  "%1$s"',THEME_FRONT_TD),single_tag_title( '', false ) );
+                        $message = 'Sorry, no posts were tagged with "'. single_tag_title( '', false ).'"' ;
                     }
                     else{
-                        $message = __('Sorry, nothing found',THEME_FRONT_TD);
+                        $message = 'Sorry, nothing found';
                     }
             ?>
                 <p><?php _e( $message, THEME_FRONT_TD ); ?></p>

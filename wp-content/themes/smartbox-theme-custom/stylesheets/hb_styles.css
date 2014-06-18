@@ -274,6 +274,41 @@ ul.bycategories li a:hover{
 }
 .clear{clear: both;}
 
+/*Tagging cloud*/
 
+.tagcloudbody {
+width:800px;
+font-family:Geneva, Arial, Helvetica, sans-serif;
+font-size:11px;
+color:#666666;
+border:solid 1px #333333;
+padding:5px;
+text-align:justify;
+}
 
-/************************* NEW ************************************/
+.tagcloudbody a {
+text-decoration:none;
+color:#333366;
+}
+
+.tagcloudThema {
+font-weight:bold;
+font-size:16px;
+margin-bottom: 10px;
+}
+
+.tag1 {
+font-size:26px;
+}
+.tag2 {
+font-size:16px;
+}
+.tag3 {
+font-size:13px;
+}
+.tag4 {
+font-size:20px;
+}
+.tag5 {
+font-size:9px;
+}

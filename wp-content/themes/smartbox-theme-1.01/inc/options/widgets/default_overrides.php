@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license **LICENSE**
- * @version 1.5
+ * @version 1.4
  */
 
 /* ------------------- OVERRIDE DEFAULT RECENT POSTS WIDGET ------------------*/
@@ -108,9 +108,65 @@ class Custom_Archives_Widget extends WP_Widget_Archives{
     }
 }
 
+// wordpress default Category widget override. Uses the default code but a little modified.
+class Custom_Categories_widget extends WP_Widget_Categories {
+
+    function widget( $args, $instance ) {
+        extract( $args );
+
+        $title = apply_filters('widget_title', empty( $instance['title'] ) ? __( 'Categories', THEME_FRONT_TD ) : $instance['title'], $instance, $this->id_base);
+        $c = ! empty( $instance['count'] ) ? '1' : '0';
+        $h = ! empty( $instance['hierarchical'] ) ? '1' : '0';
+        $d = ! empty( $instance['dropdown'] ) ? '1' : '0';
+
+        echo $before_widget;
+        if ( $title )
+            echo $before_title . $title . $after_title;
+
+        $cat_args = array('orderby' => 'name', 'show_count' => $c, 'hierarchical' => $h);
+
+        if ( $d ) {
+            $cat_args['show_option_none'] = __('Select Category', THEME_FRONT_TD);
+            wp_dropdown_categories(apply_filters('widget_categories_dropdown_args', $cat_args));
+?>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+    var dropdown = document.getElementById("cat");
+    function onCatChange() {
+        if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+            location.href = "<?php echo home_url(); ?>/?cat="+dropdown.options[dropdown.selectedIndex].value;
+        }
+    }
+    dropdown.onchange = onCatChange;
+/* ]]> */
+</script>
+
+<?php
+        } else {
+     $categories = get_categories( $cat_args ); ?>
+        <ul>
+<?php
+        // $cat_args['title_li'] = '';
+        // wp_list_categories(apply_filters('widget_categories_args', $cat_args));
+        // We change default widget output to use h4 tags inside lis
+        foreach ( $categories as $category ) {
+            echo '<li><h4><a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a></h4></li>';
+        }
+?>
+        </ul>
+<?php
+        }
+
+        echo $after_widget;
+    }
+
+}
 
 // replace default widgets
 unregister_widget('WP_Widget_Recent_Posts');
 register_widget('Custom_Recent_Posts_Widget');
 unregister_widget('WP_Widget_Archives');
 register_widget('Custom_Archives_Widget');
+unregister_widget('WP_Widget_Categories');
+register_widget('Custom_Categories_widget');
