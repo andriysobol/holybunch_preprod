@@ -24,24 +24,25 @@ if (is_day()) {
     $sub = 'Archives';
 }
 ?>
-<?php 
-$term =	$wp_query->queried_object;
+<?php
+$term = $wp_query->queried_object;
 $title = "Тема: " . $term->name;
-oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug), $title); ?>
+oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug), $title);
+?>
 <section class="section">
     <div class="container-fluid">
         <div class="row-fluid">
-            <?php get_taxonomy_terms_cloud(''); ?>
+<?php get_taxonomy_terms_cloud(''); ?>
         </div>
     </div>
 </section>
 
-    <!-- Einleitung -->
-    <?php
-        if (isset($term->description)) {
-            echo oxy_shortcode_section('', oxy_shortcode_topic_description(array("class" => 'lead lead_custom_mb'), $term->description));
-        }
-    ?>
+<!-- Einleitung -->
+<?php
+if (isset($term->description)) {
+    echo oxy_shortcode_section('', oxy_shortcode_topic_description(array("class" => 'lead lead_custom_mb'), $term->description));
+}
+?>
 
 <section class="section section-padded">
     <div class="container-fluid">
@@ -50,6 +51,6 @@ oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug
         </div>
     </div>
 </section>
-<?php get_footer();
+<?php
+get_footer();
 
-            

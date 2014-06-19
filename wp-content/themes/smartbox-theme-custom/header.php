@@ -77,4 +77,3 @@
                 </nav>
             </header>
             <div id="content" role="main">
-			<?php onlygood_debug(); ?>

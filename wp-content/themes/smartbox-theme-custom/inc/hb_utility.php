@@ -140,7 +140,7 @@ function get_post_banner_image($post, $taxonomy_name = 'teaching_topics') {
     //in order to get custom field 'banner_image' from taxonomy we have 
     //to call advanced custom fields plugin api and provide id of post
     switch ($post->post_type) {
-        case 'oxy_video': $image = get_field( 'video_banner_image', $post->ID);
+        case 'oxy_video': $image = get_field('video_banner_image', $post->ID);
             break;
         case 'oxy_audio': $image = get_field('audio_banner_image', $post->ID);
             break;
@@ -534,11 +534,12 @@ function get_related_posts($atts) {
         $span = $columns > 0 ? 'span' . floor(12 / $columns) : 'span3';
 
         $output = '';
-        if (!empty($my_query)) :
+        if ($my_query->have_posts()) :
             $output .='<ul class="unstyled row-fluid">';
             global $post;
             $item_num = 1;
             $items_per_row = $columns;
+            //loop over all related posts
             while ($my_query->have_posts()) {
                 $my_query->the_post();
                 setup_postdata($post);
@@ -553,8 +554,9 @@ function get_related_posts($atts) {
                     $item_num = 1;
                 }
 
-                $output .='<li class="' . $span . '"><div class="row-fluid"><div class="span4">';
-                $output .='<div class="round-box box-small box-colored"><a href="' . $post_link . '" class="box-inner">';
+                $output .='<li class="' . $span . '">';
+                $output .='<div class="round-box box-medium box-colored"><a href="' . $post_link . '" class="box-inner">';
+                //get post icon
                 if (has_post_thumbnail($post->ID)) {
                     $output .= get_the_post_thumbnail($post->ID, 'portfolio-thumb', array('title' => $post->post_title, 'alt' => $post->post_title, 'class' => 'img-circle'));
                     $output .= oxy_post_icon($post->ID, false);
@@ -562,17 +564,51 @@ function get_related_posts($atts) {
                     $output .= '<img class="img-circle" src="' . IMAGES_URI . 'box-empty.gif">';
                     $output .= oxy_post_icon($post->ID, false);
                 }
-                $output.='</a></div><h5 class="text-center light">' . get_the_date() . '</h5>';
-                $output.='</div><div class="span8"><h3><a href="' . $post_link . '">' . get_the_title() . '</a>';
-                $output.='</h3><p>' . oxy_limit_excerpt(get_the_excerpt(), 15) . '</p></div></div></li>';
+                
+                $output .='</div>';
+                //in order to get custom field 'summary' from post we have 
+                //to call advanced custom fields plugin api and provide id of post
+                switch ($post->post_type) {
+                    case 'oxy_video':
+                        $summary = get_field('video_summary', $post->ID);
+                        break;
+                    case 'oxy_audio':
+                        $summary = get_field('audio_summary', $post->ID);
+                        break;
+                    case 'oxy_content':
+                        $summary = get_field('summary', $post->ID);
+                        break;
+                    default :
+                        break;
+                }
+
+                //$output.='</a>';
+                $output.='<a href="' . $post_link . '"> <h3 class="text-center">'. get_the_title() . '</h3></a>';
+                
+                $content = hb_limit_excerpt($summary, 30);
+                $more_text = '<Strong>Читать</Strong> далее';
+                $link = get_permalink();
+                $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
+                $output.='<p>' . apply_filters( 'the_content', $content ) . '</p></li>';
                 $item_num++;
             }
             $output .= '</ul>';
+            // reset post data
+            wp_reset_postdata();
+            return oxy_shortcode_section($atts, $output);
         endif;
-        // reset post data
-        wp_reset_postdata();
-        return oxy_shortcode_section($atts, $output);
     }
+}
+
+function hb_limit_excerpt($string, $word_limit, $add_punkts=false) {
+    $words = explode(' ', $string, ($word_limit + 1));
+    if( count($words) > $word_limit ) {
+        array_pop($words);
+    }
+    
+    if($add_punkts)
+        return implode(' ', $words).'...';
+    return implode(' ', $words);
 }
 
 function get_related_posts_by_term($term) {
