@@ -578,6 +578,14 @@ add_shortcode('stickit', 'oxy_shortcode_stickit');
 
 /* ------------ BLOCKQUOTE SHORTCODE ------------ */
 
+function oxy_shortcode_topic_description($attrs, $content) {
+    extract(shortcode_atts(array(
+        'style' => '',
+        'class' => ''), 
+            $attrs));
+    return "<p class='" . $class . "' style='" . $style . "'>" . $content ."</p>";
+}
+
 function oxy_shortcode_blockquote_drops($atts, $content) {
     extract(shortcode_atts(array(
         'who' => '',

@@ -312,3 +312,8 @@ font-size:20px;
 .tag5 {
 font-size:9px;
 }
+
+.lead_custom_mb {
+    margin: 0px;
+    padding-left: 90px;
+}

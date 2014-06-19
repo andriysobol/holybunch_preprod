@@ -28,13 +28,21 @@ if (is_day()) {
 $term =	$wp_query->queried_object;
 $title = "Тема: " . $term->name;
 oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug), $title); ?>
-<section class="section section-padded">
+<section class="section">
     <div class="container-fluid">
         <div class="row-fluid">
-            <?php get_taxonomy_terms_cloud('') ?>
+            <?php get_taxonomy_terms_cloud(''); ?>
         </div>
     </div>
 </section>
+
+    <!-- Einleitung -->
+    <?php
+        if (!empty($term->description)) {
+            echo oxy_shortcode_section('', oxy_shortcode_topic_description(array("class" => 'lead lead_custom_mb'), $term->description));
+        }
+    ?>
+
 <section class="section section-padded">
     <div class="container-fluid">
         <div class="row-fluid">
