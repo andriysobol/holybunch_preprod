@@ -7,7 +7,6 @@
 function oxy_content_taxonomy_topic_old($atts, $content = '') {
     // setup options
     extract(shortcode_atts(array(
-        'title' => '',
         'topic' => '',
         'style' => '',
         'title' => '',
@@ -591,11 +590,14 @@ function oxy_shortcode_blockquote_drops($atts, $content) {
         'who' => '',
         'cite' => '',
         'align' => '',
+        'width' => '',
                     ), $atts));
 
     $class = 'pullquote';
     if ($align == "left") {
         $class = 'pullquote_left';
+    }elseif ($align == "right") {
+        $class = 'pullquote_right';
     }
     return '<blockquote_drops class="' . $class . '">' . $content . '<small>' . $who . '</small></blockquote_drops>';
 }

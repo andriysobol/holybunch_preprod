@@ -136,6 +136,38 @@ function get_taxonomy_banner_image($taxonomy_name, $topic) {
     }
 }
 
+function get_post_banner_image($post, $taxonomy_name = 'teaching_topics') {
+    //in order to get custom field 'banner_image' from taxonomy we have 
+    //to call advanced custom fields plugin api and provide id of post
+    switch ($post->post_type) {
+        case 'oxy_video': $image = get_field( 'video_banner_image', $post->ID);
+            break;
+        case 'oxy_audio': $image = get_field('audio_banner_image', $post->ID);
+            break;
+        case 'oxy_content': $image = get_field('content_banner_image', $post->ID);
+            break;
+        default :
+            break;
+    }
+    //image found on post level return it
+    $image_url = $image[url];
+    if (!empty($image_url)) {
+        global $wp_embed;
+        return $image_url;
+    }
+
+    //try to get image from taxonomy topic assigned to post 
+    //Returns All Term Items for taxonomy
+    $term_list = wp_get_post_terms($post->ID, $taxonomy_name, array("fields" => "all"));
+    foreach ($term_list as $term) {
+        $image = get_field('taxonomy_banner_image', 'teaching_topics_' . $term->term_id);
+        $image_url = $image[url];
+        if (!empty($image_url))
+            return $image_url;
+    }
+    return null;
+}
+
 function get_query($taxonomy_category, $teaching_topic) {
     if (!empty($taxonomy_category)) {
         $args = array(

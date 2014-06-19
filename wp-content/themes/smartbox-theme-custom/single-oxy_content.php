@@ -13,14 +13,7 @@
 
 get_header();
 global $post;
-$custom_fields = get_post_custom($post->ID);
-if ( isset ($custom_fields[THEME_SHORT.'_thickbox']) ){
-    $img = wp_get_attachment_image_src( $custom_fields[THEME_SHORT.'_thickbox'][0], 'full' );
-    oxy_create_hero_section( $img[0], $post->post_title );
-} else {
-    oxy_create_hero_section( null, $post->post_title);
-}
-
+oxy_create_hero_section(get_post_banner_image($post), $post->post_title);
 $allow_comments = oxy_get_option( 'site_comments' );
 ?>
 
