@@ -38,7 +38,7 @@ oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug
 
     <!-- Einleitung -->
     <?php
-        if (!empty($term->description)) {
+        if (isset($term->description)) {
             echo oxy_shortcode_section('', oxy_shortcode_topic_description(array("class" => 'lead lead_custom_mb'), $term->description));
         }
     ?>
