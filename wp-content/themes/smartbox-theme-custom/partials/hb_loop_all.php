@@ -117,8 +117,8 @@ $taxonomy_term = $wp_query->queried_object;
                         </blockquote>
                         <div class="round-box box-medium">
                             <span class="box-inner">
-                                <img alt="Dog Doe" class="img-circle"
-                                     src="http://themes.oxygenna.com/smartbox/files/2013/03/man-4-300x300.jpg" />
+  <img alt="Sam Doe" class="img-circle img_100x100_custom_mb" 
+                                     src="http://one-faith.ru/images/tree.jpg" />
                             </span>
                         </div>
                     </div>
@@ -138,8 +138,8 @@ $taxonomy_term = $wp_query->queried_object;
                         </blockquote>
                         <div class="round-box box-medium">
                             <span class="box-inner">
-                                <img alt="Jim Dow" class="img-circle"
-                                     src="http://themes.oxygenna.com/smartbox/files/2013/03/man-3-300x300.jpg" />
+  <img alt="Sam Doe" class="img-circle img_100x100_custom_mb" 
+                                     src="http://one-faith.ru/images/Brief.jpg" />
                             </span>
                         </div>
                     </div>
@@ -155,8 +155,8 @@ $taxonomy_term = $wp_query->queried_object;
                         </blockquote>
                         <div class="round-box box-medium">
                             <span class="box-inner">
-                                <img alt="Sam Doe" class="img-circle"
-                                     src="http://themes.oxygenna.com/smartbox/files/2013/03/woman-1-300x300.jpg" />
+                                <img alt="Sam Doe" class="img-circle img_100x100_custom_mb" 
+                                     src="http://www.one-faith.ru/images/suend.jpg" />
                             </span>
                         </div>
                     </div>
@@ -178,9 +178,9 @@ $taxonomy_term = $wp_query->queried_object;
                 <div class="span4">
                   <div class="round-box box-small box-colored">
                     <a href="http://themes.oxygenna.com/smartbox/2013/04/06/you-think-water-moves-fast/" class="box-inner">
-                      <img width="300" height="300"
+                      <img
                       src="http://themes.oxygenna.com/smartbox/files/2013/04/landscape-3-1250x600-300x300.jpg"
-                      class="img-circle wp-post-image" alt="You think water moves fast?" title="You think water moves fast?" />
+                      class="img-circle wp-post-image img_78x78_custom_mb" alt="You think water moves fast?" title="You think water moves fast?" />
                     </a>
                   </div>
                   <h5 class="text-center light">April 6, 2013</h5>
@@ -199,9 +199,9 @@ $taxonomy_term = $wp_query->queried_object;
                 <div class="span4">
                   <div class="round-box box-small box-colored">
                     <a href="http://themes.oxygenna.com/smartbox/2013/04/06/they-called-me-mr-glass/" class="box-inner">
-                      <img width="300" height="300"
+                      <img 
                       src="http://themes.oxygenna.com/smartbox/files/2013/04/landscape-6-1250x600-300x300.jpg"
-                      class="img-circle wp-post-image" alt="They called me Mr Glass." title="They called me Mr Glass." />
+                      class="img-circle wp-post-image img_78x78_custom_mb" alt="They called me Mr Glass." title="They called me Mr Glass." />
                     </a>
                   </div>
                   <h5 class="text-center light">April 6, 2013</h5>
@@ -219,9 +219,9 @@ $taxonomy_term = $wp_query->queried_object;
                 <div class="span4">
                   <div class="round-box box-small box-colored">
                     <a href="http://themes.oxygenna.com/smartbox/2013/04/06/your-bones-dont-break-mine-do/" class="box-inner">
-                      <img width="300" height="300"
+                      <img 
                       src="http://themes.oxygenna.com/smartbox/files/2013/04/landscape-4-1250x600-300x300.jpg"
-                      class="img-circle wp-post-image" alt="Your bones don&#39;t break." title="Your bones don&#39;t break." />
+                      class="img-circle wp-post-image img_78x78_custom_mb" alt="Your bones don&#39;t break." title="Your bones don&#39;t break." />
                     </a>
                   </div>
                   <h5 class="text-center light">April 6, 2013</h5>
@@ -245,9 +245,9 @@ $taxonomy_term = $wp_query->queried_object;
                 <div class="span4">
                   <div class="round-box box-small box-colored">
                     <a href="http://themes.oxygenna.com/smartbox/2013/04/06/you-think-water-moves-fast/" class="box-inner">
-                      <img width="300" height="300"
-                      src="http://themes.oxygenna.com/smartbox/files/2013/04/landscape-3-1250x600-300x300.jpg"
-                      class="img-circle wp-post-image" alt="You think water moves fast?" title="You think water moves fast?" />
+                      <img 
+                      src="http://www.one-faith.ru/images/suend.jpg"
+                      class="img-circle wp-post-image img_78x78_custom_mb" alt="You think water moves fast?" title="You think water moves fast?" />
                     </a>
                   </div>
                   <h5 class="text-center light">April 6, 2013</h5>
@@ -266,9 +266,9 @@ $taxonomy_term = $wp_query->queried_object;
                 <div class="span4">
                   <div class="round-box box-small box-colored">
                     <a href="http://themes.oxygenna.com/smartbox/2013/04/06/they-called-me-mr-glass/" class="box-inner">
-                      <img width="300" height="300"
+                      <img 
                       src="http://themes.oxygenna.com/smartbox/files/2013/04/landscape-6-1250x600-300x300.jpg"
-                      class="img-circle wp-post-image" alt="They called me Mr Glass." title="They called me Mr Glass." />
+                      class="img-circle wp-post-image img_78x78_custom_mb" alt="They called me Mr Glass." title="They called me Mr Glass." />
                     </a>
                   </div>
                   <h5 class="text-center light">April 6, 2013</h5>
@@ -286,9 +286,9 @@ $taxonomy_term = $wp_query->queried_object;
                 <div class="span4">
                   <div class="round-box box-small box-colored">
                     <a href="http://themes.oxygenna.com/smartbox/2013/04/06/your-bones-dont-break-mine-do/" class="box-inner">
-                      <img width="300" height="300"
+                      <img 
                       src="http://themes.oxygenna.com/smartbox/files/2013/04/landscape-4-1250x600-300x300.jpg"
-                      class="img-circle wp-post-image" alt="Your bones don&#39;t break." title="Your bones don&#39;t break." />
+                      class="img-circle wp-post-image img_78x78_custom_mb" alt="Your bones don&#39;t break." title="Your bones don&#39;t break." />
                     </a>
                   </div>
                   <h5 class="text-center light">April 6, 2013</h5>

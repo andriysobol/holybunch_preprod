@@ -241,3 +241,13 @@ font-size:9px;
     max-height: 300px;
     min-height: 300px;
 }
+
+.img_100x100_custom_mb {
+    width: 100px;
+    height: 100px;
+}
+
+.img_78x78_custom_mb {
+    width: 78px;
+    height: 78px;
+}
