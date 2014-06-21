@@ -44,13 +44,13 @@ if (isset($term->description)) {
 }
 ?>
 
-<section class="section section-padded">
+<!--<section class="section section-padded">
     <div class="container-fluid">
-        <div class="row-fluid">
+        <div class="row-fluid">-->
 <?php get_template_part('partials/hb_loop_all'); ?>
-        </div>
+<!--        </div>
     </div>
-</section>
+</section>-->
 <?php
 get_footer();
 

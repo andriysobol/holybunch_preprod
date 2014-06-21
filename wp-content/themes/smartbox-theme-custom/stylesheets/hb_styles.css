@@ -231,3 +231,8 @@ font-size:9px;
     margin: 0px;
     padding-left: 90px;
 }
+
+.well_custom_3col_mb {
+    max-height: 480px;
+    min-height: 480px;
+}
