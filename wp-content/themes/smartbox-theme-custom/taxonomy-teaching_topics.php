@@ -27,6 +27,9 @@ if (is_day()) {
 <?php
 $term = $wp_query->queried_object;
 $title = "Тема: " . $term->name;
+if ($term->slug == "god") {
+    $title = "Выбрать все темы (как-то так)";
+}
 oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug), $title);
 ?>
 <section class="section">
