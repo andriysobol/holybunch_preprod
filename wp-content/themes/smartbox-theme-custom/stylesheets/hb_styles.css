@@ -114,8 +114,8 @@ h4.infokasten:hover {
 
 blockquote_drops { 
     background : url(../images/quotes.png) no-repeat top left;
-    margin : 15px 0 0 5px;
-    padding : 5px 20px 0 25px;
+    margin: 25px 10px 20px 30px;
+    padding: 0 0 0 65px;
     border-right : 1px dotted #99cc66; 
     border-left : 1px dotted #99cc66; 
     color: #FFA500;
@@ -124,26 +124,26 @@ blockquote_drops {
 
 .ex-pullquote_left, .pullquote_left {
     float : left;
-    width : 320px;
+    width : 30%;
     border : 0;
     color: #FFA500;
-    font-family : georgia, palatino, 'times new roman', serif;
+   /* font-family : georgia, palatino, 'times new roman', serif; */
     font-size : 110%;
     font-weight : bold;
     font-style : italic;
-    margin : 0;
+  /*  margin : 0; */
 }
 
 .ex-pullquote_right, .pullquote_right {
     float : right;
-    width : 320px;
+    width : 30%;
     border : 0;
     color:#FFA500;
-    font-family : georgia, palatino, 'times new roman', serif;
+  /*  font-family : georgia, palatino, 'times new roman', serif; */
     font-size : 110%;
     font-weight : bold;
     font-style : italic;
-    margin : 0;
+  /*  margin : 0; */
 }
 
 .ex-pullquote, .pullquote {
@@ -155,8 +155,8 @@ blockquote_drops {
     font-size : 110%;
     font-weight : bold;
     font-style : italic;
-    margin : -5px 0 15px 10px;
-    padding : 0;
+    margin : 30px;
+  /*  padding : 0; */
 }
 
 ul.bycategories {
