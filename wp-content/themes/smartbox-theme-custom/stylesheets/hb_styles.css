@@ -55,35 +55,11 @@ p.no_li{
 }
 
 .logoButtonLink {
-    padding: 25.5px 25px 21.5px;
+    padding: 31px 31px 31px;
     background: url(../images/domikgrey50x47.png);
 }
 .logoButtonLink:hover {
     background: url(../images/domiklight50x47.png);
-}
-
-.logoButtonLink a {
-    font-style: normal;
-}
-
-.navbar-inverse .logoButtonLink a {
-    color: white;
-}
-.logoButtonLink2 {
-    font-weight: 300;
-    font-size: 30px;
-    line-height: 30px;
-    padding: 25.5px 20px 29.5px;
-    margin-top: 0;
-    margin-bottom: 0;
-    background: url(../images/domikgrey50x47.png);
-}
-.logoButtonLink2 a {
-    font-style: normal;
-}
-
-.navbar-inverse .logoButtonLink2 a {
-    color: white;
 }
 
 h4.infokasten_green{

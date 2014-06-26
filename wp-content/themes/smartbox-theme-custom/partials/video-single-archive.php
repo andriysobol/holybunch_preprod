@@ -26,7 +26,6 @@ $author_id = get_the_author_meta('ID');
                     </a>
                 <?php endif; // is_single() ?>
             </h2>
-            <?php get_template_part( 'partials/post-extras' ); ?>
         </div>
         <div class="entry-content">
             <?php
@@ -38,7 +37,7 @@ $author_id = get_the_author_meta('ID');
                 $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
                 echo '<figure><img alt="featured image" src="'.$img[0].'"></figure>';
             }            
-            $content = oxy_limit_excerpt(get_the_content(), 40);
+            $content = hb_limit_excerpt(get_the_content(), 40);
             $more_text = '<Strong>Читать</Strong> далее';
             $link = get_permalink();
             $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';

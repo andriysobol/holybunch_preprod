@@ -25,10 +25,8 @@ $output .= "[span8] ";
 $output .= '<i>';
 //get value of summary
 $summary = get_field('summary', $post->ID);
-$summary_more = apply_filters('summary_more', ' ' . '...');
-$summary_more = '<a href="' . get_permalink() . '">' . '...' . '</a>';
-$text = oxy_limit_excerpt($summary, 100);
-$output .= $text . $summary_more;
+$text = hb_limit_excerpt($summary, 100);
+$output .= $text;
 $output .= '</i>';
 
 $output .= "[/span8]";

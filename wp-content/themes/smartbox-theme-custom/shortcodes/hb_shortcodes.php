@@ -818,6 +818,23 @@ function oxy_shortcode_js_player($atts) {
 }
 
 add_shortcode('js_player', 'oxy_shortcode_js_player');
+function audio_temp(){
+    $content .= '[row]';
+    $content .= '[span12]';
+    $content .= '[div style="text-align: center; margin-top: 0px; color: orange; margin-bottom: 30px;"] ';
+    $link_novyj_zavet = "http://bible-core.com/wp-content/uploads/audio/NovyjZavet.rar";
+    $link_vetxij_zavet = "http://bible-core.com/wp-content/uploads/audio/VethijZavet.rar";
+    $content .= '<a href='.$link_novyj_zavet.'><span style="margin-right: 50px;">[[Новый Завет (1.3 ГБ)]]</span></a>';
+    $content .= '<a href='.$link_vetxij_zavet.'><span style="margin-right: 50px;">[[Ветхий завет (7 ГБ)]]</span>';
+    $content .= '[/div]';
+    $content .= '[/span12]';
+    $content .= '[/row]';
+    
+    $atts = array('title' => 'Аудио Библия от Бондаренко');
+    $output = oxy_shortcode_section($atts, $content);
+    return $output;   
+}
+add_shortcode('audio_bibel', 'audio_temp');
 
 require_once get_template_directory() . '/inc/options/shortcodes/shortcodes.php';
 require_once CUSTOM_INCLUDES_DIR . 'hb_utility.php';
