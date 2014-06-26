@@ -46,13 +46,13 @@ p.no_li{
 }
 
 .super {
-    font-size: 50px;
+ /* font-size: 50px;  */
     font-weight: 900;
     text-align: center;
     line-height: 1;
     margin-bottom: 0;
     text-transform: uppercase;
-}
+} 
 
 .logoButtonLink {
     padding: 25.5px 25px 21.5px;
