@@ -530,84 +530,88 @@ function get_related_posts($atts) {
         );
 
         $my_query = new wp_query($args);
-        $columns = $my_query->post_count > 4 ? 4 : $my_query->post_count;
-        $span = $columns > 0 ? 'span' . floor(12 / $columns) : 'span3';
-
-        $output = '';
-        if ($my_query->have_posts()) :
-            $output .='<ul class="unstyled row-fluid">';
-            global $post;
-            $item_num = 1;
-            $items_per_row = $columns;
-            //loop over all related posts
-            while ($my_query->have_posts()) {
-                $my_query->the_post();
-                setup_postdata($post);
-                if ('link' == get_post_format()) {
-                    $post_link = oxy_get_external_link();
-                } else {
-                    $post_link = get_permalink();
-                }
-
-                if ($item_num > $items_per_row) {
-                    $output.= '</ul><ul class="unstyled row-fluid">';
-                    $item_num = 1;
-                }
-
-                $output .='<li class="' . $span . '">';
-                $output .='<div class="round-box box-medium box-colored"><a href="' . $post_link . '" class="box-inner">';
-                //get post icon
-                if (has_post_thumbnail($post->ID)) {
-                    $output .= get_the_post_thumbnail($post->ID, 'portfolio-thumb', array('title' => $post->post_title, 'alt' => $post->post_title, 'class' => 'img-circle'));
-                    $output .= oxy_post_icon($post->ID, false);
-                } else {
-                    $output .= '<img class="img-circle" src="' . IMAGES_URI . 'box-empty.gif">';
-                    $output .= oxy_post_icon($post->ID, false);
-                }
-                
-                $output .='</div>';
-                //in order to get custom field 'summary' from post we have 
-                //to call advanced custom fields plugin api and provide id of post
-                switch ($post->post_type) {
-                    case 'oxy_video':
-                        $summary = get_field('video_summary', $post->ID);
-                        break;
-                    case 'oxy_audio':
-                        $summary = get_field('audio_summary', $post->ID);
-                        break;
-                    case 'oxy_content':
-                        $summary = get_field('summary', $post->ID);
-                        break;
-                    default :
-                        break;
-                }
-
-                //$output.='</a>';
-                $output.='<a href="' . $post_link . '"> <h3 class="text-center">'. get_the_title() . '</h3></a>';
-                
-                $content = hb_limit_excerpt($summary, 30);
-                $more_text = '<Strong>Читать</Strong> далее';
-                $link = get_permalink();
-                $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
-                $output.='<p>' . apply_filters( 'the_content', $content ) . '</p></li>';
-                $item_num++;
-            }
-            $output .= '</ul>';
-            // reset post data
-            wp_reset_postdata();
-            return oxy_shortcode_section($atts, $output);
-        endif;
     }
 }
 
-function hb_limit_excerpt($string, $word_limit, $add_punkts=false) {
+function create_section_with_itmes($my_query) {
+    $columns = $my_query->post_count > 4 ? 4 : $my_query->post_count;
+    $span = $columns > 0 ? 'span' . floor(12 / $columns) : 'span3';
+
+    $output = '';
+    if ($my_query->have_posts()) :
+        $output .='<ul class="unstyled row-fluid">';
+        global $post;
+        $item_num = 1;
+        $items_per_row = $columns;
+        //loop over all related posts
+        while ($my_query->have_posts()) {
+            $my_query->the_post();
+            setup_postdata($post);
+            if ('link' == get_post_format()) {
+                $post_link = oxy_get_external_link();
+            } else {
+                $post_link = get_permalink();
+            }
+
+            if ($item_num > $items_per_row) {
+                $output.= '</ul><ul class="unstyled row-fluid">';
+                $item_num = 1;
+            }
+
+            $output .='<li class="' . $span . '">';
+            $output .='<div class="round-box box-medium box-colored"><a href="' . $post_link . '" class="box-inner">';
+            //get post icon
+            if (has_post_thumbnail($post->ID)) {
+                $output .= get_the_post_thumbnail($post->ID, 'portfolio-thumb', array('title' => $post->post_title, 'alt' => $post->post_title, 'class' => 'img-circle'));
+                $output .= oxy_post_icon($post->ID, false);
+            } else {
+                $output .= '<img class="img-circle" src="' . IMAGES_URI . 'box-empty.gif">';
+                $output .= oxy_post_icon($post->ID, false);
+            }
+
+            $output .='</div>';
+            //in order to get custom field 'summary' from post we have 
+            //to call advanced custom fields plugin api and provide id of post
+            switch ($post->post_type) {
+                case 'oxy_video':
+                    $summary = get_field('video_summary', $post->ID);
+                    break;
+                case 'oxy_audio':
+                    $summary = get_field('audio_summary', $post->ID);
+                    break;
+                case 'oxy_content':
+                    $summary = get_field('summary', $post->ID);
+                    break;
+                default :
+                    break;
+            }
+
+            //$output.='</a>';
+            $output.='<a href="' . $post_link . '"> <h3 class="text-center">' . get_the_title() . '</h3></a>';
+
+            $content = hb_limit_excerpt($summary, 30);
+            $more_text = '<Strong>Читать</Strong> далее';
+            $link = get_permalink();
+            $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
+            $output.='<p>' . apply_filters('the_content', $content) . '</p></li>';
+            $item_num++;
+        }
+        $output .= '</ul>';
+        // reset post data
+        wp_reset_postdata();
+        return oxy_shortcode_section($atts, $output);
+    endif;
+}
+
+
+function hb_limit_excerpt($string, $word_limit, $add_punkts = false) {
     $words = explode(' ', $string, ($word_limit + 1));
-    if( count($words) > $word_limit ) {
+    if (count($words) > $word_limit) {
         array_pop($words);
     }
-    
-    if($add_punkts)
-        return implode(' ', $words).'...';
+
+    if ($add_punkts)
+        return implode(' ', $words) . '...';
     return implode(' ', $words);
 }
 
@@ -714,6 +718,153 @@ function get_audio_content() {
     }
 }
 
+function hb_create_topic_page($taxonomy_term) {
+
+    //get post of type text
+    $query = array(
+        'numberposts' => -1,
+        'post_type' => 'oxy_content',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'teaching_topics',
+                'field' => 'slug',
+                'terms' => $taxonomy_term->slug
+            )
+        ),
+        'orderby' => 'menu_order',
+        'order' => 'ASC'
+    );
+    $text_items = get_posts($query);
+
+    $count = count($text_items);
+
+    $output = '<section class="section section-padded section-alt">';
+
+    $output .= create_text_item($text_items[0]);
+    if ($count == 1) {
+        
+    } elseif ($count == 2) {
+        $output .= create_text_item($text_items[1]);
+    } elseif ($count == 3) {
+        $output .= create_two_text_items($text_items[1], $text_items[2]);
+    } elseif ($count == 4) {
+        $output .= create_three_text_items($text_items[1], $text_items[2], $text_items[3]);
+    } elseif ($count == 5) {
+        $output .= create_text_item($text_items[1]);
+        $output .= create_three_text_items($text_items[2], $text_items[3], $text_items[4]);
+    } elseif ($count == 6) {
+        $output .= create_two_text_items($text_items[1], $text_items[2]);
+        $output .= create_three_text_items($text_items[3], $text_items[4], $text_items[5]);
+    } elseif ($count > 6) {
+        //$output . create_more_text_items($text_items);
+        $output = create_section_with_itmes(new WP_Query($query));
+    }
+
+    $output .= '</section>';
+
+    //get post of type text
+    $slides = get_posts(array(
+        'numberposts' => -1,
+        'post_type' => $post_type,
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'teaching_topics',
+                'field' => 'slug',
+                'terms' => $slug_or_ids
+            )
+        ),
+        'orderby' => 'menu_order',
+        'order' => 'ASC'
+    ));
+    return $output;
+}
+
+function create_text_item($post) {
+    $post = $post;
+    $summary = get_field('summary', $post->ID);
+    $more_text = '<Strong>Читать</Strong> далее';
+    $link = get_permalink();
+    $more_text = '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
+    $output .= '<div class="container-fluid">
+      <div class="section-header">
+        <h1>' . $post->post_title . '</h1>
+      </div>
+      <div class="row-fluid">
+        <div class="span3">' .
+            add_image_to_text_item($post, 'big') .
+            '</div>
+        <div class="span9">
+          <h2>' . $post->post_title . '</h2>
+          <p class="lead">' . $summary . $more_text . '</p>
+        </div>
+      </div>
+    </div>';
+    return $output;
+}
+
+function create_two_text_items($first_item, $second_item) {
+    $output = '     <div class="container-fluid">
+        <div class="section-header">
+            <h1>' . $post->post_title . '</h1>
+        </div>
+        <div class="row-fluid">
+            <ul class="inline row-fluid">';
+    $post = $first_item;
+    $output .= add_post_summary_to_main_page($post, 'span6'); 
+    $post = $second_item;
+    $output .= add_post_summary_to_main_page($post, 'span6'); 
+    $output .= '</ul></div></div>';
+    return $output;
+}
+
+function create_three_text_items($first_item, $second_item, $third_item) {
+    $post = $first_item;
+    $output = '     <div class="container-fluid">
+        <div class="section-header">
+            <h1>Если 2  
+                <span class="light">проповеди и письма</span></h1>
+        </div>
+        <div class="row-fluid">
+            <ul class="inline row-fluid">
+                ';
+    
+    $output .= add_post_summary_to_main_page($post);
+    $post = $second_item;
+    $output .= add_post_summary_to_main_page($post);
+
+    $post = $third_item;
+    $output .= add_post_summary_to_main_page($post);
+    $output .='</ul></div>';
+    return $output;
+}
+
+function add_post_summary_to_main_page($post, $span = 'span4') {
+    $summary = get_field('summary', $post->ID);
+    $summary = hb_limit_excerpt($summary, 30);
+    $output = '<li class="'.$span.'">
+                    <div class="well blockquote-well well_custom_2col_mb">
+                      <h5>' . $post->post_title . '</a></h5>
+                        <p><a href="' . get_post_permalink($post->ID, false, false). '">' . $summary . '</a></p>' .
+                        add_image_to_text_item($post) .
+                    '</div>
+                </li>';
+    return $output;
+}
+
+function add_image_to_text_item($post, $size = 'medium') {
+    $output .='<div class="round-box box-' . $size . ' box-colored"><span class="box-inner">';
+    //get post icon
+    if (has_post_thumbnail($post->ID)) {
+        $output .= get_the_post_thumbnail($post->ID, 'portfolio-thumb', array('title' => $post->post_title, 'alt' => $post->post_title, 'class' => 'img-circle'));
+        $output .= oxy_post_icon($post->ID, false);
+    } else {
+        $output .= '<img class="img-circle" src="' . IMAGES_URI . 'box-empty.gif">';
+        $output .= oxy_post_icon($post->ID, false);
+    }
+    $output .= '</span></div>';
+    return $output;
+}
+
 function hb_create_flexslider($slug_or_ids, $post_type, $title, $style, $options = array()) {
     global $oxy_theme_options;
     global $post;
@@ -764,12 +915,6 @@ function hb_create_flexslider($slug_or_ids, $post_type, $title, $style, $options
     foreach ($slides as $post) {
         setup_postdata($post);
         $output .= '<li><div class="super-hero-unit"><figure>';
-
-
-
-
-
-
         $output .='<ul class="unstyled row-fluid">';
         if ('link' == get_post_format()) {
             $post_link = oxy_get_external_link();

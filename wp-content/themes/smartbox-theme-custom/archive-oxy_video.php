@@ -32,7 +32,7 @@ oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug
 <section class="section section-padded">
     <div class="container-fluid">
         <div class="row-fluid">
-<?php get_taxonomy_terms_cloud('oxy_video') ?>
+            <?php get_taxonomy_terms_cloud('oxy_video') ?>
         </div>
     </div>
 </section>
