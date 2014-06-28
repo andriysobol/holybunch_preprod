@@ -27,6 +27,9 @@ if (is_day()) {
 <?php
 $term = $wp_query->queried_object;
 $title = "Тема: " . $term->name;
+if ($term->slug == "god") {
+    $title = "Выбрать все темы (как-то так)";
+}
 oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug), $title);
 ?>
 <section class="section">
@@ -44,13 +47,13 @@ if (isset($term->description)) {
 }
 ?>
 
-<section class="section section-padded">
+<!--<section class="section section-padded">
     <div class="container-fluid">
-        <div class="row-fluid">
+        <div class="row-fluid">-->
 <?php get_template_part('partials/hb_loop_all'); ?>
-        </div>
+<!--        </div>
     </div>
-</section>
+</section>-->
 <?php
 get_footer();
 
