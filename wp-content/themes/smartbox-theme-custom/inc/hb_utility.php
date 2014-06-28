@@ -530,6 +530,7 @@ function get_related_posts($atts) {
         );
 
         $my_query = new wp_query($args);
+        return create_section_with_itmes($my_query);
     }
 }
 
@@ -741,8 +742,7 @@ function hb_create_topic_page($taxonomy_term) {
     $output = '<section class="section section-padded section-alt">';
 
     $output .= create_text_item($text_items[0]);
-    if ($count == 1) {
-        
+    if ($count == 1) {        
     } elseif ($count == 2) {
         $output .= create_text_item($text_items[1]);
     } elseif ($count == 3) {
@@ -783,7 +783,7 @@ function create_text_item($post) {
     $post = $post;
     $summary = get_field('summary', $post->ID);
     $more_text = '<Strong>Читать</Strong> далее';
-    $link = get_permalink();
+    $link = get_post_permalink($post->ID, false, false);
     $more_text = '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
     $output .= '<div class="container-fluid">
       <div class="section-header">
@@ -794,7 +794,6 @@ function create_text_item($post) {
             add_image_to_text_item($post, 'big') .
             '</div>
         <div class="span9">
-          <h2>' . $post->post_title . '</h2>
           <p class="lead">' . $summary . $more_text . '</p>
         </div>
       </div>
@@ -805,7 +804,7 @@ function create_text_item($post) {
 function create_two_text_items($first_item, $second_item) {
     $output = '     <div class="container-fluid">
         <div class="section-header">
-            <h1>' . $post->post_title . '</h1>
+            <h1>Также <span class="light">по теме</span></h1>
         </div>
         <div class="row-fluid">
             <ul class="inline row-fluid">';
@@ -821,8 +820,7 @@ function create_three_text_items($first_item, $second_item, $third_item) {
     $post = $first_item;
     $output = '     <div class="container-fluid">
         <div class="section-header">
-            <h1>Если 2  
-                <span class="light">проповеди и письма</span></h1>
+            <h1>Также <span class="light">по теме</span></h1>
         </div>
         <div class="row-fluid">
             <ul class="inline row-fluid">

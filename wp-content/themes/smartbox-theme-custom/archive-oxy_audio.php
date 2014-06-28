@@ -26,7 +26,9 @@ if (is_day()) {
 ?>
 <?php 
 $term =	$wp_query->queried_object;
-$title = "Тема: " . $term->name;
+$title = $term->name;
+if ($term->slug == "god") 
+    $title = "";
 oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug), $title); ?>
 <section class="section section-padded">
     <div class="container-fluid">

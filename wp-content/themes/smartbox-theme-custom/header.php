@@ -64,7 +64,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </a>
-                            <?php oxy_create_logo_custom(); ?>
+                            <?php oxy_create_logo(); ?>
                             <nav class="nav-collapse collapse" role="navigation">
                                 <?php
                                 if( has_nav_menu( 'primary' ) ) {

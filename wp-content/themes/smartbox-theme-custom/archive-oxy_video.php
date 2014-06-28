@@ -26,7 +26,9 @@ if (is_day()) {
 ?>
 <?php 
 $term =	$wp_query->queried_object;
-$title = "Видео: " . $term->name;
+$title = $term->name;
+if ($term->slug == "god") 
+    $title = "";
 oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug), $title); ?>
 
 <section class="section section-padded">
@@ -40,11 +42,10 @@ oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug
 <section class="section section-padded">
     <div class="container-fluid">
         <div class="row-fluid">
-<?php get_template_part('partials/hb_loop_video'); ?>
+            <?php get_template_part('partials/hb_loop_video'); ?>
         </div>
     </div>
 </section>
-            <?php
-            get_footer();
+<?php get_footer();
 
             

@@ -26,34 +26,25 @@ if (is_day()) {
 ?>
 <?php
 $term = $wp_query->queried_object;
-$title = "Тема: " . $term->name;
-if ($term->slug == "god") {
+$title = $term->name;
+if ($term->slug == "god") 
     $title = "";
-}
+
 oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug), $title);
 ?>
 <section class="section">
     <div class="container-fluid">
         <div class="row-fluid">
-<?php get_taxonomy_terms_cloud(''); ?>
+            <?php get_taxonomy_terms_cloud(''); ?>
         </div>
     </div>
 </section>
-
-<!-- Einleitung -->
 <?php
 if (isset($term->description)) {
     echo oxy_shortcode_section('', oxy_shortcode_topic_description(array("class" => 'lead lead_custom_mb'), $term->description));
 }
 ?>
 
-<!--<section class="section section-padded">
-    <div class="container-fluid">
-        <div class="row-fluid">-->
 <?php get_template_part('partials/hb_loop_all'); ?>
-<!--        </div>
-    </div>
-</section>-->
-<?php
-get_footer();
+<?php get_footer();
 
