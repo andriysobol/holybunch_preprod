@@ -2,8 +2,8 @@
 /*
  * Post relationship code.
  *
- * $HeadURL: https://www.onthegosystems.com/misc_svn/cck/tags/1.5.6/embedded/includes/post-relationship.php $
- * $LastChangedDate: 2014-04-28 16:20:36 +0000 (Mon, 28 Apr 2014) $
+ * $HeadURL: https://www.onthegosystems.com/misc_svn/cck/tags/1.5.7/embedded/includes/post-relationship.php $
+ * $LastChangedDate: 2014-04-28 18:20:36 +0200 (Mon, 28 Apr 2014) $
  * $LastChangedRevision: 21804 $
  * $LastChangedBy: marcin $
  *

@@ -1,6 +1,6 @@
-#   BULLETPROOF .50.1 >>>>>>> SECURE .HTACCESS     
+#   BULLETPROOF .50.2 >>>>>>> SECURE .HTACCESS     
 
-# If you edit the BULLETPROOF .50.1 >>>>>>> SECURE .HTACCESS text above
+# If you edit the BULLETPROOF .50.2 >>>>>>> SECURE .HTACCESS text above
 # you will see error messages on the BPS Security Status page
 # BPS is reading the version number in the htaccess file to validate checks
 # If you would like to change what is displayed above you
@@ -141,8 +141,8 @@ RewriteRule . - [S=1]
 RewriteCond %{HTTP_USER_AGENT} (havij|libwww-perl|wget|python|nikto|curl|scan|java|winhttp|clshttp|loader) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (;|<|>|'|"|\)|\(|%0A|%0D|%22|%27|%28|%3C|%3E|%00).*(libwww-perl|wget|python|nikto|curl|scan|java|winhttp|HTTrack|clshttp|archiver|loader|email|harvest|extract|grab|miner) [NC,OR]
-RewriteCond %{THE_REQUEST} \?\ HTTP/ [NC,OR]
-RewriteCond %{THE_REQUEST} \/\*\ HTTP/ [NC,OR]
+RewriteCond %{THE_REQUEST} \?+(%20{1,}|[^\s])+HTTP+(:/|/) [NC,OR]
+RewriteCond %{THE_REQUEST} \/+(\*|%2a)+(%20|\s){1,}+HTTP+(:/|/) [NC,OR]
 RewriteCond %{THE_REQUEST} etc/passwd [NC,OR]
 RewriteCond %{THE_REQUEST} cgi-bin [NC,OR]
 RewriteCond %{THE_REQUEST} (%0A|%0D|\\r|\\n) [NC,OR]
@@ -199,7 +199,7 @@ RewriteRule . /index.php [L]
 # files directly from your browser.
 
 <FilesMatch "^(wp-config\.php|php\.ini|php5\.ini|readme\.html|bb-config\.php)">
-Order allow,deny
+Order Allow,Deny
 Deny from all
 #Allow from 88.77.66.55
 </FilesMatch>

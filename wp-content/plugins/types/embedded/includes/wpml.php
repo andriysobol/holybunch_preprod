@@ -8,8 +8,8 @@
  * Values:
  * 0 nothing (ignore), 1 copy, 2 translate
  *
- * $HeadURL: https://www.onthegosystems.com/misc_svn/cck/tags/1.5.6/embedded/includes/wpml.php $
- * $LastChangedDate: 2014-04-14 14:54:27 +0000 (Mon, 14 Apr 2014) $
+ * $HeadURL: https://www.onthegosystems.com/misc_svn/cck/tags/1.5.7/embedded/includes/wpml.php $
+ * $LastChangedDate: 2014-04-14 16:54:27 +0200 (Mon, 14 Apr 2014) $
  * $LastChangedRevision: 21445 $
  * $LastChangedBy: marcin $
  *

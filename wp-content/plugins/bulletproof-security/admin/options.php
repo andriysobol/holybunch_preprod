@@ -466,7 +466,7 @@ RewriteRule . $bps_get_wp_root_default"."index.php [L]
 $bpsMUEndWP = "# END WordPress";
 
 // Multisite subfolder WordPress 3.0 through 3.4.2
-if ( preg_match('/blogs.dir/', UPLOADBLOGSDIR ) ) {
+if ( preg_match('/blogs.dir/', @UPLOADBLOGSDIR ) ) {
 $bpsMUSDirTop = "# uploaded files
 RewriteRule ^([_0-9a-zA-Z-]+/)?files/(.+) wp-includes/ms-files.php?file=$2 [L]\n
 # add a trailing slash to /wp-admin
@@ -478,7 +478,7 @@ RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]\n\n";
 }
 
 // Multisite subdomain WordPress 3.0 through 3.4.2
-if ( preg_match('/blogs.dir/', UPLOADBLOGSDIR ) ) {
+if ( preg_match('/blogs.dir/', @UPLOADBLOGSDIR ) ) {
 $bpsMUSDomTop = "# uploaded files
 RewriteRule ^files/(.+) wp-includes/ms-files.php?file=$1 [L]\n\n";
 } else {
@@ -488,7 +488,7 @@ RewriteRule ^wp-admin$ wp-admin/ [R=301,L]\n\n";
 }
 
 // Multisite subfolder WordPress 3.0 through 3.4.2
-if ( preg_match('/blogs.dir/', UPLOADBLOGSDIR ) ) {
+if ( preg_match('/blogs.dir/', @UPLOADBLOGSDIR ) ) {
 $bpsMUSDirBottom = "RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
@@ -508,7 +508,7 @@ RewriteRule . index.php [L]
 }
 
 // Multisite subdomain WordPress 3.0 through 3.4.2
-if ( preg_match('/blogs.dir/', UPLOADBLOGSDIR ) ) {
+if ( preg_match('/blogs.dir/', @UPLOADBLOGSDIR ) ) {
 $bpsMUSDomBottom = "RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
@@ -714,8 +714,8 @@ $bps_secure_BPSQSE = "# BEGIN BPSQSE BPS QUERY STRING EXPLOITS
 RewriteCond %{HTTP_USER_AGENT} (havij|libwww-perl|wget|python|nikto|curl|scan|java|winhttp|clshttp|loader) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (;|<|>|'|".'"'."|\)|\(|%0A|%0D|%22|%27|%28|%3C|%3E|%00).*(libwww-perl|wget|python|nikto|curl|scan|java|winhttp|HTTrack|clshttp|archiver|loader|email|harvest|extract|grab|miner) [NC,OR]
-RewriteCond %{THE_REQUEST} \?\ HTTP/ [NC,OR]
-RewriteCond %{THE_REQUEST} \/\*\ HTTP/ [NC,OR]
+RewriteCond %{THE_REQUEST} \?+(%20{1,}|[^\s])+HTTP+(:/|/) [NC,OR]
+RewriteCond %{THE_REQUEST} \/+(\*|%2a)+(%20|\s){1,}+HTTP+(:/|/) [NC,OR]
 RewriteCond %{THE_REQUEST} etc/passwd [NC,OR]
 RewriteCond %{THE_REQUEST} cgi-bin [NC,OR]
 RewriteCond %{THE_REQUEST} (%0A|%0D|\\"."\\"."r|\\"."\\"."n) [NC,OR]
@@ -776,7 +776,7 @@ $bps_secure_content_bottom = "# DENY BROWSER ACCESS TO THESE FILES
 # pound sign # from in front of the Allow from line of code below to access these
 # files directly from your browser.\n
 <FilesMatch ".'"'."^(wp-config\.php|php\.ini|php5\.ini|readme\.html|bb-config\.php)".'"'.">
-Order allow,deny
+Order Allow,Deny
 Deny from all
 #Allow from 88.77.66.55
 </FilesMatch>\n\n";
@@ -1009,7 +1009,12 @@ $bpsSpacePop = '-------------------------------------------------------------';
 <div id="bps-tabs-1" class="bps-tab-page">
 <h2><?php _e('BulletProof Security Modes', 'bulletproof-security'); ?></h2>
 
-<div id="bpsMonitoringAlerting" style="border-top:1px solid #999999;">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="bps-help_faq_table">
+  <tr>
+    <td class="bps-table_title">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="bps-table_cell_help">
 
 <h3><?php _e('Setup Steps & AutoMagic - Create Your htaccess Master Files', 'bulletproof-security'); ?>  <button id="bps-open-modal1" class="bps-modal-button"><?php _e('Read Me', 'bulletproof-security'); ?></button></h3>
 
@@ -1031,17 +1036,17 @@ $bpsSpacePop = '-------------------------------------------------------------';
     <form name="bps-auto-write-default" action="admin.php?page=bulletproof-security/admin/options.php" method="post">
 <?php wp_nonce_field('bulletproof_security_auto_write_default'); ?>
 <input type="hidden" name="filename" value="bps-auto-write-default_write" />
-<p class="submit">
+<div id="AutoMagic-buttons" style="margin:10px;">
 <input type="submit" name="bps-auto-write-default" value="<?php _e('Create default.htaccess File', 'bulletproof-security'); ?>" class="bps-blue-button" onClick="return confirm('<?php $text = __('Clicking OK will create a new customized default.htaccess Master file for your website.', 'bulletproof-security').'\n\n'.__('This is only creating a Master file and NOT activating it. To activate Master files go to the Activate Security Modes section below.', 'bulletproof-security').'\n\n'.__('NOTE: Default Mode should ONLY be activated for Testing and Troubleshooting.', 'bulletproof-security').'\n\n'.__('Click OK to Create your new default.htaccess Master file or click Cancel.', 'bulletproof-security'); echo $text; ?>')" />
-</p>
+</div>
 </form>
 
 <form name="bps-auto-write-secure-root" action="admin.php?page=bulletproof-security/admin/options.php" method="post">
 <?php wp_nonce_field('bulletproof_security_auto_write_secure_root'); ?>
 <input type="hidden" name="filename" value="bps-auto-write-secure_write" />
-<p class="submit">
+<div id="AutoMagic-buttons" style="margin:10px;">
 <input type="submit" name="bps-auto-write-secure-root" value="<?php _e('Create secure.htaccess File', 'bulletproof-security'); ?>" class="bps-blue-button" onClick="return confirm('<?php $text = __('Clicking OK will create a new customized secure.htaccess Master file for your website.', 'bulletproof-security').'\n\n'.__('This is only creating a Master file and NOT activating it. To activate Master files go to the Activate Security Modes section below.', 'bulletproof-security').'\n\n'.__('Click OK to Create your new secure.htaccess Master file or click Cancel.', 'bulletproof-security'); echo $text; ?>')" />
-</p>
+</div>
 </form>
 
 </td>
@@ -1050,17 +1055,17 @@ $bpsSpacePop = '-------------------------------------------------------------';
 <form name="bps-auto-write-default-MUSDir" action="admin.php?page=bulletproof-security/admin/options.php" method="post">
 <?php wp_nonce_field('bulletproof_security_auto_write_default_MUSDir'); ?>
 <input type="hidden" name="filename" value="bps-auto-write-default_write-MUSDir" />
-<p class="submit">
+<div id="AutoMagic-buttons" style="margin:10px;">
 <input type="submit" name="bps-auto-write-default-MUSDir" value="<?php _e('Create default.htaccess File', 'bulletproof-security'); ?>" class="bps-blue-button" onClick="return confirm('<?php $text = __('Clicking OK will create a new customized default.htaccess Master file for your Network / Multisite subdirectory website.', 'bulletproof-security').'\n\n'.__('This is only creating a Master file and NOT activating it. To activate Master files go to the Activate Security Modes section below.', 'bulletproof-security').'\n\n'.__('NOTE: Default Mode should ONLY be activated for Testing and Troubleshooting.', 'bulletproof-security').'\n\n'.__('Click OK to Create your new default.htaccess Master file or click Cancel.', 'bulletproof-security'); echo $text; ?>')" />
-</p>
+</div>
 </form>
 
 <form name="bps-auto-write-secure-root-MUSDir" action="admin.php?page=bulletproof-security/admin/options.php" method="post">
 <?php wp_nonce_field('bulletproof_security_auto_write_secure_root_MUSDir'); ?>
 <input type="hidden" name="filename" value="bps-auto-write-secure_write_MUSDir" />
-<p class="submit">
+<div id="AutoMagic-buttons" style="margin:10px;">
 <input type="submit" name="bps-auto-write-secure-root-MUSDir" value="<?php _e('Create secure.htaccess File', 'bulletproof-security'); ?>" class="bps-blue-button" onClick="return confirm('<?php $text = __('Clicking OK will create a new customized secure.htaccess Master file for your Network / Multisite subdirectory website.', 'bulletproof-security').'\n\n'.__('This is only creating a Master file and NOT activating it. To activate Master files go to the Activate Security Modes section below.', 'bulletproof-security').'\n\n'.__('Click OK to Create your new secure.htaccess Master file or click Cancel.', 'bulletproof-security'); echo $text; ?>')" />
-</p>
+</div>
 </form>
 
 </td>
@@ -1069,34 +1074,26 @@ $bpsSpacePop = '-------------------------------------------------------------';
 <form name="bps-auto-write-default-MUSDom" action="admin.php?page=bulletproof-security/admin/options.php" method="post">
 <?php wp_nonce_field('bulletproof_security_auto_write_default_MUSDom'); ?>
 <input type="hidden" name="filename" value="bps-auto-write-default_write_MUSDom" />
-<p class="submit">
+<div id="AutoMagic-buttons" style="margin:10px;">
 <input type="submit" name="bps-auto-write-default-MUSDom" value="<?php _e('Create default.htaccess File', 'bulletproof-security'); ?>" class="bps-blue-button" onClick="return confirm('<?php $text = __('Clicking OK will create a new customized default.htaccess Master file for your Network / Multisite subdomain website.', 'bulletproof-security').'\n\n'.__('This is only creating a Master file and NOT activating it. To activate Master files go to the Activate Security Modes section below.', 'bulletproof-security').'\n\n'.__('NOTE: Default Mode should ONLY be activated for Testing and Troubleshooting.', 'bulletproof-security').'\n\n'.__('Click OK to Create your new default.htaccess Master file or click Cancel.', 'bulletproof-security'); echo $text; ?>')" />
-</p>
+</div>
 </form>
 
 <form name="bps-auto-write-secure-root-MUSDom" action="admin.php?page=bulletproof-security/admin/options.php" method="post">
 <?php wp_nonce_field('bulletproof_security_auto_write_secure_MUSDom'); ?>
 <input type="hidden" name="filename" value="bps-auto-write-secure_write_MUSDom" />
-<p class="submit">
+<div id="AutoMagic-buttons" style="margin:10px;">
 <input type="submit" name="bps-auto-write-secure-root-MUSDom" value="<?php _e('Create secure.htaccess File', 'bulletproof-security'); ?>" class="bps-blue-button" onClick="return confirm('<?php $text = __('Clicking OK will create a new customized secure.htaccess Master file for your Network / Multisite subdomain website.', 'bulletproof-security').'\n\n'.__('This is only creating a Master file and NOT activating it. To activate Master files go to the Activate Security Modes section below.', 'bulletproof-security').'\n\n'.__('Click OK to Create your new secure.htaccess Master file or click Cancel.', 'bulletproof-security'); echo $text; ?>')" />
-</p>
+</div>
 </form>
 
 </td>
   </tr>
 </table>
 <?php } ?>
-</div>
 
 <?php if ( !current_user_can('manage_options') ) { _e('Permission Denied', 'bulletproof-security'); } else { ?>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="bps-help_faq_table">
-  <tr>
-    <td class="bps-table_title">&nbsp;</td>
-  </tr>
-  <tr>
-    <td class="bps-table_cell_help">
-    
     <h2><?php _e('Activate Security Modes', 'bulletproof-security'); ?></h2>
     <h3><?php _e('Activate Website Root Folder .htaccess Security Mode', 'bulletproof-security'); ?>  <button id="bps-open-modal2" class="bps-modal-button"><?php _e('Read Me', 'bulletproof-security'); ?></button></h3>
     
@@ -1550,20 +1547,19 @@ function bpsDeleteUserMetaDismiss() {
 </div>
         
 <div id="bps-tabs-6" class="bps-tab-page">
-<table width="100%" border="0">
+<h2><?php _e('BulletProof Security File Editing', 'bulletproof-security'); ?></h2>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="bps-help_faq_table">
   <tr>
-    <td width="33%"><h2><?php _e('BulletProof Security File Editing', 'bulletproof-security'); ?></h2></td>
-    <td width="21%"><button id="bps-open-modal14" class="bps-modal-button"><?php _e('Read Me', 'bulletproof-security'); ?></button>
-    
+    <td class="bps-table_title">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="bps-table_cell">    
+
+	<h3><?php _e('File Editing', 'bulletproof-security'); ?>  <button id="bps-open-modal14" class="bps-modal-button"><?php _e('Read Me', 'bulletproof-security'); ?></button></h3>
     <div id="bps-modal-content14" title="<?php _e('File Editing', 'bulletproof-security'); ?>">
 	<p><?php $text = '<strong>'.__('This Read Me Help window is draggable (top) and resizable (bottom right corner)','bulletproof-security').'</strong><br><br><strong>'.__('Lock / Unlock .htaccess Files','bulletproof-security').'</strong><br>'.__('If your Server API is using CGI then you will see Lock and Unlock buttons to lock your Root htaccess file with 404 Permissions and unlock your root htaccess file with 644 Permissions. If your Server API is using CLI - DSO / Apache / mod_php then you will not see lock and unlock buttons. 644 Permissions are required to write to / edit the root htaccess file. Once you are done editing your root htaccess file use the lock button to lock it with 404 Permissions. 644 Permissions for DSO are considered secure for DSO because of the different way that file security is handled with DSO.','bulletproof-security').'<br><br>'.__('If your Root htaccess file is locked and you try to save your editing changes you will see a pop message that your Root htaccess file is locked. You will need to unlock your Root htaccess file before you can save your changes.','bulletproof-security').'<br><br><strong>'.__('Turn On AutoLock / Turn Off AutoLock','bulletproof-security').'</strong><br>'.__('AutoLock is designed to automatically lock your root .htaccess file to save you an additional step of locking your root .htaccess file when performing certain actions, tasks or functions and AutoLock also automatically locks your root .htaccess during BPS upgrades. This can be a problem for some folks whose Web Hosts do not allow locking the root .htaccess file with 404 file permissions and can cause 403 errors and/or cause a website to crash. For 99.99% of folks leaving AutoLock turned On will work fine. If your Web Host ONLY allows 644 file permissions for your root .htaccess file then click the Turn Off AutoLock button. This turns Off AutoLocking for all BPS actions, tasks, functions and also for BPS upgrades.','bulletproof-security').'<br><br><strong>'.__('The File Editor is designed to open all of your htaccess files simultaneously and allow you to copy and paste from one window (file) to another window (file), BUT you can ONLY save your edits for one file at a time. Whichever file you currently have opened (the tab that you are currently viewing) when you click the Update File button is the file that will be updated / saved.','bulletproof-security').'</strong><br><br>'.__('Help links and Video Tutorial links are provided on the Help & FAQ page ','bulletproof-security'); echo $text; ?></p>
 </div>
-
-</td>
-    <td width="19%" align="right"></td>
-    <td width="27%" align="center"></td>
-  </tr>
-</table>
 
 <?php if ( !current_user_can('manage_options') ) { _e('Permission Denied', 'bulletproof-security'); } else { ?>
 
@@ -2004,11 +2000,24 @@ jQuery(document).ready(function($){
   </tr>
 </table>
 <?php } ?>
+</td>
+  </tr>
+  <tr>
+    <td class="bps-table_cell_bottom">&nbsp;</td>
+  </tr>
+</table>
 </div>
 
 <div id="bps-tabs-7" class="bps-tab-page">
 <h2><?php _e('Custom Code', 'bulletproof-security'); ?></h2>
-<div id="bpsCustomCode" style="border-top:1px solid #999999;">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="bps-help_faq_table">
+  <tr>
+    <td class="bps-table_title">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="bps-table_cell_help">
+
 
 <h3><?php _e('Add Custom htaccess Code To Root and wp-admin htaccess Files', 'bulletproof-security'); ?>  <button id="bps-open-modal16" class="bps-modal-button"><?php _e('Read Me', 'bulletproof-security'); ?></button></h3>
 
@@ -2046,14 +2055,14 @@ bps_CustomCode_BPSQSE_check();
         
 <div id="bps-accordion-2" class="bps-accordian-main-2">
     <h3><?php _e('Root htaccess File Custom Code', 'bulletproof-security'); ?></h3>
-<div style="margin:0px 0px 0px -25px;">
+<div id="cc-accordian-inner">
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="bps-help_faq_table">
   <tr>
     <td colspan="2" class="bps-table_title">&nbsp;</td>
   </tr>
   <tr>
-    <td width="50%" class="bps-table_cell_help">    
+    <td width="50%" class="bps-table_cell_help_custom_code">    
 
 <form name="bpsCustomCodeForm" action="options.php#bps-tabs-7" method="post">
 	<?php settings_fields('bulletproof_security_options_customcode'); ?>
@@ -2148,7 +2157,7 @@ jQuery(document).ready(function($){
 </div>
     
     <h3><?php _e('wp-admin htaccess File Custom Code', 'bulletproof-security'); ?></h3>
-<div style="margin:0px 0px 0px -25px;">
+<div id="cc-accordian-inner">
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="bps-help_faq_table">
   <tr>
@@ -2208,8 +2217,15 @@ jQuery(document).ready(function($){
 </table>
 </div>
 <?php } ?>
-</div>
-</div>
+</div><br /><br />
+
+</td>
+  </tr>
+  <tr>
+    <td class="bps-table_cell_bottom">&nbsp;</td>
+  </tr>
+</table>
+
 </div>
 
 <div id="bps-tabs-9">
@@ -2255,43 +2271,78 @@ jQuery(document).ready(function($){
     <td class="bps-table_cell_no_border">&nbsp;</td>
   </tr> 
   <tr>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+  </tr>
+  <tr>
+  <tr>
     <td class="bps-table_cell_no_border">&bull;</td>
-    <td class="bps-table_cell_no_border"><?php $text = '<strong>'.__('Security Logging major changes/improvements to logging template files/code & start of Phase 1 Security Log Solution Targeting: ', 'bulletproof-security').'<br><a href="http://forum.ait-pro.com/forums/topic/security-log-event-codes/" target="_blank" title="Link opens in a new Browser Window">'.__('Phase 1 Security Log Solution Targeting', 'bulletproof-security').'</a></strong><br>'.__('The Security Logging code has been significantly improved in BPS .50.1.  Logging is more streamlined, performance optimized & faster than in previous BPS versions, even with the new general conditional pattern checking code added.<br><br>As of BPS .50.1 two new Security Log Fields have been added to Security Logging: Event Code and Solution. In Phase 1 of Security Log Solution Targeting the primary focus is on detecting possible Plugin Skip/Bypass rules & wp-admin Skip/Bypass Rules issues that need/require a one-time solution. Since 99.99% of the Security Log entries are blocked/forbidden hackers, spammers, scrapers, harvesters, miners, bad bots, etc. then the Security Log checking conditions can and should be streamlined/performance optimized by only looking at pattern matches in a broad scope.', 'bulletproof-security'); echo $text; ?>
+    <td class="bps-table_cell_no_border"><?php $text = '<h3><strong>'.__('New Feature: DB Backup', 'bulletproof-security').'</strong></h3><strong>'.__('DB Backup & Security Guide & Troubleshooting: http://forum.ait-pro.com/forums/topic/database-backup-security-guide/', 'bulletproof-security').'</strong><br>'.__('Create manual and scheduled Backup Jobs. Choose which database tables to backup. Scheduled backup job options: Hourly, Daily, Weekly and Monthly. Send scheduled backup zip file via email or just send email only, automatically delete old backup files after a certain period of time, etc., etc., etc. On BPS upgrades and new installations a default obfuscated & secure BPS Backup folder is created and all DB Backup options are saved with default settings.', 'bulletproof-security').'<br><br><strong>'.__('Backup Jobs - Manual/Scheduled Accordion Tab', 'bulletproof-security').'</strong><br>'.__('- Displays the Description/Job Name, Delete and Run Checkboxes, Job Type, Frequency, Last Backup, Next Backup, Email Backup and Job Created table columns.', 'bulletproof-security').'<br><br><strong>'.__('Backup Files - Download/Delete Accordion Tab', 'bulletproof-security').'</strong><br>'.__('- Displays the Backup Filename, Delete Checkbox, Download Links, Backup Folder, Size and Date/Time table columns.', 'bulletproof-security').'<br><br><strong>'.__('Create Backup Jobs Accordion Tab', 'bulletproof-security').'</strong><br>'.__('- Displays a dynamic DB Table Name checkbox form, Description/Backup Job Name textbox, DB Backup Folder Location textbox, DB Backup File Download Link/URL textbox, Backup Job Type: Manual or Scheduled select dropdown option, Frequency of Scheduled Backup Job (recurring) select dropdown option, Hour When Scheduled Backup is Run (recurring) select dropdown option, Day of Week When Scheduled Backup is Run (recurring) select dropdown option, Day of Month When Scheduled Backup is Run (recurring) select dropdown option, Send Scheduled Backup Zip File Via Email or Just Email Only select dropdown option, Automatically Delete Old Backup Files select dropdown option, Turn On/Off All Scheduled Backups (override) select dropdown option.', 'bulletproof-security'); echo $text; ?>
+    </td>
+  </tr> 
+  <tr>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+  </tr>
+  <tr>
+  <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<h3><strong>'.__('New Feature: DB Backup Log', 'bulletproof-security').'</strong></h3><strong>'.__('DB Backup Log General Information', 'bulletproof-security').'</strong><br>'.__('Your DB Backup Log file is a plain text static file and not a dynamic file or dynamic display to keep your website resource usage at a bare minimum and keep your website performance at a maximum. Log entries are logged in descending order by Date and Time. You can copy, edit and delete this plain text file. You can choose Email Alerting & Log File Options to automatically email your DB Backup Log file to you and delete it when it reaches a certain size (256KB, 500KB or 1MB).', 'bulletproof-security').'<br><br><strong>'.__('What is Logged in The DB Backup Log?', 'bulletproof-security').'</strong><br>'.__('Depending on your DB Backup settings, log entries will be logged anytime you run a Manual Backup Job or whenever a Scheduled Cron Backup Job is run. The Backup Job Completion Time, Zip Backup File Name, timestamp and other information is logged. If you have chosen the option to automatically delete old zip backup files then the zip backup file name and timestamp will be logged when old zip backup files are automatically deleted. When you create a new Backup Job your Backup Job Settings are logged/saved in the DB Backup Log.', 'bulletproof-security'); echo $text; ?>
+    </td>
+  </tr> 
+  <tr>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+  </tr>
+  <tr>
+  <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<h3><strong>'.__('New Feature: DB Table Prefix Changer', 'bulletproof-security').'</strong></h3>'.__('By changing your Database Table Prefix name you will probably stop a lot of random Bot probes from doing any further reconnaissance against your website and causing unnecessary slowness from those random Bot probes. Changing the DB Table Prefix name is not really a security measure since if a hacker wants to find/get your DB Table Prefix name he/she will be able to find/get that information.', 'bulletproof-security').'<br><br>'.__('The Anti-nuisance benefits alone are worth changing your DB Table Prefix name. BPS has many layers of security protection that protect your Database against SQL Injection attacks and the DB Monitor will alert you if somehow a hacker has made it past all the outer layers of BPS Database security protection and changed or modified your Database in any way.', 'bulletproof-security'); echo $text; ?>
+    </td>
+  </tr> 
+  <tr>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<h3><strong>'.__('New Feature: UI Theme Skin', 'bulletproof-security').'</strong></h3>'.__('You can choose between 3 UI Theme Skins for BPS:  Blue Gel Classic UI Theme, Light Grey jQuery UI Theme, Dark Black WP UI Theme. Requires WordPress 3.8 or higher to switch to the Light Grey jQuery UI Theme or Dark Black WP UI Theme Skins. If you have an older version of WordPress (3.7 and below) installed then ONLY the Blue Gel Classic UI Theme Skin is available.', 'bulletproof-security'); echo $text; ?>
+    </td>
+  </tr> 
+  <tr>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<strong><h3>'.__('Root .htaccess Security Filters Change:', 'bulletproof-security').'</h3><strong>'.__('Old security filters', 'bulletproof-security').'</strong>'; echo $text; ?>
+<pre style="width:530px;">
+RewriteCond %{THE_REQUEST} \?\ HTTP/ [NC,OR]
+RewriteCond %{THE_REQUEST} \/\*\ HTTP/ [NC,OR]
+</pre>
+<?php $text = '<strong>'.__('New security filters', 'bulletproof-security').'</strong>'; echo $text; ?>
+<pre style="width:530px;">
+RewriteCond %{THE_REQUEST} \?+(%20{1,}|[^\s])+HTTP+(:/|/) [NC,OR]
+RewriteCond %{THE_REQUEST} \/+(\*|%2a)+(%20|\s){1,}+HTTP+(:/|/) [NC,OR]
+</pre>
+    </td>
+  </tr> 
+   <tr>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+  </tr> 
+  <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<h3><strong>'.__('Login Security New Option/Option Change & Misc:', 'bulletproof-security').'</strong></h3><strong>'.__('New Option/Option Change: ', 'bulletproof-security').'</strong>'.__('Disable Password Reset Frontend Only, Disable Password Reset Frontend & Backend.', 'bulletproof-security').'<br><strong>'.__('Displayed message: ', 'bulletproof-security').'</strong>'.__('BPS Login Security Disable Password Reset Frontend & Backend is turned On. Backend Password Reset has been disabled. To enable Backend Password Reset click here.', 'bulletproof-security').'<br><strong>'.__('Displayed on Pages: ', 'bulletproof-security').'</strong>'.__('profile.php, user-edit.php, user-new.php.', 'bulletproof-security').'<br>'.__('Login Security Dynamic DB table Auto-scroll added.', 'bulletproof-security'); echo $text; ?>
 </td>
-  </tr>  
-   <tr>
-    <td class="bps-table_cell_no_border">&nbsp;</td>
-    <td class="bps-table_cell_no_border">&nbsp;</td>
-  </tr> 
-  <tr>
-    <td class="bps-table_cell_no_border">&bull;</td>
-    <td class="bps-table_cell_no_border"><?php $text = '<strong>'.__('Maintenance Mode Accordion:', 'bulletproof-security').'</strong><br>'.__('Maintenance Mode Accordion created for better functionality/usability. Code correction: Maintenance Mode website name not displayed in the reminder email. Code correction: Maintenance Mode Apostrophes/single quote code character displayed with an escape backslash.', 'bulletproof-security'); echo $text; ?>
-    </td>
-  </tr>  
-   <tr>
-    <td class="bps-table_cell_no_border">&nbsp;</td>
-    <td class="bps-table_cell_no_border">&nbsp;</td>
-  </tr> 
-  <tr>
-    <td class="bps-table_cell_no_border">&bull;</td>
-    <td class="bps-table_cell_no_border"><?php $text = '<strong>'.__('New Bonus Custom Code/Dismiss Notice: WordPress XML-RPC DDoS Protection:', 'bulletproof-security').'</strong><br>'.__('Special Thanks goes to Gary Gordon for reporting the recent WordPress XML-RPC exploits/attacks. The XML-RPC DDoS PROTECTION Bonus Custom Code .htaccess code completely turns off/disables IXR-RPC Client/Server capabilities on a website by protecting the WordPress xmlrpc.php file from being publicly accessible, which prevents the IXR XML-RPC Client/Server connection. Using this Bonus Custom Code will turn off/disable remote posting capability from Weblog Clients (A Weblog Client is software you run on your local machine (desktop) that lets you post to your blog via XML-RPC), unless you add (whitelist) your IP address in the XML-RPC DDoS PROTECTION Bonus Code.', 'bulletproof-security'); echo $text; ?>
-    </td>
   <tr>
     <td class="bps-table_cell_no_border">&nbsp;</td>
     <td class="bps-table_cell_no_border">&nbsp;</td>
   </tr>
   <tr>
-    <td class="bps-table_cell_no_border">&bull;</td>
-    <td class="bps-table_cell_no_border"><?php $text = '<strong>'.__('New Dismiss Notice Added: WordPress Firewall 2 plugin check', 'bulletproof-security').'</strong><br>'.__('The WordPress Firewall 2 plugin contains a coding mistake and has not been updated in over 3 years. The wp-admin area is supposed to be whitelisted by default, but that code is not working correctly, which breaks several things in the BPS plugin. The Dismiss Notice will alert users to this existing problem.', 'bulletproof-security'); echo $text; ?>
-    </td>
-  </tr> 
-  <tr>
-    <td class="bps-table_cell_no_border">&nbsp;</td>
-    <td class="bps-table_cell_no_border">&nbsp;</td>
-  </tr>
   <tr>
     <td class="bps-table_cell_no_border">&bull;</td>
-    <td class="bps-table_cell_no_border"><?php $text = '<strong>'.__('New/Updated Help & FAQ Help Links:', 'bulletproof-security').'</strong><br>'.__('Help & FAQ tab pages have updated links, old/outdated links removed, etc.', 'bulletproof-security'); echo $text; ?>
+    <td class="bps-table_cell_no_border"><?php $text = '<h3><strong>'.__('BugFixes/Code Corrections/Misc/Other:', 'bulletproof-security').'</strong></h3>'.__('Whitelist the Debug Bar plugin debug-bar css and js scripts<br>System Info page added MySQL Extension, MySQLi Extension check.<br>Login Security email text change when user account is locked', 'bulletproof-security'); echo $text; ?>
     </td>
   </tr> 
   <tr>
@@ -2375,21 +2426,23 @@ jQuery(document).ready(function($){
 
 <div id="bpsProFeatures" style="position:relative;top:20px;left:0px;font-size:14px;">
 
-<?php echo '<strong>'; _e('1 Click Setup Wizard: ', 'bulletproof-security'); echo '</strong>'; _e('The Most Effective, Comprehensive & Affordable WordPress Security Plugin now includes a 1 click Setup Wizard. The Setup Wizard Takes 10 seconds to 1 minute to complete the BPS Pro setup.', 'bulletproof-security'); ?><br /><br />
+<?php $text = '<h4><strong>'.__('BulletProof Security Pro is The Complete Website Security Package for Hacker and Spammer Protection', 'bulletproof-security').'</strong></h4>'; echo $text; ?>
+
+<?php echo '<strong>'; _e('1 Click Setup Wizard: ', 'bulletproof-security'); echo '</strong>'; _e('All BPS Pro security features are setup by the BPS Pro Setup Wizard.', 'bulletproof-security'); ?><br /><br />
 
 <?php echo '<strong>'; _e('1 Click Upgrades: ', 'bulletproof-security'); echo '</strong>'; _e('BPS Pro Plugin upgrade notifications are displayed in your WordPress Dashboard exactly the same way as all other WordPress plugins. All BPS Pro files are automatically updated during the upgrade process and no additional setup steps are required when upgrading. When new features and options are added to new BPS Pro versions those new features and options are automatically setup during BPS Pro upgrades and do not require any additional setup or configuration by you.', 'bulletproof-security'); ?><br /><br />
 
-<?php echo '<strong>'; _e('AutoRestore / Quarantine Intrusion Detection and Prevention Systems (IDPS): ', 'bulletproof-security'); echo '</strong>'; _e('ARQ is a real-time file monitor that automatically AutoRestores and/or Quarantines files. ARQ utilizes countermeasure website security that has the capability to protect all of your website files, both WordPress and non-WordPress files, even if your Web Host Server is hacked or if your FTP password is cracked or stolen. Quarantine Options: Restore File, Delete File and View File. AutoRestore/Quarantine includes Displayed Alerts, Email Alerts and Logging. AutoRestore/Quarantine works seamlessly with WordPress Automatic Updates. The BPS Pro Security Log logs all WP files that were installed and backed up automatically during WordPress Automatic Update installations.', 'bulletproof-security'); ?><br /><br />
+<?php echo '<strong>'; _e('AutoRestore / Quarantine Intrusion Detection and Prevention System (IDPS): ', 'bulletproof-security'); echo '</strong>'; _e('ARQ is a real-time file monitor that automatically AutoRestores and/or Quarantines files. ARQ utilizes countermeasure website security that has the capability to protect all of your website files, both WordPress and non-WordPress files, even if your Web Host Server is hacked or if your FTP password is cracked or stolen. Quarantine Options: Restore File, Delete File and View File. AutoRestore/Quarantine includes Displayed Alerts, Email Alerts and Logging. AutoRestore/Quarantine works seamlessly with WordPress Automatic Updates. The BPS Pro Security Log logs all WP files that were installed and backed up automatically during WordPress Automatic Update installations.', 'bulletproof-security'); ?><br /><br />
+
+<?php echo '<strong>'; _e('New Concept in Website Security: DB Monitor Intrusion Detection System (IDS): ', 'bulletproof-security'); echo '</strong>'; _e('The DB Monitor (DBM) is an Intrusion Detection System (IDS) that alerts you via email anytime a change/modification occurs in your WordPress database or a new database table is created in your WordPress database. The DB Monitor email alert contains information about what database change/modification occurred and other relevant help info. Your DB Monitor Log also logs any changes/modifications to your WordPress database and other relevant help info. The DBM IDS is similar to the ARQ IDPS where it is the most powerful last line of website security protection defense. If all other outer and inner layers of security protection are penetrated then the most powerful DBM IDS and ARQ IDPS systems kick in and protect your website from attacks/hackers. Even if these powerful security measures are never utilized the most significant benefit is that you know for sure that neither your website files or your WordPress database have been tampered with.', 'bulletproof-security'); ?><br /><br />
+
+<?php echo '<strong>'; _e('DB Diff Tool: ', 'bulletproof-security'); echo '</strong>'; _e('The DB Diff Tool compares old database tables from DB backups to current database tables and displays any differences in the data/content of those 2 database tables. The DB Diff Tool allows you to check your WordPress Database if you receive a DB Monitor email alert and do not recognize the database table name change/modification.', 'bulletproof-security'); ?><br /><br />
 
 <?php echo '<strong>'; _e('Plugin Firewall: ', 'bulletproof-security'); echo '</strong>'; _e('The Plugin Firewall / Plugins BulletProof Mode prevents/blocks/forbids Remote Access to the plugins folder from external sources (remote script execution, hacker recon, remote scanning, remote accessibility, etc.) and only allows internal access to the plugins folder based on this criteria: Domain name, Server IP Address and Public IP / Your Computer IP Address.', 'bulletproof-security'); ?><br /><br />
 
 <?php echo '<strong>'; _e('Uploads Folder Anti-Exploit Guard: ', 'bulletproof-security'); echo '</strong>'; _e('The Uploads Folder Anti-Exploit Guard / Uploads BulletProof Mode allows ONLY safe image files with valid image file extensions such as jpg, gif, png, etc. to be accessed, opened or viewed from the uploads folder. The Uploads Anti-Exploit Guard prevents/blocks/forbids files by file extension names in the uploads folder from being accessed, opened, viewed, processed or executed.', 'bulletproof-security'); ?><br /><br />
 
-<?php echo '<strong>'; _e('Login Security & Monitoring: ', 'bulletproof-security'); echo '</strong>'; _e('Login Security & Monitoring allows you to choose whether or not to log all user account logins or only log user account lockouts. You can choose to have S-Monitor alerts displayed in your WP Dashboard, BPS Pages only or turn them off based on the Login Security options that you choose. S-Monitor Login Security email alerting options allow you to choose 5 different email alerting options: Choose to have email alerts sent when a User Account is locked out, An Administrator Logs in, An Administrator Logs in and when a User Account is locked out, Any User logs in and when a User Account is locked out or Do Not Send Email Alerts. Disable Password Reset option. Generic error messages displayed option.', 'bulletproof-security'); ?><br /><br />
-
 <?php echo '<strong>'; _e('JTC Anti-Spam / Anti-Hacker: ', 'bulletproof-security'); echo '</strong>'; _e('Hacker Protection ~ Spammer Protection ~ DoS/DDoS Attack Protection ~ Brute Force Login Attack Protection ~ SpamBot Trap. JTC Anti-Spam provides website security protection as well as website Anti-Spam protection. JTC Anti-Spam is user friendly Anti-Spam / Anti-Hacker Protection. You can customize and personalize your JTC ToolTip message and CAPTCHA to match your website concept. JTC Anti-Spam / Anti-Hacker protects these website pages/Forms: Login page/Form, Registration page/Form, Lost Password page/Form, Comment page/Form, BuddyPress Register page/Form and the BuddyPress Sidebar Login Form with a user friendly & customizable jQuery ToolTip CAPTCHA.', 'bulletproof-security'); ?><br /><br />
-
-<?php  echo '<strong>'; _e('Security / HTTP Error Logging/Displayed Alerts/Email Alerts: ', 'bulletproof-security'); echo '</strong>'; _e('BPS Pro Logs HTTP Errors and hacking attempts against your website. IP address, Host name, Request Method, Referering link, the file name or requested resource, the user agent and the query string are logged.', 'bulletproof-security'); ?><br /><br />
 
 <?php  echo '<strong>'; _e('S-Monitor Displayed Alerts, Email Alerting & Log File Options: ', 'bulletproof-security'); echo '</strong>'; _e('S-Monitor displayed alerting options allow you to choose how you want real-time alerts displayed to you: WP Dashboard, BPS Pro pages only or turned off. Choose whether or not to have email alerts sent when Log files log events. Choose to either automatically Zip and Email Log files to you when they reach the maximum size limit option that you choose or just automatically delete log files when they reach the the maximum size limit option that you choose.', 'bulletproof-security'); ?><br /><br />
 
@@ -2397,9 +2450,9 @@ jQuery(document).ready(function($){
 
 <?php echo '<strong>'; _e('Custom php.ini / ini_set Options: ', 'bulletproof-security'); echo '</strong>'; _e('Quickly create a custom php.ini file for your website or use ini_set Options to increase security and performance with just a few clicks. Additional P-Security Features: All-purpose File Manager, All-purpose File Editor, Protected PHP Error Log, PHP Error Alerts, Secure phpinfo Viewer...', 'bulletproof-security'); ?><br /><br />
 
-<?php echo '<strong>'; _e('Advanced Real-Time Alerting: ', 'bulletproof-security'); echo '</strong>';  _e('BPS Pro checks and displays error, warning, notifications and alert messages in real time. You can choose how you want these messages displayed to you with S-Monitor Monitoring &amp; Alerting Options - Display in your WP Dashboard, BPS Pro pages only, Turned off, Email Alerts, Logging...', 'bulletproof-security'); ?><br /><br />
+<?php echo '<strong>'; _e('Advanced Real-Time Alerting & Heads Up Dashboard Status Display: ', 'bulletproof-security'); echo '</strong>';  _e('BPS Pro checks and displays error, warning, notifications and alert messages in real time. You can choose how you want these messages displayed to you with S-Monitor Monitoring &amp; Alerting Options - Display in your WP Dashboard, BPS Pro pages only, Turned off, Email Alerts, Logging...', 'bulletproof-security'); echo '<br><br><img src="'.plugins_url('/bulletproof-security/admin/images/bps-pro-dashboard-status-display.jpg').'" style="-moz-box-shadow:4px 4px 4px #888888;-webkit-box-shadow:4px 4px 4px #888888;box-shadow:4px 4px 4px #888888;" />'; ?><br /><br />
 
-<?php echo '<strong>'; _e('Pro-Tools: ', 'bulletproof-security'); echo '</strong>'; _e('Pro-Tools is a set of versatile website tools: Online Base64 Decoder, Offline Base64 Decode/Encode, Mcrypt ~ Decrypt / Encrypt, Crypt Encryption, Scheduled Crons, String Finder, String Replacer / Remover, DB String Finder, DNS Finder, Ping Website, cURL Multi Page Scanner, Website Headers, WP Automatic Update...', 'bulletproof-security'); ?><br /><br />
+<?php echo '<strong>'; _e('Pro-Tools: ', 'bulletproof-security'); echo '</strong>'; _e('Pro-Tools is a set of versatile 16 website tools (16 mini-plugins): Online Base64 Decoder, Offline Base64 Decode/Encode, Mcrypt Decrypt/Encrypt, Crypt Encryption, Scheduled Crons, String Finder, String Replacer/Remover, DB String Finder, DB Table Cleaner/Remover, DNS Finder, Ping Website, cURL Scan, Website Headers, WP Automatic Update, Plugin Update Check, XML-RPC Exploit Checker', 'bulletproof-security'); ?><br /><br />
 </div>	
 
     </td>
@@ -2407,6 +2460,7 @@ jQuery(document).ready(function($){
 
 <div id="bpsProVersions">
 <a href="http://forum.ait-pro.com/forums/topic/bulletproof-security-pro-version-release-dates/" target="_blank" title="Link Opens in New Browser Window" style="font-size:22px;"><?php _e('BPS Pro Version Releases', 'bulletproof-security'); ?></a><br /><br />
+     <a href="http://www.ait-pro.com/aitpro-blog/5009/bulletproof-security-pro/whats-new-in-bulletproof-security-pro-9-0/" target="_blank" title="Link Opens in New Browser Window"><?php _e('Whats New in BPS Pro 9.0', 'bulletproof-security'); ?></a><br /><br />  
      <a href="http://www.ait-pro.com/aitpro-blog/4994/bulletproof-security-pro/whats-new-in-bulletproof-security-pro-8-3/" target="_blank" title="Link Opens in New Browser Window"><?php _e('Whats New in BPS Pro 8.3', 'bulletproof-security'); ?></a><br /><br />  
       <a href="http://www.ait-pro.com/aitpro-blog/4953/bulletproof-security-pro/whats-new-in-bulletproof-security-pro-8-2/" target="_blank" title="Link Opens in New Browser Window"><?php _e('Whats New in BPS Pro 8.2', 'bulletproof-security'); ?></a><br /><br />  
       <a href="http://www.ait-pro.com/aitpro-blog/4940/bulletproof-security-pro/whats-new-in-bulletproof-security-pro-8-1/" target="_blank" title="Link Opens in New Browser Window"><?php _e('Whats New in BPS Pro 8.1', 'bulletproof-security'); ?></a><br /><br />  
@@ -2489,7 +2543,7 @@ jQuery(document).ready(function($){
     <td class="bps-table_cell_help">
     
     <div id="SucuriLogo" style="position:relative; top:0px; left:0px;"><img src="<?php echo plugins_url('/bulletproof-security/admin/images/themes-plugins-logo.png'); ?>" style="float:left; padding:0px 10px 30px 0px; margin:0px;" />
-    <h3 style="font-size:14px;"><?php echo '<em>'.'"'.'...'; _e('We Test, Review & Rate Premium, Free and Paid WordPress Themes, Templates & Plugins Daily. 481 themes and 186 plugins have been tested to date....', 'bulletproof-security'); echo '"'.'</em><br> -- '; _e('Reza Shadpay, founder of themesplugins.com', 'bulletproof-security'); ?>
+    <h3 style="font-size:14px;"><?php echo '<em>'.'"'.'...'; _e('We Test, Review & Rate Premium, Free and Paid WordPress Themes, Templates & Plugins Daily. 494 themes and 193 plugins have been tested to date....', 'bulletproof-security'); echo '"'.'</em><br> -- '; _e('Reza Shadpay, founder of themesplugins.com', 'bulletproof-security'); ?>
     <br /><br /><a href="http://www.themesplugins.com/" target="_blank" title="Link opens in new browser window">ThemesPlugins.com</a>
     </h3>
 	

@@ -1,6 +1,6 @@
-#   BULLETPROOF .50.1 WP-ADMIN SECURE .HTACCESS     
+#   BULLETPROOF .50.2 WP-ADMIN SECURE .HTACCESS     
 
-# If you edit the BULLETPROOF .50.1 WP-ADMIN SECURE .HTACCESS text above 
+# If you edit the BULLETPROOF .50.2 WP-ADMIN SECURE .HTACCESS text above 
 # you will see error messages on the BPS Security Status page
 # BPS is reading the version number in the htaccess file to validate checks
 # BPS is also checking that the string BPSQSE exists in this file - do not delete it
@@ -28,7 +28,7 @@
 
 # BEGIN BPS WPADMIN DENY ACCESS TO FILES
 <FilesMatch "^(install\.php|example\.php|example2\.php|example3\.php)">
-Order allow,deny
+Order Allow,Deny
 Deny from all
 #Allow from 88.77.66.55
 </FilesMatch>
@@ -82,15 +82,15 @@ Deny from all
 #AuthGroupFile /dev/null
 #AuthName "Password Protected Area"
 #AuthType Basic
-#order deny,allow
-#deny from all
+#Order Deny,Allow
+#Deny from all
 # whitelist home IP address
-#allow from 64.233.169.99
+#Allow from 64.233.169.99
 # whitelist work IP address
-#allow from 69.147.114.210
-#allow from 199.239.136.200
+#Allow from 69.147.114.210
+#Allow from 199.239.136.200
 # IP while in Kentucky; delete when back
-#allow from 128.163.2.27
+#Allow from 128.163.2.27
 
 # END OPTIONAL WP-ADMIN ADDITIONAL SECURITY MEASURES
 
@@ -113,8 +113,8 @@ RewriteRule . - [S=1]
 # WORDPRESS WILL BREAK IF ALL THE BPSQSE FILTERS ARE DELETED
 RewriteCond %{HTTP_USER_AGENT} (%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (libwww-perl|wget|python|nikto|curl|scan|java|winhttp|HTTrack|clshttp|archiver|loader|email|harvest|extract|grab|miner) [NC,OR]
-RewriteCond %{THE_REQUEST} \?\ HTTP/ [NC,OR]
-RewriteCond %{THE_REQUEST} \/\*\ HTTP/ [NC,OR]
+RewriteCond %{THE_REQUEST} \?+(%20{1,}|[^\s])+HTTP+(:/|/) [NC,OR]
+RewriteCond %{THE_REQUEST} \/+(\*|%2a)+(%20|\s){1,}+HTTP+(:/|/) [NC,OR]
 RewriteCond %{THE_REQUEST} etc/passwd [NC,OR]
 RewriteCond %{THE_REQUEST} cgi-bin [NC,OR]
 RewriteCond %{THE_REQUEST} (%0A|%0D) [NC,OR]

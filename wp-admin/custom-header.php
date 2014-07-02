@@ -432,18 +432,18 @@ class Custom_Image_Header {
 			<?php
 			}
 			?>
-			/*onInit: function () {
+			onInit: function () {
 				jQuery('#width').val(xinit);
 				jQuery('#height').val(yinit);
-			},
+			}/*,
 			onSelectChange: function(img, c) {
 				jQuery('#x1').val(c.x1);
 				jQuery('#y1').val(c.y1);
 				jQuery('#width').val(c.width);
 				jQuery('#height').val(c.height);
-			}*/
+			}
 		});
-	});
+	});*/
 /* ]]> */
 </script>
 <?php

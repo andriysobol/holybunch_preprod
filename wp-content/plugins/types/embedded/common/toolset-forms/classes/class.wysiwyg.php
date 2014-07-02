@@ -6,8 +6,8 @@ require_once 'class.textarea.php';
  *
  * @author Srdjan
  *
- * $HeadURL: https://www.onthegosystems.com/misc_svn/common/tags/Views-1.6-Types-1.5.6/toolset-forms/classes/class.wysiwyg.php $
- * $LastChangedDate: 2014-04-14 14:17:33 +0000 (Mon, 14 Apr 2014) $
+ * $HeadURL: https://www.onthegosystems.com/misc_svn/common/tags/Views-1.6.1-Types-1.5.7/toolset-forms/classes/class.wysiwyg.php $
+ * $LastChangedDate: 2014-04-14 16:17:33 +0200 (Mon, 14 Apr 2014) $
  * $LastChangedRevision: 21441 $
  * $LastChangedBy: marcin $
  *

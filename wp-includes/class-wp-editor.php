@@ -1072,9 +1072,9 @@ final class _WP_Editors {
 			?>
 			mceInit: <?php echo $mceInit; ?>,
 			qtInit: <?php echo $qtInit; ?>,
-			ref: <?php echo self::_parse_init( $ref ); ?>//,
+			ref: <?php echo self::_parse_init( $ref ); ?>,
 			//load_ext: function(url,lang){var sl=tinymce.ScriptLoader;sl.markDone(url+'/langs/'+lang+'.js');sl.markDone(url+'/langs/'+lang+'_dlg.js');}
-		};
+		//};
 		</script>
 		<?php
 

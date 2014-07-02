@@ -173,7 +173,7 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     $content .= $termDiscription;
     $content .= '[/span12]';
     $content .= '[/row]';
-   
+
     //add links to video, audio and predigts
     $propoved_link = get_term_link($topic, $taxonomy = $taxonomy_name) . "?post_type=oxy_content";
     $video_link = get_term_link($topic, $taxonomy = $taxonomy_name) . "?post_type=oxy_audio";
@@ -181,13 +181,13 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     $content .= '[row]';
     $content .= '[span12]';
     $content .= '[div style="text-align: center; margin-top: 0px; color: orange; margin-bottom: 30px;"] ';
-    $content .= '<a href='.$propoved_link.'><span style="margin-right: 50px;">[[ПРОПОВЕДИ]]</span></a>';
-    $content .= '<a href='.$video_link.'><span style="margin-right: 50px;">[[ВИДЕО]]</span>';
-    $content .= '<a href='.$audio_link.'><span style="margin-right: 50px;">[[ПСАЛМЫ]]</span>  ';
+    $content .= '<a href=' . $propoved_link . '><span style="margin-right: 50px;">[[ПРОПОВЕДИ]]</span></a>';
+    $content .= '<a href=' . $video_link . '><span style="margin-right: 50px;">[[ВИДЕО]]</span>';
+    $content .= '<a href=' . $audio_link . '><span style="margin-right: 50px;">[[ПСАЛМЫ]]</span>  ';
     $content .= '[/div]';
     $content .= '[/span12]';
     $content .= '[/row]';
-   
+
     //add related video    
     $content .= '[row]';
     $content .= '[span4]';
@@ -200,7 +200,7 @@ function oxy_content_taxonomy_topic($atts, $content = '') {
     $content .= '[/span4]';
     $content .= '[span4]';
     $content .= '<div class="text-right">';
-    $content .= '<a href="'. get_term_link($topic, $taxonomy = $taxonomy_name) .'" class="btn btn-primary btn-large pull-center">';
+    $content .= '<a href="' . get_term_link($topic, $taxonomy = $taxonomy_name) . '" class="btn btn-primary btn-large pull-center">';
     $content .= '<i class="icon-arrow-right">Читать Далее</i>';
     //$content .= _e('Читать Далее', THEME_FRONT_TD);
     //$content .= '[button icon="icon-book" type="warning" size="btn-large" label="Далее к теме" link="' . get_term_link($topic, $taxonomy = $taxonomy_name) . '" place="right"]';
@@ -580,9 +580,8 @@ add_shortcode('stickit', 'oxy_shortcode_stickit');
 function oxy_shortcode_topic_description($attrs, $content) {
     extract(shortcode_atts(array(
         'style' => '',
-        'class' => ''), 
-            $attrs));
-    return "<p class='" . $class . "' style='" . $style . "'>" . $content ."</p>";
+        'class' => ''), $attrs));
+    return "<p class='" . $class . "' style='" . $style . "'>" . $content . "</p>";
 }
 
 function oxy_shortcode_blockquote_drops($atts, $content) {
@@ -596,7 +595,7 @@ function oxy_shortcode_blockquote_drops($atts, $content) {
     $class = 'pullquote';
     if ($align == "left") {
         $class = 'pullquote_left';
-    }elseif ($align == "right") {
+    } elseif ($align == "right") {
         $class = 'pullquote_right';
     }
     return '<blockquote_drops class="' . $class . '">' . $content . '<small>' . $who . '</small></blockquote_drops>';
@@ -818,23 +817,225 @@ function oxy_shortcode_js_player($atts) {
 }
 
 add_shortcode('js_player', 'oxy_shortcode_js_player');
-function audio_temp(){
+
+function audio_temp() {
     $content .= '[row]';
     $content .= '[span12]';
     $content .= '[div style="text-align: center; margin-top: 0px; color: orange; margin-bottom: 30px;"] ';
     $link_novyj_zavet = "http://bible-core.com/wp-content/uploads/audio/NovyjZavet.rar";
     $link_vetxij_zavet = "http://bible-core.com/wp-content/uploads/audio/VethijZavet.rar";
-    $content .= '<a href='.$link_novyj_zavet.'><span style="margin-right: 50px;">[[Новый Завет (1.3 ГБ)]]</span></a>';
-    $content .= '<a href='.$link_vetxij_zavet.'><span style="margin-right: 50px;">[[Ветхий завет (7 ГБ)]]</span>';
+    $content .= '<a href=' . $link_novyj_zavet . '><span style="margin-right: 50px;">[[Новый Завет (1.3 ГБ)]]</span></a>';
+    $content .= '<a href=' . $link_vetxij_zavet . '><span style="margin-right: 50px;">[[Ветхий завет (7 ГБ)]]</span>';
     $content .= '[/div]';
     $content .= '[/span12]';
     $content .= '[/row]';
-    
+
     $atts = array('title' => 'Аудио Библия от Бондаренко');
     $output = oxy_shortcode_section($atts, $content);
-    return $output;   
+    return $output;
 }
+
 add_shortcode('audio_bibel', 'audio_temp');
 
+function get_latest_taxonomy_topics($atts) {
+    $args = array(
+        'hide_empty' => 1,
+        'taxonomy' => 'teaching_topics',
+        'pad_counts' => 1,
+        'hierarchical' => 0,	
+    );
+    $categories = get_categories($args);
+    $count = count($categories);
+    $columns = $count > 4 ? 4 : $count;
+    $span = $columns > 0 ? 'span' . floor(12 / $columns) : 'span3';
+
+    $output = '';
+    $output .='<ul class="unstyled row-fluid">';
+
+    $item_num = 1;
+    $items_per_row = $columns;
+    //loop over all related posts
+    foreach ($categories as $category) {
+        $slug = $category->slug;
+        $taxonomy_link = $link = home_url() . "/blog/teaching_topics/" . $slug;
+
+        if ($item_num > $items_per_row) {
+            $output.= '</ul><ul class="unstyled row-fluid">';
+            $item_num = 1;
+        }
+
+        $output .='<li class="' . $span . '">';
+        $output .='<div class="round-box box-medium box-colored"><a href="' . $taxonomy_link . '" class="box-inner">';
+        //get post icon
+        $taxonomy_image_link = get_taxonomy_image('teaching_topics', $category->slug);
+        if ($taxonomy_image_link !== null) {
+            $output .= '<span class="box-inner"><img width="300" height="300" src="'.$taxonomy_image_link.'" class="img-circle wp-post-image" ></span>' ;//'<img class="img-circle" src="' . $taxonomy_image_link . '">';
+        } else {
+            $output .= '<img class="img-circle" src="' . IMAGES_URI . 'box-empty.gif">';
+        }
+
+        $output .='</div>';
+        //in order to get custom field 'summary' from post we have 
+        //to call advanced custom fields plugin api and provide id of post
+        $summary = $category->description . " ";
+
+        //$output.='</a>';
+        $output.='<a href="' . $taxonomy_link . '"> <h3 class="text-center">' . $category->name . '</h3></a>';
+
+        $content = oxy_limit_excerpt($summary, 40);
+        $more_text = '<Strong>Читать</Strong> далее';
+        $content .= '<a href="' . $taxonomy_link . '" class="more-link">' . $more_text . '</a>';
+        $output.='<p>' . apply_filters('the_content', $content) . '</p></li>';
+        $item_num++;
+    }
+    $output .= '</ul>';
+    extract(shortcode_atts(array(
+        'style' => '',
+        'title' => ''
+                    ), $atts));
+    return oxy_shortcode_section($atts, $output);
+}
+
+add_shortcode('latest_taxonomy_topics', 'get_latest_taxonomy_topics');
+
+
+function create_hero_section_with_video($image = null, $title = null, $summary = null, $random_posts = true) {
+    $title = $title === null ? oxy_get_option('blog_title') : $title;
+    //take random video post and show it
+    if ($random_posts) {
+        $args = array(
+            'post_type' => 'oxy_video',
+            'showposts' => 1,   
+            'orderby' => 'rand'
+        );
+        $my_query = new wp_query($args);
+        $random_video = $my_query->post;
+        if (!empty($random_video)) {
+            $title = $random_video->post_title;
+            $summary = hb_limit_excerpt($random_video->post_content, 50);
+            $shortcode = get_field('video_shortcode', $random_video->ID);
+            $image = get_post_banner_image($random_video);                
+            if(empty($image))
+                $image = "http://bible-core.com/wp-content/themes/smartbox-theme-1.01/images/bundled/landscape-4-1250x300.jpg";
+        }
+    }
+     $taxonomy_terms = wp_get_post_terms($random_video->ID, "teaching_topics", array("fields" => "all"));
+     if ( count($taxonomy_terms) > 0 )
+	$taxonomy_link = home_url() . "/blog/teaching_topics/" . $taxonomy_terms[0]->slug;
+     else 
+        $taxonomy_link = home_url() . "/blog/teaching_topics/";
+     $more_text = '<Strong>Перейти</Strong> к теме';
+     $read_more = '<a href="' . $taxonomy_link . '" class="more-link">' . $more_text . '</a>';
+     $output = '<section class="section section-padded section-dark" data-background="url('. $image . ') no-repeat top" style="background: url('. $image . ') 50% 0% no-repeat;">
+                <div class="container-fluid">
+                    <div class="super-hero-unit">
+                        <h1 class="animated fadeinup delayed text-center">'.
+                            $title . '</h1>
+                        <div class="row-fluid margin-top">
+                            <div class="span4">
+                                <span class="lead margin-top">
+                                    <p>'. $summary . '</p>
+                                </span>
+                            </div>
+                            <div class="span8" align="center">'.
+                                apply_filters('the_content', $shortcode) . '</div>'.
+			     $read_more .
+                        '</div>
+                    </div>
+                </div>
+            </section>';
+            return $output;
+}
+add_shortcode('hero_section_with_video', 'create_hero_section_with_video');
+
+
+function hb_get_recent_posts($atts) {
+        // setup options
+	extract(shortcode_atts(array(
+            'title' => 'Последние',
+            'cat' => null,
+            'count' => 4,
+            'style' => '',
+            'columns' => 4
+                    ), $atts));
+
+        $args = array(
+            'post_type' => array( 'oxy_content', 'oxy_video', 'oxy_audio' ),
+            'showposts' => $count, // Number of related posts that will be shown.  
+	    'orderby' => 'date',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'teaching_topics',
+                        'field' => 'slug',
+                        'terms' => 'god'
+                    )
+                )
+            );
+
+        $my_query = new wp_query($args);
+	$span = $columns == 3 ? 'span4' : 'span3';    		
+        $output = '';
+    if( $my_query->have_posts() ) :
+        $output .='<ul class="unstyled row-fluid">';
+        global $post;
+        $item_num = 1;
+        $items_per_row = $columns;
+         while ($my_query->have_posts()) {
+            $my_query->the_post();
+            setup_postdata( $post );
+			
+			$summary = '';
+			switch ($post->post_type) {
+                    case 'oxy_video':
+                        $summary = get_field('video_summary', $post->ID);
+                        break;
+                    case 'oxy_audio':
+                        $summary = get_field('audio_summary', $post->ID);
+                        break;
+                    case 'oxy_content':
+                        $summary = get_field('summary', $post->ID);
+                        break;
+                    default :
+                        break;
+                }
+			
+            if('link' == get_post_format()){
+                $post_link = oxy_get_external_link();
+            }
+            else{
+                $post_link = get_permalink();
+            }
+
+            if($item_num > $items_per_row){
+                $output.=  '</ul><ul class="unstyled row-fluid">';
+                $item_num = 1;
+            }
+
+            $output .='<li class="'.$span.'"><div class="row-fluid"><div class="span4">';
+            $output .='<div class="round-box box-small box-colored"><a href="' . $post_link . '" class="box-inner">';
+            if( has_post_thumbnail( $post->ID ) ) {
+                $output .= get_the_post_thumbnail( $post->ID, 'thumbnail', array('title'=>$post->post_title,'alt'=>$post->post_title, 'class'=>'img-circle'));
+                $output .= oxy_post_icon($post->ID ,false);
+            }
+            else{
+                $output .= '<img class="img-circle" src="'.IMAGES_URI.'box-empty.gif">';
+                $output .=  oxy_post_icon($post->ID ,false);
+            }
+            $output.='</a></div><h5 class="text-center light">'.get_the_date().'</h5>';
+            $output.='</div><div class="span8"><h3><a href="' . $post_link . '">'.get_the_title().'</a>';
+			if(empty($summary))
+				$output.='</h3><p>'.oxy_limit_excerpt(get_the_excerpt(),15 ).'</p></div></div></li>';
+			else	
+				$output.='</h3><p>'.oxy_limit_excerpt($summary, 15 ).'</p></div></div></li>';
+            $item_num++;
+        }
+        $output .= '</ul>';
+    endif;
+    // reset post data
+    wp_reset_postdata();
+    return oxy_shortcode_section( $atts, $output );
+}
+
+add_shortcode('hb_recent_posts', 'hb_get_recent_posts');
 require_once get_template_directory() . '/inc/options/shortcodes/shortcodes.php';
 require_once CUSTOM_INCLUDES_DIR . 'hb_utility.php';

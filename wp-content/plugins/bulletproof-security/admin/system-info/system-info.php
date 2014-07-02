@@ -307,30 +307,44 @@ $bpsTarget = '';
 	
 	} else {
 	
-	echo __('MySQL Database Version', 'bulletproof-security').': ';
-	$sqlversion = $wpdb->get_var("SELECT VERSION() AS version");
-	echo '<strong>'.$sqlversion.'</strong><br>';
 	function bps_mysqli_get_client_info() {
 		if ( function_exists('mysqli_get_client_info') ) { 
 			return mysqli_get_client_info(); 
 		}
 	}
-	echo __('MySQL Client Version', 'bulletproof-security').': <strong>'.bps_mysqli_get_client_info().'</strong><br>';	
-	echo __('Database Host', 'bulletproof-security').': <strong>'.DB_HOST.'</strong><br>';
-	echo __('Database Name', 'bulletproof-security').': <strong>'.DB_NAME.'</strong><br>';
-	echo __('Database User', 'bulletproof-security').': <strong>'.DB_USER.'</strong><br>';
-	echo __('SQL Mode', 'bulletproof-security').': ';
 	
-	$mysqlinfo = $wpdb->get_results("SHOW VARIABLES LIKE 'sql_mode'");
-	if (is_array($mysqlinfo)) { 
+	$sql_version = 'version';
+	$sql_mode_var = 'sql_mode';
+	$sqlversion = $wpdb->get_var( $wpdb->prepare( "SELECT VERSION() AS %s", $sql_version ) );
+	$mysqlinfo = $wpdb->get_results( $wpdb->prepare( "SHOW VARIABLES LIKE %s", $sql_mode_var ) );
+	
+	if ( is_array( $mysqlinfo ) ) { 
 		$sql_mode = $mysqlinfo[0]->Value;
-    if (empty($sql_mode)) { 
-		$sql_mode = '<strong>'.__('Not Set', 'bulletproof-security').'</strong>';
+	if ( empty( $sql_mode ) ) { 
+		$sql_mode = __('Not Set', 'bulletproof-security');
 	} else {
-		$sql_mode = '<strong>'.__('Off', 'bulletproof-security').'</strong>';
+		$sql_mode = __('Off', 'bulletproof-security');
 	}}
-	echo $sql_mode;
-	echo '<br><br>';
+	
+	$text = '<strong>'.__('MySQL Database Server Version: ', 'bulletproof-security').'</strong>'.$sqlversion.'<br><strong>'.__('MySQL Client Version: ', 'bulletproof-security').'</strong>'.bps_mysqli_get_client_info().'<br><strong>'.__('MySQL Database Server: ', 'bulletproof-security').'</strong>'.DB_HOST.'<br><strong>'.__('Your MySQL Database: ', 'bulletproof-security').'</strong>'.DB_NAME.'<br><strong>'.__('SQL Mode: ', 'bulletproof-security').'</strong>'.$sql_mode.'<br>';
+	echo $text;
+	
+	if ( function_exists('mysql_connect') ) {
+		$text = '<strong>'.__('MySQL Extension: ', 'bulletproof-security').'</strong>'.__('Installed/Enabled', 'bulletproof-security').'<br>';
+		echo $text;
+	} else {
+		$text = '<strong>'.__('MySQL Extension: ', 'bulletproof-security').'</strong>'.__('NOT Installed/Enabled', 'bulletproof-security').'<br>';		
+		echo $text;
+	}
+	if ( function_exists('mysqli_connect') ) {
+		$text = '<strong>'.__('MySQLi Extension: ', 'bulletproof-security').'</strong>'.__('Installed/Enabled', 'bulletproof-security').'<br>';
+		echo $text;
+	} else {
+		$text = '<strong>'.__('MySQLi Extension: ', 'bulletproof-security').'</strong>'.__('NOT Installed/Enabled', 'bulletproof-security').'<br>';		
+		echo $text;
+	}
+
+	echo '<br>';
 	}
 	
 	echo __('WordPress Installation Folder', 'bulletproof-security').': <strong>';
@@ -580,7 +594,7 @@ function bps_sysinfo_get_headers_head() {
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		@curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 15);
 		curl_setopt($ch, CURLOPT_VERBOSE, true);
 		curl_setopt($ch, CURLOPT_FILETIME, true);

@@ -2,8 +2,8 @@
 /**
  * Types fields specific
  *
- * $HeadURL: https://www.onthegosystems.com/misc_svn/common/tags/Views-1.6-Types-1.5.6/toolset-forms/classes/class.types.php $
- * $LastChangedDate: 2014-04-16 08:42:22 +0000 (Wed, 16 Apr 2014) $
+ * $HeadURL: https://www.onthegosystems.com/misc_svn/common/tags/Views-1.6.1-Types-1.5.7/toolset-forms/classes/class.types.php $
+ * $LastChangedDate: 2014-04-16 10:42:22 +0200 (Wed, 16 Apr 2014) $
  * $LastChangedRevision: 21561 $
  * $LastChangedBy: marcin $
  *
