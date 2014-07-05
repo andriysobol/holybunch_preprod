@@ -304,6 +304,7 @@ $bps_plugin_dir = str_replace( ABSPATH, '', WP_PLUGIN_DIR);
 	$pattern9 = '/RewriteCond\s%{QUERY_STRING}\s\(sp_executesql\)\s\[NC\]\s*(.*)\s*(.*)END\sBPSQSE(.*)\s*RewriteCond\s%{REQUEST_FILENAME}\s!-f\s*RewriteCond\s%{REQUEST_FILENAME}\s!-d\s*RewriteRule\s\.(.*)\/index\.php\s\[L\]\s*(.*)LOOP\sEND/';
 	$pattern10 = '/#\sBEGIN\sBPSQSE\sBPS\sQUERY\sSTRING\sEXPLOITS\s*#\sThe\slibwww-perl\sUser\sAgent\sis\sforbidden/';
 	$pattern10a = '/RewriteCond\s%\{THE_REQUEST\}\s(.*)\?(.*)\sHTTP\/\s\[NC,OR\]\s*RewriteCond\s%\{THE_REQUEST\}\s(.*)\*(.*)\sHTTP\/\s\[NC,OR\]/';
+	$pattern10b = '/RewriteCond\s%\{THE_REQUEST\}\s.*\?\+\(%20\{1,\}.*\s*RewriteCond\s%\{THE_REQUEST\}\s.*\+\(.*\*\|%2a.*\s\[NC,OR\]/';	
 	$pattern11 = '/RewriteCond\s%\{QUERY_STRING\}\s\[a-zA-Z0-9_\]\=http:\/\/\s\[OR\]/';
 	$pattern12 = '/RewriteCond\s%\{QUERY_STRING\}\s\[a-zA-Z0-9_\]\=\(\\\.\\\.\/\/\?\)\+\s\[OR\]/';
 	$pattern13 = '/RewriteCond\s%\{QUERY_STRING\}\s\(\\\.\\\.\/\|\\\.\\\.\)\s\[OR\]/';
@@ -384,7 +385,11 @@ switch ($bps_version) {
 		}
 
 		if ( preg_match($pattern10a, $stringReplace, $matches) ) {
-			$stringReplace = preg_replace( $pattern10a, "RewriteCond %{THE_REQUEST} \?+(%20{1,}|[^\s])+HTTP+(:/|/) [NC,OR]\nRewriteCond %{THE_REQUEST} \/+(\*|%2a)+(%20|\s){1,}+HTTP+(:/|/) [NC,OR]", $stringReplace);
+			$stringReplace = preg_replace( $pattern10a, "RewriteCond %{THE_REQUEST} (\?|\*|%2a)+(%20+|\s+|%20+\s+|\s+%20+|\s+%20+\s+)HTTP(:/|/) [NC,OR]", $stringReplace);
+		}
+
+		if ( preg_match($pattern10b, $stringReplace, $matches) ) {
+			$stringReplace = preg_replace( $pattern10b, "RewriteCond %{THE_REQUEST} (\?|\*|%2a)+(%20+|\s+|%20+\s+|\s+%20+|\s+%20+\s+)HTTP(:/|/) [NC,OR]", $stringReplace);
 		}
 
 		if ( preg_match($pattern11, $stringReplace, $matches) ) {
@@ -471,6 +476,7 @@ $filename = ABSPATH . 'wp-admin/.htaccess';
 $permsHtaccess = @substr(sprintf('%o', fileperms($filename)), -4);	
 $check_string = @file_get_contents($filename);
 $pattern10a = '/RewriteCond\s%\{THE_REQUEST\}\s(.*)\?(.*)\sHTTP\/\s\[NC,OR\]\s*RewriteCond\s%\{THE_REQUEST\}\s(.*)\*(.*)\sHTTP\/\s\[NC,OR\]/';
+$pattern10b = '/RewriteCond\s%\{THE_REQUEST\}\s.*\?\+\(%20\{1,\}.*\s*RewriteCond\s%\{THE_REQUEST\}\s.*\+\(.*\*\|%2a.*\s\[NC,OR\]/';	
 $pattern1 = '/(\[|\]|\(|\)|<|>)/s';
 $BPSVpattern = '/BULLETPROOF\s\.[\d](.*)WP-ADMIN/';
 $BPSVreplace = "BULLETPROOF $bps_version WP-ADMIN";
@@ -502,7 +508,11 @@ switch ($bps_version) {
 			$stringReplace = preg_replace($BPSVpattern, $BPSVreplace, $stringReplace);	
 
 		if ( preg_match($pattern10a, $stringReplace, $matches) ) {
-			$stringReplace = preg_replace( $pattern10a, "RewriteCond %{THE_REQUEST} \?+(%20{1,}|[^\s])+HTTP+(:/|/) [NC,OR]\nRewriteCond %{THE_REQUEST} \/+(\*|%2a)+(%20|\s){1,}+HTTP+(:/|/) [NC,OR]", $stringReplace);
+			$stringReplace = preg_replace( $pattern10a, "RewriteCond %{THE_REQUEST} (\?|\*|%2a)+(%20+|\s+|%20+\s+|\s+%20+|\s+%20+\s+)HTTP(:/|/) [NC,OR]", $stringReplace);
+		}
+
+		if ( preg_match($pattern10b, $stringReplace, $matches) ) {
+			$stringReplace = preg_replace( $pattern10b, "RewriteCond %{THE_REQUEST} (\?|\*|%2a)+(%20+|\s+|%20+\s+|\s+%20+|\s+%20+\s+)HTTP(:/|/) [NC,OR]", $stringReplace);
 		}
 
 		if ( preg_match($pattern1, $stringReplace, $matches) ) {
@@ -1764,14 +1774,15 @@ $CustomCodeoptions = get_option('bulletproof_security_options_customcode');
 $subject = $CustomCodeoptions['bps_customcode_bpsqse'];	
 $pattern1 = '/RewriteCond\s%{QUERY_STRING}\s\(\\\.\/\|\\\.\.\/\|\\\.\.\.\/\)\+\(motd\|etc\|bin\)\s\[NC,OR\]/';
 $pattern2 = '/RewriteCond\s%\{THE_REQUEST\}\s(.*)\?(.*)\sHTTP\/\s\[NC,OR\]\s*RewriteCond\s%\{THE_REQUEST\}\s(.*)\*(.*)\sHTTP\/\s\[NC,OR\]/';
+$pattern3 = '/RewriteCond\s%\{THE_REQUEST\}\s.*\?\+\(%20\{1,\}.*\s*RewriteCond\s%\{THE_REQUEST\}\s.*\+\(.*\*\|%2a.*\s\[NC,OR\]/';
 
 	if ( $CustomCodeoptions['bps_customcode_bpsqse'] == '') {
 		return;
 	}
 	
-	if ( $CustomCodeoptions['bps_customcode_bpsqse'] != '' && preg_match($pattern1, $subject, $matches) || preg_match($pattern2, $subject, $matches) ) {
+	if ( $CustomCodeoptions['bps_customcode_bpsqse'] != '' && preg_match($pattern1, $subject, $matches) || preg_match($pattern2, $subject, $matches) || preg_match($pattern3, $subject, $matches) ) {
 
-		$text = '<div class="update-nag" style="background-color:#ffffe0;font-size:1em;font-weight:bold;padding:2px 5px;margin-top:2px;"><font color="blue">'.__('Notice: BPS Query String Exploits Code Changes', 'bulletproof-security').'</font><br>'.__('Older BPS Query String Exploits code was found in BPS Custom Code. Several Query String Exploits rules were changed/added/modified in the root .htaccess file in BPS .49.6 & .50.2.', 'bulletproof-security').'<br>'.__('Copy the new Query String Exploits section of code from your root .htaccess file and paste it into this BPS Custom Code text box: CUSTOM CODE BPSQSE BPS QUERY STRING EXPLOITS and click the Save Root Custom Code button.', 'bulletproof-security').'<br>'.__('This Notice will go away once you have copied the new Query String Exploits code to BPS Custom Code and clicked the Save Root Custom Code button.', 'bulletproof-security').'</div>';
+		$text = '<div class="update-nag" style="background-color:#ffffe0;font-size:1em;font-weight:bold;padding:2px 5px;margin-top:2px;"><font color="blue">'.__('Notice: BPS Query String Exploits Code Changes', 'bulletproof-security').'</font><br>'.__('Older BPS Query String Exploits code was found in BPS Custom Code. Several Query String Exploits rules were changed/added/modified in the root .htaccess file in BPS .49.6, .50.2 & .50.3.', 'bulletproof-security').'<br>'.__('Copy the new Query String Exploits section of code from your root .htaccess file and paste it into this BPS Custom Code text box: CUSTOM CODE BPSQSE BPS QUERY STRING EXPLOITS and click the Save Root Custom Code button.', 'bulletproof-security').'<br>'.__('This Notice will go away once you have copied the new Query String Exploits code to BPS Custom Code and clicked the Save Root Custom Code button.', 'bulletproof-security').'</div>';
 		echo $text;
 	}
 }

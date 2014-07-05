@@ -714,8 +714,7 @@ $bps_secure_BPSQSE = "# BEGIN BPSQSE BPS QUERY STRING EXPLOITS
 RewriteCond %{HTTP_USER_AGENT} (havij|libwww-perl|wget|python|nikto|curl|scan|java|winhttp|clshttp|loader) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (;|<|>|'|".'"'."|\)|\(|%0A|%0D|%22|%27|%28|%3C|%3E|%00).*(libwww-perl|wget|python|nikto|curl|scan|java|winhttp|HTTrack|clshttp|archiver|loader|email|harvest|extract|grab|miner) [NC,OR]
-RewriteCond %{THE_REQUEST} \?+(%20{1,}|[^\s])+HTTP+(:/|/) [NC,OR]
-RewriteCond %{THE_REQUEST} \/+(\*|%2a)+(%20|\s){1,}+HTTP+(:/|/) [NC,OR]
+RewriteCond %{THE_REQUEST} (\?|\*|%2a)+(%20+|\s+|%20+\s+|\s+%20+|\s+%20+\s+)HTTP(:/|/) [NC,OR]
 RewriteCond %{THE_REQUEST} etc/passwd [NC,OR]
 RewriteCond %{THE_REQUEST} cgi-bin [NC,OR]
 RewriteCond %{THE_REQUEST} (%0A|%0D|\\"."\\"."r|\\"."\\"."n) [NC,OR]
@@ -2271,10 +2270,33 @@ jQuery(document).ready(function($){
     <td class="bps-table_cell_no_border">&nbsp;</td>
   </tr> 
   <tr>
-    <td class="bps-table_cell_no_border">&nbsp;</td>
-    <td class="bps-table_cell_no_border">&nbsp;</td>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<strong><h3>'.__('50.3', 'bulletproof-security').'</h3></strong>'; echo $text; ?></td>
   </tr>
   <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<strong><h3>'.__('Root & wp-admin .htaccess Security Filters Change:', 'bulletproof-security').'</h3><strong>'.__('The BPS upgrade will seamlessly replace and combine the older root & wp-admin .htaccess filters into the new security filter below during the BPS upgrade.<br>Thanks goes to aselektor for spotting and reporting this.<br><br>Old security filters', 'bulletproof-security').'</strong>'; echo $text; ?>
+<pre style="width:530px;">
+RewriteCond %{THE_REQUEST} \?\ HTTP/ [NC,OR]
+RewriteCond %{THE_REQUEST} \/\*\ HTTP/ [NC,OR]
+
+RewriteCond %{THE_REQUEST} \?+(%20{1,}|[^\s])+HTTP+(:/|/) [NC,OR]
+RewriteCond %{THE_REQUEST} \/+(\*|%2a)+(%20|\s){1,}+HTTP+(:/|/) [NC,OR]
+</pre><br />
+<?php $text = '<strong>'.__('New security filter', 'bulletproof-security').'</strong>'; echo $text; ?>
+<pre style="width:530px;">
+RewriteCond %{THE_REQUEST} (\?|\*|%2a)+(%20+|\s+|%20+\s+|\s+%20+|\s+%20+\s+)HTTP(:/|/) [NC,OR]
+</pre>
+    </td>
+  </tr> 
+   <tr>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+  </tr> 
+  <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<strong><h3>'.__('50.2', 'bulletproof-security').'</h3></strong>'; echo $text; ?></td>
+  </tr>
   <tr>
     <td class="bps-table_cell_no_border">&bull;</td>
     <td class="bps-table_cell_no_border"><?php $text = '<h3><strong>'.__('New Feature: DB Backup', 'bulletproof-security').'</strong></h3><strong>'.__('DB Backup & Security Guide & Troubleshooting: http://forum.ait-pro.com/forums/topic/database-backup-security-guide/', 'bulletproof-security').'</strong><br>'.__('Create manual and scheduled Backup Jobs. Choose which database tables to backup. Scheduled backup job options: Hourly, Daily, Weekly and Monthly. Send scheduled backup zip file via email or just send email only, automatically delete old backup files after a certain period of time, etc., etc., etc. On BPS upgrades and new installations a default obfuscated & secure BPS Backup folder is created and all DB Backup options are saved with default settings.', 'bulletproof-security').'<br><br><strong>'.__('Backup Jobs - Manual/Scheduled Accordion Tab', 'bulletproof-security').'</strong><br>'.__('- Displays the Description/Job Name, Delete and Run Checkboxes, Job Type, Frequency, Last Backup, Next Backup, Email Backup and Job Created table columns.', 'bulletproof-security').'<br><br><strong>'.__('Backup Files - Download/Delete Accordion Tab', 'bulletproof-security').'</strong><br>'.__('- Displays the Backup Filename, Delete Checkbox, Download Links, Backup Folder, Size and Date/Time table columns.', 'bulletproof-security').'<br><br><strong>'.__('Create Backup Jobs Accordion Tab', 'bulletproof-security').'</strong><br>'.__('- Displays a dynamic DB Table Name checkbox form, Description/Backup Job Name textbox, DB Backup Folder Location textbox, DB Backup File Download Link/URL textbox, Backup Job Type: Manual or Scheduled select dropdown option, Frequency of Scheduled Backup Job (recurring) select dropdown option, Hour When Scheduled Backup is Run (recurring) select dropdown option, Day of Week When Scheduled Backup is Run (recurring) select dropdown option, Day of Month When Scheduled Backup is Run (recurring) select dropdown option, Send Scheduled Backup Zip File Via Email or Just Email Only select dropdown option, Automatically Delete Old Backup Files select dropdown option, Turn On/Off All Scheduled Backups (override) select dropdown option.', 'bulletproof-security'); echo $text; ?>

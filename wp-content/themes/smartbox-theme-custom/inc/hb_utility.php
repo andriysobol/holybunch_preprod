@@ -571,26 +571,10 @@ function get_taxonomy_terms_cloud($post_type) {
                 }
 
                 $output .='</div>';
-                //in order to get custom field 'summary' from post we have 
-                //to call advanced custom fields plugin api and provide id of post
-                switch ($post->post_type) {
-                    case 'oxy_video':
-                        $summary = get_field('video_summary', $post->ID);
-                        break;
-                    case 'oxy_audio':
-                        $summary = get_field('audio_summary', $post->ID);
-                        break;
-                    case 'oxy_content':
-                        $summary = get_field('summary', $post->ID);
-                        break;
-                    default :
-                        break;
-                }
-
                 //$output.='</a>';
                 $output.='<a href="' . $post_link . '"> <h3 class="text-center">' . get_the_title() . '</h3></a>';
 
-                $content = hb_limit_excerpt($summary, 40);
+                $content = get_post_summary_mini($post);
                 $more_text = '<Strong>Читать</Strong> далее';
                 $link = get_permalink();
                 $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
@@ -676,25 +660,15 @@ function get_taxonomy_terms_cloud($post_type) {
         return oxy_shortcode_section($atts, $output);
     }
 
-    function get_video_content() {
-        $video_shortcode = get_field('video_shortcode', the_ID());
-        if ($video_shortcode !== null) {
-            // use the video in the archives
-            echo apply_filters('the_content', $video_shortcode);
-        } elseif (has_post_thumbnail()) {
-            $img = wp_get_attachment_image_src(get_post_thumbnail_id(the_ID()), 'full');
-            $img_link = is_single() ? $img[0] : get_permalink();
-            $link_class = is_single() ? 'class="fancybox"' : '';
-            echo '<figure>';
-            if (oxy_get_option('blog_fancybox') == 'on') {
-                echo '<a href="' . $img_link . '" ' . $link_class . '>';
-            }
-            echo '<img alt="featured image" src="' . $img[0] . '">';
-            if (oxy_get_option('blog_fancybox') == 'on') {
-                echo '</a>';
-            }
-            echo '</figure>';
-        }
+    function get_video_content($post) {
+        $video_shortcode = get_field('video_shortcode', $post->ID);
+	$content = $post->post_content;
+
+        $output = create_videowrapper_div($video_shortcode).
+        '<div class="span4" style="margin-top: 25px;">'.
+	 $content. 
+        '</div>';
+	 echo $output;
     }
 
     function get_audio_content() {
@@ -779,16 +753,32 @@ function get_taxonomy_terms_cloud($post_type) {
 
         $count = count($videos);
         if ($count !== 0) {
-            $summary = $videos[0]->post_content;
-            //$output .= create_hero_section_with_video("http://localhost/holybunch_prep/wp-content/themes/smartbox-theme-1.01/images/bundled/landscape-5-1250x300.jpg", $videos[0]->post_title, $summary);
+            foreach($videos as $video){
+            $output .= crate_video_section_for_themen_page($video);
+	}
         }
 
         return $output;
     }
 
+    function crate_video_section_for_themen_page($video_post){
+            $summary = get_field('video_summary', $video_post->ID);
+            if(empty($summary))
+	    	$summary = $video_post->post_content;
+	    $shortcode = get_field('video_shortcode', $video_post->ID);
+	    $output = '<div class="container-fluid"><div class="row-fluid">
+            <div class="span4" style="margin-top: 25px;">'.
+              $summary. '
+	     </div>'
+             .create_videowrapper_div($shortcode).
+         '</div>';
+	$atts[title] = $video_post->post_title;
+	return oxy_shortcode_section($atts, $output);
+    }	
+
     function create_text_item($post) {
         $post = $post;
-        $summary = get_field('summary', $post->ID);
+        $summary = get_post_summary($post);
         $more_text = '<Strong>Читать</Strong> далее';
         $link = get_post_permalink($post->ID, false, false);
         $more_text = '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
@@ -844,8 +834,7 @@ function get_taxonomy_terms_cloud($post_type) {
     }
 
     function add_post_summary_to_main_page($post, $span = 'span4') {
-        $summary = get_field('summary', $post->ID);
-        $summary = hb_limit_excerpt($summary, 40);
+        $summary =  get_post_summary_mini($post);
         $output = '<li class="' . $span . '">
                     <div class="well blockquote-well well_custom_2col_mb">
                       <h3><a href="' . get_post_permalink($post->ID, false, false) . '">' . $post->post_title . '</a></h3>
@@ -979,6 +968,73 @@ function get_taxonomy_terms_cloud($post_type) {
                 break;
         }
     }
+
+    function create_videowrapper_div($src_url){
+	$output = '<div class="span8">
+                         <div class="entry-content">
+                           <div class="videoWrapper">
+                              <iframe src="'. $src_url . '" width="1250" height="703" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                           </div>
+                        </div>
+             </div>';
+	return $output;
+}
+	
+	function get_post_summary_mini($post){
+		$summary = '';
+		//in order to get custom field 'summary' from post we have 
+                //to call advanced custom fields plugin api and provide id of post
+                switch ($post->post_type) {
+                    case 'oxy_video':
+                        $summary = get_field('video_summary_mini', $post->ID);
+			if(empty($summary)){
+	                        $summary = get_field('video_summary', $post->ID);	
+				$summary = hb_limit_excerpt($summary, 40);
+			}
+                        break;
+                    case 'oxy_audio':
+                        $summary = get_field('audio_summary_mini', $post->ID);
+			if(empty($summary)){
+	                        $summary = get_field('audio_summary', $post->ID);	
+				$summary = hb_limit_excerpt($summary, 40);
+			}
+                        break;
+                    case 'oxy_content':
+                        $summary = get_field('summary_mini', $post->ID);
+			if(empty($summary)){
+	                        $summary = get_field('summary', $post->ID);	
+				$summary = hb_limit_excerpt($summary, 40);
+			}
+                        break;
+                    default :
+                        break;
+                }
+		if(empty($summary))
+			$summary = hb_limit_excerpt($post->post_content, 40);
+	return $summary;
+}
+
+	function get_post_summary($post){
+		$summary = '';
+		//in order to get custom field 'summary' from post we have 
+                //to call advanced custom fields plugin api and provide id of post
+                switch ($post->post_type) {
+                    case 'oxy_video':
+                        $summary = get_field('video_summary', $post->ID);
+                        break;
+                    case 'oxy_audio':
+                        $summary = get_field('audio_summary', $post->ID);
+                        break;
+                    case 'oxy_content':
+                        $summary = get_field('summary', $post->ID);
+                        break;
+                    default :
+                        break;
+                }
+		if(empty($summary))
+			$summary = $post->post_content;
+	return $summary;
+}
 
     ;
     ?>

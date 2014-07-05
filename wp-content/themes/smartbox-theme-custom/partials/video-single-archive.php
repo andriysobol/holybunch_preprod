@@ -32,7 +32,7 @@ $author_id = get_the_author_meta('ID');
             $video_shortcode = get_field('video_shortcode', $post->ID);
             if( $video_shortcode !== null ) {
                 // use the video in the archives
-                echo apply_filters('the_content', $video_shortcode);
+                echo apply_filters('the_content', create_videowrapper_div($video_shortcode));
             }else if( has_post_thumbnail() ) {
                 $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
                 echo '<figure><img alt="featured image" src="'.$img[0].'"></figure>';
@@ -46,4 +46,3 @@ $author_id = get_the_author_meta('ID');
         </div>
     </div>
 </article>
-
