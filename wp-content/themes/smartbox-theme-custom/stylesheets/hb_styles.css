@@ -28,13 +28,13 @@ div#blockRigthOben h4{
     color: orange;
 }
 
-blockquote.block{
-    font-family: "cambria", sans-serif;
+ /*  blockquote.block{
+  font-family: "cambria", sans-serif; 
     font-weight: 400;
     font-size: 19px;
     line-height: 1.5em;
-    margin-left: 40px;
-}
+    margin-left: 40px; 
+} */
 
 i.icon_right{
     padding-left: 8px;
@@ -127,7 +127,7 @@ blockquote_drops {
     width : 320px;
     border : 0;
     color:#FFA500;
-    font-family : georgia, palatino, 'times new roman', serif;
+   /* font-family : georgia, palatino, 'times new roman', serif; */
     font-size : 110%;
     font-weight : bold;
     font-style : italic;
@@ -206,16 +206,6 @@ font-size:9px;
 .lead_custom_mb {
     margin: 0px;
     padding-left: 90px;
-}
-
-.well_custom_3col_mb {
-    max-height: 480px;
-    min-height: 480px;
-}
-
-.well_custom_2col_mb {
-    max-height: 300px;
-    min-height: 300px;
 }
 
 .img_100x100_custom_mb {
