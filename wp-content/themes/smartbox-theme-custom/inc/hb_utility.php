@@ -708,11 +708,15 @@ function get_taxonomy_terms_cloud($post_type) {
             'orderby' => 'menu_order',
             'order' => 'ASC'
         );
+        
+
+        $output .= hb_create_flexi_slider_themen_page($taxonomy_term->slug, "oxy_video");
+
         $text_items = get_posts($query);
 
         $count = count($text_items);
 
-        $output = '<section class="section section-padded section-alt">';
+        $output .= '<section class="section section-padded section-alt">';
 
         $output .= create_text_item($text_items[0]);
         if ($count == 1) {
@@ -736,28 +740,6 @@ function get_taxonomy_terms_cloud($post_type) {
 
         $output .= '</section>';
 
-        //get post of type text
-        $videos = get_posts(array(
-            'numberposts' => -1,
-            'post_type' => 'oxy_video',
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'teaching_topics',
-                    'field' => 'slug',
-                    'terms' => $taxonomy_term->slug
-                )
-            ),
-            'orderby' => 'menu_order',
-            'order' => 'ASC'
-        ));
-
-        $count = count($videos);
-        if ($count !== 0) {
-            foreach($videos as $video){
-            $output .= crate_video_section_for_themen_page($video);
-	}
-        }
-
         return $output;
     }
 
@@ -766,7 +748,8 @@ function get_taxonomy_terms_cloud($post_type) {
             if(empty($summary))
 	    	$summary = $video_post->post_content;
 	    $shortcode = get_field('video_shortcode', $video_post->ID);
-	    $output = '<div class="container-fluid"><div class="row-fluid">
+	    //<div class="row-fluid">
+            $output = '<div class="container-fluid">
             <div class="span4" style="margin-top: 25px;">'.
               $summary. '
 	     </div>'
@@ -801,7 +784,6 @@ function get_taxonomy_terms_cloud($post_type) {
     function create_two_text_items($first_item, $second_item) {
         $output = '     <div class="container-fluid">
         <div class="section-header">
-            <h1>Также <span class="light">по теме</span></h1>
         </div>
         <div class="row-fluid">
             <ul class="inline row-fluid">';
@@ -835,14 +817,44 @@ function get_taxonomy_terms_cloud($post_type) {
 
     function add_post_summary_to_main_page($post, $span = 'span4') {
         $summary =  get_post_summary_mini($post);
+	$more_text = '<Strong>Читать</Strong> далее';
+        $link = get_post_permalink($post->ID, false, false);
+        $more_text = '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
         $output = '<li class="' . $span . '">
                     <div class="well blockquote-well well_custom_2col_mb">
                       <h3><a href="' . get_post_permalink($post->ID, false, false) . '">' . $post->post_title . '</a></h3>
-                        <blockquote><p>' . $summary . '</p></blockquote><a href="' . get_post_permalink($post->ID, false, false) . '">' .
+                        <blockquote><p>' . $summary . $more_text . '</p></blockquote><a href="' . get_post_permalink($post->ID, false, false) . '">' .
                 add_image_to_text_item($post) .
                 '</a></div>
                 </li>';
         return $output;
+    }
+
+    function add_taxonomy_term_summary($taxonomy, $span = 'span4') {
+        $summary = get_taxonomy_term_summary_mini($taxonomy);
+	$more_text = '<Strong>Читать</Strong> далее';
+        $slug = $taxonomy->slug;
+        $link = home_url() . "/blog/teaching_topics/" . $slug;
+        $taxonomy_image_link = get_taxonomy_image('teaching_topics', $taxonomy->slug);
+
+        $more_text = '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
+        $output = '<li class="' . $span . '">
+                    <div class="well blockquote-well well_custom_2col_mb">
+                      <h3><a href="' . $link . '">' . $taxonomy->name . '</a></h3>
+                        <blockquote><p>' . $summary . $more_text . '</p></blockquote><a href="' . $link . '">' .
+                get_image_as_round_box($taxonomy_image_link) .
+                '</a></div>
+                </li>';
+        return $output;
+    }
+
+    function get_taxonomy_term_summary_mini($taxonomy){
+	$summary = get_field('taxonomy_summary', 'teaching_topics_' . $taxonomy->term_id);
+        if(empty($taxonomy)){
+            $summary = $taxonomy->description . " ";
+            $summary = oxy_limit_excerpt($summary, 40);
+        }
+	return $summary;
     }
 
     function add_image_to_text_item($post, $size = 'medium') {
@@ -855,6 +867,13 @@ function get_taxonomy_terms_cloud($post_type) {
             $output .= '<img class="img-circle" src="' . IMAGES_URI . 'box-empty.gif">';
             $output .= oxy_post_icon($post->ID, false);
         }
+        $output .= '</span></div>';
+        return $output;
+    }
+
+    function get_image_as_round_box($img_source, $size = 'medium') {
+        $output .='<div class="round-box box-' . $size . ' box-colored"><span class="box-inner">';
+        $output .= '<img class="img-circle" src="' . $img_source . '">';
         $output .= '</span></div>';
         return $output;
     }
@@ -943,6 +962,40 @@ function get_taxonomy_terms_cloud($post_type) {
         echo oxy_shortcode_section($atts, $output);
     }
 
+    function hb_create_flexi_slider_themen_page($slug_or_ids, $post_type){
+        $slides = get_posts(array(
+            'numberposts' => -1,
+            'post_type' => $post_type,
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'teaching_topics',
+                    'field' => 'slug',
+                    'terms' => $slug_or_ids
+                )
+            ),
+            'orderby' => 'menu_order',
+            'order' => 'ASC'
+        ));
+        $xtracapsclss = ' fadeup animated delayed';
+        $id = 'flexslider-' . rand(1, 100);
+        if(count($slides) == 0)
+            return '';
+        $output .= '<section class="section section-alt">';
+        $output .= '<div id="flexslider-100" class="flexslider flex-directions-fancy flex-controls-inside flex-controls-center" data-flex-animation="slide" data-flex-controlsalign="center" data-flex-controlsposition="inside" data-flex-directions="show" data-flex-speed="8000" data-flex-directions-position="inside" data-flex-controls="show" data-flex-slideshow="true">';
+        $output .= '<ul class="slides">';
+
+        foreach ($slides as $slide) {
+            $output .= '<li>';
+            $output .= create_hero_section_with_video(null, null, null, false, $slide);
+            $output .= '</li>';
+        }
+        $output .= '</ul>';
+        $output .= '</div>';        
+        $output .= '</section>';
+        return $output;
+    }
+
+    
     function hb_get_slide_link($post) {
         $link_type = get_post_meta($post->ID, THEME_SHORT . '_link_type', true);
         switch ($link_type) {

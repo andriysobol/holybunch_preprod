@@ -843,6 +843,7 @@ function get_latest_taxonomy_topics($atts) {
         'taxonomy' => 'teaching_topics',
         'pad_counts' => 1,
         'hierarchical' => 0,
+	'number'       => '3',
     );
     $categories = get_categories($args);
     $count = count($categories);
@@ -856,39 +857,7 @@ function get_latest_taxonomy_topics($atts) {
     $items_per_row = $columns;
     //loop over all related posts
     foreach ($categories as $category) {
-        $slug = $category->slug;
-        $taxonomy_link = $link = home_url() . "/blog/teaching_topics/" . $slug;
-
-        if ($item_num > $items_per_row) {
-            $output.= '</ul><ul class="unstyled row-fluid">';
-            $item_num = 1;
-        }
-
-        $output .='<li class="' . $span . '">';
-        $output .='<div class="round-box box-medium box-colored"><a href="' . $taxonomy_link . '" class="box-inner">';
-        //get post icon
-        $taxonomy_image_link = get_taxonomy_image('teaching_topics', $category->slug);
-        if ($taxonomy_image_link !== null) {
-            $output .= '<span class="box-inner"><img width="300" height="300" src="' . $taxonomy_image_link . '" class="img-circle wp-post-image" ></span>'; //'<img class="img-circle" src="' . $taxonomy_image_link . '">';
-        } else {
-            $output .= '<img class="img-circle" src="' . IMAGES_URI . 'box-empty.gif">';
-        }
-        $output .='</div>';
-
-        $summary = get_field('taxonomy_summary', 'teaching_topics_' . $category->term_id);
-        if(empty($summary)){
-            $summary = $category->description . " ";
-            $summary = oxy_limit_excerpt($summary, 40);
-        }
-
-        //$output.='</a>';
-        $output.='<a href="' . $taxonomy_link . '"> <h3 class="text-center">' . $category->name . '</h3></a>';
-
-        $content = $summary;
-        $more_text = '<Strong>Читать</Strong> далее';
-        $content .= '<a href="' . $taxonomy_link . '" class="more-link">' . $more_text . '</a>';
-        $output.='<p>' . apply_filters('the_content', $content) . '</p></li>';
-        $item_num++;
+        $output .= add_taxonomy_term_summary($category);
     }
     $output .= '</ul>';
     extract(shortcode_atts(array(
@@ -900,7 +869,7 @@ function get_latest_taxonomy_topics($atts) {
 
 add_shortcode('latest_taxonomy_topics', 'get_latest_taxonomy_topics');
 
-function create_hero_section_with_video($image = null, $title = null, $summary = null, $random_posts = true) {
+function create_hero_section_with_video($image = null, $title = null, $summary = null, $random_posts = true, $post_video = null) {
     $title = $title === null ? oxy_get_option('blog_title') : $title;
     //take random video post and show it
     if ($random_posts) {
@@ -910,23 +879,24 @@ function create_hero_section_with_video($image = null, $title = null, $summary =
             'orderby' => 'rand'
         );
         $my_query = new wp_query($args);
-        $random_video = $my_query->post;
-        if (!empty($random_video)) {
-            $title = $random_video->post_title;
-            $summary = hb_limit_excerpt($random_video->post_content, 50);
-            $shortcode = get_field('video_shortcode', $random_video->ID);
-            $image = get_post_banner_image($random_video);
-            if (empty($image))
-                $image = "http://bible-core.com/wp-content/themes/smartbox-theme-1.01/images/bundled/landscape-4-1250x300.jpg";
-        }
+        $post_video = $my_query->post;
+    }else {
+        $post_video = $post_video;
     }
-    $taxonomy_terms = wp_get_post_terms($random_video->ID, "teaching_topics", array("fields" => "all"));
-    if (count($taxonomy_terms) > 0)
-        $taxonomy_link = home_url() . "/blog/teaching_topics/" . $taxonomy_terms[0]->slug;
-    else
-        $taxonomy_link = home_url() . "/blog/teaching_topics/";
-    $more_text = '<Strong>Перейти</Strong> к теме';
-    $read_more = '<a href="' . $taxonomy_link . '" class="more-link">' . $more_text . '</a>';
+
+    if (!empty($post_video)) {
+        $title = $post_video->post_title;
+        $summary = hb_limit_excerpt($post_video->post_content, 50);
+        $shortcode = get_field('video_shortcode', $post_video->ID);
+        $image = get_post_banner_image($post_video);
+        if (empty($image))
+            $image = "http://bible-core.com/wp-content/themes/smartbox-theme-1.01/images/bundled/landscape-4-1250x300.jpg";
+    }
+    $image = get_home_url()."/wp-content/uploads/2014/07/IMG_0333.jpg";
+    
+    $post_link = get_post_permalink($post_video->ID, false, false);
+    $more_text = '<Strong>Перейти</Strong> к видео';
+    $read_more = '<a href="' . $post_link . '" class="more-link">' . $more_text . '</a>';
     $output = '<section class="section section-padded section-dark" data-background="url(' . $image . ') no-repeat top" style="background: url(' . $image . ') 50% 0% no-repeat;">
                 <div class="container-fluid">
                     <div class="super-hero-unit">
@@ -1018,7 +988,7 @@ function hb_get_recent_posts($atts) {
                 $output .= '<img class="img-circle" src="' . IMAGES_URI . 'box-empty.gif">';
                 $output .= oxy_post_icon($post->ID, false);
             }
-            $output.='</a></div><h5 class="text-center light">' . get_the_date() . '</h5>';
+            $output.='</a></div>';//<h5 class="text-center light">' . get_the_date() . '</h5>';
             $output.='</div><div class="span8"><h3><a href="' . $post_link . '">' . get_the_title() . '</a>';
             if (empty($summary))
                 $output.='</h3><p>' . oxy_limit_excerpt(get_the_excerpt(), 15) . '</p></div></div></li>';
