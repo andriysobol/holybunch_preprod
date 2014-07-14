@@ -211,7 +211,7 @@ font-size:9px;
     }
 }
 
-/* mboehm 14.06.2014
+/* 
  * https://trello.com/c/zdR1moHs/78-bug-title
  */
 .super {
@@ -226,4 +226,14 @@ font-size:9px;
     .super {
         font-size: 36px;
     }
+}
+
+/**
+ * https://trello.com/c/CdTn2B6Y/108-homepage-link-unterstreichen-beim-mousehover
+ */
+a:hover {
+    text-decoration: underline;
+}
+a:hover i {
+    text-decoration: none;
 }
