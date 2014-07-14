@@ -45,14 +45,6 @@ p.no_li{
     font-size: 0.9em;
 }
 
-.super {
- /* font-size: 50px;  */
-    font-weight: 900;
-    text-align: center;
-    line-height: 1;
-    margin-bottom: 0;
-    text-transform: uppercase;
-} 
 
 .logoButtonLink {
     padding: 31px 31px 31px;
@@ -216,5 +208,22 @@ font-size:9px;
 @media (max-width: 580px) {
     blockquote_drops {
         display: none;
+    }
+}
+
+/* mboehm 14.06.2014
+ * https://trello.com/c/zdR1moHs/78-bug-title
+ */
+.super {
+    font-size: 60px;
+} 
+@media (max-width: 480px) {
+    .super {
+        font-size: 28px;
+    }
+}
+@media (max-width: 767px) {
+    .super {
+        font-size: 36px;
     }
 }
