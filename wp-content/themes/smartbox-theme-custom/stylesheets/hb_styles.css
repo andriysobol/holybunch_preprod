@@ -214,17 +214,30 @@ font-size:9px;
 /* 
  * https://trello.com/c/zdR1moHs/78-bug-title
  */
-.super {
-    font-size: 60px;
-} 
-@media (max-width: 480px) {
+
+@media (max-width: 320px){
     .super {
-        font-size: 28px;
+        font-size: 16px;
     }
 }
-@media (max-width: 767px) {
+@media (min-width: 321px) and (max-width: 480px){
     .super {
-        font-size: 36px;
+        font-size: 24px;
+    }
+}
+@media (min-width: 481px) and (max-width: 768px){
+    .super {
+        font-size: 34px;
+    }
+}
+@media (min-width: 769px) and (max-width: 978px){
+    .super {
+        font-size: 46px;
+    }
+}
+@media (min-width: 979px) and (max-width: 1200px){
+    .super {
+        font-size: 60px;
     }
 }
 
