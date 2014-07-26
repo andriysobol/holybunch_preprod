@@ -241,6 +241,13 @@ font-size:9px;
     }
 }
 
+@media (min-width: 1200px){
+    .post-body {
+        padding-left: 200px;
+        padding-right: 160px;
+    }
+}
+
 /**
  * https://trello.com/c/CdTn2B6Y/108-homepage-link-unterstreichen-beim-mousehover
  */
