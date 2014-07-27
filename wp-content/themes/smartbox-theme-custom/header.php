@@ -35,6 +35,17 @@
           <script src="javascripts/PIE.js"></script>
         <![endif]-->
         <?php wp_head(); ?>
+<script>
+var _prum = [['id', '53c3db78abe53d4068bb7da6'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
     </head>
     <body <?php body_class( oxy_get_option('style') . ' ' .  oxy_get_option('width')); ?>>
         <?php if ( is_active_sidebar( 'above-nav-right' ) || is_active_sidebar( 'above-nav-left' ) ) : ?>

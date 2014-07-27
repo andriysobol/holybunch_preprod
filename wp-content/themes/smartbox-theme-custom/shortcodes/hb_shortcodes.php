@@ -869,8 +869,18 @@ function get_latest_taxonomy_topics($atts) {
 
 add_shortcode('latest_taxonomy_topics', 'get_latest_taxonomy_topics');
 
-function create_hero_section_with_video($image = null, $title = null, $summary = null, $random_posts = true, $post_video = null) {
+function create_hero_section_with_video($atts) {
+    extract(shortcode_atts(array(
+        'image' => '',
+        'title' => '',
+        'summary' => '',
+        'random_posts' => 'true',
+        'post_video' => '',
+        'taxonomy_slug' => ''
+                    ), $atts));
+    	
     $title = $title === null ? oxy_get_option('blog_title') : $title;
+    
     //take random video post and show it
     if ($random_posts) {
         $args = array(
@@ -888,26 +898,32 @@ function create_hero_section_with_video($image = null, $title = null, $summary =
         $title = $post_video->post_title;
         $summary = hb_limit_excerpt($post_video->post_content, 50);
         $shortcode = get_field('video_shortcode', $post_video->ID);
-        $image = get_post_banner_image($post_video);
-        if (empty($image))
-            $image = "http://bible-core.com/wp-content/themes/smartbox-theme-1.01/images/bundled/landscape-4-1250x300.jpg";
     }
-    $image = get_home_url()."/wp-content/uploads/2014/07/IMG_0333.jpg";
+    
+    if(!empty($image)){
+	$img_attachment = wp_get_attachment_image_src($image);
+	$image = $img_attachment[0];
+    }    
+    
+    if(empty($image)){
+        $image = get_taxonomy_video_background_image('teaching_topics',$taxonomy_slug);
+        if(empty($image))
+            $image = get_home_url()."/wp-content/uploads/2014/07/IMG_0333.jpg";
+    }
     
     $post_link = get_post_permalink($post_video->ID, false, false);
     $more_text = '<Strong>Перейти</Strong> к видео';
     $read_more = '<a href="' . $post_link . '" class="more-link">' . $more_text . '</a>';
+    $title = $title;
     $output = '<section class="section section-padded section-dark" data-background="url(' . $image . ') no-repeat top" style="background: url(' . $image . ') 50% 0% no-repeat;">
                 <div class="container-fluid">
                     <div class="super-hero-unit">
-                        <h1 class="animated fadeinup delayed text-center">' .
+                        <h1 class="light animated fadeinup delayed text-center">' .
             $title . '</h1>
                         <div class="row-fluid margin-top">
-                            <div class="span4">
-                                <span class="lead margin-top" align="left" >
-                                    <p>' . $summary . '</p>'
-            . $read_more .
-            '</span>
+                            <div class="span4 margin-top margin-bottom">
+                                <span align="left">
+                                    <p>' . $summary . '</p></span>
                             </div>' . create_videowrapper_div($shortcode) .
             '</div>
                     </div>
@@ -954,20 +970,32 @@ function hb_get_recent_posts($atts) {
             setup_postdata($post);
 
             $summary = '';
+            $image_folder = home_url() . '/wp-content/themes/smartbox-theme-custom/images/' ;
             switch ($post->post_type) {
                 case 'oxy_video':
                     $summary = get_field('video_summary', $post->ID);
                     break;
                 case 'oxy_audio':
                     $summary = get_field('audio_summary', $post->ID);
+                    $IMAGE_URI = $image_folder . "audio_icon_recent.png";
                     break;
                 case 'oxy_content':
                     $summary = get_field('summary', $post->ID);
+                    $IMAGE_URI =  $image_folder . "text_icon_recent.png";
                     break;
                 default :
                     break;
             }
 
+                    if($item_num == 1)
+                        $IMAGE_URI = $image_folder . 'video_icon_white_recent.png';
+                    else if($item_num == 2)
+                        $IMAGE_URI = $image_folder . 'video_icon_recent.png';
+                    else if($item_num == 3)
+                        $IMAGE_URI = $image_folder . 'text_transparent_icon_recent.png';
+                    else if($item_num == 4)
+                        $IMAGE_URI = $image_folder . 'video_icon_transparent_recent.png';
+                    
             if ('link' == get_post_format()) {
                 $post_link = oxy_get_external_link();
             } else {
@@ -981,19 +1009,22 @@ function hb_get_recent_posts($atts) {
 
             $output .='<li class="' . $span . '"><div class="row-fluid"><div class="span4">';
             $output .='<div class="round-box box-small box-colored"><a href="' . $post_link . '" class="box-inner">';
-            if (has_post_thumbnail($post->ID)) {
+            /*if (has_post_thumbnail($post->ID)) {
                 $output .= get_the_post_thumbnail($post->ID, 'thumbnail', array('title' => $post->post_title, 'alt' => $post->post_title, 'class' => 'img-circle'));
                 $output .= oxy_post_icon($post->ID, false);
-            } else {
-                $output .= '<img class="img-circle" src="' . IMAGES_URI . 'box-empty.gif">';
-                $output .= oxy_post_icon($post->ID, false);
-            }
-            $output.='</a></div>';//<h5 class="text-center light">' . get_the_date() . '</h5>';
+            } else {              
+             */
+            $output .= '<img class="img-circle" src="' . $IMAGE_URI . '">';
+            //$output .= '<img src="' . $ICON_URI . '">';
+            
+            $output.='</a></div>';
             $output.='</div><div class="span8"><h3><a href="' . $post_link . '">' . get_the_title() . '</a>';
-            if (empty($summary))
+            $output.='</h3></div></div></li>'; 
+            /*if (empty($summary))
                 $output.='</h3><p>' . oxy_limit_excerpt(get_the_excerpt(), 15) . '</p></div></div></li>';
             else
-                $output.='</h3><p>' . oxy_limit_excerpt($summary, 15) . '</p></div></div></li>';
+                $output.='</h3><p>' . oxy_limit_excerpt($summary, 15) . '</p></div></div></li>';             
+             */
             $item_num++;
         }
         $output .= '</ul>';
@@ -1002,7 +1033,19 @@ function hb_get_recent_posts($atts) {
     wp_reset_postdata();
     return oxy_shortcode_section($atts, $output);
 }
-
 add_shortcode('hb_recent_posts', 'hb_get_recent_posts');
+
+function hb_add_element_into_wrapper($atts){
+// setup options
+    extract(shortcode_atts(array(
+        'title' => '',
+        'style' => '',
+        'src_url' => ''
+                    ), $atts));
+	$output = create_videowrapper_div($src_url, "span12");
+	return oxy_shortcode_section($atts, $output);
+}
+add_shortcode('hb_add_into_wrapper', 'hb_add_element_into_wrapper');
+
 require_once get_template_directory() . '/inc/options/shortcodes/shortcodes.php';
 require_once CUSTOM_INCLUDES_DIR . 'hb_utility.php';
