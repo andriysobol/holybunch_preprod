@@ -1034,6 +1034,20 @@ function hb_get_recent_posts($atts) {
     return oxy_shortcode_section($atts, $output);
 }
 add_shortcode('hb_recent_posts', 'hb_get_recent_posts');
+function hb_get_contact_form($atts,  $content = null) {
+    // setup options
+    extract(shortcode_atts(array(
+        'title' => 'Напишите нам'), $atts));
+    $output ='<div class="span5">';
+    $output.= '<div class="contact-details">' . do_shortcode( $content ) . '</div>';
+    $output.='</div>'; 
+    $output .='<div class="span7">';
+    $output .= do_shortcode( '[contact-form-7 id="2119" title="Будем рады вашим сообщениям"]' );
+    $output.='</div>';
+          
+    return oxy_shortcode_section($atts, $output);
+}
+add_shortcode('hb_contact_form', 'hb_get_contact_form');
 
 function hb_add_element_into_wrapper($atts){
 // setup options
