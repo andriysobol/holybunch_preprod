@@ -1131,5 +1131,20 @@ function get_taxonomy_terms_cloud($post_type) {
 	return $summary;
 }
 
+    function get_more_text($post_type){
+        $more_text='<Strong>Читать</Strong> далее';
+        switch ($post_type) {
+                case 'oxy_video':
+                   $more_text = '<Strong>Перейти</Strong> к видео';
+                    break;
+                case 'oxy_audio':
+                   $more_text = '<Strong>Перейти</Strong> к аудио';
+                    break;
+                default :
+                    break;
+        }
+        return $more_text;
+    }
+
     ;
     ?>

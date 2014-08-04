@@ -1034,6 +1034,85 @@ function hb_get_recent_posts($atts) {
     return oxy_shortcode_section($atts, $output);
 }
 add_shortcode('hb_recent_posts', 'hb_get_recent_posts');
+function hb_get_recent_posts_new($atts) {
+    $image_folder = home_url() . '/wp-content/themes/smartbox-theme-custom/images/' ;
+            
+    // setup options
+    extract(shortcode_atts(array(
+        'title' => 'Последние публикации',
+        'cat' => null,
+        'count' => 4,
+        'style' => ''), $atts));
+
+    $args = array(
+        'post_type' => array('oxy_content', 'oxy_video', 'oxy_audio'),
+        'showposts' => $count, // Number of related posts that will be shown.  
+        'orderby' => 'date',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'teaching_topics',
+                'field' => 'slug',
+                'terms' => 'god'
+            )
+        )
+    );
+    $my_query = new wp_query($args);
+    $columns=2;
+    $span =  'span6';
+    $output = '';
+        if ($my_query->have_posts()) :
+            $output .='<ul class="unstyled row-fluid">';
+            global $post;
+            $item_num = 1;
+            $items_per_row = $columns;
+            //loop over all related posts
+            while ($my_query->have_posts()) {
+                $my_query->the_post();
+                setup_postdata($post);
+                if ('link' == get_post_format()) {
+                    $post_link = oxy_get_external_link();
+                } else {
+                    $post_link = get_permalink();
+                }
+
+                if ($item_num > $items_per_row) {
+                    $output.= '</ul><ul class="unstyled row-fluid">';
+                    $item_num = 1;
+                }
+                 if($item_num == 1){
+                        $IMAGE_URI = $image_folder . 'text_recent.jpg';
+                 }else if($item_num == 2){
+                        $IMAGE_URI = $image_folder . 'video_recent.jpg';
+                 }
+                $output .='<li class="' . $span . '">';
+                $output .='<div class="round-box box-medium box-colored"><a href="' . $post_link . '" class="box-inner">';
+               //get post icon
+                if (has_post_thumbnail($post->ID)) {
+                   $output .= get_the_post_thumbnail($post->ID, 'portfolio-thumb', array('title' => $post->post_title, 'alt' => $post->post_title, 'class' => 'img-circle'));
+                   $output .= oxy_post_icon($post->ID, false);
+                } else {
+                    $output .= '<img class="img-circle" src="' . $IMAGE_URI.'">';
+                   // $output .= '<img class="img-circle" src="' . IMAGES_URI . 'box-empty.gif">';
+                    $output .= oxy_post_icon($post->ID, false);
+                }
+
+                $output .='</div>';
+                $output.='<a href="' . $post_link . '"> <h3 class="text-center">' . get_the_title() . '</h3></a>';
+
+                $content =  oxy_limit_excerpt(get_the_excerpt(), 33) ;
+                $more_text=  get_more_text($post->post_type);
+                $link = get_permalink();
+                $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
+                $output.='<p>' . apply_filters('the_content', $content) . '</p></li>';
+                $item_num++;
+            }
+            $output .= '</ul>';
+    endif;
+    // reset post data
+    wp_reset_postdata();
+    return oxy_shortcode_section($atts, $output);
+}
+add_shortcode('hb_recent_posts_new', 'hb_get_recent_posts_new');
 function hb_get_contact_form($atts,  $content = null) {
     // setup options
     extract(shortcode_atts(array(
