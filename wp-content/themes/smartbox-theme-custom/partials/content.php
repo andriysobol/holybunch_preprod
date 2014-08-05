@@ -9,7 +9,7 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('row-fluid'); ?>>
     <div class="<?php echo  'span12'; ?> post-body">
-        <div class="entry-content">
+        <div class="entry-content content-text">
             <?php the_content(); ?>
         </div>
     </div>

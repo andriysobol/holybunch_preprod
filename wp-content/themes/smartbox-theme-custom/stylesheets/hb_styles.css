@@ -95,23 +95,23 @@ blockquote_drops {
     width : 30%;
     border : 0;
     color: #FFA500;
-   /* font-family : georgia, palatino, 'times new roman', serif; */
+    font-family : georgia, palatino, 'times new roman', serif; 
     font-size : 110%;
     font-weight : bold;
     font-style : italic;
-  /*  margin : 0; */
-}
+    margin : 0; 
 
+}
 .ex-pullquote_right, .pullquote_right {
     float : right;
     width : 30%;
     border : 0;
     color:#FFA500;
-  /*  font-family : georgia, palatino, 'times new roman', serif; */
+    font-family : georgia, palatino, 'times new roman', serif; 
     font-size : 110%;
     font-weight : bold;
     font-style : italic;
-  /*  margin : 0; */
+    margin : 0; 
 }
 
 .ex-pullquote, .pullquote {
@@ -119,12 +119,10 @@ blockquote_drops {
     width : 320px;
     border : 0;
     color:#FFA500;
-   /* font-family : georgia, palatino, 'times new roman', serif; */
     font-size : 110%;
     font-weight : bold;
     font-style : italic;
     margin : 30px;
-  /*  padding : 0; */
 }
 
 ul.bycategories {
@@ -241,13 +239,6 @@ font-size:9px;
     }
 }
 
-@media (min-width: 1200px){
-    .post-body {
-        padding-left: 200px;
-        padding-right: 160px;
-    }
-}
-
 /**
  * https://trello.com/c/CdTn2B6Y/108-homepage-link-unterstreichen-beim-mousehover
  */
@@ -256,4 +247,19 @@ a:hover {
 }
 a:hover i {
     text-decoration: none;
+}
+
+div.post-body .content-text p, 
+div.post-body .content-text h2 {
+    padding-left: 30%;
+    margin-bottom: 35px;
+    margin-right: 10%;
+}
+
+div.post-body .content-text blockquote {
+    color: orange;
+    float: left;
+    width: 25%;
+    margin-top: -60px;
+    border: none;
 }
