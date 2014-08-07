@@ -1089,7 +1089,13 @@ function hb_get_recent_posts_new($atts) {
                //get post icon
                 if (has_post_thumbnail($post->ID)) {
                    $output .= get_the_post_thumbnail($post->ID, 'portfolio-thumb', array('title' => $post->post_title, 'alt' => $post->post_title, 'class' => 'img-circle'));
-                   $output .= oxy_post_icon($post->ID, false);
+                   $icon = oxy_post_icon($post->ID, false);
+                   if($icon==''){
+                       $output .= get_hb_post_icon($post->post_type);
+                   } else {
+                       $output.=$icon;
+                   }
+                                              
                 } else {
                     $output .= '<img class="img-circle" src="' . $IMAGE_URI.'">';
                    // $output .= '<img class="img-circle" src="' . IMAGES_URI . 'box-empty.gif">';
@@ -1127,6 +1133,22 @@ function hb_get_contact_form($atts,  $content = null) {
     return oxy_shortcode_section($atts, $output);
 }
 add_shortcode('hb_contact_form', 'hb_get_contact_form');
+
+function ht_get_shortcode_blockquote( $atts, $content ) {
+    extract( shortcode_atts( array(
+        'who' =>'',
+        'cite'  => '',
+    ), $atts ) );
+    if($who!=null && $cite!=null){
+    return '<blockquote>' . do_shortcode($content) . '<small>'.$who.' <cite title="source title">'.$cite.'</cite></small></blockquote>';
+    } else if ($who!=null){
+     return '<blockquote>' . do_shortcode($content) . '<small>'.$who.'</small></blockquote>';
+    }else {
+       return '<blockquote>' . do_shortcode($content) . '</blockquote>';
+      
+    }
+}
+add_shortcode( 'hb_blockquote', 'ht_get_shortcode_blockquote' );
 
 function hb_add_element_into_wrapper($atts){
 // setup options
