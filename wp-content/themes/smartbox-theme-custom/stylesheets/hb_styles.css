@@ -80,16 +80,6 @@ h4.infokasten:hover {
   /*  text-align: center;  */
 }
 
-blockquote_drops { 
-    background : url(../images/quotes.png) no-repeat top left;
-    margin: 25px 10px 20px 30px;
-    padding: 0 0 0 65px;
-    border-right : 1px dotted #99cc66; 
-    border-left : 1px dotted #99cc66; 
-    color: #FFA500;
-    text-indent : 30px;
-}
-
 .ex-pullquote_left, .pullquote_left {
     float : left;
     width : 30%;
