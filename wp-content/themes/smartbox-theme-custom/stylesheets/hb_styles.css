@@ -253,13 +253,21 @@ div.post-body .content-text p,
 div.post-body .content-text h2 {
     padding-left: 30%;
     margin-bottom: 35px;
-    margin-right: 10%;
+    margin-right: 5%;
+}
+
+div.post-body .content-text h2 {
+    font-weight: 100;
+    line-height: 1.4em;
+    text-align: center;
 }
 
 div.post-body .content-text blockquote {
-    color: orange;
+    color: cornflowerblue;
     float: left;
     width: 25%;
     margin-top: -60px;
     border: none;
+    font-size: 18px;
+    line-height: 1.4em;
 }
