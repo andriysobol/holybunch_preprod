@@ -1123,6 +1123,11 @@ function hb_get_contact_form($atts,  $content = null) {
     // setup options
     extract(shortcode_atts(array(
         'title' => 'Напишите нам'), $atts));
+    if($content==null){
+        $content="<p>Если Вы желаете общаться с нами, узнать больше о нашей вере или же у Вас есть вопросы о нашей церкви, пишите нам.</p>
+
+<p>Мы всегда рады общению с ищущими познать Правду на основании Писания.</p>";
+    }
     $output ='<div class="span5">';
     $output.= '<div class="contact-details">' . do_shortcode( $content ) . '</div>';
     $output.='</div>'; 
@@ -1134,7 +1139,7 @@ function hb_get_contact_form($atts,  $content = null) {
 }
 add_shortcode('hb_contact_form', 'hb_get_contact_form');
 
-function ht_get_shortcode_blockquote( $atts, $content ) {
+function hb_get_shortcode_blockquote( $atts, $content ) {
     extract( shortcode_atts( array(
         'who' =>'',
         'cite'  => '',
@@ -1148,7 +1153,9 @@ function ht_get_shortcode_blockquote( $atts, $content ) {
       
     }
 }
-add_shortcode( 'hb_blockquote', 'ht_get_shortcode_blockquote' );
+
+remove_shortcode('blockquote');
+//add_shortcode( 'blockquote', 'hb_get_shortcode_blockquote' );
 
 function hb_add_element_into_wrapper($atts){
 // setup options
