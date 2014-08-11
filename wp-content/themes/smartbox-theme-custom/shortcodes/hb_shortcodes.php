@@ -1139,24 +1139,6 @@ function hb_get_contact_form($atts,  $content = null) {
 }
 add_shortcode('hb_contact_form', 'hb_get_contact_form');
 
-function hb_get_shortcode_blockquote( $atts, $content ) {
-    extract( shortcode_atts( array(
-        'who' =>'',
-        'cite'  => '',
-    ), $atts ) );
-    if($who!=null && $cite!=null){
-    return '<blockquote>' . do_shortcode($content) . '<small>'.$who.' <cite title="source title">'.$cite.'</cite></small></blockquote>';
-    } else if ($who!=null){
-     return '<blockquote>' . do_shortcode($content) . '<small>'.$who.'</small></blockquote>';
-    }else {
-       return '<blockquote>' . do_shortcode($content) . '</blockquote>';
-      
-    }
-}
-
-remove_shortcode('blockquote');
-//add_shortcode( 'blockquote', 'hb_get_shortcode_blockquote' );
-
 function hb_add_element_into_wrapper($atts){
 // setup options
     extract(shortcode_atts(array(
@@ -1171,3 +1153,19 @@ add_shortcode('hb_add_into_wrapper', 'hb_add_element_into_wrapper');
 
 require_once get_template_directory() . '/inc/options/shortcodes/shortcodes.php';
 require_once CUSTOM_INCLUDES_DIR . 'hb_utility.php';
+
+//Blockquote
+function hb_get_shortcode_blockquote( $atts, $content ) {
+    extract( shortcode_atts( array(
+        'who' =>'',
+        'cite'  => '',
+    ), $atts ));
+    if($who != null && $cite != null){
+        return '<blockquote>' . do_shortcode($content) . '<small>'.$who.' <cite title="source title">'.$cite.'</cite></small></blockquote>';
+    } else if ($who != null){
+        return '<blockquote>' . do_shortcode($content) . '<small>'.$who.'</small></blockquote>';
+    } else {
+        return '<blockquote>' . do_shortcode($content) . '</blockquote>';      
+    }
+}
+add_shortcode( 'blockquote', 'hb_get_shortcode_blockquote' );
