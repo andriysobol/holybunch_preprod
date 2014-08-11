@@ -1089,12 +1089,7 @@ function hb_get_recent_posts_new($atts) {
                //get post icon
                 if (has_post_thumbnail($post->ID)) {
                    $output .= get_the_post_thumbnail($post->ID, 'portfolio-thumb', array('title' => $post->post_title, 'alt' => $post->post_title, 'class' => 'img-circle'));
-                   $icon = oxy_post_icon($post->ID, false);
-                   if($icon==''){
-                       $output .= get_hb_post_icon($post->post_type);
-                   } else {
-                       $output.=$icon;
-                   }
+                   $output .= oxy_post_icon($post->ID, false);
                                               
                 } else {
                     $output .= '<img class="img-circle" src="' . $IMAGE_URI.'">';
