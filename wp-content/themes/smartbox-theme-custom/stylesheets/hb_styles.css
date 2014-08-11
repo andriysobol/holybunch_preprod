@@ -28,14 +28,6 @@ div#blockRigthOben h4{
     color: orange;
 }
 
- /*  blockquote.block{
-  font-family: "cambria", sans-serif; 
-    font-weight: 400;
-    font-size: 19px;
-    line-height: 1.5em;
-    margin-left: 40px; 
-} */
-
 i.icon_right{
     padding-left: 8px;
 }
@@ -43,15 +35,6 @@ i.icon_right{
 p.no_li{
     line-height: 1.5em;
     font-size: 0.9em;
-}
-
-
-.logoButtonLink {
-    padding: 31px 31px 31px;
-    background: url(../images/domikgrey50x47.png);
-}
-.logoButtonLink:hover {
-    background: url(../images/domiklight50x47.png);
 }
 
 h4.infokasten_green{
@@ -77,52 +60,6 @@ h4.infokasten:hover {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
     display: block;
     margin: auto 0;
-  /*  text-align: center;  */
-}
-
-blockquote_drops { 
-    background : url(../images/quotes.png) no-repeat top left;
-    margin: 25px 10px 20px 30px;
-    padding: 0 0 0 65px;
-    border-right : 1px dotted #99cc66; 
-    border-left : 1px dotted #99cc66; 
-    color: #FFA500;
-    text-indent : 30px;
-}
-
-.ex-pullquote_left, .pullquote_left {
-    float : left;
-    width : 30%;
-    border : 0;
-    color: #FFA500;
-    font-family : georgia, palatino, 'times new roman', serif; 
-    font-size : 110%;
-    font-weight : bold;
-    font-style : italic;
-    margin : 0; 
-
-}
-.ex-pullquote_right, .pullquote_right {
-    float : right;
-    width : 30%;
-    border : 0;
-    color:#FFA500;
-    font-family : georgia, palatino, 'times new roman', serif; 
-    font-size : 110%;
-    font-weight : bold;
-    font-style : italic;
-    margin : 0; 
-}
-
-.ex-pullquote, .pullquote {
-    float : none;
-    width : 320px;
-    border : 0;
-    color:#FFA500;
-    font-size : 110%;
-    font-weight : bold;
-    font-style : italic;
-    margin : 30px;
 }
 
 ul.bycategories {
@@ -203,16 +140,9 @@ font-size:9px;
     height: 78px;
 }
 
-@media (max-width: 580px) {
-    blockquote_drops {
-        display: none;
-    }
-}
-
 /* 
  * https://trello.com/c/zdR1moHs/78-bug-title
  */
-
 @media (max-width: 320px){
     .super {
         font-size: 16px;
@@ -249,17 +179,39 @@ a:hover i {
     text-decoration: none;
 }
 
+/**
+ * https://trello.com/c/wZcXbqun/159-text
+ */
 div.post-body .content-text p, 
 div.post-body .content-text h2 {
     padding-left: 30%;
     margin-bottom: 35px;
-    margin-right: 10%;
+    margin-right: 5%;
+}
+
+div.post-body .content-text h2 {
+    font-weight: 100;
+    line-height: 1.4em;
+    text-align: center;
 }
 
 div.post-body .content-text blockquote {
-    color: orange;
+    color: cornflowerblue;
     float: left;
     width: 25%;
     margin-top: -60px;
     border: none;
+    font-size: 18px;
+    line-height: 1.4em;
+}
+
+@media (max-width: 1000px) {
+    div.post-body .content-text blockquote  {
+        display: none;   
+    }
+    
+    div.post-body .content-text p, 
+    div.post-body .content-text h2 {
+        padding-left: 5%;
+    }
 }
