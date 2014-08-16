@@ -918,7 +918,7 @@ function create_hero_section_with_video($atts) {
     $output = '<section class="section section-padded section-dark" data-background="url(' . $image . ') no-repeat top" style="background: url(' . $image . ') 50% 0% no-repeat;">
                 <div class="container-fluid">
                     <div class="super-hero-unit">
-                        <h1 class="light animated fadeinup delayed text-center">' .
+                        <h1 class="animated fadeinup delayed text-center">' .
             $title . '</h1>
                         <div class="row-fluid margin-top">
                             <div class="span4 margin-top margin-bottom">
