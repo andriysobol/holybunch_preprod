@@ -522,7 +522,7 @@ function get_taxonomy_terms_cloud($post_type) {
     function get_related_posts($atts) {
         // setup options
         $atts = array(
-            'title' => 'Родственные',
+            'title' => 'Также по теме',
             'cat' => null,
             'count' => 4,
             'style' => '',
@@ -550,7 +550,7 @@ function get_taxonomy_terms_cloud($post_type) {
             );
 
             $my_query = new wp_query($args);
-            return create_section_with_itmes($my_query);
+            return create_section_with_itmes($my_query, $atts);
         }
     }
 
@@ -1145,6 +1145,5 @@ function get_taxonomy_terms_cloud($post_type) {
         }
         return $more_text;
     }
-
     ;
     ?>
