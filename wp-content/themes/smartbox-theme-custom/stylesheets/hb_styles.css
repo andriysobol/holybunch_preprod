@@ -183,7 +183,8 @@ a:hover i {
  * https://trello.com/c/wZcXbqun/159-text
  */
 div.post-body .content-text p, 
-div.post-body .content-text h2 {
+div.post-body .content-text h2,
+section.content-text-section div p{
     padding-left: 30%;
     margin-bottom: 35px;
     margin-right: 5%;
@@ -195,18 +196,25 @@ div.post-body .content-text h2 {
     text-align: center;
 }
 
-div.post-body .content-text blockquote {
-    color: cornflowerblue;
+div.post-body .content-text blockquote,
+section.content-text-section div blockquote{
+    color: #c09853;
     float: left;
     width: 25%;
     margin-top: -60px;
-    border: none;
+    border-left: 3px solid #c09853;
     font-size: 18px;
     line-height: 1.4em;
 }
 
+blockquote p {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
 @media (max-width: 1000px) {
-    div.post-body .content-text blockquote  {
+    div.post-body .content-text blockquote,
+    section.content-text-section div blockquote  {
         display: none;   
     }
     
