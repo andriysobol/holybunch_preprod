@@ -207,8 +207,14 @@ section.content-text-section div blockquote{
     line-height: 1.4em;
 }
 
+blockquote p {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
 @media (max-width: 1000px) {
-    div.post-body .content-text blockquote  {
+    div.post-body .content-text blockquote,
+    section.content-text-section div blockquote  {
         display: none;   
     }
     
