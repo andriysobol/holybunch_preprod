@@ -25,7 +25,7 @@ $allow_comments = oxy_get_option( 'site_comments' );
                                <div class="span12" style = "color:#FFA500;">
                     <?php echo get_field('quote'); ?>
                 </div>
-                <?php get_template_part( 'partials/content', get_post_format() ); ?>
+                <?php get_template_part( 'partials/content-text', get_post_format() ); ?>
                 <?php oxy_wp_link_pages(array('before' => '<div class="pagination pagination-centered">', 'after' => '</div>')); ?>
                 <?php echo get_related_posts(get_the_ID()); ?>
                 <?php if( $allow_comments == 'posts' || $allow_comments == 'all' ) comments_template( '', true ); ?>
