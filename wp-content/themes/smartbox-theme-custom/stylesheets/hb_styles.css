@@ -184,13 +184,15 @@ a:hover i {
  */
 div.post-body .content-text p, 
 div.post-body .content-text h2,
-section.content-text-section div p{
+section.content-text-section div p,
+section.content-text-section div h2{
     padding-left: 30%;
     margin-bottom: 35px;
     margin-right: 5%;
 }
 
-div.post-body .content-text h2 {
+div.post-body .content-text h2,
+section.content-text-section div h2 {
     font-weight: 100;
     line-height: 1.4em;
     margin: 75px 0px 15px 0px;
