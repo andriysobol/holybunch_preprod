@@ -1,6 +1,6 @@
-#   BULLETPROOF .50.3 WP-ADMIN SECURE .HTACCESS     
+#   BULLETPROOF .50.6 WP-ADMIN SECURE .HTACCESS     
 
-# If you edit the BULLETPROOF .50.3 WP-ADMIN SECURE .HTACCESS text above 
+# If you edit the BULLETPROOF .50.6 WP-ADMIN SECURE .HTACCESS text above 
 # you will see error messages on the BPS Security Status page
 # BPS is reading the version number in the htaccess file to validate checks
 # BPS is also checking that the string BPSQSE exists in this file - do not delete it
@@ -113,7 +113,7 @@ RewriteRule . - [S=1]
 # WORDPRESS WILL BREAK IF ALL THE BPSQSE FILTERS ARE DELETED
 RewriteCond %{HTTP_USER_AGENT} (%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (libwww-perl|wget|python|nikto|curl|scan|java|winhttp|HTTrack|clshttp|archiver|loader|email|harvest|extract|grab|miner) [NC,OR]
-RewriteCond %{THE_REQUEST} (\?|\*|%2a)+(%20+|\s+|%20+\s+|\s+%20+|\s+%20+\s+)HTTP(:/|/) [NC,OR]
+RewriteCond %{THE_REQUEST} (\?|\*|%2a)+(%20+|\\s+|%20+\\s+|\\s+%20+|\\s+%20+\\s+)HTTP(:/|/) [NC,OR]
 RewriteCond %{THE_REQUEST} etc/passwd [NC,OR]
 RewriteCond %{THE_REQUEST} cgi-bin [NC,OR]
 RewriteCond %{THE_REQUEST} (%0A|%0D) [NC,OR]

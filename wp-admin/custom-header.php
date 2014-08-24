@@ -435,7 +435,7 @@ class Custom_Image_Header {
 			onInit: function () {
 				jQuery('#width').val(xinit);
 				jQuery('#height').val(yinit);
-			}/*,
+			},
 			onSelectChange: function(img, c) {
 				jQuery('#x1').val(c.x1);
 				jQuery('#y1').val(c.y1);
@@ -443,7 +443,7 @@ class Custom_Image_Header {
 				jQuery('#height').val(c.height);
 			}
 		});
-	});*/
+	});
 /* ]]> */
 </script>
 <?php

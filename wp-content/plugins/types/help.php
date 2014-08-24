@@ -2,10 +2,10 @@
 /*
  * Plugin contextual help
  *
- * $HeadURL: https://www.onthegosystems.com/misc_svn/cck/tags/1.5.7/help.php $
- * $LastChangedDate: 2014-05-27 12:32:10 +0200 (Tue, 27 May 2014) $
- * $LastChangedRevision: 22804 $
- * $LastChangedBy: marcin $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6/help.php $
+ * $LastChangedDate: 2014-05-29 08:44:10 +0000 (Thu, 29 May 2014) $
+ * $LastChangedRevision: 922956 $
+ * $LastChangedBy: iworks $
  *
  */
 

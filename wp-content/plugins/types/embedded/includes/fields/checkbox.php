@@ -1,10 +1,10 @@
 <?php
 /**
  *
- * $HeadURL: https://www.onthegosystems.com/misc_svn/cck/tags/1.5.7/embedded/includes/fields/checkbox.php $
- * $LastChangedDate: 2014-05-19 15:11:37 +0200 (Mon, 19 May 2014) $
- * $LastChangedRevision: 22448 $
- * $LastChangedBy: marcin $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6/embedded/includes/fields/checkbox.php $
+ * $LastChangedDate: 2014-05-29 08:44:10 +0000 (Thu, 29 May 2014) $
+ * $LastChangedRevision: 922956 $
+ * $LastChangedBy: iworks $
  *
  */
 

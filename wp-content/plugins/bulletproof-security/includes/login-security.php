@@ -589,12 +589,25 @@ if ( $BPSoptions['bps_login_security_OnOff'] == 'On' && isset( $_POST['wp-submit
 
 /************************************************/
 // Disable/Enable Password Reset Frontend/Backend
+// Independent Password Reset Option added BPS .50.5
 // Removes a lot of Cool WP features, but
 // if Stealth Mode is desired then oh well
 /************************************************/
 
-switch ( $BPSoptions['bps_login_security_OnOff'] == 'On' ) {
-    case $BPSoptions['bps_login_security_pw_reset'] == 'disableFrontend':
+if ( $BPSoptions['bps_login_security_OnOff'] != 'Off' ) {
+
+if ( $BPSoptions['bps_login_security_OnOff'] == 'pwreset' || $BPSoptions['bps_login_security_OnOff'] == 'On' ) {
+
+	$pw_reset = '1';
+
+} else {
+
+	$pw_reset = '0';
+}
+
+switch ( $pw_reset ) {
+
+    case ( $pw_reset == '1' && $BPSoptions['bps_login_security_pw_reset'] == 'disableFrontend' ):
 		
 		if ( !is_admin() ) {
 		
@@ -632,7 +645,7 @@ switch ( $BPSoptions['bps_login_security_OnOff'] == 'On' ) {
 		add_filter ( 'shake_error_codes', 'bpspro_remove_shake');	
 		}	
 		break;
-    case $BPSoptions['bps_login_security_pw_reset'] == 'disable':
+    case ( $pw_reset == '1' && $BPSoptions['bps_login_security_pw_reset'] == 'disable' ):
 		
 		function bpspro_disable_password_reset() { 
 			return false; 
@@ -668,5 +681,6 @@ switch ( $BPSoptions['bps_login_security_OnOff'] == 'On' ) {
 		add_filter ( 'shake_error_codes', 'bpspro_remove_shake');
 		break;
  	}
+}
 
 ?>

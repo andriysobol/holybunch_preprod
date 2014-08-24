@@ -1,10 +1,10 @@
 <?php
 /**
  *
- * $HeadURL: https://www.onthegosystems.com/misc_svn/common/tags/Views-1.6.1-Types-1.5.7/toolset-forms/external/autocompleter.php $
- * $LastChangedDate: 2014-04-15 08:05:11 +0200 (Tue, 15 Apr 2014) $
- * $LastChangedRevision: 21477 $
- * $LastChangedBy: marcin $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6/embedded/common/toolset-forms/external/autocompleter.php $
+ * $LastChangedDate: 2014-05-29 08:44:10 +0000 (Thu, 29 May 2014) $
+ * $LastChangedRevision: 922956 $
+ * $LastChangedBy: iworks $
  *
  */
 

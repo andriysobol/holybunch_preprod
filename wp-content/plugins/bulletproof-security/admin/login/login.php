@@ -129,7 +129,7 @@ $bps_bottomDiv = '</p></div>';
 <h3><?php _e('Login Security & Monitoring', 'bulletproof-security'); ?>  <button id="bps-open-modal1" class="bps-modal-button"><?php _e('Read Me', 'bulletproof-security'); ?></button></h3>
 
 <div id="bps-modal-content1" title="<?php _e('Login Security & Monitoring', 'bulletproof-security'); ?>">
-	<p><?php $text = '<strong>'.__('This Read Me Help window is draggable (top) and resizable (bottom right corner)', 'bulletproof-security').'</strong><br><br><strong>'.__('Click both Save Options buttons to save the best pre-selected Login Security settings or choose your own Login Security option settings.', 'bulletproof-security').'</strong><br><br><strong>'.__('What to do if your User Account is locked and you are unable to login to your website', 'bulletproof-security').'</strong><br>'.__('Use FTP or your web host control panel file manager and rename the /bulletproof-security plugin folder name to /_bulletproof-security. Log into your website. Rename the /_bulletproof-security plugin folder name back to /bulletproof-security. Go to the BPS Login Security page and unlock your User Account.', 'bulletproof-security').'<br><br><strong>'.__('NOTE: ', 'bulletproof-security').'</strong>'.__('Email Alerting and Log file options are located in S-Monitor in BPS Pro instead of being on the Login Security page, Security Log & DB Backup Log pages. The Email Alerting & Log File Options Form is identical on the Login Security, Security Log & DB Backup Log pages in BPS free. You can change and save your email alerting and log file options on any of these pages.', 'bulletproof-security').'<br><br><strong>'.__('Max Login Attempts: ', 'bulletproof-security').'</strong><br>'.__('Type in the maximum number of failed login attempts allowed before a User Account is automatically Locked out. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('NOTE: ', 'bulletproof-security').'</strong>'.__('The Max Login Attempts setting range is from 1 - 10. Minimum is 1 failed login attempt - Maximum is 10 failed login attempts. Setting this to 1 failed login attempt is NOT recommended. The default is 3 failed login attempts before locking the User Account.', 'bulletproof-security').'<br><br><strong>'.__('Automatic Lockout Time: ', 'bulletproof-security').'</strong><br>'.__('Type in the number of minutes that you would like the User Account to be locked out for when the maximum number of failed login attempts have been made. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Manual Lockout Time: ', 'bulletproof-security').'</strong><br>'.__('Type in the number of minutes that you would like the User Account to be locked out for when you manually lock a User Account using Lock checkbox options in the Dynamic Login Security form. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Max DB Rows To Show: ', 'bulletproof-security').'</strong><br>'.__('Type in the maximum number of database rows that you would like to display in the Dynamic Login Security form. Leaving this text box blank means display all database rows. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Turn On/Turn Off: ', 'bulletproof-security').'</strong><br>'.__('Turn On Login Security or Turn Off Login Security. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Logging Options: ', 'bulletproof-security').'</strong><br>'.__('You can choose to Log All User Account Logins or Log Only User Account Lockouts. Recommended Setting: Log Only Account Lockouts.  After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Error Messages: ', 'bulletproof-security').'</strong><br><br><strong>'.__('Standard WP Login Errors: ', 'bulletproof-security').'</strong>'.__('will display the normal WP login errors. Example1: ERROR: The password you entered for the username X is incorrect. BPS Example2: ERROR: This user account has been locked until May 14, 2013 9:31 am due to too many failed login attempts. You can login again after the Lockout Time above has expired.', 'bulletproof-security').'<br><br><strong>'.__('User/Pass Invalid Entry Error: ', 'bulletproof-security').'</strong>'.__('will display a generic Invalid Entry error message instead of displaying normal WP login errors for incorrect username or incorrect password, but if a user account is locked out then the BPS timestamp and Lockout Time error message will be displayed. Example: ERROR: Invalid Entry for either incorrect username or incorrect password. BPS Example2: ERROR: This user account has been locked until May 14, 2013 9:31 am due to too many failed login attempts. You can login again after the Lockout Time above has expired.', 'bulletproof-security').'<br><br><strong>'.__('User/Pass/Lock Invalid Entry Error: ', 'bulletproof-security').'</strong>'.__('will display a generic Invalid Entry error message instead of displaying normal WP login errors for incorrect username, incorrect password and when the user account is locked out - the BPS Lockout Time error message will NOT be displayed. ', 'bulletproof-security').'<br><strong>'.__('CAUTION: ', 'bulletproof-security').'</strong>'.__('If the user account is locked out then no indication will be given that the user account is locked out and only a generic ERROR: Invalid Entry message will be displayed.', 'bulletproof-security').'<br><br><strong>'.__('Password Reset: ', 'bulletproof-security').'</strong><br>'.__('The Enable Password Reset option will allow the normal WP Lost Password link to be displayed and allow locked out users to reset their passwords. The Disable Password Reset Frontend Only option disables the WP Login reset password feature and displays this error message - Password reset is not allowed for this user. This error message is displayed for valid or invalid user accounts or email addresses. In other words, there is no indication of whether or not a valid username or email address is being entered. This of course disables a lot of cool WordPress login features, but if you want complete Login Stealth Mode then this is the option for you. Disable Password Reset Frontend & Backend disables password reset on the frontend and backend (WP Dashboard) of your website.', 'bulletproof-security').'<br><br><strong>'.__('Search feature: ', 'bulletproof-security').'</strong><br>'.__('The search feature allows you to search all of the Login Security database rows. To search for all Locked User accounts enter Locked, to search for a username enter that username, to search for an IP address enter that IP address, etc.', 'bulletproof-security').'<br><br><strong>'.__('The Dynamic Login Security Form: ', 'bulletproof-security').'</strong><br>'.__('You have 3 options: Lock, Unlock or Delete database rows. The Login Security database table is hooked into the WordPress Users database table, but they are 2 completely separate database tables. If you lock a User Account then BPS Pro will enforce that lock on that User Account and the User will not be able to log in. If you unlock a User Account then the User will be able to login. Deleting database rows in the Login Security database table does NOT delete the User Account from the WordPress Users database table. When you delete a User Account it is pretty much the same thing as unlocking a User Account. To delete actual User Accounts you would go to the WordPress Users page and delete that User Account.', 'bulletproof-security').'<br><br><strong>'.__('BPS Pro Video Tutorial links can be found in the Help & FAQ pages.', 'bulletproof-security').'</strong>'; echo $text; ?></p>
+	<p><?php $text = '<strong>'.__('This Read Me Help window is draggable (top) and resizable (bottom right corner)', 'bulletproof-security').'</strong><br><br><strong>'.__('Click both Save Options buttons to save the best pre-selected Login Security settings or choose your own Login Security option settings.', 'bulletproof-security').'</strong><br><br><strong>'.__('What to do if your User Account is locked and you are unable to login to your website', 'bulletproof-security').'</strong><br>'.__('Use FTP or your web host control panel file manager and rename the /bulletproof-security plugin folder name to /_bulletproof-security. Log into your website. Rename the /_bulletproof-security plugin folder name back to /bulletproof-security. Go to the BPS Login Security page and unlock your User Account.', 'bulletproof-security').'<br><br><strong>'.__('NOTE: ', 'bulletproof-security').'</strong>'.__('Email Alerting and Log file options are located in S-Monitor in BPS Pro instead of being on the Login Security page, Security Log & DB Backup Log pages. The Email Alerting & Log File Options Form is identical on the Login Security, Security Log & DB Backup Log pages in BPS free. You can change and save your email alerting and log file options on any of these pages.', 'bulletproof-security').'<br><br><strong>'.__('Max Login Attempts: ', 'bulletproof-security').'</strong><br>'.__('Type in the maximum number of failed login attempts allowed before a User Account is automatically Locked out. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('NOTE: ', 'bulletproof-security').'</strong>'.__('The Max Login Attempts setting range is from 1 - 10. Minimum is 1 failed login attempt - Maximum is 10 failed login attempts. Setting this to 1 failed login attempt is NOT recommended. The default is 3 failed login attempts before locking the User Account.', 'bulletproof-security').'<br><br><strong>'.__('Automatic Lockout Time: ', 'bulletproof-security').'</strong><br>'.__('Type in the number of minutes that you would like the User Account to be locked out for when the maximum number of failed login attempts have been made. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Manual Lockout Time: ', 'bulletproof-security').'</strong><br>'.__('Type in the number of minutes that you would like the User Account to be locked out for when you manually lock a User Account using Lock checkbox options in the Dynamic Login Security form. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Max DB Rows To Show: ', 'bulletproof-security').'</strong><br>'.__('Type in the maximum number of database rows that you would like to display in the Dynamic Login Security form. Leaving this text box blank means display all database rows. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Turn On/Turn Off: ', 'bulletproof-security').'</strong><br>'.__('Turn On Login Security or Turn Off Login Security or Turn Off Login Security and Use the Password Reset Option ONLY. The Turn Off Login Security/Use Password Reset Option ONLY setting means that all Login Security features are turned Off except for the Password Reset Option, which can be used independently by itself. After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Logging Options: ', 'bulletproof-security').'</strong><br>'.__('You can choose to Log All User Account Logins or Log Only User Account Lockouts. Recommended Setting: Log Only Account Lockouts.  After making any setting changes click the Save Options button to save your new option settings.', 'bulletproof-security').'<br><br><strong>'.__('Error Messages: ', 'bulletproof-security').'</strong><br><br><strong>'.__('Standard WP Login Errors: ', 'bulletproof-security').'</strong>'.__('will display the normal WP login errors. Example1: ERROR: The password you entered for the username X is incorrect. BPS Example2: ERROR: This user account has been locked until May 14, 2013 9:31 am due to too many failed login attempts. You can login again after the Lockout Time above has expired.', 'bulletproof-security').'<br><br><strong>'.__('User/Pass Invalid Entry Error: ', 'bulletproof-security').'</strong>'.__('will display a generic Invalid Entry error message instead of displaying normal WP login errors for incorrect username or incorrect password, but if a user account is locked out then the BPS timestamp and Lockout Time error message will be displayed. Example: ERROR: Invalid Entry for either incorrect username or incorrect password. BPS Example2: ERROR: This user account has been locked until May 14, 2013 9:31 am due to too many failed login attempts. You can login again after the Lockout Time above has expired.', 'bulletproof-security').'<br><br><strong>'.__('User/Pass/Lock Invalid Entry Error: ', 'bulletproof-security').'</strong>'.__('will display a generic Invalid Entry error message instead of displaying normal WP login errors for incorrect username, incorrect password and when the user account is locked out - the BPS Lockout Time error message will NOT be displayed. ', 'bulletproof-security').'<br><strong>'.__('CAUTION: ', 'bulletproof-security').'</strong>'.__('If the user account is locked out then no indication will be given that the user account is locked out and only a generic ERROR: Invalid Entry message will be displayed.', 'bulletproof-security').'<br><br><strong>'.__('Password Reset: ', 'bulletproof-security').'</strong><br>'.__('The Enable Password Reset option will allow the normal WP Lost Password link to be displayed and allow locked out users to reset their passwords. The Disable Password Reset Frontend Only option disables the WP Login reset password feature and displays this error message - Password reset is not allowed for this user. This error message is displayed for valid or invalid user accounts or email addresses. In other words, there is no indication of whether or not a valid username or email address is being entered. This of course disables a lot of cool WordPress login features, but if you want complete Login Stealth Mode then this is the option for you. Disable Password Reset Frontend & Backend disables password reset on the frontend and backend (WP Dashboard) of your website.', 'bulletproof-security').'<br><br><strong>'.__('Sort DB Rows: ', 'bulletproof-security').'</strong><br>'.__('The Ascending Show Oldest Login First option displays logins from the oldest logins to your site to the newest logins to your site. The Descending Show Newest Login First option displays logins from the newest logins to your site to the oldest logins to your site. Example usage: Enter 50 for the Max DB Rows To Show option, which will show a maximum of 50 database rows/logins to your site and set Sort DB Rows option to Descending Show Newest Login First. You will see the last 50 most current/newest logins to your site in descending order.', 'bulletproof-security').'<br><br><strong>'.__('Search feature: ', 'bulletproof-security').'</strong><br>'.__('The search feature allows you to search all of the Login Security database rows. To search for all Locked User accounts enter Locked, to search for a username enter that username, to search for an IP address enter that IP address, etc.', 'bulletproof-security').'<br><br><strong>'.__('The Dynamic Login Security Form: ', 'bulletproof-security').'</strong><br>'.__('You have 3 options: Lock, Unlock or Delete database rows. The Login Security database table is hooked into the WordPress Users database table, but they are 2 completely separate database tables. If you lock a User Account then BPS Pro will enforce that lock on that User Account and the User will not be able to log in. If you unlock a User Account then the User will be able to login. Deleting database rows in the Login Security database table does NOT delete the User Account from the WordPress Users database table. When you delete a User Account it is pretty much the same thing as unlocking a User Account. To delete actual User Accounts you would go to the WordPress Users page and delete that User Account.', 'bulletproof-security').'<br><br><strong>'.__('BPS Pro Video Tutorial links can be found in the Help & FAQ pages.', 'bulletproof-security').'</strong>'; echo $text; ?></p>
 </div>
 
 <?php
@@ -156,6 +156,7 @@ if ( !current_user_can('manage_options') ) { _e('Permission Denied', 'bulletproo
 <select name="bulletproof_security_options_login_security[bps_login_security_OnOff]" style="width:220px;">
 <option value="On" <?php selected('On', $BPSoptions['bps_login_security_OnOff']); ?>><?php _e('Turn On Login Security', 'bulletproof-security'); ?></option>
 <option value="Off" <?php selected('Off', $BPSoptions['bps_login_security_OnOff']); ?>><?php _e('Turn Off Login Security', 'bulletproof-security'); ?></option>
+<option value="pwreset" <?php selected('pwreset', $BPSoptions['bps_login_security_OnOff']); ?>><?php _e('Turn Off Login Security/Use Password Reset Option ONLY', 'bulletproof-security'); ?></option>
 </select><br />
 	<label for="LSLog6"><?php _e('Logging Options:', 'bulletproof-security'); ?></label>
 <select name="bulletproof_security_options_login_security[bps_login_security_logging]" style="width:220px;">
@@ -173,7 +174,12 @@ if ( !current_user_can('manage_options') ) { _e('Permission Denied', 'bulletproo
 <option value="enable" <?php @selected('enable', $BPSoptions['bps_login_security_pw_reset']); ?>><?php _e('Enable Password Reset', 'bulletproof-security'); ?></option>
 <option value="disableFrontend" <?php @selected('disableFrontend', $BPSoptions['bps_login_security_pw_reset']); ?>><?php _e('Disable Password Reset Frontend Only', 'bulletproof-security'); ?></option>
 <option value="disable" <?php @selected('disable', $BPSoptions['bps_login_security_pw_reset']); ?>><?php _e('Disable Password Reset Frontend & Backend', 'bulletproof-security'); ?></option>
-
+</select><br />
+	<!-- delete LSLog8b inline CSS in .50.7 - added in .50.6 -->
+    <label for="LSLog8b" style="margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:26px;float:left;"><?php _e('Sort DB Rows:', 'bulletproof-security'); ?></label>
+<select name="bulletproof_security_options_login_security[bps_login_security_sort]" style="width:220px;">
+<option value="ascending" <?php @selected('ascending', $BPSoptions['bps_login_security_sort']); ?>><?php _e('Ascending - Show Oldest Login First', 'bulletproof-security'); ?></option>
+<option value="descending" <?php @selected('descending', $BPSoptions['bps_login_security_sort']); ?>><?php _e('Descending - Show Newest Login First', 'bulletproof-security'); ?></option>
 </select><br />
 <input type="submit" name="Submit-Security-Log-Options" class="bps-blue-button" style="margin:10px 0px 0px 0px;" value="<?php esc_attr_e('Save Options', 'bulletproof-security') ?>" />
 </form>
@@ -281,7 +287,7 @@ $Max_db_rows = $BPSoptions['bps_max_db_rows_display'];
 echo bpsDBRowCount();
 
 // Login Security Search Form
-if (isset($_POST['Submit-Login-Security-search']) && current_user_can('manage_options')) {
+if ( isset($_POST['Submit-Login-Security-search'] ) && current_user_can('manage_options') ) {
 	check_admin_referer('bulletproof_security_login_security_search');
 	
 	if ( wp_script_is( 'bps-js', $list = 'queue' ) ) {
@@ -294,7 +300,7 @@ if (isset($_POST['Submit-Login-Security-search']) && current_user_can('manage_op
 	echo '<form name="bpsLoginSecuritySearchDBRadio" action="admin.php?page=bulletproof-security/admin/login/login.php" method="post">';
 	wp_nonce_field('bulletproof_security_login_security_search');
 
-		echo '<div id="LoginSecurityCheckall">';
+		echo '<div id="LoginSecurityCheckall" style="max-height:600px;">';
 		echo '<table class="widefat" style="margin-bottom:20px;">';
 		echo '<thead>';
 		echo '<tr>';
@@ -317,26 +323,28 @@ if (isset($_POST['Submit-Login-Security-search']) && current_user_can('manage_op
 		echo '<tbody>';
 		echo '<tr>';
 		
-		foreach ($getLoginSecurityTable as $row) {
+		foreach ( $getLoginSecurityTable as $row ) {
 
-		if ($wpdb->num_rows != 0) {
+		if ( $wpdb->num_rows != 0 ) {
 			$gmt_offset = get_option( 'gmt_offset' ) * 3600;
 		
-			if ( $row->status == 'Locked') {
+			if ( $row->status == 'Locked' ) {
 				echo '<th scope="row" style="border-bottom:none;color:red;font-weight:bold;">'.$row->status.'</th>';
 			} else {
 				echo '<th scope="row" style="border-bottom:none;">'.$row->status.'</th>';
 			}
-		echo "<td><input type=\"checkbox\" id=\"lockuser\" name=\"LSradio[$row->user_id]\" value=\"lockuser\" class=\"lockuserALL\" /></td>";
-		echo "<td><input type=\"checkbox\" id=\"unlockuser\" name=\"LSradio[$row->user_id]\" value=\"unlockuser\" class=\"unlockuserALL\" /></td>";
-		echo "<td><input type=\"checkbox\" id=\"deleteuser\" name=\"LSradio[$row->user_id]\" value=\"deleteuser\" class=\"deleteuserALL\" /></td>";
+
+		echo "<td><input type=\"checkbox\" id=\"lockuser\" name=\"LSradio[$row->user_id]\" value=\"lockuser\" class=\"lockuserALL\" /><br><span style=\"font-size:10px;\">".__('Lock', 'bulletproof-security')."</span></td>";
+		echo "<td><input type=\"checkbox\" id=\"unlockuser\" name=\"LSradio[$row->user_id]\" value=\"unlockuser\" class=\"unlockuserALL\" /><br><span style=\"font-size:10px;\">".__('Unlock', 'bulletproof-security')."</span></td>";
+		echo "<td><input type=\"checkbox\" id=\"deleteuser\" name=\"LSradio[$row->user_id]\" value=\"deleteuser\" class=\"deleteuserALL\" /><br><span style=\"font-size:10px;\">".__('Delete', 'bulletproof-security')."</span></td>";
+
 		echo '<td>'.$row->user_id.'</td>';
 		echo '<td>'.$row->username.'</td>';
 		echo '<td>'.$row->public_name.'</td>';	
 		echo '<td>'.$row->email.'</td>';	
 		echo '<td>'.$row->role.'</td>';	
 		echo '<td>'.date_i18n(get_option('date_format').' '.get_option('time_format'), $row->login_time + $gmt_offset).'</td>';
-		if ( $row->lockout_time == 0) { 
+		if ( $row->lockout_time == 0 ) { 
 		echo '<td>'.__('NA', 'bulletproof-security').'</td>';
 		} else {
 		echo '<td>'.date_i18n(get_option('date_format').' '.get_option('time_format'), $row->lockout_time + $gmt_offset).'</td>';
@@ -348,7 +356,7 @@ if (isset($_POST['Submit-Login-Security-search']) && current_user_can('manage_op
 		}
 		} 
 		
-		if ($wpdb->num_rows == 0) {		
+		if ( $wpdb->num_rows == 0 ) {		
 		echo '<th scope="row" style="border-bottom:none;">'.__('No Logins/Locked', 'bulletproof-security').'</th>';
 		echo "<td></td>";
 		echo "<td></td>";
@@ -378,15 +386,22 @@ if (isset($_POST['Submit-Login-Security-search']) && current_user_can('manage_op
 	$bpspro_login_table = $wpdb->prefix . "bpspro_login_security";
 	$searchAll = ''; // return all rows
 	$BPSoptions = get_option('bulletproof_security_options_login_security');
-	$db_row_limit = $BPSoptions['bps_max_db_rows_display'];
 	
-	if ( $BPSoptions['bps_max_db_rows_display'] != '') {
-		$getLoginSecurityTable = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $bpspro_login_table WHERE (user_id LIKE %s) ORDER BY id LIMIT $db_row_limit", "%$searchAll%") );
+	if ( !$BPSoptions['bps_login_security_sort'] || $BPSoptions['bps_login_security_sort'] == 'ascending' ) {
+		$sorting = 'ASC';
 	} else {
-		$getLoginSecurityTable = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $bpspro_login_table WHERE (user_id LIKE %s) ORDER BY id ASC", "%$searchAll%") );
+		$sorting = 'DESC';
+	}
+	
+	if ( $BPSoptions['bps_max_db_rows_display'] != '' ) {
+		$db_row_limit = 'LIMIT '. $BPSoptions['bps_max_db_rows_display'];
+		$getLoginSecurityTable = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $bpspro_login_table WHERE login_time != %s ORDER BY login_time $sorting $db_row_limit", "%$searchAll%") );
+	
+	} else {
+		$getLoginSecurityTable = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $bpspro_login_table WHERE login_time != %s ORDER BY login_time $sorting", "%$searchAll%") );	
 	}
 
-		echo '<div id="LoginSecurityCheckall">';
+		echo '<div id="LoginSecurityCheckall" style="max-height:600px;">';
 		echo '<table class="widefat" style="margin-bottom:20px;">';
 		echo '<thead>';
 		echo '<tr>';
@@ -409,26 +424,28 @@ if (isset($_POST['Submit-Login-Security-search']) && current_user_can('manage_op
 		echo '<tbody>';
 		echo '<tr>';
 		
-		foreach ($getLoginSecurityTable as $row) {
+		foreach ( $getLoginSecurityTable as $row ) {
 
-		if ($wpdb->num_rows != 0) {
+		if ( $wpdb->num_rows != 0 ) {
 			$gmt_offset = get_option( 'gmt_offset' ) * 3600;
 			
-			if ( $row->status == 'Locked') {
+			if ( $row->status == 'Locked' ) {
 				echo '<th scope="row" style="border-bottom:none;color:red;font-weight:bold;">'.$row->status.'</th>';
 			} else {
 				echo '<th scope="row" style="border-bottom:none;">'.$row->status.'</th>';
 			}
-		echo "<td><input type=\"checkbox\" id=\"lockuser\" name=\"LSradio[$row->user_id]\" value=\"lockuser\" class=\"lockuserALL\" /></td>";
-		echo "<td><input type=\"checkbox\" id=\"unlockuser\" name=\"LSradio[$row->user_id]\" value=\"unlockuser\" class=\"unlockuserALL\" /></td>";
-		echo "<td><input type=\"checkbox\" id=\"deleteuser\" name=\"LSradio[$row->user_id]\" value=\"deleteuser\" class=\"deleteuserALL\" /></td>";
+
+		echo "<td><input type=\"checkbox\" id=\"lockuser\" name=\"LSradio[$row->user_id]\" value=\"lockuser\" class=\"lockuserALL\" /><br><span style=\"font-size:10px;\">".__('Lock', 'bulletproof-security')."</span></td>";
+		echo "<td><input type=\"checkbox\" id=\"unlockuser\" name=\"LSradio[$row->user_id]\" value=\"unlockuser\" class=\"unlockuserALL\" /><br><span style=\"font-size:10px;\">".__('Unlock', 'bulletproof-security')."</span></td>";
+		echo "<td><input type=\"checkbox\" id=\"deleteuser\" name=\"LSradio[$row->user_id]\" value=\"deleteuser\" class=\"deleteuserALL\" /><br><span style=\"font-size:10px;\">".__('Delete', 'bulletproof-security')."</span></td>";
+
 		echo '<td>'.$row->user_id.'</td>';
 		echo '<td>'.$row->username.'</td>';
 		echo '<td>'.$row->public_name.'</td>';	
 		echo '<td>'.$row->email.'</td>';	
 		echo '<td>'.$row->role.'</td>';	
 		echo '<td>'.date_i18n(get_option('date_format').' '.get_option('time_format'), $row->login_time + $gmt_offset).'</td>';
-		if ( $row->lockout_time == 0) { 
+		if ( $row->lockout_time == 0 ) { 
 		echo '<td>'.__('NA', 'bulletproof-security').'</td>';
 		} else {
 		echo '<td>'.date_i18n(get_option('date_format').' '.get_option('time_format'), $row->lockout_time + $gmt_offset).'</td>';
@@ -440,7 +457,7 @@ if (isset($_POST['Submit-Login-Security-search']) && current_user_can('manage_op
 		}
 		} 
 		
-		if ($wpdb->num_rows == 0) {		
+		if ( $wpdb->num_rows == 0 ) {		
 		echo '<th scope="row" style="border-bottom:none;">'.__('No Logins/Locked', 'bulletproof-security').'</th>';
 		echo "<td></td>";
 		echo "<td></td>";
@@ -499,40 +516,40 @@ jQuery(document).ready(function($){
 
 <?php 
 // Standard Visible Login Security form proccessing - Lock, Unlock or Delete user login status from DB
-if (isset($_POST['Submit-Login-Security-Radio']) && current_user_can('manage_options')) {
+if ( isset($_POST['Submit-Login-Security-Radio'] ) && current_user_can('manage_options') ) {
 	check_admin_referer('bulletproof_security_login_security');
 	
 	$LSradio = $_POST['LSradio'];
 	$bpspro_login_table = $wpdb->prefix . "bpspro_login_security";
 
-	switch($_POST['Submit-Login-Security-Radio']) {
+	switch( $_POST['Submit-Login-Security-Radio'] ) {
 		case __('Submit', 'bulletproof-security'):
 		
 		$delete_users = array();
 		$unlock_users = array();
 		$lock_users = array();		
 		
-		if (!empty($LSradio)) {
-			foreach ($LSradio as $key => $value) {
+		if ( !empty($LSradio) ) {
+			foreach ( $LSradio as $key => $value ) {
 				
-				if ($value == 'deleteuser') {
+				if ( $value == 'deleteuser' ) {
 					$delete_users[] = $key;
 				
-				} elseif ($value == 'unlockuser') {
+				} elseif ( $value == 'unlockuser' ) {
 					$unlock_users[] = $key;
 				
-				} elseif ($value == 'lockuser') {
+				} elseif ( $value == 'lockuser' ) {
 					$lock_users[] = $key;
 				}
 			}
 		}
 			
-		if (!empty($delete_users)) {
-			foreach ($delete_users as $delete_user) {
+		if ( !empty($delete_users) ) {
+			foreach ( $delete_users as $delete_user ) {
 				$LoginSecurityRows = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $bpspro_login_table WHERE user_id = %s", $delete_user) );
 			
-				foreach ($LoginSecurityRows as $row) {
-					$delete_row = $wpdb->query( $wpdb->prepare( "DELETE FROM $bpspro_login_table WHERE user_id = %s", $delete_user));
+				foreach ( $LoginSecurityRows as $row ) {
+					$delete_row = $wpdb->query( $wpdb->prepare( "DELETE FROM $bpspro_login_table WHERE user_id = %s", $delete_user) );
 				
 				echo $bps_topDiv;
 				$textDelete = '<font color="green">'.$row->username.__(' has been deleted from the Login Security Database Table.', 'bulletproof-security').'</font><br><div class="bps-message-button" style="width:90px;"><a href="admin.php?page=bulletproof-security/admin/login/login.php">'.__('Refresh Status', 'bulletproof-security').'</a></div>';
@@ -542,11 +559,11 @@ if (isset($_POST['Submit-Login-Security-Radio']) && current_user_can('manage_opt
 			}
 		}
 		
-		if (!empty($unlock_users)) {
-			foreach ($unlock_users as $unlock_user) {
+		if ( !empty($unlock_users) ) {
+			foreach ( $unlock_users as $unlock_user ) {
 				$LoginSecurityRows = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $bpspro_login_table WHERE user_id = %s", $unlock_user) );
 			
-				foreach ($LoginSecurityRows as $row) {
+				foreach ( $LoginSecurityRows as $row ) {
 					$NLstatus = 'Not Locked';
 					$lockout_time = '0';		
 					$failed_logins ='0';
@@ -561,11 +578,11 @@ if (isset($_POST['Submit-Login-Security-Radio']) && current_user_can('manage_opt
 			}
 		}
 
-		if (!empty($lock_users)) {
-			foreach ($lock_users as $lock_user) {
+		if ( !empty($lock_users) ) {
+			foreach ( $lock_users as $lock_user ) {
 				$LoginSecurityRows = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $bpspro_login_table WHERE user_id = %s", $lock_user) );
 			
-				foreach ($LoginSecurityRows as $row) {
+				foreach ( $LoginSecurityRows as $row ) {
 					$Lstatus = 'Locked';
 					$manual_lockout_time = time() + (60 * $BPSoptions['bps_manual_lockout_duration']); // default is 1 hour/3600 seconds
 					$BPSoptions = get_option('bulletproof_security_options_login_security');
@@ -585,39 +602,39 @@ if (isset($_POST['Submit-Login-Security-Radio']) && current_user_can('manage_opt
 }
 
 // Search Form - Login Security form proccessing - Lock, Unlock or Delete user login status from DB
-if (isset($_POST['Submit-Login-Search-Radio']) && current_user_can('manage_options')) {
+if ( isset($_POST['Submit-Login-Search-Radio'] ) && current_user_can('manage_options') ) {
 	check_admin_referer('bulletproof_security_login_security_search');
 	
 	$LSradio = $_POST['LSradio'];
 	$bpspro_login_table = $wpdb->prefix . "bpspro_login_security";
 	
-	switch($_POST['Submit-Login-Search-Radio']) {
+	switch( $_POST['Submit-Login-Search-Radio'] ) {
 		case __('Submit', 'bulletproof-security'):
 		
 		$delete_users = array();
 		$unlock_users = array();
 		$lock_users = array();		
 		
-		if (!empty($LSradio)) {
-			foreach ($LSradio as $key => $value) {
+		if ( !empty($LSradio) ) {
+			foreach ( $LSradio as $key => $value ) {
 				
-				if ($value == 'deleteuser') {
+				if ( $value == 'deleteuser' ) {
 					$delete_users[] = $key;
 				
-				} elseif ($value == 'unlockuser') {
+				} elseif ( $value == 'unlockuser' ) {
 					$unlock_users[] = $key;
 				
-				} elseif ($value == 'lockuser') {
+				} elseif ( $value == 'lockuser' ) {
 					$lock_users[] = $key;
 				}
 			}
 		}
 			
-		if (!empty($delete_users)) {
-			foreach ($delete_users as $delete_user) {
+		if ( !empty($delete_users) ) {
+			foreach ( $delete_users as $delete_user ) {
 				$LoginSecurityRows = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $bpspro_login_table WHERE user_id = %s", $delete_user) );
 			
-				foreach ($LoginSecurityRows as $row) {
+				foreach ( $LoginSecurityRows as $row ) {
 					$delete_row = $wpdb->query( $wpdb->prepare( "DELETE FROM $bpspro_login_table WHERE user_id = %s", $delete_user));
 				
 				echo $bps_topDiv;
@@ -628,11 +645,11 @@ if (isset($_POST['Submit-Login-Search-Radio']) && current_user_can('manage_optio
 			}
 		}
 		
-		if (!empty($unlock_users)) {
-			foreach ($unlock_users as $unlock_user) {
+		if ( !empty($unlock_users) ) {
+			foreach ( $unlock_users as $unlock_user ) {
 				$LoginSecurityRows = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $bpspro_login_table WHERE user_id = %s", $unlock_user) );
 			
-				foreach ($LoginSecurityRows as $row) {
+				foreach ( $LoginSecurityRows as $row ) {
 					$NLstatus = 'Not Locked';
 					$lockout_time = '0';		
 					$failed_logins ='0';						
@@ -647,11 +664,11 @@ if (isset($_POST['Submit-Login-Search-Radio']) && current_user_can('manage_optio
 			}
 		}
 
-		if (!empty($lock_users)) {
-			foreach ($lock_users as $lock_user) {
+		if ( !empty($lock_users) ) {
+			foreach ( $lock_users as $lock_user ) {
 				$LoginSecurityRows = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $bpspro_login_table WHERE user_id = %s", $lock_user) );
 			
-				foreach ($LoginSecurityRows as $row) {
+				foreach ( $LoginSecurityRows as $row ) {
 					$Lstatus = 'Locked';
 					$manual_lockout_time = time() + (60 * $BPSoptions['bps_manual_lockout_duration']); // default is 1 hour/3600 seconds 	
 					$BPSoptions = get_option('bulletproof_security_options_login_security');

@@ -2,10 +2,10 @@
 /**
  * Returns HTML formatted output for elements and handles form submission.
  *
- * $HeadURL: https://www.onthegosystems.com/misc_svn/common/tags/Views-1.6.1-Types-1.5.7/classes/forms.php $
- * $LastChangedDate: 2014-05-09 13:24:35 +0200 (Fri, 09 May 2014) $
- * $LastChangedRevision: 22197 $
- * $LastChangedBy: marcin $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6/embedded/common/classes/forms.php $
+ * $LastChangedDate: 2014-05-29 08:44:10 +0000 (Thu, 29 May 2014) $
+ * $LastChangedRevision: 922956 $
+ * $LastChangedBy: iworks $
  *
  * @version 1.0
  */

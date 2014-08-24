@@ -2,10 +2,10 @@
 /*
  * Post relationship class.
  *
- * $HeadURL: https://www.onthegosystems.com/misc_svn/cck/tags/1.5.7/embedded/classes/relationship.php $
- * $LastChangedDate: 2014-05-05 13:47:14 +0200 (Mon, 05 May 2014) $
- * $LastChangedRevision: 22007 $
- * $LastChangedBy: marcin $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6/embedded/classes/relationship.php $
+ * $LastChangedDate: 2014-08-22 01:02:43 +0000 (Fri, 22 Aug 2014) $
+ * $LastChangedRevision: 970205 $
+ * $LastChangedBy: brucepearson $
  *
  */
 
@@ -328,7 +328,27 @@ class WPCF_Relationship
          * UPDATE Loop over fields
          */
         foreach ( $save_fields as $slug => $value ) {
-            $this->cf->set( $child, $slug );
+            if ( defined( 'WPTOOLSET_FORMS_VERSION' ) ) {
+                // Get field by slug
+                $field = wpcf_fields_get_field_by_slug( str_replace( WPCF_META_PREFIX,
+                                '', $slug ) );
+                if ( empty( $field ) ) {
+                    continue;
+                }
+                // Set config
+                $config = wptoolset_form_filter_types_field( $field, $child->ID );
+                // Check if valid
+                $valid = wptoolset_form_validate_field( 'post', $config, $value );
+                if ( is_wp_error( $valid ) ) {
+                    $errors = $valid->get_error_data();
+                    $msg = sprintf( __( 'Child post "%s" field "%s" not updated:',
+                                    'wpcf' ), $child->post_title, $field['name'] );
+                    wpcf_admin_message_store( $msg . ' ' . implode( ', ',
+                                    $errors ), 'error' );
+                    continue;
+                }
+            }
+            $this->cf->set( $child, $field );
             $this->cf->context = 'post_relationship';
             $this->cf->save( $value );
         }

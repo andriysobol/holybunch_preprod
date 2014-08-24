@@ -21,13 +21,19 @@ label[for=LSLog5] {margin:0;padding:0;display:block;font-size:1em;font-weight:bo
 label[for=LSLog6] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:5px;float:left;}
 label[for=LSLog7] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:6px;float:left;}
 label[for=LSLog8] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:3px;float:left;}
-#LoginSecurityCheckall {max-height:1000px;width:100%;overflow:auto;margin:0px 0px 20px 0px;}
+label[for=LSLog8b] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:19px;float:left;}
+#LoginSecurityCheckall {max-height:600px;width:100%;overflow:auto;margin:0px 0px 20px 0px;}
 
 /* JTC Anti-Spam */
 label[for=LSLog9] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:.25em;float:left;}
 label[for=LSLog10] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:16px;float:left;}
 label[for=LSLog11] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:5px;float:left;}
 label[for=LSLog12] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:12px;float:left;}
+
+/** DB Backup **/
+#DBBJobscheckall {margin:0px;}
+#DBBFilescheckall {margin:0px;}
+#DBBcheckall {margin:0px 30px 10px 0px;float:left;overflow:auto;width:400px;max-height:400px;border:1px solid black;}
 
 div.automagic-text {font-weight:bold;color:green;border:1px solid black;background-color:#ffffe0;width:300px;padding:5px;}
 #bps-container div div {font-size:1em;}

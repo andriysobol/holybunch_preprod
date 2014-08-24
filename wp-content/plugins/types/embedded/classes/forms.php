@@ -4,10 +4,10 @@
  *
  * Returns HTML formatted output for elements and handles form submission.
  *
- * $HeadURL: https://www.onthegosystems.com/misc_svn/cck/tags/1.5.7/embedded/classes/forms.php $
- * $LastChangedDate: 2014-05-26 15:12:51 +0200 (Mon, 26 May 2014) $
- * $LastChangedRevision: 22752 $
- * $LastChangedBy: marcin $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6/embedded/classes/forms.php $
+ * $LastChangedDate: 2014-08-22 01:02:43 +0000 (Fri, 22 Aug 2014) $
+ * $LastChangedRevision: 970205 $
+ * $LastChangedBy: brucepearson $
  *
  *
  * @version 1.0
@@ -846,10 +846,14 @@ class Enlimbo_Forms_Wpcf
     public function hidden( $element )
     {
         $element['#type'] = 'hidden';
-        $output = '<input type="hidden" id="' . $element['#id'] . '"  name="'
-                . $element['#name'] . '" value="';
-        $output .= isset( $element['#value'] ) ? $element['#value'] : 1;
-        $output .= '" />';
+        $element = $this->_setRender( $element );
+        $output = '<input type="hidden" ';
+        foreach( array('id', 'name' ) as $key ) {
+            $output .= sprintf( '%s="%s" ', $key, $element['#'.$key] );
+        }
+        $output .= sprintf( 'value="%s" ', isset( $element['#value'] ) ? $element['#value'] : 1 );
+        $output .= $element['_attributes_string'];
+        $output .= ' />';
         return $output;
     }
 

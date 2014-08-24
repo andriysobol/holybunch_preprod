@@ -4,7 +4,7 @@ Donate link: http://www.ait-pro.com/aitpro-blog/331/bulletproof-security-plugin-
 Tags: 400, 403, 404, 503, antivirus, attack, authenticate, authentication, author, author id, back up, backups, ban, banned, base64, block, blocked, Bot, brute force, bruteforce, bulletproof, chmod, code, coming soon, crack, cracking, CRLF, CSRF, database backup, database table prefix, DB backup, DB table backup, DB table prefix, developer, development, directory traversal, DoS, DDoS, dump, encode, enumeration, error log, exploit, exploitation, file inclusion, firewall, hack, hackers, htaccess, HTTP log, infect, infected, infection, injection, LFI, lock, log, logging, login alerts, login security, login, maintenance mode, maintenance, malicious, multisite, mysql, mysql backup, offline, optimize, optimization, path traversal, performance, permissions, pingback, plugin, prevent, prevention, privacy, private, protection, RFI, safe, safety, schedule backup, script, secure, security log, security, spam, spammers, speed increase, speed boost, SQL injection, trackback, unavailable, under construction, user id, username, users, virus, vulnerable, vulnerability, website backup, wordpress backup, website security, WordPress security, xmlrpc, xml-rpc, XSS
 Requires at least: 3.0 
 Tested up to: 4.0 
-Stable tag: .50.3
+Stable tag: .50.6
 
 WordPress Website Security Protection: Effective...Reliable...Easy to use
 
@@ -283,6 +283,10 @@ If you are using both Apache and Nginx together and Nginx is the frontend webser
 
 Occasionally issues or conflicts do occur with other plugins, but they are always quickly resolved. BulletProof Security is compatible with all other Plugins and Themes except for the Better WP Security (iThemes Security) plugin. If BulletProof Security is blocking something legitimate in another plugin or theme a whitelist rule can be created in BPS Custom Code to allow/whitelist whatever was being blocked by BPS. Please check the BulletProof Security <a href="http://forum.ait-pro.com/forums/topic/plugin-conflicts-actively-blocked-plugins-plugin-compatibility/" title="Plugin Compatibility" rel="nofollow" target="_blank">Plugin Compatibility</a> page for the steps to search for documented plugin or theme whitelist rules.
 
+= Does BulletProof Security Work On All Web Hosts? =
+
+Yes, BulletProof Security works on all web hosts. There is one known issue with Go Daddy Managed WordPress Hosting (not Go Daddy standard hosting account types) where wp-admin .htaccess files are not allowed to be created or edited due to security restrictions for that hosting account type. As of BPS .50.6 a new option was added for wp-admin BulletProof Mode to enable or disable wp-admin BulletProof Mode. The Enable/Disable wp-admin BulletProof Mode option on the htaccess Core Security Modes page disables wp-admin .htaccess file displayed error messages, automation, updating and creation of wp-admin .htaccess files. Note: Some wp-admin .htaccess file inpage error checking was not changed, such as the inpage check on the Security Status tab page. This may be changed in the future, but it serves a useful troubleshooting purpose for now.
+
 = I am seeing Security Log entries in my BulletProof Security Log. What do they mean? =
 
 Your Security Log will log 400, 403 and 404 (requires copying the BPS 404 logging code to your Theme's 404.php Template) Errors. The Security Log logs all 400 and 403 HTTP Response Status Codes by default. You can also log 404 HTTP Response Status Codes by opening this BPS 404 Template file - /bulletproof-security/404.php and copying the logging code into your Theme's 404 Template file. When you open the BPS Pro 404.php file you will see simple instructions on how to add the 404 logging code to your Theme's 404 Template file. 99.99% of what is logged in the Security Log is blocked hackers, spammers, bad bots, scrapers, miners, etc. The Security Log is also a troubleshooting tool. If BPS is blocking something legitimate in another plugin or theme then exactly what is being blocked in another plugin or theme by BPS will be logged in the Security Log.
@@ -344,6 +348,35 @@ Yes, BulletProof Security works with Git, but does require some additional set u
 8. BulletProof Security - Maintenance Mode template images
 
 == Changelog ==
+
+= .50.6 =
+* New Option: Login Security & Monitoring Sort DB Rows:
+* The Ascending Show Oldest Login First option displays logins from the oldest logins to your site to the newest logins to your site. The Descending Show Newest Login First option displays logins from the newest logins to your site to the oldest logins to your site. Example usage: Enter 50 for the Max DB Rows To Show option, which will show a maximum of 50 database rows/logins to your site and set Sort DB Rows option to Descending Show Newest Login First. You will see the last 50 most current/newest logins to your site in descending order.
+* Enhancements: Login Security & Monitoring:
+* CSS max-height changed from 1000px to 600px for the scrollable Dynamic DB table. 600px is a much better / more manageable viewing area.
+* Lock, Unlock and Delete labels for individual checkboxes in Dynamic DB search form and standard form.
+* DB Query improvement for the Dynamic DB standard form.
+* New Option: htaccess Core wp-admin BulletProof Mode Enable/Disable wp-admin BulletProof Mode:
+* This option is ONLY for Hosts that do not allow .htaccess files in the wp-admin folder. Go Daddy Managed WordPress Hosting (not standard Go Daddy Hosting) is the only known hosting account type where this option should be set to: Disable wp-admin BulletProof Mode. For everyone else you do not need to use this option. The default setting is already set to: Enable wp-admin BulletProof Mode.
+* Improvement:  htaccess Core root domain label retrieval/writing:
+* Improvement to htaccess Core code when retrieving & writing domain labels. Impact: Folks with 3+ domain label naming conventions such as: www.label1.label2.label3.
+* Enjoy!
+
+= .50.5 =
+* Login Security Password Reset BugFix & New Option:
+* BugFix: The Lost your password link was not being displayed when Login Security was turned Off.
+* New Option: Turn Off Login Security/Use Password Reset Option ONLY.
+* Enjoy!
+
+= .50.4 =
+* BugFixes/Code Corrections/Misc/CSS/Visual/Other:
+* DB Backup: backticks added to DB Backup Query to allow for hyphenated or other special characters in DB naming conventions.
+* DB Backup dynamic DB table: max-height CSS change
+* Login Security CSS auto-scroll: max-height CSS change
+* DB Table Prefix Changer: Additional check for writable files for DSO server types.
+* Root and wp-admin filter change
+* Log timestamps synchronized to GMT: All log timestamps are now synchronized to GMT time.
+* Enjoy!
 
 = .50.3 =
 * Correction/BugFix/Improvement: root and wp-admin .htaccess filters/rules change/correction/improvement. See the BPS Whats New tab page for more details.
@@ -502,6 +535,32 @@ Additional function checking code has been added in cases where the mysqli_get_c
 
 == Upgrade Notice ==
 
+= .50.6 =
+* New Option: Login Security & Monitoring Sort DB Rows:
+* Enhancements: Login Security & Monitoring:
+* CSS max-height changed from 1000px to 600px for the scrollable Dynamic DB table. 600px is a much better / more manageable viewing area.
+* Lock, Unlock and Delete labels for individual checkboxes in Dynamic DB search form and standard form.
+* DB Query improvement for the Dynamic DB standard form.
+* New Option: htaccess Core wp-admin BulletProof Mode Enable/Disable wp-admin BulletProof Mode:
+* Improvement:  htaccess Core root domain label retrieval/writing:
+* Enjoy!
+
+= .50.5 =
+* Login Security Password Reset BugFix & New Option:
+* BugFix: The Lost your password link was not being displayed when Login Security was turned Off.
+* New Option: Turn Off Login Security/Use Password Reset Option ONLY.
+* Enjoy!
+
+= .50.4 =
+* BugFixes/Code Corrections/Misc/CSS/Visual/Other:
+* DB Backup: backticks added to DB Backup Query to allow for hyphenated or other special characters in DB naming conventions.
+* DB Backup dynamic DB table: max-height CSS change
+* Login Security CSS auto-scroll: max-height CSS change
+* DB Table Prefix Changer: Additional check for writable files for DSO server types.
+* Root and wp-admin filter change
+* Log timestamps synchronized to GMT: All log timestamps are now synchronized to GMT time.
+* Enjoy!
+
 = .50.3 =
 * Correction/BugFix/Improvement: root and wp-admin .htaccess filters/rules change/correction/improvement. See the BPS Whats New tab page for more details.
 * Thanks goes to aselektor for spotting and reporting this.
@@ -517,20 +576,6 @@ Additional function checking code has been added in cases where the mysqli_get_c
 * System Info page: added MySQL Extension, MySQLi Extension check.
 * Login Security email message text change when user account is locked.
 * Whitelist the Debug Bar plugin debug-bar css and js scripts.
-* Enjoy!
-
-= .50.1 =
-* Security Logging major changes/improvements to logging template files/code & start of Phase 1 Security Log Solution Targeting: 
-The Security Logging code has been significantly improved in BPS .50.1. Logging is more streamlined, performance optimized & faster than in previous BPS versions, even with the new general conditional pattern checking code added.
-* As of BPS .50.1 two new Security Log Fields have been added to Security Logging: Event Code and Solution. In Phase 1 of Security Log Solution Targeting the primary focus is on detecting possible Plugin Skip/Bypass rules & wp-admin Skip/Bypass Rules issues that need/require a one-time solution. Since 99.99% of the Security Log entries are blocked/forbidden hackers, spammers, scrapers, harvesters, miners, bad bots, etc. then the Security Log checking conditions can and should be streamlined/performance optimized by only looking at pattern matches in a broad scope.
-* Maintenance Mode Accordion:
-Maintenance Mode Accordion created for better functionality/usability. Code correction: Maintenance Mode website name not displayed in the reminder email. Code correction: Maintenance Mode Apostrophes/single quote code character displayed with an escape backslash.
-* New Bonus Custom Code/Dismiss Notice: WordPress XML-RPC DDoS Protection:
-Special Thanks goes to Gary Gordon for reporting the recent WordPress XML-RPC exploits/attacks. The XML-RPC DDoS PROTECTION Bonus Custom Code .htaccess code completely turns off/disables IXR-RPC Client/Server capabilities on a website by protecting the WordPress xmlrpc.php file from being publicly accessible, which prevents the IXR XML-RPC Client/Server connection. Using this Bonus Custom Code will turn off/disable remote posting capability from Weblog Clients (A Weblog Client is software you run on your local machine (desktop) that lets you post to your blog via XML-RPC), unless you add (whitelist) your IP address in the XML-RPC DDoS PROTECTION Bonus Code.
-* New Dismiss Notice Added: WordPress Firewall 2 plugin check
-The WordPress Firewall 2 plugin contains a coding mistake and has not been updated in over 3 years. The wp-admin area is supposed to be whitelisted by default, but that code is not working correctly, which breaks several things in the BPS plugin. The Dismiss Notice will alert users to this existing problem.
-* New/Updated Help & FAQ Help Links:
-Help & FAQ tab pages have updated links, old/outdated links removed, etc.
 * Enjoy!
 
 == Help Info ==

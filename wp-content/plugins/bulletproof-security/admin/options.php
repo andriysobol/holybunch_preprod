@@ -176,9 +176,19 @@ if (isset($_POST['submit12']) && current_user_can('manage_options')) {
 // Do String Replacements for Custom Code AFTER new .htaccess file has been copied to wp-admin
 $bpsecurewpadmin = 'unchecked';
 $Removebpsecurewpadmin = 'unchecked';
-if (isset($_POST['submit13']) && current_user_can('manage_options')) {
+if ( isset( $_POST['submit13'] ) && current_user_can('manage_options') ) {
 	check_admin_referer( 'bulletproof_security_wpadmin_copy' );
 	
+	$BPS_wpadmin_Options = get_option('bulletproof_security_options_htaccess_res');
+
+	if ( $BPS_wpadmin_Options['bps_wpadmin_restriction'] == 'disabled' ) {
+		echo $bps_topDiv;
+		$text = '<font color="red"><strong>'.__('wp-admin BulletProof Mode was not activated. wp-admin BulletProof Mode is disabled on the Security Modes page.', 'bulletproof-security').'</strong></font>';
+		echo $text;
+   		echo $bps_bottomDiv;		
+	return;
+	}
+
 	$options = get_option('bulletproof_security_options_customcode_WPA');  
 	
 	$HtaccessMaster = WP_PLUGIN_DIR . '/bulletproof-security/admin/htaccess/wpadmin-secure.htaccess';
@@ -196,10 +206,10 @@ if (isset($_POST['submit13']) && current_user_can('manage_options')) {
 	
 	$selected_radio = $_POST['selection13'];
 	
-	if ($selected_radio == 'bpsecurewpadmin') {
+	if ( $selected_radio == 'bpsecurewpadmin' ) {
 		$bpsecurewpadmin = 'checked';
 
-		if ( @substr($sapi_type, 0, 6) != 'apache' || @$permsHtaccess != '0666' || @$permsHtaccess != '0777') { // Windows IIS, XAMPP, etc
+		if ( @substr($sapi_type, 0, 6) != 'apache' || @$permsHtaccess != '0666' || @$permsHtaccess != '0777' ) { // Windows IIS, XAMPP, etc
 			@chmod($wpadminHtaccess, 0644);
 		}		
 
@@ -238,7 +248,7 @@ if (isset($_POST['submit13']) && current_user_can('manage_options')) {
 			}
 		}
 	}
-	elseif ($selected_radio == 'Removebpsecurewpadmin') {
+	elseif ( $selected_radio == 'Removebpsecurewpadmin' ) {
 		$Removebpsecurewpadmin = 'checked';
 		$fh = fopen($wpadminHtaccess, 'a');
 		fwrite($fh, 'delete');
@@ -529,7 +539,7 @@ RewriteRule . index.php [L]
 $bps_get_wp_root_secure = bps_wp_get_root_folder();
 $bps_auto_write_secure_file = WP_PLUGIN_DIR . '/bulletproof-security/admin/htaccess/secure.htaccess';
 
-$bpsSuccessMessageSec = '<font color="green"><strong>'.__('Success! Your BulletProof Security Root Master htaccess file was created successfully!', 'bulletproof-security').'</strong></font><br><font color="black"><strong>'.__('You can now Activate BulletProof Mode for your Root folder. Select the BulletProof Mode radio button and click Activate to put your website in BulletProof Mode.', 'bulletproof-security').'</strong></font>';
+$bpsSuccessMessageSec = '<font color="green"><strong>'.__('Success! Your BulletProof Security Root Master htaccess file was created successfully!', 'bulletproof-security').'</strong></font><br><font color="black"><strong>'.__('You can now Activate BulletProof Mode for your Root folder. Select the Root Folder BulletProof Mode radio button and click Activate to put your website in BulletProof Mode.', 'bulletproof-security').'</strong></font>';
 
 $bpsFailMessageSec = '<font color="red"><strong>'.__('The file ', 'bulletproof-security').$bps_auto_write_secure_file.__(' is not writable or does not exist.', 'bulletproof-security').'</strong></font><br><strong>'.__('Check that the file is named secure.htaccess and that the file exists in the /bulletproof-security/admin/htaccess master folder. If this is not the problem click', 'bulletproof-security').' <a href="http://forum.ait-pro.com/forums/topic/read-me-first-free/" target="_blank">'.__('HERE', 'bulletproof-security').'</a>'.__(' to go the the BulletProof Security Forum.', 'bulletproof-security').'</strong>';
 
@@ -714,7 +724,7 @@ $bps_secure_BPSQSE = "# BEGIN BPSQSE BPS QUERY STRING EXPLOITS
 RewriteCond %{HTTP_USER_AGENT} (havij|libwww-perl|wget|python|nikto|curl|scan|java|winhttp|clshttp|loader) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (;|<|>|'|".'"'."|\)|\(|%0A|%0D|%22|%27|%28|%3C|%3E|%00).*(libwww-perl|wget|python|nikto|curl|scan|java|winhttp|HTTrack|clshttp|archiver|loader|email|harvest|extract|grab|miner) [NC,OR]
-RewriteCond %{THE_REQUEST} (\?|\*|%2a)+(%20+|\s+|%20+\s+|\s+%20+|\s+%20+\s+)HTTP(:/|/) [NC,OR]
+RewriteCond %{THE_REQUEST} (\?|\*|%2a)+(%20+|\\\\s+|%20+\\\\s+|\\\\s+%20+|\\\\s+%20+\\\\s+)HTTP(:/|/) [NC,OR]
 RewriteCond %{THE_REQUEST} etc/passwd [NC,OR]
 RewriteCond %{THE_REQUEST} cgi-bin [NC,OR]
 RewriteCond %{THE_REQUEST} (%0A|%0D|\\"."\\"."r|\\"."\\"."n) [NC,OR]
@@ -1119,8 +1129,20 @@ $bpsSpacePop = '-------------------------------------------------------------';
 <h3><?php _e('Activate Website wp-admin Folder .htaccess Security Mode', 'bulletproof-security'); ?>  <button id="bps-open-modal3" class="bps-modal-button"><?php _e('Read Me', 'bulletproof-security'); ?></button></h3>
 
 <div id="bps-modal-content3" title="<?php _e('Activate wp-admin BulletProof Mode', 'bulletproof-security'); ?>">
-	<p><?php $text = '<strong>'.__('This Read Me Help window is draggable (top) and resizable (bottom right corner)','bulletproof-security').'</strong><br><br><strong>'.__('If you activate BulletProof Mode for your wp-admin folder you must also activate BulletProof Mode for your Root folder.','bulletproof-security').'</strong><br><br>'.__('Activating BulletProof Mode copies, renames and moves the master htaccess file wpadmin-secure.htaccess from /plugins/bulletproof-security/admin/htaccess/ to your /wp-admin folder.','bulletproof-security').'<br><br><strong>'.__('Testing or Removing / Uninstalling BPS','bulletproof-security').'</strong><br>'.__('If you are testing BPS to determine if there is a plugin conflict or other conflict then Activate Default Mode and select the Delete wp-admin htaccess File radio button and click the Activate button. This puts your site in a standard WordPress state with a default or generic Root htaccess file and no htaccess file in your wp-admin folder. After testing or troubleshooting is completed reactivate BulletProof Modes for both the Root and wp-admin folders. If you are removing / uninstalling BPS then follow the same steps and then select Deactivate from the Wordpress Plugins page and then click Delete to uninstall the BPS plugin.','bulletproof-security').'<br><br><strong>'.__('BPS Video Tutorial links can be found in the Help & FAQ pages.','bulletproof-security').'</strong>'; echo $text; ?></p>
+	<p><?php $text = '<strong>'.__('This Read Me Help window is draggable (top) and resizable (bottom right corner)','bulletproof-security').'</strong><br><br><strong>'.__('If you activate BulletProof Mode for your wp-admin folder you must also activate BulletProof Mode for your Root folder.','bulletproof-security').'</strong><br><br>'.__('Activating BulletProof Mode copies, renames and moves the master htaccess file wpadmin-secure.htaccess from /plugins/bulletproof-security/admin/htaccess/ to your /wp-admin folder.','bulletproof-security').'<br><br><strong>'.__('Enable/Disable wp-admin BulletProof Mode','bulletproof-security').'</strong><br>'.__('This option is ONLY for Hosts that do not allow .htaccess files in the wp-admin folder. Go Daddy Managed WordPress Hosting (not standard Go Daddy Hosting) is the only known hosting account type where this option should be set to: Disable wp-admin BulletProof Mode. For everyone else you do not need to use this option. The default setting is already set to: Enable wp-admin BulletProof Mode.','bulletproof-security').'<br><br><strong>'.__('Testing or Removing / Uninstalling BPS','bulletproof-security').'</strong><br>'.__('If you are testing BPS to determine if there is a plugin conflict or other conflict then Activate Default Mode and select the Delete wp-admin htaccess File radio button and click the Activate button. This puts your site in a standard WordPress state with a default or generic Root htaccess file and no htaccess file in your wp-admin folder. After testing or troubleshooting is completed reactivate BulletProof Modes for both the Root and wp-admin folders. If you are removing / uninstalling BPS then follow the same steps and then select Deactivate from the Wordpress Plugins page and then click Delete to uninstall the BPS plugin.','bulletproof-security').'<br><br><strong>'.__('BPS Video Tutorial links can be found in the Help & FAQ pages.','bulletproof-security').'</strong>'; echo $text; ?></p>
 </div>
+
+<form name="wpadminEnableDisable" action="options.php" method="post">
+	<?php settings_fields('bulletproof_security_options_htaccess_res'); ?> 
+	<?php $BPS_wpadmin_Options = get_option('bulletproof_security_options_htaccess_res'); ?>
+	<strong><label for="wpadmin-res"><?php _e('Enable/Disable wp-admin BulletProof Mode:', 'bulletproof-security'); ?></label></strong><br />
+	<strong><label for="wpadmin-res"><?php _e('Note: See Read Me help button above', 'bulletproof-security'); ?></label></strong><br />
+<select name="bulletproof_security_options_htaccess_res[bps_wpadmin_restriction]" style="width:280px;">
+<option value="enabled" <?php selected('enabled', $BPS_wpadmin_Options['bps_wpadmin_restriction']); ?>><?php _e('Enable wp-admin BulletProof Mode', 'bulletproof-security'); ?></option>
+<option value="disabled" <?php selected('disabled', $BPS_wpadmin_Options['bps_wpadmin_restriction']); ?>><?php _e('Disable wp-admin BulletProof Mode', 'bulletproof-security'); ?></option>
+</select>
+<input type="submit" name="Submit-Enable-Disable-wpadmin" class="bps-blue-button" style="margin:0px 0px 0px 0px;" value="<?php esc_attr_e('Enable/Disable', 'bulletproof-security') ?>" />
+</form>
 
 <form name="BulletProof-WPadmin" action="admin.php?page=bulletproof-security/admin/options.php" method="post">
 <?php wp_nonce_field('bulletproof_security_wpadmin_copy'); ?>
@@ -2269,24 +2291,69 @@ jQuery(document).ready(function($){
     <td class="bps-table_cell_no_border">&nbsp;</td>
     <td class="bps-table_cell_no_border">&nbsp;</td>
   </tr> 
+
+  <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<strong><h3>'.__('50.6', 'bulletproof-security').'</h3></strong>'; echo $text; ?></td>
+  </tr>
+  <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<h3><strong>'.__('New Option: Login Security & Monitoring Sort DB Rows:', 'bulletproof-security').'</strong></h3>'.__('The Ascending Show Oldest Login First option displays logins from the oldest logins to your site to the newest logins to your site. The Descending Show Newest Login First option displays logins from the newest logins to your site to the oldest logins to your site. Example usage: Enter 50 for the Max DB Rows To Show option, which will show a maximum of 50 database rows/logins to your site and set Sort DB Rows option to Descending Show Newest Login First. You will see the last 50 most current/newest logins to your site in descending order.', 'bulletproof-security'); echo $text; ?>
+    </td>
+  </tr> 
+  <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<h3><strong>'.__('Enhancements: Login Security & Monitoring:', 'bulletproof-security').'</strong></h3>'.__('- CSS max-height changed from 1000px to 600px for the scrollable Dynamic DB table. 600px is a much better / more manageable viewing area.', 'bulletproof-security').'<br>'.__('- Lock, Unlock and Delete labels for individual checkboxes in Dynamic DB search form and standard form.', 'bulletproof-security').'<br>'.__('- DB Query improvement for the Dynamic DB standard form.', 'bulletproof-security'); echo $text; ?>
+    </td>
+  </tr> 
+  <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<h3><strong>'.__('New Option: htaccess Core wp-admin BulletProof Mode Enable/Disable wp-admin BulletProof Mode:', 'bulletproof-security').'</strong></h3>'.__('This option is ONLY for Hosts that do not allow .htaccess files in the wp-admin folder. Go Daddy Managed WordPress Hosting (not standard Go Daddy Hosting) is the only known hosting account type where this option should be set to: Disable wp-admin BulletProof Mode. For everyone else you do not need to use this option. The default setting is already set to: Enable wp-admin BulletProof Mode.', 'bulletproof-security'); echo $text; ?>
+    </td>
+  </tr> 
+  <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<h3><strong>'.__('Improvement: htaccess Core root domain label retrieval/writing:', 'bulletproof-security').'</strong></h3>'.__('Improvement to htaccess Core code when retrieving & writing domain labels. Impact: Folks with 3+ domain label naming conventions such as: www.label1.label2.label3.', 'bulletproof-security'); echo $text; ?>
+    </td>
+  </tr> 
+  <tr>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<strong><h3>'.__('50.5', 'bulletproof-security').'</h3></strong>'; echo $text; ?></td>
+  </tr>
+  <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<h3><strong>'.__('Login Security Password Reset BugFix & New Option:', 'bulletproof-security').'</strong></h3>'.__('- BugFix: The Lost your password link was not being displayed when Login Security was turned Off.<br>- New Option: Turn Off Login Security/Use Password Reset Option ONLY. The Turn Off Login Security/Use Password Reset Option ONLY setting means that all Login Security features are turned Off except for the Password Reset Option, which can be used independently by itself.', 'bulletproof-security'); echo $text; ?>
+    </td>
+  </tr> 
+  <tr>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<strong><h3>'.__('50.4', 'bulletproof-security').'</h3></strong>'; echo $text; ?></td>
+  </tr>
+  <tr>
+    <td class="bps-table_cell_no_border">&bull;</td>
+    <td class="bps-table_cell_no_border"><?php $text = '<h3><strong>'.__('BugFixes/Code Corrections/Misc/CSS/Visual/Other:', 'bulletproof-security').'</strong></h3>'.__('- DB Backup: backticks added to DB Backup Query to allow for hyphenated or other special characters in DB naming conventions.<br>- DB Backup dynamic DB table: max-height CSS change<br>- Login Security CSS auto-scroll: max-height CSS change<br>- DB Table Prefix Changer: Additional check for writable files for DSO server types.<br>- Root and wp-admin filter change<br>- Log timestamps synchronized to GMT: All log timestamps are now synchronized to GMT time.
+', 'bulletproof-security'); echo $text; ?>
+    </td>
+  </tr> 
+  <tr>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+    <td class="bps-table_cell_no_border">&nbsp;</td>
+  </tr>
   <tr>
     <td class="bps-table_cell_no_border">&bull;</td>
     <td class="bps-table_cell_no_border"><?php $text = '<strong><h3>'.__('50.3', 'bulletproof-security').'</h3></strong>'; echo $text; ?></td>
   </tr>
   <tr>
     <td class="bps-table_cell_no_border">&bull;</td>
-    <td class="bps-table_cell_no_border"><?php $text = '<strong><h3>'.__('Root & wp-admin .htaccess Security Filters Change:', 'bulletproof-security').'</h3><strong>'.__('The BPS upgrade will seamlessly replace and combine the older root & wp-admin .htaccess filters into the new security filter below during the BPS upgrade.<br>Thanks goes to aselektor for spotting and reporting this.<br><br>Old security filters', 'bulletproof-security').'</strong>'; echo $text; ?>
-<pre style="width:530px;">
-RewriteCond %{THE_REQUEST} \?\ HTTP/ [NC,OR]
-RewriteCond %{THE_REQUEST} \/\*\ HTTP/ [NC,OR]
-
-RewriteCond %{THE_REQUEST} \?+(%20{1,}|[^\s])+HTTP+(:/|/) [NC,OR]
-RewriteCond %{THE_REQUEST} \/+(\*|%2a)+(%20|\s){1,}+HTTP+(:/|/) [NC,OR]
-</pre><br />
-<?php $text = '<strong>'.__('New security filter', 'bulletproof-security').'</strong>'; echo $text; ?>
-<pre style="width:530px;">
-RewriteCond %{THE_REQUEST} (\?|\*|%2a)+(%20+|\s+|%20+\s+|\s+%20+|\s+%20+\s+)HTTP(:/|/) [NC,OR]
-</pre>
+    <td class="bps-table_cell_no_border"><?php $text = '<strong><h3>'.__('Root & wp-admin .htaccess Security Filters Change:', 'bulletproof-security').'</h3><strong>'.__('The BPS upgrade will seamlessly replace and combine the older root & wp-admin .htaccess filters into the new security filter below during the BPS upgrade.<br>Thanks goes to aselektor for spotting and reporting this.', 'bulletproof-security').'</strong>'; echo $text; ?>
     </td>
   </tr> 
    <tr>
@@ -2337,16 +2404,7 @@ RewriteCond %{THE_REQUEST} (\?|\*|%2a)+(%20+|\s+|%20+\s+|\s+%20+|\s+%20+\s+)HTTP
   </tr>
   <tr>
     <td class="bps-table_cell_no_border">&bull;</td>
-    <td class="bps-table_cell_no_border"><?php $text = '<strong><h3>'.__('Root .htaccess Security Filters Change:', 'bulletproof-security').'</h3><strong>'.__('Old security filters', 'bulletproof-security').'</strong>'; echo $text; ?>
-<pre style="width:530px;">
-RewriteCond %{THE_REQUEST} \?\ HTTP/ [NC,OR]
-RewriteCond %{THE_REQUEST} \/\*\ HTTP/ [NC,OR]
-</pre>
-<?php $text = '<strong>'.__('New security filters', 'bulletproof-security').'</strong>'; echo $text; ?>
-<pre style="width:530px;">
-RewriteCond %{THE_REQUEST} \?+(%20{1,}|[^\s])+HTTP+(:/|/) [NC,OR]
-RewriteCond %{THE_REQUEST} \/+(\*|%2a)+(%20|\s){1,}+HTTP+(:/|/) [NC,OR]
-</pre>
+    <td class="bps-table_cell_no_border"><?php $text = '<strong><h3>'.__('Root .htaccess Security Filters Change:', 'bulletproof-security').'</h3><strong>'; echo $text; ?>
     </td>
   </tr> 
    <tr>
@@ -2482,6 +2540,8 @@ jQuery(document).ready(function($){
 
 <div id="bpsProVersions">
 <a href="http://forum.ait-pro.com/forums/topic/bulletproof-security-pro-version-release-dates/" target="_blank" title="Link Opens in New Browser Window" style="font-size:22px;"><?php _e('BPS Pro Version Releases', 'bulletproof-security'); ?></a><br /><br />
+     <a href="http://www.ait-pro.com/aitpro-blog/5039/bulletproof-security-pro/whats-new-in-bulletproof-security-pro-9-2/" target="_blank" title="Link Opens in New Browser Window"><?php _e('Whats New in BPS Pro 9.2', 'bulletproof-security'); ?></a><br /><br />  
+     <a href="http://www.ait-pro.com/aitpro-blog/5027/bulletproof-security-pro/whats-new-in-bulletproof-security-pro-9-1/" target="_blank" title="Link Opens in New Browser Window"><?php _e('Whats New in BPS Pro 9.1', 'bulletproof-security'); ?></a><br /><br />  
      <a href="http://www.ait-pro.com/aitpro-blog/5009/bulletproof-security-pro/whats-new-in-bulletproof-security-pro-9-0/" target="_blank" title="Link Opens in New Browser Window"><?php _e('Whats New in BPS Pro 9.0', 'bulletproof-security'); ?></a><br /><br />  
      <a href="http://www.ait-pro.com/aitpro-blog/4994/bulletproof-security-pro/whats-new-in-bulletproof-security-pro-8-3/" target="_blank" title="Link Opens in New Browser Window"><?php _e('Whats New in BPS Pro 8.3', 'bulletproof-security'); ?></a><br /><br />  
       <a href="http://www.ait-pro.com/aitpro-blog/4953/bulletproof-security-pro/whats-new-in-bulletproof-security-pro-8-2/" target="_blank" title="Link Opens in New Browser Window"><?php _e('Whats New in BPS Pro 8.2', 'bulletproof-security'); ?></a><br /><br />  

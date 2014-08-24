@@ -107,6 +107,7 @@ $DBBtable_name = $wpdb->prefix . "bpspro_db_backup";
 	register_setting('bulletproof_security_options_customcode', 'bulletproof_security_options_customcode', 'bulletproof_security_options_validate_customcode');
 	register_setting('bulletproof_security_options_customcode_WPA', 'bulletproof_security_options_customcode_WPA', 'bulletproof_security_options_validate_customcode_WPA');
 	register_setting('bulletproof_security_options_login_security', 'bulletproof_security_options_login_security', 'bulletproof_security_options_validate_login_security');
+	register_setting('bulletproof_security_options_htaccess_res', 'bulletproof_security_options_htaccess_res', 'bulletproof_security_options_validate_htaccess_res');
 	register_setting('bulletproof_security_options_maint_mode', 'bulletproof_security_options_maint_mode', 'bulletproof_security_options_validate_maint_mode');
 	register_setting('bulletproof_security_options_theme_skin', 'bulletproof_security_options_theme_skin', 'bulletproof_security_options_validate_theme_skin');
 	register_setting('bulletproof_security_options_db_backup', 'bulletproof_security_options_db_backup', 'bulletproof_security_options_validate_db_backup');
@@ -632,6 +633,7 @@ $options = get_option('bulletproof_security_options');
 	delete_option('bulletproof_security_options_theme_skin');
 	delete_option('bulletproof_security_options_db_backup');
 	delete_option('bulletproof_security_options_DBB_log');
+	delete_option('bulletproof_security_options_htaccess_res');
 	// will be adding this new upgrade notice option later
 	// delete_option('bulletproof_security_options_upgrade_notice');	
 	$wpdb->query("DROP TABLE IF EXISTS $Stable_name");
@@ -747,6 +749,7 @@ function bulletproof_security_options_validate_login_security($input) {
 	$BPSoptions['bps_login_security_logging'] = wp_filter_nohtml_kses($input['bps_login_security_logging']);
 	$BPSoptions['bps_login_security_errors'] = wp_filter_nohtml_kses($input['bps_login_security_errors']);
 	$BPSoptions['bps_login_security_pw_reset'] = wp_filter_nohtml_kses($input['bps_login_security_pw_reset']);		
+	$BPSoptions['bps_login_security_sort'] = wp_filter_nohtml_kses($input['bps_login_security_sort']);	
 	
 	return $BPSoptions;  
 }
@@ -799,6 +802,14 @@ function bulletproof_security_options_validate_db_backup($input) {
 function bulletproof_security_options_validate_DBB_log($input) {  
 	$options = get_option('bulletproof_security_options_DBB_log');  
 	$options['bps_dbb_log_date_mod'] = wp_filter_nohtml_kses($input['bps_dbb_log_date_mod']);
+		
+	return $options;  
+}
+
+// Validate BPS options - Hosting that does not allow wp-admin .htaccess files - Go Daddy Managed WordPress hosting
+function bulletproof_security_options_validate_htaccess_res($input) {  
+	$options = get_option('bulletproof_security_options_htaccess_res');  
+	$options['bps_wpadmin_restriction'] = wp_filter_nohtml_kses($input['bps_wpadmin_restriction']);
 		
 	return $options;  
 }

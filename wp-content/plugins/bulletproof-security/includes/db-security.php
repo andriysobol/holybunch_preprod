@@ -55,11 +55,11 @@ global $wpdb;
 			$job_type = $row->bps_job_type;
 			$email_zip = $row->bps_email_zip;
 					
-			$build_query_1 = "SHOW TABLES FROM ".DB_NAME." WHERE Tables_in_".DB_NAME." LIKE '";
-			$build_query_2 = str_replace( ', ', "' OR Tables_in_".DB_NAME." LIKE '", $row->bps_table_name );
+			$build_query_1 = "SHOW TABLES FROM `".DB_NAME."` WHERE `Tables_in_".DB_NAME."` LIKE '";
+			$build_query_2 = str_replace( ', ', "' OR `Tables_in_".DB_NAME."` LIKE '", $row->bps_table_name );
 			$build_query_3 = "'";
 			$tables = $wpdb->get_results( $build_query_1.$build_query_2.$build_query_3, ARRAY_A );
-					
+
 			bpsPro_db_backup( $db_backup, $tables, $job_type, $email_zip );
 			
 			if ( $row->bps_frequency == 'Hourly' ) {
@@ -150,11 +150,13 @@ $bpsDBBLog = WP_CONTENT_DIR . '/bps-backup/logs/db_backup_log.txt';
 	}
 }
 
-// Get the Current / Last Modifed time of the DB Backup Log File - Seconds - Wizard & formality since no Dashboard alerts
+// Get the Current / Last Modifed time of the DB Backup Log File - Seconds
 function bpsPro_DBB_LogLastMod_wp_secs() {
 $filename = WP_CONTENT_DIR . '/bps-backup/logs/db_backup_log.txt';
+$gmt_offset = get_option( 'gmt_offset' ) * 3600;
+
 if ( file_exists($filename) ) {
-	$last_modified = date( "F d Y H:i:s", filemtime($filename) );
+	$last_modified = date( "F d Y H:i:s", filemtime($filename) + $gmt_offset );
 	return $last_modified;
 	}
 }

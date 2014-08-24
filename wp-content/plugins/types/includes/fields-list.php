@@ -2,10 +2,10 @@
 /*
  * Fields and groups list functions
  *
- * $HeadURL: https://www.onthegosystems.com/misc_svn/cck/tags/1.5.7/includes/fields-list.php $
- * $LastChangedDate: 2014-05-27 12:32:10 +0200 (Tue, 27 May 2014) $
- * $LastChangedRevision: 22804 $
- * $LastChangedBy: marcin $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6/includes/fields-list.php $
+ * $LastChangedDate: 2014-08-22 01:02:43 +0000 (Fri, 22 Aug 2014) $
+ * $LastChangedRevision: 970205 $
+ * $LastChangedBy: brucepearson $
  *
  */
 
@@ -14,7 +14,7 @@
  */
 function wpcf_admin_fields_list() {
     $groups = wpcf_admin_fields_get_groups();
-    
+
     if (empty($groups)) {
         echo '<p>'
         . __("To use custom fields, please create a group to hold them.",
@@ -41,24 +41,24 @@ function wpcf_admin_fields_list() {
             // Set 'name' column
             $name = '';
             $name .= '<a href="'
-                    . admin_url('admin.php?page=wpcf-edit&amp;group_id='
-                            . $group['id']) . '">' . $group['name'] . '</a>';
+                . admin_url('admin.php?page=wpcf-edit&amp;group_id='
+                . $group['id']) . '">' . $group['name'] . '</a>';
             $name .= '<br />';
             $name .= '<a href="'
-                    . admin_url('admin.php?page=wpcf-edit&amp;group_id='
-                            . $group['id']) . '">' . __('Edit', 'wpcf') . '</a> | ';
+                . admin_url('admin.php?page=wpcf-edit&amp;group_id='
+                . $group['id']) . '">' . __('Edit', 'wpcf') . '</a> | ';
 
             $name .= $group['is_active'] ? wpcf_admin_fields_get_ajax_deactivation_link($group['id']) . ' | ' : wpcf_admin_fields_get_ajax_activation_link($group['id']) . ' | ';
 
             $name .= '<a href="'
-                    . admin_url('admin-ajax.php?action=wpcf_ajax&amp;'
-                            . 'wpcf_action=delete_group&amp;group_id='
-                            . $group['id'] . '&amp;wpcf_ajax_update=wpcf_list_ajax_response_'
-                            . $group['id']) . '&amp;_wpnonce=' . wp_create_nonce('delete_group')
-                    . '&amp;wpcf_warning='
-                    . __('Are you sure?', 'wpcf') . '" class="wpcf-ajax-link" '
-                    . 'id="wpcf-list-delete-' . $group['id'] . '">'
-                    . __('Delete Permanently', 'wpcf') . '</a>';
+                . admin_url('admin-ajax.php?action=wpcf_ajax&amp;'
+                . 'wpcf_action=delete_group&amp;group_id='
+                . $group['id'] . '&amp;wpcf_ajax_update=wpcf_list_ajax_response_'
+                . $group['id']) . '&amp;_wpnonce=' . wp_create_nonce('delete_group')
+                . '&amp;wpcf_warning='
+                . __('Are you sure?', 'wpcf') . '" class="wpcf-ajax-link" '
+                . 'id="wpcf-list-delete-' . $group['id'] . '">'
+                . __('Delete Permanently', 'wpcf') . '</a>';
 
             $name .= '<div id="wpcf_list_ajax_response_' . $group['id'] . '"></div>';
 
@@ -71,7 +71,7 @@ function wpcf_admin_fields_list() {
             // Set 'post_tpes' column
             $post_types = wpcf_admin_get_post_types_by_group($group['id']);
             $rows[$group['id']]['post_types'] = empty($post_types) ? __('None',
-                            'wpcf') : implode(', ', $post_types);
+                'wpcf') : implode(', ', $post_types);
 
             // Set 'taxonomies' column
             $taxonomies = wpcf_admin_get_taxonomies_by_group($group['id']);
@@ -94,6 +94,6 @@ function wpcf_admin_fields_list() {
         // Render table
         wpcf_admin_widefat_table('wpcf_groups_list', $header, $rows);
     }
-    
+
     do_action('wpcf_groups_list_table_after');
 }

@@ -1,10 +1,10 @@
 <?php
 /**
  *
- * $HeadURL: https://www.onthegosystems.com/misc_svn/cck/tags/1.5.7/embedded/admin.php $
- * $LastChangedDate: 2014-05-23 15:15:01 +0200 (Fri, 23 May 2014) $
- * $LastChangedRevision: 22676 $
- * $LastChangedBy: marcin $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6/embedded/admin.php $
+ * $LastChangedDate: 2014-08-22 01:02:43 +0000 (Fri, 22 Aug 2014) $
+ * $LastChangedRevision: 970205 $
+ * $LastChangedBy: brucepearson $
  *
  */
 require_once(WPCF_EMBEDDED_ABSPATH . '/common/visual-editor/editor-addon.class.php');
@@ -51,8 +51,7 @@ function wpcf_embedded_admin_init_hook() {
     ) {
         require_once WPCF_EMBEDDED_INC_ABSPATH . '/fields/file.php';
         // Add types button
-        add_filter( 'attachment_fields_to_edit',
-                'wpcf_fields_file_attachment_fields_to_edit_filter', 9999, 2 );
+        add_filter( 'attachment_fields_to_edit', 'wpcf_fields_file_attachment_fields_to_edit_filter', PHP_INT_MAX, 2 );
         // Add JS
         add_action( 'admin_head', 'wpcf_fields_file_media_admin_head' );
         // Filter media TABs
@@ -324,7 +323,7 @@ function wpcf_custom_fields_to_be_copied( $copied_fields, $original_post_id ) {
  */
 function wpcf_admin_validation_messages( $method = false, $sprintf = '' ) {
     $messages = array(
-        'required' => __( 'This Field is required', 'wpcf' ),
+        'required' => __( 'This field is required', 'wpcf' ),
         'email' => __( 'Please enter a valid email address', 'wpcf' ),
         'url' => __( 'Please enter a valid URL address', 'wpcf' ),
         'date' => __( 'Please enter a valid date', 'wpcf' ),

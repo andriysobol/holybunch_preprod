@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bulletproof-security\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-30 13:56-0800\n"
-"PO-Revision-Date: 2014-06-30 13:56-0800\n"
+"POT-Creation-Date: 2014-08-18 13:42-0800\n"
+"PO-Revision-Date: 2014-08-18 13:42-0800\n"
 "Last-Translator: Ed Alexander <edward@ait-pro.com>\n"
 "Language-Team: AITpro <info@ait-pro.com>\n"
 "Language: en_US\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.6.7\n"
 "X-Poedit-SearchPath-0: C:\\BPS47\n"
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:21
@@ -108,7 +108,7 @@ msgstr ""
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:124
 #: C:\BPS47/admin/login/login.php:92
 #: C:\BPS47/admin/maintenance/maintenance.php:100
-#: C:\BPS47/admin/options.php:978
+#: C:\BPS47/admin/options.php:987
 #: C:\BPS47/admin/security-log/security-log.php:92
 #: C:\BPS47/admin/system-info/system-info.php:93
 #: C:\BPS47/admin/theme-skin/theme-skin.php:96
@@ -119,7 +119,7 @@ msgstr ""
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:204
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:213
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:214
-#: C:\BPS47/admin/includes/admin.php:213
+#: C:\BPS47/admin/includes/admin.php:214
 msgid "DB Backup"
 msgstr ""
 
@@ -138,10 +138,10 @@ msgid "DB Table Prefix Changer"
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:200
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1425
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1433
 #: C:\BPS47/admin/login/login.php:116
 #: C:\BPS47/admin/maintenance/maintenance.php:141
-#: C:\BPS47/admin/options.php:1001
+#: C:\BPS47/admin/options.php:1010
 #: C:\BPS47/admin/security-log/security-log.php:242
 #: C:\BPS47/admin/system-info/system-info.php:114
 #: C:\BPS47/admin/theme-skin/theme-skin.php:120
@@ -154,13 +154,13 @@ msgstr ""
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1174
 #: C:\BPS47/admin/login/login.php:129
 #: C:\BPS47/admin/maintenance/maintenance.php:162
-#: C:\BPS47/admin/options.php:1019 C:\BPS47/admin/options.php:1098
-#: C:\BPS47/admin/options.php:1120 C:\BPS47/admin/options.php:1143
-#: C:\BPS47/admin/options.php:1161 C:\BPS47/admin/options.php:1196
-#: C:\BPS47/admin/options.php:1364 C:\BPS47/admin/options.php:1374
-#: C:\BPS47/admin/options.php:1463 C:\BPS47/admin/options.php:1485
-#: C:\BPS47/admin/options.php:1519 C:\BPS47/admin/options.php:1559
-#: C:\BPS47/admin/options.php:2022
+#: C:\BPS47/admin/options.php:1028 C:\BPS47/admin/options.php:1107
+#: C:\BPS47/admin/options.php:1129 C:\BPS47/admin/options.php:1164
+#: C:\BPS47/admin/options.php:1182 C:\BPS47/admin/options.php:1217
+#: C:\BPS47/admin/options.php:1385 C:\BPS47/admin/options.php:1395
+#: C:\BPS47/admin/options.php:1484 C:\BPS47/admin/options.php:1506
+#: C:\BPS47/admin/options.php:1540 C:\BPS47/admin/options.php:1580
+#: C:\BPS47/admin/options.php:2043
 #: C:\BPS47/admin/security-log/security-log.php:255
 #: C:\BPS47/admin/theme-skin/theme-skin.php:134
 msgid "Read Me"
@@ -171,13 +171,13 @@ msgstr ""
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1176
 #: C:\BPS47/admin/login/login.php:132
 #: C:\BPS47/admin/maintenance/maintenance.php:165
-#: C:\BPS47/admin/options.php:1022 C:\BPS47/admin/options.php:1101
-#: C:\BPS47/admin/options.php:1123 C:\BPS47/admin/options.php:1146
-#: C:\BPS47/admin/options.php:1164 C:\BPS47/admin/options.php:1199
-#: C:\BPS47/admin/options.php:1367 C:\BPS47/admin/options.php:1377
-#: C:\BPS47/admin/options.php:1466 C:\BPS47/admin/options.php:1488
-#: C:\BPS47/admin/options.php:1522 C:\BPS47/admin/options.php:1561
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:1031 C:\BPS47/admin/options.php:1110
+#: C:\BPS47/admin/options.php:1132 C:\BPS47/admin/options.php:1167
+#: C:\BPS47/admin/options.php:1185 C:\BPS47/admin/options.php:1220
+#: C:\BPS47/admin/options.php:1388 C:\BPS47/admin/options.php:1398
+#: C:\BPS47/admin/options.php:1487 C:\BPS47/admin/options.php:1509
+#: C:\BPS47/admin/options.php:1543 C:\BPS47/admin/options.php:1582
+#: C:\BPS47/admin/options.php:2046
 #: C:\BPS47/admin/security-log/security-log.php:258
 #: C:\BPS47/admin/theme-skin/theme-skin.php:136
 msgid ""
@@ -193,7 +193,7 @@ msgid ""
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:215
-#: C:\BPS47/admin/options.php:2280
+#: C:\BPS47/admin/options.php:2369
 msgid ""
 "DB Backup & Security Guide & Troubleshooting: http://forum.ait-pro.com/"
 "forums/topic/database-backup-security-guide/"
@@ -207,7 +207,7 @@ msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:215
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:964
-#: C:\BPS47/admin/login/login.php:132 C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/login/login.php:132 C:\BPS47/admin/options.php:1031
 #: C:\BPS47/admin/security-log/security-log.php:258
 msgid "NOTE: "
 msgstr ""
@@ -266,12 +266,12 @@ msgid ""
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:215
-#: C:\BPS47/admin/options.php:2280
+#: C:\BPS47/admin/options.php:2369
 msgid "Backup Jobs - Manual/Scheduled Accordion Tab"
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:215
-#: C:\BPS47/admin/options.php:2280
+#: C:\BPS47/admin/options.php:2369
 msgid ""
 "- Displays the Description/Job Name, Delete and Run Checkboxes, Job Type, "
 "Frequency, Last Backup, Next Backup, Email Backup and Job Created table "
@@ -310,12 +310,12 @@ msgid ""
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:215
-#: C:\BPS47/admin/options.php:2280
+#: C:\BPS47/admin/options.php:2369
 msgid "Backup Files - Download/Delete Accordion Tab"
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:215
-#: C:\BPS47/admin/options.php:2280
+#: C:\BPS47/admin/options.php:2369
 msgid ""
 "- Displays the Backup Filename, Delete Checkbox, Download Links, Backup "
 "Folder, Size and Date/Time table columns."
@@ -339,7 +339,7 @@ msgid ""
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:215
-#: C:\BPS47/admin/options.php:2280
+#: C:\BPS47/admin/options.php:2369
 msgid "Create Backup Jobs Accordion Tab"
 msgstr ""
 
@@ -571,7 +571,8 @@ msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:245
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:438
-#: C:\BPS47/admin/login/login.php:304 C:\BPS47/admin/login/login.php:396
+#: C:\BPS47/admin/login/login.php:310 C:\BPS47/admin/login/login.php:339
+#: C:\BPS47/admin/login/login.php:411 C:\BPS47/admin/login/login.php:440
 msgid "Delete"
 msgstr ""
 
@@ -638,15 +639,15 @@ msgstr ""
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:406
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:539
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:929
-#: C:\BPS47/admin/login/login.php:538 C:\BPS47/admin/login/login.php:557
-#: C:\BPS47/admin/login/login.php:577 C:\BPS47/admin/login/login.php:624
-#: C:\BPS47/admin/login/login.php:643 C:\BPS47/admin/login/login.php:663
-#: C:\BPS47/admin/options.php:1240 C:\BPS47/admin/options.php:1248
-#: C:\BPS47/admin/options.php:1256 C:\BPS47/admin/options.php:1264
-#: C:\BPS47/admin/options.php:1272 C:\BPS47/admin/options.php:1280
-#: C:\BPS47/admin/options.php:1288 C:\BPS47/admin/options.php:1296
-#: C:\BPS47/admin/options.php:1304 C:\BPS47/admin/options.php:1312
-#: C:\BPS47/admin/options.php:1320
+#: C:\BPS47/admin/login/login.php:555 C:\BPS47/admin/login/login.php:574
+#: C:\BPS47/admin/login/login.php:594 C:\BPS47/admin/login/login.php:641
+#: C:\BPS47/admin/login/login.php:660 C:\BPS47/admin/login/login.php:680
+#: C:\BPS47/admin/options.php:1261 C:\BPS47/admin/options.php:1269
+#: C:\BPS47/admin/options.php:1277 C:\BPS47/admin/options.php:1285
+#: C:\BPS47/admin/options.php:1293 C:\BPS47/admin/options.php:1301
+#: C:\BPS47/admin/options.php:1309 C:\BPS47/admin/options.php:1317
+#: C:\BPS47/admin/options.php:1325 C:\BPS47/admin/options.php:1333
+#: C:\BPS47/admin/options.php:1341
 msgid "Refresh Status"
 msgstr ""
 
@@ -711,7 +712,7 @@ msgid "All"
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:569
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1320
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1328
 msgid "DB Table Name"
 msgstr ""
 
@@ -1142,7 +1143,7 @@ msgid "Backup Job Settings Logged successfully in the DB Backup Log"
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:964
-#: C:\BPS47/admin/options.php:2290
+#: C:\BPS47/admin/options.php:2379
 msgid "DB Backup Log General Information"
 msgstr ""
 
@@ -1167,12 +1168,12 @@ msgid ""
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:964
-#: C:\BPS47/admin/options.php:2290
+#: C:\BPS47/admin/options.php:2379
 msgid "What is Logged in The DB Backup Log?"
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:964
-#: C:\BPS47/admin/options.php:2290
+#: C:\BPS47/admin/options.php:2379
 msgid ""
 "Depending on your DB Backup settings, log entries will be logged anytime you "
 "run a Manual Backup Job or whenever a Scheduled Cron Backup Job is run. The "
@@ -1244,74 +1245,74 @@ msgid "DB Backup Log Last Modified Time: "
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1007
-#: C:\BPS47/admin/login/login.php:191
+#: C:\BPS47/admin/login/login.php:197
 #: C:\BPS47/admin/security-log/security-log.php:425
 msgid "Send Email Alerts & Log Files To:"
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1009
-#: C:\BPS47/admin/login/login.php:193
+#: C:\BPS47/admin/login/login.php:199
 #: C:\BPS47/admin/security-log/security-log.php:427
 msgid "Send Email Alerts & Log Files From:"
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1011
-#: C:\BPS47/admin/login/login.php:195
+#: C:\BPS47/admin/login/login.php:201
 #: C:\BPS47/admin/security-log/security-log.php:429
 msgid "Send Email Alerts & Log Files Cc:"
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1013
-#: C:\BPS47/admin/login/login.php:197
+#: C:\BPS47/admin/login/login.php:203
 #: C:\BPS47/admin/security-log/security-log.php:431
 msgid "Send Email Alerts & Log Files Bcc:"
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1016
-#: C:\BPS47/admin/login/login.php:200
+#: C:\BPS47/admin/login/login.php:206
 #: C:\BPS47/admin/security-log/security-log.php:434
 msgid "Login Security: Send Login Security Email Alert When..."
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1018
-#: C:\BPS47/admin/login/login.php:202
+#: C:\BPS47/admin/login/login.php:208
 #: C:\BPS47/admin/security-log/security-log.php:436
 msgid "A User Account Is Locked Out"
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1019
-#: C:\BPS47/admin/login/login.php:203
+#: C:\BPS47/admin/login/login.php:209
 #: C:\BPS47/admin/security-log/security-log.php:437
 msgid "An Administrator Logs In"
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1020
-#: C:\BPS47/admin/login/login.php:204
+#: C:\BPS47/admin/login/login.php:210
 #: C:\BPS47/admin/security-log/security-log.php:438
 msgid "An Administrator Logs In & A User Account is Locked Out"
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1021
-#: C:\BPS47/admin/login/login.php:205
+#: C:\BPS47/admin/login/login.php:211
 #: C:\BPS47/admin/security-log/security-log.php:439
 msgid "Any User Logs In & A User Account is Locked Out"
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1022
-#: C:\BPS47/admin/login/login.php:206
+#: C:\BPS47/admin/login/login.php:212
 #: C:\BPS47/admin/security-log/security-log.php:440
 msgid "Do Not Send Email Alerts"
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1025
-#: C:\BPS47/admin/login/login.php:209
+#: C:\BPS47/admin/login/login.php:215
 #: C:\BPS47/admin/security-log/security-log.php:443
 msgid "Security Log: Email/Delete Security Log File When..."
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1027
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1038
-#: C:\BPS47/admin/login/login.php:211 C:\BPS47/admin/login/login.php:222
+#: C:\BPS47/admin/login/login.php:217 C:\BPS47/admin/login/login.php:228
 #: C:\BPS47/admin/security-log/security-log.php:445
 #: C:\BPS47/admin/security-log/security-log.php:456
 msgid "500KB"
@@ -1319,7 +1320,7 @@ msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1028
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1039
-#: C:\BPS47/admin/login/login.php:212 C:\BPS47/admin/login/login.php:223
+#: C:\BPS47/admin/login/login.php:218 C:\BPS47/admin/login/login.php:229
 #: C:\BPS47/admin/security-log/security-log.php:446
 #: C:\BPS47/admin/security-log/security-log.php:457
 msgid "256KB"
@@ -1327,7 +1328,7 @@ msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1029
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1040
-#: C:\BPS47/admin/login/login.php:213 C:\BPS47/admin/login/login.php:224
+#: C:\BPS47/admin/login/login.php:219 C:\BPS47/admin/login/login.php:230
 #: C:\BPS47/admin/security-log/security-log.php:447
 #: C:\BPS47/admin/security-log/security-log.php:458
 msgid "1MB"
@@ -1335,7 +1336,7 @@ msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1032
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1043
-#: C:\BPS47/admin/login/login.php:216 C:\BPS47/admin/login/login.php:227
+#: C:\BPS47/admin/login/login.php:222 C:\BPS47/admin/login/login.php:233
 #: C:\BPS47/admin/security-log/security-log.php:450
 #: C:\BPS47/admin/security-log/security-log.php:461
 msgid "Email Log & Then Delete Log File"
@@ -1343,14 +1344,14 @@ msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1033
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1044
-#: C:\BPS47/admin/login/login.php:217 C:\BPS47/admin/login/login.php:228
+#: C:\BPS47/admin/login/login.php:223 C:\BPS47/admin/login/login.php:234
 #: C:\BPS47/admin/security-log/security-log.php:451
 #: C:\BPS47/admin/security-log/security-log.php:462
 msgid "Delete Log File"
 msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1036
-#: C:\BPS47/admin/login/login.php:220
+#: C:\BPS47/admin/login/login.php:226
 #: C:\BPS47/admin/security-log/security-log.php:454
 msgid "DB Backup Log: Email/Delete DB Backup Log File When..."
 msgstr ""
@@ -1524,134 +1525,148 @@ msgstr ""
 
 #: C:\BPS47/admin/db-backup-security/db-backup-security.php:1196
 msgid ""
-"If you have moved your wp-config.php file to a another Server folder then "
-"you can use this tool to change your DB Table Prefix, but first you will "
-"need to temporarily move your wp-config.php file back to the default "
-"location: your WordPress website root folder."
+"Your DB Table Prefix was not changed. If you have moved your wp-config.php "
+"file to a another Server folder then you can use this tool to change your DB "
+"Table Prefix, but first you will need to temporarily move your wp-config.php "
+"file back to the default location: your WordPress website root folder."
 msgstr ""
 
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1276
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1216
+msgid ""
+"Error: The wp-config.php file is not writable. Unable to write to the wp-"
+"config.php file."
+msgstr ""
+
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1216
+msgid ""
+"Your DB Table Prefix was not changed. You will need to make the wp-config."
+"php file writable first by changing either the file permissions or Ownership "
+"of the wp-config.php file (if you have a DSO Server) before you can use the "
+"DB Table Prefix Changer tool to change your DB Table Prefix."
+msgstr ""
+
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1284
 msgid ""
 "DB Table Prefix Name change completed. Click the Load/Refresh Table button "
 "to load/refresh the DB Table Names & Character Length Table."
 msgstr ""
 
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1293
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1301
 msgid "Randomly Generated DB Table Prefix"
 msgstr ""
 
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1296
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1304
 msgid "Clicking OK will change your DB Table Prefix name."
 msgstr ""
 
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1296
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1304
 msgid "Click OK to Change your DB Table Prefix name or click Cancel."
 msgstr ""
 
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1321
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1329
 msgid "Length"
 msgstr ""
 
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1345
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1353
 msgid "DB Table Name / Column"
 msgstr ""
 
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1346
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1354
 msgid "Other Prefix Changes"
 msgstr ""
 
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1403
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1411
 msgid "DB Table Names & Character Length Table"
 msgstr ""
 
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1404
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1412
 msgid ""
 "Displays your Current DB Table Names & Length Including The DB Table Prefix"
 msgstr ""
 
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1407
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1415
 msgid "Load/Refresh Table"
 msgstr ""
 
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1431
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1439
 #: C:\BPS47/admin/theme-skin/theme-skin.php:171
 msgid "Whats New in "
 msgstr ""
 
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1432
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1440
 #: C:\BPS47/admin/theme-skin/theme-skin.php:172
 msgid "BPS Pro Features & Version Release Dates"
 msgstr ""
 
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1435
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1443
 #: C:\BPS47/admin/theme-skin/theme-skin.php:175
 msgid "Video Tutorials"
 msgstr ""
 
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1436
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1444
 msgid "DB Backup & Security Guide & Troubleshooting"
 msgstr ""
 
-#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1439
-#: C:\BPS47/admin/login/login.php:693
+#: C:\BPS47/admin/db-backup-security/db-backup-security.php:1447
+#: C:\BPS47/admin/login/login.php:710
 #: C:\BPS47/admin/maintenance/maintenance.php:1791
-#: C:\BPS47/admin/options.php:2247
-#: C:\BPS47/admin/security-log/security-log.php:761
+#: C:\BPS47/admin/options.php:2268
+#: C:\BPS47/admin/security-log/security-log.php:762
 #: C:\BPS47/admin/system-info/system-info.php:658
 #: C:\BPS47/admin/theme-skin/theme-skin.php:179
 msgid "Forum: Search, Troubleshooting Steps & Post Questions For Assistance"
 msgstr ""
 
-#: C:\BPS47/admin/includes/admin.php:202
+#: C:\BPS47/admin/includes/admin.php:203
 msgid "BulletProof Security Settings"
 msgstr ""
 
-#: C:\BPS47/admin/includes/admin.php:202 C:\BPS47/admin/includes/admin.php:210
+#: C:\BPS47/admin/includes/admin.php:203 C:\BPS47/admin/includes/admin.php:211
 msgid "BPS Security"
 msgstr ""
 
-#: C:\BPS47/admin/includes/admin.php:203 C:\BPS47/admin/includes/admin.php:212
+#: C:\BPS47/admin/includes/admin.php:204 C:\BPS47/admin/includes/admin.php:213
 #: C:\BPS47/admin/login/login.php:115
 msgid "Login Security"
 msgstr ""
 
-#: C:\BPS47/admin/includes/admin.php:204 C:\BPS47/admin/includes/admin.php:215
+#: C:\BPS47/admin/includes/admin.php:205 C:\BPS47/admin/includes/admin.php:216
 #: C:\BPS47/admin/maintenance/maintenance.php:140
 #: C:\BPS47/admin/maintenance/maintenance.php:162
 #: C:\BPS47/admin/maintenance/maintenance.php:164
 msgid "Maintenance Mode"
 msgstr ""
 
-#: C:\BPS47/admin/includes/admin.php:205 C:\BPS47/admin/includes/admin.php:216
+#: C:\BPS47/admin/includes/admin.php:206 C:\BPS47/admin/includes/admin.php:217
 #: C:\BPS47/admin/system-info/system-info.php:113
 msgid "System Info"
 msgstr ""
 
-#: C:\BPS47/admin/includes/admin.php:206 C:\BPS47/admin/includes/admin.php:217
+#: C:\BPS47/admin/includes/admin.php:207 C:\BPS47/admin/includes/admin.php:218
 #: C:\BPS47/admin/theme-skin/theme-skin.php:119
 #: C:\BPS47/admin/theme-skin/theme-skin.php:134
 #: C:\BPS47/admin/theme-skin/theme-skin.php:135
 msgid "UI Theme Skin"
 msgstr ""
 
-#: C:\BPS47/admin/includes/admin.php:210 C:\BPS47/admin/includes/admin.php:211
+#: C:\BPS47/admin/includes/admin.php:211 C:\BPS47/admin/includes/admin.php:212
 #: C:\BPS47/admin/options.php:82
 msgid "BulletProof Security ~ htaccess Core"
 msgstr ""
 
-#: C:\BPS47/admin/includes/admin.php:211
+#: C:\BPS47/admin/includes/admin.php:212
 msgid "htaccess Core"
 msgstr ""
 
-#: C:\BPS47/admin/includes/admin.php:212
+#: C:\BPS47/admin/includes/admin.php:213
 msgid "Login Security "
 msgstr ""
 
-#: C:\BPS47/admin/includes/admin.php:213
+#: C:\BPS47/admin/includes/admin.php:214
 msgid "DB Backup & Security"
 msgstr ""
 
-#: C:\BPS47/admin/includes/admin.php:214
+#: C:\BPS47/admin/includes/admin.php:215
 #: C:\BPS47/admin/security-log/security-log.php:241
 #: C:\BPS47/admin/security-log/security-log.php:255
 #: C:\BPS47/admin/security-log/security-log.php:257
@@ -1752,8 +1767,12 @@ msgstr ""
 
 #: C:\BPS47/admin/login/login.php:132
 msgid ""
-"Turn On Login Security or Turn Off Login Security. After making any setting "
-"changes click the Save Options button to save your new option settings."
+"Turn On Login Security or Turn Off Login Security or Turn Off Login Security "
+"and Use the Password Reset Option ONLY. The Turn Off Login Security/Use "
+"Password Reset Option ONLY setting means that all Login Security features "
+"are turned Off except for the Password Reset Option, which can be used "
+"independently by itself. After making any setting changes click the Save "
+"Options button to save your new option settings."
 msgstr ""
 
 #: C:\BPS47/admin/login/login.php:132
@@ -1813,7 +1832,7 @@ msgstr ""
 
 #: C:\BPS47/admin/login/login.php:132
 #: C:\BPS47/admin/maintenance/maintenance.php:473
-#: C:\BPS47/admin/options.php:1463 C:\BPS47/admin/options.php:1475
+#: C:\BPS47/admin/options.php:1484 C:\BPS47/admin/options.php:1496
 msgid "CAUTION: "
 msgstr ""
 
@@ -1841,6 +1860,22 @@ msgid ""
 "complete Login Stealth Mode then this is the option for you. Disable "
 "Password Reset Frontend & Backend disables password reset on the frontend "
 "and backend (WP Dashboard) of your website."
+msgstr ""
+
+#: C:\BPS47/admin/login/login.php:132
+msgid "Sort DB Rows: "
+msgstr ""
+
+#: C:\BPS47/admin/login/login.php:132 C:\BPS47/admin/options.php:2301
+msgid ""
+"The Ascending Show Oldest Login First option displays logins from the oldest "
+"logins to your site to the newest logins to your site. The Descending Show "
+"Newest Login First option displays logins from the newest logins to your "
+"site to the oldest logins to your site. Example usage: Enter 50 for the Max "
+"DB Rows To Show option, which will show a maximum of 50 database rows/logins "
+"to your site and set Sort DB Rows option to Descending Show Newest Login "
+"First. You will see the last 50 most current/newest logins to your site in "
+"descending order."
 msgstr ""
 
 #: C:\BPS47/admin/login/login.php:132
@@ -1877,11 +1912,11 @@ msgstr ""
 msgid "BPS Pro Video Tutorial links can be found in the Help & FAQ pages."
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:136 C:\BPS47/admin/options.php:1025
-#: C:\BPS47/admin/options.php:1095 C:\BPS47/admin/options.php:1190
-#: C:\BPS47/admin/options.php:1358 C:\BPS47/admin/options.php:1454
-#: C:\BPS47/admin/options.php:1564 C:\BPS47/admin/options.php:2032
-#: C:\BPS47/admin/options.php:2365
+#: C:\BPS47/admin/login/login.php:136 C:\BPS47/admin/options.php:1034
+#: C:\BPS47/admin/options.php:1104 C:\BPS47/admin/options.php:1211
+#: C:\BPS47/admin/options.php:1379 C:\BPS47/admin/options.php:1475
+#: C:\BPS47/admin/options.php:1585 C:\BPS47/admin/options.php:2053
+#: C:\BPS47/admin/options.php:2445
 #: C:\BPS47/admin/system-info/system-info.php:121
 msgid "Permission Denied"
 msgstr ""
@@ -1922,128 +1957,146 @@ msgstr ""
 msgid "Turn Off Login Security"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:160
+#: C:\BPS47/admin/login/login.php:159
+msgid "Turn Off Login Security/Use Password Reset Option ONLY"
+msgstr ""
+
+#: C:\BPS47/admin/login/login.php:161
 msgid "Logging Options:"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:162
+#: C:\BPS47/admin/login/login.php:163
 msgid "Log Only Account Lockouts"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:163
+#: C:\BPS47/admin/login/login.php:164
 msgid "Log All Account Logins"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:165
+#: C:\BPS47/admin/login/login.php:166
 msgid "Error Messages:"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:167
+#: C:\BPS47/admin/login/login.php:168
 msgid "Standard WP Login Errors"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:168
+#: C:\BPS47/admin/login/login.php:169
 msgid "User/Pass Invalid Entry Error"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:169
+#: C:\BPS47/admin/login/login.php:170
 msgid "User/Pass/Lock Invalid Entry Error"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:171
+#: C:\BPS47/admin/login/login.php:172
 msgid "Password Reset:"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:173
+#: C:\BPS47/admin/login/login.php:174
 msgid "Enable Password Reset"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:174
+#: C:\BPS47/admin/login/login.php:175
 msgid "Disable Password Reset Frontend Only"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:175
+#: C:\BPS47/admin/login/login.php:176
 msgid "Disable Password Reset Frontend & Backend"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:272
+#: C:\BPS47/admin/login/login.php:179
+msgid "Sort DB Rows:"
+msgstr ""
+
+#: C:\BPS47/admin/login/login.php:181
+msgid "Ascending - Show Oldest Login First"
+msgstr ""
+
+#: C:\BPS47/admin/login/login.php:182
+msgid "Descending - Show Newest Login First"
+msgstr ""
+
+#: C:\BPS47/admin/login/login.php:278
 msgid " out of "
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:272
+#: C:\BPS47/admin/login/login.php:278
 msgid " Database Rows are currently being displayed"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:275
+#: C:\BPS47/admin/login/login.php:281
 msgid "Total number of Database Rows is: "
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:301 C:\BPS47/admin/login/login.php:393
+#: C:\BPS47/admin/login/login.php:307 C:\BPS47/admin/login/login.php:408
 msgid "Login Status"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:302 C:\BPS47/admin/login/login.php:394
+#: C:\BPS47/admin/login/login.php:308 C:\BPS47/admin/login/login.php:337
+#: C:\BPS47/admin/login/login.php:409 C:\BPS47/admin/login/login.php:438
 msgid "Lock"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:303 C:\BPS47/admin/login/login.php:395
+#: C:\BPS47/admin/login/login.php:309 C:\BPS47/admin/login/login.php:338
+#: C:\BPS47/admin/login/login.php:410 C:\BPS47/admin/login/login.php:439
 msgid "Unlock"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:305 C:\BPS47/admin/login/login.php:397
+#: C:\BPS47/admin/login/login.php:311 C:\BPS47/admin/login/login.php:412
 msgid "User ID"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:306 C:\BPS47/admin/login/login.php:398
+#: C:\BPS47/admin/login/login.php:312 C:\BPS47/admin/login/login.php:413
 msgid "Username"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:307 C:\BPS47/admin/login/login.php:399
+#: C:\BPS47/admin/login/login.php:313 C:\BPS47/admin/login/login.php:414
 msgid "Display Name"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:308 C:\BPS47/admin/login/login.php:400
+#: C:\BPS47/admin/login/login.php:314 C:\BPS47/admin/login/login.php:415
 msgid "Email"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:309 C:\BPS47/admin/login/login.php:401
+#: C:\BPS47/admin/login/login.php:315 C:\BPS47/admin/login/login.php:416
 msgid "Role"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:310 C:\BPS47/admin/login/login.php:402
+#: C:\BPS47/admin/login/login.php:316 C:\BPS47/admin/login/login.php:417
 msgid "Login Time"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:311 C:\BPS47/admin/login/login.php:403
+#: C:\BPS47/admin/login/login.php:317 C:\BPS47/admin/login/login.php:418
 msgid "Lockout Expires"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:312 C:\BPS47/admin/login/login.php:404
+#: C:\BPS47/admin/login/login.php:318 C:\BPS47/admin/login/login.php:419
 msgid "IP Address"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:313 C:\BPS47/admin/login/login.php:405
+#: C:\BPS47/admin/login/login.php:319 C:\BPS47/admin/login/login.php:420
 msgid "Hostname"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:314 C:\BPS47/admin/login/login.php:406
+#: C:\BPS47/admin/login/login.php:320 C:\BPS47/admin/login/login.php:421
 msgid "Request URI"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:340 C:\BPS47/admin/login/login.php:432
+#: C:\BPS47/admin/login/login.php:348 C:\BPS47/admin/login/login.php:449
 msgid "NA"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:352 C:\BPS47/admin/login/login.php:444
+#: C:\BPS47/admin/login/login.php:360 C:\BPS47/admin/login/login.php:461
 msgid "No Logins/Locked"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:369 C:\BPS47/admin/login/login.php:461
-#: C:\BPS47/admin/login/login.php:509 C:\BPS47/admin/login/login.php:595
+#: C:\BPS47/admin/login/login.php:377 C:\BPS47/admin/login/login.php:478
+#: C:\BPS47/admin/login/login.php:526 C:\BPS47/admin/login/login.php:612
 msgid "Submit"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:369 C:\BPS47/admin/login/login.php:461
+#: C:\BPS47/admin/login/login.php:377 C:\BPS47/admin/login/login.php:478
 msgid ""
 "Locking and Unlocking a User is reversible, but Deleting a User is not.\\n"
 "\\n-------------------------------------------------------------\\n\\nWhen "
@@ -2056,40 +2109,40 @@ msgid ""
 "OK to proceed or click Cancel"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:369 C:\BPS47/admin/login/login.php:461
+#: C:\BPS47/admin/login/login.php:377 C:\BPS47/admin/login/login.php:478
 msgid "Clear/Refresh"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:538 C:\BPS47/admin/login/login.php:624
+#: C:\BPS47/admin/login/login.php:555 C:\BPS47/admin/login/login.php:641
 msgid " has been deleted from the Login Security Database Table."
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:557 C:\BPS47/admin/login/login.php:643
+#: C:\BPS47/admin/login/login.php:574 C:\BPS47/admin/login/login.php:660
 msgid " has been Unlocked."
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:577 C:\BPS47/admin/login/login.php:663
+#: C:\BPS47/admin/login/login.php:594 C:\BPS47/admin/login/login.php:680
 msgid " has been Locked."
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:683 C:\BPS47/admin/options.php:2232
-#: C:\BPS47/admin/security-log/security-log.php:751
+#: C:\BPS47/admin/login/login.php:700 C:\BPS47/admin/options.php:2253
+#: C:\BPS47/admin/security-log/security-log.php:752
 #: C:\BPS47/admin/system-info/system-info.php:648
 msgid "BulletProof Security Help &amp; FAQ"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:689
+#: C:\BPS47/admin/login/login.php:706
 #: C:\BPS47/admin/maintenance/maintenance.php:1790
-#: C:\BPS47/admin/options.php:2243
-#: C:\BPS47/admin/security-log/security-log.php:757
+#: C:\BPS47/admin/options.php:2264
+#: C:\BPS47/admin/security-log/security-log.php:758
 #: C:\BPS47/admin/system-info/system-info.php:654
 msgid "Security Log Event Codes"
 msgstr ""
 
-#: C:\BPS47/admin/login/login.php:690
+#: C:\BPS47/admin/login/login.php:707
 #: C:\BPS47/admin/maintenance/maintenance.php:1787
-#: C:\BPS47/admin/options.php:2239
-#: C:\BPS47/admin/security-log/security-log.php:758
+#: C:\BPS47/admin/options.php:2260
+#: C:\BPS47/admin/security-log/security-log.php:759
 #: C:\BPS47/admin/system-info/system-info.php:655
 msgid "Contributors Page"
 msgstr ""
@@ -2431,7 +2484,7 @@ msgid ""
 msgstr ""
 
 #: C:\BPS47/admin/maintenance/maintenance.php:165
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "BPS help links can be found in the Help & FAQ pages."
 msgstr ""
 
@@ -2459,13 +2512,13 @@ msgstr ""
 
 #: C:\BPS47/admin/maintenance/maintenance.php:317
 #: C:\BPS47/admin/maintenance/maintenance.php:337
-#: C:\BPS47/admin/options.php:438 C:\BPS47/admin/options.php:534
+#: C:\BPS47/admin/options.php:448 C:\BPS47/admin/options.php:544
 msgid "The file "
 msgstr ""
 
 #: C:\BPS47/admin/maintenance/maintenance.php:317
 #: C:\BPS47/admin/maintenance/maintenance.php:337
-#: C:\BPS47/admin/options.php:438 C:\BPS47/admin/options.php:534
+#: C:\BPS47/admin/options.php:448 C:\BPS47/admin/options.php:544
 msgid " is not writable or does not exist."
 msgstr ""
 
@@ -2477,10 +2530,10 @@ msgstr ""
 
 #: C:\BPS47/admin/maintenance/maintenance.php:317
 #: C:\BPS47/admin/maintenance/maintenance.php:337
-#: C:\BPS47/includes/functions.php:1185 C:\BPS47/includes/functions.php:1211
-#: C:\BPS47/includes/functions.php:1237 C:\BPS47/includes/functions.php:1263
-#: C:\BPS47/includes/functions.php:1298 C:\BPS47/includes/functions.php:1326
-#: C:\BPS47/includes/functions.php:1384 C:\BPS47/includes/functions.php:1419
+#: C:\BPS47/includes/functions.php:1225 C:\BPS47/includes/functions.php:1251
+#: C:\BPS47/includes/functions.php:1277 C:\BPS47/includes/functions.php:1303
+#: C:\BPS47/includes/functions.php:1338 C:\BPS47/includes/functions.php:1366
+#: C:\BPS47/includes/functions.php:1424 C:\BPS47/includes/functions.php:1459
 msgid "Click Here"
 msgstr ""
 
@@ -2518,7 +2571,7 @@ msgstr ""
 #: C:\BPS47/admin/maintenance/maintenance.php:429
 #: C:\BPS47/admin/security-log/security-log.php:480
 #: C:\BPS47/admin/security-log/security-log.php:494
-#: C:\BPS47/admin/security-log/security-log.php:663
+#: C:\BPS47/admin/security-log/security-log.php:664
 #: C:\BPS47/admin/system-info/system-info.php:573
 #: C:\BPS47/admin/system-info/system-info.php:625
 msgid "Click OK to proceed or click Cancel."
@@ -2902,7 +2955,7 @@ msgstr ""
 msgid "IMPORTANT!"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:143 C:\BPS47/includes/functions.php:584
+#: C:\BPS47/admin/options.php:143 C:\BPS47/includes/functions.php:624
 msgid ""
 "BulletProof Mode for the wp-admin folder MUST also be activated when you "
 "have BulletProof Mode activated for the Root folder."
@@ -2918,33 +2971,39 @@ msgid ""
 "Your Website Is Not Protected With BulletProof Security."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:208
+#: C:\BPS47/admin/options.php:186
+msgid ""
+"wp-admin BulletProof Mode was not activated. wp-admin BulletProof Mode is "
+"disabled on the Security Modes page."
+msgstr ""
+
+#: C:\BPS47/admin/options.php:218
 msgid ""
 "Failed to Activate BulletProof Security wp-admin Folder Protection! Your wp-"
 "admin folder is NOT protected with BulletProof Security!"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:235
+#: C:\BPS47/admin/options.php:245
 msgid ""
 "BulletProof Security wp-admin Folder Protection Activated. Your wp-admin "
 "folder is now protected with BulletProof Security."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:250
+#: C:\BPS47/admin/options.php:260
 msgid ""
 "Failed to Delete the wp-admin htaccess file! The file does not exist. It may "
 "have been deleted or renamed already."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:257
+#: C:\BPS47/admin/options.php:267
 msgid "The wp-admin htaccess file has been Deleted. "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:257
+#: C:\BPS47/admin/options.php:267
 msgid "Your wp-admin folder is no longer htaccess protected. "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:257
+#: C:\BPS47/admin/options.php:267
 msgid ""
 "If you are testing then be sure to reactivate BulletProof Mode for your wp-"
 "admin folder when you are done testing. If you are removing BPS from your "
@@ -2953,68 +3012,68 @@ msgid ""
 "together."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:278
+#: C:\BPS47/admin/options.php:288
 msgid ""
 "Failed to Activate BulletProof Security Deny All Folder Protection! Your BPS "
 "Master htaccess folder is NOT Protected with Deny All htaccess folder "
 "protection!"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:285 C:\BPS47/admin/options.php:313
+#: C:\BPS47/admin/options.php:295 C:\BPS47/admin/options.php:323
 msgid "BulletProof Security Deny All Folder Protection"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:285 C:\BPS47/admin/options.php:313
+#: C:\BPS47/admin/options.php:295 C:\BPS47/admin/options.php:323
 msgid "Activated."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:285
+#: C:\BPS47/admin/options.php:295
 msgid ""
 "Your BPS Master htaccess folder is Now Protected with Deny All htaccess "
 "folder protection."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:306
+#: C:\BPS47/admin/options.php:316
 msgid ""
 "Failed to Activate BulletProof Security Deny All Folder Protection! Your "
 "BPS /"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:306
+#: C:\BPS47/admin/options.php:316
 msgid ""
 "/bps-backup folder is NOT Protected with Deny All htaccess folder protection!"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:313
+#: C:\BPS47/admin/options.php:323
 msgid "Your BPS /"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:313
+#: C:\BPS47/admin/options.php:323
 msgid ""
 "/bps-backup folder is Now Protected with Deny All htaccess folder protection."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:337
+#: C:\BPS47/admin/options.php:347
 msgid ""
 "You do not currently have an .htaccess file in your Root folder to backup."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:345
+#: C:\BPS47/admin/options.php:355
 msgid ""
 "Failed to Backup Your Root .htaccess File! File copy function failed. Check "
 "the folder permissions for the /"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:345 C:\BPS47/admin/options.php:368
+#: C:\BPS47/admin/options.php:355 C:\BPS47/admin/options.php:378
 msgid "/bps-backup folder. Folder permissions should be set to 755."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:352
+#: C:\BPS47/admin/options.php:362
 msgid ""
 "Your currently active Root .htaccess file has been backed up successfully!"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:352
+#: C:\BPS47/admin/options.php:362
 msgid ""
 "Use the Restore feature to restore your htaccess files if you run into a "
 "problem at any time. If you make additional changes or install a plugin that "
@@ -3022,158 +3081,158 @@ msgid ""
 "the currently backed up htaccess files. Please read the"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:352
+#: C:\BPS47/admin/options.php:362
 msgid "CAUTION:"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:352
+#: C:\BPS47/admin/options.php:362
 msgid ""
 "Read Me button on the Backup & Restore Page for more detailed information."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:360
+#: C:\BPS47/admin/options.php:370
 msgid ""
 "You do not currently have an htaccess file in your wp-admin folder to backup."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:368
+#: C:\BPS47/admin/options.php:378
 msgid ""
 "Failed to Backup Your wp-admin htaccess File! File copy function failed. "
 "Check the folder permissions for the /"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:375
+#: C:\BPS47/admin/options.php:385
 msgid ""
 "Your currently active wp-admin htaccess file has been backed up successfully!"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:400
+#: C:\BPS47/admin/options.php:410
 msgid ""
 "Failed to Restore Your Root htaccess File! This is most likely because you "
 "DO NOT currently have a Backed up Root htaccess file."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:406
+#: C:\BPS47/admin/options.php:416
 msgid "Your Root htaccess file has been Restored successfully!"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:415
+#: C:\BPS47/admin/options.php:425
 msgid ""
 "Failed to Restore Your wp-admin htaccess File! This is most likely because "
 "you DO NOT currently have a Backed up wp-admin htaccess file."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:422
+#: C:\BPS47/admin/options.php:432
 msgid "Your wp-admin htaccess file has been Restored successfully!"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:436
+#: C:\BPS47/admin/options.php:446
 msgid ""
 "Success! Your Default Mode Master htaccess file was created successfully!"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:436
+#: C:\BPS47/admin/options.php:446
 msgid ""
 "CAUTION: Default Mode should only be activated for testing or "
 "troubleshooting purposes. Default Mode does not protect your website with "
 "any security protection."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:436
+#: C:\BPS47/admin/options.php:446
 msgid ""
 "To activate Default Mode select the Default Mode radio button and click "
 "Activate to put your website in Default Mode."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:438
+#: C:\BPS47/admin/options.php:448
 msgid ""
 "Check that the file is named default.htaccess and that the file exists in "
 "the /bulletproof-security/admin/htaccess master folder. If this is not the "
 "problem click "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:438 C:\BPS47/admin/options.php:534
+#: C:\BPS47/admin/options.php:448 C:\BPS47/admin/options.php:544
 msgid "HERE"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:438 C:\BPS47/admin/options.php:534
+#: C:\BPS47/admin/options.php:448 C:\BPS47/admin/options.php:544
 msgid " to go the the BulletProof Security Forum."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:532
+#: C:\BPS47/admin/options.php:542
 msgid ""
 "Success! Your BulletProof Security Root Master htaccess file was created "
 "successfully!"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:532
+#: C:\BPS47/admin/options.php:542
 msgid ""
-"You can now Activate BulletProof Mode for your Root folder. Select the "
-"BulletProof Mode radio button and click Activate to put your website in "
-"BulletProof Mode."
+"You can now Activate BulletProof Mode for your Root folder. Select the Root "
+"Folder BulletProof Mode radio button and click Activate to put your website "
+"in BulletProof Mode."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:534
+#: C:\BPS47/admin/options.php:544
 msgid ""
 "Check that the file is named secure.htaccess and that the file exists in "
 "the /bulletproof-security/admin/htaccess master folder. If this is not the "
 "problem click"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:993
+#: C:\BPS47/admin/options.php:1002
 msgid "Security Modes"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:994
+#: C:\BPS47/admin/options.php:1003
 msgid "Security Status"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:997
+#: C:\BPS47/admin/options.php:1006
 msgid "Backup &amp; Restore"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:998
+#: C:\BPS47/admin/options.php:1007
 msgid "htaccess File Editor"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:999 C:\BPS47/admin/options.php:2012
-#: C:\BPS47/admin/options.php:2024
+#: C:\BPS47/admin/options.php:1008 C:\BPS47/admin/options.php:2033
+#: C:\BPS47/admin/options.php:2045
 msgid "Custom Code"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1002
+#: C:\BPS47/admin/options.php:1011
 msgid "Whats New"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1003 C:\BPS47/admin/options.php:2360
+#: C:\BPS47/admin/options.php:1012 C:\BPS47/admin/options.php:2440
 msgid "My Notes"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1004
+#: C:\BPS47/admin/options.php:1013
 msgid "BPS Pro Features"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1005
+#: C:\BPS47/admin/options.php:1014
 msgid "Website Scanner"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1006 C:\BPS47/admin/options.php:2535
+#: C:\BPS47/admin/options.php:1015 C:\BPS47/admin/options.php:2617
 msgid "Website SEO"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1010
+#: C:\BPS47/admin/options.php:1019
 msgid "BulletProof Security Modes"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1019
+#: C:\BPS47/admin/options.php:1028
 msgid "Setup Steps & AutoMagic - Create Your htaccess Master Files"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1021
+#: C:\BPS47/admin/options.php:1030
 msgid "Setup Steps & AutoMagic"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "You can backup your existing htaccess files if you have any by clicking on "
 "the Backup & Restore menu tab - click on the Backup htaccess files radio "
@@ -3181,66 +3240,66 @@ msgid ""
 "existing htaccess files."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "AutoMagic - BPS Creates Customized htaccess Master Files For Your Website "
 "Automatically"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "BPS detects what type of WordPress installation you have and will display "
 "which AutoMagic buttons to use for your website in Green font."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "htaccess Core Setup Steps"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "1. Click the "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "Create default.htaccess File "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "button."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "2. Click the "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "Create secure.htaccess File "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "3. Activate BulletProof Mode for your Root folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "4. Activate BulletProof Mode for your wp-admin folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "BPS Master and BPS Backup folder steps below are done Automatically unless "
 "your Server does not allow this then you will have to activate the Deny All "
 "BulletProof Modes manually:"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "1. Activate BulletProof Mode for the BPS Master htaccess folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "2. Activate BulletProof Mode for the BPS Backup folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "If you would like to view, edit or add any additional .htaccess code to your "
 "new secure.htaccess Master file use BPS Custom Code or click on the htaccess "
@@ -3248,17 +3307,17 @@ msgid ""
 "editing changes before you Activate BulletProof Mode for your Root folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "NOTE: If you activate BulletProof Mode for your Root folder you must also "
 "activate BulletProof Mode for your wp-admin folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "WordPress Network (Multisite) Sites Info"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "BPS will automatically detect whether you have a subdomain or subdirectory "
 "Network (Multisite) installation and display, which AutoMagic buttons to use "
@@ -3270,42 +3329,42 @@ msgid ""
 "deactivate BPS on subsites, if you allow this on your Network / Multisite."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "BPS Subsite Menus:  Login Security and System Info: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "Login Security and System Info menus / pages are available on Network / "
 "Multisite subsites to Super Admins and Administrators."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "Login Security has all the same functionality on Network/Multisite subsites "
 "with these exceptions: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "Login Security email alerting is not available for subsites."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "System Info has all the same functionality on Network/Multisite subsites "
 "with these exceptions: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "MySQL Database information is not displayed on subsites ."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "BPS Primary Site Menus: All BPS menus are displayed on the Primary Site: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "All other BulletProof Security features are not available on subsites since "
 "Network/Multisite subsites are virtual and do not have separate website "
@@ -3317,26 +3376,26 @@ msgid ""
 "Network/Multisite website."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "Additional Info:"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "If you see error messages when performing a first time backup do not worry "
 "about it. BPS will backup whatever files should be or are available to "
 "backup for your website."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "Clicking the "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "button and the "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "button will create these two new customized master htaccess files for your "
 "website. The correct RewriteBase and RewriteRule for your website will be "
@@ -3348,130 +3407,130 @@ msgid ""
 "Activate BulletProof Mode for your Root folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "When you Activate BulletProof Mode for your Root folder it will overwrite "
 "the existing Root htaccess file."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "If you have added any custom htaccess code in your Root htaccess file you "
 "should save that custom code to BPS Custom Code."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid "Editing htaccess Files - BPS Built-in File Editor"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1022
+#: C:\BPS47/admin/options.php:1031
 msgid ""
 "BPS has a built-in htaccess File Editor if you want to edit your htaccess "
 "files manually. Go to the htaccess File Editor menu tab."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1040 C:\BPS47/admin/options.php:1059
-#: C:\BPS47/admin/options.php:1078
+#: C:\BPS47/admin/options.php:1049 C:\BPS47/admin/options.php:1068
+#: C:\BPS47/admin/options.php:1087
 msgid "Create default.htaccess File"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1040
+#: C:\BPS47/admin/options.php:1049
 msgid ""
 "Clicking OK will create a new customized default.htaccess Master file for "
 "your website."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1040 C:\BPS47/admin/options.php:1048
-#: C:\BPS47/admin/options.php:1059 C:\BPS47/admin/options.php:1067
-#: C:\BPS47/admin/options.php:1078 C:\BPS47/admin/options.php:1086
+#: C:\BPS47/admin/options.php:1049 C:\BPS47/admin/options.php:1057
+#: C:\BPS47/admin/options.php:1068 C:\BPS47/admin/options.php:1076
+#: C:\BPS47/admin/options.php:1087 C:\BPS47/admin/options.php:1095
 msgid ""
 "This is only creating a Master file and NOT activating it. To activate "
 "Master files go to the Activate Security Modes section below."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1040 C:\BPS47/admin/options.php:1059
-#: C:\BPS47/admin/options.php:1078
+#: C:\BPS47/admin/options.php:1049 C:\BPS47/admin/options.php:1068
+#: C:\BPS47/admin/options.php:1087
 msgid ""
 "NOTE: Default Mode should ONLY be activated for Testing and Troubleshooting."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1040 C:\BPS47/admin/options.php:1059
-#: C:\BPS47/admin/options.php:1078
+#: C:\BPS47/admin/options.php:1049 C:\BPS47/admin/options.php:1068
+#: C:\BPS47/admin/options.php:1087
 msgid ""
 "Click OK to Create your new default.htaccess Master file or click Cancel."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1048 C:\BPS47/admin/options.php:1067
-#: C:\BPS47/admin/options.php:1086
+#: C:\BPS47/admin/options.php:1057 C:\BPS47/admin/options.php:1076
+#: C:\BPS47/admin/options.php:1095
 msgid "Create secure.htaccess File"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1048
+#: C:\BPS47/admin/options.php:1057
 msgid ""
 "Clicking OK will create a new customized secure.htaccess Master file for "
 "your website."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1048 C:\BPS47/admin/options.php:1067
-#: C:\BPS47/admin/options.php:1086
+#: C:\BPS47/admin/options.php:1057 C:\BPS47/admin/options.php:1076
+#: C:\BPS47/admin/options.php:1095
 msgid ""
 "Click OK to Create your new secure.htaccess Master file or click Cancel."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1059
+#: C:\BPS47/admin/options.php:1068
 msgid ""
 "Clicking OK will create a new customized default.htaccess Master file for "
 "your Network / Multisite subdirectory website."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1067
+#: C:\BPS47/admin/options.php:1076
 msgid ""
 "Clicking OK will create a new customized secure.htaccess Master file for "
 "your Network / Multisite subdirectory website."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1078
+#: C:\BPS47/admin/options.php:1087
 msgid ""
 "Clicking OK will create a new customized default.htaccess Master file for "
 "your Network / Multisite subdomain website."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1086
+#: C:\BPS47/admin/options.php:1095
 msgid ""
 "Clicking OK will create a new customized secure.htaccess Master file for "
 "your Network / Multisite subdomain website."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1097
+#: C:\BPS47/admin/options.php:1106
 msgid "Activate Security Modes"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1098
+#: C:\BPS47/admin/options.php:1107
 msgid "Activate Website Root Folder .htaccess Security Mode"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1100
+#: C:\BPS47/admin/options.php:1109
 msgid "Activate Root Folder BulletProof Mode"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1101 C:\BPS47/admin/options.php:1199
+#: C:\BPS47/admin/options.php:1110 C:\BPS47/admin/options.php:1220
 msgid ""
 "If you activate BulletProof Mode for your Root folder you must also activate "
 "BulletProof Mode for your wp-admin folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1101 C:\BPS47/admin/options.php:1199
+#: C:\BPS47/admin/options.php:1110 C:\BPS47/admin/options.php:1220
 msgid ""
 "Perform a backup first before activating any BulletProof Security modes "
 "(backs up both currently active root and wp-admin htaccess files at the same "
 "time)."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1101
+#: C:\BPS47/admin/options.php:1110
 msgid "What Is Going On Here?"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1101
+#: C:\BPS47/admin/options.php:1110
 msgid ""
 "Clicking the AutoMagic buttons creates your customized Master htaccess files "
 "for your website. You can add your own custom htaccess code to the Custom "
@@ -3485,15 +3544,15 @@ msgid ""
 "troubleshooting purposes."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1101 C:\BPS47/admin/options.php:1199
+#: C:\BPS47/admin/options.php:1110 C:\BPS47/admin/options.php:1220
 msgid "Help and FAQ links are available on the BPS Help and FAQ page"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1101 C:\BPS47/admin/options.php:1123
+#: C:\BPS47/admin/options.php:1110 C:\BPS47/admin/options.php:1132
 msgid "Testing or Removing / Uninstalling BPS"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1101
+#: C:\BPS47/admin/options.php:1110
 msgid ""
 "If you are testing BPS to determine if there is a plugin conflict or other "
 "conflict then Activate Default Mode and select the Delete wp-admin htaccess "
@@ -3509,90 +3568,104 @@ msgid ""
 "Delete to uninstall the BPS plugin."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1101 C:\BPS47/admin/options.php:1123
-#: C:\BPS47/admin/options.php:1199 C:\BPS47/admin/options.php:1466
-#: C:\BPS47/admin/options.php:1488 C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:1110 C:\BPS47/admin/options.php:1132
+#: C:\BPS47/admin/options.php:1220 C:\BPS47/admin/options.php:1487
+#: C:\BPS47/admin/options.php:1509 C:\BPS47/admin/options.php:2046
 msgid "BPS Video Tutorial links can be found in the Help & FAQ pages."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1108
+#: C:\BPS47/admin/options.php:1117
 msgid "Root Folder"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1108 C:\BPS47/admin/options.php:1130
-#: C:\BPS47/admin/options.php:1153 C:\BPS47/admin/options.php:1171
+#: C:\BPS47/admin/options.php:1117 C:\BPS47/admin/options.php:1151
+#: C:\BPS47/admin/options.php:1174 C:\BPS47/admin/options.php:1192
 msgid "BulletProof Mode"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1109
+#: C:\BPS47/admin/options.php:1118
 msgid ""
 "Copies the file secure.htaccess to your root folder and renames the file "
 "name to just .htaccess"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1112
+#: C:\BPS47/admin/options.php:1121
 msgid "Default Mode"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1112
+#: C:\BPS47/admin/options.php:1121
 msgid "WP Default htaccess File"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1113 C:\BPS47/admin/options.php:1135
+#: C:\BPS47/admin/options.php:1122 C:\BPS47/admin/options.php:1156
 msgid " CAUTION: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1113
+#: C:\BPS47/admin/options.php:1122
 msgid ""
 "Your site will not be protected if you activate Default Mode. ONLY activate "
 "Default Mode for Testing and Troubleshooting."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1117
+#: C:\BPS47/admin/options.php:1126
 msgid "Did you create your Master .htaccess files using the AutoMagic buttons?"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1117
+#: C:\BPS47/admin/options.php:1126
 msgid "Did you backup your existing .htaccess files?"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1117
+#: C:\BPS47/admin/options.php:1126
 msgid ""
 "Do you have any custom .htaccess code in your Root .htaccess file that you "
 "want to save before Activating BulletProof Mode?"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1117
+#: C:\BPS47/admin/options.php:1126
 msgid "Clicking OK will overwrite your existing Root .htaccess file."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1117
+#: C:\BPS47/admin/options.php:1126
 msgid ""
 "Click OK to Activate BulletProof Mode for your Root folder or click Cancel."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1120
+#: C:\BPS47/admin/options.php:1129
 msgid "Activate Website wp-admin Folder .htaccess Security Mode"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1122
+#: C:\BPS47/admin/options.php:1131
 msgid "Activate wp-admin BulletProof Mode"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1123
+#: C:\BPS47/admin/options.php:1132
 msgid ""
 "If you activate BulletProof Mode for your wp-admin folder you must also "
 "activate BulletProof Mode for your Root folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1123
+#: C:\BPS47/admin/options.php:1132
 msgid ""
 "Activating BulletProof Mode copies, renames and moves the master htaccess "
 "file wpadmin-secure.htaccess from /plugins/bulletproof-security/admin/"
 "htaccess/ to your /wp-admin folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1123
+#: C:\BPS47/admin/options.php:1132
+msgid "Enable/Disable wp-admin BulletProof Mode"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:1132 C:\BPS47/admin/options.php:2311
+msgid ""
+"This option is ONLY for Hosts that do not allow .htaccess files in the wp-"
+"admin folder. Go Daddy Managed WordPress Hosting (not standard Go Daddy "
+"Hosting) is the only known hosting account type where this option should be "
+"set to: Disable wp-admin BulletProof Mode. For everyone else you do not need "
+"to use this option. The default setting is already set to: Enable wp-admin "
+"BulletProof Mode."
+msgstr ""
+
+#: C:\BPS47/admin/options.php:1132
 msgid ""
 "If you are testing BPS to determine if there is a plugin conflict or other "
 "conflict then Activate Default Mode and select the Delete wp-admin htaccess "
@@ -3605,55 +3678,71 @@ msgid ""
 "Delete to uninstall the BPS plugin."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1130
+#: C:\BPS47/admin/options.php:1138
+msgid "Enable/Disable wp-admin BulletProof Mode:"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:1139
+msgid "Note: See Read Me help button above"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:1141
+msgid "Enable wp-admin BulletProof Mode"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:1142
+msgid "Disable wp-admin BulletProof Mode"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:1151
 msgid "wp-admin Folder"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1131
+#: C:\BPS47/admin/options.php:1152
 msgid ""
 " Copies the file wpadmin-secure.htaccess to your /wp-admin folder and "
 "renames the file name to just .htaccess"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1134
+#: C:\BPS47/admin/options.php:1155
 msgid "Delete wp-admin"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1134
+#: C:\BPS47/admin/options.php:1155
 msgid "htaccess File"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1135
+#: C:\BPS47/admin/options.php:1156
 msgid ""
 "Deletes the .htaccess file in your /wp-admin folder. ONLY delete For testing "
 "or BPS removal."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1142
+#: C:\BPS47/admin/options.php:1163
 msgid ""
 "The Deny All htaccess BulletProof Modes/files below are activated/created "
 "automatically. If your Server does not allow this then manually activate the "
 "Deny All htaccess files below."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1143
+#: C:\BPS47/admin/options.php:1164
 msgid ""
 "Activate Deny All htaccess Folder Protection For The BPS Master htaccess "
 "Folder"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1145
+#: C:\BPS47/admin/options.php:1166
 msgid "BPS Master htaccess Folder"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1146
+#: C:\BPS47/admin/options.php:1167
 msgid ""
 "Your BPS Master htaccess folder should already be automatically protected by "
 "BPS, but if it is not then activate BulletProof Mode for your BPS Master "
 "htaccess folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1146
+#: C:\BPS47/admin/options.php:1167
 msgid ""
 "Activating BulletProof Mode for Deny All htaccess Folder Protection copies "
 "and renames the deny-all.htaccess file located in the /plugins/bulletproof-"
@@ -3662,67 +3751,67 @@ msgid ""
 "viewing the BPS Master htaccess files."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1153
+#: C:\BPS47/admin/options.php:1174
 msgid "Master htaccess"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1154
+#: C:\BPS47/admin/options.php:1175
 msgid ""
 " Copies the file deny-all.htaccess to the BPS Master htaccess folder and "
 "renames the file name to just .htaccess"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1161
+#: C:\BPS47/admin/options.php:1182
 msgid "Activate Deny All htaccess Folder Protection For The BPS Backup Folder"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1163
+#: C:\BPS47/admin/options.php:1184
 msgid "BPS Backup Folder"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1164
+#: C:\BPS47/admin/options.php:1185
 msgid ""
 "Your BPS Backup folder should already be automatically protected by BPS, but "
 "if it is not then activate BulletProof Mode for your BPS Backup folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1164
+#: C:\BPS47/admin/options.php:1185
 msgid ""
 "Activating BulletProof Mode for Deny All BPS Backup Folder Protection copies "
 "and renames the deny-all.htaccess file located in the /bulletproof-security/"
 "admin/htaccess/ folder to the BPS Backup folder /"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1164
+#: C:\BPS47/admin/options.php:1185
 msgid ""
 "/bps-backup and renames it to just .htaccess. The Deny All htaccess file "
 "blocks everyone, except for you, from accessing and viewing your backed up "
 "htaccess files."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1171
+#: C:\BPS47/admin/options.php:1192
 msgid "BPS Backup"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1172
+#: C:\BPS47/admin/options.php:1193
 msgid ""
 " Copies the file deny-all.htaccess to the BPS Backup folder and renames the "
 "file name to just .htaccess"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1188
+#: C:\BPS47/admin/options.php:1209
 msgid "BulletProof Security Status"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1196
+#: C:\BPS47/admin/options.php:1217
 msgid "Activated BulletProof Security .htaccess Files"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1198
+#: C:\BPS47/admin/options.php:1219
 msgid "Activated htaccess Files"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1199
+#: C:\BPS47/admin/options.php:1220
 msgid ""
 "The Text Strings you see listed in the Activated BulletProof Security Status "
 "window if you have an active BulletProof htaccess file (or an existing "
@@ -3730,33 +3819,33 @@ msgid ""
 "htaccess files here. "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1199
+#: C:\BPS47/admin/options.php:1220
 msgid ""
 "This is not just a displayed message - this is the actual first 46 string "
 "characters (text) of the contents of your htaccess files."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1199
+#: C:\BPS47/admin/options.php:1220
 msgid ""
 "The BPSQSE BPS QUERY STRING EXPLOITS code check is done by searching the "
 "root htaccess file to verify that the string/text/word BPSQSE is in the file."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1199
+#: C:\BPS47/admin/options.php:1220
 msgid "Troubleshooting Error Messages"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1199
+#: C:\BPS47/admin/options.php:1220
 msgid ""
 "See the Forum: Post Questions and Comments For Assistance link on the Help "
 "and FAQ page. "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1199
+#: C:\BPS47/admin/options.php:1220
 msgid "Miscellaneous Info"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1199
+#: C:\BPS47/admin/options.php:1220
 msgid ""
 "To change or modify the Text String that you see displayed here you would "
 "use the BPS built in Text Editor to change the actual text content of the "
@@ -3764,7 +3853,7 @@ msgid ""
 "title shown here then you must also change the code in the /"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1199
+#: C:\BPS47/admin/options.php:1220
 msgid ""
 "/bulletproof-security/includes/functions.php file to match your changes or "
 "you will get some error messages. The rest of the text content in the "
@@ -3774,164 +3863,164 @@ msgid ""
 "modifying what text is displayed here click this Read Me button link."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1204
+#: C:\BPS47/admin/options.php:1225
 msgid "Additional Website Security Measures"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1237
+#: C:\BPS47/admin/options.php:1258
 msgid "The Windows IIS Dismiss Notice is NOT set. Nothing to reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1240
+#: C:\BPS47/admin/options.php:1261
 msgid "Success! The Windows IIS check is reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1245
+#: C:\BPS47/admin/options.php:1266
 msgid ""
 "The BPS Network/Multisite Plugin Network Activation Notice is NOT set. "
 "Nothing to reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1248
+#: C:\BPS47/admin/options.php:1269
 msgid ""
 "Success! The BPS Network/Multisite Plugin Network Activation Notice is reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1253
+#: C:\BPS47/admin/options.php:1274
 msgid ""
 "The Bonus Custom Code: Brute Force Login Protection Dismiss Notice is NOT "
 "set. Nothing to reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1256
+#: C:\BPS47/admin/options.php:1277
 msgid ""
 "Success! The Bonus Custom Code: Brute Force Login Protection Notice is reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1261
+#: C:\BPS47/admin/options.php:1282
 msgid ""
 "The Bonus Custom Code: Speed Boost Cache Code Dismiss Notice is NOT set. "
 "Nothing to reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1264
+#: C:\BPS47/admin/options.php:1285
 msgid "Success! The Bonus Custom Code: Speed Boost Cache Code Notice is reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1264
+#: C:\BPS47/admin/options.php:1285
 msgid ""
 "Note: The Speed Boost Cache Code Notice will ONLY be displayed after you "
 "dismiss the Brute Force Login Protection Notice."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1269
+#: C:\BPS47/admin/options.php:1290
 msgid ""
 "The Bonus Custom Code: Author Enumeration BOT Probe Code Dismiss Notice is "
 "NOT set. Nothing to reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1272
+#: C:\BPS47/admin/options.php:1293
 msgid ""
 "Success! The Bonus Custom Code: Author Enumeration BOT Probe Code Notice is "
 "reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1272
+#: C:\BPS47/admin/options.php:1293
 msgid ""
 "Note: The Author Enumeration BOT Probe Code Notice will ONLY be displayed "
 "after you dismiss the Speed Boost Cache Code Notice."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1277
+#: C:\BPS47/admin/options.php:1298
 msgid ""
 "The Bonus Custom Code: XML-RPC DDoS Protection Code Dismiss Notice is NOT "
 "set. Nothing to reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1280
+#: C:\BPS47/admin/options.php:1301
 msgid ""
 "Success! The Bonus Custom Code: XML-RPC DDoS Protection Code Notice is reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1280
+#: C:\BPS47/admin/options.php:1301
 msgid ""
 "Note: The XML-RPC DDoS Protection Code Notice will ONLY be displayed after "
 "you dismiss the Author Enumeration BOT Probe Code Notice."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1285
+#: C:\BPS47/admin/options.php:1306
 msgid ""
 "The PHP/php.ini handler htaccess code check Dismiss Notice is NOT set. "
 "Nothing to reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1288
+#: C:\BPS47/admin/options.php:1309
 msgid "Success! The PHP/php.ini handler htaccess code check Notice is reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1288
+#: C:\BPS47/admin/options.php:1309
 msgid ""
 "Note: The PHP/php.ini handler htaccess code check Notice will ONLY be "
 "displayed after you dismiss the Speed Boost Cache Code Notice."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1293
+#: C:\BPS47/admin/options.php:1314
 msgid ""
 "The Custom Permalinks HUD Check Dismiss Notice is NOT set. Nothing to reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1296
+#: C:\BPS47/admin/options.php:1317
 msgid "Success! The Custom Permalinks HUD Check is reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1301
+#: C:\BPS47/admin/options.php:1322
 msgid ""
 "The Sucuri 1-click Hardening wp-content HUD Check Dismiss Notice is NOT set. "
 "Nothing to reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1304
+#: C:\BPS47/admin/options.php:1325
 msgid "Success! The Sucuri 1-click Hardening wp-content HUD Check is reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1309
+#: C:\BPS47/admin/options.php:1330
 msgid ""
 "The WordPress Firewall 2 Plugin Dismiss Notice is NOT set. Nothing to reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1312
+#: C:\BPS47/admin/options.php:1333
 msgid "Success! The WordPress Firewall 2 Plugin check is reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1317
+#: C:\BPS47/admin/options.php:1338
 msgid ""
 "The Broken Link Checker plugin HEAD Request Method filter HUD Check Dismiss "
 "Notice is NOT set. Nothing to reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1320
+#: C:\BPS47/admin/options.php:1341
 msgid ""
 "Success! The Broken Link Checker plugin HEAD Request Method filter HUD Check "
 "is reset."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1341
+#: C:\BPS47/admin/options.php:1362
 msgid "Reset / Recheck Dismiss Notices: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1364
+#: C:\BPS47/admin/options.php:1385
 msgid "File and Folder Permissions - CGI or DSO"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1366
+#: C:\BPS47/admin/options.php:1387
 msgid "File and Folder Permissions"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1367
+#: C:\BPS47/admin/options.php:1388
 msgid "CGI And DSO File And Folder Permission Recommendations"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1367
+#: C:\BPS47/admin/options.php:1388
 msgid ""
 "If your Server API (SAPI) is CGI you will see a table displayed with "
 "recommendations for file and folder permissions for CGI. If your SAPI is "
@@ -3939,7 +4028,7 @@ msgid ""
 "recommendations for DSO."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1367
+#: C:\BPS47/admin/options.php:1388
 msgid ""
 "If your Host is using CGI, but they do not allow you to set your folder "
 "permissions more restrictive to 705 and file permissions more restrictive to "
@@ -3952,7 +4041,7 @@ msgid ""
 "things that they specifically allow or do not allow."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1367
+#: C:\BPS47/admin/options.php:1388
 msgid ""
 "Most Hosts now use 705 Root folder permissions. Your Host might not be doing "
 "this or allow this, but typically 755 is fine for your Root folder. Changing "
@@ -3964,14 +4053,14 @@ msgid ""
 "and 404 respectively."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1367
+#: C:\BPS47/admin/options.php:1388
 msgid ""
 "If you have BPS Pro installed then use F-Lock to Lock or Unlock your Mission "
 "Critical files. BPS Pro S-Monitor will automatically display warning "
 "messages if your files are unlocked."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1367
+#: C:\BPS47/admin/options.php:1388
 msgid ""
 "The wp-content/bps-backup/ folder permission recommendation is 755 for CGI "
 "or DSO for compatibility reasons. The /bps-backup folder has a deny all "
@@ -3979,25 +4068,25 @@ msgid ""
 "so the folder permissions for this folder are irrelevant."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1367
+#: C:\BPS47/admin/options.php:1388
 msgid ""
 "Your current file and folder permissions are shown below with suggested / "
 "recommended file and folder permissions. "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1367
+#: C:\BPS47/admin/options.php:1388
 msgid ""
 "Not all web hosts will allow you to set your folder permissions to these "
 "Recommended folder permissions."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1367
+#: C:\BPS47/admin/options.php:1388
 msgid ""
 "If you see 500 errors after changing your folder permissions than change "
 "them back to what they were."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1367
+#: C:\BPS47/admin/options.php:1388
 msgid ""
 "I recommend using FileZilla to change your file and folder permissions. "
 "FileZilla is a free FTP software that makes changing your file and folder "
@@ -4007,15 +4096,15 @@ msgid ""
 "confusion out of which attributes to check or uncheck."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1374
+#: C:\BPS47/admin/options.php:1395
 msgid "General BulletProof Security File Checks"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1376
+#: C:\BPS47/admin/options.php:1397
 msgid "General File Checks"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1377
+#: C:\BPS47/admin/options.php:1398
 msgid ""
 "This is a quick visual check to verify that you have active .htaccess files "
 "in your root and /wp-admin folders and that all the required BPS files are "
@@ -4024,11 +4113,11 @@ msgid ""
 "htaccess) are located in this folder /"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1377
+#: C:\BPS47/admin/options.php:1398
 msgid "/bulletproof-security/admin/htaccess/"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1377
+#: C:\BPS47/admin/options.php:1398
 msgid ""
 "For new installations and upgrades of BulletProof Security you will see red "
 "warning messages. This is completely normal. These warnings are there to "
@@ -4036,58 +4125,58 @@ msgid ""
 "may see warning messages if files do not exist yet."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1377
+#: C:\BPS47/admin/options.php:1398
 msgid ""
 "You can also download backups of any existing .htaccess files using the BPS "
 "File Downloader."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1389
+#: C:\BPS47/admin/options.php:1410
 msgid "CGI File and Folder Permissions / Recommendations"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1392 C:\BPS47/admin/options.php:1415
+#: C:\BPS47/admin/options.php:1413 C:\BPS47/admin/options.php:1436
 msgid "File Name"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1392 C:\BPS47/admin/options.php:1415
+#: C:\BPS47/admin/options.php:1413 C:\BPS47/admin/options.php:1436
 msgid "Folder Name"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1393 C:\BPS47/admin/options.php:1416
+#: C:\BPS47/admin/options.php:1414 C:\BPS47/admin/options.php:1437
 msgid "File Path"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1393 C:\BPS47/admin/options.php:1416
+#: C:\BPS47/admin/options.php:1414 C:\BPS47/admin/options.php:1437
 msgid "Folder Path"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1394 C:\BPS47/admin/options.php:1417
+#: C:\BPS47/admin/options.php:1415 C:\BPS47/admin/options.php:1438
 msgid "Recommended"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1394 C:\BPS47/admin/options.php:1395
-#: C:\BPS47/admin/options.php:1417 C:\BPS47/admin/options.php:1418
+#: C:\BPS47/admin/options.php:1415 C:\BPS47/admin/options.php:1416
+#: C:\BPS47/admin/options.php:1438 C:\BPS47/admin/options.php:1439
 msgid "Permissions"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1395 C:\BPS47/admin/options.php:1418
+#: C:\BPS47/admin/options.php:1416 C:\BPS47/admin/options.php:1439
 msgid "Current"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1412
+#: C:\BPS47/admin/options.php:1433
 msgid "DSO File and Folder Permissions / Recommendations"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1452
+#: C:\BPS47/admin/options.php:1473
 msgid "BulletProof Security Backup &amp; Restore"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1465
+#: C:\BPS47/admin/options.php:1486
 msgid "htaccess File Backup"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1466
+#: C:\BPS47/admin/options.php:1487
 msgid ""
 "Back up your existing htaccess files first before activating any BulletProof "
 "Security Modes in case of a problem when you first install and activate any "
@@ -4095,23 +4184,23 @@ msgid ""
 "htaccess files you will see the status listed in the "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1466
+#: C:\BPS47/admin/options.php:1487
 msgid "Current Backed Up htaccess Files Status"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1466
+#: C:\BPS47/admin/options.php:1487
 msgid "window below. "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1466
+#: C:\BPS47/admin/options.php:1487
 msgid "Backup files are stored in this folder /"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1466
+#: C:\BPS47/admin/options.php:1487
 msgid "/bps-backup."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1466
+#: C:\BPS47/admin/options.php:1487
 msgid ""
 "In cases where you install a plugin that writes to your htaccess files you "
 "will want to perform another backup of your htaccess files. Each time you "
@@ -4119,21 +4208,21 @@ msgid ""
 "up files are stored in the /"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1466
+#: C:\BPS47/admin/options.php:1487
 msgid "/bps-folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1466
+#: C:\BPS47/admin/options.php:1487
 msgid ""
 "The BPS Master htaccess files are stored in your /plugins/bulletproof-"
 "security/admin/htaccess folder and can also be backed up to the /"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1466 C:\BPS47/includes/functions.php:829
+#: C:\BPS47/admin/options.php:1487 C:\BPS47/includes/functions.php:869
 msgid "/bps-backup/master-backups folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1466
+#: C:\BPS47/admin/options.php:1487
 msgid ""
 "Backed up files are stored online so they will be available to you after "
 "upgrading to a newer version of BPS if you run into a problem. There is no "
@@ -4142,11 +4231,11 @@ msgid ""
 "can manually download the files from this folder /"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1466
+#: C:\BPS47/admin/options.php:1487
 msgid "/bps-backup/master-backups using FTP or your web host file downloader."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1466
+#: C:\BPS47/admin/options.php:1487
 msgid ""
 "When you upgrade BPS your currently active root and wp-admin .htaccess files "
 "are updated with any new htaccess code additions in the new version of BPS, "
@@ -4157,102 +4246,102 @@ msgid ""
 "you want to keep then back them up first before upgrading."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1466
+#: C:\BPS47/admin/options.php:1487
 msgid ""
 "If something goes wrong in the htaccess file editing process or at any point "
 "you can restore your good htaccess files with one click as long as you "
 "already backed them up."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1474
+#: C:\BPS47/admin/options.php:1495
 msgid "Backup .htaccess Files"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1475
+#: C:\BPS47/admin/options.php:1496
 msgid ""
 "Backs up your currently active .htaccess files in your root and /wp-admin "
 "folders."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1475
+#: C:\BPS47/admin/options.php:1496
 msgid ""
 "Backup your htaccess files for first time installations of BPS or whenever "
 "new modifications have been made to your htaccess files. Read the "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1475
+#: C:\BPS47/admin/options.php:1496
 msgid "Read Me button."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1485
+#: C:\BPS47/admin/options.php:1506
 msgid "Restore Your .htaccess Files From Backup"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1487
+#: C:\BPS47/admin/options.php:1508
 msgid "htaccess File Restore"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1488
+#: C:\BPS47/admin/options.php:1509
 msgid ""
 "Restores your backed up htaccess files that you backed up. Your backed up "
 "htaccess files were renamed to root.htaccess and wpadmin.htaccess and copied "
 "to the /"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1488
+#: C:\BPS47/admin/options.php:1509
 msgid ""
 "/bps-backup/master-backups folder. Restoring your backed up htaccess files "
 "will rename them back to htaccess and copy them back to your root and /wp-"
 "admin folders respectively."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1488
+#: C:\BPS47/admin/options.php:1509
 msgid ""
 "If you did not have any original htaccess files to begin with and / or you "
 "did not back up any files then you will not have any backed up htaccess "
 "files."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1496
+#: C:\BPS47/admin/options.php:1517
 msgid "Restore .htaccess Files"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1497
+#: C:\BPS47/admin/options.php:1518
 msgid ""
 "Restores your backed up .htaccess files to your root and /wp-admin folders."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1497
+#: C:\BPS47/admin/options.php:1518
 msgid ""
 "Restore your backed up .htaccess files if you have any problems or for use "
 "between BPS ugrades."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1519
+#: C:\BPS47/admin/options.php:1540
 msgid "Current Backed Up .htaccess Files Status"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1521
+#: C:\BPS47/admin/options.php:1542
 msgid "Backup .htaccess File"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1522
+#: C:\BPS47/admin/options.php:1543
 msgid "General file checks to check which files have been backed up or not."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1550
+#: C:\BPS47/admin/options.php:1571
 msgid "BulletProof Security File Editing"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1559 C:\BPS47/admin/options.php:1560
+#: C:\BPS47/admin/options.php:1580 C:\BPS47/admin/options.php:1581
 msgid "File Editing"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1561
+#: C:\BPS47/admin/options.php:1582
 msgid "Lock / Unlock .htaccess Files"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1561
+#: C:\BPS47/admin/options.php:1582
 msgid ""
 "If your Server API is using CGI then you will see Lock and Unlock buttons to "
 "lock your Root htaccess file with 404 Permissions and unlock your root "
@@ -4264,7 +4353,7 @@ msgid ""
 "because of the different way that file security is handled with DSO."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1561
+#: C:\BPS47/admin/options.php:1582
 msgid ""
 "If your Root htaccess file is locked and you try to save your editing "
 "changes you will see a pop message that your Root htaccess file is locked. "
@@ -4272,11 +4361,11 @@ msgid ""
 "changes."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1561
+#: C:\BPS47/admin/options.php:1582
 msgid "Turn On AutoLock / Turn Off AutoLock"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1561
+#: C:\BPS47/admin/options.php:1582
 #, php-format
 msgid ""
 "AutoLock is designed to automatically lock your root .htaccess file to save "
@@ -4291,7 +4380,7 @@ msgid ""
 "actions, tasks, functions and also for BPS upgrades."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1561
+#: C:\BPS47/admin/options.php:1582
 msgid ""
 "The File Editor is designed to open all of your htaccess files "
 "simultaneously and allow you to copy and paste from one window (file) to "
@@ -4301,117 +4390,117 @@ msgid ""
 "will be updated / saved."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1561
+#: C:\BPS47/admin/options.php:1582
 msgid ""
 "Help links and Video Tutorial links are provided on the Help & FAQ page "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1590
+#: C:\BPS47/admin/options.php:1611
 msgid ""
 "File Open and Write test successful! The secure.htaccess file is writable."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1595 C:\BPS47/admin/options.php:1630
-#: C:\BPS47/admin/options.php:1665 C:\BPS47/admin/options.php:1703
-#: C:\BPS47/admin/options.php:1743
+#: C:\BPS47/admin/options.php:1616 C:\BPS47/admin/options.php:1651
+#: C:\BPS47/admin/options.php:1686 C:\BPS47/admin/options.php:1724
+#: C:\BPS47/admin/options.php:1764
 msgid "Cannot write to file: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1608
+#: C:\BPS47/admin/options.php:1629
 msgid "Success! The secure.htaccess file has been updated."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1625
+#: C:\BPS47/admin/options.php:1646
 msgid ""
 "File Open and Write test successful! The default.htaccess file is writable."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1643
+#: C:\BPS47/admin/options.php:1664
 msgid "Success! The default.htaccess file has been updated."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1660
+#: C:\BPS47/admin/options.php:1681
 msgid ""
 "File Open and Write test successful! The wpadmin-secure.htaccess file is "
 "writable."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1678
+#: C:\BPS47/admin/options.php:1699
 msgid "Success! The wpadmin-secure.htaccess file has been updated."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1695
+#: C:\BPS47/admin/options.php:1716
 msgid ""
 "File Open and Write test successful! Your currently active root .htaccess "
 "file is writable."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1700
+#: C:\BPS47/admin/options.php:1721
 msgid "Your root .htaccess file is Locked with Read Only Permissions."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1700
+#: C:\BPS47/admin/options.php:1721
 msgid ""
 "Use the Lock and Unlock buttons below to Lock or Unlock your root .htaccess "
 "file for editing."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1714
+#: C:\BPS47/admin/options.php:1735
 msgid ""
 "Error: Unable to write to the Root .htaccess file. If your Root .htaccess "
 "file is locked you must unlock first."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1721
+#: C:\BPS47/admin/options.php:1742
 msgid "Success! Your currently active root .htaccess file has been updated."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1738
+#: C:\BPS47/admin/options.php:1759
 msgid ""
 "File Open and Write test successful! Your currently active wp-admin ."
 "htaccess file is writable."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1756
+#: C:\BPS47/admin/options.php:1777
 msgid ""
 "Success! Your currently active wp-admin .htaccess file has been updated."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1769
+#: C:\BPS47/admin/options.php:1790
 msgid "Your Root .htaccess file has been Locked."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1772
+#: C:\BPS47/admin/options.php:1793
 msgid "Unable to Lock your Root .htaccess file."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1783
+#: C:\BPS47/admin/options.php:1804
 msgid "Your Root .htaccess file has been Unlocked."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1786
+#: C:\BPS47/admin/options.php:1807
 msgid "Unable to Unlock your Root .htaccess file."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1805
+#: C:\BPS47/admin/options.php:1826
 msgid "Lock htaccess File"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1805
+#: C:\BPS47/admin/options.php:1826
 msgid "Click OK to Lock your Root htaccess file or click Cancel."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1805
+#: C:\BPS47/admin/options.php:1826
 msgid ""
 "Note: The File Open and Write Test window will still display the last status "
 "of the file as Unlocked. To see the current status refresh your browser."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1813
+#: C:\BPS47/admin/options.php:1834
 msgid "Turn On AutoLock"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1813
+#: C:\BPS47/admin/options.php:1834
 msgid ""
 "Turning AutoLock On will allow BPS Pro to automatically lock your Root ."
 "htaccess file. For some folks this causes a problem because their Web Hosts "
@@ -4419,11 +4508,11 @@ msgid ""
 "BPS Pro to AutoLock the Root .htaccess file works fine."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1813
+#: C:\BPS47/admin/options.php:1834
 msgid "Click OK to Turn AutoLock On or click Cancel."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1813
+#: C:\BPS47/admin/options.php:1834
 #: C:\BPS47/admin/system-info/system-info.php:415
 #: C:\BPS47/admin/system-info/system-info.php:423
 #: C:\BPS47/admin/system-info/system-info.php:431
@@ -4436,25 +4525,25 @@ msgstr ""
 msgid "On"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1831
+#: C:\BPS47/admin/options.php:1852
 msgid "Unlock htaccess File"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1831
+#: C:\BPS47/admin/options.php:1852
 msgid "Click OK to Unlock your Root htaccess file or click Cancel."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1831
+#: C:\BPS47/admin/options.php:1852
 msgid ""
 "Note: The File Open and Write Test window will still display the last status "
 "of the file as Locked. To see the current status refresh your browser."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1839
+#: C:\BPS47/admin/options.php:1860
 msgid "Turn Off AutoLock"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1839
+#: C:\BPS47/admin/options.php:1860
 msgid ""
 "Turning AutoLock Off will prevent BPS Pro from automatically locking your "
 "Root .htaccess file. For some folks this is necessary because their Web "
@@ -4462,11 +4551,11 @@ msgid ""
 "allowing BPS Pro to AutoLock the Root .htaccess file works fine."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1839
+#: C:\BPS47/admin/options.php:1860
 msgid "Click OK to Turn AutoLock Off or click Cancel."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1839
+#: C:\BPS47/admin/options.php:1860
 #: C:\BPS47/admin/system-info/system-info.php:326
 #: C:\BPS47/admin/system-info/system-info.php:418
 #: C:\BPS47/admin/system-info/system-info.php:426
@@ -4477,39 +4566,39 @@ msgstr ""
 #: C:\BPS47/admin/system-info/system-info.php:466
 #: C:\BPS47/admin/system-info/system-info.php:474
 #: C:\BPS47/admin/system-info/system-info.php:491
-#: C:\BPS47/includes/functions.php:1109
+#: C:\BPS47/includes/functions.php:1149
 msgid "Off"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1854
+#: C:\BPS47/admin/options.php:1875
 msgid "secure.htaccess"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1855
+#: C:\BPS47/admin/options.php:1876
 msgid "default.htaccess"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1857
+#: C:\BPS47/admin/options.php:1878
 msgid "wpadmin-secure.htaccess"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1858
+#: C:\BPS47/admin/options.php:1879
 msgid "Your Current Root htaccess File"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1859
+#: C:\BPS47/admin/options.php:1880
 msgid "Your Current wp-admin htaccess File"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1961
+#: C:\BPS47/admin/options.php:1982
 msgid "YOUR ROOT HTACCESS FILE IS LOCKED."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1961
+#: C:\BPS47/admin/options.php:1982
 msgid "YOUR FILE EDITS / CHANGES CANNOT BE SAVED."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:1961
+#: C:\BPS47/admin/options.php:1982
 msgid ""
 "Click Cancel, copy the file editing changes you made to save them and then "
 "click the Unlock .htaccess File button to unlock your Root .htaccess file. "
@@ -4518,15 +4607,15 @@ msgid ""
 "to save your file edits / changes."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2022
+#: C:\BPS47/admin/options.php:2043
 msgid "Add Custom htaccess Code To Root and wp-admin htaccess Files"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid "IMPORTANT!!! Custom Code General Help Information"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "ONLY add valid htaccess code into these text areas/text boxes. If you want "
 "to add regular text instead of .htaccess code then you will need to add a "
@@ -4535,28 +4624,28 @@ msgid ""
 "Root folder or your wp-admin folder your website WILL crash."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "For Custom Code text areas/ text boxes the require that you copy the entire "
 "section of code that you want to edit and modify you will see this blue help "
 "text - "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "\"You MUST copy and paste the entire xxxxx section of code from your root ."
 "htaccess file into this text box first. You can then edit and modify the "
 "code in this text window and save your changes.\""
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "If you do not copy the entire section of code into a text area/text box that "
 "requires this then the next time you use AutoMagic and activate BulletProof "
 "Mode for your Root folder or your wp-admin folder your website WILL crash."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "If your website crashes: FTP to your website and delete the root .htaccess "
 "file or the wp-admin file or both files if necessary. Log back into your "
@@ -4566,50 +4655,50 @@ msgid ""
 "Modes again."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "Your Custom Code is saved permanently to your WordPress Database until you "
 "delete it and will not be removed or deleted when you upgrade BPS."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid "Root htaccess File Custom Code Setup Steps"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid "1. Enter your custom code in the appropriate Custom Code text box."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid "2. Click the Save Root Custom Code button to save your custom code."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid "3. Go to the Security Modes page and click the AutoMagic buttons."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid "4. Activate BulletProof Mode for your Root folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "CUSTOM CODE TOP PHP/PHP.INI HANDLER/CACHE CODE: Add php.ini handler and/or "
 "plugin cache code here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "ONLY add valid htaccess code below or text commented out with a pound sign # "
 "The CUSTOM CODE TOP text area should ONLY be used for php/php.ini handler "
 "code and/or plugin cache code."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid "CUSTOM CODE DIRECTORY LISTING/DIRECTORY INDEX:"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "You MUST copy and paste the entire Show Directory Listing and Directory "
 "Index section of code from your root .htaccess file into this text box "
@@ -4619,11 +4708,11 @@ msgid ""
 "activate BulletProof Mode for your Root folder your website WILL crash."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025 C:\BPS47/admin/options.php:2078
+#: C:\BPS47/admin/options.php:2046 C:\BPS47/admin/options.php:2099
 msgid "CUSTOM CODE BRUTE FORCE LOGIN PAGE PROTECTION:"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "This Custom Code text box is for optional/Bonus code. To get this code go to "
 "this link: http://forum.ait-pro.com/forums/topic/protect-login-page-from-"
@@ -4634,12 +4723,12 @@ msgid ""
 "403 error when logging out and logging into your website."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025 C:\BPS47/admin/options.php:2082
+#: C:\BPS47/admin/options.php:2046 C:\BPS47/admin/options.php:2103
 msgid ""
 "CUSTOM CODE ERROR LOGGING AND TRACKING: Add/Modify Error logging code here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "You MUST copy and paste the entire Error Logging section of code from your "
 "root .htaccess file into this text box first. You can then edit and modify "
@@ -4649,11 +4738,11 @@ msgid ""
 "folder your website WILL crash."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025 C:\BPS47/admin/options.php:2085
+#: C:\BPS47/admin/options.php:2046 C:\BPS47/admin/options.php:2106
 msgid "CUSTOM CODE WP-ADMIN/INCLUDES: DO NOT add wp-admin .htaccess code here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "Add one pound sign # below to remove the WP-ADMIN/INCLUDES section of code "
 "from your root .htaccess file. If you do not want to use the wp-admin/"
@@ -4662,13 +4751,13 @@ msgid ""
 "in this text area/text box."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025 C:\BPS47/admin/options.php:2088
+#: C:\BPS47/admin/options.php:2046 C:\BPS47/admin/options.php:2109
 msgid ""
 "CUSTOM CODE WP REWRITE LOOP START: Add www to non-www/non-www to www code "
 "here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "You MUST copy and paste the entire Timthumb section of code from your root ."
 "htaccess file into this text box first. You can then edit and modify the "
@@ -4678,13 +4767,13 @@ msgid ""
 "folder your website WILL crash."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025 C:\BPS47/admin/options.php:2091
+#: C:\BPS47/admin/options.php:2046 C:\BPS47/admin/options.php:2112
 msgid ""
 "CUSTOM CODE REQUEST METHODS FILTERED: Whitelist User Agents or remove HEAD "
 "here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "You MUST copy and paste the entire Request Methods Filtered section of code "
 "from your root .htaccess file into this text box first. You can then edit "
@@ -4694,13 +4783,13 @@ msgid ""
 "Root folder your website WILL crash."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "CUSTOM CODE PLUGIN/THEME SKIP/BYPASS RULES: Add personal plugin/theme skip/"
 "bypass rules here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "ONLY add valid htaccess code below or text commented out with a pound sign # "
 "This text area is for plugin fixes that are specific to your website. BPS "
@@ -4714,19 +4803,19 @@ msgid ""
 "RewriteRule . - [S=15]."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "CUSTOM CODE TIMTHUMB FORBID RFI and MISC FILE SKIP/BYPASS RULE: Add "
 "additional Referers and/or misc file names"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "CUSTOM CODE BPSQSE BPS QUERY STRING EXPLOITS: Modify Query String Exploit "
 "code here "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "You MUST copy and paste the entire BPSQSE QUERY STRING EXPLOITS section of "
 "code from your root .htaccess file from # BEGIN BPSQSE BPS QUERY STRING "
@@ -4737,13 +4826,13 @@ msgid ""
 "BulletProof Mode for your Root folder your website WILL crash."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "CUSTOM CODE DENY BROWSER ACCESS TO THESE FILES: Add or remove files that you "
 "want to block or allow access to here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "You MUST copy and paste the entire Deny Browser Access section of code from "
 "your root .htaccess file into this text box first. You can then edit and "
@@ -4753,13 +4842,13 @@ msgid ""
 "Root folder your website WILL crash."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025 C:\BPS47/admin/options.php:2106
+#: C:\BPS47/admin/options.php:2046 C:\BPS47/admin/options.php:2127
 msgid ""
 "CUSTOM CODE BOTTOM HOTLINKING/FORBID COMMENT SPAMMERS/BLOCK BOTS/BLOCK IP/"
 "REDIRECT CODE: Add miscellaneous code here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "ONLY add valid htaccess code below or text commented out with a pound sign # "
 "You can save any miscellaneous custom htaccess code here as long as it is "
@@ -4767,11 +4856,11 @@ msgid ""
 "comment it out with a pound sign # in front of the text."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025 C:\BPS47/admin/options.php:2159
+#: C:\BPS47/admin/options.php:2046 C:\BPS47/admin/options.php:2180
 msgid "wp-admin htaccess File Custom Code"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "The wp-admin htaccess File Custom Code feature works differently then the "
 "Root htaccess Custom Code feature. The wp-admin htaccess file does not use "
@@ -4779,27 +4868,27 @@ msgid ""
 "file when you Activate BulletProof Mode for your wp-admin folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid "wp-admin htaccess File Custom Code Steps"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid "2. Click the Save wp-admin Custom Code button to save your custom code."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "3. Go to the Security Modes page and activate BulletProof Mode for your wp-"
 "admin folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "CUSTOM CODE BPS WPADMIN DENY ACCESS TO FILES: Add additional wp-admin files "
 "that you would like to block here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "You MUST copy and paste the entire BPS WPADMIN DENY ACCESS TO FILES section "
 "of code from your wp-admin .htaccess file into this text box first. You can "
@@ -4809,19 +4898,19 @@ msgid ""
 "your wp-admin folder your website WILL crash."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "CUSTOM CODE WPADMIN TOP: Add wp-admin password protection, IP whitelist "
 "allow access & miscellaneous custom code here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "CUSTOM CODE WPADMIN PLUGIN FIXES: Add ONLY wp-admin personal plugin fixes "
 "code here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "ONLY add valid htaccess code below or text commented out with a pound sign # "
 "There is currently one skip rule in the wp-admin htaccess file - the WP "
@@ -4833,13 +4922,13 @@ msgid ""
 "rule above #2 and #3 it would be Skip rule #4 - RewriteRule . - [S=4]."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "CUSTOM CODE BPSQSE-check BPS QUERY STRING EXPLOITS AND FILTERS: Modify wp-"
 "admin Query String Exploit code here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2025
+#: C:\BPS47/admin/options.php:2046
 msgid ""
 "You MUST copy and paste the entire BPS QUERY STRING EXPLOITS section of code "
 "from your wp-admin .htaccess file into this text box first. You can then "
@@ -4849,46 +4938,46 @@ msgid ""
 "your wp-admin folder your website WILL crash."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2028 C:\BPS47/admin/options.php:2248
+#: C:\BPS47/admin/options.php:2049 C:\BPS47/admin/options.php:2269
 msgid "Custom Code Video Tutorial"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2029
+#: C:\BPS47/admin/options.php:2050
 msgid "BulletProof Security Forum"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2045
+#: C:\BPS47/admin/options.php:2066
 msgid "The BPS Query String Exploits Custom Code below is NOT valid."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2045
+#: C:\BPS47/admin/options.php:2066
 msgid ""
 "Delete the code shown below from the CUSTOM CODE BPSQSE BPS QUERY STRING "
 "EXPLOITS: text box and click the Save Root Custom Code button again."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2057
+#: C:\BPS47/admin/options.php:2078
 msgid "Root htaccess File Custom Code"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2071
+#: C:\BPS47/admin/options.php:2092
 msgid ""
 "CUSTOM CODE TOP PHP/PHP.INI HANDLER/CACHE CODE:<br>Add php.ini handler and/"
 "or plugin cache code here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2072 C:\BPS47/admin/options.php:2095
-#: C:\BPS47/admin/options.php:2107 C:\BPS47/admin/options.php:2177
-#: C:\BPS47/admin/options.php:2180
+#: C:\BPS47/admin/options.php:2093 C:\BPS47/admin/options.php:2116
+#: C:\BPS47/admin/options.php:2128 C:\BPS47/admin/options.php:2198
+#: C:\BPS47/admin/options.php:2201
 msgid ""
 "ONLY add valid htaccess code below or text commented out with a pound sign #"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2074
+#: C:\BPS47/admin/options.php:2095
 msgid "CUSTOM CODE DO NOT SHOW DIRECTORY LISTING/DIRECTORY INDEX:"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2075
+#: C:\BPS47/admin/options.php:2096
 msgid ""
 "You MUST copy and paste the entire DO NOT SHOW DIRECTORY LISTING and "
 "DIRECTORY INDEX sections of code from your root .htaccess file into this "
@@ -4896,65 +4985,65 @@ msgid ""
 "and save your changes."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2079
+#: C:\BPS47/admin/options.php:2100
 msgid ""
 "This Custom Code text box is for optional/Bonus code. To get this code click "
 "the link below:"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2083
+#: C:\BPS47/admin/options.php:2104
 msgid ""
 "You MUST copy and paste the entire ERROR LOGGING AND TRACKING section of "
 "code from your root .htaccess file into this text box first. You can then "
 "edit and modify the code in this text window and save your changes."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2086
+#: C:\BPS47/admin/options.php:2107
 msgid ""
 "Add one pound sign # below to remove the WP-ADMIN/INCLUDES section of code "
 "from your root .htaccess file"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2089
+#: C:\BPS47/admin/options.php:2110
 msgid ""
 "You MUST copy and paste the entire WP REWRITE LOOP START section of code "
 "from your root .htaccess file into this text box first. You can then edit "
 "and modify the code in this text window and save your changes."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2092
+#: C:\BPS47/admin/options.php:2113
 msgid ""
 "You MUST copy and paste the entire REQUEST METHODS FILTERED section of code "
 "from your root .htaccess file into this text box first. You can then edit "
 "and modify the code in this text window and save your changes."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2094
+#: C:\BPS47/admin/options.php:2115
 msgid ""
 "CUSTOM CODE PLUGIN/THEME SKIP/BYPASS RULES:<br>Add personal plugin/theme "
 "skip/bypass rules here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2097
+#: C:\BPS47/admin/options.php:2118
 msgid ""
 "CUSTOM CODE TIMTHUMB FORBID RFI and MISC FILE SKIP/BYPASS RULE:<br>Add "
 "additional Referers and/or misc file names"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2098
+#: C:\BPS47/admin/options.php:2119
 msgid ""
 "You MUST copy and paste the entire TIMTHUMB FORBID RFI section of code from "
 "your root .htaccess file into this text box first. You can then edit and "
 "modify the code in this text window and save your changes."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2100
+#: C:\BPS47/admin/options.php:2121
 msgid ""
 "CUSTOM CODE BPSQSE BPS QUERY STRING EXPLOITS: Modify Query String Exploit "
 "code here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2101
+#: C:\BPS47/admin/options.php:2122
 msgid ""
 "You MUST copy and paste the entire BPSQSE QUERY STRING EXPLOITS section of "
 "code from your root .htaccess file from # BEGIN BPSQSE BPS QUERY STRING "
@@ -4963,122 +5052,223 @@ msgid ""
 "changes."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2103
+#: C:\BPS47/admin/options.php:2124
 msgid ""
 "CUSTOM CODE DENY BROWSER ACCESS TO THESE FILES:<br>Add or remove files that "
 "you want to block or allow access to here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2104
+#: C:\BPS47/admin/options.php:2125
 msgid ""
 "You MUST copy and paste the entire DENY BROWSER ACCESS section of code from "
 "your root .htaccess file into this text box first. You can then edit and "
 "modify the code in this text window and save your changes."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2111
+#: C:\BPS47/admin/options.php:2132
 msgid ""
 "Clicking OK will save your Root custom .htaccess code to your database and "
 "not actually write that custom htaccess code to your Root htaccess file."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2111
+#: C:\BPS47/admin/options.php:2132
 msgid ""
 "To write your custom htaccess code to your Root htacess file click the "
 "Create secure.htaccess File AutoMagic button on the Security Modes page and "
 "then Activate BulletProof Mode for your Root folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2111
+#: C:\BPS47/admin/options.php:2132
 msgid "Click OK to save your Root Custom Code or click Cancel."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2173
+#: C:\BPS47/admin/options.php:2194
 msgid ""
 "CUSTOM CODE BPS WPADMIN DENY ACCESS TO FILES:<br>Add additional wp-admin "
 "files that you would like to block here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2174
+#: C:\BPS47/admin/options.php:2195
 msgid ""
 "You MUST copy and paste the entire BPS WPADMIN DENY ACCESS TO FILES section "
 "of code from your wp-admin .htaccess file into this text box first. You can "
 "then edit and modify the code in this text window and save your changes."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2176
+#: C:\BPS47/admin/options.php:2197
 msgid ""
 "CUSTOM CODE WPADMIN TOP:<br>Add wp-admin password protection, IP whitelist "
 "allow access & miscellaneous custom code here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2179
+#: C:\BPS47/admin/options.php:2200
 msgid ""
 "CUSTOM CODE WPADMIN PLUGIN FIXES: Add ONLY WPADMIN personal plugin fixes "
 "code here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2182
+#: C:\BPS47/admin/options.php:2203
 msgid ""
 "CUSTOM CODE BPSQSE-check BPS QUERY STRING EXPLOITS AND FILTERS:<br>Modify "
 "Query String Exploit code here"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2183
+#: C:\BPS47/admin/options.php:2204
 msgid ""
 "You MUST copy and paste the entire BPS QUERY STRING EXPLOITS section of code "
 "from your wp-admin .htaccess file into this text box first. You can then "
 "edit and modify the code in this text window and save your changes."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2187
+#: C:\BPS47/admin/options.php:2208
 msgid ""
 "Clicking OK will save your wp-admin custom .htaccess code to your database "
 "and not actually write that custom htaccess code to your wp-admin htaccess "
 "file."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2187
+#: C:\BPS47/admin/options.php:2208
 msgid ""
 "To write your custom htaccess code to your wp-admin htacess file go to the "
 "Security Modes page and then Activate BulletProof Mode for your wp-admin "
 "folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2187
+#: C:\BPS47/admin/options.php:2208
 msgid ""
 "NOTE: The wp-admin htaccess file does not have an AutoMagic button and your "
 "Custom Code is written directly to your wp-admin htaccess file when you "
 "Activate BulletProof Mode for your wp-admin folder."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2187
+#: C:\BPS47/admin/options.php:2208
 msgid "Click OK to save your wp-admin Custom Code or click Cancel."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2240
+#: C:\BPS47/admin/options.php:2261
 msgid "WP Permalinks - Custom Permalink Structure Help Info"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2244
+#: C:\BPS47/admin/options.php:2265
 msgid "Adding a Custom 403 Forbidden Page For Your Website"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2261
+#: C:\BPS47/admin/options.php:2282
 msgid "Whats New in ~ "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2262
+#: C:\BPS47/admin/options.php:2283
 msgid ""
 "The Whats New page will list new changes that were made in each new version "
 "release of BulletProof Security"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2280
+#: C:\BPS47/admin/options.php:2297
+msgid "50.6"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2301
+msgid "New Option: Login Security & Monitoring Sort DB Rows:"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2306
+msgid "Enhancements: Login Security & Monitoring:"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2306
+msgid ""
+"- CSS max-height changed from 1000px to 600px for the scrollable Dynamic DB "
+"table. 600px is a much better / more manageable viewing area."
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2306
+msgid ""
+"- Lock, Unlock and Delete labels for individual checkboxes in Dynamic DB "
+"search form and standard form."
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2306
+msgid "- DB Query improvement for the Dynamic DB standard form."
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2311
+msgid ""
+"New Option: htaccess Core wp-admin BulletProof Mode Enable/Disable wp-admin "
+"BulletProof Mode:"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2316
+msgid "Improvement: htaccess Core root domain label retrieval/writing:"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2316
+msgid ""
+"Improvement to htaccess Core code when retrieving & writing domain labels. "
+"Impact: Folks with 3+ domain label naming conventions such as: www.label1."
+"label2.label3."
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2325
+msgid "50.5"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2329
+msgid "Login Security Password Reset BugFix & New Option:"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2329
+msgid ""
+"- BugFix: The Lost your password link was not being displayed when Login "
+"Security was turned Off.<br>- New Option: Turn Off Login Security/Use "
+"Password Reset Option ONLY. The Turn Off Login Security/Use Password Reset "
+"Option ONLY setting means that all Login Security features are turned Off "
+"except for the Password Reset Option, which can be used independently by "
+"itself."
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2338
+msgid "50.4"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2342
+msgid "BugFixes/Code Corrections/Misc/CSS/Visual/Other:"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2342
+msgid ""
+"- DB Backup: backticks added to DB Backup Query to allow for hyphenated or "
+"other special characters in DB naming conventions.<br>- DB Backup dynamic DB "
+"table: max-height CSS change<br>- Login Security CSS auto-scroll: max-height "
+"CSS change<br>- DB Table Prefix Changer: Additional check for writable files "
+"for DSO server types.<br>- Root and wp-admin filter change<br>- Log "
+"timestamps synchronized to GMT: All log timestamps are now synchronized to "
+"GMT time.\n"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2352
+msgid "50.3"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2356
+msgid "Root & wp-admin .htaccess Security Filters Change:"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2356
+msgid ""
+"The BPS upgrade will seamlessly replace and combine the older root & wp-"
+"admin .htaccess filters into the new security filter below during the BPS "
+"upgrade.<br>Thanks goes to aselektor for spotting and reporting this."
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2365
+msgid "50.2"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2369
 msgid "New Feature: DB Backup"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2280
+#: C:\BPS47/admin/options.php:2369
 msgid ""
 "Create manual and scheduled Backup Jobs. Choose which database tables to "
 "backup. Scheduled backup job options: Hourly, Daily, Weekly and Monthly. "
@@ -5089,7 +5279,7 @@ msgid ""
 "default settings."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2280
+#: C:\BPS47/admin/options.php:2369
 msgid ""
 "- Displays a dynamic DB Table Name checkbox form, Description/Backup Job "
 "Name textbox, DB Backup Folder Location textbox, DB Backup File Download "
@@ -5104,11 +5294,11 @@ msgid ""
 "dropdown option."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2290
+#: C:\BPS47/admin/options.php:2379
 msgid "New Feature: DB Backup Log"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2290
+#: C:\BPS47/admin/options.php:2379
 msgid ""
 "Your DB Backup Log file is a plain text static file and not a dynamic file "
 "or dynamic display to keep your website resource usage at a bare minimum and "
@@ -5119,11 +5309,11 @@ msgid ""
 "size (256KB, 500KB or 1MB)."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2300
+#: C:\BPS47/admin/options.php:2389
 msgid "New Feature: DB Table Prefix Changer"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2300
+#: C:\BPS47/admin/options.php:2389
 msgid ""
 "By changing your Database Table Prefix name you will probably stop a lot of "
 "random Bot probes from doing any further reconnaissance against your website "
@@ -5133,7 +5323,7 @@ msgid ""
 "that information."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2300
+#: C:\BPS47/admin/options.php:2389
 msgid ""
 "The Anti-nuisance benefits alone are worth changing your DB Table Prefix "
 "name. BPS has many layers of security protection that protect your Database "
@@ -5142,11 +5332,11 @@ msgid ""
 "protection and changed or modified your Database in any way."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2309
+#: C:\BPS47/admin/options.php:2398
 msgid "New Feature: UI Theme Skin"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2309
+#: C:\BPS47/admin/options.php:2398
 msgid ""
 "You can choose between 3 UI Theme Skins for BPS:  Blue Gel Classic UI Theme, "
 "Light Grey jQuery UI Theme, Dark Black WP UI Theme. Requires WordPress 3.8 "
@@ -5155,109 +5345,101 @@ msgid ""
 "installed then ONLY the Blue Gel Classic UI Theme Skin is available."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2318
+#: C:\BPS47/admin/options.php:2407
 msgid "Root .htaccess Security Filters Change:"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2318
-msgid "Old security filters"
-msgstr ""
-
-#: C:\BPS47/admin/options.php:2323
-msgid "New security filters"
-msgstr ""
-
-#: C:\BPS47/admin/options.php:2336
+#: C:\BPS47/admin/options.php:2416
 msgid "Login Security New Option/Option Change & Misc:"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2336
+#: C:\BPS47/admin/options.php:2416
 msgid "New Option/Option Change: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2336
+#: C:\BPS47/admin/options.php:2416
 msgid ""
 "Disable Password Reset Frontend Only, Disable Password Reset Frontend & "
 "Backend."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2336
+#: C:\BPS47/admin/options.php:2416
 msgid "Displayed message: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2336
+#: C:\BPS47/admin/options.php:2416
 msgid ""
 "BPS Login Security Disable Password Reset Frontend & Backend is turned On. "
 "Backend Password Reset has been disabled. To enable Backend Password Reset "
 "click here."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2336
+#: C:\BPS47/admin/options.php:2416
 msgid "Displayed on Pages: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2336
+#: C:\BPS47/admin/options.php:2416
 msgid "profile.php, user-edit.php, user-new.php."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2336
+#: C:\BPS47/admin/options.php:2416
 msgid "Login Security Dynamic DB table Auto-scroll added."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2345
+#: C:\BPS47/admin/options.php:2425
 msgid "BugFixes/Code Corrections/Misc/Other:"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2345
+#: C:\BPS47/admin/options.php:2425
 msgid ""
 "Whitelist the Debug Bar plugin debug-bar css and js scripts<br>System Info "
 "page added MySQL Extension, MySQLi Extension check.<br>Login Security email "
 "text change when user account is locked"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2362
+#: C:\BPS47/admin/options.php:2442
 msgid "Save any personal notes or htaccess code to your WordPress Database"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2404
+#: C:\BPS47/admin/options.php:2484
 msgid "BulletProof Security Pro Feature Highlights"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2418
+#: C:\BPS47/admin/options.php:2498
 msgid "The Most Effective & Comprehensive<br>WordPress Security Plugin"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2421
+#: C:\BPS47/admin/options.php:2501
 msgid "BPS Pro 1 Click Setup Wizard & Demo Video Tutorial"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2422
+#: C:\BPS47/admin/options.php:2502
 msgid "BPS Pro Affiliate Program"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2423
+#: C:\BPS47/admin/options.php:2503
 msgid "View All BPS Pro Features"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2429
+#: C:\BPS47/admin/options.php:2509
 msgid ""
 "BulletProof Security Pro is The Complete Website Security Package for Hacker "
 "and Spammer Protection"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2431
+#: C:\BPS47/admin/options.php:2511
 msgid "1 Click Setup Wizard: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2431
+#: C:\BPS47/admin/options.php:2511
 msgid "All BPS Pro security features are setup by the BPS Pro Setup Wizard."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2433
+#: C:\BPS47/admin/options.php:2513
 msgid "1 Click Upgrades: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2433
+#: C:\BPS47/admin/options.php:2513
 msgid ""
 "BPS Pro Plugin upgrade notifications are displayed in your WordPress "
 "Dashboard exactly the same way as all other WordPress plugins. All BPS Pro "
@@ -5268,12 +5450,12 @@ msgid ""
 "additional setup or configuration by you."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2435
+#: C:\BPS47/admin/options.php:2515
 msgid ""
 "AutoRestore / Quarantine Intrusion Detection and Prevention System (IDPS): "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2435
+#: C:\BPS47/admin/options.php:2515
 msgid ""
 "ARQ is a real-time file monitor that automatically AutoRestores and/or "
 "Quarantines files. ARQ utilizes countermeasure website security that has the "
@@ -5287,13 +5469,13 @@ msgid ""
 "installations."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2437
+#: C:\BPS47/admin/options.php:2517
 msgid ""
 "New Concept in Website Security: DB Monitor Intrusion Detection System "
 "(IDS): "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2437
+#: C:\BPS47/admin/options.php:2517
 msgid ""
 "The DB Monitor (DBM) is an Intrusion Detection System (IDS) that alerts you "
 "via email anytime a change/modification occurs in your WordPress database or "
@@ -5310,11 +5492,11 @@ msgid ""
 "files or your WordPress database have been tampered with."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2439
+#: C:\BPS47/admin/options.php:2519
 msgid "DB Diff Tool: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2439
+#: C:\BPS47/admin/options.php:2519
 msgid ""
 "The DB Diff Tool compares old database tables from DB backups to current "
 "database tables and displays any differences in the data/content of those 2 "
@@ -5323,11 +5505,11 @@ msgid ""
 "database table name change/modification."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2441
+#: C:\BPS47/admin/options.php:2521
 msgid "Plugin Firewall: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2441
+#: C:\BPS47/admin/options.php:2521
 msgid ""
 "The Plugin Firewall / Plugins BulletProof Mode prevents/blocks/forbids "
 "Remote Access to the plugins folder from external sources (remote script "
@@ -5336,11 +5518,11 @@ msgid ""
 "Domain name, Server IP Address and Public IP / Your Computer IP Address."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2443
+#: C:\BPS47/admin/options.php:2523
 msgid "Uploads Folder Anti-Exploit Guard: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2443
+#: C:\BPS47/admin/options.php:2523
 msgid ""
 "The Uploads Folder Anti-Exploit Guard / Uploads BulletProof Mode allows ONLY "
 "safe image files with valid image file extensions such as jpg, gif, png, "
@@ -5350,11 +5532,11 @@ msgid ""
 "executed."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2445
+#: C:\BPS47/admin/options.php:2525
 msgid "JTC Anti-Spam / Anti-Hacker: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2445
+#: C:\BPS47/admin/options.php:2525
 msgid ""
 "Hacker Protection ~ Spammer Protection ~ DoS/DDoS Attack Protection ~ Brute "
 "Force Login Attack Protection ~ SpamBot Trap. JTC Anti-Spam provides website "
@@ -5367,11 +5549,11 @@ msgid ""
 "Form with a user friendly & customizable jQuery ToolTip CAPTCHA."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2447
+#: C:\BPS47/admin/options.php:2527
 msgid "S-Monitor Displayed Alerts, Email Alerting & Log File Options: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2447
+#: C:\BPS47/admin/options.php:2527
 msgid ""
 "S-Monitor displayed alerting options allow you to choose how you want real-"
 "time alerts displayed to you: WP Dashboard, BPS Pro pages only or turned "
@@ -5382,21 +5564,21 @@ msgid ""
 "option that you choose."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2449
+#: C:\BPS47/admin/options.php:2529
 msgid "F-Lock: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2449
+#: C:\BPS47/admin/options.php:2529
 msgid ""
 "Lock and Unlock WordPress Mission Critical files from within your WordPress "
 "Dashboard."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2451
+#: C:\BPS47/admin/options.php:2531
 msgid "Custom php.ini / ini_set Options: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2451
+#: C:\BPS47/admin/options.php:2531
 msgid ""
 "Quickly create a custom php.ini file for your website or use ini_set Options "
 "to increase security and performance with just a few clicks. Additional P-"
@@ -5404,11 +5586,11 @@ msgid ""
 "Protected PHP Error Log, PHP Error Alerts, Secure phpinfo Viewer..."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2453
+#: C:\BPS47/admin/options.php:2533
 msgid "Advanced Real-Time Alerting & Heads Up Dashboard Status Display: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2453
+#: C:\BPS47/admin/options.php:2533
 msgid ""
 "BPS Pro checks and displays error, warning, notifications and alert messages "
 "in real time. You can choose how you want these messages displayed to you "
@@ -5416,11 +5598,11 @@ msgid ""
 "Dashboard, BPS Pro pages only, Turned off, Email Alerts, Logging..."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2455
+#: C:\BPS47/admin/options.php:2535
 msgid "Pro-Tools: "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2455
+#: C:\BPS47/admin/options.php:2535
 msgid ""
 "Pro-Tools is a set of versatile 16 website tools (16 mini-plugins): Online "
 "Base64 Decoder, Offline Base64 Decode/Encode, Mcrypt Decrypt/Encrypt, Crypt "
@@ -5430,150 +5612,158 @@ msgid ""
 "Exploit Checker"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2462
+#: C:\BPS47/admin/options.php:2542
 msgid "BPS Pro Version Releases"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2463
+#: C:\BPS47/admin/options.php:2543
+msgid "Whats New in BPS Pro 9.2"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2544
+msgid "Whats New in BPS Pro 9.1"
+msgstr ""
+
+#: C:\BPS47/admin/options.php:2545
 msgid "Whats New in BPS Pro 9.0"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2464
+#: C:\BPS47/admin/options.php:2546
 msgid "Whats New in BPS Pro 8.3"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2465
+#: C:\BPS47/admin/options.php:2547
 msgid "Whats New in BPS Pro 8.2"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2466
+#: C:\BPS47/admin/options.php:2548
 msgid "Whats New in BPS Pro 8.1"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2467
+#: C:\BPS47/admin/options.php:2549
 msgid "Whats New in BPS Pro 8.0"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2468
+#: C:\BPS47/admin/options.php:2550
 msgid "Whats New in BPS Pro 7.9"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2469
+#: C:\BPS47/admin/options.php:2551
 msgid "Whats New in BPS Pro 7.8"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2470
+#: C:\BPS47/admin/options.php:2552
 msgid "Whats New in BPS Pro 7.7"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2471
+#: C:\BPS47/admin/options.php:2553
 msgid "Whats New in BPS Pro 7.6"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2472
+#: C:\BPS47/admin/options.php:2554
 msgid "Whats New in BPS Pro 7.5"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2473
+#: C:\BPS47/admin/options.php:2555
 msgid "Whats New in BPS Pro 7.0"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2474
+#: C:\BPS47/admin/options.php:2556
 msgid "Whats New in BPS Pro 6.5"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2475
+#: C:\BPS47/admin/options.php:2557
 msgid "Whats New in BPS Pro 6.0"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2476
+#: C:\BPS47/admin/options.php:2558
 msgid "Whats New in BPS Pro 5.9"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2477
+#: C:\BPS47/admin/options.php:2559
 msgid "Whats New in BPS Pro 5.8/5.8.1/5.8.2"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2478
+#: C:\BPS47/admin/options.php:2560
 msgid "Whats New in BPS Pro 5.7/5.7.1/5.7.2"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2479
+#: C:\BPS47/admin/options.php:2561
 msgid "Whats New in BPS Pro 5.6/5.6.1"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2480
+#: C:\BPS47/admin/options.php:2562
 msgid "Whats New in BPS Pro 5.5"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2481
+#: C:\BPS47/admin/options.php:2563
 msgid "Whats New in BPS Pro 5.4/5.4.1"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2482
+#: C:\BPS47/admin/options.php:2564
 msgid "Whats New in BPS Pro 5.3/5.3.1/5.3.2/5.3.3"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2483
+#: C:\BPS47/admin/options.php:2565
 msgid "Whats New in BPS Pro 5.2/5.2.1/5.2.2"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2484
+#: C:\BPS47/admin/options.php:2566
 msgid "Whats New in BPS Pro 5.1.9"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2485
+#: C:\BPS47/admin/options.php:2567
 msgid "Whats New in BPS Pro 5.1.8/5.1.8.1/5.1.8.2/5.1.8.3/5.1.8.4"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2486
+#: C:\BPS47/admin/options.php:2568
 msgid "Whats New in BPS Pro 5.1.7"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2487
+#: C:\BPS47/admin/options.php:2569
 msgid "Whats New in BPS Pro 5.1.6"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2488
+#: C:\BPS47/admin/options.php:2570
 msgid "Whats New in BPS Pro 5.1.5"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2489
+#: C:\BPS47/admin/options.php:2571
 msgid "Whats New in BPS Pro 5.1.4"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2490
+#: C:\BPS47/admin/options.php:2572
 msgid "Whats New in BPS Pro 5.1.3"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2491
+#: C:\BPS47/admin/options.php:2573
 msgid "Whats New in BPS Pro 5.1.2"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2492
+#: C:\BPS47/admin/options.php:2574
 msgid "Whats New in BPS Pro 5.1.1"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2493
+#: C:\BPS47/admin/options.php:2575
 msgid "Whats New in BPS Pro 5.1"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2494
+#: C:\BPS47/admin/options.php:2576
 msgid "Whats New in BPS Pro 5.0"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2510
+#: C:\BPS47/admin/options.php:2592
 msgid "Sucuri SiteCheck - Free website malware & blacklist scan"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2511
+#: C:\BPS47/admin/options.php:2593
 msgid ""
 "BPS is designed to protect your website from being hacked. If your website "
 "was already hacked prior to installing BPS then BPS will not automatically "
 "clean it up. Sucuri offers hacked website cleanup services."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2520
+#: C:\BPS47/admin/options.php:2602
 #, php-format
 msgid ""
 "the sheer nature of malware makes it very challenging to give you "
@@ -5583,35 +5773,35 @@ msgid ""
 "your feet."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2520
+#: C:\BPS47/admin/options.php:2602
 msgid "Tony Perez, CFO Sucuri, LLC"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2536
+#: C:\BPS47/admin/options.php:2618
 msgid "Free, Premium Plugin and Theme testing, rating and review."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2536
+#: C:\BPS47/admin/options.php:2618
 msgid "SPECIAL OFFER!!! "
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2536
+#: C:\BPS47/admin/options.php:2618
 msgid ""
 "Search Engine Optimization (SEO) eBook for Beginners to Experienced Website "
 "Owners."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2546
+#: C:\BPS47/admin/options.php:2628
 msgid ""
 "We Test, Review & Rate Premium, Free and Paid WordPress Themes, Templates & "
 "Plugins Daily. 494 themes and 193 plugins have been tested to date...."
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2546 C:\BPS47/admin/options.php:2551
+#: C:\BPS47/admin/options.php:2628 C:\BPS47/admin/options.php:2633
 msgid "Reza Shadpay, founder of themesplugins.com"
 msgstr ""
 
-#: C:\BPS47/admin/options.php:2551
+#: C:\BPS47/admin/options.php:2633
 msgid ""
 "SEO explained for Beginners to Experienced website owners. Simple and fully "
 "explained WhiteHat SEO techniques and methods that will get your website top "
@@ -5970,8 +6160,8 @@ msgid ""
 msgstr ""
 
 #: C:\BPS47/admin/security-log/security-log.php:542
-#: C:\BPS47/admin/security-log/security-log.php:633
-#: C:\BPS47/admin/security-log/security-log.php:663
+#: C:\BPS47/admin/security-log/security-log.php:634
+#: C:\BPS47/admin/security-log/security-log.php:664
 msgid "Remove"
 msgstr ""
 
@@ -5985,68 +6175,68 @@ msgstr ""
 msgid "%s has been deleted from your DB."
 msgstr ""
 
-#: C:\BPS47/admin/security-log/security-log.php:597
+#: C:\BPS47/admin/security-log/security-log.php:598
 msgid ""
 "Success! The BPS 403.php Security Logging template file has been updated. "
 "This User Agent/Bot will be logged again in your Security Log."
 msgstr ""
 
-#: C:\BPS47/admin/security-log/security-log.php:628
+#: C:\BPS47/admin/security-log/security-log.php:629
 msgid "Search Results For User Agents/Bots To Remove"
 msgstr ""
 
-#: C:\BPS47/admin/security-log/security-log.php:632
+#: C:\BPS47/admin/security-log/security-log.php:633
 msgid "User Agents/Bots in DB"
 msgstr ""
 
-#: C:\BPS47/admin/security-log/security-log.php:634
+#: C:\BPS47/admin/security-log/security-log.php:635
 msgid "Do Not<br>Remove"
 msgstr ""
 
-#: C:\BPS47/admin/security-log/security-log.php:635
+#: C:\BPS47/admin/security-log/security-log.php:636
 msgid "Time Added<br>To DB"
 msgstr ""
 
-#: C:\BPS47/admin/security-log/security-log.php:653
+#: C:\BPS47/admin/security-log/security-log.php:654
 msgid ""
 "Your DB Search Results For User Agents/Bots To Remove are displayed below "
 "the Remove / Allow Search tool."
 msgstr ""
 
-#: C:\BPS47/admin/security-log/security-log.php:657
+#: C:\BPS47/admin/security-log/security-log.php:658
 msgid ""
 "You do not have any User Agents/Bots in your DB To Remove. An empty/blank "
 "dynamic radio button form is displayed below the Remove / Allow Search tool "
 "since you do not have any User Agents/Bot to remove."
 msgstr ""
 
-#: C:\BPS47/admin/security-log/security-log.php:663
+#: C:\BPS47/admin/security-log/security-log.php:664
 msgid ""
 "Clicking OK will Remove the User Agent/Bot DB entries for any Remove Radio "
 "button selections you have made. User Agents/Bots will also be removed from "
 "the 403.php Security Logging template."
 msgstr ""
 
-#: C:\BPS47/admin/security-log/security-log.php:663
+#: C:\BPS47/admin/security-log/security-log.php:664
 msgid "To add a User Agent/Bot, use the Add / Ignore tool."
 msgstr ""
 
-#: C:\BPS47/admin/security-log/security-log.php:684
+#: C:\BPS47/admin/security-log/security-log.php:685
 msgid ""
 "The Security Log File Was Not Found! Check that the file really exists here "
 "- /"
 msgstr ""
 
-#: C:\BPS47/admin/security-log/security-log.php:684
+#: C:\BPS47/admin/security-log/security-log.php:685
 msgid "/bps-backup/logs/http_error_log.txt and is named correctly."
 msgstr ""
 
-#: C:\BPS47/admin/security-log/security-log.php:701
+#: C:\BPS47/admin/security-log/security-log.php:702
 msgid ""
 "File Open and Write test successful! Your Security Log file is writable."
 msgstr ""
 
-#: C:\BPS47/admin/security-log/security-log.php:712
+#: C:\BPS47/admin/security-log/security-log.php:713
 msgid "Success! Your Security Log file has been updated."
 msgstr ""
 
@@ -6293,7 +6483,7 @@ msgid "MySQL DB Info is not displayed on Network/Multisite subsites"
 msgstr ""
 
 #: C:\BPS47/admin/system-info/system-info.php:324
-#: C:\BPS47/includes/functions.php:1107
+#: C:\BPS47/includes/functions.php:1147
 msgid "Not Set"
 msgstr ""
 
@@ -6701,81 +6891,81 @@ msgid ""
 "required is 600."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:319
+#: C:\BPS47/includes/functions.php:334
 msgid ""
 "BPS Alert! An htaccess file was NOT found in your root folder. Check the BPS "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:319 C:\BPS47/includes/functions.php:459
-#: C:\BPS47/includes/functions.php:481 C:\BPS47/includes/functions.php:524
+#: C:\BPS47/includes/functions.php:334 C:\BPS47/includes/functions.php:482
+#: C:\BPS47/includes/functions.php:513 C:\BPS47/includes/functions.php:564
 msgid "Security Status page"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:319 C:\BPS47/includes/functions.php:481
-#: C:\BPS47/includes/functions.php:524
+#: C:\BPS47/includes/functions.php:334 C:\BPS47/includes/functions.php:513
+#: C:\BPS47/includes/functions.php:564
 msgid " for more specific information."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:439
+#: C:\BPS47/includes/functions.php:462
 msgid "The BPS Automatic htaccess File Update Completed Successfully!"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:459
+#: C:\BPS47/includes/functions.php:482
 msgid ""
 "BPS Alert! Your site does not appear to be protected by BulletProof Security"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:459
+#: C:\BPS47/includes/functions.php:482
 msgid ""
 "Go to the Security Modes page and click the Create secure.htaccess File "
 "AutoMagic button and Activate Root Folder BulletProof Mode."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:459
+#: C:\BPS47/includes/functions.php:482
 msgid ""
 "If your site is in Default Mode then it is NOT protected by BulletProof "
 "Security. Check the BPS "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:459
+#: C:\BPS47/includes/functions.php:482
 msgid " to view your BPS Security Status information."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:481
+#: C:\BPS47/includes/functions.php:513
 msgid ""
 "BPS Alert! An htaccess file was NOT found in your wp-admin folder. Check the "
 "BPS "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:524
+#: C:\BPS47/includes/functions.php:564
 msgid ""
 "BPS Alert! A valid BPS htaccess file was NOT found in your wp-admin folder"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:524
+#: C:\BPS47/includes/functions.php:564
 msgid ""
 "BulletProof Mode for the wp-admin folder MUST be activated when you have "
 "BulletProof Mode activated for the Root folder."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:524
+#: C:\BPS47/includes/functions.php:564
 msgid "Check the BPS "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:539
+#: C:\BPS47/includes/functions.php:579
 msgid "ERROR: An htaccess file was NOT found in your root folder"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:539 C:\BPS47/includes/functions.php:552
-#: C:\BPS47/includes/functions.php:562 C:\BPS47/includes/functions.php:571
+#: C:\BPS47/includes/functions.php:579 C:\BPS47/includes/functions.php:592
+#: C:\BPS47/includes/functions.php:602 C:\BPS47/includes/functions.php:611
 msgid "wp-config.php is NOT htaccess protected by BPS"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:545
+#: C:\BPS47/includes/functions.php:585
 msgid "The htaccess file that is activated in your root folder is:"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:552 C:\BPS47/includes/functions.php:562
+#: C:\BPS47/includes/functions.php:592 C:\BPS47/includes/functions.php:602
 msgid ""
 "BPS may be in the process of updating the version number in your root "
 "htaccess file. Refresh your browser to display your current security status "
@@ -6786,15 +6976,15 @@ msgid ""
 "BulletProof Modes again."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:556 C:\BPS47/includes/functions.php:566
+#: C:\BPS47/includes/functions.php:596 C:\BPS47/includes/functions.php:606
 msgid "wp-config.php is htaccess protected by BPS"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:556 C:\BPS47/includes/functions.php:566
+#: C:\BPS47/includes/functions.php:596 C:\BPS47/includes/functions.php:606
 msgid "php.ini and php5.ini are htaccess protected by BPS"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:571
+#: C:\BPS47/includes/functions.php:611
 msgid ""
 "ERROR: Either a BPS htaccess file was NOT found in your root folder or you "
 "have not activated BulletProof Mode for your Root folder yet, Default Mode "
@@ -6803,11 +6993,11 @@ msgid ""
 "exist in your root htaccess file. Please view the Read Me Help button above."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:584
+#: C:\BPS47/includes/functions.php:624
 msgid "ERROR: An htaccess file was NOT found in your wp-admin folder."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:594 C:\BPS47/includes/functions.php:605
+#: C:\BPS47/includes/functions.php:634 C:\BPS47/includes/functions.php:645
 msgid ""
 "BPS may be in the process of updating the version number in your wp-admin "
 "htaccess file. Refresh your browser to display your current security status "
@@ -6818,11 +7008,11 @@ msgid ""
 "again."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:598 C:\BPS47/includes/functions.php:609
+#: C:\BPS47/includes/functions.php:638 C:\BPS47/includes/functions.php:649
 msgid "The htaccess file that is activated in your wp-admin folder is:"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:615
+#: C:\BPS47/includes/functions.php:655
 msgid ""
 "ERROR: A valid BPS htaccess file was NOT found in your wp-admin folder. "
 "Either you have not activated BulletProof Mode for your wp-admin folder yet "
@@ -6832,40 +7022,40 @@ msgid ""
 "Please view the Read Me Help button above."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:624
+#: C:\BPS47/includes/functions.php:664
 msgid "Deny All protection activated for BPS Master /htaccess folder"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:627
+#: C:\BPS47/includes/functions.php:667
 msgid ""
 "ERROR: Deny All protection NOT activated for BPS Master /htaccess folder"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:637
+#: C:\BPS47/includes/functions.php:677
 msgid "Deny All protection activated for /"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:637 C:\BPS47/includes/functions.php:640
+#: C:\BPS47/includes/functions.php:677 C:\BPS47/includes/functions.php:680
 msgid "/bps-backup folder"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:640
+#: C:\BPS47/includes/functions.php:680
 msgid "ERROR: Deny All protection NOT activated for /"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:676
+#: C:\BPS47/includes/functions.php:716
 msgid " File Found"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:678
+#: C:\BPS47/includes/functions.php:718
 msgid " File NOT Found"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:689
+#: C:\BPS47/includes/functions.php:729
 msgid "Your Root .htaccess file is backed up."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:692
+#: C:\BPS47/includes/functions.php:732
 msgid ""
 "Your Root .htaccess file is NOT backed up either because you have not done a "
 "Backup yet, an .htaccess file did NOT already exist in your root folder or "
@@ -6873,11 +7063,11 @@ msgid ""
 "Status Read Me\" button for more specific information."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:697
+#: C:\BPS47/includes/functions.php:737
 msgid "Your wp-admin .htaccess file is backed up."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:700
+#: C:\BPS47/includes/functions.php:740
 msgid ""
 "Your wp-admin .htaccess file is NOT backed up either because you have not "
 "done a Backup yet, an .htaccess file did NOT already exist in your /wp-admin "
@@ -6885,187 +7075,187 @@ msgid ""
 "htaccess Files Status Read Me\" button for more specific information"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:711
+#: C:\BPS47/includes/functions.php:751
 msgid "An .htaccess file was found in your root folder"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:714
+#: C:\BPS47/includes/functions.php:754
 msgid "An .htaccess file was NOT found in your root folder"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:719
+#: C:\BPS47/includes/functions.php:759
 msgid "An .htaccess file was found in your /wp-admin folder"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:722
+#: C:\BPS47/includes/functions.php:762
 msgid "An .htaccess file was NOT found in your /wp-admin folder"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:732 C:\BPS47/includes/functions.php:735
+#: C:\BPS47/includes/functions.php:772 C:\BPS47/includes/functions.php:775
 msgid "Custom Permalinks:"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:732
+#: C:\BPS47/includes/functions.php:772
 msgid "WARNING! Custom Permalinks are NOT in use"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:732
+#: C:\BPS47/includes/functions.php:772
 msgid "It is recommended that you use Custom Permalinks"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:735
+#: C:\BPS47/includes/functions.php:775
 msgid "Custom Permalinks are in use"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:744
+#: C:\BPS47/includes/functions.php:784
 msgid "PHP Version Check: "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:744
+#: C:\BPS47/includes/functions.php:784
 msgid "Using PHP5"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:748
+#: C:\BPS47/includes/functions.php:788
 msgid "WARNING! BPS requires PHP5 to function correctly. Your PHP version is: "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:760
+#: C:\BPS47/includes/functions.php:800
 msgid ""
 "WARNING! BPS requires at least PHP5 to function correctly. Your PHP version "
 "is: "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:760
+#: C:\BPS47/includes/functions.php:800
 msgid "BPS Guide - PHP5 Solution"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:760
+#: C:\BPS47/includes/functions.php:800
 msgid ""
 "The BPS Guide will open in a new browser window. You will not be directed "
 "away from your WordPress Dashboard."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:775
+#: C:\BPS47/includes/functions.php:815
 msgid "HUD Check: Custom Permalinks are NOT being used."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:775
+#: C:\BPS47/includes/functions.php:815
 msgid "It is recommended that you use Custom Permalinks: "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:775
+#: C:\BPS47/includes/functions.php:815
 msgid "How to setup Custom Permalinks"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:775 C:\BPS47/includes/functions.php:801
-#: C:\BPS47/includes/functions.php:1185 C:\BPS47/includes/functions.php:1211
-#: C:\BPS47/includes/functions.php:1237 C:\BPS47/includes/functions.php:1263
-#: C:\BPS47/includes/functions.php:1384
+#: C:\BPS47/includes/functions.php:815 C:\BPS47/includes/functions.php:841
+#: C:\BPS47/includes/functions.php:1225 C:\BPS47/includes/functions.php:1251
+#: C:\BPS47/includes/functions.php:1277 C:\BPS47/includes/functions.php:1303
+#: C:\BPS47/includes/functions.php:1424
 msgid ""
 "To Dismiss this Notice click the Dismiss Notice link below. To Reset Dismiss "
 "Notices click the Reset/Recheck Dismiss Notices button on the Security "
 "Status page."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:775 C:\BPS47/includes/functions.php:801
-#: C:\BPS47/includes/functions.php:1156 C:\BPS47/includes/functions.php:1185
-#: C:\BPS47/includes/functions.php:1211 C:\BPS47/includes/functions.php:1237
-#: C:\BPS47/includes/functions.php:1263 C:\BPS47/includes/functions.php:1298
-#: C:\BPS47/includes/functions.php:1351 C:\BPS47/includes/functions.php:1384
-#: C:\BPS47/includes/functions.php:1419
+#: C:\BPS47/includes/functions.php:815 C:\BPS47/includes/functions.php:841
+#: C:\BPS47/includes/functions.php:1196 C:\BPS47/includes/functions.php:1225
+#: C:\BPS47/includes/functions.php:1251 C:\BPS47/includes/functions.php:1277
+#: C:\BPS47/includes/functions.php:1303 C:\BPS47/includes/functions.php:1338
+#: C:\BPS47/includes/functions.php:1391 C:\BPS47/includes/functions.php:1424
+#: C:\BPS47/includes/functions.php:1459
 msgid "Dismiss Notice"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:801
+#: C:\BPS47/includes/functions.php:841
 msgid ""
 "WARNING! BPS has detected that your Server is a Windows IIS Server that does "
 "not support htaccess rewriting."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:801
+#: C:\BPS47/includes/functions.php:841
 msgid "Do NOT activate BulletProof Modes unless you know what you are doing."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:801
+#: C:\BPS47/includes/functions.php:841
 msgid "Your Server Type is: "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:801
+#: C:\BPS47/includes/functions.php:841
 msgid "WordPress Codex - Using Permalinks - see IIS section"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:824 C:\BPS47/includes/functions.php:829
+#: C:\BPS47/includes/functions.php:864 C:\BPS47/includes/functions.php:869
 msgid "WARNING! BPS was unable to automatically create the /"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:824
+#: C:\BPS47/includes/functions.php:864
 msgid "/bps-backup folder."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:824 C:\BPS47/includes/functions.php:829
+#: C:\BPS47/includes/functions.php:864 C:\BPS47/includes/functions.php:869
 msgid "You will need to create the /"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:824
+#: C:\BPS47/includes/functions.php:864
 msgid ""
 "/bps-backup folder manually via FTP. The folder permissions for the bps-"
 "backup folder need to be set to 755 in order to successfully perform "
 "permanent online backups."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:824 C:\BPS47/includes/functions.php:829
-#: C:\BPS47/includes/functions.php:838
+#: C:\BPS47/includes/functions.php:864 C:\BPS47/includes/functions.php:869
+#: C:\BPS47/includes/functions.php:878
 msgid "To remove this message permanently click "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:824 C:\BPS47/includes/functions.php:829
-#: C:\BPS47/includes/functions.php:838
+#: C:\BPS47/includes/functions.php:864 C:\BPS47/includes/functions.php:869
+#: C:\BPS47/includes/functions.php:878
 msgid "here."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:829
+#: C:\BPS47/includes/functions.php:869
 msgid ""
 "/bps-backup/master-backups folder manually via FTP. The folder permissions "
 "for the master-backups folder need to be set to 755 in order to successfully "
 "perform permanent online backups."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:838
+#: C:\BPS47/includes/functions.php:878
 msgid ""
 "WARNING! BPS has detected that Safe Mode is set to On in your php.ini file."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:838
+#: C:\BPS47/includes/functions.php:878
 msgid ""
 "If you see errors that BPS was unable to automatically create the backup "
 "folders this is probably the reason why."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:855
+#: C:\BPS47/includes/functions.php:895
 msgid ""
 "W3 Total Cache is activated, but W3TC htaccess code was NOT found in your "
 "root htaccess file."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:855
+#: C:\BPS47/includes/functions.php:895
 msgid ""
 "W3TC needs to be redeployed by clicking either the W3TC auto-install or "
 "deploy buttons. Your Root htaccess file must be temporarily unlocked so that "
 "W3TC can write to your Root htaccess file. Click to "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:855
+#: C:\BPS47/includes/functions.php:895
 msgid "Redeploy W3TC."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:855
+#: C:\BPS47/includes/functions.php:895
 msgid ""
 "You can copy W3TC .htaccess code from your Root .htaccess file to BPS Custom "
 "Code to save it permanently so that you will not have to do these steps in "
 "the future."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:855
+#: C:\BPS47/includes/functions.php:895
 msgid ""
 "Copy W3TC .htaccess code to this BPS Custom Code text box: CUSTOM CODE TOP "
 "PHP/PHP.INI HANDLER/CACHE CODE, click the Save Root Custom Code button, go "
@@ -7073,13 +7263,13 @@ msgid ""
 "AutoMagic button and activate Root folder BulletProof Mode again."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:863
+#: C:\BPS47/includes/functions.php:903
 msgid ""
 "W3 Total Cache is deactivated and W3TC .htaccess code was found in your "
 "root .htaccess file."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:863
+#: C:\BPS47/includes/functions.php:903
 msgid ""
 "If this is just temporary then this warning message will go away when you "
 "reactivate W3TC. If you are planning on uninstalling W3TC the W3TC .htaccess "
@@ -7088,14 +7278,14 @@ msgid ""
 "your browser to perform a new HUD htaccess file check."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:882
+#: C:\BPS47/includes/functions.php:922
 msgid ""
 "WP Super Cache is activated, but either you are not using WPSC mod_rewrite "
 "to serve cache files or the WPSC htaccess code was NOT found in your root "
 "htaccess file."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:882
+#: C:\BPS47/includes/functions.php:922
 msgid ""
 "If you are not using WPSC mod_rewrite then copy this: # WPSuperCache to this "
 "BPS Custom Code text box: CUSTOM CODE TOP PHP/PHP.INI HANDLER/CACHE CODE, "
@@ -7104,38 +7294,38 @@ msgid ""
 "BulletProof Mode again."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:882
+#: C:\BPS47/includes/functions.php:922
 msgid ""
 "If you are using WPSC mod_rewrite and the WPSC htaccess code is not in your "
 "root htaccess file then unlock your Root htaccess file temporarily then "
 "click this "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:882
+#: C:\BPS47/includes/functions.php:922
 msgid "Update WPSC link"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:882
+#: C:\BPS47/includes/functions.php:922
 msgid ""
 " to go to the WPSC Settings page and click the Update Mod_Rewrite Rules "
 "button."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:882
+#: C:\BPS47/includes/functions.php:922
 msgid ""
 "If you have put your site in Default Mode then disregard this Alert and DO "
 "NOT update your Mod_Rewrite Rules. Refresh your browser to perform a new "
 "htaccess file check."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:882
+#: C:\BPS47/includes/functions.php:922
 msgid ""
 "You can copy WPSC .htaccess code from your Root .htaccess file to BPS Custom "
 "Code to save it permanently so that you will not have to do these steps in "
 "the future."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:882
+#: C:\BPS47/includes/functions.php:922
 msgid ""
 "Copy WPSC .htaccess code to this BPS Custom Code text box: CUSTOM CODE TOP "
 "PHP/PHP.INI HANDLER/CACHE CODE, click the Save Root Custom Code button, go "
@@ -7143,13 +7333,13 @@ msgid ""
 "AutoMagic button and activate Root folder BulletProof Mode again."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:890
+#: C:\BPS47/includes/functions.php:930
 msgid ""
 "WP Super Cache is deactivated and WPSC .htaccess code - # BEGIN WPSuperCache "
 "# END WPSuperCache - was found in your root .htaccess file."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:890
+#: C:\BPS47/includes/functions.php:930
 msgid ""
 "If this is just temporary then this warning message will go away when you "
 "reactivate WPSC. You will need to set up and reconfigure WPSC again when you "
@@ -7160,364 +7350,364 @@ msgid ""
 "browser."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:917
+#: C:\BPS47/includes/functions.php:957
 msgid "Subfolder Installation"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:919
+#: C:\BPS47/includes/functions.php:959
 msgid "Root Folder Installation"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:929
+#: C:\BPS47/includes/functions.php:969
 msgid "Standard WP Site Type"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:931
+#: C:\BPS47/includes/functions.php:971
 msgid "GWIOD WP Site Type"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:932
+#: C:\BPS47/includes/functions.php:972
 msgid "WordPress Address (URL): "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:933
+#: C:\BPS47/includes/functions.php:973
 msgid "Site Address (URL): "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:941
+#: C:\BPS47/includes/functions.php:981
 msgid "BuddyPress is installed/enabled"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:943
+#: C:\BPS47/includes/functions.php:983
 msgid "BuddyPress is not installed/enabled"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:951
+#: C:\BPS47/includes/functions.php:991
 msgid "bbPress is installed/enabled"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:953
+#: C:\BPS47/includes/functions.php:993
 msgid "bbPress is not installed/enabled"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:961
+#: C:\BPS47/includes/functions.php:1001
 msgid "Multisite is installed/enabled"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:964
+#: C:\BPS47/includes/functions.php:1004
 msgid "Multisite is not installed/enabled"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:973 C:\BPS47/includes/functions.php:985
-#: C:\BPS47/includes/functions.php:997
+#: C:\BPS47/includes/functions.php:1013 C:\BPS47/includes/functions.php:1025
+#: C:\BPS47/includes/functions.php:1037
 msgid "Use These AutoMagic Buttons For Your Website"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:973
+#: C:\BPS47/includes/functions.php:1013
 msgid "For Standard WP Installations"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:976 C:\BPS47/includes/functions.php:988
-#: C:\BPS47/includes/functions.php:1000
+#: C:\BPS47/includes/functions.php:1016 C:\BPS47/includes/functions.php:1028
+#: C:\BPS47/includes/functions.php:1040
 msgid "Do Not Use These AutoMagic Buttons"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:976
+#: C:\BPS47/includes/functions.php:1016
 msgid "For Standard WP Single Sites Only"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:985
+#: C:\BPS47/includes/functions.php:1025
 msgid "For WP Network / Multisite sub-directory Installations"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:988
+#: C:\BPS47/includes/functions.php:1028
 msgid "For Multisite subdirectory Websites Only"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:997
+#: C:\BPS47/includes/functions.php:1037
 msgid "For WP Network / Multisite sub-domain Installations"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1000
+#: C:\BPS47/includes/functions.php:1040
 msgid "For Multisite subdomain Websites Only"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1012
+#: C:\BPS47/includes/functions.php:1052
 msgid ""
 "Recommended Security Changes: Username \"admin\" is being used. It is "
 "recommended that you change the default administrator username \"admin\" to "
 "a new unique username."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1015
+#: C:\BPS47/includes/functions.php:1055
 msgid "The Default Admin username \"admin\" is not being used"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1036
+#: C:\BPS47/includes/functions.php:1076
 msgid "The WP readme.html file does not exist"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1041
+#: C:\BPS47/includes/functions.php:1081
 msgid "The WP readme.html file is .htaccess protected"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1044
+#: C:\BPS47/includes/functions.php:1084
 msgid "The WP readme.html file is not .htaccess protected"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1067
+#: C:\BPS47/includes/functions.php:1107
 msgid "The WP /wp-admin/install.php file does not exist"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1072
+#: C:\BPS47/includes/functions.php:1112
 msgid "The WP /wp-admin/install.php file is .htaccess protected"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1075
+#: C:\BPS47/includes/functions.php:1115
 msgid "The WP /wp-admin/install.php file is not .htaccess protected"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1089
+#: C:\BPS47/includes/functions.php:1129
 msgid "BulletProof Security Pro Modules are installed and activated."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1093
+#: C:\BPS47/includes/functions.php:1133
 msgid "BPS Pro Modules are not installed"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1121
+#: C:\BPS47/includes/functions.php:1161
 msgid ""
 "WARNING! WordPress DB Show Errors Is Set To: true! DB errors will be "
 "displayed"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1124
+#: C:\BPS47/includes/functions.php:1164
 msgid "WordPress DB Show Errors Function Is Set To: "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1124
+#: C:\BPS47/includes/functions.php:1164
 msgid "false"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1124
+#: C:\BPS47/includes/functions.php:1164
 msgid "WordPress Database Errors Are Turned Off"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1132
+#: C:\BPS47/includes/functions.php:1172
 msgid "WordPress Meta Generator Tag Removed"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1132
+#: C:\BPS47/includes/functions.php:1172
 msgid "WordPress Version Is Not Displayed / Not Shown"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1156
+#: C:\BPS47/includes/functions.php:1196
 msgid "New Feature Notice: BPS can now be Network Activated on Multisite"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1156
+#: C:\BPS47/includes/functions.php:1196
 msgid ""
 "Go to the BPS Whats New tab page for details about the new BPS Network/"
 "Multisite capabilities."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1156
+#: C:\BPS47/includes/functions.php:1196
 msgid ""
 "or just click the Dismiss Notice link below if you do not want to allow BPS "
 "to be used on your Multisite subsites."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1156
+#: C:\BPS47/includes/functions.php:1196
 msgid ""
 "To Reset Dismiss Notices click the Reset/Recheck Dismiss Notices button on "
 "the Security Status page."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1185
+#: C:\BPS47/includes/functions.php:1225
 msgid "Bonus Custom Code: Brute Force Login Protection"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1185
+#: C:\BPS47/includes/functions.php:1225
 msgid " to get additional Brute Force Login Protection code for your website."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1211
+#: C:\BPS47/includes/functions.php:1251
 msgid "Bonus Custom Code: Speed Boost Cache Code"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1211
+#: C:\BPS47/includes/functions.php:1251
 msgid " to get Speed Boost Cache code to speed up your website."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1237
+#: C:\BPS47/includes/functions.php:1277
 msgid "Bonus Custom Code: Author Enumeration BOT Probe Code"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1237
+#: C:\BPS47/includes/functions.php:1277
 msgid ""
 " to get Author Enumeration BOT Probe Code. Protects against hacker bots "
 "finding Author names & User names on your website."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1263
+#: C:\BPS47/includes/functions.php:1303
 msgid "Bonus Custom Code: XML-RPC DDoS Protection Code"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1263
+#: C:\BPS47/includes/functions.php:1303
 msgid ""
 " to get the XML-RPC DDoS Protection Code. Protects against DDoS attacks "
 "against your website that exploit your WordPress xmlrpc.php file and XML-RPC "
 "Server."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1298
+#: C:\BPS47/includes/functions.php:1338
 msgid "HUD Check: PHP/php.ini handler htaccess code check"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1298
+#: C:\BPS47/includes/functions.php:1338
 msgid ""
 "PHP/php.ini handler htaccess code was found in your root .htaccess file, but "
 "was NOT found in BPS Custom Code."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1298
+#: C:\BPS47/includes/functions.php:1338
 msgid ""
 "It is recommended that you copy your PHP/php.ini handler htaccess code in "
 "your root htaccess file to BPS Custom Code."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1298
+#: C:\BPS47/includes/functions.php:1338
 msgid ""
 " for instructions on how to copy your PHP/php.ini handler htaccess code to "
 "BPS Custom Code."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1298 C:\BPS47/includes/functions.php:1351
-#: C:\BPS47/includes/functions.php:1419
+#: C:\BPS47/includes/functions.php:1338 C:\BPS47/includes/functions.php:1391
+#: C:\BPS47/includes/functions.php:1459
 msgid ""
 "To Dismiss this Notice click the Dismiss Notice link below. To Dismiss this "
 "Notice click the Dismiss Notice link below. To Reset Dismiss Notices click "
 "the Reset/Recheck Dismiss Notices button on the Security Status page."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1326
+#: C:\BPS47/includes/functions.php:1366
 msgid "New Login Security Options Notification"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1326
+#: C:\BPS47/includes/functions.php:1366
 msgid ""
 " to go to Login Security page and choose the settings you want to use for "
 "these 2 new Login Security Options:"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1326
+#: C:\BPS47/includes/functions.php:1366
 msgid ""
 "Error Messages Option & Password Reset Option and then click the Save "
 "Options button."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1351
+#: C:\BPS47/includes/functions.php:1391
 msgid "Sucuri 1-click Hardening wp-content .htaccess file problem detected"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1351
+#: C:\BPS47/includes/functions.php:1391
 msgid ""
 "Using the Sucuri 1-click Hardening wp-content .htaccess file option will "
 "prevent BPS Security Error Logging from working."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1351
+#: C:\BPS47/includes/functions.php:1391
 msgid ""
 "To fix this issue delete the Sucuri .htaccess file in your wp-content folder."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1384
+#: C:\BPS47/includes/functions.php:1424
 msgid "The WordPress Firewall 2 plugin is installed and activated"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1384
+#: C:\BPS47/includes/functions.php:1424
 msgid "It is recommended that you delete the WordPress Firewall 2 plugin."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1384
+#: C:\BPS47/includes/functions.php:1424
 msgid " for more information."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1419
+#: C:\BPS47/includes/functions.php:1459
 msgid "Broken Link Checker plugin HEAD Request Method filter problem detected"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1419
+#: C:\BPS47/includes/functions.php:1459
 msgid "To fix this problem "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1525
+#: C:\BPS47/includes/functions.php:1565
 msgid "Once Hourly"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1774
+#: C:\BPS47/includes/functions.php:1815
 msgid "Notice: BPS Query String Exploits Code Changes"
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1774
+#: C:\BPS47/includes/functions.php:1815
 msgid ""
 "Older BPS Query String Exploits code was found in BPS Custom Code. Several "
 "Query String Exploits rules were changed/added/modified in the root ."
-"htaccess file in BPS .49.6 & .50.2."
+"htaccess file in BPS .49.6, .50.2 & .50.3."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1774
+#: C:\BPS47/includes/functions.php:1815
 msgid ""
 "Copy the new Query String Exploits section of code from your root .htaccess "
 "file and paste it into this BPS Custom Code text box: CUSTOM CODE BPSQSE BPS "
 "QUERY STRING EXPLOITS and click the Save Root Custom Code button."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1774
+#: C:\BPS47/includes/functions.php:1815
 msgid ""
 "This Notice will go away once you have copied the new Query String Exploits "
 "code to BPS Custom Code and clicked the Save Root Custom Code button."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1798 C:\BPS47/includes/functions.php:1830
-#: C:\BPS47/includes/functions.php:1859
+#: C:\BPS47/includes/functions.php:1839 C:\BPS47/includes/functions.php:1871
+#: C:\BPS47/includes/functions.php:1900
 msgid "Reminder: Frontend Maintenance Mode is Turned On."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1801 C:\BPS47/includes/functions.php:1833
-#: C:\BPS47/includes/functions.php:1862
+#: C:\BPS47/includes/functions.php:1842 C:\BPS47/includes/functions.php:1874
+#: C:\BPS47/includes/functions.php:1903
 msgid "Reminder: Backend Maintenance Mode is Turned On."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1804 C:\BPS47/includes/functions.php:1836
-#: C:\BPS47/includes/functions.php:1865
+#: C:\BPS47/includes/functions.php:1845 C:\BPS47/includes/functions.php:1877
+#: C:\BPS47/includes/functions.php:1906
 msgid "Reminder: Frontend & Backend Maintenance Modes are Turned On."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1818 C:\BPS47/includes/functions.php:1847
+#: C:\BPS47/includes/functions.php:1859 C:\BPS47/includes/functions.php:1888
 msgid ""
 "Reminder: Frontend Maintenance Mode is Turned On for The Primary Site and "
 "All Subsites."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1823 C:\BPS47/includes/functions.php:1852
+#: C:\BPS47/includes/functions.php:1864 C:\BPS47/includes/functions.php:1893
 msgid ""
 "Reminder: Frontend Maintenance Mode is Turned On for All Subsites, but Not "
 "The Primary Site."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1945
+#: C:\BPS47/includes/functions.php:1986
 msgid ""
 "BPS Login Security Disable Password Reset Frontend & Backend is turned On."
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1945
+#: C:\BPS47/includes/functions.php:1986
 msgid ""
 "Backend Password Reset has been disabled. To enable Backend Password Reset "
 "click "
 msgstr ""
 
-#: C:\BPS47/includes/functions.php:1945
+#: C:\BPS47/includes/functions.php:1986
 msgid "here"
 msgstr ""
 

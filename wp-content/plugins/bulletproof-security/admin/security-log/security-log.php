@@ -88,7 +88,7 @@ bps_delete_language_files();
 
 // General all purpose "Settings Saved." message for forms
 if ( current_user_can('manage_options') && wp_script_is( 'bps-js', $list = 'queue' ) ) {
-if ( @$_GET['settings-updated'] == true) {
+if ( @$_GET['settings-updated'] == true ) {
 	$text = '<p style="background-color:#ffffe0;font-size:1em;font-weight:bold;padding:5px;margin:0px;"><font color="green"><strong>'.__('Settings Saved', 'bulletproof-security').'</strong></font></p>';
 	echo $text;
 	}
@@ -106,7 +106,7 @@ $bps_topDiv = '<div id="message" class="updated" style="background-color:#ffffe0
 $bps_bottomDiv = '</p></div>';
 
 // Form - Security Log page - Turn Error Logging Off
-if (isset($_POST['Submit-Error-Log-Off']) && current_user_can('manage_options')) {
+if ( isset($_POST['Submit-Error-Log-Off'] ) && current_user_can('manage_options') ) {
 	check_admin_referer( 'bps-error-log-off' );
 
 $AutoLockoptions = get_option('bulletproof_security_options_autolock');	
@@ -167,7 +167,7 @@ $bps_get_wp_root_secure = bps_wp_get_root_folder();
 }
 
 // Form - Security Log page - Turn Error Logging On
-if (isset($_POST['Submit-Error-Log-On']) && current_user_can('manage_options')) {
+if ( isset($_POST['Submit-Error-Log-On'] ) && current_user_can('manage_options') ) {
 	check_admin_referer( 'bps-error-log-on' );
 
 $AutoLockoptions = get_option('bulletproof_security_options_autolock');	
@@ -292,7 +292,7 @@ $filename = WP_CONTENT_DIR . '/bps-backup/logs/http_error_log.txt';
 if ( @file_exists($filename) ) {
 	$logSize = filesize($filename);
 	
-	if ($logSize < 2097152) {
+	if ( $logSize < 2097152 ) {
  		$text = '<strong>'. __('Security Log File Size: ', 'bulletproof-security').'<font color="blue">'. round($logSize / 1024, 2) .' KB</font></strong><br>';
 		echo $text;
 	} else {
@@ -348,7 +348,7 @@ if (isset($_POST['Submit-Delete-Log']) && current_user_can('manage_options')) {
 }
 
 // Security Log Form - Add User Agents to DB and write them to the 403.php template
-if (isset($_POST['Submit-UserAgent-Ignore']) && current_user_can('manage_options')) {
+if ( isset($_POST['Submit-UserAgent-Ignore']) && current_user_can('manage_options') ) {
 check_admin_referer( 'bulletproof_security_useragent_ignore' );   
 		
 $userAgent = trim(stripslashes($_POST['user-agent-ignore']));
@@ -495,7 +495,7 @@ $search = '';
 	echo '</form><br><br>';
 
 // Get the Search Post variable for processing other search/remove Forms 
-if (isset($_POST['Submit-SecLog-Search']) && current_user_can('manage_options')) {
+if ( isset($_POST['Submit-SecLog-Search']) && current_user_can('manage_options') ) {
 	check_admin_referer( 'bulletproof_security_seclog_db_search' );
 	
 $search = $_POST['userAgentSearchRemove'];
@@ -513,7 +513,7 @@ $searchAll = '';
 
 			$getSecLogTableSearch = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $bpspro_seclog_table WHERE user_agent_bot LIKE %s", "%$searchAll%") );
 			
-		if ($wpdb->num_rows == 0) { // if no rows exist in DB add the BPSUserAgentPlaceHolder back into the 403.php security logging template
+		if ( $wpdb->num_rows == 0 ) { // if no rows exist in DB add the BPSUserAgentPlaceHolder back into the 403.php security logging template
 			
 			$stringReplace = preg_replace('/# BEGIN USERAGENT FILTER(.*)# END USERAGENT FILTER/s', "# BEGIN USERAGENT FILTER\nif ( !preg_match('/BPSUserAgentPlaceHolder/', \$_SERVER['HTTP_USER_AGENT']) ) {\n# END USERAGENT FILTER", $stringReplace);		
 		
@@ -529,7 +529,7 @@ $searchAll = '';
 }
 
 // Remove User Agents/Bots Dynamic Radio button Form proccessing code
-if (isset($_POST['Submit-SecLog-Remove']) && current_user_can('manage_options')) {
+if ( isset($_POST['Submit-SecLog-Remove']) && current_user_can('manage_options') ) {
 	check_admin_referer('bulletproof_security_seclog_db_remove');
 	
 $removeornot = $_POST['removeornot'];
@@ -538,25 +538,25 @@ $userAgentMaster = WP_CONTENT_DIR . '/bps-backup/master-backups/UserAgentMaster.
 $bps403File = WP_PLUGIN_DIR . '/bulletproof-security/403.php';
 $searchALLD = '';
 
-	switch($_POST['Submit-SecLog-Remove']) {
+	switch( $_POST['Submit-SecLog-Remove'] ) {
 		case __('Remove', 'bulletproof-security'):
 	
 		$remove_rows = array();
 
-		if (!empty($removeornot)) {
-			foreach ($removeornot as $key => $value) {
-				if ($value == 'remove') {
+		if ( !empty($removeornot) ) {
+			foreach ( $removeornot as $key => $value ) {
+				if ( $value == 'remove' ) {
 					$remove_rows[] = $key;
-				} elseif ($value == 'donotremove') {
+				} elseif ( $value == 'donotremove' ) {
 					$donotremove .=  ', '.$key;
 				}
 				}
 			}
 			$donotremove = substr($donotremove, 2);
 		
-		if (!empty($remove_rows)) {
+		if ( !empty($remove_rows) ) {
 			
-			foreach ($remove_rows as $remove_row) {
+			foreach ( $remove_rows as $remove_row ) {
 				if ( !$delete_row = $wpdb->query( $wpdb->prepare( "DELETE FROM $bpspro_seclog_table WHERE user_agent_bot = %s", $remove_row) )) {
 					$textSecLogRemove = '<font color="red"><strong>'.sprintf(__('%s unable to delete row from your DB.', 'bulletproof-security'), $remove_row).'</strong></font><br>';			
 				} else {
@@ -565,7 +565,7 @@ $searchALLD = '';
 					$getSecLogTableRemove = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $bpspro_seclog_table WHERE user_agent_bot LIKE %s", "%$searchALLD%") );
 					$UserAgentRules = array();		
 
-					foreach ($getSecLogTableRemove as $row) {
+					foreach ( $getSecLogTableRemove as $row ) {
 						$UserAgentRules[] = "(.*)".$row->user_agent_bot."(.*)|";
 							file_put_contents($userAgentMaster, $UserAgentRules);
 					}
@@ -583,11 +583,12 @@ $searchALLD = '';
 			$text = '<font color="red"><strong>'.__('Error: Unable to write to file ', 'bulletproof-security').$bps403File.__('. Check that file permissions allow writing to this file. If you have a DSO Server check file and folder Ownership.', 'bulletproof-security').'</strong></font>';
 			echo $text;	
 			echo $bps_bottomDiv;
+		
 		} else {
 			// need to run the Query again just in case there are 0 DB rows
 			$getSecLogTableRemove = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $bpspro_seclog_table WHERE user_agent_bot LIKE %s", "%$searchAll%") );
 			
-		if ($wpdb->num_rows == 0) { // if no rows exist in DB add the BPSUserAgentPlaceHolder back into the 403.php security logging template
+		if ( $wpdb->num_rows == 0 ) { // if no rows exist in DB add the BPSUserAgentPlaceHolder back into the 403.php security logging template
 			
 			$stringReplace = preg_replace('/# BEGIN USERAGENT FILTER(.*)# END USERAGENT FILTER/s', "# BEGIN USERAGENT FILTER\nif ( !preg_match('/BPSUserAgentPlaceHolder/', \$_SERVER['HTTP_USER_AGENT']) ) {\n# END USERAGENT FILTER", $stringReplace);
 			file_put_contents($bps403File, $stringReplace);		
@@ -600,7 +601,7 @@ $searchALLD = '';
 		}
 		} // end if (!empty($remove_rows)) { // no rows selected to delete
 		
-		if (!empty($donotremove)) {
+		if ( !empty($donotremove) ) {
 		// do nothing here - do not echo a message because it would be repeated X times
 		//$textDB = '<font color="green">'.sprintf(__('DB Rows %s Not Removed', 'bulletproof-security'), $donotremove).'</font>';
 		}
@@ -638,7 +639,7 @@ echo '<div id="message" class="updated" style="border:1px solid #999999; margin-
 		echo '<tbody>';
 		echo '<tr>';
 		
-		foreach ($getSecLogTableSearchForm as $row) {
+		foreach ( $getSecLogTableSearchForm as $row ) {
 		
 		echo '<th scope="row" style="border-bottom:none;">'.$row->user_agent_bot.'</th>';
 		echo "<td><input type=\"radio\" id=\"remove\" name=\"removeornot[$row->user_agent_bot]\" value=\"remove\" /></td>";
@@ -648,7 +649,7 @@ echo '<div id="message" class="updated" style="border:1px solid #999999; margin-
 		}
 		echo '</tbody>';
 		echo '</table>';	
-		if ($wpdb->num_rows != 0) {		
+		if ( $wpdb->num_rows != 0 ) {		
 		echo $bps_topDiv;
 		$text = '<font color="green"><strong>'.__('Your DB Search Results For User Agents/Bots To Remove are displayed below the Remove / Allow Search tool.', 'bulletproof-security').'</strong></font><br>';
 		echo $text;
@@ -673,10 +674,10 @@ echo '<div id="message" class="updated" style="border:1px solid #999999; margin-
 <?php
 // Get BPS Security log file contents
 function bps_get_security_log() {
-if (current_user_can('manage_options')) {
+if ( current_user_can('manage_options') ) {
 $bps_sec_log = WP_CONTENT_DIR . '/bps-backup/logs/http_error_log.txt';
 	
-	if (file_exists($bps_sec_log)) {
+	if ( file_exists($bps_sec_log) ) {
 		$bps_sec_log = file_get_contents($bps_sec_log);
 	return esc_html($bps_sec_log);
 	
@@ -687,15 +688,15 @@ $bps_sec_log = WP_CONTENT_DIR . '/bps-backup/logs/http_error_log.txt';
 }
 
 // Form - Security Log - Perform File Open and Write test - If append write test is successful write to file
-if (current_user_can('manage_options')) {
+if ( current_user_can('manage_options') ) {
 $bps_sec_log = WP_CONTENT_DIR . '/bps-backup/logs/http_error_log.txt';
 $write_test = "";
 	
-	if (is_writable($bps_sec_log)) {
-    if (!$handle = fopen($bps_sec_log, 'a+b')) {
+	if ( is_writable($bps_sec_log) ) {
+    if ( !$handle = fopen($bps_sec_log, 'a+b' ) ) {
     	exit;
     }
-    if (fwrite($handle, $write_test) === FALSE) {
+    if ( fwrite($handle, $write_test) === FALSE ) {
 		exit;
     }
 	$text = '<font color="green"><strong>'.__('File Open and Write test successful! Your Security Log file is writable.', 'bulletproof-security').'</strong></font><br>';
@@ -703,7 +704,7 @@ $write_test = "";
 	}
 	}
 	
-	if (isset($_POST['submit-security-log']) && current_user_can('manage_options')) {
+	if ( isset( $_POST['submit-security-log'] ) && current_user_can('manage_options') ) {
 		check_admin_referer( 'bulletproof_security_save_security_log' );
 		$newcontentSecLog = stripslashes($_POST['newcontentSecLog']);
 	if ( is_writable($bps_sec_log) ) {

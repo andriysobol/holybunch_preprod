@@ -389,8 +389,8 @@ if ( isset( $_POST['Submit-DBB-Run-Job'] ) && current_user_can('manage_options')
 					$job_type = $row->bps_job_type;
 					$email_zip = $row->bps_email_zip;
 					
-					$build_query_1 = "SHOW TABLES FROM ".DB_NAME." WHERE Tables_in_".DB_NAME." LIKE '";
-					$build_query_2 = str_replace( ', ', "' OR Tables_in_".DB_NAME." LIKE '", $row->bps_table_name );
+					$build_query_1 = "SHOW TABLES FROM `".DB_NAME."` WHERE `Tables_in_".DB_NAME."` LIKE '";
+					$build_query_2 = str_replace( ', ', "' OR `Tables_in_".DB_NAME."` LIKE '", $row->bps_table_name );
 					$build_query_3 = "'";
 					$tables = $wpdb->get_results( $build_query_1.$build_query_2.$build_query_3, ARRAY_A );
 					
@@ -561,7 +561,7 @@ if ( isset( $_POST['Submit-DBB-Files'] ) && current_user_can('manage_options') )
 	$size = 0;
 	$getDBTables = $wpdb->get_results( $wpdb->prepare( "SHOW TABLE STATUS WHERE Rows >= %d", $DBTables ) );
 
-	echo '<div id="DBBcheckall">';
+	echo '<div id="DBBcheckall" style="max-height:400px;">';
 	echo '<table style="text-align:left;border-right:1px solid black;padding:5px;">';
 	echo '<thead>';
 	echo '<tr>';
@@ -1193,7 +1193,7 @@ if ( isset( $_POST['Submit-DB-Table-Prefix'] ) && current_user_can('manage_optio
 	
 	if ( !file_exists($wpconfig_file) ) {
 		echo '<div id="message" class="updated" style="border:1px solid #999999;margin-left:70px;background-color:#ffffe0;"><p>';
-		$text = '<font color="red"><strong>'.__('A wp-config.php file was NOT found in your website root folder.', 'bulletproof-security').'</strong></font><br>'.__('If you have moved your wp-config.php file to a another Server folder then you can use this tool to change your DB Table Prefix, but first you will need to temporarily move your wp-config.php file back to the default location: your WordPress website root folder.', 'bulletproof-security');
+		$text = '<strong><font color="red">'.__('A wp-config.php file was NOT found in your website root folder.', 'bulletproof-security').'</font><br>'.__('Your DB Table Prefix was not changed. If you have moved your wp-config.php file to a another Server folder then you can use this tool to change your DB Table Prefix, but first you will need to temporarily move your wp-config.php file back to the default location: your WordPress website root folder.', 'bulletproof-security').'</strong>';
 		echo $text;
 		echo '</p></div>';
 	}
@@ -1210,6 +1210,14 @@ if ( isset( $_POST['Submit-DB-Table-Prefix'] ) && current_user_can('manage_optio
 		if ( @substr( $sapi_type, 0, 6 ) != 'apache' || @$permswpconfig != '0666' || @$permswpconfig != '0777' ) { // Windows IIS, XAMPP, etc
 			@chmod($wpconfig_file, 0644);
 		}
+
+	if ( !is_writable($wpconfig_file) ) {
+		echo '<div id="message" class="updated" style="border:1px solid #999999;margin-left:70px;background-color:#ffffe0;"><p>';
+		$text = '<strong><font color="red">'.__('Error: The wp-config.php file is not writable. Unable to write to the wp-config.php file.', 'bulletproof-security').'</font><br>'.__('Your DB Table Prefix was not changed. You will need to make the wp-config.php file writable first by changing either the file permissions or Ownership of the wp-config.php file (if you have a DSO Server) before you can use the DB Table Prefix Changer tool to change your DB Table Prefix.', 'bulletproof-security').'</strong>';
+		echo $text;
+		echo '</p></div>';
+	return;
+	}
 
 	$base_prefix = $wpdb->base_prefix;
 	$MetaKeys = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->usermeta WHERE meta_key LIKE %s", "$base_prefix%" ) );
