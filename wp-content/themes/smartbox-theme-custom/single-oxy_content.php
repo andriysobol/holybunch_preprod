@@ -16,11 +16,11 @@ global $post;
 oxy_create_hero_section(get_post_banner_image($post), $post->post_title);
 $allow_comments = oxy_get_option( 'site_comments' );
 ?>
-
 <section class="section section-padded">
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span12">
+		<?php echo get_corresponding_terms($post);?>
                 <?php while ( have_posts() ) : the_post(); ?>
                                <div class="span12" style = "color:#FFA500;">
                     <?php echo get_field('quote'); ?>

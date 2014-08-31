@@ -553,7 +553,6 @@ function get_taxonomy_terms_cloud($post_type) {
             return create_section_with_itmes($my_query, $atts);
         }
     }
-
     function create_section_with_itmes($my_query, $atts=null) {
         $columns = $my_query->post_count > 4 ? 4 : $my_query->post_count;
         $span = $columns > 0 ? 'span' . floor(12 / $columns) : 'span3';
@@ -1129,6 +1128,25 @@ function get_taxonomy_terms_cloud($post_type) {
 		if(empty($summary))
 			$summary = $post->post_content;
 	return $summary;
+}
+
+function get_corresponding_terms($post) {
+    $output = '<div id="tag_cloud-3" class="sidebar-widget  widget_tag_cloud">';
+    $output .= '<div class="tagcloud">';
+    $output .= '    <div class="tagcloudThema">Перейти в тему:</div>';
+    $output .= '<ul>';
+    $taxonomy = "teaching_topics";
+    $terms = wp_get_post_terms($post->ID, $taxonomy);
+    if ($terms) {
+        foreach ($terms as $individual_term) {
+            $term_link = get_term_link($individual_term);
+            $output .= "<li><a href='" . $term_link . "' title='" . $individual_term->name . "'  style='font-size:" . 12 . "pt;' >" . $individual_term->name . "</a></li>";;
+        }
+    }
+    $output .= '</ul>'; 
+    $output .= '</div>';
+    $output .= '</div>'; 
+    return $output;
 }
 
     function get_more_text($post_type){

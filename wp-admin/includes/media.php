@@ -2391,15 +2391,7 @@ foreach ($arc_result as $arc_row) {
 <?php //media_upload_form( $errors ); ?>
 
 <script type="text/javascript">
-<!--
-jQuery(function($){
-	var preloaded = $(".media-item.preloaded");
-	if ( preloaded.length > 0 ) {
-		preloaded.each(function(){prepareMediaItem({id:this.id.replace(/[^0-9]/g, '')},'');});
-		updateMediaForm();
-	}
-});
--->
+
 </script>
 
 <div id="media-items">

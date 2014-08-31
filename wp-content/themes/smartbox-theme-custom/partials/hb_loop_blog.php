@@ -19,14 +19,19 @@
 <?php endif; ?>
 
 <div class="<?php echo oxy_get_option('blog_layout') == 'full-width' ? 'span12':'span9' ; ?>">
-    <?php if( have_posts() ): ?>
-    <?php while ( have_posts() ) : the_post(); ?>
+    <?php $args = array(
+                'post_type' => 'post',
+                'post_status' => 'publish'
+            );
+    $my_query = new wp_query($args);?>
+    <?php if( $my_query->have_posts() ): ?>
+    <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
 
-    <?php get_template_part( 'partials/content-blog', get_post_format() ); ?>
+    <?php get_template_part(  'partials/timeline/content-blog-excerpt' ); ?>
 
     <?php endwhile; ?>
 
-    <?php oxy_pagination($wp_query->max_num_pages); ?>
+    <?php oxy_pagination($my_query->max_num_pages); ?>
     <?php else: ?>
         <article id="post-0" class="post no-results not-found">
             <header class="entry-header">

@@ -1,7 +1,7 @@
 <?php
 /**
  * Shows a simple single post
- * @author tomikb
+ *
  * @package Smartbox
  * @subpackage Frontend
  * @since 1.0
@@ -42,11 +42,7 @@
                 }
                 echo '</figure>';
             } ?>
-            <?php $content= oxy_limit_excerpt(get_the_content(), 100) ;
-                $more_text=  get_more_text($post->post_type);
-                $link = get_permalink();
-                $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>'; 
-                echo $content;?>
+            <?php the_excerpt(); ?>
             <?php get_template_part( 'partials/social-links', null ); ?>
             <?php oxy_wp_link_pages(array('before' => '<div class="pagination pagination-centered">', 'after' => '</div>')); ?>
         </div>
