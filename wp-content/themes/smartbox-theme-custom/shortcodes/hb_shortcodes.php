@@ -908,7 +908,7 @@ function create_hero_section_with_video($atts) {
     if(empty($image)){
         $image = get_taxonomy_video_background_image('teaching_topics',$taxonomy_slug);
         if(empty($image))
-            $image = get_home_url()."/wp-content/uploads/2014/07/IMG_0333.jpg";
+            $image = get_theme_root_uri() . '/smartbox-theme-custom/images/background_video_default.jpg';
     }
     
     $post_link = get_post_permalink($post_video->ID, false, false);

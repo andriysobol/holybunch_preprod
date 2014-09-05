@@ -132,7 +132,7 @@ function get_taxonomy_banner_image($taxonomy_name, $topic) {
         global $wp_embed;
         return $image_url;
     } else {
-        return null;
+        return get_theme_root_uri() . '/smartbox-theme-custom/images/banner_thema_default.jpg';
     }
 }
 
@@ -185,7 +185,7 @@ function get_post_banner_image($post, $taxonomy_name = 'teaching_topics') {
         if (!empty($image_url))
             return $image_url;
     }
-    return null;
+    return get_theme_root_uri() . '/smartbox-theme-custom/images/banner_thema_default.jpg';
 }
 
 function get_query($taxonomy_category, $teaching_topic) {
@@ -614,7 +614,7 @@ function get_taxonomy_terms_cloud($post_type) {
         }
 
         if ($add_punkts)
-            return implode(' ', $words) . '...';
+            return implode(' ', $words) . ' ...';
         return implode(' ', $words);
     }
 
@@ -1133,7 +1133,7 @@ function get_taxonomy_terms_cloud($post_type) {
 function get_corresponding_terms($post) {
     $output = '<div id="tag_cloud-3" class="sidebar-widget  widget_tag_cloud">';
     $output .= '<div class="tagcloud">';
-    $output .= '    <div class="tagcloudThema">Перейти в тему:</div>';
+    $output .= '    <div class="tagcloudThema">Перейти к теме:</div>';
     $output .= '<ul>';
     $taxonomy = "teaching_topics";
     $terms = wp_get_post_terms($post->ID, $taxonomy);

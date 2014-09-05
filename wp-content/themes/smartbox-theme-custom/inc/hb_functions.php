@@ -139,13 +139,18 @@ Class Recent_Bloggers extends WP_Widget {
                 foreach ($user_query->results as $user) {
                     ++$counter;
             ?>
-            <div class="round-box box-small">
+	    <div class="row-fluid">
+	    <div class="span3">
+            <div class="round-box box-mini box-colored">
                 <?php echo get_avatar($user->ID, 300); ?>
             </div>
-            <h5 class="text-center">
-                <?php echo $user->user_nicename; ?>
-            </h5>
-
+            </div>
+	    <div class="span9">
+            <h4>
+               	<?php echo $user->user_nicename; ?>
+            </h4>
+            </div>
+            </div>
             <?php if($counter == $number) break;} ?>
             </ul>
 

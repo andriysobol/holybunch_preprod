@@ -27,7 +27,7 @@
     <?php if( $my_query->have_posts() ): ?>
     <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
 
-    <?php get_template_part(  'partials/timeline/content-blog-excerpt' ); ?>
+    <?php get_template_part(  'partials/content-blog'  ); ?>
 
     <?php endwhile; ?>
 
