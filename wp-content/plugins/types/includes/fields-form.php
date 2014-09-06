@@ -2,7 +2,7 @@
 /*
  * Fields and groups form functions.
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6/includes/fields-form.php $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/trunk/includes/fields-form.php $
  * $LastChangedDate: 2014-08-22 01:02:43 +0000 (Fri, 22 Aug 2014) $
  * $LastChangedRevision: 970205 $
  * $LastChangedBy: brucepearson $

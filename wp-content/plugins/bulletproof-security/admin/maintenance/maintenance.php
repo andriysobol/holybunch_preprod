@@ -1,76 +1,43 @@
 <?php
 // Direct calls to this file are Forbidden when core files are not present
-if ( !current_user_can('manage_options') ){ 
+if ( !current_user_can('manage_options') ) { 
 		header('Status: 403 Forbidden');
 		header('HTTP/1.1 403 Forbidden');
 		exit();
 }
 ?>
 
-<div class="wrap">
-<div id="bpsUprade"><strong>
-<a href="http://www.ait-pro.com/bulletproof-security-pro-flash/bulletproof.html" target="_blank" title="BulletProof Security Pro Flash Movie">Upgrade to BulletProof Security Pro</a></strong></div>
-
-<!-- Begin Rating CSS - needs to be inline to load on first launch -->
-<style type="text/css">
-div.bps-star-container { float:right; position: relative; top:-10px; right:-100px; height:19px; width:100px; font-size:19px;}
-div.bps-star {height: 100%; position:absolute; top:0px; left:0px; background-color: transparent; letter-spacing:1ex; border:none;}
-.bps-star1 {width:20%;} .bps-star2 {width:40%;} .bps-star3 {width:60%;} .bps-star4 {width:80%;} .bps-star5 {width:100%;}
-.bps-star.bps-star-rating {background-color: #fc0;}
-.bps-star img{display:block; position:absolute; right:0px; border:none; text-decoration:none;}
-div.bps-star img {width:19px; height:19px; border-left:1px solid #fff; border-right:1px solid #fff;}
-.bps-downloaded {float:right; position: relative; top:15px; right:0px; }
-.bps-star-link {position: relative; top:43px; right:0px; font-size:12px;}
-</style>
-<!-- End Rating CSS - needs to be inline to load on first launch -->
+<div class="wrap" style="margin-top:45px;">
 
 <?php
-if (function_exists('get_transient')) {
+if ( function_exists('get_transient') ) {
 require_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
 
-	if (false === ($bpsapi = get_transient('bulletproof-security_info'))) {
-		$bpsapi = plugins_api('plugin_information', array('slug' => stripslashes( 'bulletproof-security' ) ));
-	
-	if ( !is_wp_error($bpsapi) ) {
-		$bpsexpire = 60 * 15; // Cache data for 15 minutes
-		set_transient('bulletproof-security_info', $bpsapi, $bpsexpire);
+	if ( false === ( $bps_api = get_transient('bulletproof-security_info') ) ) {
+		$bps_api = plugins_api( 'plugin_information', array( 'slug' => stripslashes( 'bulletproof-security' ) ) );
+		
+	if ( !is_wp_error( $bps_api ) ) {
+		$bps_expire = 60 * 30; // Cache downloads data for 30 minutes
+		$bps_downloaded = array( 'downloaded' => $bps_api->downloaded );
+		maybe_serialize( $bps_downloaded );
+		set_transient( 'bulletproof-security_info', $bps_downloaded, $bps_expire );
 	}
 	}
-  
-	if ( !is_wp_error($bpsapi) ) {
-		$plugins_allowedtags = array('a' => array('href' => array(), 'title' => array(), 'target' => array()),
-								'abbr' => array('title' => array()), 'acronym' => array('title' => array()),
-								'code' => array(), 'pre' => array(), 'em' => array(), 'strong' => array(),
-								'div' => array(), 'p' => array(), 'ul' => array(), 'ol' => array(), 'li' => array(),
-								'h1' => array(), 'h2' => array(), 'h3' => array(), 'h4' => array(), 'h5' => array(), 'h6' => array(),
-								'img' => array('src' => array(), 'class' => array(), 'alt' => array()));
-	//Sanitize HTML
-	foreach ( (array)$bpsapi->sections as $section_name => $content )
-		$bpsapi->sections[$section_name] = wp_kses($content, $plugins_allowedtags);
-	foreach ( array('version', 'author', 'requires', 'tested', 'homepage', 'downloaded', 'slug') as $key )
-		$bpsapi->$key = wp_kses($bpsapi->$key, $plugins_allowedtags);
 
-	  if ( !empty($bpsapi->downloaded) ) {
-        echo '<div class="bps-downloaded">'.sprintf(__('%s Downloads', 'bulletproof-security'),number_format_i18n($bpsapi->downloaded)).'</div>';
-      }
-?>
-		<?php if ( !empty($bpsapi->rating) ) : ?>
-		<div class="bps-star-container" title="<?php //echo esc_attr(sprintf(__('Average Rating (%s ratings)', 'bulletproof-security'),number_format_i18n($bpsapi->num_ratings))); ?>">
-			<div class="bps-star bps-star-rating" style="width: <?php echo esc_attr($bpsapi->rating) ?>px"></div>
-			<div class="bps-star bps-star5"><img src="<?php echo plugins_url('/bulletproof-security/admin/images/star.png'); ?>" alt="<?php _e('5 stars', 'bulletproof-security') ?>" /></div>
-			<div class="bps-star bps-star4"><img src="<?php echo plugins_url('/bulletproof-security/admin/images/star.png'); ?>" alt="<?php _e('4 stars', 'bulletproof-security') ?>" /></div>
-			<div class="bps-star bps-star3"><img src="<?php echo plugins_url('/bulletproof-security/admin/images/star.png'); ?>" alt="<?php _e('3 stars', 'bulletproof-security') ?>" /></div>
-			<div class="bps-star bps-star2"><img src="<?php echo plugins_url('/bulletproof-security/admin/images/star.png'); ?>" alt="<?php _e('2 stars', 'bulletproof-security') ?>" /></div>
-			<div class="bps-star bps-star1"><img src="<?php echo plugins_url('/bulletproof-security/admin/images/star.png'); ?>" alt="<?php _e('1 star', 'bulletproof-security') ?>" /></div>
+		$bps_transient = get_transient( 'bulletproof-security_info' );
+    	
+		echo '<div class="bps-star-container" style="float:right;position:relative;top:-40px;left:0px;margin:0px 0px -40px 0px;font-weight:bold;">';
+		echo '<div class="bps-star"><img src="'.plugins_url('/bulletproof-security/admin/images/star.png').'" /></div>';
+		echo '<div class="bps-downloaded">';
 		
-        <div class="bps-star-link"><a target="_blank" title="Link opens in new browser window" href="http://wordpress.org/extend/plugins/<?php echo $bpsapi->slug ?>/"> <?php _e('Rate BPS', 'bulletproof-security'); ?></a> <small><?php //echo sprintf(__('%s Ratings', 'bulletproof-security'),number_format_i18n($bpsapi->num_ratings)); ?> </small></div>
-        
-        </div>
+		foreach ( $bps_transient as $key => $value ) {
+			echo number_format_i18n( $value ) .' '. str_replace( 'downloaded', "Downloads", $key );
+		}
 		
-        <br />
-		<?php endif; 
-	  } // if ( !is_wp_error($bpsapi)
- }// end if (function_exists('get_transient'
+		echo '<div class="bps-star-link"><a href="http://wordpress.org/support/view/plugin-reviews/bulletproof-security" target="_blank" title="Add your own BPS Plugin Review">'.__('Add a Review', 'bulletproof-security').'</a><br><a href="http://affiliates.ait-pro.com/po/" target="_blank" title="Upgrade to BulletProof Security Pro">Upgrade to Pro</a></div>';
+		echo '</div>';
+		echo '</div>';
+}
 ?>
 
 <h2 style="margin-left:70px;">
@@ -83,7 +50,7 @@ _e('Maintenance Mode ~ FrontEnd ~ BackEnd', 'bulletproof-security');
 ?>
 </h2>
 
-<div id="message" class="updated" style="border:1px solid #999999; margin-left:70px;background-color: #000;">
+<div id="message" class="updated" style="border:1px solid #999999;margin-left:70px;background-color:#000;">
 
 <?php
 // HUD - Heads Up Display - Warnings and Error messages
@@ -152,6 +119,15 @@ _e('FrontEnd ~ Display Maintenance Mode Page / BackEnd ~ Lock BackEnd with Deny 
 ?>
 </h2>
 
+<?php
+	$BPS_wpadmin_Options = get_option('bulletproof_security_options_htaccess_res');
+	
+	if ( $BPS_wpadmin_Options['bps_wpadmin_restriction'] == 'disabled' ) {
+		$text = '<h3><strong><span style="font-size:1em;"><font color="blue">'.__('Notice: ', 'bulletproof-security').'</font></span><span style="font-size:.75em;">'.__('You have disabled wp-admin BulletProof Mode on the Security Modes page.', 'bulletproof-security').'<br>'.__('If you have Go Daddy "Managed WordPress Hosting" click this link: ', 'bulletproof-security').'<a href="http://forum.ait-pro.com/forums/topic/gdmw/" target="_blank" title="Link opens in a new Browser window">'.__('Go Daddy Managed WordPress Hosting', 'bulletproof-security').'</a>.</span></strong></h3>';
+		echo $text;
+	}
+?>
+
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="bps-help_faq_table">
   <tr>
     <td class="bps-table_title">&nbsp;</td>
@@ -171,7 +147,7 @@ _e('FrontEnd ~ Display Maintenance Mode Page / BackEnd ~ Lock BackEnd with Deny 
 function bpsPro_maintenance_mode_values_form() {
 global $current_blog, $blog_id, $bps_topDiv, $bps_bottomDiv;
 
-if (isset($_POST['Submit-Maintenance-Mode-Form']) && current_user_can('manage_options')) {
+if ( isset( $_POST['Submit-Maintenance-Mode-Form'] ) && current_user_can('manage_options') ) {
 	check_admin_referer( 'bpsMaintenanceMode' );
 
 $MMoptions = get_option('bulletproof_security_options_maint_mode');
@@ -425,29 +401,29 @@ bpsPro_maintenance_mode_values_form();
 $MMoptions = get_option('bulletproof_security_options_maint_mode');
 ?>
 
-<div id="MMode-button-position" style="position:absolute; bottom:-50px; left:0px;z-index:9999;">
+<div id="MMode-button-position" style="position:absolute;bottom:-50px;left:0px;">
     <input type="submit" name="Submit-Maintenance-Mode-Form" class="bps-blue-button" value="<?php esc_attr_e('Save Options', 'bulletproof-security') ?>" onclick="return confirm('<?php $text = __('Clicking OK Saves your Options/Settings to your Database and also creates your Maintenance Mode page. Click the Preview button to preview your Maintenance Mode page. After previewing your Maintenance Mode page click the Turn On button to enable Maintenance Mode on your website.', 'bulletproof-security').'\n\n'.$bpsSpacePop.'\n\n'.__('Click OK to proceed or click Cancel.', 'bulletproof-security'); echo $text; ?>')" />
 </div>
 
 <div id="bps-accordion-3" class="bps-accordian-main-2">
 <h3><?php _e('MMode Editor', 'bulletproof-security'); ?></h3>
-<div>
-	
+<div id="mmode-accordian-inner">
+
   	<label for="mmode"><?php _e('Maintenance Mode Text, CSS Style Code, Images, Videos Displayed To Website Visitors:', 'bulletproof-security'); ?></label><br />
     <label for="mmode"><?php _e('Click the Maintenance Mode Guide link below for CSS Code, Image & Video Embed examples.', 'bulletproof-security'); ?></label><br />
     <label for="mmode"><?php $text = '<div style="margin:0px 0px -10px 0px;"><strong><a href="http://forum.ait-pro.com/forums/topic/maintenance-mode-guide-read-me-first/" target="_blank" title="Link opens in a new Browser window">'.__('Maintenance Mode Guide', 'bulletproof-security').'</a></strong></div>'; echo $text; ?></label><br /><br />
     
-    <!-- Delete Me - leave this style inline for 1 BPS Pro version -->
-    <div class="mmode-tinymce" style="width:60%">
+    <!-- Delete Me - leave this style inline for 3 version3 -->
+    <div class="mmode-tinymce" style="width:60%;">
 	<?php wp_editor( stripslashes(htmlspecialchars_decode($MMoptions['bps_maint_text'], ENT_QUOTES)), 'bpscustomeditor' ); ?><br />
     </div> 
 
 </div>
   
 <h3><?php _e('MMode Option Settings', 'bulletproof-security'); ?></h3>
-<div><br />
+<div id="mmode-accordian-inner">
     
-    <input type="checkbox" name="mmode_countdown_timer" value="1" <?php checked( $MMoptions['bps_maint_countdown_timer'], 1 ); ?> /><label for="mmode"><?php _e('Enable Countdown Timer', 'bulletproof-security'); ?></label><br /><br />
+    <input type="checkbox" name="mmode_countdown_timer" style="margin-top:5px;" value="1" <?php checked( $MMoptions['bps_maint_countdown_timer'], 1 ); ?> /><label for="mmode"><?php _e('Enable Countdown Timer', 'bulletproof-security'); ?></label><br /><br />
     
     <label for="mmode"><?php _e('Countdown Timer Text Color:', 'bulletproof-security'); ?></label><br />
 <select name="mmode_countdown_timer_color" style="width:300px;">
@@ -556,7 +532,7 @@ $MMoptions = get_option('bulletproof_security_options_maint_mode');
 
 </div>
 <h3><?php _e('MMode Network/Multisite Options', 'bulletproof-security'); ?></h3>
-<div>
+<div id="mmode-accordian-inner">
 
 	<p style="font-size:16px; font-weight:bold;"><?php _e('Network/Multisite Primary Site Options ONLY', 'bulletproof-security'); ?></p> 
 
@@ -583,12 +559,12 @@ jQuery(document).ready(function($){
 
 <?php
 // Maintenance Mode Preview - check Referer
-if (isset($_POST['maintenance-mode-preview-submit']) && current_user_can('manage_options')) {
+if ( isset( $_POST['maintenance-mode-preview-submit'] ) && current_user_can('manage_options')) {
 	check_admin_referer( 'bulletproof_security_maintenance_preview' );
 }
 ?>
 
-<div id="MMode-button-position" style="position:relative; top:0px; left:110px;z-index:9999;">
+<div id="MMode-button-position" style="margin-left:110px;">
 
 <?php if ( is_multisite() && $blog_id != 1 ) { $subsite_remove_slashes = str_replace( '/', "", $current_blog->path ); ?>
 	
@@ -1013,7 +989,7 @@ $format_error_2 = '/,[^\s]/'; // no whitespaces between commas
 }
 
 // Form - Turn On Maintenance Mode
-if (isset($_POST['Submit-maintenance-mode-on']) && current_user_can('manage_options')) {
+if ( isset( $_POST['Submit-maintenance-mode-on'] ) && current_user_can('manage_options') ) {
 	check_admin_referer( 'bulletproof_security_mmode_on' );
 
 $MMoptions = get_option('bulletproof_security_options_maint_mode');
@@ -1705,7 +1681,7 @@ $MMindexMaster = WP_PLUGIN_DIR . '/bulletproof-security/admin/htaccess/maintenan
 }
 
 // Form - Turn Off Maintenance Mode
-if (isset($_POST['Submit-maintenance-mode-off']) && current_user_can('manage_options')) {
+if ( isset( $_POST['Submit-maintenance-mode-off'] ) && current_user_can('manage_options') ) {
 	check_admin_referer( 'bulletproof_security_mmode_off' );
 
 $MMoptions = get_option('bulletproof_security_options_maint_mode');

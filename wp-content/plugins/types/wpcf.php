@@ -5,13 +5,13 @@
   Description: Define custom post types, custom taxonomy and custom fields.
   Author: OnTheGoSystems
   Author URI: http://www.onthegosystems.com
-  Version: 1.6
+  Version: 1.6.2
  */
 /**
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6/wpcf.php $
- * $LastChangedDate: 2014-08-22 01:02:43 +0000 (Fri, 22 Aug 2014) $
- * $LastChangedRevision: 970205 $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/trunk/wpcf.php $
+ * $LastChangedDate: 2014-08-28 13:23:24 +0000 (Thu, 28 Aug 2014) $
+ * $LastChangedRevision: 974679 $
  * $LastChangedBy: brucepearson $
  *
  */
@@ -20,7 +20,7 @@ if ( !defined( 'WPCF_VERSION' ) ) {
     /**
      * make sure that WPCF_VERSION in embedded/bootstrap.php is the same!
      */
-    define( 'WPCF_VERSION', '1.6' );
+    define( 'WPCF_VERSION', '1.6.2' );
 }
 
 define( 'WPCF_REPOSITORY', 'http://api.wp-types.com/' );

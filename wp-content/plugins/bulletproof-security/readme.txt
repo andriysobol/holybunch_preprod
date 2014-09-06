@@ -4,7 +4,7 @@ Donate link: http://www.ait-pro.com/aitpro-blog/331/bulletproof-security-plugin-
 Tags: 400, 403, 404, 503, antivirus, attack, authenticate, authentication, author, author id, back up, backups, ban, banned, base64, block, blocked, Bot, brute force, bruteforce, bulletproof, chmod, code, coming soon, crack, cracking, CRLF, CSRF, database backup, database table prefix, DB backup, DB table backup, DB table prefix, developer, development, directory traversal, DoS, DDoS, dump, encode, enumeration, error log, exploit, exploitation, file inclusion, firewall, hack, hackers, htaccess, HTTP log, infect, infected, infection, injection, LFI, lock, log, logging, login alerts, login security, login, maintenance mode, maintenance, malicious, multisite, mysql, mysql backup, offline, optimize, optimization, path traversal, performance, permissions, pingback, plugin, prevent, prevention, privacy, private, protection, RFI, safe, safety, schedule backup, script, secure, security log, security, spam, spammers, speed increase, speed boost, SQL injection, trackback, unavailable, under construction, user id, username, users, virus, vulnerable, vulnerability, website backup, wordpress backup, website security, WordPress security, xmlrpc, xml-rpc, XSS
 Requires at least: 3.0 
 Tested up to: 4.0 
-Stable tag: .50.6
+Stable tag: .50.8
 
 WordPress Website Security Protection: Effective...Reliable...Easy to use
 
@@ -285,7 +285,7 @@ Occasionally issues or conflicts do occur with other plugins, but they are alway
 
 = Does BulletProof Security Work On All Web Hosts? =
 
-Yes, BulletProof Security works on all web hosts. There is one known issue with Go Daddy Managed WordPress Hosting (not Go Daddy standard hosting account types) where wp-admin .htaccess files are not allowed to be created or edited due to security restrictions for that hosting account type. As of BPS .50.6 a new option was added for wp-admin BulletProof Mode to enable or disable wp-admin BulletProof Mode. The Enable/Disable wp-admin BulletProof Mode option on the htaccess Core Security Modes page disables wp-admin .htaccess file displayed error messages, automation, updating and creation of wp-admin .htaccess files. Note: Some wp-admin .htaccess file inpage error checking was not changed, such as the inpage check on the Security Status tab page. This may be changed in the future, but it serves a useful troubleshooting purpose for now.
+BulletProof Security works on all web hosts except for these 3 web hosts: <a href="http://forum.ait-pro.com/forums/topic/read-me-first-free/#incompatible-hosts" title="Incompatible Hosts" rel="nofollow" target="_blank">Incompatible Hosts</a>. If you have Go Daddy "Managed WordPress" hosting, which is special type of hosting account and is not a regular/standard Go Daddy hosting account then click this link for more information: <a href="http://forum.ait-pro.com/forums/topic/gdmw/" title="Go Daddy Managed WordPress Hosting" rel="nofollow" target="_blank">Go Daddy Managed WordPress Hosting</a>. BPS works fine on Go Daddy "Managed WordPress" Hosting. BPS has a one click option setting that has been created for Go Daddy "Managed WordPress" Hosting. 
 
 = I am seeing Security Log entries in my BulletProof Security Log. What do they mean? =
 
@@ -348,6 +348,24 @@ Yes, BulletProof Security works with Git, but does require some additional set u
 8. BulletProof Security - Maintenance Mode template images
 
 == Changelog ==
+
+= .50.8 =
+* Network/Multisite BPS plugin Network Activation correction:
+* Conditional wrap added for blog_id 1
+
+= .50.7 =
+* htaccess Core Security Modes AutoMagic Buttons:
+* BPS automatically detects your site type and displays the correct AutoMagic buttons for your site type. Other site type AutoMagic buttons are no longer displayed on the Security Modes page. 
+* Network/Multisite One Time Code Correction:
+* If you have a Network/Multisite website/installation of WordPress you will see a one time htaccess code correction Notice message displayed to you with steps to perform the one time code correction when you upgrade BPS.
+* Go Daddy Managed WordPress Hosting:
+* If you have Go Daddy Managed WordPress Hosting see the BPS Whats New tab page within the BPS plugin.
+*  BugFixes/Code Corrections/Misc/CSS/Visual/Other:
+* Maintenance Mode countdown timer email website link correction for subdirectory websites.
+* Maintenance Mode CSS visual improvements/changes/corrections.
+* WordPress 4.0 RC1 final testing completed - no issues or problems.
+* Delete old BPS bulletproof-security_info transient content on upgrade.
+* Enjoy!
 
 = .50.6 =
 * New Option: Login Security & Monitoring Sort DB Rows:
@@ -534,6 +552,24 @@ Additional function checking code has been added in cases where the mysqli_get_c
 * Enjoy!
 
 == Upgrade Notice ==
+
+= .50.8 =
+* Network/Multisite BPS plugin Network Activation correction:
+* Conditional wrap added for blog_id 1
+
+= .50.7 =
+* htaccess Core Security Modes AutoMagic Buttons:
+* BPS automatically detects your site type and displays the correct AutoMagic buttons for your site type. Other site type AutoMagic buttons are no longer displayed on the Security Modes page. 
+* Network/Multisite One Time Code Correction:
+* If you have a Network/Multisite website/installation of WordPress you will see a one time htaccess code correction Notice message displayed to you with steps to perform the one time code correction when you upgrade BPS.
+* Go Daddy Managed WordPress Hosting:
+* If you have Go Daddy Managed WordPress Hosting see the BPS Whats New tab page within the BPS plugin.
+*  BugFixes/Code Corrections/Misc/CSS/Visual/Other:
+* Maintenance Mode countdown timer email website link correction for subdirectory websites.
+* Maintenance Mode CSS visual improvements/changes/corrections.
+* WordPress 4.0 RC1 final testing completed - no issues or problems.
+* Delete old BPS bulletproof-security_info transient content on upgrade.
+* Enjoy!
 
 = .50.6 =
 * New Option: Login Security & Monitoring Sort DB Rows:

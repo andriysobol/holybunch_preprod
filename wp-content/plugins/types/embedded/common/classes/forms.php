@@ -2,7 +2,7 @@
 /**
  * Returns HTML formatted output for elements and handles form submission.
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6/embedded/common/classes/forms.php $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/trunk/embedded/common/classes/forms.php $
  * $LastChangedDate: 2014-05-29 08:44:10 +0000 (Thu, 29 May 2014) $
  * $LastChangedRevision: 922956 $
  * $LastChangedBy: iworks $

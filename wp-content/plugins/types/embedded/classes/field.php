@@ -2,9 +2,9 @@
 /*
  * Field class.
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6/embedded/classes/field.php $
- * $LastChangedDate: 2014-08-22 01:02:43 +0000 (Fri, 22 Aug 2014) $
- * $LastChangedRevision: 970205 $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/trunk/embedded/classes/field.php $
+ * $LastChangedDate: 2014-08-27 08:49:51 +0000 (Wed, 27 Aug 2014) $
+ * $LastChangedRevision: 973824 $
  * $LastChangedBy: brucepearson $
  *
  */
@@ -716,11 +716,11 @@ class WPCF_Field
         if ( isset( $params['raw'] ) && $params['raw'] == 'true' ) {
             return $html;
         } else {
-            $html = esc_attr( $html );
+            $html = htmlspecialchars( $html );
         }
         // Process shortcodes too
 //        $shortcode = do_shortcode( $html );
-        $html = do_shortcode( htmlspecialchars_decode( $html ) );
+        $html = do_shortcode( htmlspecialchars_decode( stripslashes( $html ) ) );
 
         return $html;
     }

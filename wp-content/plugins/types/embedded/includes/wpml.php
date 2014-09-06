@@ -8,9 +8,9 @@
  * Values:
  * 0 nothing (ignore), 1 copy, 2 translate
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6/embedded/includes/wpml.php $
- * $LastChangedDate: 2014-08-22 01:02:43 +0000 (Fri, 22 Aug 2014) $
- * $LastChangedRevision: 970205 $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/trunk/embedded/includes/wpml.php $
+ * $LastChangedDate: 2014-08-27 08:49:51 +0000 (Wed, 27 Aug 2014) $
+ * $LastChangedRevision: 973824 $
  * $LastChangedBy: brucepearson $
  *
  */
@@ -160,7 +160,7 @@ function wpcf_translate( $name, $string, $context = 'plugin Types' ) {
     if ( !function_exists( 'icl_t' ) || !is_string($string) || empty($string) ) {
         return $string;
     }
-    return icl_t( $context, $name, esc_attr( $string ) );
+    return icl_t( $context, $name, stripslashes( $string ) );
 }
 
 /**

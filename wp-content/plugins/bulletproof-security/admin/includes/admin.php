@@ -105,6 +105,7 @@ $DBBtable_name = $wpdb->prefix . "bpspro_db_backup";
 	register_setting('bulletproof_security_options_DBB_log', 'bulletproof_security_options_DBB_log', 'bulletproof_security_options_validate_DBB_log');
 	register_setting('bulletproof_security_options_autolock', 'bulletproof_security_options_autolock', 'bulletproof_security_options_validate_autolock');
 	register_setting('bulletproof_security_options_customcode', 'bulletproof_security_options_customcode', 'bulletproof_security_options_validate_customcode');
+	register_setting('bulletproof_security_options_net_correction', 'bulletproof_security_options_net_correction', 'bulletproof_security_options_validate_net_correction');
 	register_setting('bulletproof_security_options_customcode_WPA', 'bulletproof_security_options_customcode_WPA', 'bulletproof_security_options_validate_customcode_WPA');
 	register_setting('bulletproof_security_options_login_security', 'bulletproof_security_options_login_security', 'bulletproof_security_options_validate_login_security');
 	register_setting('bulletproof_security_options_htaccess_res', 'bulletproof_security_options_htaccess_res', 'bulletproof_security_options_validate_htaccess_res');
@@ -202,7 +203,12 @@ global $blog_id;
 
 	add_menu_page(__('BulletProof Security Settings', 'bulletproof-security'), __('BPS Security', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/login/login.php', '', plugins_url('bulletproof-security/admin/images/bps-icon-small.png'));
 	add_submenu_page('bulletproof-security/admin/login/login.php', __('Login Security', 'bulletproof-security'), __('Login Security', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/login/login.php' );
+	
+	// hiding MMode menu in BPS .50.7 for subdomain subsites - currently subsite MMode is not working - pending code correction in .50.8
+	if ( ! is_subdomain_install() ) {
 	add_submenu_page('bulletproof-security/admin/login/login.php', __('Maintenance Mode', 'bulletproof-security'), __('Maintenance Mode', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/maintenance/maintenance.php' );
+	}
+	
 	add_submenu_page('bulletproof-security/admin/login/login.php', __('System Info', 'bulletproof-security'), __('System Info', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/system-info/system-info.php' );
 	add_submenu_page('bulletproof-security/admin/login/login.php', __('UI Theme Skin', 'bulletproof-security'), __('UI Theme Skin', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/theme-skin/theme-skin.php' );
 	
@@ -590,17 +596,17 @@ function bulletproof_security_deactivation() {
 }
 
 // Partial Uninstall - BPS later version will have the option of complete removal in addition to a BPS Pro upgrade uninstall
-// Currently options and files are not deleted on uninstall as a courtesy to BPS Pro customers
+// Currently all options and files are not deleted on uninstall as a courtesy to BPS Pro customers
 function bulletproof_security_uninstall() {
 	require_once( ABSPATH . 'wp-admin/includes/plugin.php');
-	$options = get_option('bulletproof_security_options');
-	delete_option('bulletproof_security_options');
+	delete_option( 'bulletproof_security_options' );
+	delete_transient( 'bulletproof-security_info' );
 }
 
 /* 
 // This uninstall function will completely remove BPS files, DB Options & Tables
 // IMPORTANT: either do not delete db backup options or add the Pro Setup Wizard function to get the existing DB backups folder name
-function bulletproof_security_uninstall() {
+function bulletproof_security_complete_uninstall() {
 global $wpdb, $current_user;
 require_once( ABSPATH . 'wp-admin/includes/plugin.php');
 
@@ -612,7 +618,7 @@ $RootHtaccess = ABSPATH . '.htaccess';
 $RootHtaccessBackup = WP_CONTENT_DIR . '/bps-backup/master-backups/root.htaccess';
 $wpadminHtaccess = ABSPATH . 'wp-admin/.htaccess';
 $wpadminHtaccessBackup = WP_CONTENT_DIR . '/bps-backup/master-backups/wpadmin.htaccess';
-$options = get_option('bulletproof_security_options');
+//$options = get_option('bulletproof_security_options');
 
 	if ( file_exists($RootHtaccess) ) {
 		copy($RootHtaccess, $RootHtaccessBackup);
@@ -621,6 +627,8 @@ $options = get_option('bulletproof_security_options');
 		copy($wpadminHtaccess, $wpadminHtaccessBackup);
 	}
 
+	delete_transient( 'bulletproof-security_info' );
+	
 	delete_option('bulletproof_security_options');
 	delete_option('bulletproof_security_options_customcode');
 	delete_option('bulletproof_security_options_customcode_WPA');
@@ -634,6 +642,7 @@ $options = get_option('bulletproof_security_options');
 	delete_option('bulletproof_security_options_db_backup');
 	delete_option('bulletproof_security_options_DBB_log');
 	delete_option('bulletproof_security_options_htaccess_res');
+	delete_option('bulletproof_security_options_net_correction');
 	// will be adding this new upgrade notice option later
 	// delete_option('bulletproof_security_options_upgrade_notice');	
 	$wpdb->query("DROP TABLE IF EXISTS $Stable_name");
@@ -811,6 +820,15 @@ function bulletproof_security_options_validate_htaccess_res($input) {
 	$options = get_option('bulletproof_security_options_htaccess_res');  
 	$options['bps_wpadmin_restriction'] = wp_filter_nohtml_kses($input['bps_wpadmin_restriction']);
 		
+	return $options;  
+}
+
+// Validate BPS options - Network/Multisite root .htaccess file code correction checks
+function bulletproof_security_options_validate_net_correction($input) {  
+	$options = get_option('bulletproof_security_options_net_correction');  
+	$options['bps_net_automagic'] = wp_filter_nohtml_kses($input['bps_net_automagic']);
+	$options['bps_net_activated'] = wp_filter_nohtml_kses($input['bps_net_activated']);		
+	
 	return $options;  
 }
 

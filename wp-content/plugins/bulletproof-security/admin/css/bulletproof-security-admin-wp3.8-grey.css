@@ -211,6 +211,7 @@ label[for=bps-CCode] {font-size:10px;}
 #bps-container #mmode-caution {font-size:.88em;font-weight:bold;margin:0px 0px 10px 0px;border:2px solid #000;width:400px;background-color:#ffffe0;padding:5px;}
 .mmode-tinymce {width:60%}
 label[for=mmode], label[for=mmode-email] {font-size:1em;}
+#mmode-accordian-inner {margin:15px 0px 0px 0px;}
 
 /** PHP ini pages **/
 #iniselector {float:left;margin:0px 0px 20px 0px;}

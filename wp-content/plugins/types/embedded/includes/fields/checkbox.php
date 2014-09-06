@@ -1,10 +1,10 @@
 <?php
 /**
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6/embedded/includes/fields/checkbox.php $
- * $LastChangedDate: 2014-05-29 08:44:10 +0000 (Thu, 29 May 2014) $
- * $LastChangedRevision: 922956 $
- * $LastChangedBy: iworks $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/trunk/embedded/includes/fields/checkbox.php $
+ * $LastChangedDate: 2014-08-28 13:23:24 +0000 (Thu, 28 Aug 2014) $
+ * $LastChangedRevision: 974679 $
+ * $LastChangedBy: brucepearson $
  *
  */
 
@@ -101,7 +101,7 @@ function wpcf_fields_checkbox_editor_submit( $data, $field, $context ) {
         $types_attr = 'usermeta';
     }
 
-    if ( $data['display'] == 'value' ) {
+    if ( isset($data['display']) && $data['display'] == 'value' ) {
 
         $checked_add = $add . ' state="checked"';
         $unchecked_add = $add . ' state="unchecked"';

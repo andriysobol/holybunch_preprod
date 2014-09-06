@@ -138,7 +138,15 @@ global $bps_maint_countdown_email, $bps_maint_email_to, $bps_maint_email_from, $
 	// -1 minute buffer so that email is not sent prematurely
 	if ( $bps_maint_countdown_email == '1' && time() >= $bps_maint_time - 60 ) { 
 	
-	$site_link = htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_QUOTES );
+	$uri = preg_replace( '/[^\/][a-zA-Z0-9-]+\/plugins\/bulletproof-security\/admin\/htaccess\/bps-maintenance\.php/', "", htmlspecialchars( $_SERVER['REQUEST_URI'], ENT_QUOTES ) );
+	
+	if ( isset( $_SERVER['SERVER_NAME'] ) ) {
+		$hostname = htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_QUOTES );
+	} else {
+		$hostname = htmlspecialchars( $_SERVER['HTTP_HOST'], ENT_QUOTES );
+	}
+	
+	$site_link = 'http://' . $hostname . $uri;
 
 	$headers = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";

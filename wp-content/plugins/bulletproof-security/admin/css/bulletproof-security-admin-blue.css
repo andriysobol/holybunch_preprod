@@ -187,6 +187,7 @@ pre {position:relative;z-index:50;background:#fff url(../images/pre_bg.png) top 
 /** Maintenance Mode **/
 #mmode-caution {font-weight:bold;margin:0px 0px 10px 0px;border:2px solid #000;width:400px;background-color:#ffffe0;padding:5px;}
 .mmode-tinymce {width:60%;}
+#mmode-accordian-inner {margin:5px -15px 0px -15px;}
 
 /** PHP ini pages **/
 #iniselector {float:left;margin:0px 0px 20px 0px;}

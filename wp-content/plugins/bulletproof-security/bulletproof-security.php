@@ -5,7 +5,7 @@ Plugin URI: http://forum.ait-pro.com/read-me-first/
 Text Domain: bulletproof-security
 Domain Path: /languages/
 Description: Website Security Protection: BulletProof Security protects your website against 100,000's of different hacking attempts/attacks. Built-in .htaccess file Editor. Security Logging/HTTP Error Logging. Login Security/Login Monitoring: Log All Account Logins or Log Only Account Lockouts. DB Backup: Database Backup. Website FrontEnd/BackEnd Maintenance Mode. System Info: PHP, MySQL, OS, Server, Memory Usage, IP, SAPI, WP Filesystem API Method, DNS, Max Upload...
-Version: .50.6
+Version: .50.8
 Author: AITpro | Edward Alexander
 Author URI: http://forum.ait-pro.com/read-me-first/
 */
@@ -28,9 +28,9 @@ Author URI: http://forum.ait-pro.com/read-me-first/
 */
 
 // BPS variables
-define( 'BULLETPROOF_VERSION', '.50.6' );
-$bps_last_version = '.50.5';
-$bps_version = '.50.6';
+define( 'BULLETPROOF_VERSION', '.50.8' );
+$bps_last_version = '.50.7';
+$bps_version = '.50.8';
 $bps_readme_install_ver = '0';
 
 // Load BPS Global class - not doing anything with this Class in BPS Free
@@ -57,12 +57,12 @@ require_once( WP_PLUGIN_DIR . '/bulletproof-security/includes/db-security.php' )
 if ( is_admin() ) {
     require_once( WP_PLUGIN_DIR . '/bulletproof-security/admin/includes/admin.php' );
 	
-	$bps_complete_uninstallation = WP_PLUGIN_DIR . '/bulletproof-security/uninstall.php';
+	//$bps_complete_uninstallation = WP_PLUGIN_DIR . '/bulletproof-security/uninstall.php';
 	
 	register_activation_hook(__FILE__, 'bulletproof_security_install');
 	register_deactivation_hook(__FILE__, 'bulletproof_security_deactivation');
     register_uninstall_hook(__FILE__, 'bulletproof_security_uninstall');
-	register_uninstall_hook(__FILE__, 'bulletproof_security_complete_uninstall');
+	//register_uninstall_hook(__FILE__, 'bulletproof_security_complete_uninstall');
 	//register_uninstall_hook($bps_complete_uninstallation, $bps_uninstallation_callback);
 
 	add_action( 'admin_init', 'bulletproof_security_admin_init' );
