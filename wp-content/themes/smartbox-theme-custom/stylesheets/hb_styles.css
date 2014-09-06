@@ -221,7 +221,9 @@ blockquote p {
     }
     
     div.post-body .content-text p, 
-    div.post-body .content-text h2 {
+    div.post-body .content-text h2,
+    section.content-text-section div p,
+    section.content-text-section div h2 {
         padding-left: 5%;
     }
 }
