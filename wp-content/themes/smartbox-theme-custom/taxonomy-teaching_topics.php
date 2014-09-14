@@ -19,6 +19,6 @@ if ($term->slug == "god")
 oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug), $title);
 ?>
 <?php get_template_part('partials/hb_loop_all'); ?>
-<?php echo  do_shortcode( '[hb_contact_form title="Напишите нам"][/hb_contact_form]');?>
+<?php echo  do_shortcode( '[hb_contact_form title="Напишите нам" id="2199"][/hb_contact_form]');?>
 <?php get_footer();
 

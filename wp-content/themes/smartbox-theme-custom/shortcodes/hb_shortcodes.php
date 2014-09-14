@@ -663,17 +663,18 @@ add_shortcode('hb_recent_posts_new', 'hb_get_recent_posts_new');
 function hb_get_contact_form($atts,  $content = null) {
     // setup options
     extract(shortcode_atts(array(
-        'title' => 'Напишите нам'), $atts));
+        'title' => 'Contact us',
+		'id' => ''), $atts));
     if($content==null){
         $content="<p>Если Вы желаете общаться с нами, узнать больше о нашей вере или же у Вас есть вопросы о нашей церкви, пишите нам.</p>
 
 <p>Мы всегда рады общению с ищущими познать Правду на основании Писания.</p>";
     }
-    $output ='<div class="span5">';
+	$output ='<div class="span5">';
     $output.= '<div class="contact-details">' . do_shortcode( $content ) . '</div>';
     $output.='</div>'; 
     $output .='<div class="span7">';
-    $output .= do_shortcode( '[contact-form-7 id="2119" title="Будем рады вашим сообщениям"]' );
+    $output .= do_shortcode( '[contact-form-7 id="'.$id.'" title="ContactForm"]' );
     $output.='</div>';
           
     return oxy_shortcode_section($atts, $output);
