@@ -1,0 +1,265 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR (c) 2013 Oxygenna.com
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Smartbox Frontend Translation File 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-18 15:09+0300\n"
+"PO-Revision-Date: 2014-09-11 21:11+0100\n"
+"Last-Translator: Andriy Sobol <andriy.sobol@googlemail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+
+#: build/archive.php:15
+msgid "Day"
+msgstr ""
+
+#: build/archive.php:19
+msgid "Month"
+msgstr ""
+
+#: build/archive.php:23
+msgid "Year"
+msgstr ""
+
+#: build/archive.php:27
+msgid "Blog"
+msgstr ""
+
+#: build/author.php:22
+msgid "Author"
+msgstr ""
+
+#: build/comments.php:31
+msgid "&larr; Older"
+msgstr ""
+
+#: build/comments.php:32
+msgid "Newer &rarr;"
+msgstr ""
+
+#: build/comments.php:42
+msgid "Comments are closed."
+msgstr ""
+
+#: build/inc/core/theme.php:214
+msgid "Theme"
+msgstr ""
+
+#: build/inc/frontend.php:16
+msgid "Primary Navigation"
+msgstr ""
+
+#: build/inc/frontend.php:343
+msgid "Portfolio Thumbnail Size"
+msgstr ""
+
+#: build/inc/frontend.php:491
+msgid "Landscape 1"
+msgstr ""
+
+#: build/inc/frontend.php:497
+msgid "Landscape 2"
+msgstr ""
+
+#: build/inc/frontend.php:503
+msgid "Landscape 3"
+msgstr ""
+
+#: build/inc/frontend.php:509
+msgid "Landscape 4"
+msgstr ""
+
+#: build/inc/frontend.php:515
+msgid "Landscape 5"
+msgstr ""
+
+#: build/inc/frontend.php:673
+msgid "Pingback:"
+msgstr ""
+
+#: build/inc/frontend.php:673
+msgid "(Edit)"
+msgstr ""
+
+#: build/inc/frontend.php:693
+msgid "Reply"
+msgstr ""
+
+#: build/inc/frontend.php:739
+msgid "your name"
+msgstr ""
+
+#: build/inc/frontend.php:740
+msgid "your email address"
+msgstr ""
+
+#: build/inc/frontend.php:744
+#, php-format
+msgid "Required fields are marked %s"
+msgstr ""
+
+#: build/inc/frontend.php:747
+msgid "add your comment here"
+msgstr "Добавь здесь свой комментарий"
+
+#: build/inc/frontend.php:748
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: build/inc/frontend.php:749
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+"Вы вошли как <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Выйти?</a>"
+
+#: build/inc/frontend.php:755
+msgid "Add your comment"
+msgstr "Добавь свой комментарий"
+
+#: build/inc/frontend.php:756
+msgid "Leave a Reply"
+msgstr ""
+
+#: build/inc/frontend.php:757
+msgid "Cancel reply"
+msgstr ""
+
+#: build/inc/frontend.php:758
+msgid "Add comment"
+msgstr "Добавить комментарий"
+
+#: build/inc/frontend.php:835
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: build/inc/frontend.php:836
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: build/inc/frontend.php:891
+msgid "search"
+msgstr ""
+
+#: build/inc/frontend.php:1021
+msgid "Next page"
+msgstr ""
+
+#: build/inc/frontend.php:1022
+msgid "Previous page"
+msgstr ""
+
+#: build/inc/frontend.php:1106
+msgid "Related Posts"
+msgstr ""
+
+#: build/inc/frontend.php:1156
+msgid "About "
+msgstr ""
+
+#: build/inc/options/shortcodes/shortcodes.php:397
+msgid "all"
+msgstr ""
+
+#: build/inc/options/widgets/default_overrides.php:22
+msgid "Recent Posts"
+msgstr ""
+
+#: build/inc/options/widgets/default_overrides.php:88
+msgid "Archives"
+msgstr "Архив"
+
+#: build/inc/options/widgets/default_overrides.php:96
+msgid "Select Month"
+msgstr ""
+
+#: build/inc/options/widgets/default_overrides.php:117
+msgid "Categories"
+msgstr ""
+
+#: build/inc/options/widgets/default_overrides.php:129
+msgid "Select Category"
+msgstr ""
+
+#: build/inc/options/widgets/smartbox_twitter.php:25
+msgid "Display an official Twitter Embedded Timeline widget."
+msgstr ""
+
+#: build/inc/options/widgets/smartbox_twitter.php:188
+msgid "Link Color (hex):"
+msgstr ""
+
+#: build/inc/options/widgets/smartbox_twitter.php:193
+msgid "Border Color (hex):"
+msgstr ""
+
+#: build/inc/options/widgets/smartbox_twitter.php:198
+msgid "Timeline Theme:"
+msgstr ""
+
+#: build/partials/content-404.php:26
+msgid "Go Back Home"
+msgstr ""
+
+#: build/partials/content-gallery.php:24 build/partials/content-video.php:24
+#: build/partials/content.php:22
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: build/partials/loop.php:33 build/search.php:32
+msgid "Nothing Found"
+msgstr ""
+
+#: build/partials/post-extras.php:31
+msgid "No comments"
+msgstr "Нет комментариев"
+
+#: build/partials/post-extras.php:31
+msgid "1 comment"
+msgstr "1 комментарий"
+
+#: build/partials/post-extras.php:31
+msgid "% comments"
+msgstr "% комментарий"
+
+#: build/partials/post-extras.php:31
+msgid "No Comments"
+msgstr "Нет комментариев"
+
+#: build/partials/post-extras.php:31
+msgid "1 Comment"
+msgstr "1 комментарий"
+
+#: build/partials/post-extras.php:31
+msgid "% Comments"
+msgstr "% комментарий"
+
+#: build/search.php:15
+msgid "Search"
+msgstr ""
+
+#: build/search.php:36
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: build/tag.php:15
+msgid "Tag"
+msgstr ""
+
+#: build/tag.php:15
+msgid "Read more"
+msgstr "Читать далее"

@@ -10,10 +10,10 @@
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
  * @version 1.4
  */
-
 get_header();
+oxy_page_header();
+$allow_comments = oxy_get_option( 'site_comments' );
 ?>
-<?php oxy_create_hero_section( null, null ); ?>
 <section class="section section-padded">
     <div class="container-fluid">
         <div class="row-fluid">

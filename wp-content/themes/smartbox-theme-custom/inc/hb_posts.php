@@ -52,6 +52,18 @@ $labels = array(
     'menu_name'          => __('Video',  THEME_ADMIN_TD)
 );
 
+$capabilities = array(
+    'publish_posts' => 'publish_video',
+    'edit_posts' => 'edit_video',
+    'edit_others_posts' => 'edit_others_video',
+    'delete_posts' => 'delete_video',
+    'delete_others_posts' => 'delete_others_video',
+    'read_private_posts' => 'read_private_video',
+    'edit_post' => 'edit_video',
+    'delete_post' => 'delete_video',
+    'read_post' => 'read_video'
+);
+
 $args = array(  
     'labels'             => $labels,
     'public'             => true,
@@ -60,14 +72,33 @@ $args = array(
     'show_in_menu'       => true,
     'query_var'          => true,
     'capability_type'    => 'post',
+    'capabilities'       => $capabilities,
+    'rewrite'            => true,
     'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => null,
     'menu_icon'          => ADMIN_ASSETS_URI . 'images/staff.png',
     'supports'           => array( 'title', 'editor', 'thumbnail', 'post-formats' )
 );
+
 register_post_type('oxy_video', $args);
 
+add_role(
+    'video_author',
+    'Video author',
+    array(
+        'publish_video' => true,
+        'edit_video' => true,
+        'edit_others_video' => true,
+        'delete_video' => true,
+        'delete_others_video' => true,
+        'read_private_video' => true,
+        'edit_video' => true,
+        'delete_video' => true,
+        'read_video' => true,
+        // more standard capabilities here
+    )
+);
 
 /* --------------------- audio ------------------------*/
 $labels = array(

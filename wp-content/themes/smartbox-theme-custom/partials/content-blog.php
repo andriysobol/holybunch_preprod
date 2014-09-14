@@ -47,8 +47,6 @@
                 $link = get_permalink();
                 $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>'; 
                 echo $content;?>
-            <?php get_template_part( 'partials/social-links', null ); ?>
-            <?php oxy_wp_link_pages(array('before' => '<div class="pagination pagination-centered">', 'after' => '</div>')); ?>
         </div>
     </div>
 </article>

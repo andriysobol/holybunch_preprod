@@ -1676,6 +1676,10 @@ msgstr "Вставить тег &laquo;Далее&raquo;"
 msgid "Read more..."
 msgstr "Тег &laquo;Далее&raquo;"
 
+#: wp-includes/class-wp-editor.php:945
+msgid "Read more"
+msgstr "Читать далее"
+
 #: wp-includes/class-wp-editor.php:948
 msgid "Distraction Free Writing"
 msgstr "Полноэкранный режим"

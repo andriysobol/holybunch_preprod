@@ -1,1 +1,1 @@
-return array('localhost/holybunch_prep' => 'm1');
+return array('localhost/holybunch_prep/test' => 'm14', 'localhost/holybunch_prep' => 'm1');

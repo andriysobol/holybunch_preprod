@@ -37,16 +37,6 @@ $allow_comments = oxy_get_option( 'site_comments' );
 
                 <?php get_template_part( 'partials/content', get_post_format() ); ?>
 
-                <?php if( oxy_get_option('author_bio') == 'on') oxy_author_bio( get_the_author_meta('ID') ); ?>
-                <?php if( oxy_get_option('related_posts') == 'on') oxy_related_posts( get_the_ID() ); ?>
-
-                <nav id="nav-below" class="post-navigation">
-                    <ul class="pager">
-                        <li class="previous"><?php previous_post_link( '%link', '<i class="icon-angle-left"></i>' . ' %title' ); ?></li>
-                        <li class="next"><?php next_post_link( '%link', '%title ' . '<i class="icon-angle-right"></i>' ); ?></li>
-                    </ul>
-                </nav><!-- nav-below -->
-
                 <?php if( $allow_comments == 'posts' || $allow_comments == 'all' ) comments_template( '', true ); ?>
 
                 <?php endwhile; ?>
