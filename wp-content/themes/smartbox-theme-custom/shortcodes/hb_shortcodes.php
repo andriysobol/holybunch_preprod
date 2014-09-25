@@ -711,3 +711,44 @@ function hb_get_shortcode_blockquote( $atts, $content ) {
     }
 }
 add_shortcode( 'blockquote', 'hb_get_shortcode_blockquote' );
+
+function hb_get_recent_blog_posts($atts) {
+extract(shortcode_atts(array(
+        'title' => '',
+        'style' => '',
+        'src_url' => ''
+                    ), $atts));
+ $output = '';
+ query_posts('showposts=2');
+    if (have_posts()){
+        $output .='<ul class="unstyled row-fluid">';
+			while (have_posts()) {the_post();
+				$author_avatar = get_avatar(get_the_author_meta('ID'), 300 );
+				$author  = get_the_author();
+				$date = get_the_time(get_option("date_format"));
+				if ('link' == get_post_format()) {
+                    $post_link = oxy_get_external_link();
+                } else {
+                    $post_link = get_permalink();
+                }
+			
+				$more_text=  get_more_text($post->post_type);
+				$output .= '<li class="span6">';
+				$output .= '<div class="row-fluid"><div class="span4">';
+				$output .='<div class="round-box box-small box-colored"><a href="' . $post_link . '" class="box-inner">';
+				$output .= '<img class="img-circle" src="' . $author_avatar . '"><h5 class="text-center">'.$author.'</h5>';
+				$output .= '<h5 class="text-center light">'.$date.'</h5></div></div>';
+				$output .= '<div class="span8">';
+				$output .= '<h3><a href="' . $post_link . '"> '. get_the_title() . '</a></h3>';
+			 
+				$content =  oxy_limit_excerpt(get_the_excerpt(), 100) ;
+				$content .= '<a href="' . $post_link . '" class="more-link">' . $more_text . '</a>';
+             
+				$output.='<p>' . apply_filters('the_content', $content) . '</p></div></li>';
+			}
+    	}
+	$output .= '</ul>';
+              
+    return oxy_shortcode_section($atts, $output);
+}	
+add_shortcode('hb_blog_posts', 'hb_get_recent_blog_posts');
