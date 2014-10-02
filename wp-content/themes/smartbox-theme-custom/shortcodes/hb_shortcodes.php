@@ -718,17 +718,25 @@ extract(shortcode_atts(array(
         'style' => '',
         'src_url' => ''
                     ), $atts));
+
+ $args = array(
+        'showposts' => 2, // Number of related posts that will be shown.  
+        'orderby' => 'date',
+    );
  $output = '';
- query_posts('showposts=2');
-    if (have_posts()){
+    $my_query = new wp_query($args);
+    if ($my_query->have_posts()){
         $output .='<ul class="unstyled row-fluid">';
-			while (have_posts()) {the_post();
+			while ($my_query->have_posts()) {
+			 global $post;
+			$my_query->the_post();
+			setup_postdata($post);
 				$author_avatar = get_avatar(get_the_author_meta('ID'), 300 );
 				$author  = get_the_author();
 				$date = get_the_time(get_option("date_format"));
 				if ('link' == get_post_format()) {
-                    $post_link = oxy_get_external_link();
-                } else {
+                   $post_link = oxy_get_external_link();
+               } else {
                     $post_link = get_permalink();
                 }
 			
@@ -741,7 +749,7 @@ extract(shortcode_atts(array(
 				$output .= '<div class="span9">';
 				$output .= '<h3><a href="' . $post_link . '"> '. get_the_title() . '</a></h3>';
 			 
-				$content =  oxy_limit_excerpt(get_the_content(), 60) ;
+				$content = oxy_limit_excerpt(get_the_content(), 60)  ;
 				$content .= '<a href="' . $post_link . '" class="more-link">' . $more_text . '</a>';
              
 				$output.='<p>' . apply_filters('the_content', $content) . '</p></div></li>';
