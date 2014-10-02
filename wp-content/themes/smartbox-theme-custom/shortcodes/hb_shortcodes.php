@@ -734,14 +734,14 @@ extract(shortcode_atts(array(
 			
 				$more_text=  get_more_text($post->post_type);
 				$output .= '<li class="span6">';
-				$output .= '<div class="row-fluid"><div class="span4">';
-				$output .='<div class="round-box box-small box-colored"><a href="' . $post_link . '" class="box-inner">';
-				$output .= '<img class="img-circle" src="' . $author_avatar . '"><h5 class="text-center">'.$author.'</h5>';
-				$output .= '<h5 class="text-center light">'.$date.'</h5></div></div>';
-				$output .= '<div class="span8">';
+				$output .= '<div class="row-fluid"><div class="span3">';
+				$output .='<div class="round-box box-small"><a href="' . $post_link . '" class="box-inner">';
+				$output .= $author_avatar. '</a></div><h5 class="text-center">'.$author.'</h5>';
+				$output .= '<h5 class="text-center light">'.$date.'</h5></div>';
+				$output .= '<div class="span9">';
 				$output .= '<h3><a href="' . $post_link . '"> '. get_the_title() . '</a></h3>';
 			 
-				$content =  oxy_limit_excerpt(get_the_excerpt(), 100) ;
+				$content =  oxy_limit_excerpt(get_the_content(), 60) ;
 				$content .= '<a href="' . $post_link . '" class="more-link">' . $more_text . '</a>';
              
 				$output.='<p>' . apply_filters('the_content', $content) . '</p></div></li>';
