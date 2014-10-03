@@ -3,8 +3,8 @@
  * Types fields specific
  *
  * $HeadURL: http://plugins.svn.wordpress.org/types/trunk/embedded/common/toolset-forms/classes/class.types.php $
- * $LastChangedDate: 2014-08-22 01:02:43 +0000 (Fri, 22 Aug 2014) $
- * $LastChangedRevision: 970205 $
+ * $LastChangedDate: 2014-09-18 09:37:16 +0000 (Thu, 18 Sep 2014) $
+ * $LastChangedRevision: 992466 $
  * $LastChangedBy: brucepearson $
  *
  */
@@ -194,7 +194,7 @@ class WPToolset_Types
                     $validation[$rule] = array(
                         'args' => isset( $settings['args'] ) ? array_unshift( $value,
                                         $settings['args'] ) : array($value, true),
-                        'message' => self::translate('field ' . $id . ' validation message ' . $rule, $settings['message'])
+                        'message' => self::translate('field ' . $id . ' validation message ' . $rule, stripslashes( $settings['message']))
                     );
                 }
             }

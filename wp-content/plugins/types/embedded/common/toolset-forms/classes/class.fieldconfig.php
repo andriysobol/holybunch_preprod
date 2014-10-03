@@ -2,8 +2,8 @@
 /**
  *
  * $HeadURL: http://plugins.svn.wordpress.org/types/trunk/embedded/common/toolset-forms/classes/class.fieldconfig.php $
- * $LastChangedDate: 2014-08-27 08:49:51 +0000 (Wed, 27 Aug 2014) $
- * $LastChangedRevision: 973824 $
+ * $LastChangedDate: 2014-09-18 09:37:16 +0000 (Thu, 18 Sep 2014) $
+ * $LastChangedRevision: 992466 $
  * $LastChangedBy: brucepearson $
  *
  */
@@ -68,11 +68,21 @@ if (!class_exists("FieldConfig")) {
                         $this->default_value = $field_arr['attr']['default'][0];
                     }
                     break;
-
+                    
                 case 'select':
-                    $this->default_value = isset( $field_arr['attr']['actual_value'][0] )? $field_arr['attr']['actual_value'][0] : null;
-                    break;
-
+                    if (isset($field_arr['attr']['multiple'])) {
+                        //Multiselect
+                        if (isset($field_arr['value']))
+                        foreach ($field_arr['value'] as $value) {
+                            if (isset($value[0])) {
+                                $this->default_value = $value;
+                                break;
+                            }
+                        }                        
+                    } else
+                        $this->default_value = isset( $field_arr['attr']['actual_value'][0] )? $field_arr['attr']['actual_value'][0] : null;                    
+                    break;                    
+                
                 case 'radios':
                     $this->default_value = $field_arr['attr']['default'];
                     break;

@@ -28,8 +28,8 @@
  * @author srdjan <srdjan@enlimbo.net>
  *
  * $HeadURL: http://plugins.svn.wordpress.org/types/trunk/embedded/common/toolset-forms/classes/class.eforms.php $
- * $LastChangedDate: 2014-08-22 01:02:43 +0000 (Fri, 22 Aug 2014) $
- * $LastChangedRevision: 970205 $
+ * $LastChangedDate: 2014-09-18 09:37:16 +0000 (Thu, 18 Sep 2014) $
+ * $LastChangedRevision: 992466 $
  * $LastChangedBy: brucepearson $
  *
  */
@@ -393,14 +393,14 @@ class Enlimbo_Forms
                     // Asterisk
                     $element['#title'] .= '&#42;';
                 }
-                $element['#attributes']['data-wpt-validate'] = esc_js( self::json_encode( apply_filters( 'wptoolset_forms_field_js_validation_data_' . $this->_id,
+                $element['#attributes']['data-wpt-validate'] = esc_html( self::json_encode( apply_filters( 'wptoolset_forms_field_js_validation_data_' . $this->_id,
                                         $element['#validate'] ) ) );
 				$element['#attributes']['data-wpt-field-title'] = esc_js( $custom_field_title );
             }
             if ( $element['#type'] == 'radios' && !empty( $element['#options'] ) ) {
                 foreach ( $element['#options'] as &$option ) {
                     if ( !empty( $option['#validate'] ) ) {
-                        $option['#attributes']['data-wpt-validate'] = esc_js( self::json_encode( apply_filters( 'wptoolset_forms_field_js_validation_data_' . $this->_id,
+                        $option['#attributes']['data-wpt-validate'] = esc_html( self::json_encode( apply_filters( 'wptoolset_forms_field_js_validation_data_' . $this->_id,
                                                 $option['#validate'] ) ) );
 						$option['#attributes']['data-wpt-field-title'] = esc_js( $custom_field_title );
                     }

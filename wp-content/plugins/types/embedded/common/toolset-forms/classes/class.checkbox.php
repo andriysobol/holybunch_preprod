@@ -2,8 +2,8 @@
 /**
  *
  * $HeadURL: http://plugins.svn.wordpress.org/types/trunk/embedded/common/toolset-forms/classes/class.checkbox.php $
- * $LastChangedDate: 2014-08-22 01:02:43 +0000 (Fri, 22 Aug 2014) $
- * $LastChangedRevision: 970205 $
+ * $LastChangedDate: 2014-09-18 09:37:16 +0000 (Thu, 18 Sep 2014) $
+ * $LastChangedRevision: 992466 $
  * $LastChangedBy: brucepearson $
  *
  */
@@ -52,6 +52,7 @@ class WPToolset_Field_Checkbox extends FieldFactory
             '#value' => $value,
             '#default_value' => array_key_exists( 'default_value', $data )? $data['default_value']:null,
             '#name' => $this->getName(),
+            '#description' => $this->getDescription(),
             '#title' => $this->getTitle(),
             '#validate' => $this->getValidationData(),
             '#after' => '<input type="hidden" name="_wptoolset_checkbox[' . $this->getId() . ']" value="1" />',

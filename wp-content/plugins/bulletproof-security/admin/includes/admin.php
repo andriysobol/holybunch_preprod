@@ -143,24 +143,52 @@ $DBBtable_name = $wpdb->prefix . "bpspro_db_backup";
 	}
 
 	// Create BPS Backup Folder structure - suppressing errors on activation - errors displayed in HUD
-	if( !is_dir (WP_CONTENT_DIR . '/bps-backup')) {
-		@mkdir (WP_CONTENT_DIR . '/bps-backup/master-backups', 0755, true);
-		@chmod (WP_CONTENT_DIR . '/bps-backup/', 0755);
-		@chmod (WP_CONTENT_DIR . '/bps-backup/master-backups/', 0755);
+	if( !is_dir( WP_CONTENT_DIR . '/bps-backup' ) ) {
+		@mkdir( WP_CONTENT_DIR . '/bps-backup/master-backups', 0755, true );
+		@chmod( WP_CONTENT_DIR . '/bps-backup/', 0755 );
+		@chmod( WP_CONTENT_DIR . '/bps-backup/master-backups/', 0755 );
 	}
 	
-	// Create the BPS Backup folder Deny all .htaccess file - recursive will protect all /bps-backup subfolders
+	// Create Deny all .htaccess files - /bps-backup htaccess file is recursive and will protect all subfolders
 	$bps_denyall_htaccess = WP_PLUGIN_DIR . '/bulletproof-security/admin/htaccess/deny-all.htaccess';
+	$bps_denyall_htaccess_renamed = WP_PLUGIN_DIR . '/bulletproof-security/admin/htaccess/.htaccess';
+	$security_log_denyall_htaccess = WP_PLUGIN_DIR . '/bulletproof-security/admin/security-log/.htaccess';
+	$system_info_denyall_htaccess = WP_PLUGIN_DIR . '/bulletproof-security/admin/system-info/.htaccess';
+	$login_denyall_htaccess = WP_PLUGIN_DIR . '/bulletproof-security/admin/login/.htaccess';
+	$MMode_denyall_htaccess = WP_PLUGIN_DIR . '/bulletproof-security/admin/maintenance/.htaccess';
+	$DBB_denyall_htaccess = WP_PLUGIN_DIR . '/bulletproof-security/admin/db-backup-security/.htaccess';
+	$core_denyall_htaccess = WP_PLUGIN_DIR . '/bulletproof-security/admin/core/.htaccess';	
 	$bps_ARHtaccess = WP_CONTENT_DIR . '/bps-backup/.htaccess';
 	
 	if ( !file_exists($bps_ARHtaccess) ) {
 		@copy($bps_denyall_htaccess, $bps_ARHtaccess);
 	}
+	if ( !file_exists($bps_denyall_htaccess_renamed) ) {
+		@copy($bps_denyall_htaccess, $bps_denyall_htaccess_renamed);	
+	}
+	if ( !file_exists($security_log_denyall_htaccess) ) {
+		@copy($bps_denyall_htaccess, $security_log_denyall_htaccess);	
+	}
+	if ( !file_exists($system_info_denyall_htaccess) ) {
+		@copy($bps_denyall_htaccess, $system_info_denyall_htaccess);
+	}
+	if ( !file_exists($login_denyall_htaccess) ) {
+		@copy($bps_denyall_htaccess, $login_denyall_htaccess);
+	}
+	if ( !file_exists($MMode_denyall_htaccess) ) {
+		@copy($bps_denyall_htaccess, $MMode_denyall_htaccess);			
+	}
+	if ( !file_exists($DBB_denyall_htaccess) ) {
+		@copy($bps_denyall_htaccess, $DBB_denyall_htaccess);
+	}
+	if ( !file_exists($core_denyall_htaccess) ) {
+		@copy($bps_denyall_htaccess, $core_denyall_htaccess);
+	}
 
 	// Create logs folder
-	if( !is_dir (WP_CONTENT_DIR . '/bps-backup/logs')) {
-		@mkdir (WP_CONTENT_DIR . '/bps-backup/logs', 0755, true);
-		@chmod (WP_CONTENT_DIR . '/bps-backup/logs/', 0755);
+	if( !is_dir( WP_CONTENT_DIR . '/bps-backup/logs' ) ) {
+		@mkdir( WP_CONTENT_DIR . '/bps-backup/logs', 0755, true );
+		@chmod( WP_CONTENT_DIR . '/bps-backup/logs/', 0755 );
 	}
 
 	// Create backups folder with randomly generated folder name & save the backups folder name to the DB
@@ -170,7 +198,7 @@ $DBBtable_name = $wpdb->prefix . "bpspro_db_backup";
 	$bpsProLog = WP_PLUGIN_DIR . '/bulletproof-security/admin/htaccess/http_error_log.txt';
 	$bpsProLogARQ = WP_CONTENT_DIR . '/bps-backup/logs/http_error_log.txt';
 	
-	if (!file_exists($bpsProLogARQ)) {
+	if ( !file_exists($bpsProLogARQ) ) {
 		@copy($bpsProLog, $bpsProLogARQ);
 	}	
 
@@ -183,7 +211,7 @@ $DBBtable_name = $wpdb->prefix . "bpspro_db_backup";
 	}
 
 	// Load scripts and styles only on BPS specified pages
-	add_action('load-bulletproof-security/admin/options.php', 'bulletproof_security_load_settings_page');
+	add_action('load-bulletproof-security/admin/core/options.php', 'bulletproof_security_load_settings_page');
 	add_action('load-bulletproof-security/admin/login/login.php', 'bulletproof_security_load_settings_page_login');
 	add_action('load-bulletproof-security/admin/security-log/security-log.php', 'bulletproof_security_load_settings_page_security_log');
 	add_action('load-bulletproof-security/admin/system-info/system-info.php', 'bulletproof_security_load_settings_page_system_info');
@@ -214,14 +242,14 @@ global $blog_id;
 	
 	} else {
 
-	add_menu_page(__('BulletProof Security ~ htaccess Core', 'bulletproof-security'), __('BPS Security', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/options.php', '', plugins_url('bulletproof-security/admin/images/bps-icon-small.png'));
-	add_submenu_page('bulletproof-security/admin/options.php', __('BulletProof Security ~ htaccess Core', 'bulletproof-security'), __('htaccess Core', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/options.php' );
-	add_submenu_page('bulletproof-security/admin/options.php', __('Login Security ', 'bulletproof-security'), __('Login Security', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/login/login.php' );
-	add_submenu_page('bulletproof-security/admin/options.php', __('DB Backup & Security', 'bulletproof-security'), __('DB Backup', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/db-backup-security/db-backup-security.php' );
-	add_submenu_page('bulletproof-security/admin/options.php', __('Security Log', 'bulletproof-security'), __('Security Log', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/security-log/security-log.php' );
-	add_submenu_page('bulletproof-security/admin/options.php', __('Maintenance Mode', 'bulletproof-security'), __('Maintenance Mode', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/maintenance/maintenance.php' );
-	add_submenu_page('bulletproof-security/admin/options.php', __('System Info', 'bulletproof-security'), __('System Info', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/system-info/system-info.php' );
-	add_submenu_page('bulletproof-security/admin/options.php', __('UI Theme Skin', 'bulletproof-security'), __('UI Theme Skin', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/theme-skin/theme-skin.php' );
+	add_menu_page(__('BulletProof Security ~ htaccess Core', 'bulletproof-security'), __('BPS Security', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/core/options.php', '', plugins_url('bulletproof-security/admin/images/bps-icon-small.png'));
+	add_submenu_page('bulletproof-security/admin/core/options.php', __('BulletProof Security ~ htaccess Core', 'bulletproof-security'), __('htaccess Core', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/core/options.php' );
+	add_submenu_page('bulletproof-security/admin/core/options.php', __('Login Security ', 'bulletproof-security'), __('Login Security', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/login/login.php' );
+	add_submenu_page('bulletproof-security/admin/core/options.php', __('DB Backup & Security', 'bulletproof-security'), __('DB Backup', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/db-backup-security/db-backup-security.php' );
+	add_submenu_page('bulletproof-security/admin/core/options.php', __('Security Log', 'bulletproof-security'), __('Security Log', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/security-log/security-log.php' );
+	add_submenu_page('bulletproof-security/admin/core/options.php', __('Maintenance Mode', 'bulletproof-security'), __('Maintenance Mode', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/maintenance/maintenance.php' );
+	add_submenu_page('bulletproof-security/admin/core/options.php', __('System Info', 'bulletproof-security'), __('System Info', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/system-info/system-info.php' );
+	add_submenu_page('bulletproof-security/admin/core/options.php', __('UI Theme Skin', 'bulletproof-security'), __('UI Theme Skin', 'bulletproof-security'), 'manage_options', 'bulletproof-security/admin/theme-skin/theme-skin.php' );
 	}
 	}
 }
