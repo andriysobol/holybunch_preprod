@@ -1150,7 +1150,7 @@ function get_corresponding_terms($post) {
 }
 
     function get_more_text($post_type){
-        $more_text= __( 'Read more', THEME_FRONT_TD ); 
+        $more_text= __( '<Strong>Read</Strong> more', THEME_FRONT_TD ); 
         switch ($post_type) {
                 case 'oxy_video':
                    $more_text = '<Strong>Перейти</Strong> к видео';
