@@ -40,7 +40,11 @@ $author_id = get_the_author_meta('ID');
                 endif;
                 global $more;    // Declare global $more (before the loop).
                 $more = 0;
-                echo oxy_limit_excerpt($post->post_content, "100");
+                $content= oxy_limit_excerpt($post->post_content, "60") ;
+                $more_text=  get_more_text($post->post_type);
+                $link = get_permalink();
+                $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>'; 
+                echo $content;
             ?>
         </div>
         <div class="post-arrow"></div>

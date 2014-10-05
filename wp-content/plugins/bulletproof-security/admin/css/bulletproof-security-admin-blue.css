@@ -13,22 +13,7 @@ li#toplevel_page_bulletproof-security-admin-options .wp-menu-image, li#toplevel_
 #bps-container .bps-pro-tools {font-family:"Courier New", Courier, monospace; font-size:1em;height:250px;width:700px;overflow:auto;}
 
 /* Login Security */
-label[for=LSLog1] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:28px;float:left;}
-label[for=LSLog2] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:.25em;float:left;}
-label[for=LSLog3] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:20px;float:left;}
-label[for=LSLog4] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:11px;float:left;}
-label[for=LSLog5] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:.25em;float:left;}
-label[for=LSLog6] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:5px;float:left;}
-label[for=LSLog7] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:6px;float:left;}
-label[for=LSLog8] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:3px;float:left;}
-label[for=LSLog8b] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:19px;float:left;}
 #LoginSecurityCheckall {max-height:600px;width:100%;overflow:auto;margin:0px 0px 20px 0px;}
-
-/* JTC Anti-Spam */
-label[for=LSLog9] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:.25em;float:left;}
-label[for=LSLog10] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:16px;float:left;}
-label[for=LSLog11] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:5px;float:left;}
-label[for=LSLog12] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:12px;float:left;}
 
 /** DB Backup **/
 #DBBJobscheckall {margin:0px;}
@@ -176,6 +161,7 @@ pre {position:relative;z-index:50;background:#fff url(../images/pre_bg.png) top 
 #CC-plugins-skip-rules {margin:115px 0px 0px 0px;}
 #CC-timthumb {margin:145px 0px 0px 0px;padding:3px;}
 #CC-BPSQSE {margin:130px 0px 0px 0px;padding:3px;}
+#CC-end-rewrite {margin:130px 0px 0px 0px;padding:3px;}
 #CC-deny-browser-access {margin:120px 0px 0px 0px;padding:3px;}
 #CC-bottom-spam-block {margin:75px 0px 0px 0px;padding:3px;}
 

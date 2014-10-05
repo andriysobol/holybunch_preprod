@@ -26,7 +26,7 @@ class MslsMetaBox extends MslsMain {
 			);
 
 			$args = array(
-				'post_status'    => get_post_stati(),
+				'post_status'    => get_post_stati( array( 'internal' => '' ) ),
 				'posts_per_page' => 10,
 			);
 
@@ -153,12 +153,12 @@ class MslsMetaBox extends MslsMain {
 					);
 				}
 				else {
-					$options  = '';
+					$options = '';
 
 					$my_query = new WP_Query(
 						array(
 							'post_type' => $type,
-							'post_status' => get_post_stati(),
+							'post_status' => get_post_stati( array( 'internal' => '' ) ),
 							'orderby' => 'title',
 							'order' => 'ASC',
 							'posts_per_page' => (-1),
@@ -254,14 +254,26 @@ class MslsMetaBox extends MslsMain {
 				restore_current_blog();
 			}
 
+			$input_button = sprintf(
+				'<input type="submit" class="button-secondary clear" value="%s"/>',
+				__( 'Update', 'msls' )
+			);
+
+			/**
+			 * Returns the input button, return an empty string if you'ld like to hide the button
+			 * @since 1.0.2
+			 * @param string $input_button
+			 */
+			$input_button = ( string ) apply_filters( 'msls_meta_box_render_input_button', $input_button );
+
 			printf(
 				'<ul>%s</ul>
 				<input type="hidden" name="msls_post_type" id="msls_post_type" value="%s"/>
 				<input type="hidden" name="msls_action" id="msls_action" value="suggest_posts"/>
-				<input type="submit" class="button-secondary clear" value="%s"/>',
+				%s',
 				$items,
 				$post_type,
-				__( 'Update', 'msls' )
+				$input_button
 			);
 
 			$post = $temp;

@@ -9,25 +9,6 @@ label {font-size:1em;font-weight:bold;vertical-align:bottom;}
 label[for=bps-ini-file-selector], label[for=bps-ini-file-deleter] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:.25em;float:left;}
 select[id=iniSelector], select[id=iniServerType], select[id=iniHost], select[id=iniDeleter] {font-size:1em;font-weight:bold;} 
 
-/* Login Security */
-#LoginSecurityOptions {width:340px;}
-#LoginSecurityCheckall {max-height:600px;width:100%;overflow:auto;margin:0px 0px 20px 0px;}
-#LoginSecurityCheckall .widefat td {font-size:12px;}
-label[for=LSLog1] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:27px;float:left;}
-label[for=LSLog2] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:.25em;float:left;}
-label[for=LSLog3] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:19px;float:left;}
-label[for=LSLog4] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:13px;float:left;}
-label[for=LSLog5] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:.30em;float:left;}
-label[for=LSLog6] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:10px;float:left;}
-label[for=LSLog7] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:15px;float:left;}
-label[for=LSLog8] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:13px;float:left;}
-label[for=LSLog8b] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:26px;float:left;}
-
-label[for=bps-monitor-email1] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:18px;float:left;}
-label[for=bps-monitor-email2] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:.25em;float:left;}
-label[for=bps-monitor-email3] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:18px;float:left;}
-label[for=bps-monitor-email4] {margin:0;padding:0;display:block;font-size:1em;font-weight:bold;padding-top:.35em;padding-right:13px;float:left;}
-
 .widefat td {border-bottom:1px solid #eee;}
 
 #bps-container textarea {background-color:#f4f9ff;} /* a little too blue #f2fdfd */
@@ -120,6 +101,11 @@ div.bps-white-background {background-color:#fff;}
 .ui-accordion .ui-accordion-header .ui-accordion-header-icon {position:absolute;left:.5em;top:50%;margin-top:-8px;}
 .ui-accordion .ui-accordion-content {padding:1em 2.2em;border-top:0;overflow:auto;}
 
+/* Login Security */
+#LoginSecurityOptions {width:340px;}
+#LoginSecurityCheckall {max-height:600px;width:100%;overflow:auto;margin:0px 0px 20px 0px;}
+#LoginSecurityCheckall .widefat td {font-size:12px;}
+
 /** DB Backup **/
 #DBBJobscheckall {margin:0px 0px 0px -20px;}
 #DBBFilescheckall {margin:0px 0px 0px -20px;}
@@ -199,6 +185,7 @@ pre {position:relative;z-index:50;background:#fff url(../images/pre_bg.png) top 
 #CC-plugins-skip-rules {margin:115px 0px 0px 0px;}
 #CC-timthumb {margin:145px 0px 0px 0px;padding:3px;}
 #CC-BPSQSE {margin:130px 0px 0px 0px;padding:3px;}
+#CC-end-rewrite {margin:130px 0px 0px 0px;padding:3px;}
 #CC-deny-browser-access {margin:120px 0px 0px 0px;padding:3px;}
 #CC-bottom-spam-block {margin:75px 0px 0px 0px;padding:3px;}
 

@@ -4,7 +4,7 @@ Donate link: http://www.ait-pro.com/aitpro-blog/331/bulletproof-security-plugin-
 Tags: 400, 403, 404, 503, antivirus, attack, authenticate, authentication, author, author id, back up, backups, ban, banned, base64, block, blocked, Bot, brute force, bruteforce, bulletproof, chmod, code, coming soon, crack, cracking, CRLF, CSRF, database backup, database table prefix, DB backup, DB table backup, DB table prefix, developer, development, directory traversal, DoS, DDoS, dump, encode, enumeration, error log, exploit, exploitation, file inclusion, firewall, hack, hackers, htaccess, HTTP log, infect, infected, infection, injection, LFI, lock, log, logging, login alerts, login security, login, maintenance mode, maintenance, malicious, multisite, mysql, mysql backup, offline, optimize, optimization, path traversal, performance, permissions, pingback, plugin, prevent, prevention, privacy, private, protection, RFI, safe, safety, schedule backup, script, secure, security log, security, spam, spammers, speed increase, speed boost, SQL injection, trackback, unavailable, under construction, user id, username, users, virus, vulnerable, vulnerability, website backup, wordpress backup, website security, WordPress security, xmlrpc, xml-rpc, XSS
 Requires at least: 3.0 
 Tested up to: 4.0 
-Stable tag: .50.8
+Stable tag: .50.9
 
 WordPress Website Security Protection: Effective...Reliable...Easy to use
 
@@ -281,7 +281,7 @@ If you are using both Apache and Nginx together and Nginx is the frontend webser
 
 = Are there any known issues or conflicts with other WordPress Plugins or Themes? =
 
-Occasionally issues or conflicts do occur with other plugins, but they are always quickly resolved. BulletProof Security is compatible with all other Plugins and Themes except for the Better WP Security (iThemes Security) plugin. If BulletProof Security is blocking something legitimate in another plugin or theme a whitelist rule can be created in BPS Custom Code to allow/whitelist whatever was being blocked by BPS. Please check the BulletProof Security <a href="http://forum.ait-pro.com/forums/topic/plugin-conflicts-actively-blocked-plugins-plugin-compatibility/" title="Plugin Compatibility" rel="nofollow" target="_blank">Plugin Compatibility</a> page for the steps to search for documented plugin or theme whitelist rules.
+Occasionally issues or conflicts do occur with other plugins, but they are always quickly resolved. BulletProof Security is compatible with all other Plugins and Themes. If BulletProof Security is blocking something legitimate in another plugin or theme a whitelist rule can be created in BPS Custom Code to allow/whitelist whatever was being blocked by BPS. Please check the BulletProof Security <a href="http://forum.ait-pro.com/forums/topic/plugin-conflicts-actively-blocked-plugins-plugin-compatibility/" title="Plugin Compatibility" rel="nofollow" target="_blank">Plugin Compatibility</a> page for the steps to search for documented plugin or theme whitelist rules.
 
 = Does BulletProof Security Work On All Web Hosts? =
 
@@ -299,8 +299,12 @@ Your Security Log will log 400, 403 and 404 (requires copying the BPS 404 loggin
 
 = Is BulletProof Security Network / Multisite Compatible? =
 
-Yes, BulletProof Security contains AutoMagic buttons for Network / Multisite websites. Both sub-directory and sub-domain Master .htaccess code is written / created for your specific Network / Multisite site based on your WordPress version. The BulletProof Security plugin can be Network Activated or you can allow BulletProof Security to be activated individually on each Network / Multisite subsite or of course you can choose not to Network Activate BulletProof Security or allow the BPS plugin on subsites. Only Login Security, System Info & Maintenance Mode menus are available on subsites. Super Admins will see BPS Dashboard Alerts and other Status displays on the Primary Site only. Administrators 
-can activate or deactivate BulletProof Security on subsites if you allow this on your Network / Multisite website. The BPS Primary Site Menus will display all BPS menus. All other BulletProof Security features are not available on subsites since Network/Multisite subsites are virtual and do not have separate website files of their own. All of the other standard BulletProof Security features work sitewide and affect all other virtual subsites with the exception of Login Security which works individually for each specific website - Primary or virtual subsites and therefore should only be available to and controlled by the Super Admin with Network Admin capabilities for the Network/Multisite website. BulletProof Security also works with Network / Multisite Domain Mapping.
+Yes, BulletProof Security works on Network / Multisite websites. Both subdirectory and subdomain .htaccess code is written / created for your specific Network / Multisite site based on your WordPress installation version (pre 3.5 or 3.5+). The BulletProof Security plugin can be Network Activated or you can allow BulletProof Security to be activated individually on each Network / Multisite subsite or of course you can choose not to Network Activate BulletProof Security or allow the BPS plugin on subsites. Super Admins will see BPS Dashboard Alerts and other Status displays on the Primary Site only. Administrators can activate or deactivate BulletProof Security on subsites if you allow this on your Network / Multisite website. The BPS Primary Site Menus will display all BPS menus. The BPS Subsite Menus will display: Login Security, Maintenance Mode, System Info & UI Theme Skin menus. All BulletProof Security features are not available on subsites since Network/Multisite subsites are virtual and do not have physical website folders. All BulletProof Security features work sitewide and affect all other virtual subsites. Login Security and Maintenance Mode work independently on each subsite. 
+
+* Login Security works individually for each specific subsite. Login Security has all the same functionality on Network/Multisite subsites with these exceptions: Login Security email alerting is not available for subsites. 
+* Maintenance Mode works individually for each specific subsite. MMode has all the same functionality on Network/Multisite subsites with these exceptions: BackEnd Maintenance is not available on subsites & these Primary site options are not available on subsites: Put The Primary Site And All Subsites In Maintenance Mode & Put All Subsites In Maintenance Mode, But Not The Primary Site. MMode is currently not available for Network/Multisite subdomain sites. Pending future development.
+* System Info has all the same functionality on Network/Multisite subsites with these exceptions: MySQL Database information is not displayed on subsites. 
+* BulletProof Security also works with Network / Multisite Domain Mapping.
 
 = Is BulletProof Security BuddyPress/bbPress Compatible? =
 
@@ -308,7 +312,7 @@ Yes, BulletProof Security works with all BuddyPress/bbPress site types.
 
 = Is BulletProof Security Compatible with subdomain websites and subdirectory websites? =
 
-Yes, BulletProof Security works on all types of WordPress installations including "Giving WordPress Its Own Directory" websites. Note: Maintenance Mode may not work correctly on Network/Multisite Subdomain site types. Pending additional testing.
+Yes, BulletProof Security works on all types of WordPress installations including "Giving WordPress Its Own Directory" websites. Note: Maintenance Mode is currently not available for Network/Multisite subdomain sites. Pending future development.
 
 = Can I add my own .htaccess code to the BulletProof Security .htaccess files? =
 
@@ -349,7 +353,25 @@ Yes, BulletProof Security works with Git, but does require some additional set u
 
 == Changelog ==
 
+= .50.9 =
+* System Info Enhancements/Improvements/Additions:
+* DNS Name Server checking code performance improvement and conditional checking added based on domain labels. Network/Multisite subdirectory / subdomain site type check added and changes to existing conditional checks. output_buffering directive variable check changed and text correction. Additional conditional checks for PHP Actual Configuration Memory Limit. Will display color coded recommendations and/or memory limits. Various naming/text changes.
+* htaccess Core Structural Core Changes:
+* Reduction in size of large Options Core file by creating additional conditional supporting files with require. Deny All htaccess file is created in the new /core/ folder on init to protect the options.php core file. Other internal Core stuff.
+* Security Log Design/Visual/Enhancement Changes:
+* Auto-Locking added to Security Log Turn On/Off Forms. The root .htaccess file is automatically locked again if it was locked. Cross Browser compatibility visual display issues/problems with Email Alerts and Log files Form. Forms are now using tables instead of individual CSS properties.
+* Login Security Visual/Design Change:
+* Cross Browser compatibility visual display issues/problems with Option/Settings & Email Alerts and Log files Form. Forms are now using tables instead of individual CSS properties.
+* DB Backup Log Visual/Design Change:
+* Cross Browser compatibility visual display issues/problems with Email Alerts and Log files Form. Forms are now using tables instead of individual CSS properties.
+* Custom Code Network/Multisite Additional Text Box:
+* CUSTOM CODE WP REWRITE LOOP END: Add WP Rewrite Loop End code here. This is a Special Network/Multisite Custom Code text box that should ONLY be used if the correct WP REWRITE LOOP END code is not being created in your root .htaccess file by AutoMagic. This Custom Code text box and Read Me help text is ONLY displayed if you have a Network/Multisite website.
+* BugFixes/Code Corrections/Misc/CSS/Visual/Other:
+* Backend Maintenance Mode causing crashes due to newline not being generated in some cases. Additional newline added to wp-admin backend MMode htaccess writing code base
+* Removal/Deletion of obsolete usage of bps_DNS_NS() function.
+
 = .50.8 =
+* Quickie BugFix Release - released 1 hour after release of .50.7: 
 * Network/Multisite BPS plugin Network Activation correction:
 * Conditional wrap added for blog_id 1
 
@@ -553,66 +575,22 @@ Additional function checking code has been added in cases where the mysqli_get_c
 
 == Upgrade Notice ==
 
-= .50.8 =
-* Network/Multisite BPS plugin Network Activation correction:
-* Conditional wrap added for blog_id 1
-
-= .50.7 =
-* htaccess Core Security Modes AutoMagic Buttons:
-* BPS automatically detects your site type and displays the correct AutoMagic buttons for your site type. Other site type AutoMagic buttons are no longer displayed on the Security Modes page. 
-* Network/Multisite One Time Code Correction:
-* If you have a Network/Multisite website/installation of WordPress you will see a one time htaccess code correction Notice message displayed to you with steps to perform the one time code correction when you upgrade BPS.
-* Go Daddy Managed WordPress Hosting:
-* If you have Go Daddy Managed WordPress Hosting see the BPS Whats New tab page within the BPS plugin.
-*  BugFixes/Code Corrections/Misc/CSS/Visual/Other:
-* Maintenance Mode countdown timer email website link correction for subdirectory websites.
-* Maintenance Mode CSS visual improvements/changes/corrections.
-* WordPress 4.0 RC1 final testing completed - no issues or problems.
-* Delete old BPS bulletproof-security_info transient content on upgrade.
-* Enjoy!
-
-= .50.6 =
-* New Option: Login Security & Monitoring Sort DB Rows:
-* Enhancements: Login Security & Monitoring:
-* CSS max-height changed from 1000px to 600px for the scrollable Dynamic DB table. 600px is a much better / more manageable viewing area.
-* Lock, Unlock and Delete labels for individual checkboxes in Dynamic DB search form and standard form.
-* DB Query improvement for the Dynamic DB standard form.
-* New Option: htaccess Core wp-admin BulletProof Mode Enable/Disable wp-admin BulletProof Mode:
-* Improvement:  htaccess Core root domain label retrieval/writing:
-* Enjoy!
-
-= .50.5 =
-* Login Security Password Reset BugFix & New Option:
-* BugFix: The Lost your password link was not being displayed when Login Security was turned Off.
-* New Option: Turn Off Login Security/Use Password Reset Option ONLY.
-* Enjoy!
-
-= .50.4 =
+= .50.9 =
+* System Info Enhancements/Improvements/Additions:
+* DNS Name Server checking code performance improvement and conditional checking added based on domain labels. Network/Multisite subdirectory / subdomain site type check added and changes to existing conditional checks. output_buffering directive variable check changed and text correction. Additional conditional checks for PHP Actual Configuration Memory Limit. Will display color coded recommendations and/or memory limits. Various naming/text changes.
+* htaccess Core Structural Core Changes:
+* Reduction in size of large Options Core file by creating additional conditional supporting files with require. Deny All htaccess file is created in the new /core/ folder on init to protect the options.php core file. Other internal Core stuff.
+* Security Log Design/Visual/Enhancement Changes:
+* Auto-Locking added to Security Log Turn On/Off Forms. The root .htaccess file is automatically locked again if it was locked. Cross Browser compatibility visual display issues/problems with Email Alerts and Log files Form. Forms are now using tables instead of individual CSS properties.
+* Login Security Visual/Design Change:
+* Cross Browser compatibility visual display issues/problems with Option/Settings & Email Alerts and Log files Form. Forms are now using tables instead of individual CSS properties.
+* DB Backup Log Visual/Design Change:
+* Cross Browser compatibility visual display issues/problems with Email Alerts and Log files Form. Forms are now using tables instead of individual CSS properties.
+* Custom Code Network/Multisite Additional Text Box:
+* CUSTOM CODE WP REWRITE LOOP END: Add WP Rewrite Loop End code here. This is a Special Network/Multisite Custom Code text box that should ONLY be used if the correct WP REWRITE LOOP END code is not being created in your root .htaccess file by AutoMagic. This Custom Code text box and Read Me help text is ONLY displayed if you have a Network/Multisite website.
 * BugFixes/Code Corrections/Misc/CSS/Visual/Other:
-* DB Backup: backticks added to DB Backup Query to allow for hyphenated or other special characters in DB naming conventions.
-* DB Backup dynamic DB table: max-height CSS change
-* Login Security CSS auto-scroll: max-height CSS change
-* DB Table Prefix Changer: Additional check for writable files for DSO server types.
-* Root and wp-admin filter change
-* Log timestamps synchronized to GMT: All log timestamps are now synchronized to GMT time.
-* Enjoy!
-
-= .50.3 =
-* Correction/BugFix/Improvement: root and wp-admin .htaccess filters/rules change/correction/improvement. See the BPS Whats New tab page for more details.
-* Thanks goes to aselektor for spotting and reporting this.
-* Enjoy!
-
-= .50.2 =
-* New Feature: DB Backup. Manual or scheduled (Hourly, Daily, Weekly and Monthly) database backups. Send DB Backups via email etc.
-* New Feature: DB Backup Log. The Backup Job Completion Time, Zip Backup File Name, timestamp. etc. is logged. Backup Job Settings are logged.
-* New Feature: DB Table Prefix Changer.
-* New Feature: UI Theme Skin. 3 UI Theme Skins: Blue Gel Classic UI Theme, Light Grey jQuery UI Theme, Dark Black WP UI Theme.
-* Root .htaccess Security Filters Change: See the BPS Whats New tab page for more details.
-* Login Security New Option/Option Change & Misc: Disable Password Reset Frontend Only, Disable Password Reset Frontend & Backend.
-* System Info page: added MySQL Extension, MySQLi Extension check.
-* Login Security email message text change when user account is locked.
-* Whitelist the Debug Bar plugin debug-bar css and js scripts.
-* Enjoy!
+* Backend Maintenance Mode causing crashes due to newline not being generated in some cases. Additional newline added to wp-admin backend MMode htaccess writing code base
+* Removal/Deletion of obsolete usage of bps_DNS_NS() function.
 
 == Help Info ==
 

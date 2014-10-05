@@ -20,7 +20,7 @@ if( get_query_var('author') ){
 
 $query = new WP_Query(  array( 'post_type' => 'post', 'author' => $author->ID, 'post_status' => 'publish' ) );
 ?>
-<?php oxy_create_hero_section( null, '<span class="lighter">' .  $author->nickname . '</span>'  ); ?>
+<?php oxy_create_hero_section( null, '<span class="lighter">' .  $author->display_name . '</span>'  ); ?>
 <section class="section section-padded section-alt">
     <div class="container-fluid">
         <div class="row-fluid">

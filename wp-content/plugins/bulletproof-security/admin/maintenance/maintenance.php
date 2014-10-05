@@ -730,7 +730,7 @@ $format_error_2 = '/,[^\s]/'; // no whitespaces between commas
 				
 		if ( !preg_match( $pattern2, $stringReplace, $matches ) ) {
 				
-			$stringReplace = "# BEGIN BPS MAINTENANCE MODE IP\nOrder Allow,Deny\n".$AllowFromRules."# END BPS MAINTENANCE MODE IP";	
+			$stringReplace = "\n# BEGIN BPS MAINTENANCE MODE IP\nOrder Allow,Deny\n".$AllowFromRules."# END BPS MAINTENANCE MODE IP";	
 			file_put_contents($wpadminHtaccess, $stringReplace, FILE_APPEND | LOCK_EX);				
 				
 		} else {
@@ -966,7 +966,7 @@ $format_error_2 = '/,[^\s]/'; // no whitespaces between commas
 				
 		if ( !preg_match( $pattern2, $stringReplace, $matches ) ) {
 				
-			$stringReplace = "# BEGIN BPS MAINTENANCE MODE IP\nOrder Allow,Deny\n".$AllowFromRules."# END BPS MAINTENANCE MODE IP";	
+			$stringReplace = "\n# BEGIN BPS MAINTENANCE MODE IP\nOrder Allow,Deny\n".$AllowFromRules."# END BPS MAINTENANCE MODE IP";	
 			file_put_contents($wpadminHtaccess, $stringReplace, FILE_APPEND | LOCK_EX);				
 				
 		} else {

@@ -138,6 +138,7 @@ Class Recent_Bloggers extends WP_Widget {
                 $counter = 0;
                 foreach ($user_query->results as $user) {
                     ++$counter;
+                    if ( count_user_posts( $user->id ) == 0 ) continue;
             ?>
 	    <div class="row-fluid">
 	    <div class="span3">
@@ -147,7 +148,7 @@ Class Recent_Bloggers extends WP_Widget {
             </div>
 	    <div class="span9">
             <h4>
-               	<?php echo $user->user_nicename; ?>
+               	<?php echo $user->display_name; ?>
             </h4>
             </div>
             </div>

@@ -20,6 +20,22 @@ $labels = array(
     'menu_name'          => __('Text',  THEME_ADMIN_TD)
 );
 
+$capabilities = array(
+    'publish_posts' => 'publish_text',
+    'edit_posts' => 'edit_texts',
+    'edit_others_posts' => 'edit_others_text',
+    'edit_published_posts' => 'edit_published_text',
+    'edit_private_posts' => 'edit_private_text',
+    'delete_posts' => 'delete_text',
+    'delete_private_posts' => 'delete_private_texts',
+    'delete_published_posts' => 'delete_published_texts',
+    'delete_others_posts' => 'delete_others_text',
+    'read_private_posts' => 'read_private_text',
+    'edit_post' => 'edit_text',
+    'delete_post' => 'delete_text',
+    'read_post' => 'read_text'
+);
+
 $args = array(
     'labels'             => $labels,
     'public'             => true,
@@ -28,11 +44,13 @@ $args = array(
     'show_in_menu'       => true,
     'query_var'          => true,
     'capability_type'    => 'post',
+    'capabilities'       => $capabilities,
     'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => null,
     'menu_icon'          => ADMIN_ASSETS_URI . 'images/staff.png',
-    'supports'           => array( 'title', 'editor', 'thumbnail', 'post-formats' )
+    'supports'           => array( 'title', 'editor', 'thumbnail', 'post-formats' ),
+    'map_meta_cap'       => true
 );
 register_post_type('oxy_content', $args);
 
@@ -54,11 +72,15 @@ $labels = array(
 
 $capabilities = array(
     'publish_posts' => 'publish_video',
-    'edit_posts' => 'edit_video',
-    'edit_others_posts' => 'edit_others_video',
-    'delete_posts' => 'delete_video',
-    'delete_others_posts' => 'delete_others_video',
-    'read_private_posts' => 'read_private_video',
+    'edit_posts' => 'edit_videos',
+    'edit_others_posts' => 'edit_others_videos',
+    'edit_published_posts' => 'edit_published_videos',
+    'edit_private_posts' => 'edit_private_videos',
+    'delete_posts' => 'delete_videos',
+    'delete_private_posts' => 'delete_private_videos',
+    'delete_published_posts' => 'delete_published_videos',
+    'delete_others_posts' => 'delete_others_videos',
+    'read_private_posts' => 'read_private_videos',
     'edit_post' => 'edit_video',
     'delete_post' => 'delete_video',
     'read_post' => 'read_video'
@@ -83,22 +105,6 @@ $args = array(
 
 register_post_type('oxy_video', $args);
 
-add_role(
-    'video_author',
-    'Video author',
-    array(
-        'publish_video' => true,
-        'edit_video' => true,
-        'edit_others_video' => true,
-        'delete_video' => true,
-        'delete_others_video' => true,
-        'read_private_video' => true,
-        'edit_video' => true,
-        'delete_video' => true,
-        'read_video' => true,
-        // more standard capabilities here
-    )
-);
 
 /* --------------------- audio ------------------------*/
 $labels = array(
@@ -116,6 +122,22 @@ $labels = array(
     'menu_name'          => __('Audio',  THEME_ADMIN_TD)
 );
 
+$capabilities = array(
+    'publish_posts' => 'publish_audios',
+    'edit_posts' => 'edit_audios',
+    'edit_others_posts' => 'edit_others_audios',
+    'edit_published_posts' => 'edit_published_audios',
+    'edit_private_posts' => 'edit_private_audios',
+    'delete_posts' => 'delete_audios',
+    'delete_private_posts' => 'delete_private_audios',
+    'delete_published_posts' => 'delete_published_audios',
+    'delete_others_posts' => 'delete_others_audios',
+    'read_private_posts' => 'read_private_audios',
+    'edit_post' => 'edit_audio',
+    'delete_post' => 'delete_audio',
+    'read_post' => 'read_audio'
+);
+
 $args = array(
     'labels'             => $labels,
     'public'             => true,
@@ -124,6 +146,7 @@ $args = array(
     'show_in_menu'       => true,
     'query_var'          => true,
     'capability_type'    => 'post',
+    'capabilities'       => $capabilities,
     'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => null,
@@ -131,6 +154,54 @@ $args = array(
     'supports'           => array( 'title', 'editor', 'thumbnail', 'post-formats' )
 );
 register_post_type('oxy_audio', $args);
+
+$result = add_role(
+    'Dummy',
+    __( 'Dummy' ),
+    array(
+        'publish_audios' => true,
+        'edit_audios' => true,
+        'edit_others_audios' => true,
+        'edit_published_audios' => true,
+        'edit_private_audios' => true,
+        'delete_audios' => true,
+        'delete_private_audios' => true,
+        'delete_published_audios' => true,
+        'delete_others_audios' => true,
+        'read_private_audios' => true,
+        'edit_audio' => true,
+        'delete_audio' => true,
+        'read_audio' => true,
+
+        'publish_video' => true,
+        'edit_videos' => true,
+        'edit_others_videos' => true,
+        'edit_published_videos' => true,
+        'edit_private_videos' => true,
+        'delete_videos' => true,
+        'delete_private_videos' => true,
+        'delete_published_videos' => true,
+        'delete_others_videos' => true,
+        'read_private_videos' => true,
+        'edit_video' => true,
+        'delete_video' => true,
+        'read_video' => true,
+        
+        'publish_text' => true,
+        'edit_texts' => true,
+        'edit_others_text' => true,
+        'edit_published_text' => true,
+        'edit_private_text' => true,
+        'delete_text' => true,
+        'delete_private_texts' => true,
+        'delete_published_texts' => true,
+        'delete_others_text' => true,
+        'read_private_text' => true,
+        'edit_text' => true,
+        'delete_text' => true,
+        'read_text' => true,
+    )
+);
 
 $labels = array(
     'name'          => __( 'Categorys', THEME_ADMIN_TD ),
