@@ -880,3 +880,46 @@ function hb_get_recent_oxy_video($atts) {
     return oxy_shortcode_section($atts, $output);
 }
 add_shortcode('hb_recent_videos', 'hb_get_recent_oxy_video');
+function get_latest_taxonomy_topics_as_list($atts) {
+    $args = array(
+        'hide_empty' => 1,
+        'taxonomy' => 'teaching_topics',
+        'pad_counts' => 1,
+        'hierarchical' => 0,
+	'number'       => '2',
+    );
+    $categories = get_categories($args);
+    $count = count($categories);
+    $columns = $count > 4 ? 4 : $count;
+    //$span = $columns > 0 ? 'span' . floor(12 / $columns) : 'span3';
+	$span='span12';
+    $output = '';
+    $output .='<div class="unstyled row-fluid">';
+
+    $item_num = 1;
+    $items_per_row = $columns;
+    //loop over all related posts
+    foreach ($categories as $taxonomy) {
+        $summary = get_taxonomy_term_summary_mini($taxonomy);
+		$more_text = '<Strong>Перейти</Strong> к теме';
+        $slug = $taxonomy->slug;
+        $link = home_url() . "/blog/teaching_topics/" . $slug;
+        $taxonomy_image_link = get_taxonomy_image('teaching_topics', $taxonomy->slug);
+
+        $more_text = '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
+        $output .= '<div class="span12">
+                    <div class="well blockquote-well well_custom_2col_mb">
+                      <h3><a href="' . $link . '">' . $taxonomy->name . '</a></h3>
+                        <blockquote><p>' . $summary . $more_text . '</p></blockquote>';
+        $output .='<a href="' . $link . '">' .get_image_as_round_box($taxonomy_image_link) .'</a>';
+        $output.= '</div> </div>';
+    }
+    $output .= '</div>';
+    extract(shortcode_atts(array(
+        'style' => '',
+        'title' => ''
+                    ), $atts));
+    return oxy_shortcode_section($atts, $output);
+}
+
+add_shortcode('latest_taxonomy_topics_new', 'get_latest_taxonomy_topics_as_list');
