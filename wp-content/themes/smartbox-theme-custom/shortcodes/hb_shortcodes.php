@@ -749,7 +749,7 @@ extract(shortcode_atts(array(
 				$output .= '<div class="span9">';
 				$output .= '<h3><a href="' . $post_link . '"> '. get_the_title() . '</a></h3>';
 			 
-				$content = oxy_limit_excerpt(get_the_content(), 60)  ;
+				$content = oxy_limit_excerpt(get_the_content(), 30)  ;
 				$content .= '<a href="' . $post_link . '" class="more-link">' . $more_text . '</a>';
              
 				$output.='<p>' . apply_filters('the_content', $content) . '</p></div></li>';
@@ -890,14 +890,9 @@ function get_latest_taxonomy_topics_as_list($atts) {
     );
     $categories = get_categories($args);
     $count = count($categories);
-    $columns = $count > 4 ? 4 : $count;
-    //$span = $columns > 0 ? 'span' . floor(12 / $columns) : 'span3';
-	$span='span12';
-    $output = '';
-    $output .='<div class="unstyled row-fluid">';
+    $span='span12';
+    $output = '<div class="unstyled row-fluid">';
 
-    $item_num = 1;
-    $items_per_row = $columns;
     //loop over all related posts
     foreach ($categories as $taxonomy) {
         $summary = get_taxonomy_term_summary_mini($taxonomy);
@@ -907,7 +902,7 @@ function get_latest_taxonomy_topics_as_list($atts) {
         $taxonomy_image_link = get_taxonomy_image('teaching_topics', $taxonomy->slug);
 
         $more_text = '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
-        $output .= '<div class="span12">
+        $output .= '<div>
                     <div class="well blockquote-well well_custom_2col_mb">
                       <h3><a href="' . $link . '">' . $taxonomy->name . '</a></h3>
                         <blockquote><p>' . $summary . $more_text . '</p></blockquote>';
@@ -922,4 +917,4 @@ function get_latest_taxonomy_topics_as_list($atts) {
     return oxy_shortcode_section($atts, $output);
 }
 
-add_shortcode('latest_taxonomy_topics_new', 'get_latest_taxonomy_topics_as_list');
+add_shortcode('latest_taxonomy_topics', 'get_latest_taxonomy_topics_as_list');
