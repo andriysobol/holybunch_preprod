@@ -27,7 +27,7 @@ $query = new WP_Query(  array( 'post_type' => 'post', 'author' => $author->ID, '
             <ol id="timeline">
                 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-                <?php get_template_part( 'partials/timeline/content-timeline-excerpt' ); ?>
+                <?php get_template_part('partials/timeline/content-timeline-excerpt' ); ?>
 
                 <?php endwhile; ?>
 

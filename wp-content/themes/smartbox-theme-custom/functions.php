@@ -22,6 +22,9 @@ $theme = new OxyCustomTheme(
         ),
          'sidebars' => array(
             'sidebar'            => array( 'Main Sidebar', 'Main sidebar for blog and non full width pages' ),
+            'sidebar-videos'     => array( 'Video Sidebar', 'Video sidebar for video archive' ),
+            'sidebar-texts'     => array( 'Text Sidebar', 'Text sidebar for text archive' ),
+            'sidebar-audios'     => array( 'Audio Sidebar', 'Audio sidebar for audio archive' ),
             'above-nav-right'    => array( 'Top right', 'Above Navigation section to the right' ),
             'above-nav-left'     => array( 'Top left', 'Above Navigation section to the left' ),
             'footer-left'        => array( 'Footer left', 'Left footer section' ),
@@ -41,6 +44,20 @@ function node_custom_post_type_archive($where, $args) {
     return $where;
 }
 
+/*
+ * $options = array(
+            'name' => $name,
+            'description'=> $desc,
+            'before_widget' => '<div id="%1$s" class="sidebar-widget ' . $class  . ' %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3 class="sidebar-header">',
+            'after_title' => '</h3>',
+        );
+        if( null !== $id ) {
+            $options['id'] = $id;
+        }
+        register_sidebar( $options );
+ */
 // Debug info
 function onlygood_debug() {
  $info = '<div style="position: fixed; bottom: 10px; width: 120px; padding: 5px; line-height: 15px; color: #fff; font-size: 11px; background: rgba(0,0,0,.7);">';

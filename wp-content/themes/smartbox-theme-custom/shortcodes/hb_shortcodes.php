@@ -593,14 +593,7 @@ function hb_get_recent_posts_new($atts) {
     $args = array(
         'post_type' => array('oxy_content', 'oxy_video', 'oxy_audio'),
         'showposts' => $count, // Number of related posts that will be shown.  
-        'orderby' => 'date',
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'teaching_topics',
-                'field' => 'slug',
-                'terms' => 'god'
-            )
-        )
+        'orderby' => 'date'
     );
     $my_query = new wp_query($args);
     $columns=2;
@@ -742,14 +735,14 @@ extract(shortcode_atts(array(
 			
 				$more_text=  get_more_text($post->post_type);
 				$output .= '<li class="span6">';
-				$output .= '<div class="row-fluid"><div class="span3">';
-				$output .='<div class="round-box box-small"><a href="' . $post_link . '" class="box-inner">';
-				$output .= $author_avatar. '</a></div><h5 class="text-center">'.$author.'</h5>';
+				$output .= '<div class="row-fluid"><div class="span3 post-info">';
+				$output .='<div class="round-box box-small">';
+				$output .= $author_avatar. '</div><h5 class="text-center">'.$author.'</h5>';
 				$output .= '<h5 class="text-center light">'.$date.'</h5></div>';
 				$output .= '<div class="span9">';
 				$output .= '<h3><a href="' . $post_link . '"> '. get_the_title() . '</a></h3>';
 			 
-				$content = oxy_limit_excerpt(get_the_content(), 60)  ;
+				$content = oxy_limit_excerpt(get_the_content(), 30)  ;
 				$content .= '<a href="' . $post_link . '" class="more-link">' . $more_text . '</a>';
              
 				$output.='<p>' . apply_filters('the_content', $content) . '</p></div></li>';
@@ -760,3 +753,116 @@ extract(shortcode_atts(array(
     return oxy_shortcode_section($atts, $output);
 }	
 add_shortcode('hb_blog_posts', 'hb_get_recent_blog_posts');
+
+function hb_get_recent_oxy_content($atts) {
+          
+    // setup options
+    extract(shortcode_atts(array(
+        'title' => 'Новые проповеди',
+        'cat' => null,
+        'count' => 3,
+        'style' => ''), $atts));
+
+    $args = array(
+        'post_type' => array('oxy_content'),
+        'showposts' => $count, // Number of related posts that will be shown.  
+        'orderby' => 'date',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'teaching_topics',
+                'field' => 'slug',
+                'terms' => 'god'
+            )
+        )
+    );
+    $my_query = new wp_query($args);
+    $output = '';
+        if ($my_query->have_posts()) :
+            $output .='<ul class="unstyled row-fluid">';
+            global $post;
+            //loop over all related posts
+            while ($my_query->have_posts()) {
+                $my_query->the_post();
+                setup_postdata($post);
+				$output .= '<li class="span4">';
+				if ('link' == get_post_format()) {
+                    $post_link = oxy_get_external_link();
+                } else {
+                    $post_link = get_permalink();
+                }
+
+                $output.='<a href="' . $post_link . '"> <h3 class="text-center">' . get_the_title() . '</h3></a>';
+
+                $content =  oxy_limit_excerpt(get_the_content(), 30) ;
+                $more_text=  get_more_text($post->post_type);
+                $link = get_permalink();
+                $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
+                $output.='<p>' . apply_filters('the_content', $content) . '</p></li>';
+               
+            }
+            $output .= '</ul>';
+    endif;
+    // reset post data
+    wp_reset_postdata();
+    return oxy_shortcode_section($atts, $output);
+}
+add_shortcode('hb_recent_content', 'hb_get_recent_oxy_content');
+
+function hb_get_recent_oxy_video($atts) {
+    // setup options
+    extract(shortcode_atts(array(
+        'title' => 'Новые видео',
+        'cat' => null,
+        'count' => 3,
+        'style' => ''), $atts));
+
+    $args = array(
+        'post_type' => array('oxy_video'),
+        'showposts' => $count, // Number of related posts that will be shown.  
+        'orderby' => 'date'
+    );
+    $my_query = new wp_query($args);
+    $output = '';
+	$IMAGE_URI = home_url() . '/wp-content/themes/smartbox-theme-custom/images/video1.jpg';
+        if ($my_query->have_posts()) :
+            $output .='<ul class="unstyled row-fluid">';
+            global $post;
+            //loop over all related posts
+            while ($my_query->have_posts()) {
+                $my_query->the_post();
+                setup_postdata($post);
+				$date = get_the_time(get_option("date_format"));
+				
+				$output .= '<li class="span4">';
+				if ('link' == get_post_format()) {
+                    $post_link = oxy_get_external_link();
+                } else {
+                    $post_link = get_permalink();
+                }
+
+				$output .= '<div class="row-fluid"><div class="span3">';
+				$output .='<div class="round-box box-medium box-colored"><a href="' . $post_link . '" class="box-inner">';
+                $output .= '<img class="img-circle" src="' . $IMAGE_URI.'">';
+                $output .= oxy_post_icon($post->ID, false);
+                $output .='</div>';
+				//$output .= '<img class="img-circle" src="' . $IMAGE_URI.'">';
+				//$output .= oxy_post_icon($post->ID, false);
+                  
+				$output .= '<h5 class="text-center light">'.$date.'</h5></div>';
+				$output .= '<div class="span9">';
+				$output.='<a href="' . $post_link . '"> <h3 class="text-center">' . get_the_title() . '</h3></a>';
+
+                $content =  oxy_limit_excerpt(get_the_content(), 15) ;
+                $more_text=  get_more_text($post->post_type);
+                $link = get_permalink();
+                $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
+                $output.='<p>' . apply_filters('the_content', $content) . '</p></li>';
+               
+            }
+            $output .= '</ul>';
+    endif;
+    // reset post data
+    wp_reset_postdata();
+    return oxy_shortcode_section($atts, $output);
+}
+add_shortcode('hb_recent_videos', 'hb_get_recent_oxy_video');

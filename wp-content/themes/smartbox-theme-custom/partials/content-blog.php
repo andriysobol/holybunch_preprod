@@ -42,11 +42,11 @@
                 }
                 echo '</figure>';
             } ?>
-            <?php $content= oxy_limit_excerpt(get_the_content(), 100) ;
+            <?php $content= oxy_limit_excerpt(get_the_content(), 60) ;
                 $more_text=  get_more_text($post->post_type);
                 $link = get_permalink();
                 $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>'; 
-                echo $content;?>
+                echo apply_filters('the_content', $content);?>
         </div>
     </div>
 </article>

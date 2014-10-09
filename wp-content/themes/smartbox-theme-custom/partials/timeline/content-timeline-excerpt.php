@@ -31,20 +31,12 @@ $author_id = get_the_author_meta('ID');
                     <?php the_title(); ?>
                 </a>
             </h4>
-            <?php  // if post has featured image , display it also.
-                if( has_post_thumbnail() ) :
-                    $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
-                    echo '<figure>'
-                        .   '<img alt="featured image" src="'.$img[0].'">'
-                        .'</figure>';
-                endif;
-                global $more;    // Declare global $more (before the loop).
-                $more = 0;
-                $content= oxy_limit_excerpt($post->post_content, "60") ;
+            <?php  
+                $content= get_the_excerpt();//oxy_limit_excerpt(get_the_content(), 60) ;
                 $more_text=  get_more_text($post->post_type);
                 $link = get_permalink();
                 $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>'; 
-                echo $content;
+                echo apply_filters('the_content', $content);
             ?>
         </div>
         <div class="post-arrow"></div>

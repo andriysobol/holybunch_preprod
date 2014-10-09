@@ -43,6 +43,9 @@ oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug
     <div class="container-fluid">
         <div class="row-fluid">
             <?php get_template_part('partials/hb_loop_video'); ?>
+            <aside class="span3 sidebar">
+                <?php dynamic_sidebar('sidebar-videos'); ?>
+            </aside>
         </div>
     </div>
 </section>
