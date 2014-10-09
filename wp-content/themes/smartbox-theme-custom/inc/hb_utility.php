@@ -880,10 +880,11 @@ function get_taxonomy_terms_cloud($post_type) {
         $output = '<li class="' . $span . '">
                     <div class="well blockquote-well well_custom_2col_mb">
                       <h3><a href="' . $link . '">' . $taxonomy->name . '</a></h3>
-                        <blockquote><p>' . $summary . $more_text . '</p></blockquote><a href="' . $link . '">' .
-                get_image_as_round_box($taxonomy_image_link) .
-                '</a></div>
-                </li>';
+                        <blockquote><p>' . $summary . $more_text . '</p></blockquote>';
+        if(has_post_thumbnail($post->ID)){
+        $output .='<a href="' . $link . '">' .get_image_as_round_box($taxonomy_image_link) .'</a>';
+        }
+        $output.= '</div> </li>';
         return $output;
     }
 
@@ -897,17 +898,13 @@ function get_taxonomy_terms_cloud($post_type) {
     }
 
     function add_image_to_text_item($post, $size = 'medium') {
-        $output .='<div class="round-box box-' . $size . ' box-colored"><span class="box-inner">';
-        //get post icon
-        if (has_post_thumbnail($post->ID)) {
-            $output .= get_the_post_thumbnail($post->ID, 'portfolio-thumb', array('title' => $post->post_title, 'alt' => $post->post_title, 'class' => 'img-circle'));
-            $output .= oxy_post_icon($post->ID, false);
-        } else {
-            $output .= '<img class="img-circle" src="' . IMAGES_URI . 'box-empty.gif">';
-            $output .= oxy_post_icon($post->ID, false);
-        }
-        $output .= '</span></div>';
-        return $output;
+         if (has_post_thumbnail($post->ID)) {
+           $output .='<div class="round-box box-' . $size . ' box-colored"><span class="box-inner">';
+           $output .= get_the_post_thumbnail($post->ID, 'portfolio-thumb', array('title' => $post->post_title, 'alt' => $post->post_title, 'class' => 'img-circle'));
+           $output .= oxy_post_icon($post->ID, false);
+           $output .= '</span></div>';
+           return $output;
+          }
     }
 
     function get_image_as_round_box($img_source, $size = 'medium') {
