@@ -904,9 +904,7 @@ function get_taxonomy_terms_cloud($post_type) {
            $output .= oxy_post_icon($post->ID, false);
            $output .= '</span></div>';
            return $output;
-      //  } else {
-       //     return '';
-        }
+          }
     }
 
     function get_image_as_round_box($img_source, $size = 'medium') {
