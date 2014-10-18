@@ -594,7 +594,7 @@ function get_taxonomy_terms_cloud($post_type) {
                 $output.='<a href="' . $post_link . '"> <h3 class="text-center">' . get_the_title() . '</h3></a>';
 
                 $content = get_post_summary_mini($post);
-                $more_text = '<Strong>Читать</Strong> далее';
+                $more_text = __('Read more', THEME_FRONT_TD);
                 $link = get_permalink();
                 $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
                 $output.='<p>' . apply_filters('the_content', $content) . '</p></li>';
@@ -856,7 +856,7 @@ function get_taxonomy_terms_cloud($post_type) {
 
     function add_post_summary_to_main_page($post, $span = 'span4') {
         $summary =  get_post_summary_mini($post);
-	$more_text = '<Strong>Читать</Strong> далее';
+	$more_text = __( 'Read more', THEME_FRONT_TD );
         $link = get_post_permalink($post->ID, false, false);
         $more_text = '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
         $output = '<li class="' . $span . '">
@@ -1130,7 +1130,7 @@ function get_taxonomy_terms_cloud($post_type) {
 function get_corresponding_terms($post) {
     $output = '<div id="tag_cloud-3" class="sidebar-widget  widget_tag_cloud">';
     $output .= '<div class="tagcloud">';
-    $output .= '    <div class="tagcloudThema">'.__('Go to topic:', THEME_FRONT_TD).'</div>';
+    $output .= '    <div class="tagcloudThema">'.__('Go to topic', THEME_FRONT_TD).':'.'</div>';
     $output .= '<ul>';
     $taxonomy = "teaching_topics";
     $terms = wp_get_post_terms($post->ID, $taxonomy);

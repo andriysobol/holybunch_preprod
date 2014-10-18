@@ -119,7 +119,7 @@ function oxy_content_latest_topics($atts, $content = '') {
     return $output;
 }
 
-add_shortcode('latest_taxonomy_topics', 'oxy_content_latest_topics');
+//add_shortcode('latest_taxonomy_topics', 'oxy_content_latest_topics');
 
 /* ------------ BLOCKQUOTE SHORTCODE ------------ */
 
@@ -889,7 +889,7 @@ function get_latest_taxonomy_topics_as_list($atts) {
     //loop over all related posts
     foreach ($categories as $taxonomy) {
         $summary = get_taxonomy_term_summary_mini($taxonomy);
-		$more_text = '<Strong>Перейти</Strong> к теме';
+		$more_text = __('Go to topic', THEME_FRONT_TD);
         $slug = $taxonomy->slug;
         $link = home_url() . "/blog/teaching_topics/" . $slug;
         $taxonomy_image_link = get_taxonomy_image('teaching_topics', $taxonomy->slug);
@@ -909,5 +909,4 @@ function get_latest_taxonomy_topics_as_list($atts) {
                     ), $atts));
     return oxy_shortcode_section($atts, $output);
 }
-
 add_shortcode('latest_taxonomy_topics', 'get_latest_taxonomy_topics_as_list');

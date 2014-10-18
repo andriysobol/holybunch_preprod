@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Smartbox Frontend Translation File 1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-18 15:09+0300\n"
-"PO-Revision-Date: 2014-10-18 20:12+0100\n"
+"PO-Revision-Date: 2014-10-18 20:57+0100\n"
 "Last-Translator: Andriy Sobol <andriy.sobol@googlemail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: en_US\n"
@@ -231,7 +231,7 @@ msgstr "1 Kommentar"
 #: build/partials/post-extras.php:31
 #, php-format
 msgid "% comments"
-msgstr "% Kommentare"
+msgstr ""
 
 #: build/search.php:15
 msgid "Search"
@@ -260,5 +260,9 @@ msgid "Also in this topic"
 msgstr "Auch in diesem Thema"
 
 #: build/tag.php:15
-msgid "Go to topic:"
-msgstr "Gehe zum Thema:"
+msgid "Go to topic"
+msgstr "<Strong>Zum</Strong> Thema"
+
+#: build/tag.php:15
+msgid "Read more"
+msgstr "<strong>Weiter</strong> lesen"
