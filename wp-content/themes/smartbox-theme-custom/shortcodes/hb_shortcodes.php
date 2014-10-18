@@ -766,14 +766,7 @@ function hb_get_recent_oxy_content($atts) {
     $args = array(
         'post_type' => array('oxy_content'),
         'showposts' => $count, // Number of related posts that will be shown.  
-        'orderby' => 'date',
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'teaching_topics',
-                'field' => 'slug',
-                'terms' => 'god'
-            )
-        )
+        'orderby' => 'date'
     );
     $my_query = new wp_query($args);
     $output = '';
@@ -793,7 +786,7 @@ function hb_get_recent_oxy_content($atts) {
 
                 $output.='<a href="' . $post_link . '"> <h3 class="text-center">' . get_the_title() . '</h3></a>';
 
-                $content =  oxy_limit_excerpt(get_the_content(), 30) ;
+                $content =  get_field('summary', $post->ID);//oxy_limit_excerpt(get_the_content(), 30) ;
                 $more_text=  get_more_text($post->post_type);
                 $link = get_permalink();
                 $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
@@ -819,14 +812,7 @@ function hb_get_recent_oxy_video($atts) {
     $args = array(
         'post_type' => array('oxy_video'),
         'showposts' => $count, // Number of related posts that will be shown.  
-        'orderby' => 'date',
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'teaching_topics',
-                'field' => 'slug',
-                'terms' => 'god'
-            )
-        )
+        'orderby' => 'date'
     );
     $my_query = new wp_query($args);
     $output = '';
@@ -891,7 +877,7 @@ function get_latest_taxonomy_topics_as_list($atts) {
         $summary = get_taxonomy_term_summary_mini($taxonomy);
 		$more_text = __('Go to topic', THEME_FRONT_TD);
         $slug = $taxonomy->slug;
-        $link = home_url() . "/blog/teaching_topics/" . $slug;
+        $link = get_term_link( $taxonomy );//home_url() . "/blog/teaching_topics/" . $slug;
         $taxonomy_image_link = get_taxonomy_image('teaching_topics', $taxonomy->slug);
 
         $more_text = '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
