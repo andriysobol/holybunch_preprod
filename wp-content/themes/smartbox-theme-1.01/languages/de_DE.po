@@ -3,39 +3,39 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Smartbox Frontend Translation File 1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-18 15:09+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-10-18 20:12+0100\n"
+"Last-Translator: Andriy Sobol <andriy.sobol@googlemail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
 
 #: build/archive.php:15
 msgid "Day"
-msgstr ""
+msgstr "Tag"
 
 #: build/archive.php:19
 msgid "Month"
-msgstr ""
+msgstr "Monat"
 
 #: build/archive.php:23
 msgid "Year"
-msgstr ""
+msgstr "Jahr"
 
 #: build/archive.php:27
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
 #: build/author.php:22
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: build/comments.php:31
 msgid "&larr; Older"
@@ -91,15 +91,15 @@ msgstr ""
 
 #: build/inc/frontend.php:693
 msgid "Reply"
-msgstr ""
+msgstr "Antwort"
 
 #: build/inc/frontend.php:739
 msgid "your name"
-msgstr ""
+msgstr "Dein Name"
 
 #: build/inc/frontend.php:740
 msgid "your email address"
-msgstr ""
+msgstr "Dein E-Mail Adresse"
 
 #: build/inc/frontend.php:744
 #, php-format
@@ -108,7 +108,7 @@ msgstr ""
 
 #: build/inc/frontend.php:747
 msgid "add your comment here"
-msgstr ""
+msgstr "Füge dein Kommentar hinzu"
 
 #: build/inc/frontend.php:748
 #, php-format
@@ -124,7 +124,7 @@ msgstr ""
 
 #: build/inc/frontend.php:755
 msgid "Add your comment"
-msgstr ""
+msgstr "Füge dein Kommentar hinzu"
 
 #: build/inc/frontend.php:756
 msgid "Leave a Reply"
@@ -136,7 +136,7 @@ msgstr ""
 
 #: build/inc/frontend.php:758
 msgid "Add comment"
-msgstr ""
+msgstr "Füge dein Kommentar hinzu"
 
 #: build/inc/frontend.php:835
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
@@ -148,15 +148,15 @@ msgstr ""
 
 #: build/inc/frontend.php:891
 msgid "search"
-msgstr ""
+msgstr "suche"
 
 #: build/inc/frontend.php:1021
 msgid "Next page"
-msgstr ""
+msgstr "Nächste Seite"
 
 #: build/inc/frontend.php:1022
 msgid "Previous page"
-msgstr ""
+msgstr "Vorherige Seite"
 
 #: build/inc/frontend.php:1106
 msgid "Related Posts"
@@ -208,7 +208,7 @@ msgstr ""
 
 #: build/partials/content-404.php:26
 msgid "Go Back Home"
-msgstr ""
+msgstr "Zurück zum Home Seite"
 
 #: build/partials/content-gallery.php:24 build/partials/content-video.php:24
 #: build/partials/content.php:22
@@ -218,24 +218,24 @@ msgstr ""
 
 #: build/partials/loop.php:33 build/search.php:32
 msgid "Nothing Found"
-msgstr ""
+msgstr "Es wurde nichts gefunden"
 
 #: build/partials/post-extras.php:31
 msgid "No comments"
-msgstr ""
+msgstr "Keine Kommentare"
 
 #: build/partials/post-extras.php:31
 msgid "1 comment"
-msgstr ""
+msgstr "1 Kommentar"
 
 #: build/partials/post-extras.php:31
 #, php-format
 msgid "% comments"
-msgstr ""
+msgstr "% Kommentare"
 
 #: build/search.php:15
 msgid "Search"
-msgstr ""
+msgstr "Suche"
 
 #: build/search.php:36
 msgid ""
@@ -246,3 +246,19 @@ msgstr ""
 #: build/tag.php:15
 msgid "Tag"
 msgstr ""
+
+#: build/tag.php:15
+msgid "In this topic ..."
+msgstr "In diesem Thema ..."
+
+#: build/tag.php:15
+msgid "Back to the topic"
+msgstr "Zurück zum Thema"
+
+#: build/tag.php:15
+msgid "Also in this topic"
+msgstr "Auch in diesem Thema"
+
+#: build/tag.php:15
+msgid "Go to topic:"
+msgstr "Gehe zum Thema:"

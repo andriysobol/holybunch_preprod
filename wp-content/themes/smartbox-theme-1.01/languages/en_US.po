@@ -246,3 +246,19 @@ msgstr ""
 #: build/tag.php:15
 msgid "Tag"
 msgstr ""
+
+#: build/tag.php:15
+msgid "In this topic ..."
+msgstr ""
+
+#: build/tag.php:15
+msgid "Back to the topic"
+msgstr ""
+
+#: build/tag.php:15
+msgid "Also in this topic"
+msgstr ""
+
+#: build/tag.php:15
+msgid "Go to topic:"
+msgstr ""
