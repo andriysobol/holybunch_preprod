@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Smartbox Frontend Translation File 1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-18 15:09+0300\n"
-"PO-Revision-Date: 2014-10-18 20:55+0100\n"
+"PO-Revision-Date: 2014-10-19 00:12+0100\n"
 "Last-Translator: Andriy Sobol <andriy.sobol@googlemail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru_RU\n"
@@ -274,7 +274,7 @@ msgstr "Также в теме"
 
 #: build/tag.php:15
 msgid "Go to topic"
-msgstr "<Strong>Перейти</Strong> к теме"
+msgstr "<Strong>Перейти</Strong> к теме "
 
 #: build/tag.php:15
 msgid "Read more"
