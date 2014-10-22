@@ -119,7 +119,7 @@ function oxy_content_latest_topics($atts, $content = '') {
     return $output;
 }
 
-add_shortcode('latest_taxonomy_topics', 'oxy_content_latest_topics');
+//add_shortcode('latest_taxonomy_topics', 'oxy_content_latest_topics');
 
 /* ------------ BLOCKQUOTE SHORTCODE ------------ */
 
@@ -766,14 +766,7 @@ function hb_get_recent_oxy_content($atts) {
     $args = array(
         'post_type' => array('oxy_content'),
         'showposts' => $count, // Number of related posts that will be shown.  
-        'orderby' => 'date',
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'teaching_topics',
-                'field' => 'slug',
-                'terms' => 'god'
-            )
-        )
+        'orderby' => 'date'
     );
     $my_query = new wp_query($args);
     $output = '';
@@ -793,7 +786,7 @@ function hb_get_recent_oxy_content($atts) {
 
                 $output.='<a href="' . $post_link . '"> <h3 class="text-center">' . get_the_title() . '</h3></a>';
 
-                $content =  oxy_limit_excerpt(get_the_content(), 30) ;
+                $content =  get_field('summary', $post->ID);//oxy_limit_excerpt(get_the_content(), 30) ;
                 $more_text=  get_more_text($post->post_type);
                 $link = get_permalink();
                 $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
@@ -872,7 +865,7 @@ function get_latest_taxonomy_topics_as_list($atts) {
         'taxonomy' => 'teaching_topics',
         'pad_counts' => 1,
         'hierarchical' => 0,
-		'number'       => '2',
+	'number'       => '2',
     );
     $categories = get_categories($args);
     $count = count($categories);

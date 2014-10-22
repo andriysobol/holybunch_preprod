@@ -50,7 +50,8 @@ $args = array(
     'menu_position'      => null,
     'menu_icon'          => ADMIN_ASSETS_URI . 'images/staff.png',
     'supports'           => array( 'title', 'editor', 'thumbnail', 'post-formats' ),
-    'map_meta_cap'       => true
+    'map_meta_cap'       => true,
+    
 );
 register_post_type('oxy_content', $args);
 
@@ -95,12 +96,12 @@ $args = array(
     'query_var'          => true,
     'capability_type'    => 'post',
     'capabilities'       => $capabilities,
-    'rewrite'            => true,
     'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => null,
     'menu_icon'          => ADMIN_ASSETS_URI . 'images/staff.png',
-    'supports'           => array( 'title', 'editor', 'thumbnail', 'post-formats' )
+    'supports'           => array( 'title', 'editor', 'thumbnail', 'post-formats' ),
+    'rewrite'            => false,
 );
 
 register_post_type('oxy_video', $args);
