@@ -877,6 +877,7 @@ function oxy_pagination( $pages = '', $range = 2 ){
 }
 
 function oxy_limit_excerpt($string, $word_limit) {
+    $string = strip_tags($string); //Gibt die reduzierte Zeichenkette zurück. 
     $words = explode(' ', $string, ($word_limit + 1));
     if( count($words) > $word_limit ) {
         array_pop($words);
