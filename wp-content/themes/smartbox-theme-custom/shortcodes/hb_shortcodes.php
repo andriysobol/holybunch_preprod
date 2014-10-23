@@ -742,7 +742,7 @@ extract(shortcode_atts(array(
 				$output .= '<div class="span9">';
 				$output .= '<h3><a href="' . $post_link . '"> '. get_the_title() . '</a></h3>';
 			 
-				$content = oxy_limit_excerpt(get_the_content(), 30)  ;
+				$content = oxy_limit_excerpt(strip_tags(get_the_content()), 30)  ;
 				$content .= '<a href="' . $post_link . '" class="more-link">' . $more_text . '</a>';
              
 				$output.='<p>' . apply_filters('the_content', $content) . '</p></div></li>';
