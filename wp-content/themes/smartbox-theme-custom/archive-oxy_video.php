@@ -1,3 +1,6 @@
+<?php if(get_page_by_title('Videos')) : ?>
+<?php include('page-videos.php'); ?>
+<?php else:?>
 <?php
 /**
  * Displays a tag archive
@@ -31,24 +34,22 @@ if ($term->slug == "god")
     $title = "";
 oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug), $title); ?>
 
-<section class="section section-padded">
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <?php get_taxonomy_terms_cloud('oxy_video') ?>
-        </div>
-    </div>
-</section>
 
 <section class="section section-padded">
     <div class="container-fluid">
         <div class="row-fluid">
+                <div class="span9">
+                    
             <?php get_template_part('partials/hb_loop_video'); ?>
-            <aside class="span3 sidebar">
-                <?php dynamic_sidebar('sidebar-videos'); ?>
-            </aside>
         </div>
+            <aside class="span3 text-left">
+            <?php dynamic_sidebar('sidebar-videos'); ?>
+        </aside>
+    </div>
+        
     </div>
 </section>
 <?php get_footer();
+endif;?>
 
             

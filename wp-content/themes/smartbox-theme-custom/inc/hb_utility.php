@@ -495,22 +495,8 @@ function get_taxonomy_terms_cloud($post_type) {
             $link = home_url() . "/blog/teaching_topics/" . $category->slug;
         else
             $link = home_url() . "/blog/teaching_topics/" . $category->slug . "/?post_type=" . $post_type;
-        $font_size = 12 + $count / 1.5;
-        $count_as_int = intval($count);
-        if ($count_as_int <= 2)
-            $tag = 'tag1';
-        elseif ($count_as_int <= 4)
-            $tag = 'tag2';
-        elseif ($count_as_int <= 6)
-            $tag = 'tag3';
-        elseif ($count_as_int <= 8)
-            $tag = 'tag4';
-        elseif ($count_as_int <= 10)
-            $tag = 'tag5';
-        else
-            $tag = 'tag6';
         if (!empty($count)) 
-            $output.= "<li><a href='" . $link . "' class='tag-link-22' title='" . $count . " записи'  style='font-size:" . $font_size . "pt;' >" . $tax_name . "</a></li>";
+            $output.= "<li><a href='" . $link . "' class='tag-link-22' title='" . $count . " записи'  style='font-size:10pt;' >" . $tax_name . "</a></li>";
     }
     $output .= '</ul>';
     $target = '_blank';
@@ -1060,11 +1046,11 @@ function get_taxonomy_terms_cloud($post_type) {
         }
     }
 
-    function create_videowrapper_div($src_url, $span="span8"){
+    function create_videowrapper_div($src_url, $span="span8", $width="1250", $height="703"){
 	$output = '<div class='.$span.'>
                          <div class="entry-content">
                            <div class="videoWrapper">
-                              <iframe src="'. $src_url . '" width="1250" height="703" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                              <iframe src="'. $src_url . '" width="'. $width .'" height="'. $height .'" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
                            </div>
                         </div>
              </div>';

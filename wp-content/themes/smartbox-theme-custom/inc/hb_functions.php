@@ -178,4 +178,100 @@ Class Recent_Bloggers extends WP_Widget {
 
 // replace default widgets
 register_widget('Recent_Bloggers');
+
+Class Taxonomy_Topics extends WP_Widget {
+
+    function __construct() {
+        parent::__construct(
+// Base ID of your widget
+                'wpb_widget_taxonomy_topics',
+// Widget name will appear in UI
+                __('Taxonomy Topics', 'wpb_widget_taxonomy_topics'),
+// Widget description
+                array('description' => __('Taxonomy topics for archive', 'wpb_widget_taxonomy_topics'),)
+        );
+    }
+
+    function widget($args, $instance) {
+
+        extract($args);
+
+        $title = apply_filters('widget_title', empty($instance['title']) ? __('Taxonomy Topics', THEME_FRONT_TD) : $instance['title'], $instance, $this->id_base);
+        $post_type    = isset( $instance['post_type'] ) ? esc_attr( $instance['post_type'] ) : 'oxy_content';
+        echo get_taxonomy_terms_cloud($post_type);
+    }
+    function form( $instance ) {
+		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
+		$post_type    = isset( $instance['post_type'] ) ? esc_attr( $instance['post_type'] ) : 'oxy_content';
+?>
+		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
+
+		<p><label for="<?php echo $this->get_field_id( 'post_type' ); ?>"><?php _e( 'Type of posts to show:' ); ?></label>
+		<input id="<?php echo $this->get_field_id( 'post_type' ); ?>" name="<?php echo $this->get_field_name( 'post_type' ); ?>" type="text" value="<?php echo $post_type; ?>"/></p>
+
+<?php
+	}
+}
+
+// replace default widgets
+register_widget('Taxonomy_Topics');
+
+Class Custom_Search extends WP_Widget {
+
+    function __construct() {
+        parent::__construct(
+// Base ID of your widget
+                'wpb_widget_custom_search',
+// Widget name will appear in UI
+                __('Custom Search', 'wpb_widget_custom_search'),
+// Widget description
+                array('description' => __('Search for custom post types', 'wpb_widget_custom_search'),)
+        );
+    }
+
+    function widget($args, $instance) {
+        extract($args);
+        $title = apply_filters('widget_title', empty($instance['title']) ? __('Taxonomy Topics', THEME_FRONT_TD) : $instance['title'], $instance, $this->id_base);
+        $post_type    = isset( $instance['post_type'] ) ? esc_attr( $instance['post_type'] ) : 'oxy_content';
+        
+        if(empty($title))
+            $title = __('Search', THEME_FRONT_TD);
+        
+        if($post_type === 'oxy_video')
+            echo include( CUSTOM_THEME_DIR . 'searchform_sidebar_videos.php');        
+    }
+    function form( $instance ) {
+		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
+		$post_type    = isset( $instance['post_type'] ) ? esc_attr( $instance['post_type'] ) : 'oxy_content';
+?>
+		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
+
+		<p><label for="<?php echo $this->get_field_id( 'post_type' ); ?>"><?php _e( 'Type of posts to show:' ); ?></label>
+		<input id="<?php echo $this->get_field_id( 'post_type' ); ?>" name="<?php echo $this->get_field_name( 'post_type' ); ?>" type="text" value="<?php echo $post_type; ?>"/></p>
+
+<?php
+	}
+}
+
+// replace default widgets
+register_widget('Custom_Search');
+
+function custom_fields_to_excerpts($content, $post, $query) {
+        $more_text=  get_more_text($post->post_type);
+        $link = get_permalink();
+        $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
+    return $content;
+}
+//add_filter('relevanssi_excerpt_content', 'custom_fields_to_excerpts', 10, 3);
+
+// Add a modified "read more" link for manually created excerpts
+function my_custom_excerpt_more($more) {
+        $more_text= get_more_text($post->post_type);
+        $link = get_permalink();
+        $more = '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
+	return $more;
+}
+//add_filter( 'get_the_excerpt', 'my_custom_excerpt_more');
 ?>
