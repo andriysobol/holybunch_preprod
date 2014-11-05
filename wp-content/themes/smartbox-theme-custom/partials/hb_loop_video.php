@@ -11,18 +11,22 @@
  * @version 1.4
  */
 ?>
-
-<div class="<?php echo oxy_get_option('blog_layout') == 'full-width' ? 'span12':'span9' ; ?>">
-    <?php $args = array(
-                'post_type' => 'oxy_video',
-                'post_status' => 'publish'
-            );
-    $my_query = new wp_query($args);?>
+<?php oxy_pagination($wp_query->max_num_pages); ?>
+    <?php 
+    $taxonomy_term = $wp_query->queried_object;
+    $slug = $taxonomy_term->slug;
+    if(empty($slug))
+	$slug = 'god';
+    $wp_query->tax_query = array(
+                array(
+                    'taxonomy' => 'teaching_topics',
+                    'field' => 'slug',
+                    'terms' => $slug
+                ));
+    $my_query = $wp_query;?>
     <?php if( $my_query->have_posts() ): ?>
     <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
-
     <?php get_template_part(  'partials/video-single-archive'  ); ?>
-
     <?php endwhile; ?>
 
     <?php oxy_pagination($my_query->max_num_pages); ?>
@@ -33,8 +37,3 @@
             </header>
         </article>
     <?php endif; ?>
-</div>
-
-<aside class="span3 sidebar">
-    <?php dynamic_sidebar('sidebar-videos'); ?>
-</aside>

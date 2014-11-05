@@ -19,7 +19,7 @@
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
         <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
         <title><?php wp_title( '|', true, 'right' );  bloginfo('name'); ?></title>
-        <meta content="<?php wp_title( '|', true, 'right' );  bloginfo('name'); ?>" name="description" />
+        <meta content="Christian side" name="description" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
         <link href="<?php echo oxy_get_option( 'favicon' ); ?>" rel="shortcut icon" />

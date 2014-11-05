@@ -13,6 +13,8 @@
  * @version 1.5
  */
 get_header();
+oxy_page_header();
+$allow_comments = oxy_get_option( 'site_comments' );
 if (is_day()) {
     $title = __('Day', THEME_FRONT_TD);
     $sub = get_the_date('j M Y');
@@ -27,26 +29,23 @@ if (is_day()) {
     $sub = 'Archives';
 }
 ?>
-<?php 
-$term =	$wp_query->queried_object;
+<?php
+$term = $wp_query->queried_object;
 $title = $term->name;
 if ($term->slug == "god") 
     $title = "";
-oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug), $title); ?>
-
-
+oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug), $title);
+?>
 <section class="section section-padded">
     <div class="container-fluid">
         <div class="row-fluid">
                 <div class="span9">
-                    
-            <?php get_template_part('partials/hb_loop_video'); ?>
-        </div>
+                    <?php get_template_part('partials/hb_loop_video'); ?>
+                </div>
             <aside class="span3 text-left">
-            <?php dynamic_sidebar('sidebar-videos'); ?>
-        </aside>
-    </div>
-        
+                <?php dynamic_sidebar('sidebar-videos'); ?>
+            </aside>
+        </div>        
     </div>
 </section>
 <?php get_footer();

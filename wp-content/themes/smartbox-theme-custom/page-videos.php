@@ -14,6 +14,13 @@ get_header();
 oxy_page_header();
 $allow_comments = oxy_get_option( 'site_comments' );
 ?>
+<?php
+$term = $wp_query->queried_object;
+$title = $term->name;
+if ($term->slug == "god") 
+    $title = "";
+oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug), $title);
+?>
 <section class="section section-padded">
     <div class="container-fluid">
         <div class="row-fluid">

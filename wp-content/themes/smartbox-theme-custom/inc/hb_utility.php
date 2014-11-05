@@ -473,7 +473,7 @@ function get_taxonomy_terms_cloud($post_type) {
     $categories = get_categories($args);
     $output = '<div id="tag_cloud-3" class="sidebar-widget  widget_tag_cloud">';
     $output .= '<div class="tagcloud">';
-    $output .= '    <div class="tagcloudThema">Темы на выбор:</div>';
+    $output .= '    <h3 class="sidebar-header">Темы на выбор:</h3>';
     $output .= '<ul>';
     foreach ($categories as $category) {
         $posts_in_category = get_posts(array(

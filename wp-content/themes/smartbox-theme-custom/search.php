@@ -24,16 +24,16 @@ get_header();
                                        
                     <input type="checkbox" name="post_type[]" value="oxy_content" <?php if (is_array($query_types) and in_array('oxy_content', $query_types)) {
                         echo 'checked="checked"';
-                    } ?> > Propoved
+                    } ?> > Проповедь
                     <input type="checkbox" name="post_type[]" value="post" <?php if (is_array($query_types) and in_array('post', $query_types)) {
                         echo 'checked="checked"';
-                    } ?> > Blog
+                    } ?> > Блог
                     <input type="checkbox" name="post_type[]" value="oxy_audio" <?php if (is_array($query_types) and in_array('oxy_audio', $query_types)) {
                         echo 'checked="checked"';
-                    } ?> > Audios
+                    } ?> > Аудио
                     <input type="checkbox" name="post_type[]" value="oxy_video" <?php if (is_array($query_types) and in_array('oxy_video', $query_types)) {
                         echo 'checked="checked"';
-                        } ?> /> Videos<br>                       
+                        } ?> /> Видео<br>                       
                 </form>
             </div>
         </div>
