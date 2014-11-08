@@ -51,6 +51,8 @@ $allow_comments = oxy_get_option( 'site_comments' );
                 $link = get_permalink();
                 $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>'; 
                 echo $content;?>
+             <?php oxy_wp_link_pages(array('before' => '<div class="pagination pagination-centered">', 'after' => '</div>')); ?>
+    
         </div>
     </div>
 </article>
