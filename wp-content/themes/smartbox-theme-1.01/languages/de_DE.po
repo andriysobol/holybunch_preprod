@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: Smartbox Frontend Translation File 1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-18 15:09+0300\n"
-"PO-Revision-Date: 2014-10-28 13:07+0100\n"
-"Last-Translator: Mihail <mihon_82@rambler.ru>\n"
+"PO-Revision-Date: 2014-11-08 12:28+0100\n"
+"Last-Translator: Andriy Sobol <andriy.sobol@googlemail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.6.9\n"
 
 #: build/archive.php:15
 msgid "Day"
@@ -266,3 +266,15 @@ msgstr "<Strong>Zum Thema</Strong>"
 #: build/tag.php:15
 msgid "Read more"
 msgstr "<strong>Weiterlesen</strong>"
+
+#: build/tag.php:15
+msgid "Enter keywords"
+msgstr "Schlüsselwörter"
+
+#: build/tag.php:15
+msgid "Show all videos"
+msgstr "Alle Videos zeigen"
+
+#: build/tag.php:15
+msgid "Show all articles"
+msgstr "Alle Beiträge zeigen"

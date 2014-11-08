@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Smartbox Frontend Translation File 1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-18 15:09+0300\n"
-"PO-Revision-Date: 2014-10-19 00:12+0100\n"
+"PO-Revision-Date: 2014-11-08 12:29+0100\n"
 "Last-Translator: Andriy Sobol <andriy.sobol@googlemail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru_RU\n"
@@ -248,7 +248,7 @@ msgstr "% комментарий"
 
 #: build/search.php:15
 msgid "Search"
-msgstr ""
+msgstr "Поиск"
 
 #: build/search.php:36
 msgid ""
@@ -279,3 +279,15 @@ msgstr "<Strong>Перейти</Strong> к теме "
 #: build/tag.php:15
 msgid "Read more"
 msgstr "<strong>Читать</strong> далее"
+
+#: build/tag.php:15
+msgid "Enter keywords"
+msgstr "Введите ключевые слова"
+
+#: build/tag.php:15
+msgid "Show all videos"
+msgstr "Показать все видео"
+
+#: build/tag.php:15
+msgid "Show all articles"
+msgstr "Показать все статьи"

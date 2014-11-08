@@ -240,6 +240,8 @@ Class Custom_Search extends WP_Widget {
         
         if($post_type === 'oxy_video')
             include( CUSTOM_THEME_DIR . 'searchform_sidebar_videos.php');        
+        elseif ($post_type === 'oxy_content') 
+            include( CUSTOM_THEME_DIR . 'searchform_sidebar_texts.php');        
     }
     function form( $instance ) {
 		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
@@ -303,30 +305,14 @@ Class Archive_Custom_Types extends WP_Widget {
 // replace default widgets
 register_widget('Archive_Custom_Types');
 
-function custom_fields_to_excerpts($content, $post, $query) {
-        $more_text=  get_more_text($post->post_type);
-        $link = get_permalink();
-        $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
-    return $content;
-}
-//add_filter('relevanssi_excerpt_content', 'custom_fields_to_excerpts', 10, 3);
-
-// Add a modified "read more" link for manually created excerpts
-function my_custom_excerpt_more($more) {
-        $more_text= get_more_text($post->post_type);
-        $link = get_permalink();
-        $more = '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
-	return $more;
-}
-//add_filter( 'get_the_excerpt', 'my_custom_excerpt_more');
-function template_chooser($template)   
-{    
+function template_chooser($template) {    
   global $wp_query;   
   $post_type = get_query_var('post_type');   
-  if( $wp_query->is_search && $post_type == 'oxy_video' )   
-  {
-    return locate_template('archive-oxy_video.php');  //  redirect to archive-search.php
-  }   
+  if( $post_type == 'oxy_video' ){
+    return locate_template('page-videos.php');  //  redirect to page-videos.php
+  }elseif( $post_type == 'oxy_content' ){
+    return locate_template('page-texts.php');  //  redirect to page-texts.php
+  }    
   return $template;   
 }
 add_filter('template_include', 'template_chooser');
