@@ -13,36 +13,38 @@
 global $post;
 $author_id = get_the_author_meta('ID');
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('row-fluid'); ?>>
-    
-    <div class="<?php echo  oxy_get_option( 'blog_image_size' ) == 'normal'? 'span10':'span12'; ?> post-body">
-        <div class="post-head">
-            <h2 class="small-screen-center">
-                <?php if ( is_single() ) : ?>
-                    <?php the_title(); ?>
-                <?php else : ?>
-                    <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', THEME_FRONT_TD ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+<article id="post-<?php the_ID(); ?>" <?php post_class('row-fluid'); ?>>    
+    <div class="span12">
+        <div class="span12 post-body">
+            <div class="post-head">
+                <h2 class="small-screen-center">
+                    <?php if (is_single()) : ?>
                         <?php the_title(); ?>
-                    </a>
-                <?php endif; // is_single() ?>
-            </h2>
+                    <?php else : ?>
+                        <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr(sprintf(__('Permalink to %s', THEME_FRONT_TD), the_title_attribute('echo=0'))); ?>" rel="bookmark">
+                            <?php the_title(); ?>
+                        </a>
+                    <?php endif; // is_single() ?>
+                </h2>
+            </div>
+            <div class="entry-content">
+                <?php
+                if (is_search()):
+                    $content = relevanssi_the_excerpt();
+                else:
+                    $content = hb_limit_excerpt(get_the_content(), 40);
+                endif;
+                /*$more_text = get_more_text('oxy_video');
+                $link = get_permalink();
+                $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';*/
+                $video_shortcode = get_field('video_shortcode', $post->ID);
+                $output = '<div>'. create_videowrapper_div($video_shortcode, $span = "span12", "1250", "703")  .
+                        '</div>';
+                $output .= '<div class="span12" style="margin-top: 25px;">' .
+                        $content .
+                        '</div>';
+                echo $output;
+                ?>
+            </div>
         </div>
-        <div class="entry-content">
-            <?php
-            $video_shortcode = get_field('video_shortcode', $post->ID);
-            if( $video_shortcode !== null ) {
-                // use the video in the archives
-                echo apply_filters('the_content', create_videowrapper_div($video_shortcode));
-            }else if( has_post_thumbnail() ) {
-                $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
-                echo '<figure><img alt="featured image" src="'.$img[0].'"></figure>';
-            }            
-            $content = hb_limit_excerpt(get_the_content(), 40);
-            $more_text = '<Strong>Читать</Strong> далее';
-            $link = get_permalink();
-            $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
-            echo apply_filters( 'the_content', $content );
-            ?>
-        </div>
-    </div>
 </article>

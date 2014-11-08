@@ -742,7 +742,7 @@ extract(shortcode_atts(array(
 				$output .= '<div class="span9">';
 				$output .= '<h3><a href="' . $post_link . '"> '. get_the_title() . '</a></h3>';
 			 
-				$content = oxy_limit_excerpt(get_the_content(), 30)  ;
+				$content = oxy_limit_excerpt(strip_tags(get_the_content()), 30)  ;
 				$content .= '<a href="' . $post_link . '" class="more-link">' . $more_text . '</a>';
              
 				$output.='<p>' . apply_filters('the_content', $content) . '</p></div></li>';
@@ -882,9 +882,9 @@ function get_latest_taxonomy_topics_as_list($atts) {
 
         $more_text = '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
         $output .= '<div>
-                    <div class="well blockquote-well well_custom_2col_mb">
+                    <div class="well blockquote-well">
                       <h3><a href="' . $link . '">' . $taxonomy->name . '</a></h3>
-                        <blockquote><p>' . $summary . $more_text . '</p></blockquote>';
+                        <blockquote class="margin_bottom_0px_mb"><p>' . $summary . $more_text . '</p></blockquote>';
         $output .='<a href="' . $link . '">' .get_image_as_round_box($taxonomy_image_link) .'</a>';
         $output.= '</div> </div>';
     }

@@ -11,6 +11,10 @@
  * @version 1.4
  */
 ?>
+
+<?php 
+$allow_comments = oxy_get_option( 'site_comments' );
+ ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('row-fluid'); ?>>
     <?php get_template_part( 'partials/post-gutter' ); ?>
     <div class="<?php echo  oxy_get_option( 'blog_image_size' ) == 'normal'? 'span10':'span12'; ?> post-body">
@@ -42,11 +46,11 @@
                 }
                 echo '</figure>';
             } ?>
-            <?php $content= oxy_limit_excerpt(get_the_content(), 60) ;
+            <?php $content= oxy_limit_excerpt(get_the_content(), 100) ;
                 $more_text=  get_more_text($post->post_type);
                 $link = get_permalink();
                 $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>'; 
-                echo apply_filters('the_content', $content);?>
+                echo $content;?>
         </div>
     </div>
 </article>

@@ -40,7 +40,7 @@ oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug
 <section class="section section-padded">
     <div class="container-fluid">
         <div class="row-fluid">
-<?php get_template_part('partials/hb_loop'); ?>
+            <?php get_template_part('partials/hb_loop'); ?>
         </div>
     </div>
 </section>
