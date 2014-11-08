@@ -1,7 +1,8 @@
 <?php
 /**
- * Shows a simple gallery post
- *
+ * Shows video item for: 
+ * 1 taxonomy request (e.g. url='.../blog/teaching_topics/golgota/?post_type=oxy_video')
+ * 2 search requesr (e.g. url='.../?s=Ибо+слово+о+кресте&post_type=oxy_video'); in this case relevanssi_the_excerpt will be used
  * @package Smartbox
  * @subpackage Frontend
  * @since 1.0
@@ -11,7 +12,6 @@
  * @version 1.5
  */
 global $post;
-$author_id = get_the_author_meta('ID');
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('row-fluid'); ?>>    
     <div class="span12">
@@ -24,7 +24,7 @@ $author_id = get_the_author_meta('ID');
                         <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr(sprintf(__('Permalink to %s', THEME_FRONT_TD), the_title_attribute('echo=0'))); ?>" rel="bookmark">
                             <?php the_title(); ?>
                         </a>
-                    <?php endif; // is_single() ?>
+                    <?php endif;  ?>
                 </h2>
             </div>
             <div class="entry-content">
@@ -34,15 +34,9 @@ $author_id = get_the_author_meta('ID');
                 else:
                     $content = hb_limit_excerpt(get_the_content(), 40);
                 endif;
-                /*$more_text = get_more_text('oxy_video');
-                $link = get_permalink();
-                $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';*/
                 $video_shortcode = get_field('video_shortcode', $post->ID);
-                $output = '<div>'. create_videowrapper_div($video_shortcode, $span = "span12", "1250", "703")  .
-                        '</div>';
-                $output .= '<div class="span12" style="margin-top: 25px;">' .
-                        $content .
-                        '</div>';
+                $output = '<div>' . create_videowrapper_div($video_shortcode, $span = "span12", "1250", "703") . '</div>';
+                $output .= '<div class="span12" style="margin-top: 25px;">' . $content . '</div>';
                 echo $output;
                 ?>
             </div>

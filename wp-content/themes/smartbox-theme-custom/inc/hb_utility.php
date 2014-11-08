@@ -121,7 +121,7 @@ function get_taxonomy_banner_image($taxonomy_name, $topic) {
     if (is_array($term_details)) {
         $term_id = $term_details['term_id'];
     } else {
-        return '';
+        return get_theme_root_uri() . '/smartbox-theme-custom/images/banner_thema_default.jpg';;
     }
     //in order to get custom field 'taxonomy_image' from taxonomy we have 
     //to call advanced custom fields plugin api and provide id of post which 
@@ -468,13 +468,23 @@ function get_taxonomy_terms_cloud($post_type) {
         'hide_empty' => 1,
         'taxonomy' => 'teaching_topics',
         'pad_counts' => 1,
-        'hierarchical' => 0,
+        'hierarchical' => 0
     );
     $categories = get_categories($args);
     $output = '<div id="tag_cloud-3" class="sidebar-widget  widget_tag_cloud">';
     $output .= '<div class="tagcloud">';
     $output .= '    <h3 class="sidebar-header">Темы на выбор:</h3>';
     $output .= '<ul>';
+    $output .= append_categories_as_list($categories, $post_type);
+    $output .= '</ul>';
+    $target = '_blank';
+    $output .= '</div>';
+    $output .= '</div>';
+    echo $output;
+}
+
+function append_categories_as_list($categories, $post_type){
+    $add_all = true;
     foreach ($categories as $category) {
         $posts_in_category = get_posts(array(
             'showposts' => -1,
@@ -486,25 +496,34 @@ function get_taxonomy_terms_cloud($post_type) {
             )
         ));
         $count = count($posts_in_category);
-        //strpad makes following echo str_pad($input, 10, "-=", STR_PAD_LEFT);  // produces "-=-=-Alien"
-        //we need to add whitespaces in order to create hierarchy
-        $slug = $category->slug;
-        $tax_name = " " . $category->name . "(" . $count . ")";
+        $tax_name = " " . $category->name . " (" . $count . ")";
         //dont add post type for theme, but do link for all post types
         if (is_array($post_type))
             $link = home_url() . "/blog/teaching_topics/" . $category->slug;
         else
             $link = home_url() . "/blog/teaching_topics/" . $category->slug . "/?post_type=" . $post_type;
+        if($add_all){
+            $posts_all = get_posts(array(
+            'post_type' => $post_type,
+            'showposts' => -1,    
+            )
+            );
+            $count_all = count($posts_all);
+            if($post_type == 'oxy_video'){
+                $link_all = home_url() . "/videos";
+                $title = __('Show all videos', THEME_FRONT_TD). " (" . $count_all . ") ";
+            }elseif (oxy_content){
+                $title = __('Show all articles', THEME_FRONT_TD). " (" . $count_all . ") ";
+                $link_all = home_url() . "/texts";
+            }
+            $output = "<li><a href='" . $link_all . "' class='tag-link-22' title='" . $count_all . " записи'  style='font-size:10pt;' >" . $title . "</a></li>";
+            $add_all = FALSE;
+        }
         if (!empty($count)) 
-            $output.= "<li><a href='" . $link . "' class='tag-link-22' title='" . $count . " записи'  style='font-size:10pt;' >" . $tax_name . "</a></li>";
+            $output .= "<li><a href='" . $link . "' class='tag-link-22' title='" . $count . " записи'  style='font-size:10pt;' >" . $tax_name . "</a></li>";
     }
-    $output .= '</ul>';
-    $target = '_blank';
-    $output .= '</div>';
-    $output .= '</div>';
-    echo $output;
+    return $output;
 }
-
     function get_related_posts($atts) {
         // setup options
         $atts = array(
@@ -796,14 +815,14 @@ function get_taxonomy_terms_cloud($post_type) {
     </div>';
         return $output;
     }
-      function create_one_text_items($first_item) {
+      function create_one_text_items($first_item, $content='') {
         $output = '     <div class="container-fluid">
         <div>
         </div>
         <div class="row-fluid">
             <ul class="inline row-fluid">';
         $post = $first_item;
-        $output .= add_post_summary_to_main_page($post, 'span12');
+        $output .= add_post_summary_to_main_page($post, 'span12', $content);
         $output .= '</ul></div></div>';
         return $output;
     }
@@ -840,8 +859,11 @@ function get_taxonomy_terms_cloud($post_type) {
         return $output;
     }
 
-    function add_post_summary_to_main_page($post, $span = 'span4') {
-        $summary =  get_post_summary_mini($post);
+    function add_post_summary_to_main_page($post, $span = 'span4', $summary='') {
+        if(empty($summary))
+            $summary =  get_post_summary_mini($post);
+        else 
+            $summary =  $summary; 
 	$more_text = __( 'Read more', THEME_FRONT_TD );
         $link = get_post_permalink($post->ID, false, false);
         $more_text = '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';

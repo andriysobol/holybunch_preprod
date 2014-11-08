@@ -11,19 +11,17 @@
  * @version 1.4
  */
 ?>
-<?php oxy_pagination($wp_query->max_num_pages); ?>
+    <?php oxy_pagination($wp_query->max_num_pages); ?>
     <?php 
-    $taxonomy_term = $wp_query->queried_object;
-    $slug = $taxonomy_term->slug;
-    if(empty($slug))
-	$slug = 'god';
-    $wp_query->tax_query = array(
-                array(
-                    'taxonomy' => 'teaching_topics',
-                    'field' => 'slug',
-                    'terms' => $slug
-                ));
-    $my_query = $wp_query;?>
+   if(is_archive()){
+        $my_query = $wp_query;
+    }else{
+        $args = array(
+                'post_type' => 'oxy_video',
+                'post_status' => 'publish'
+        );
+        $my_query = new wp_query($args);
+    }?>
     <?php if( $my_query->have_posts() ): ?>
     <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
     <?php get_template_part(  'partials/video-single-archive'  ); ?>
