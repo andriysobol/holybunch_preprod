@@ -18,7 +18,9 @@
     }else{
         $args = array(
                 'post_type' => 'oxy_video',
-                'post_status' => 'publish'
+                'post_status' => 'publish',
+                'posts_per_page' => $my_query->max_num_pages, 
+                'paged' => $paged 
         );
         $my_query = new wp_query($args);
     }?>

@@ -32,7 +32,7 @@ global $post;
                 if (is_search()):
                     $content = relevanssi_the_excerpt();
                 else:
-                    $content = hb_limit_excerpt(get_the_content(), 40);
+                    $content = get_the_content();
                 endif;
                 $video_shortcode = get_field('video_shortcode', $post->ID);
                 $output = '<div>' . create_videowrapper_div($video_shortcode, $span = "span12", "1250", "703") . '</div>';
