@@ -51,7 +51,7 @@ if(is_page()){
             <div class="span9">
                 <?php get_template_part('partials/hb_loop_video'); ?>
             </div>
-            <aside class="span3 text-left">
+            <aside class="span3 sidebar">
                 <?php dynamic_sidebar('sidebar-videos'); ?>
             </aside>
         </div>        
