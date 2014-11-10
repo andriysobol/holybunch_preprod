@@ -5,7 +5,7 @@ Donate link: http://www.greenpeace.org/international/
 Tags: multilingual, multisite, language, switcher, international, localization, i18n
 Requires at least: 3.6.1
 Tested up to: 4.0
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,7 @@ http://blog.jrmayer.co/) for creating the plugin's banner.
 * Japanese (ja) - [ThemeBoy](http://themeboy.com/)
 * Swedish (sv_SE) - [Erik Bernskiold](http://www.bernskioldmedia.com/)
 * Traditional & Simplified Chinese (zh_CN & zh_TW) - DrBenson
+* Arabic (ar) - Mohamed Elwan
 
 If you have created your own language pack, or have an update of an existing one, you can [send me](mailto:re@lloc.de) your gettext PO and MO so that I can 
 bundle it into the Multisite Language Switcher. You can download the latest POT file
@@ -91,7 +92,11 @@ if you need such functionality.
 
 = How can I add the Multisite Language Switcher to the nav-menu of my blog? =
 
-Please check this [plugin](https://wordpress.org/plugins/mslsmenu/) out.
+Please check the add-on [MslsMenu](https://wordpress.org/plugins/mslsmenu/) out.
+
+= I want to have the languages in an HTML select. How can I do that? =
+
+Please check the add-on [MslsSelect](https://wordpress.org/plugins/mslsselect/) out.
 
 = I don't want to upload the same media files for every site. What can I do? =
 
@@ -116,6 +121,9 @@ There is a [plugin](http://wordpress.org/plugins/wpml2wpmsls/) which comes handy
 4. Widget
 
 == Changelog ==
+
+= 1.0.4 =
+* language files for Arabic (ar) by Mohamed Elwan added
 
 = 1.0.3 =
 * Bugfix: alternate hreflang for the current blog was empty
