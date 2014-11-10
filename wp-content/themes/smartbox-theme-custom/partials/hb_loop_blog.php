@@ -19,13 +19,18 @@
 <?php endif; ?>
 
 <div class="<?php echo oxy_get_option('blog_layout') == 'full-width' ? 'span12':'span9' ; ?>">
-    <?php $args = array(
+    <?php 
+       if (is_archive()) {
+            $my_query = $wp_query;
+        } else {
+            $args = array(
                 'post_type' => 'post',
                 'post_status' => 'publish',
-                'posts_per_page' => $my_query->max_num_pages, 
-                'paged' => $paged 
+                'posts_per_page' => $my_query->max_num_pages,
+                'paged' => $paged
             );
-    $my_query = new wp_query($args);?>
+        $my_query = new wp_query($args);
+        }?>
     <?php if( $my_query->have_posts() ): ?>
     <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
 
