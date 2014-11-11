@@ -198,7 +198,9 @@ Class Taxonomy_Topics extends WP_Widget {
 
         $title = apply_filters('widget_title', empty($instance['title']) ? __('Taxonomy Topics', THEME_FRONT_TD) : $instance['title'], $instance, $this->id_base);
         $post_type    = isset( $instance['post_type'] ) ? esc_attr( $instance['post_type'] ) : 'oxy_content';
-        echo get_taxonomy_terms_cloud($post_type);
+        echo $before_widget;
+        echo get_taxonomy_terms_cloud($post_type, $title);
+        echo $after_widget;
     }
     function form( $instance ) {
 		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
@@ -281,12 +283,14 @@ Class Archive_Custom_Types extends WP_Widget {
         $args = array('post_type' => $post_type, 'show_post_count' => true,'echo' => 0, 'before' => '<h4>',
 		'after' => '</h4>', 'format' => 'custom');
         $output = '<div >';
-        $output .= '    <h3 class="sidebar-header">'.$title.':</h3>';
+        $output .= '    <h3 class="sidebar-header">'.$title.'</h3>';
         $output .= '<ul>';
         $output .= wp_get_archives_cpt( $args );
         $output .= '</ul>';
-        $output .= '</div>';
+        $output .= '</div></hr>';
+       echo $before_widget;
         echo $output;
+        echo $after_widget;
     }
     function form( $instance ) {
 		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';

@@ -461,7 +461,7 @@ function get_taxonomy_drop_down($post_type) {
     echo $select;
 }
 
-function get_taxonomy_terms_cloud($post_type) {
+function get_taxonomy_terms_cloud($post_type, $title="Темы на выбор") {
     if (empty($post_type))
         $post_type = array('oxy_content', 'oxy_video', 'oxy_audio');
     $args = array(
@@ -473,7 +473,7 @@ function get_taxonomy_terms_cloud($post_type) {
     $categories = get_categories($args);
     $output = '<div id="tag_cloud-3" class="sidebar-widget  widget_tag_cloud">';
     $output .= '<div class="tagcloud">';
-    $output .= '    <h3 class="sidebar-header">Темы на выбор:</h3>';
+    $output .= '    <h3 class="sidebar-header">'.$title.'</h3>';
     $output .= '<ul>';
     $output .= append_categories_as_list($categories, $post_type);
     $output .= '</ul>';
