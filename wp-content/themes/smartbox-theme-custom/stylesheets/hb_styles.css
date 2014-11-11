@@ -230,3 +230,6 @@ blockquote p {
 blockquote.margin_bottom_0px_mb {
     margin-bottom: 0px;
 }
+.widget_wpb_widget_custom_search form {
+margin: 0;
+}
