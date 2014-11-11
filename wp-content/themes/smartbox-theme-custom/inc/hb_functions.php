@@ -312,9 +312,9 @@ register_widget('Archive_Custom_Types');
 function template_chooser($template) {    
   global $wp_query;   
   $post_type = get_query_var('post_type');   
-  if( $post_type == 'oxy_video' ){
+  if(($wp_query->is_search or $wp_query->is_archive) &&  $post_type == 'oxy_video' ){
     return locate_template('page-videos.php');  //  redirect to page-videos.php
-  }elseif( $post_type == 'oxy_content' ){
+  }elseif(($wp_query->is_search or $wp_query->is_archive) && $post_type == 'oxy_content' ){
     return locate_template('page-texts.php');  //  redirect to page-texts.php
   }    
   return $template;   
