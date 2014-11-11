@@ -239,11 +239,12 @@ Class Custom_Search extends WP_Widget {
         
         if(empty($title))
             $title = __('Search', THEME_FRONT_TD);
-        
+            echo $before_widget;
         if($post_type === 'oxy_video')
             include( CUSTOM_THEME_DIR . 'searchform_sidebar_videos.php');        
         elseif ($post_type === 'oxy_content') 
-            include( CUSTOM_THEME_DIR . 'searchform_sidebar_texts.php');        
+            include( CUSTOM_THEME_DIR . 'searchform_sidebar_texts.php');
+        echo $after_widget;
     }
     function form( $instance ) {
 		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
