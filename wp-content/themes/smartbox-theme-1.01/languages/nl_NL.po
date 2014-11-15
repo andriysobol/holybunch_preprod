@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: Smartbox Frontend Translation File 1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-18 15:09+0300\n"
-"PO-Revision-Date: 2014-09-17 21:16+0100\n"
+"PO-Revision-Date: 2014-11-15 14:00+0100\n"
 "Last-Translator: Andriy Sobol <andriy.sobol@googlemail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.6.10\n"
 
 #: build/archive.php:15
 msgid "Day"
@@ -252,3 +252,11 @@ msgstr "Tag"
 #: build/tag.php:15
 msgid "Read more"
 msgstr "<strong>Lees</strong> meer"
+
+#: build/tag.php:15
+msgid "In this topic ..."
+msgstr "In dit onderwerp"
+
+#: build/tag.php:15
+msgid "Go to topic"
+msgstr "<Strong>Naar thema</Strong>"
