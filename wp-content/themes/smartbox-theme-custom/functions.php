@@ -25,6 +25,7 @@ $theme = new OxyCustomTheme(
             'sidebar-videos'     => array( 'Video Sidebar', 'Video sidebar for video archive' ),
             'sidebar-texts'     => array( 'Text Sidebar', 'Text sidebar for text archive' ),
             'sidebar-audios'     => array( 'Audio Sidebar', 'Audio sidebar for audio archive' ),
+            'sidebar-music'     => array( 'Music Sidebar', 'Sidebar for music side' ),
             'above-nav-right'    => array( 'Top right', 'Above Navigation section to the right' ),
             'above-nav-left'     => array( 'Top left', 'Above Navigation section to the left' ),
             'footer-left'        => array( 'Footer left', 'Left footer section' ),
