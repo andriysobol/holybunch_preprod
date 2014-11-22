@@ -210,7 +210,7 @@ function get_search_form( $echo = true ) {
 	 *
 	 * @link https://core.trac.wordpress.org/ticket/19321
 	 */
- 	do_action( 'pre_get_search_form' );
+	do_action( 'pre_get_search_form' );
 
 	$format = current_theme_supports( 'html5', 'search-form' ) ? 'html5' : 'xhtml';
 
