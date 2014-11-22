@@ -227,8 +227,8 @@ blockquote p {
         padding-left: 5%;
     }
 }
-blockquote.margin_bottom_0px_mb {
-    margin-bottom: 0px;
+blockquote.margin_bottom_25px_mb {
+    margin-bottom: 25px;
 }
 .widget_wpb_widget_custom_search form {
 margin: 0;

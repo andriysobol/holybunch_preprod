@@ -884,7 +884,7 @@ function get_latest_taxonomy_topics_as_list($atts) {
         $output .= '<div>
                     <div class="well blockquote-well">
                       <h3><a href="' . $link . '">' . $taxonomy->name . '</a></h3>
-                        <blockquote class="margin_bottom_0px_mb"><p>' . $summary . $more_text . '</p></blockquote>';
+                        <blockquote class="margin_bottom_25px_mb"><p>' . $summary . $more_text . '</p></blockquote>';
         $output .='<a href="' . $link . '">' .get_image_as_round_box($taxonomy_image_link) .'</a>';
         $output.= '</div> </div>';
     }
