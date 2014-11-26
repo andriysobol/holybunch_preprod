@@ -717,8 +717,8 @@ function append_categories_as_list($categories, $post_type){
     }
 
     function hb_create_topic_page($taxonomy_term) {
-
-        //get post of type text
+    
+       //get post of type text
         $query = array(
             'numberposts' => -1,
             'post_type' => 'oxy_content',
@@ -1167,6 +1167,9 @@ function get_corresponding_terms($post) {
                     break;
         }
         return $more_text;
+    }
+    function get_hb_more_text_link($link, $more_text){
+        return '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
     }
     ;
     ?>
