@@ -20,7 +20,10 @@ $allow_comments = oxy_get_option( 'site_comments' );
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span12">
-		<?php echo get_corresponding_terms($post);?>
+			<a align="right" class="icon-print pf-alignright" href="<?php echo get_permalink() . '?pfstyle=wp' ; ?>" rel="nofollow"> Print</a>
+			<?php 
+			echo get_corresponding_terms($post);
+			?>
                 <?php while ( have_posts() ) : the_post(); ?>
                                <div class="span12" style = "color:#FFA500;">
                     <?php echo get_field('quote'); ?>
