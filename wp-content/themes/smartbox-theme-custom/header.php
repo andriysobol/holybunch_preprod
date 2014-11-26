@@ -34,6 +34,28 @@
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
           <script src="javascripts/PIE.js"></script>
         <![endif]-->
+<!-- jquery -->
+<script src="http://holybunch.com/wp-content/themes/smartbox-theme-custom/inc/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<!-- easing plugin ( optional ) -->
+<script src="http://holybunch.com/wp-content/themes/smartbox-theme-custom/inc/js/easing.js" type="text/javascript"></script>
+<!-- UItoTop plugin -->
+<script src="http://holybunch.com/wp-content/themes/smartbox-theme-custom/inc/js/jquery.ui.totop.js" type="text/javascript"></script>
+<!-- Starting the plugin -->
+<script type="text/javascript">
+$(document).ready(function() {
+/*
+var defaults = {
+containerID: 'toTop', // fading element id
+containerHoverID: 'toTopHover', // fading element hover id
+scrollSpeed: 1200,
+easingType: 'linear'
+};
+*/
+ 
+$().UItoTop({ easingType: 'easeOutQuart' });
+ 
+});
+</script>
         <?php wp_head(); ?>
 <script>
 var _prum = [['id', '53c3db78abe53d4068bb7da6'],
