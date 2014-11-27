@@ -6,7 +6,9 @@
  * $Licence:: *(LICENCE)*
  */
 
-/* https://sites.google.com/site/gmapsdevelopment/ */
+/** 
+ * https://sites.google.com/site/gmapsdevelopment/ 
+ */
 var ICON_PATH = "http://maps.google.com/mapfiles/ms/icons/";
 var images = {
     PURPURLE: "purple.png",
@@ -18,6 +20,9 @@ var images = {
     ORANGE: "orange.png",
     PINK: "pink.png"
 }
+/** 
+ * http://universimmedia.pagesperso-orange.fr/geo/loc.htm
+ */
 var markers = [
     //Russia
     ['Sankt-Peterburg', 59.93428, 30.33510, ICON_PATH + images.ORANGE],
