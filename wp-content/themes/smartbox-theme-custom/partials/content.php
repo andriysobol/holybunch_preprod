@@ -42,10 +42,27 @@
                 }
                 echo '</figure>';
             } ?>
-            <?php the_content(); ?>
+            <?php
+            $current_url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+            //if user opens print view, means url contains "?pfstyle=wp", then content should not shown in pages but completely
+            if (strpos($current_url, '?pfstyle=wp') !== false) {
+                $content = apply_filters('the_content', $post->post_content);
+                echo $content;
+            } else {
+                the_content();
+            }
+            ?>
             <?php get_template_part( 'partials/social-links', null ); ?>
             <?php oxy_wp_link_pages(array('before' => '<div class="pagination pagination-centered">', 'after' => '</div>')); ?>
         </div>
     </div>
 </article>
+<script type="text/javascript">
+    // PrintFriendly
+    var e = document.createElement('script');
+    e.type = "text/javascript";
+    e.async = true;
+    e.src = '//cdn.printfriendly.com/printfriendly.js';
+    document.getElementsByTagName('head')[0].appendChild(e);
+</script>
 

@@ -33,12 +33,10 @@ $allow_comments = oxy_get_option( 'site_comments' );
             </aside>
             <?php endif; ?>
             <div class="<?php echo oxy_get_option('blog_layout') == 'full-width' ? 'span12':'span9' ; ?>">
+                			<a align="right" class="icon-print pf-alignright" href="<?php echo get_permalink() . '?pfstyle=wp' ; ?>" rel="nofollow"></a>
                 <?php while ( have_posts() ) : the_post(); ?>
-
                 <?php get_template_part( 'partials/content', get_post_format() ); ?>
-
                 <?php if( $allow_comments == 'posts' || $allow_comments == 'all' ) comments_template( '', true ); ?>
-
                 <?php endwhile; ?>
             </div>
             <?php if( oxy_get_option('blog_layout') == 'sidebar-right' ): ?>
