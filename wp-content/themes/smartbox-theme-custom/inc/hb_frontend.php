@@ -86,7 +86,7 @@ function hb_load_scripts() {
              if ( isset($custom_fields[THEME_SHORT.'_header_type']) ){
                 if ( $custom_fields[THEME_SHORT.'_header_type'][0] == 'map' ){
                     wp_enqueue_script( 'google', 'https://maps.googleapis.com/maps/api/js?sensor=false' ,  array( 'jquery' ) );
-                    wp_enqueue_script( 'map', home_url(). '/wp-content/themes/smartbox-theme-custom/inc/' . 'maps.js', array( 'jquery' , 'google' ) );
+                    wp_enqueue_script( 'map', home_url(). '/wp-content/themes/smartbox-theme-custom/inc/js/' . 'maps.js', array( 'jquery' , 'google' ) );
 
                     // get the coordinates from the metabox value
                     $coords =  $custom_fields['loc'][0];
