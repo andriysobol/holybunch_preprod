@@ -45,6 +45,6 @@ class OxyCustomTheme extends OxyTheme
         // directories
         define('CUSTOM_THEME_DIR', $this->get_custom_template_directory());
         define('CUSTOM_INCLUDES_DIR', CUSTOM_THEME_DIR . '/inc/');
-        define('CUSTOM_IMAGES_DIR', CUSTOM_THEME_DIR . '/images/');
+        define('CUSTOM_IMAGES_DIR', home_url() . '/wp-content/themes/smartbox-theme-custom/images/');
     }
 }

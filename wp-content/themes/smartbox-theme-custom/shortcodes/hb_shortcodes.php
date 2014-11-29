@@ -18,27 +18,14 @@ function oxy_shortcode_div($atts, $content = null) {
                     ), $atts));
 
     $output = '<div id="' . $id . '" class="' . $class . '" style="' . $style . '">';
-    $output .= do_shortcode($content);
+    $output .= do_shortcode($content); 
     $output .= '</div>';
     return $output;
 }
 
 add_shortcode('div', 'oxy_shortcode_div');
 
-function cmp($a, $b) {
-    if ($a == $b) {
-        return 0;
-    }
-    return ($a < $b) ? -1 : 1;
-}
-
-/**
- * Custom shortcode functions go here
- * @author Andriy Sobol
- */
-
-/* Show content items of category */
-
+/* Show content items of category, used for archive of internal recorded videos */
 function oxy_shortcode_content_items($atts) {
     extract(shortcode_atts(array(
         'category' => '',
@@ -55,8 +42,7 @@ function oxy_shortcode_content_items($atts) {
     $query = array(
         'post_type' => 'oxy_content',
         'posts_per_page' => $count,
-        'orderby' => 'title',
-        'order' => 'ASC'
+        'orderby' => 'title'
     );
 
     if (!empty($category)) {
@@ -127,7 +113,6 @@ function oxy_shortcode_content_items($atts) {
             if ($links == 'show') {
                 $output .= '</a>';
             }
-            //$output .= '<p'.$text_class.'>' .  apply_filters( 'the_content', get_the_content('') ) . '</p>';
             $shortcode_value = get_field('video_shortcode', $post->ID);
             $output .= '<p' . $text_class . '>' . apply_filters('the_content', $shortcode_value) . '</p>';
             if ($links == 'show') {
@@ -145,113 +130,22 @@ function oxy_shortcode_content_items($atts) {
     $term_link = get_term_link($term, 'oxy_content_category');
     if (is_wp_error($term_link))
         continue;
+    
     //We successfully got a link. Print it out.
-    $output .= '<div id="" class="span10"></div>';
+    //Might be buggy
+    /*$output .= '<div id="" class="span10"></div>';
     $output .= '<div id="" class="span2" style="height: 60px;border: orange 1px solid;margin-top: 0px;width: 170px;padding: 10px;margin-left:41px;">';
     $output .= '<span style="font-size: 15px; color: orange;"><i class="icon-signin icon-large"></i>';
     $output .= '<a href="' . $term_link . '"> &nbsp Далее к рубрике </a>';
     $output .= '</span><p></p></div>';
-    //$output .= '</ul>';
+    */
     $post = $tmp_post;
 
     return oxy_shortcode_section($atts, $output);
 }
-
 add_shortcode('content_items', 'oxy_shortcode_content_items');
 
-function oxy_shortcode_rtmp_player($atts) {
-    extract(shortcode_atts(array(
-        'ip' => '84.200.83.137',
-        'stream' => 'myStream'
-                    ), $atts));
-    $output = '<div class = "span4">';
-    $output .= '<strong>Начало:</strong> 12.00 Ландау (14.00 Московское время, 13.00 Киевское, 06.00 восточное сша)';
-    $output .= '</div>';
-    $output .= '<div class = "span8">';
-    $output .= '<div id = "playerygRpQJGcOwEP">';
-    $output .= '<script src = "' . GetHostForJWScript() . '"></script>';
-    $output .= '<script type = \'text/javascript\'>';
-    $output .= 'jwplayer(\'playerygRpQJGcOwEP\').setup({';
-    $output .= 'playlist: [{';
-    $output .= 'image: "' . get_theme_root_uri() . '/smartbox-theme-custom/images/broadcast.jpg",';
-    $output .= 'sources: [';
-    $output .= '{ file: "rtmp://84.200.83.137/live/myStream.sdp", },';
-    $output .= '],';
-    $output .= '}],';
-    $output .= 'sources: [{';
-    $output .= 'file: "http://84.200.83.137:1935/vod/mp4:sample.mp4/manifest.f4m"';
-    $output .= '}],';
-    $output .= 'sources: [{';
-    $output .= 'file: "http://84.200.83.137:1935/vod/mp4:sample.mp4/playlist.m3u8"';
-    $output .= '}],';
-    $output .= 'height: 360,';
-    $output .= 'rtmp: {';
-    $output .= 'subscribe: true';
-    $output .= '},';
-    $output .= 'width: 640';
-    $output .= '});';
-    $output .= '</script></div></div>';
-    $atts = array(
-        'title' => 'Прямая трансляция'
-    );
-    return oxy_shortcode_section($atts, $output);
-}
-
-add_shortcode('rtmp_player', 'oxy_shortcode_rtmp_player');
-
-function oxy_shortcode_js_player($atts) {
-    extract(shortcode_atts(array(
-        'sources' => '',
-        'title' => '',
-        'image' => '',
-        'height' => '',
-        'width' => ''
-                    ), $atts));
-
-    if (empty($image))
-        $image = "\"" . get_theme_root_uri() . "/smartbox-theme-custom/images/broadcast.jpg\"";
-
-    if (empty($height))
-        $height = "200";
-
-    if (empty($width))
-        $width = "360";
-    $uniqid = "player" . uniqid();
-    $output = '<div id = "' . $uniqid . '">';
-    $output .= '<script src = "' . GetHostForJWScript() . '"></script>';
-    //$output .= '<script src = "http://84.200.83.37/wp-content/themes/smartbox-theme-custom/inc/js_player/JS_Player.js' . '"></script>';
-    $output .= '<script type = \'text/javascript\'>';
-    $output .= 'jwplayer(\'' . $uniqid . '\').setup({';
-    $output .= ' height: ' . $height . ',';
-    $output .= ' width: ' . $width . ',';
-    $output .= 'playlist: [{';
-    $output .= 'image: ' . $image . ',';
-    $output .= 'sources: [';
-    $sourcesArray = explode(",", $sources);
-    $addComma = false;
-    $counter = 0;
-    foreach ($sourcesArray as $source) {
-        if (isset($source)) {
-            $counter = $counter + 1;
-            if ($addComma)
-                $output .= ',';
-            $output .= '{ file: "' . $source . '", label: "' . $counter . '" }';
-            $addComma = true;
-        }
-    }
-    $output .= ']';
-    $output .= '}]';
-    $output .= '});';
-    $output .= '</script></div>';
-    $atts = array(
-        'title' => $title
-    );
-
-    return $output;
-}
-
-add_shortcode('js_player', 'oxy_shortcode_js_player');
-
+//used for example on main page for section with random video
 function create_hero_section_with_video($atts) {
     extract(shortcode_atts(array(
         'image' => '',
@@ -293,37 +187,32 @@ function create_hero_section_with_video($atts) {
         if(empty($image))
             $image = get_theme_root_uri() . '/smartbox-theme-custom/images/background_video_default.jpg';
     }
-    
-    $post_link = get_post_permalink($post_video->ID, false, false);
-    $more_text = '<Strong>Перейти</Strong> к видео';
-    $read_more = '<a href="' . $post_link . '" class="more-link">' . $more_text . '</a>';
-    $title = $title;
+  
     $output = '<section class="section section-padded section-dark" data-background="url(' . $image . ') no-repeat top" style="background: url(' . $image . ') 50% 0% no-repeat;">
                 <div class="container-fluid">
                     <div class="super-hero-unit">
-                        <h1 class="animated fadeinup delayed text-center">' .
-            $title . '</h1>
+                        <h1 class="animated fadeinup delayed text-center">' . $title . '</h1>
                         <div class="row-fluid margin-top">
                             <div class="span4 margin-top margin-bottom">
                                 <span align="left">
                                     <p>' . $summary . '</p></span>
-                            </div>' . create_videowrapper_div($shortcode) .
-            '</div>
+                            </div>' . create_videowrapper_div($shortcode) . 
+                        '</div>
                     </div>
                 </div>
             </section>';
     return $output;
 }
-
 add_shortcode('hero_section_with_video', 'create_hero_section_with_video');
 
+//used on contact page, about us as contact form
 function hb_get_contact_form($atts,  $content = null) {
     // setup options
     extract(shortcode_atts(array(
         'title' => 'Contact us',
-		'id' => ''), $atts));
+	'id' => ''), $atts));
     
-	$output ='<div class="span5">';
+    $output ='<div class="span5">';
     $output.= '<div class="contact-details">' . do_shortcode( $content ) . '</div>';
     $output.='</div>'; 
     $output .='<div class="span7">';
@@ -334,6 +223,17 @@ function hb_get_contact_form($atts,  $content = null) {
 }
 add_shortcode('hb_contact_form', 'hb_get_contact_form');
 
+//used for integration of google calendar into section
+function hb_add_element_into_wrapper($atts){
+    extract(shortcode_atts(array(
+        'title' => '',
+        'style' => '',
+        'src_url' => ''
+                    ), $atts));
+	$output = create_videowrapper_div($src_url, "span12");
+	return oxy_shortcode_section($atts, $output);
+}
+add_shortcode('hb_add_into_wrapper', 'hb_add_element_into_wrapper');
 
 //Blockquote
 function hb_get_shortcode_blockquote( $atts, $content ) {
@@ -351,6 +251,7 @@ function hb_get_shortcode_blockquote( $atts, $content ) {
 }
 add_shortcode( 'blockquote', 'hb_get_shortcode_blockquote' );
 
+//shows recents blogs on main page
 function hb_get_recent_blog_posts($atts) {
 extract(shortcode_atts(array(
         'title' => '',
@@ -400,18 +301,17 @@ extract(shortcode_atts(array(
 }	
 add_shortcode('hb_blog_posts', 'hb_get_recent_blog_posts');
 
-function hb_get_recent_oxy_content($atts) {
-          
+//used on main pages in dutch and german in order to show latest conten
+function hb_get_recent_oxy_content($atts) {          
     // setup options
     extract(shortcode_atts(array(
-        'title' => 'Новые проповеди',
+        'title' => '',
         'cat' => null,
-        'count' => 3,
         'style' => ''), $atts));
 
     $args = array(
         'post_type' => array('oxy_content'),
-        'showposts' => $count, // Number of related posts that will be shown.  
+        'showposts' => 3, // Number of related posts that will be shown.  
         'orderby' => 'date'
     );
     $my_query = new wp_query($args);
@@ -429,7 +329,6 @@ function hb_get_recent_oxy_content($atts) {
                 } else {
                     $post_link = get_permalink();
                 }
-
                 $output.='<a href="' . $post_link . '"> <h3 class="text-center">' . get_the_title() . '</h3></a>';
                 $content =  get_field('summary', $post->ID);
                 $more_text=  get_more_text($post->post_type);
@@ -445,67 +344,67 @@ function hb_get_recent_oxy_content($atts) {
 }
 add_shortcode('hb_recent_content', 'hb_get_recent_oxy_content');
 
+//used on main page for latest videos
 function hb_get_recent_oxy_video($atts) {
     // setup options
     extract(shortcode_atts(array(
-        'title' => 'Новые видео',
+        'title' => '',
         'cat' => null,
-        'count' => 3,
         'style' => ''), $atts));
 
     $args = array(
         'post_type' => array('oxy_video'),
-        'showposts' => $count, // Number of related posts that will be shown.  
+        'showposts' => 3, // Number of related posts that will be shown.  
         'orderby' => 'date'
     );
     $my_query = new wp_query($args);
     $output = '';
-	$IMAGE_URI = home_url() . '/wp-content/themes/smartbox-theme-custom/images/video1.jpg';
-        if ($my_query->have_posts()) :
-            $output .='<ul class="unstyled row-fluid">';
-            global $post;
-            //loop over all related posts
-            while ($my_query->have_posts()) {
-                $my_query->the_post();
-                setup_postdata($post);
-				$date = get_the_time(get_option("date_format"));
-				
-				$output .= '<li class="span4">';
-				if ('link' == get_post_format()) {
-                    $post_link = oxy_get_external_link();
-                } else {
-                    $post_link = get_permalink();
-                }
+    $IMAGE_URI = CUSTOM_IMAGES_DIR . 'video1.jpg';
+    if ($my_query->have_posts()) :
+        $output .='<ul class="unstyled row-fluid">';
+        global $post;
+        //loop over all related posts
+        while ($my_query->have_posts()) {
+            $my_query->the_post();
+            setup_postdata($post);
+            $date = get_the_time(get_option("date_format"));
 
-				$output .= '<div class="row-fluid"><div class="span3">';
-				$output .='<div class="round-box box-medium box-colored"><a href="' . $post_link . '" class="box-inner">';
-                $output .= '<img class="img-circle" src="' . $IMAGE_URI.'">';
-                $output .= oxy_post_icon($post->ID, false);
-                $output .='</div>';
-                  
-				$output .= '<h5 class="text-center light">'.$date.'</h5></div>';
-				$output .= '<div class="span9">';
-				$output.='<a href="' . $post_link . '"> <h3 class="text-center">' . get_the_title() . '</h3></a>';
-
-                $content =  oxy_limit_excerpt(get_the_content(), 15) ;
-                $content .= get_hb_more_text_link(get_permalink(), get_more_text($post->post_type));
-                $output.='<p>' . apply_filters('the_content', $content) . '</p></li>';
-               
+            $output .= '<li class="span4">';
+            if ('link' == get_post_format()) {
+                $post_link = oxy_get_external_link();
+            } else {
+                $post_link = get_permalink();
             }
-            $output .= '</ul>';
+
+            $output .= '<div class="row-fluid"><div class="span3">';
+            $output .='<div class="round-box box-medium box-colored"><a href="' . $post_link . '" class="box-inner">';
+            $output .= '<img class="img-circle" src="' . $IMAGE_URI . '">';
+            $output .= oxy_post_icon($post->ID, false);
+            $output .='</div>';
+            $output .= '<h5 class="text-center light">' . $date . '</h5></div>';
+            $output .= '<div class="span9">';
+            $output.='<a href="' . $post_link . '"> <h3 class="text-center">' . get_the_title() . '</h3></a>';
+
+            $content = oxy_limit_excerpt(get_the_content(), 15);
+            $content .= get_hb_more_text_link(get_permalink(), get_more_text($post->post_type));
+            $output.='<p>' . apply_filters('the_content', $content) . '</p></li>';
+        }
+        $output .= '</ul>';
     endif;
     // reset post data
     wp_reset_postdata();
     return oxy_shortcode_section($atts, $output);
 }
 add_shortcode('hb_recent_videos', 'hb_get_recent_oxy_video');
+
+//latest taxonomy topics shown on main page
 function get_latest_taxonomy_topics_as_list($atts) {
     $args = array(
         'hide_empty' => 1,
         'taxonomy' => 'teaching_topics',
         'pad_counts' => 1,
         'hierarchical' => 0,
-		'number'       => '2',
+	'number'       => '2',
     );
     $categories = get_categories($args);
     $count = count($categories);

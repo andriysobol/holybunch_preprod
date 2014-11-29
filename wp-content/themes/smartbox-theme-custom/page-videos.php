@@ -1,7 +1,7 @@
 <?php
 /**
  * Displays archive for videos. This page is used for requests:
- * 1 Search reguest of videso(e.g. url =".../?s=searched_keaword&post_type=oxy_video"
+ * 1 Search reguest of videos(e.g. url =".../?s=searched_keaword&post_type=oxy_video"
  * 2 Taxonomy request of videos (e.g. url = ".../blog/teaching_topics/golgota/?post_type=oxy_video")
  * 3 Archive request of videos (e.g. url = ".../blog/2014/10/?post_type=oxy_video")
  * 4 Display all videos (e.g url = "...?post_type=oxy_video")
