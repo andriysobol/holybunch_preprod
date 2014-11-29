@@ -115,15 +115,11 @@ add_shortcode('hb_recent_videos', 'hb_get_recent_oxy_video');
 
 
 
-
-
-
-
-
-
-
-
-
+##################################################
+######                                      ###### 
+######          Code zum Bearbeiten         ###### 
+######                                      ###### 
+##################################################
 
 /* Show content items of category, used for archive of internal recorded videos */
 function oxy_shortcode_content_items($atts) {
