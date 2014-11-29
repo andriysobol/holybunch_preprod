@@ -1084,8 +1084,55 @@ function get_corresponding_terms($post) {
         }
         return $more_text;
     }
-    function get_hb_more_text_link($link, $more_text){
-        return '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
+
+    function get_hb_linkformat($post_format) {
+    if (post_format == 'link') {
+        return oxy_get_external_link();
+    } else {
+        return get_permalink();
     }
-    ;
+}
+
+
+
+
+
+
+
+    //////UI_ELEMENTS///////////
+    
+    function get_hb_more_text_link($link, $more_text){
+        return get_hb_link($link, "more-link", $more_text);
+    }
+    
+    function get_hb_link($link, $class, $content){
+        $result = '<a href="' . $link . '">' . $content . '</a>';
+        if ($class != NULL) {            
+          $result =   '<a href="' . $link . '" class="' . $class . '">' . $content . '</a>';
+        } 
+        return $result;
+    }
+    
+    function get_hb_title($tag, $class, $content) {
+        $result = '<h' . $tag . '>' . $content . '</h' . $tag .'>';
+        if ($class != NULL) {            
+          $result = '<h' . $tag . ' class="' . $class . '">' . $content . '</h' . $tag .'>';
+        } 
+        return $result;
+    }
+    
+    function get_hb_oxy_shortcode_blockquote($class, $content, $atts) {
+        if ($atts == NULL) {
+            $result = '<blockquote>';
+            if ($class != NULL) {
+                $result = '<blockquote class="' . $class . '">';
+            }
+            $result .= $content;
+            $result .= '</blockquote>';
+        } else {
+            oxy_shortcode_blockquote($atts, $content);
+        }
+        return $result;
+    }
+
     ?>

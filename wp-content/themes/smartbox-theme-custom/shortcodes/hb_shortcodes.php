@@ -6,24 +6,124 @@ require_once CUSTOM_INCLUDES_DIR . 'hb_utility.php';
  * @author Andriy Sobol
  */
 /**
- * DIV
- *
  * @return DIV HTML
- * */
+ */
 function oxy_shortcode_div($atts, $content = null) {
     extract(shortcode_atts(array(
         'class' => '',
-        'id' => '',
-        'style' => '',
-                    ), $atts));
+        'id' => ''), $atts));
 
-    $output = '<div id="' . $id . '" class="' . $class . '" style="' . $style . '">';
+    $output = '<div id="' . $id . '" class="' . $class . '">';
     $output .= do_shortcode($content); 
     $output .= '</div>';
     return $output;
 }
-
 add_shortcode('div', 'oxy_shortcode_div');
+
+
+/**
+ * @description latest taxonomy topics shown on main page
+ * @param array $atts
+ * @return string
+ */
+function get_latest_taxonomy_topics_as_list($atts) {
+    $args = array(
+        'hide_empty' => 1,
+        'taxonomy' => 'teaching_topics',
+        'pad_counts' => 1,
+        'hierarchical' => 0,
+	'number'       => '2',
+    );
+    $categories = get_categories($args);
+    //loop over all related posts
+    $output_loop = '';
+    foreach ($categories as $taxonomy) {
+        $link = get_term_link( $taxonomy );
+        $summary = get_taxonomy_term_summary_mini($taxonomy);
+        $more_text = get_hb_more_text_link($link,  __('Go to topic', THEME_FRONT_TD));
+        $title = get_hb_title(3, NULL, get_hb_link($link, NULL, $taxonomy->name));
+        $blockquote = get_hb_oxy_shortcode_blockquote("margin_bottom_25px_mb", '<p>' . $summary . $more_text . '</p>', NULL); 
+        $taxonomy_image_link = get_taxonomy_image('teaching_topics', $taxonomy->slug);
+        $round_link = get_hb_link($link, NULL, get_image_as_round_box($taxonomy_image_link));
+
+        $output_loop .= oxy_shortcode_div(array('class' => 'well blockquote-well'), $title . $blockquote . $round_link);
+    }
+    $output = oxy_shortcode_div(array('class' => 'unstyled row-fluid'), $output_loop);
+    return oxy_shortcode_section($atts, $output);
+}
+add_shortcode('latest_taxonomy_topics', 'get_latest_taxonomy_topics_as_list');
+
+//
+
+/**
+ * @description used on main page for latest videos
+ * @global type $post
+ * @param array $atts
+ * @return string
+ */
+function hb_get_recent_oxy_video($atts) {
+    extract(shortcode_atts(array(
+        'title' => '',
+        'cat' => null), 
+            $atts));
+
+    $args = array(
+        'post_type' => array('oxy_video'),
+        'showposts' => 3, // Number of related posts that will be shown.  
+        'orderby' => 'date'
+    );
+    $my_query = new wp_query($args);
+    if ($my_query->have_posts()) :    
+        global $post;
+        while ($my_query->have_posts()) {
+            $my_query->the_post();
+            setup_postdata($post);
+            $date = get_the_time(get_option("date_format"));
+            $post_link = get_hb_linkformat(get_post_format());            
+            $icon_class_array = explode('"', oxy_post_icon($post->ID, false));
+            
+            $span3 = oxy_shortcode_image(array(
+                'size'       => 'box-medium',
+                'source'     => CUSTOM_IMAGES_DIR . 'video1.jpg',
+                'icon'       => $icon_class_array[1],
+                'link'       => $post_link
+            ));
+            $span3 .= get_hb_title(5, "text-center light", $date);
+            
+            $title_span9 = get_hb_title(3, "text-center", get_the_title());            
+            $content_span9 = oxy_limit_excerpt(get_the_content(), 15);
+            $content_span9 .= get_hb_more_text_link(get_permalink(), get_more_text($post->post_type));
+            $span9 = get_hb_link($post_link, NULL, $title_span9);
+            $span9 .='<p>' . apply_filters('the_content', $content_span9) . '</p>';
+            
+            
+            $merge_spans = oxy_shortcode_layout( NULL, $span3, 'span3');
+            $merge_spans .= oxy_shortcode_layout( NULL, $span9, 'span9');
+            $result .= oxy_shortcode_layout( NULL, $merge_spans, 'span4');
+        }
+    endif;
+    // reset post data
+    wp_reset_postdata();
+    return oxy_shortcode_section($atts, $result);
+}
+add_shortcode('hb_recent_videos', 'hb_get_recent_oxy_video');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Show content items of category, used for archive of internal recorded videos */
 function oxy_shortcode_content_items($atts) {
@@ -344,94 +444,12 @@ function hb_get_recent_oxy_content($atts) {
 }
 add_shortcode('hb_recent_content', 'hb_get_recent_oxy_content');
 
-//used on main page for latest videos
-function hb_get_recent_oxy_video($atts) {
-    // setup options
-    extract(shortcode_atts(array(
-        'title' => '',
-        'cat' => null,
-        'style' => ''), $atts));
 
-    $args = array(
-        'post_type' => array('oxy_video'),
-        'showposts' => 3, // Number of related posts that will be shown.  
-        'orderby' => 'date'
-    );
-    $my_query = new wp_query($args);
-    $output = '';
-    $IMAGE_URI = CUSTOM_IMAGES_DIR . 'video1.jpg';
-    if ($my_query->have_posts()) :
-        $output .='<ul class="unstyled row-fluid">';
-        global $post;
-        //loop over all related posts
-        while ($my_query->have_posts()) {
-            $my_query->the_post();
-            setup_postdata($post);
-            $date = get_the_time(get_option("date_format"));
 
-            $output .= '<li class="span4">';
-            if ('link' == get_post_format()) {
-                $post_link = oxy_get_external_link();
-            } else {
-                $post_link = get_permalink();
-            }
 
-            $output .= '<div class="row-fluid"><div class="span3">';
-            $output .='<div class="round-box box-medium box-colored"><a href="' . $post_link . '" class="box-inner">';
-            $output .= '<img class="img-circle" src="' . $IMAGE_URI . '">';
-            $output .= oxy_post_icon($post->ID, false);
-            $output .='</div>';
-            $output .= '<h5 class="text-center light">' . $date . '</h5></div>';
-            $output .= '<div class="span9">';
-            $output.='<a href="' . $post_link . '"> <h3 class="text-center">' . get_the_title() . '</h3></a>';
 
-            $content = oxy_limit_excerpt(get_the_content(), 15);
-            $content .= get_hb_more_text_link(get_permalink(), get_more_text($post->post_type));
-            $output.='<p>' . apply_filters('the_content', $content) . '</p></li>';
-        }
-        $output .= '</ul>';
-    endif;
-    // reset post data
-    wp_reset_postdata();
-    return oxy_shortcode_section($atts, $output);
-}
-add_shortcode('hb_recent_videos', 'hb_get_recent_oxy_video');
 
-//latest taxonomy topics shown on main page
-function get_latest_taxonomy_topics_as_list($atts) {
-    $args = array(
-        'hide_empty' => 1,
-        'taxonomy' => 'teaching_topics',
-        'pad_counts' => 1,
-        'hierarchical' => 0,
-	'number'       => '2',
-    );
-    $categories = get_categories($args);
-    $count = count($categories);
-    $span='span12';
-    $output = '<div class="unstyled row-fluid">';
 
-    //loop over all related posts
-    foreach ($categories as $taxonomy) {
-        $summary = get_taxonomy_term_summary_mini($taxonomy);
-		$more_text = __('Go to topic', THEME_FRONT_TD);
-        $slug = $taxonomy->slug;
-        $link = get_term_link( $taxonomy );//home_url() . "/blog/teaching_topics/" . $slug;
-        $taxonomy_image_link = get_taxonomy_image('teaching_topics', $taxonomy->slug);
 
-        $more_text = get_hb_more_text_link($link, $more_text);
-        $output .= '<div>
-                    <div class="well blockquote-well">
-                      <h3><a href="' . $link . '">' . $taxonomy->name . '</a></h3>
-                        <blockquote class="margin_bottom_25px_mb"><p>' . $summary . $more_text . '</p></blockquote>';
-        $output .='<a href="' . $link . '">' .get_image_as_round_box($taxonomy_image_link) .'</a>';
-        $output.= '</div> </div>';
-    }
-    $output .= '</div>';
-    extract(shortcode_atts(array(
-        'style' => '',
-        'title' => ''
-                    ), $atts));
-    return oxy_shortcode_section($atts, $output);
-}
-add_shortcode('latest_taxonomy_topics', 'get_latest_taxonomy_topics_as_list');
+
+
