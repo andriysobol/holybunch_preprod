@@ -40,11 +40,27 @@ function get_latest_taxonomy_topics_as_list($atts) {
     foreach ($categories as $taxonomy) {
         $link = get_term_link( $taxonomy );
         $summary = get_taxonomy_term_summary_mini($taxonomy);
-        $more_text = get_hb_more_text_link($link,  __('Go to topic', THEME_FRONT_TD));
-        $title = get_hb_title(3, NULL, get_hb_link($link, NULL, $taxonomy->name));
-        $blockquote = get_hb_oxy_shortcode_blockquote("margin_bottom_25px_mb", '<p>' . $summary . $more_text . '</p>', NULL); 
+        
+        $more_text = get_hb_link(array(
+                    'link'      => $link,
+                    'class'     =>  'more-link',
+                    'content'   =>  __('Go to topic', THEME_FRONT_TD)));        
+        $title = get_hb_title(
+                array(
+                    'tag'       => 3,
+                    'content'   => get_hb_link(
+                                        array(
+                                            'link'      => $link,
+                                            'content'   =>  $taxonomy->name))));                 
+        $blockquote = get_hb_oxy_shortcode_blockquote(
+                array(
+                    'class'     =>  'margin_bottom_25px_mb',
+                    'content'   =>  '<p>' . $summary . $more_text . '</p>')); 
+        
         $taxonomy_image_link = get_taxonomy_image('teaching_topics', $taxonomy->slug);
-        $round_link = get_hb_link($link, NULL, get_image_as_round_box($taxonomy_image_link));
+        $round_link = get_hb_link(array(
+                    'link'      => $link,
+                    'content'   =>  get_image_as_round_box($taxonomy_image_link)));                
 
         $output_loop .= oxy_shortcode_div(array('class' => 'well blockquote-well'), $title . $blockquote . $round_link);
     }
@@ -82,23 +98,32 @@ function hb_get_recent_oxy_video($atts) {
             $post_link = get_hb_linkformat(get_post_format());            
             $icon_class_array = explode('"', oxy_post_icon($post->ID, false));
             
-            $span3 = oxy_shortcode_image(array(
+            $span_left = oxy_shortcode_image(array(
                 'size'       => 'box-medium',
                 'source'     => CUSTOM_IMAGES_DIR . 'video1.jpg',
                 'icon'       => $icon_class_array[1],
                 'link'       => $post_link
             ));
-            $span3 .= get_hb_title(5, "text-center light", $date);
+            $span_left .= get_hb_title(array(
+                    'tag'       => 5,
+                    'class'     => 'text-center light',
+                    'content'   => $date));            
+            $title_right = get_hb_title(array(
+                    'tag'       => 3,
+                    'class'     => 'text-center',
+                    'content'   => get_the_title()));            
+            $content_right = '<p>' . oxy_limit_excerpt(get_the_content(), 15) . '</p>';
+            $content_right .= get_hb_link(array(
+                    'link'      => get_permalink(),
+                    'class'     => 'more-link',
+                    'content'   => get_more_text($post->post_type)));
+            $span_right = get_hb_link(array(
+                    'link'      => $post_link,
+                    'content'   => $title_right));
+            $span_right .= apply_filters('the_content', $content_right) ;            
             
-            $title_span9 = get_hb_title(3, "text-center", get_the_title());            
-            $content_span9 = oxy_limit_excerpt(get_the_content(), 15);
-            $content_span9 .= get_hb_more_text_link(get_permalink(), get_more_text($post->post_type));
-            $span9 = get_hb_link($post_link, NULL, $title_span9);
-            $span9 .='<p>' . apply_filters('the_content', $content_span9) . '</p>';
-            
-            
-            $merge_spans = oxy_shortcode_layout( NULL, $span3, 'span3');
-            $merge_spans .= oxy_shortcode_layout( NULL, $span9, 'span9');
+            $merge_spans = oxy_shortcode_layout( NULL, $span_left, 'span3');
+            $merge_spans .= oxy_shortcode_layout( NULL, $span_right, 'span9');
             $result .= oxy_shortcode_layout( NULL, $merge_spans, 'span4');
         }
     endif;

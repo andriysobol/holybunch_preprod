@@ -1102,37 +1102,65 @@ function get_corresponding_terms($post) {
     //////UI_ELEMENTS///////////
     
     function get_hb_more_text_link($link, $more_text){
-        return get_hb_link($link, "more-link", $more_text);
+        return get_hb_link(
+                array(
+        'class'   => 'more-link',
+        'content'  => $more_text,
+        'link' => $link));
     }
     
-    function get_hb_link($link, $class, $content){
-        $result = '<a href="' . $link . '">' . $content . '</a>';
-        if ($class != NULL) {            
-          $result =   '<a href="' . $link . '" class="' . $class . '">' . $content . '</a>';
-        } 
-        return $result;
+    function get_hb_link($atts){
+        extract( shortcode_atts( array(
+        'id'  => '',
+        'class'   => '',
+        'content'  => '',
+        'link' => ''), $atts ) );
+        return '<a href="' . $link . '" ' . set_attributes_hb($id, $class) . '>' . $content . '</a>';
     }
     
-    function get_hb_title($tag, $class, $content) {
-        $result = '<h' . $tag . '>' . $content . '</h' . $tag .'>';
-        if ($class != NULL) {            
-          $result = '<h' . $tag . ' class="' . $class . '">' . $content . '</h' . $tag .'>';
-        } 
-        return $result;
+    function get_hb_title($atts) {
+        extract( shortcode_atts( array(
+        'id'  => '',
+        'class'   => '',
+        'content'  => '',
+        'tag' => ''), $atts ));
+        
+        return $result = '<h' . $tag  . set_attributes_hb($id, $class) . '>' . $content . '</h' . $tag .'>';
     }
     
-    function get_hb_oxy_shortcode_blockquote($class, $content, $atts) {
-        if ($atts == NULL) {
-            $result = '<blockquote>';
-            if ($class != NULL) {
-                $result = '<blockquote class="' . $class . '">';
-            }
+    function get_hb_oxy_shortcode_blockquote($atts) {
+        extract( shortcode_atts( array(
+        'id'  => '',
+        'class'   => '',
+        'content'  => '',
+        'params' => ''), $atts ) );
+        
+        if ($params == '' || $params == NULL) {
+            $result = '<blockquote ' . set_attributes_hb($id, $class) . '>';
             $result .= $content;
             $result .= '</blockquote>';
         } else {
-            oxy_shortcode_blockquote($atts, $content);
+            oxy_shortcode_blockquote($params, $content);
         }
         return $result;
     }
 
+    function set_attributes_hb($id, $class) {
+        $string = ' ';
+        if (checkElement($id)) {
+            $string .= 'id="' . $id . '" ';
+        } 
+        if (checkElement($class)) {
+            $string .= 'class="' . $class . '" ';
+        } 
+        return $string;
+    }
+    
+    
+    function checkElement($element) {
+        if ($element != NULL && $element != '') {
+            return TRUE;
+        }
+        return FALSE;
+    }
     ?>
