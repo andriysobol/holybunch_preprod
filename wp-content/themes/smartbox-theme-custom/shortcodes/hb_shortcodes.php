@@ -108,6 +108,7 @@ function hb_get_recent_oxy_video($atts) {
                     'tag'       => 5,
                     'class'     => 'text-center light',
                     'content'   => $date));            
+            
             $title_right = get_hb_title(array(
                     'tag'       => 3,
                     'class'     => 'text-center',
