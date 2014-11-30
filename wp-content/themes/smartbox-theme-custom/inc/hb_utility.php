@@ -1085,20 +1085,9 @@ function get_corresponding_terms($post) {
         return $more_text;
     }
 
-    function get_hb_linkformat($post_format) {
-    if (post_format == 'link') {
-        return oxy_get_external_link();
-    } else {
-        return get_permalink();
-    }
-}
 
-
-
-
-
-
-
+  
+    
 //////UI_ELEMENTS///////////
 
 
@@ -1208,5 +1197,19 @@ function checkElement($element) {
         return TRUE;
     }
     return FALSE;
+}
+
+/**
+ * @package HELPER
+ * @description get to back <b>externa link</b> or <b>permalink</b>
+ * @param string $post_format
+ * @return string
+ */
+function get_hb_linkformat($post_format) {
+    if (post_format == 'link') {
+        return oxy_get_external_link();
+    } else {
+        return get_permalink();
+    }
 }
     ?>

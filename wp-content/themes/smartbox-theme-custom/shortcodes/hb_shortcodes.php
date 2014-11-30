@@ -53,7 +53,6 @@ function get_latest_taxonomy_topics_as_list($atts) {
     $output = oxy_shortcode_layout(NULL, $output_loop, 'unstyled row-fluid');
     return oxy_shortcode_section($atts, $output);
 }
-
 add_shortcode('latest_taxonomy_topics', 'get_latest_taxonomy_topics_as_list');
 
 /**
@@ -116,7 +115,6 @@ function hb_get_recent_oxy_video($atts) {
     wp_reset_postdata();
     return oxy_shortcode_section($atts, $result);
 }
-
 add_shortcode('hb_recent_videos', 'hb_get_recent_oxy_video');
 
 /**
@@ -130,7 +128,6 @@ function hb_get_shortcode_blockquote($atts, $content) {
         'content' => $content,
         'params' => $atts));
 }
-
 add_shortcode('blockquote', 'hb_get_shortcode_blockquote');
 
 /**
@@ -195,7 +192,6 @@ function hb_get_recent_blog_posts($atts) {
     }
     return oxy_shortcode_section($atts, oxy_shortcode_layout(NULL, $output_loop, 'unstyled row-fluid'));
 }
-
 add_shortcode('hb_blog_posts', 'hb_get_recent_blog_posts');
 
 /**
@@ -214,12 +210,53 @@ function hb_get_contact_form($atts, $content = null) {
     $div_right = oxy_shortcode_layout(NULL, do_shortcode('[contact-form-7 id="' . $id . '" title="ContactForm"]'), 'span7');
     return oxy_shortcode_section($atts, $div_left . $div_right);
 }
-
 add_shortcode('hb_contact_form', 'hb_get_contact_form');
 
+/**
+ * @description used on main pages in dutch and german in order to show latest conten
+ * @global type $post
+ * @param array $atts
+ * @return String
+ */
+function hb_get_recent_oxy_content($atts) {
+    extract(shortcode_atts(array(
+        'title' => '',
+        'cat' => null,
+        'style' => ''), $atts));
 
-
-
+    $args = array(
+        'post_type' => array('oxy_content'),
+        'showposts' => 3, // Number of related posts that will be shown.  
+        'orderby' => 'date'
+    );
+    $my_query = new wp_query($args);
+    if ($my_query->have_posts()) {
+        global $post;
+        while ($my_query->have_posts()) {
+            $my_query->the_post();
+            setup_postdata($post);
+            $title_link = get_hb_link(array(
+                'link' => get_hb_linkformat(get_post_format()),
+                'content' => get_hb_title(array(
+                    'tag' => 3,
+                    'class' => 'text-center',
+                    'content' => get_the_title()
+                ))
+            ));
+            $content = get_field('summary', $post->ID);
+            $content .= get_hb_link(array(
+                'content' => get_more_text($post->post_type),
+                'link' => get_permalink(),
+                'class' => 'more-link'));
+            $text = '<p>' . apply_filters('the_content', $content) . '</p>';
+            $output_loop .= oxy_shortcode_layout(NULL, do_shortcode($title_link . $text), 'span4');
+        }
+    }
+    $output = oxy_shortcode_layout(NULL, $output_loop, 'unstyled row-fluid');
+    wp_reset_postdata();
+    return oxy_shortcode_section($atts, $output);
+}
+add_shortcode('hb_recent_content', 'hb_get_recent_oxy_content');
 
 
 
@@ -235,6 +272,7 @@ add_shortcode('hb_contact_form', 'hb_get_contact_form');
 ##################################################
 
 /* Show content items of category, used for archive of internal recorded videos */
+
 function oxy_shortcode_content_items($atts) {
     extract(shortcode_atts(array(
         'category' => '',
@@ -339,19 +377,20 @@ function oxy_shortcode_content_items($atts) {
     $term_link = get_term_link($term, 'oxy_content_category');
     if (is_wp_error($term_link))
         continue;
-    
+
     //We successfully got a link. Print it out.
     //Might be buggy
-    /*$output .= '<div id="" class="span10"></div>';
-    $output .= '<div id="" class="span2" style="height: 60px;border: orange 1px solid;margin-top: 0px;width: 170px;padding: 10px;margin-left:41px;">';
-    $output .= '<span style="font-size: 15px; color: orange;"><i class="icon-signin icon-large"></i>';
-    $output .= '<a href="' . $term_link . '"> &nbsp Далее к рубрике </a>';
-    $output .= '</span><p></p></div>';
-    */
+    /* $output .= '<div id="" class="span10"></div>';
+      $output .= '<div id="" class="span2" style="height: 60px;border: orange 1px solid;margin-top: 0px;width: 170px;padding: 10px;margin-left:41px;">';
+      $output .= '<span style="font-size: 15px; color: orange;"><i class="icon-signin icon-large"></i>';
+      $output .= '<a href="' . $term_link . '"> &nbsp Далее к рубрике </a>';
+      $output .= '</span><p></p></div>';
+     */
     $post = $tmp_post;
 
     return oxy_shortcode_section($atts, $output);
 }
+
 add_shortcode('content_items', 'oxy_shortcode_content_items');
 
 //used for example on main page for section with random video
@@ -364,9 +403,9 @@ function create_hero_section_with_video($atts) {
         'post_video' => '',
         'taxonomy_slug' => ''
                     ), $atts));
-    	
+
     $title = $title === null ? oxy_get_option('blog_title') : $title;
-    
+
     //take random video post and show it
     if ($random_posts) {
         $args = array(
@@ -376,7 +415,7 @@ function create_hero_section_with_video($atts) {
         );
         $my_query = new wp_query($args);
         $post_video = $my_query->post;
-    }else {
+    } else {
         $post_video = $post_video;
     }
 
@@ -385,18 +424,18 @@ function create_hero_section_with_video($atts) {
         $summary = hb_limit_excerpt($post_video->post_content, 50);
         $shortcode = get_field('video_shortcode', $post_video->ID);
     }
-    
-    if(!empty($image)){
-	$img_attachment = wp_get_attachment_image_src($image);
-	$image = $img_attachment[0];
-    }    
-    
-    if(empty($image)){
-        $image = get_taxonomy_video_background_image('teaching_topics',$taxonomy_slug);
-        if(empty($image))
+
+    if (!empty($image)) {
+        $img_attachment = wp_get_attachment_image_src($image);
+        $image = $img_attachment[0];
+    }
+
+    if (empty($image)) {
+        $image = get_taxonomy_video_background_image('teaching_topics', $taxonomy_slug);
+        if (empty($image))
             $image = get_theme_root_uri() . '/smartbox-theme-custom/images/background_video_default.jpg';
     }
-  
+
     $output = '<section class="section section-padded section-dark" data-background="url(' . $image . ') no-repeat top" style="background: url(' . $image . ') 50% 0% no-repeat;">
                 <div class="container-fluid">
                     <div class="super-hero-unit">
@@ -405,77 +444,34 @@ function create_hero_section_with_video($atts) {
                             <div class="span4 margin-top margin-bottom">
                                 <span align="left">
                                     <p>' . $summary . '</p></span>
-                            </div>' . create_videowrapper_div($shortcode) . 
-                        '</div>
+                            </div>' . create_videowrapper_div($shortcode) .
+            '</div>
                     </div>
                 </div>
             </section>';
     return $output;
 }
+
 add_shortcode('hero_section_with_video', 'create_hero_section_with_video');
 
-
-
-
-
 //used for integration of google calendar into section
-function hb_add_element_into_wrapper($atts){
+function hb_add_element_into_wrapper($atts) {
     extract(shortcode_atts(array(
         'title' => '',
         'style' => '',
         'src_url' => ''
                     ), $atts));
-	$output = create_videowrapper_div($src_url, "span12");
-	return oxy_shortcode_section($atts, $output);
+    $output = create_videowrapper_div($src_url, "span12");
+    return oxy_shortcode_section($atts, $output);
 }
+
 add_shortcode('hb_add_into_wrapper', 'hb_add_element_into_wrapper');
 
 
 
 
 
-//used on main pages in dutch and german in order to show latest conten
-function hb_get_recent_oxy_content($atts) {          
-    // setup options
-    extract(shortcode_atts(array(
-        'title' => '',
-        'cat' => null,
-        'style' => ''), $atts));
 
-    $args = array(
-        'post_type' => array('oxy_content'),
-        'showposts' => 3, // Number of related posts that will be shown.  
-        'orderby' => 'date'
-    );
-    $my_query = new wp_query($args);
-    $output = '';
-        if ($my_query->have_posts()) :
-            $output .='<ul class="unstyled row-fluid">';
-            global $post;
-            //loop over all related posts
-            while ($my_query->have_posts()) {
-                $my_query->the_post();
-                setup_postdata($post);
-				$output .= '<li class="span4">';
-				if ('link' == get_post_format()) {
-                    $post_link = oxy_get_external_link();
-                } else {
-                    $post_link = get_permalink();
-                }
-                $output.='<a href="' . $post_link . '"> <h3 class="text-center">' . get_the_title() . '</h3></a>';
-                $content =  get_field('summary', $post->ID);
-                $more_text=  get_more_text($post->post_type);
-                $content .= get_hb_more_text_link(get_permalink(), $more_text);
-                $output.='<p>' . apply_filters('the_content', $content) . '</p></li>';
-               
-            }
-            $output .= '</ul>';
-    endif;
-    // reset post data
-    wp_reset_postdata();
-    return oxy_shortcode_section($atts, $output);
-}
-add_shortcode('hb_recent_content', 'hb_get_recent_oxy_content');
 
 
 
