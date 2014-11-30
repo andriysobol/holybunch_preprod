@@ -1,4 +1,5 @@
 <?php
+
 require_once get_template_directory() . '/inc/options/shortcodes/shortcodes.php';
 require_once CUSTOM_INCLUDES_DIR . 'hb_utility.php';
 /**
@@ -17,41 +18,42 @@ function get_latest_taxonomy_topics_as_list($atts) {
         'taxonomy' => 'teaching_topics',
         'pad_counts' => 1,
         'hierarchical' => 0,
-	'number'       => '2',
+        'number' => '2',
     );
     $categories = get_categories($args);
     //loop over all related posts
     $output_loop = '';
     foreach ($categories as $taxonomy) {
-        $link = get_term_link( $taxonomy );
+        $link = get_term_link($taxonomy);
         $summary = get_taxonomy_term_summary_mini($taxonomy);
-        
+
         $more_text = get_hb_link(array(
-                    'link'      => $link,
-                    'class'     =>  'more-link',
-                    'content'   =>  __('Go to topic', THEME_FRONT_TD)));        
+            'link' => $link,
+            'class' => 'more-link',
+            'content' => __('Go to topic', THEME_FRONT_TD)));
         $title = get_hb_title(
                 array(
-                    'tag'       => 3,
-                    'content'   => get_hb_link(
-                                        array(
-                                            'link'      => $link,
-                                            'content'   =>  $taxonomy->name))));                 
+                    'tag' => 3,
+                    'content' => get_hb_link(
+                            array(
+                                'link' => $link,
+                                'content' => $taxonomy->name))));
         $blockquote = get_hb_oxy_shortcode_blockquote(
                 array(
-                    'class'     =>  'margin_bottom_25px_mb',
-                    'content'   =>  '<p>' . $summary . $more_text . '</p>')); 
-        
+                    'class' => 'margin_bottom_25px_mb',
+                    'content' => '<p>' . $summary . $more_text . '</p>'));
+
         $taxonomy_image_link = get_taxonomy_image('teaching_topics', $taxonomy->slug);
         $round_link = get_hb_link(array(
-                    'link'      => $link,
-                    'content'   =>  get_image_as_round_box($taxonomy_image_link)));                
+            'link' => $link,
+            'content' => get_image_as_round_box($taxonomy_image_link)));
 
         $output_loop .= oxy_shortcode_layout(NULL, $title . $blockquote . $round_link, 'well blockquote-well');
     }
     $output = oxy_shortcode_layout(NULL, $output_loop, 'unstyled row-fluid');
     return oxy_shortcode_section($atts, $output);
 }
+
 add_shortcode('latest_taxonomy_topics', 'get_latest_taxonomy_topics_as_list');
 
 /**
@@ -63,8 +65,7 @@ add_shortcode('latest_taxonomy_topics', 'get_latest_taxonomy_topics_as_list');
 function hb_get_recent_oxy_video($atts) {
     extract(shortcode_atts(array(
         'title' => '',
-        'cat' => null), 
-            $atts));
+        'cat' => null), $atts));
 
     $args = array(
         'post_type' => array('oxy_video'),
@@ -72,51 +73,51 @@ function hb_get_recent_oxy_video($atts) {
         'orderby' => 'date'
     );
     $my_query = new wp_query($args);
-    if ($my_query->have_posts()) :    
+    if ($my_query->have_posts()) :
         global $post;
         while ($my_query->have_posts()) {
             $my_query->the_post();
             setup_postdata($post);
             $date = get_the_time(get_option("date_format"));
-            $post_link = get_hb_linkformat(get_post_format());            
+            $post_link = get_hb_linkformat(get_post_format());
             $icon_class_array = explode('"', oxy_post_icon($post->ID, false));
-            
+
             $span_left = oxy_shortcode_image(array(
-                'size'       => 'box-medium',
-                'source'     => CUSTOM_IMAGES_DIR . 'video1.jpg',
-                'icon'       => $icon_class_array[1],
-                'link'       => $post_link
+                'size' => 'box-medium',
+                'source' => CUSTOM_IMAGES_DIR . 'video1.jpg',
+                'icon' => $icon_class_array[1],
+                'link' => $post_link
             ));
             $span_left .= get_hb_title(array(
-                    'tag'       => 5,
-                    'class'     => 'text-center light',
-                    'content'   => $date));            
-            
+                'tag' => 5,
+                'class' => 'text-center light',
+                'content' => $date));
+
             $title_right = get_hb_title(array(
-                    'tag'       => 3,
-                    'class'     => 'text-center',
-                    'content'   => get_the_title()));            
+                'tag' => 3,
+                'class' => 'text-center',
+                'content' => get_the_title()));
             $content_right = '<p>' . oxy_limit_excerpt(get_the_content(), 15) . '</p>';
             $content_right .= get_hb_link(array(
-                    'link'      => get_permalink(),
-                    'class'     => 'more-link',
-                    'content'   => get_more_text($post->post_type)));
+                'link' => get_permalink(),
+                'class' => 'more-link',
+                'content' => get_more_text($post->post_type)));
             $span_right = get_hb_link(array(
-                    'link'      => $post_link,
-                    'content'   => $title_right));
-            $span_right .= apply_filters('the_content', $content_right) ;            
-            
-            $merge_spans = oxy_shortcode_layout( NULL, $span_left, 'span3');
-            $merge_spans .= oxy_shortcode_layout( NULL, $span_right, 'span9');
-            $result .= oxy_shortcode_layout( NULL, $merge_spans, 'span4');
+                'link' => $post_link,
+                'content' => $title_right));
+            $span_right .= apply_filters('the_content', $content_right);
+
+            $merge_spans = oxy_shortcode_layout(NULL, $span_left, 'span3');
+            $merge_spans .= oxy_shortcode_layout(NULL, $span_right, 'span9');
+            $result .= oxy_shortcode_layout(NULL, $merge_spans, 'span4');
         }
     endif;
     // reset post data
     wp_reset_postdata();
     return oxy_shortcode_section($atts, $result);
 }
-add_shortcode('hb_recent_videos', 'hb_get_recent_oxy_video');
 
+add_shortcode('hb_recent_videos', 'hb_get_recent_oxy_video');
 
 /**
  * @description overreid <b>blockquote</b> from parent template
@@ -124,12 +125,13 @@ add_shortcode('hb_recent_videos', 'hb_get_recent_oxy_video');
  * @param String $content
  * @return String
  */
-function hb_get_shortcode_blockquote($atts, $content ) { 
+function hb_get_shortcode_blockquote($atts, $content) {
     return get_hb_oxy_shortcode_blockquote(array(
-        'content'  => $content,
+        'content' => $content,
         'params' => $atts));
 }
-add_shortcode( 'blockquote', 'hb_get_shortcode_blockquote' );
+
+add_shortcode('blockquote', 'hb_get_shortcode_blockquote');
 
 /**
  * @description shows recents blogs on main page
@@ -157,45 +159,63 @@ function hb_get_recent_blog_posts($atts) {
             $author_avatar = get_avatar(get_the_author_meta('ID'), 300);
             $author = get_the_author();
             $date = get_the_time(get_option("date_format"));
-            $post_link = get_hb_linkformat(get_post_format());    
+            $post_link = get_hb_linkformat(get_post_format());
 
 
             $div_avatar_left = oxy_shortcode_layout(NULL, $author_avatar, 'round-box box-small');
             $title_autor_left = get_hb_title(array(
-                    'tag'       => 5,
-                    'class'     => 'text-center',
-                    'content'   => $author));
+                'tag' => 5,
+                'class' => 'text-center',
+                'content' => $author));
             $title_date_left = get_hb_title(array(
-                    'tag'       => 5,
-                    'class'     => 'text-center light',
-                    'content'   => $date));
-            
-            $link_right = get_hb_link(array( 
-                'content'  => get_the_title(),
+                'tag' => 5,
+                'class' => 'text-center light',
+                'content' => $date));
+
+            $link_right = get_hb_link(array(
+                'content' => get_the_title(),
                 'link' => $post_link));
-            
+
             $title_right = get_hb_title(array(
-                    'tag'       => 3,
-                    'content'   => $link_right));
-            
+                'tag' => 3,
+                'content' => $link_right));
+
             $content_right = oxy_limit_excerpt(strip_tags(get_the_content()), 30);
-            $content_right .= get_hb_link(array( 
-                'content'  => get_more_text($post->post_type),
+            $content_right .= get_hb_link(array(
+                'content' => get_more_text($post->post_type),
                 'link' => $post_link,
                 'class' => 'more-link'));
-            
+
             $text_right = '<p>' . apply_filters('the_content', $content_right) . '</p>';
-            
+
             $merge_spans = oxy_shortcode_layout(NULL, $div_avatar_left . $title_autor_left . $title_date_left, 'span3 post-info');
             $merge_spans .= oxy_shortcode_layout(NULL, $title_right . $text_right, 'span9');
             $output_loop .= oxy_shortcode_layout(NULL, oxy_shortcode_row(NULL, $merge_spans, NULL), 'span6');
         }
     }
-    return oxy_shortcode_section($atts, oxy_shortcode_layout(NULL, $output_loop , 'unstyled row-fluid'));
-}	
+    return oxy_shortcode_section($atts, oxy_shortcode_layout(NULL, $output_loop, 'unstyled row-fluid'));
+}
+
 add_shortcode('hb_blog_posts', 'hb_get_recent_blog_posts');
 
+/**
+ * @description used on contact page, about us as contact form
+ * @param array $atts
+ * @param String $content
+ * @return String
+ */
+function hb_get_contact_form($atts, $content = null) {
+    // setup options
+    extract(shortcode_atts(array(
+        'title' => 'Contact us',
+        'id' => ''), $atts));
+    $div_content = oxy_shortcode_layout(NULL, do_shortcode($content), 'contact-details');
+    $div_left = oxy_shortcode_layout(NULL, do_shortcode($div_content), 'span5');
+    $div_right = oxy_shortcode_layout(NULL, do_shortcode('[contact-form-7 id="' . $id . '" title="ContactForm"]'), 'span7');
+    return oxy_shortcode_section($atts, $div_left . $div_right);
+}
 
+add_shortcode('hb_contact_form', 'hb_get_contact_form');
 
 
 
@@ -394,23 +414,9 @@ function create_hero_section_with_video($atts) {
 }
 add_shortcode('hero_section_with_video', 'create_hero_section_with_video');
 
-//used on contact page, about us as contact form
-function hb_get_contact_form($atts,  $content = null) {
-    // setup options
-    extract(shortcode_atts(array(
-        'title' => 'Contact us',
-	'id' => ''), $atts));
-    
-    $output ='<div class="span5">';
-    $output.= '<div class="contact-details">' . do_shortcode( $content ) . '</div>';
-    $output.='</div>'; 
-    $output .='<div class="span7">';
-    $output .= do_shortcode( '[contact-form-7 id="'.$id.'" title="ContactForm"]' );
-    $output.='</div>';
-          
-    return oxy_shortcode_section($atts, $output);
-}
-add_shortcode('hb_contact_form', 'hb_get_contact_form');
+
+
+
 
 //used for integration of google calendar into section
 function hb_add_element_into_wrapper($atts){
