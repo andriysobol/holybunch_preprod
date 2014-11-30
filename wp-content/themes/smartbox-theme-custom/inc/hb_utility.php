@@ -1129,21 +1129,34 @@ function get_corresponding_terms($post) {
     }
     
     function get_hb_oxy_shortcode_blockquote($atts) {
-        extract( shortcode_atts( array(
-        'id'  => '',
-        'class'   => '',
-        'content'  => '',
-        'params' => ''), $atts ) );
-        
-        if ($params == '' || $params == NULL) {
-            $result = '<blockquote ' . set_attributes_hb($id, $class) . '>';
-            $result .= $content;
-            $result .= '</blockquote>';
+    extract(shortcode_atts(array(
+        'id' => '',
+        'class' => '',
+        'content' => '',
+        'params' => ''), $atts));
+
+    if ($params == '' || $params == NULL) {
+        $result = '<blockquote ' . set_attributes_hb($id, $class) . '>';
+        $result .= $content;
+        $result .= '</blockquote>';
+    } else {
+        extract(shortcode_atts(array(
+            'who' => '',
+            'cite' => ''), $params));
+        if ($who != null && $cite != null) {
+            return oxy_shortcode_blockquote($params, $content);
+        } else if ($who != null) {
+            return '<blockquote' . set_attributes_hb($id, $class) . '>' . do_shortcode($content) . '<small>' . $who . '</small></blockquote>';
         } else {
-            oxy_shortcode_blockquote($params, $content);
+            return get_hb_oxy_shortcode_blockquote(array(
+                'id' => $id,
+                'class' => $class,
+                'content' => $content,
+                'params' => NULL));
         }
-        return $result;
     }
+    return $result;
+}
 
     function set_attributes_hb($id, $class) {
         $string = ' ';

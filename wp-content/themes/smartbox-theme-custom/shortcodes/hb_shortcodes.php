@@ -69,8 +69,6 @@ function get_latest_taxonomy_topics_as_list($atts) {
 }
 add_shortcode('latest_taxonomy_topics', 'get_latest_taxonomy_topics_as_list');
 
-//
-
 /**
  * @description used on main page for latest videos
  * @global type $post
@@ -133,6 +131,21 @@ function hb_get_recent_oxy_video($atts) {
     return oxy_shortcode_section($atts, $result);
 }
 add_shortcode('hb_recent_videos', 'hb_get_recent_oxy_video');
+
+
+/**
+ * @description overreid <b>blockquote</b> from parent template
+ * @param array $atts
+ * @param String $content
+ * @return String
+ */
+function hb_get_shortcode_blockquote($atts, $content ) { 
+    return get_hb_oxy_shortcode_blockquote(array(
+        'content'  => $content,
+        'params' => $atts));
+}
+add_shortcode( 'blockquote', 'hb_get_shortcode_blockquote' );
+
 
 
 
@@ -357,21 +370,7 @@ function hb_add_element_into_wrapper($atts){
 }
 add_shortcode('hb_add_into_wrapper', 'hb_add_element_into_wrapper');
 
-//Blockquote
-function hb_get_shortcode_blockquote( $atts, $content ) {
-    extract( shortcode_atts( array(
-        'who' =>'',
-        'cite'  => '',
-    ), $atts ));
-    if($who != null && $cite != null){
-        return '<blockquote>' . do_shortcode($content) . '<small>'.$who.' <cite title="source title">'.$cite.'</cite></small></blockquote>';
-    } else if ($who != null){
-        return '<blockquote>' . do_shortcode($content) . '<small>'.$who.'</small></blockquote>';
-    } else {
-        return '<blockquote>' . do_shortcode($content) . '</blockquote>';      
-    }
-}
-add_shortcode( 'blockquote', 'hb_get_shortcode_blockquote' );
+
 
 //shows recents blogs on main page
 function hb_get_recent_blog_posts($atts) {
