@@ -1099,36 +1099,57 @@ function get_corresponding_terms($post) {
 
 
 
-    //////UI_ELEMENTS///////////
-    
-    function get_hb_more_text_link($link, $more_text){
-        return get_hb_link(
-                array(
-        'class'   => 'more-link',
-        'content'  => $more_text,
-        'link' => $link));
-    }
-    
-    function get_hb_link($atts){
-        extract( shortcode_atts( array(
-        'id'  => '',
-        'class'   => '',
-        'content'  => '',
-        'link' => ''), $atts ) );
-        return '<a href="' . $link . '" ' . set_attributes_hb($id, $class) . '>' . $content . '</a>';
-    }
-    
-    function get_hb_title($atts) {
-        extract( shortcode_atts( array(
-        'id'  => '',
-        'class'   => '',
-        'content'  => '',
-        'tag' => ''), $atts ));
-        
-        return $result = '<h' . $tag  . set_attributes_hb($id, $class) . '>' . $content . '</h' . $tag .'>';
-    }
-    
-    function get_hb_oxy_shortcode_blockquote($atts) {
+//////UI_ELEMENTS///////////
+
+
+function get_hb_more_text_link($link, $more_text) {
+    return get_hb_link(
+            array(
+                'class' => 'more-link',
+                'content' => $more_text,
+                'link' => $link));
+}
+
+/**
+ * @package UI_ELEMENT_HTML
+ * @description function to create a link
+ * @param array $atts <i> id , class, content, link </i>
+ * @return string
+ */
+function get_hb_link($atts) {
+    extract(shortcode_atts(array(
+        'id' => '',
+        'class' => '',
+        'content' => '',
+        'link' => ''), $atts));
+    return '<a href="' . $link . '" ' . set_attributes_hb($id, $class) . '>' . $content . '</a>';
+}
+
+/**
+ * @package UI_ELEMENT_HTML
+ * @description function to create a title (H1, H2 ...)
+ * @param array $atts <i> id , class, content, tag </i>
+ * @example $tag for H3 is 3
+ * @return string
+ */
+function get_hb_title($atts) {
+    extract(shortcode_atts(array(
+        'id' => '',
+        'class' => '',
+        'content' => '',
+        'tag' => ''), $atts));
+
+    return $result = '<h' . $tag . set_attributes_hb($id, $class) . '>' . $content . '</h' . $tag . '>';
+}
+
+/**
+ * @package UI_ELEMENT_HTML
+ * @description function to create a blockquote
+ * @param array $atts <i> id , class, content, params (who , site) </i>
+ * @see oxy_shortcode_blockquote($params, $content);
+ * @return string
+ */
+function get_hb_oxy_shortcode_blockquote($atts) {
     extract(shortcode_atts(array(
         'id' => '',
         'class' => '',
@@ -1158,22 +1179,34 @@ function get_corresponding_terms($post) {
     return $result;
 }
 
-    function set_attributes_hb($id, $class) {
-        $string = ' ';
-        if (checkElement($id)) {
-            $string .= 'id="' . $id . '" ';
-        } 
-        if (checkElement($class)) {
-            $string .= 'class="' . $class . '" ';
-        } 
-        return $string;
+/**
+ * @package HTML_HELPER
+ * @description function to generate a attributes for html-elements
+ * @param string $id
+ * @param string $class
+ * @return string
+ */
+function set_attributes_hb($id, $class) {
+    $string = ' ';
+    if (checkElement($id)) {
+        $string .= 'id="' . $id . '" ';
     }
-    
-    
-    function checkElement($element) {
-        if ($element != NULL && $element != '') {
-            return TRUE;
-        }
-        return FALSE;
+    if (checkElement($class)) {
+        $string .= 'class="' . $class . '" ';
     }
+    return $string;
+}
+
+/**
+ * @package HELPER
+ * @description function to check if a element exists
+ * @param string $element
+ * @return boolean only <b>TRUE</b> or <b>FALSE</b>. Not NULL.
+ */
+function checkElement($element) {
+    if ($element != NULL && $element != '') {
+        return TRUE;
+    }
+    return FALSE;
+}
     ?>
