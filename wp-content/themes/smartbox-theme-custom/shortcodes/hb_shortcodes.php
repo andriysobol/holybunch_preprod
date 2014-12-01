@@ -258,8 +258,69 @@ function hb_get_recent_oxy_content($atts) {
 }
 add_shortcode('hb_recent_content', 'hb_get_recent_oxy_content');
 
+/**
+ * @description used for example on main page for section with random video
+ * @param array $atts
+ * @return string
+ */
+function create_hero_section_with_video($atts) {
+    extract(shortcode_atts(array(
+        'image' => '',
+        'title' => '',
+        'summary' => '',
+        'random_posts' => 'true',
+        'post_video' => '',
+        'taxonomy_slug' => ''
+                    ), $atts));
 
+    $title = $title === null ? oxy_get_option('blog_title') : $title;
 
+    //take random video post and show it
+    if ($random_posts) {
+        $args = array(
+            'post_type' => 'oxy_video',
+            'showposts' => 1,
+            'orderby' => 'rand'
+        );
+        $my_query = new wp_query($args);
+        $post_video = $my_query->post;
+    }
+
+    if (!empty($post_video)) {
+        $title = $post_video->post_title;
+        $summary = hb_limit_excerpt($post_video->post_content, 50);
+        $shortcode = get_field('video_shortcode', $post_video->ID);
+    }
+
+    if (!empty($image)) {
+        $img_attachment = wp_get_attachment_image_src($image);
+        $image = $img_attachment[0];
+    } else {
+        $image = get_taxonomy_video_background_image('teaching_topics', $taxonomy_slug);
+        if (empty($image)) {
+            $image = CUSTOM_IMAGES_DIR . 'background_video_default.jpg';
+        }
+    }
+
+    $title_ui = get_hb_title(array(
+        'tag' => 1,
+        'class' => 'animated fadeinup delayed text-center',
+        'content' => $title
+    ));
+    $text_left = oxy_shortcode_layout(NULL, do_shortcode('<p>' . $summary . '</p>'), 'span4  margin-top margin-bottom');
+    $row = oxy_shortcode_row(NULL, $text_left . create_videowrapper_div($shortcode), NULL);
+    $super_hero_unit = oxy_shortcode_layout(NULL, do_shortcode($title_ui . $row), 'container-fluid super-hero-unit');
+    
+    return get_hb_section_background_image_simple(
+            array(
+                'class' => 'section section-padded section-dark',
+                'data_background' => 'url(' . $image . ') no-repeat top',
+                'image_link' => 'background: url(' . $image . ') 50% 0% no-repeat;',
+                'content' => $super_hero_unit
+    ));
+}
+
+add_shortcode('hero_section_with_video', 'create_hero_section_with_video');
 
 
 
@@ -393,66 +454,7 @@ function oxy_shortcode_content_items($atts) {
 
 add_shortcode('content_items', 'oxy_shortcode_content_items');
 
-//used for example on main page for section with random video
-function create_hero_section_with_video($atts) {
-    extract(shortcode_atts(array(
-        'image' => '',
-        'title' => '',
-        'summary' => '',
-        'random_posts' => 'true',
-        'post_video' => '',
-        'taxonomy_slug' => ''
-                    ), $atts));
 
-    $title = $title === null ? oxy_get_option('blog_title') : $title;
-
-    //take random video post and show it
-    if ($random_posts) {
-        $args = array(
-            'post_type' => 'oxy_video',
-            'showposts' => 1,
-            'orderby' => 'rand'
-        );
-        $my_query = new wp_query($args);
-        $post_video = $my_query->post;
-    } else {
-        $post_video = $post_video;
-    }
-
-    if (!empty($post_video)) {
-        $title = $post_video->post_title;
-        $summary = hb_limit_excerpt($post_video->post_content, 50);
-        $shortcode = get_field('video_shortcode', $post_video->ID);
-    }
-
-    if (!empty($image)) {
-        $img_attachment = wp_get_attachment_image_src($image);
-        $image = $img_attachment[0];
-    }
-
-    if (empty($image)) {
-        $image = get_taxonomy_video_background_image('teaching_topics', $taxonomy_slug);
-        if (empty($image))
-            $image = get_theme_root_uri() . '/smartbox-theme-custom/images/background_video_default.jpg';
-    }
-
-    $output = '<section class="section section-padded section-dark" data-background="url(' . $image . ') no-repeat top" style="background: url(' . $image . ') 50% 0% no-repeat;">
-                <div class="container-fluid">
-                    <div class="super-hero-unit">
-                        <h1 class="animated fadeinup delayed text-center">' . $title . '</h1>
-                        <div class="row-fluid margin-top">
-                            <div class="span4 margin-top margin-bottom">
-                                <span align="left">
-                                    <p>' . $summary . '</p></span>
-                            </div>' . create_videowrapper_div($shortcode) .
-            '</div>
-                    </div>
-                </div>
-            </section>';
-    return $output;
-}
-
-add_shortcode('hero_section_with_video', 'create_hero_section_with_video');
 
 //used for integration of google calendar into section
 function hb_add_element_into_wrapper($atts) {
