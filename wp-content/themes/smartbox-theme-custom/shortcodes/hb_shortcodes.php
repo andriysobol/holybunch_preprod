@@ -321,165 +321,17 @@ function create_hero_section_with_video($atts) {
 }
 add_shortcode('hero_section_with_video', 'create_hero_section_with_video');
 
-
-
-
-
-##################################################
-######                                      ###### 
-######          Code zum Bearbeiten         ###### 
-######                                      ###### 
-##################################################
-
-/* Show content items of category, used for archive of internal recorded videos */
-
-function oxy_shortcode_content_items($atts) {
-    extract(shortcode_atts(array(
-        'category' => '',
-        'count' => 3,
-        'columns' => 3,
-        'links' => 'show',
-        'lead' => 'hide',
-        'title' => '',
-        'style' => '',
-        'title_size' => 'medium',
-        'image_style' => ''
-                    ), $atts));
-
-    $query = array(
-        'post_type' => 'oxy_content',
-        'posts_per_page' => $count,
-        'orderby' => 'title'
-    );
-
-    if (!empty($category)) {
-        $query['tax_query'] = array(
-            array(
-                'taxonomy' => 'oxy_content_category',
-                'field' => 'slug',
-                'terms' => $category
-            )
-        );
-    }
-
-    global $post;
-    $tmp_post = $post;
-
-    $content_items = get_posts($query);
-    $output = '';
-    if (count($content_items > 0)) {
-        $output .= '<ul class="unstyled row-fluid">';
-        if ($title_size == 'big')
-            $header = 'h2';
-        else if ($title_size == 'medium')
-            $header = 'h3';
-        else
-            $header = 'h4';
-        $size = ($columns == 4) ? 'round-medium' : 'box-big';
-        $text_class = ($lead == 'show') ? ' class="lead text-center"' : '';
-        $items_per_row = ($columns == 3) ? 3 : 4;
-        $span = ($columns == 4) ? 'span3' : 'span4';
-        $service_num = 1;
-        foreach ($content_items as $post) {
-            setup_postdata($post);
-            global $more;
-            $more = 0;
-            if ($links == 'show') {
-                $link = oxy_get_slide_link($post);
-                if (null == $link) {
-                    $link = get_permalink();
-                }
-            }
-            if ($service_num > $items_per_row) {
-                $output .='</ul><ul class="unstyled row-fluid">';
-                $service_num = 1;
-            }
-            $icon = get_post_meta($post->ID, THEME_SHORT . '_icon', true);
-            $output .= '<li class="' . $span . '">';
-            $output .= '<div class="round-box ' . $size . ' ' . $image_style . '">';
-            if ($links == 'show') {
-                $output .= '<a href="' . $link . '" class="box-inner">';
-            } else {
-                $output .= '<span class="box-inner">';
-            }
-            $output .= get_the_post_thumbnail($post->ID, 'portfolio-thumb', array('class' => 'img-circle', 'alt' => get_the_title()));
-            if ($links == 'show') {
-                $output .= '</a>';
-            } else {
-                $output .= '</span>';
-            }
-            if ($icon != '') {
-                $output .= '<i class="' . $icon . '"></i>';
-            }
-            $output .= '</span>';
-            $output .= '</div>';
-            if ($links == 'show') {
-                $output .= '<a href="' . $link . '">';
-            }
-            $output .= '<' . $header . ' class="text-center">' . get_the_title() . '</' . $header . '>';
-            if ($links == 'show') {
-                $output .= '</a>';
-            }
-            $shortcode_value = get_field('video_shortcode', $post->ID);
-            $output .= '<p' . $text_class . '>' . apply_filters('the_content', $shortcode_value) . '</p>';
-            if ($links == 'show') {
-                $more_text = oxy_get_option('blog_readmore') ? oxy_get_option('blog_readmore') : 'Read more';
-                $output .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
-            }
-            $output .= '</li>';
-            $service_num++;
-        }
-        $output .= '</ul>';
-    }
-
-    //Always check if it's an error before continuing. get_term_link() can be finicky sometimes
-    $term = get_term_by('slug', $category, 'oxy_content_category');
-    $term_link = get_term_link($term, 'oxy_content_category');
-    if (is_wp_error($term_link))
-        continue;
-
-    //We successfully got a link. Print it out.
-    //Might be buggy
-    /* $output .= '<div id="" class="span10"></div>';
-      $output .= '<div id="" class="span2" style="height: 60px;border: orange 1px solid;margin-top: 0px;width: 170px;padding: 10px;margin-left:41px;">';
-      $output .= '<span style="font-size: 15px; color: orange;"><i class="icon-signin icon-large"></i>';
-      $output .= '<a href="' . $term_link . '"> &nbsp Далее к рубрике </a>';
-      $output .= '</span><p></p></div>';
-     */
-    $post = $tmp_post;
-
-    return oxy_shortcode_section($atts, $output);
-}
-
-add_shortcode('content_items', 'oxy_shortcode_content_items');
-
-
-
-//used for integration of google calendar into section
+/**
+ * @description used for integration of google calendar into section
+ * @param array $atts
+ * @return String
+ */
 function hb_add_element_into_wrapper($atts) {
     extract(shortcode_atts(array(
         'title' => '',
         'style' => '',
         'src_url' => ''
                     ), $atts));
-    $output = create_videowrapper_div($src_url, "span12");
-    return oxy_shortcode_section($atts, $output);
+    return oxy_shortcode_section($atts, create_videowrapper_div($src_url, "span12"));
 }
-
 add_shortcode('hb_add_into_wrapper', 'hb_add_element_into_wrapper');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
