@@ -1172,7 +1172,7 @@ function get_hb_oxy_shortcode_blockquote($atts) {
 /**
  * @package UI_ELEMENT_HTML
  * @description function to create a section with image-background
- * @param array $atts
+ * @param array $atts <i>class, data_background, image_link, content </i>
  */
 function get_hb_section_background_image_simple($atts) {
      extract(shortcode_atts(array(

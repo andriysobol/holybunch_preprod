@@ -319,7 +319,6 @@ function create_hero_section_with_video($atts) {
                 'content' => $super_hero_unit
     ));
 }
-
 add_shortcode('hero_section_with_video', 'create_hero_section_with_video');
 
 
