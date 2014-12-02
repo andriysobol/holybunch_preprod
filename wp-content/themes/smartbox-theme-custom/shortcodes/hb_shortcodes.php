@@ -41,7 +41,7 @@ function get_latest_taxonomy_topics_as_list($atts) {
         $blockquote = get_hb_oxy_shortcode_blockquote(
                 array(
                     'class' => 'margin_bottom_25px_mb',
-                    'content' => '<p>' . $summary . $more_text . '</p>'));
+                    'content' => $summary . $more_text));
 
         $taxonomy_image_link = get_taxonomy_image('teaching_topics', $taxonomy->slug);
         $round_link = get_hb_link(array(
