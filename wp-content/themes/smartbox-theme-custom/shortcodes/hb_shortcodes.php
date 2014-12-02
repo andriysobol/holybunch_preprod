@@ -135,6 +135,7 @@ add_shortcode('blockquote', 'hb_get_shortcode_blockquote');
  * @param array $atts
  * @param String $content
  * @return string
+ * @see oxy_shortcode_image($atts , $content = '')
  */
 function hb_oxy_shortcode_image($atts , $content = ''){
     extract( shortcode_atts( array(
