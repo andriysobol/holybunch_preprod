@@ -20,44 +20,43 @@ function get_latest_taxonomy_topics_as_list($atts) {
         'hierarchical' => 0,
         'number' => '2',
     );
-    $categories = get_categories($args);
-    //loop over all related posts
-    $output_loop = '';
-    foreach ($categories as $taxonomy) {
+    
+    foreach (get_categories($args) as $taxonomy) {
         $link = get_term_link($taxonomy);
-        $summary = get_taxonomy_term_summary_mini($taxonomy);
-
-        $more_text = get_hb_link(array(
-            'link' => $link,
-            'class' => 'more-link',
-            'content' => __('Go to topic', THEME_FRONT_TD)));
-        $title = get_hb_title(
-                array(
+        
+        //generate title as link
+        $title = get_hb_title(array(
                     'tag' => 3,
-                    'content' => get_hb_link(
-                            array(
+                    'content' => get_hb_link(array(
                                 'link' => $link,
                                 'content' => $taxonomy->name))));
-        $blockquote = get_hb_oxy_shortcode_blockquote(
-                array(
+        
+        //prepare info to generate a blockquote
+        $summary = get_taxonomy_term_summary_mini($taxonomy);
+        $link_more = get_hb_link(array(
+                'link' => $link,
+                'class' => 'more-link',
+                'content' => __('Go to topic', THEME_FRONT_TD)));
+        //generate a blockquote
+        $blockquote = get_hb_oxy_shortcode_blockquote(array(
                     'class' => 'margin_bottom_25px_mb',
-                    'content' => '<p>' . $summary . $more_text . '</p>'));
+                    'content' => '<p>' . $summary . $link_more . '</p>'));
 
-        $taxonomy_image_link = get_taxonomy_image('teaching_topics', $taxonomy->slug);
+        //generate a round image as link
         $round_link = get_hb_link(array(
             'link' => $link,
-            'content' => get_image_as_round_box($taxonomy_image_link)));
+            'content' => get_image_as_round_box(get_taxonomy_image('teaching_topics', $taxonomy->slug))));
 
+        //builde layout
         $output_loop .= oxy_shortcode_layout(NULL, $title . $blockquote . $round_link, 'well blockquote-well');
     }
-    $output = oxy_shortcode_layout(NULL, $output_loop, 'unstyled row-fluid');
-    return oxy_shortcode_section($atts, $output);
+    return oxy_shortcode_section($atts, $output_loop);
 }
 add_shortcode('latest_taxonomy_topics', 'get_latest_taxonomy_topics_as_list');
 
 /**
  * @description used on main page for latest videos
- * @global type $post
+ * @global WP_Post $post
  * @param array $atts
  * @return string
  */
@@ -72,30 +71,33 @@ function hb_get_recent_oxy_video($atts) {
         'orderby' => 'date'
     );
     $my_query = new wp_query($args);
-    if ($my_query->have_posts()) :
+    if ($my_query->have_posts()) {
         global $post;
         while ($my_query->have_posts()) {
             $my_query->the_post();
             setup_postdata($post);
-            $date = get_the_time(get_option("date_format"));
             $post_link = get_hb_linkformat(get_post_format());
             $icon_class_array = explode('"', oxy_post_icon($post->ID, false));
-
-            $span_left = oxy_shortcode_image(array(
+            
+            //generate round image with icon as link 
+            $image_and_date = oxy_shortcode_image(array(
                 'size' => 'box-medium',
                 'source' => CUSTOM_IMAGES_DIR . 'video1.jpg',
                 'icon' => $icon_class_array[1],
                 'link' => $post_link
             ));
-            $span_left .= get_hb_title(array(
+            //generate date
+            $image_and_date .= get_hb_title(array(
                 'tag' => 5,
                 'class' => 'text-center light',
-                'content' => $date));
+                'content' => get_the_time(get_option("date_format"))));
 
+            //generate a title as link
             $title_right = get_hb_title(array(
                 'tag' => 3,
                 'class' => 'text-center',
                 'content' => get_the_title()));
+            //text with link get more text
             $content_right = '<p>' . oxy_limit_excerpt(get_the_content(), 15) . '</p>';
             $content_right .= get_hb_link(array(
                 'link' => get_permalink(),
@@ -106,12 +108,12 @@ function hb_get_recent_oxy_video($atts) {
                 'content' => $title_right));
             $span_right .= apply_filters('the_content', $content_right);
 
-            $merge_spans = oxy_shortcode_layout(NULL, $span_left, 'span3');
+            //build layout
+            $merge_spans = oxy_shortcode_layout(NULL, $image_and_date, 'span3');
             $merge_spans .= oxy_shortcode_layout(NULL, $span_right, 'span9');
             $result .= oxy_shortcode_layout(NULL, $merge_spans, 'span4');
         }
-    endif;
-    // reset post data
+    }
     wp_reset_postdata();
     return oxy_shortcode_section($atts, $result);
 }
@@ -132,7 +134,7 @@ add_shortcode('blockquote', 'hb_get_shortcode_blockquote');
 
 /**
  * @description shows recents blogs on main page
- * @global type $post
+ * @global WP_Post $post
  * @param array $atts
  * @return String
  */
@@ -158,39 +160,41 @@ function hb_get_recent_blog_posts($atts) {
             $date = get_the_time(get_option("date_format"));
             $post_link = get_hb_linkformat(get_post_format());
 
-
-            $div_avatar_left = oxy_shortcode_layout(NULL, $author_avatar, 'round-box box-small');
-            $title_autor_left = get_hb_title(array(
+            //generate round image 
+            //@todo
+            $avatar_blog = oxy_shortcode_layout(NULL, $author_avatar, 'round-box box-small');
+            //generate name of bloger
+            $avatar_blog .= get_hb_title(array(
                 'tag' => 5,
                 'class' => 'text-center',
                 'content' => $author));
-            $title_date_left = get_hb_title(array(
+            //generate date
+            $avatar_blog .= get_hb_title(array(
                 'tag' => 5,
                 'class' => 'text-center light',
                 'content' => $date));
 
-            $link_right = get_hb_link(array(
-                'content' => get_the_title(),
-                'link' => $post_link));
-
-            $title_right = get_hb_title(array(
+            //generate a title as link
+            $content_blog = get_hb_title(array(
                 'tag' => 3,
-                'content' => $link_right));
-
-            $content_right = oxy_limit_excerpt(strip_tags(get_the_content()), 30);
-            $content_right .= get_hb_link(array(
+                'content' => get_hb_link(array(
+                                'content' => get_the_title(),
+                                'link' => $post_link))));
+            //generate text + more link
+            $content = oxy_limit_excerpt(strip_tags(get_the_content()), 30);
+            $content .= get_hb_link(array(
                 'content' => get_more_text($post->post_type),
                 'link' => $post_link,
                 'class' => 'more-link'));
+            $content_blog .= '<p>' . apply_filters('the_content', $content) . '</p>';
 
-            $text_right = '<p>' . apply_filters('the_content', $content_right) . '</p>';
-
-            $merge_spans = oxy_shortcode_layout(NULL, $div_avatar_left . $title_autor_left . $title_date_left, 'span3 post-info');
-            $merge_spans .= oxy_shortcode_layout(NULL, $title_right . $text_right, 'span9');
+            //builde layout
+            $merge_spans = oxy_shortcode_layout(NULL, $avatar_blog, 'span3 post-info');
+            $merge_spans .= oxy_shortcode_layout(NULL, $content_blog, 'span9');
             $output_loop .= oxy_shortcode_layout(NULL, oxy_shortcode_row(NULL, $merge_spans, NULL), 'span6');
         }
     }
-    return oxy_shortcode_section($atts, oxy_shortcode_layout(NULL, $output_loop, 'unstyled row-fluid'));
+    return oxy_shortcode_section($atts, $output_loop);
 }
 add_shortcode('hb_blog_posts', 'hb_get_recent_blog_posts');
 
@@ -214,7 +218,7 @@ add_shortcode('hb_contact_form', 'hb_get_contact_form');
 
 /**
  * @description used on main pages in dutch and german in order to show latest conten
- * @global type $post
+ * @global WP_Post $post
  * @param array $atts
  * @return String
  */
