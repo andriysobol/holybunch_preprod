@@ -81,7 +81,7 @@ function hb_get_recent_oxy_video($atts) {
             $post_link = get_hb_linkformat(get_post_format());
             $icon_class_array = explode('"', oxy_post_icon($post->ID, false));
 
-            $span_left = oxy_shortcode_image(array(
+            $span_left = hb_oxy_shortcode_image(array(
                 'size' => 'box-medium',
                 'source' => CUSTOM_IMAGES_DIR . 'video1.jpg',
                 'icon' => $icon_class_array[1],
@@ -129,6 +129,36 @@ function hb_get_shortcode_blockquote($atts, $content) {
         'params' => $atts));
 }
 add_shortcode('blockquote', 'hb_get_shortcode_blockquote');
+
+/**
+ * @description overreid <b>image</b> from parent template. Purpose: added new attribute alt to checkstyle
+ * @param array $atts
+ * @param String $content
+ * @return string
+ */
+function hb_oxy_shortcode_image($atts , $content = ''){
+    extract( shortcode_atts( array(
+        'size'       => 'box-medium',
+        'rounded'    => 'yes',
+        'polaroid'   => 'no',
+        'source'     => '',
+        'icon'       => '',
+        'link'       => '',
+        'alt'       => 'holybunch_image'
+    ), $atts ) );
+    
+    $iconclass= ($icon != '')?'<i class="'.$icon.'"></i>':'';
+    $polaroidclss = ( $polaroid == 'yes')? 'img-polaroid':'';
+    $extraclass = ($rounded == 'no')?' no-rounded':'';
+    $tag = ($link != '')?'a':'span';
+    $ref = ($tag == 'a')?' href="'.$link.'"':'';
+
+    $output = '<div class="round-box'.$extraclass.' '.$size.'"> <'.$tag.' class="box-inner"'.$ref.'>';
+    $output.= '<img class="img-circle '.$polaroidclss.'"  src="'.$source.'" alt="'.$alt.'" />'.$iconclass.'</'.$tag.'></div>';
+
+    return $output;
+}
+add_shortcode( 'image' , 'oxy_shortcode_image');
 
 /**
  * @description shows recents blogs on main page
@@ -183,7 +213,7 @@ function hb_get_recent_blog_posts($atts) {
                 'link' => $post_link,
                 'class' => 'more-link'));
 
-            $text_right = '<p>' . apply_filters('the_content', $content_right) . '</p>';
+            $text_right = apply_filters('the_content', $content_right);
 
             $merge_spans = oxy_shortcode_layout(NULL, $div_avatar_left . $title_autor_left . $title_date_left, 'span3 post-info');
             $merge_spans .= oxy_shortcode_layout(NULL, $title_right . $text_right, 'span9');
@@ -248,7 +278,7 @@ function hb_get_recent_oxy_content($atts) {
                 'content' => get_more_text($post->post_type),
                 'link' => get_permalink(),
                 'class' => 'more-link'));
-            $text = '<p>' . apply_filters('the_content', $content) . '</p>';
+            $text = apply_filters('the_content', $content);
             $output_loop .= oxy_shortcode_layout(NULL, do_shortcode($title_link . $text), 'span4');
         }
     }
