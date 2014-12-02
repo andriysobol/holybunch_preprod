@@ -263,3 +263,7 @@ margin: 0;
 #toTop:active, #toTop:focus {
 	outline:none;
 }
+
+.padding_a_language {
+    padding: 0px 10px;
+}
