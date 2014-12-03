@@ -209,6 +209,11 @@ section.content-text-section div blockquote{
     line-height: 1.4em;
 }
 
+.archive-body  {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #dcdce1;
+}
+
 blockquote p {
     padding: 0px !important;
     margin: 0px !important;
