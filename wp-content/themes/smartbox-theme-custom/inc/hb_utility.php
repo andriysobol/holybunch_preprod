@@ -235,11 +235,11 @@ function append_categories_as_list($categories, $post_type){
             );
             $count_all = count($posts_all);
             if($post_type == 'oxy_video'){
-                $link_all = home_url() . "/videos";
+                $link_all = home_url() . "/videoarchive";
                 $title = __('Show all videos', THEME_FRONT_TD). " (" . $count_all . ") ";
             }elseif (oxy_content){
                 $title = __('Show all articles', THEME_FRONT_TD). " (" . $count_all . ") ";
-                $link_all = home_url() . "/texts";
+                $link_all = home_url() . "/archive";
             }
             $output = "<li><a href='" . $link_all . "' class='tag-link-22' title='" . $count_all . " записи'  style='font-size:10pt;' >" . $title . "</a></li>";
             $add_all = FALSE;
@@ -249,7 +249,8 @@ function append_categories_as_list($categories, $post_type){
     }
     return $output;
 }
-    function get_related_posts($atts) {
+
+function get_related_posts($atts) {
     // setup options
     $atts = array(
         'title' => __('Also in this topic', THEME_FRONT_TD),
