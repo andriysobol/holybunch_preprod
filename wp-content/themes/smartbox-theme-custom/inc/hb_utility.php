@@ -1,16 +1,13 @@
-<?php
+ <?php
 
-function get_category_term_link_for_taxonomy_topic($category_term, $teaching_topic) {
-    $content_link = get_term_link($category_term, $taxonomy = 'oxy_content_category');
-    if (!is_a($content_link, 'WP_Error')) {
-        $term_link = $content_link . "?taxonomy=teaching_topics&term=" . $teaching_topic;
-        return $term_link;
-    }
-    return '';
-}
-
-function get_taxonomy_image($taxonomy_name, $topic) {
-    $term_details = term_exists($topic, $taxonomy_name);
+/**
+ * @description get image value which is stored in custom field of taxonomy
+ * @param string $taxonomy_name <i>name of taxonomy</i>
+ * @param string $taxonomy_slug optional<i>taxonomy slug</i>
+ * @return string
+ */
+function get_taxonomy_image($taxonomy_name, $taxonomy_slug) {
+    $term_details = term_exists($taxonomy_slug, $taxonomy_name);
     if (is_array($term_details)) {
         $term_id = $term_details['term_id'];
     } else {
@@ -29,8 +26,14 @@ function get_taxonomy_image($taxonomy_name, $topic) {
     }
 }
 
-function get_taxonomy_banner_image($taxonomy_name, $topic) {
-    $term_details = term_exists($topic, $taxonomy_name);
+/**
+ * @description get banner image value which is stored in custom field of taxonomy
+ * @param string $taxonomy_name <i>name of taxonomy</i>
+ * @param string $taxonomy_slug optional<i>taxonomy slug</i>
+ * @return string
+ */
+function get_taxonomy_banner_image($taxonomy_name, $taxonomy_slug) {
+    $term_details = term_exists($taxonomy_slug, $taxonomy_name);
     if (is_array($term_details)) {
         $term_id = $term_details['term_id'];
     } else {
@@ -49,8 +52,14 @@ function get_taxonomy_banner_image($taxonomy_name, $topic) {
     }
 }
 
-function get_taxonomy_video_background_image($taxonomy_name, $topic) {
-    $term_details = term_exists($topic, $taxonomy_name);
+/**
+ * @description get video background image value which is stored in custom field of taxonomy, used for taxonomy topic page
+ * @param string $taxonomy_name <i>name of taxonomy</i>
+ * @param string $taxonomy_slug optional<i>taxonomy slug</i>
+ * @return string
+ */
+function get_taxonomy_video_background_image($taxonomy_name, $taxonomy_slug) {
+    $term_details = term_exists($taxonomy_slug, $taxonomy_name);
     if (is_array($term_details)) {
         $term_id = $term_details['term_id'];
     } else {
@@ -69,7 +78,13 @@ function get_taxonomy_video_background_image($taxonomy_name, $topic) {
     }
 }
 
-function get_post_banner_image($post, $taxonomy_name = 'teaching_topics') {
+/**
+ * @description get banner image for post from custom field of post or from corresponding taxonomy term of post 
+ * @param post $post <i>post</i>
+ * @param string $taxonomy_term optional<i>taxonomy term</i>
+ * @return string
+ */
+function get_post_banner_image($post, $taxonomy_term = 'teaching_topics') {
     //in order to get custom field 'banner_image' from taxonomy we have 
     //to call advanced custom fields plugin api and provide id of post
     switch ($post->post_type) {
@@ -91,7 +106,7 @@ function get_post_banner_image($post, $taxonomy_name = 'teaching_topics') {
 
     //try to get image from taxonomy topic assigned to post 
     //Returns All Term Items for taxonomy
-    $term_list = wp_get_post_terms($post->ID, $taxonomy_name, array("fields" => "all"));
+    $term_list = wp_get_post_terms($post->ID, $taxonomy_term, array("fields" => "all"));
     foreach ($term_list as $term) {
         $image = get_field('taxonomy_banner_image', 'teaching_topics_' . $term->term_id);
         $image_url = $image[url];
@@ -101,66 +116,12 @@ function get_post_banner_image($post, $taxonomy_name = 'teaching_topics') {
     return get_theme_root_uri() . '/smartbox-theme-custom/images/banner_thema_default.jpg';
 }
 
-function get_query($taxonomy_category, $teaching_topic) {
-    if (!empty($taxonomy_category)) {
-        $args = array(
-            // post basics
-            'post_type' => 'oxy_video', // check capitalization, make sure this matches your post type slug
-            'post_status' => 'publish', // you may not need this line.
-            'posts_per_page' => 3, // set this yourself, 10 is a placeholder
-            'post__not_in' => array($video[0]->ID),
-            // taxonomy
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'teaching_topics', // slug for desired tag goes here
-                    'field' => 'slug',
-                    'terms' => $teaching_topic, // should work without a slug, try it both ways...and use a variable, don't hardcode
-                    'include_children' => false,
-                ),
-                array(
-                    'taxonomy' => 'oxy_content_category', // slug for desired tag goes here
-                    'field' => 'slug',
-                    'terms' => $taxonomy_category, // should work without a slug, try it both ways...and use a variable, don't hardcode
-                    'include_children' => false,
-                )
-            )
-        );
-    } else {
-        $args = array(
-            // post basics
-            'post_type' => 'oxy_content', // check capitalization, make sure this matches your post type slug
-            'post_status' => 'publish', // you may not need this line.
-            'posts_per_page' => 3, // set this yourself, 10 is a placeholder
-            'post__not_in' => array($video[0]->ID),
-            // taxonomy
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'teaching_topics', // slug for desired tag goes here
-                    'field' => 'slug',
-                    'terms' => $teaching_topic, // should work without a slug, try it both ways...and use a variable, don't hardcode
-                    'include_children' => false,
-                )
-            )
-        );
-    }
-    return new WP_Query($args);
-}
-
-function get_query_only_video($teaching_topic) {
-    return get_query('video', $teaching_topic);
-}
-
-function get_query_only_music($teaching_topic) {
-    return get_query('music', $teaching_topic);
-}
-
-function get_query_only_text($teaching_topic) {
-    return get_query('text', $teaching_topic);
-}
-
+/**
+ * @description teaching topic can occur in url query as term or just a topic try to get this term
+ * @return string
+ */
 function get_teaching_topic_from_query() {
-    //teaching topic can occur in url query as term or just a topic
-    //try to get term
+    
     $teaching_topic = get_query_var('term');
     if (empty($teaching_topic)) {
         $teaching_topic = get_query_var('teaching_topics');
@@ -168,25 +129,38 @@ function get_teaching_topic_from_query() {
     return $teaching_topic;
 }
 
-function IsLocalEinvironment() {
+/**
+ * @description provides true if theme is running locally on localhost and false if on server 
+ * @return boolean
+ */
+function is_local_environment() {
     $server_name = $_SERVER['SERVER_NAME'];
     if (isset($server_name) && $server_name == "localhost")
         return true;
     return false;
 }
-
-function GetHostForJWScript() {
-    if (is_ssl() && !IsLocalEinvironment())
+/**
+ * @description get path to script library of jw player
+ * @return string
+ */
+function get_host_jw_player_script() {
+    if (is_ssl() && !is_local_environment())
         return 'https://ssl.jwpsrv.com/library/2vQezLOEEeOy_CIACi0I_Q.js';
-    else if (is_ssl() && IsLocalEinvironment())
+    else if (is_ssl() && is_local_environment())
         return 'https://jwpsrv.com/library/2vQezLOEEeOy_CIACi0I_Q.js';
-    else if (!IsLocalEinvironment())
+    else if (!is_local_environment())
         return 'https://ssl.jwpsrv.com/library/2vQezLOEEeOy_CIACi0I_Q.js';
     else
         return 'http://jwpsrv.com/library/2vQezLOEEeOy_CIACi0I_Q.js';
 }
 
-function get_taxonomy_terms_cloud($post_type, $title="Темы на выбор") {
+/**
+ * @description get all taxonomies which contain posts and return as term cloud, used for (video-)archive 
+ * @param string $post_type <i>type of post</i>
+ * @param title $title <i>title</i>
+ * @return string
+ */
+function get_taxonomy_terms_cloud($post_type, $title) {
     if (empty($post_type))
         $post_type = array('oxy_content', 'oxy_video', 'oxy_audio');
     $args = array(
@@ -200,17 +174,22 @@ function get_taxonomy_terms_cloud($post_type, $title="Темы на выбор")
     $output .= '<div class="tagcloud">';
     $output .= '    <h3 class="sidebar-header">'.$title.'</h3>';
     $output .= '<ul>';
-    $output .= append_categories_as_list($categories, $post_type);
+    $output .= get_taxonomy_terms_as_list($categories, $post_type);
     $output .= '</ul>';
-    $target = '_blank';
     $output .= '</div>';
     $output .= '</div>';
     echo $output;
 }
 
-function append_categories_as_list($categories, $post_type){
+/**
+ * @description get all taxonomies which contain posts and return as list, used for (video-)archive 
+ * @param array $taxonomies <i>taxonomies</i>
+ * @param string $post_type <i>type of post</i>
+ * @return string
+ */
+function get_taxonomy_terms_as_list($taxonomies, $post_type){
     $add_all = true;
-    foreach ($categories as $category) {
+    foreach ($taxonomies as $category) {
         $posts_in_category = get_posts(array(
             'showposts' => -1,
             'post_type' => $post_type,
@@ -250,6 +229,11 @@ function append_categories_as_list($categories, $post_type){
     return $output;
 }
 
+/**
+ * @description get related for particular post, is used for example on single post page
+ * @param array $atts <i>attributes</i>
+ * @return string
+ */
 function get_related_posts($atts) {
     // setup options
     $atts = array(
@@ -281,11 +265,16 @@ function get_related_posts($atts) {
         );
 
         $my_query = new wp_query($args);
-        return create_section_with_itmes($my_query, $atts);
+        return create_section_with_text_items($my_query, $atts);
     }
 }
 
-function create_section_with_itmes($my_query, $atts = null) {
+/**
+ * @description create taxonomy topic page with short summary of taxonomy term and corresponding text/video items
+ * @param string $taxonomy term <i>term of taxonomy</i>
+ * @return string
+ */
+function create_section_with_text_items($my_query, $atts = null) {
     $columns = $my_query->post_count > 4 ? 4 : $my_query->post_count;
     $span = $columns > 0 ? 'span' . floor(12 / $columns) : 'span3';
 
@@ -339,7 +328,14 @@ function create_section_with_itmes($my_query, $atts = null) {
     endif;
 }
 
-function hb_limit_excerpt($string, $word_limit, $add_punkts = false) {
+/**
+ * @description do limit string by word count
+ * @param string $string <i>string to be limited</i>
+ * @param int $word_limit <i>amount of words for limit</i>
+ * @param bool $add_punkts <i>whether to add punkts at the end </i>
+ * @return string
+ */
+function hb_limit_string($string, $word_limit, $add_punkts = false) {
     $words = explode(' ', $string, ($word_limit + 1));
     if (count($words) > $word_limit) {
         array_pop($words);
@@ -349,7 +345,11 @@ function hb_limit_excerpt($string, $word_limit, $add_punkts = false) {
         return implode(' ', $words) . ' ...';
     return implode(' ', $words);
 }
-
+/**
+ * @description get attached video from post and return it as video wrapper, used for archive
+ * @param post $post <i>post</i>
+ * @return string
+ */
 function get_video_content($post) {
     $video_shortcode = get_field('video_shortcode', $post->ID);
     $content = $post->post_content;
@@ -361,29 +361,12 @@ function get_video_content($post) {
     echo $output;
 }
 
-function get_audio_content() {
-    $audio_shortcode = get_field('audio_shortcode', the_ID());
-    if ($audio_shortcode !== null) {
-        // use the video in the archives
-        echo apply_filters('the_content', $audio_shortcode);
-    } elseif (has_post_thumbnail()) {
-        $img = wp_get_attachment_image_src(get_post_thumbnail_id(the_ID()), 'full');
-        $img_link = is_single() ? $img[0] : get_permalink();
-        $link_class = is_single() ? 'class="fancybox"' : '';
-        echo '<figure>';
-        if (oxy_get_option('blog_fancybox') == 'on') {
-            echo '<a href="' . $img_link . '" ' . $link_class . '>';
-        }
-        echo '<img alt="featured image" src="' . $img[0] . '">';
-        if (oxy_get_option('blog_fancybox') == 'on') {
-            echo '</a>';
-        }
-        echo '</figure>';
-    }
-}
-
-function hb_create_topic_page($taxonomy_term) {
-
+/**
+ * @description create taxonomy topic page with short summary of taxonomy term and corresponding text/video items
+ * @param string $taxonomy term <i>term of taxonomy</i>
+ * @return string
+ */
+function get_taxonomy_topic_page($taxonomy_term) {
     //get post of type text
     $query = array(
         'numberposts' => -1,
@@ -403,8 +386,10 @@ function hb_create_topic_page($taxonomy_term) {
     $count = count($text_items);
 
     if (isset($taxonomy_term->description)) {
-        //$output .= oxy_shortcode_section($atts, '[lead centered="no"]'.$taxonomy_term->description.'[/lead]');
-        $output .= create_text_item($taxonomy_term->description);
+        $summary = $taxonomy_term->description . '<p><br><br></p>';
+        $output = oxy_shortcode_layout(NULL, $summary, 'container-fluid');
+        $output = oxy_shortcode_layout(NULL, $output, 'row-fluid');
+        $output = oxy_shortcode_layout(NULL, $output, 'span12');
     }
 
     if ($count == 1) {
@@ -424,72 +409,70 @@ function hb_create_topic_page($taxonomy_term) {
         $output .= create_three_text_items($text_items[3], $text_items[4], $text_items[5]);
     } elseif ($count > 6) {
         //$output . create_more_text_items($text_items);
-        $output .= create_section_with_itmes(new WP_Query($query));
+        $output .= create_section_with_text_items(new WP_Query($query));
     }
-
+    
     $atts[title] = __('In this topic ...', THEME_FRONT_TD); //'В этой теме ...';        
     $output = oxy_shortcode_section($atts, $output);
-    $output .= hb_create_flexi_slider_themen_page($taxonomy_term->slug, "oxy_video");
+    $output .= get_flexi_slider_for_taxonomy_topic_page($taxonomy_term->slug);
     return $output;
 }
 
-function create_text_item($summary) {
-    $output = '<div class="container-fluid">
-         <div class="row-fluid">
-        <div class="span12">
-          <p>' . $summary . '</p>
-          <p><br><br></p>
-        </div>
-      </div>
-    </div>';
+/**
+ * @description create text item as quote for taxonomy topic page
+ * @param post $post <i>post</i>
+ * @param string $content optional <i>optional content</i>
+ * @return string
+ */
+function create_one_text_items($post, $content = '') {
+    $output = get_post_summary_as_quote($post, 'span12', $content);
+    $output = oxy_shortcode_layout(NULL, $output, 'container-fluid');
     return $output;
 }
 
-function create_one_text_items($first_item, $content = '') {
-    $output = '     <div class="container-fluid">
-        <div>
-        </div>
-        <div class="row-fluid">
-            <ul class="inline row-fluid">';
-    $post = $first_item;
-    $output .= add_post_summary_to_main_page($post, 'span12', $content);
-    $output .= '</ul></div></div>';
-    return $output;
-}
-
+/**
+ * @description create 2 text items as quote for taxonomy topic page
+ * @param post $first_item <i>first post item</i>
+ * @param post $second_item <i>second post item</i>
+ * @return string
+ */
 function create_two_text_items($first_item, $second_item) {
-    $output = '     <div class="container-fluid">
-        <div>
-        </div>
-        <div class="row-fluid">
-            <ul class="inline row-fluid">';
     $post = $first_item;
-    $output .= add_post_summary_to_main_page($post, 'span6');
+    $output = get_post_summary_as_quote($post, 'span6');
     $post = $second_item;
-    $output .= add_post_summary_to_main_page($post, 'span6');
-    $output .= '</ul></div></div>';
+    $output .= get_post_summary_as_quote($post, 'span6');
+    $output = oxy_shortcode_layout(NULL, $output, 'container-fluid');
     return $output;
 }
 
+/**
+ * @description create 3 text items as quote for taxonomy topic page
+ * @param post $first_item <i>first post item</i>
+ * @param post $second_item <i>second post item</i>
+ * @param post $third_item <i>third post item</i>
+ * @return string
+ */
 function create_three_text_items($first_item, $second_item, $third_item) {
     $post = $first_item;
-    $output = '     <div class="container-fluid">
-        <div>
-        </div>
-        <div class="row-fluid">
-            <ul class="inline row-fluid">';
-
-    $output .= add_post_summary_to_main_page($post);
+    $output = get_post_summary_as_quote($post);
     $post = $second_item;
-    $output .= add_post_summary_to_main_page($post);
+    $output .= get_post_summary_as_quote($post);
 
     $post = $third_item;
-    $output .= add_post_summary_to_main_page($post);
-    $output .= '</ul></div></div>';
+    $output .= get_post_summary_as_quote($post);
+      
+    $output = oxy_shortcode_layout(NULL, $output, 'container-fluid');
     return $output;
 }
 
-function add_post_summary_to_main_page($post, $span = 'span4', $summary = '') {
+/**
+ * @description get summary of post as quote, used on taxonomy topic page 
+ * @param post $post <i>post instance of text post</i>
+ * @param string $span optional <i>span size, default is span4</i>
+ * @param string $summary optional <i>summary text, default is empty</i>
+ * @return string
+ */
+function get_post_summary_as_quote($post, $span = 'span4', $summary = '') {
     if (empty($summary))
         $summary = get_post_summary_mini($post);
     else
@@ -497,16 +480,20 @@ function add_post_summary_to_main_page($post, $span = 'span4', $summary = '') {
     $more_text = __('Read more', THEME_FRONT_TD);
     $link = get_post_permalink($post->ID, false, false);
     $more_text = '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
-    $output = '<li class="' . $span . '">
-                    <div class="well blockquote-well well_custom_2col_mb">
-                      <h3><a href="' . get_post_permalink($post->ID, false, false) . '">' . $post->post_title . '</a></h3>
+    $output = '<h3><a href="' . get_post_permalink($post->ID, false, false) . '">' . $post->post_title . '</a></h3>
                         <blockquote><p>' . $summary . $more_text . '</p></blockquote><a href="' . get_post_permalink($post->ID, false, false) . '">' .
             add_image_to_text_item($post) .
-            '</a></div>
-                </li>';
+            '</a>';
+    $output = oxy_shortcode_layout(NULL, $output, 'well blockquote-well well_custom_2col_mb');
+    $output = oxy_shortcode_layout(NULL, $output, $span);
     return $output;
 }
 
+/**
+ * @description get taxonomy term summary, used for example on topic page 
+ * @param taxonomy $taxonomy <i>post instance of text post</i>
+  * @return string
+ */
 function get_taxonomy_term_summary_mini($taxonomy) {
     $summary = get_field('taxonomy_summary', 'teaching_topics_' . $taxonomy->term_id);
     if (empty($taxonomy)) {
@@ -516,6 +503,12 @@ function get_taxonomy_term_summary_mini($taxonomy) {
     return $summary;
 }
 
+/**
+ * @description create round box with image in it for short summary of text item on topic page 
+ * @param post $post <i>post instance of text post</i>
+ * @param string size <i>size of image box</i>
+ * @return string
+ */
 function add_image_to_text_item($post, $size = 'medium') {
     if (has_post_thumbnail($post->ID)) {
         $output .='<div class="round-box box-' . $size . ' box-colored"><span class="box-inner">';
@@ -526,48 +519,63 @@ function add_image_to_text_item($post, $size = 'medium') {
     }
 }
 
-function get_image_as_round_box($img_source, $size = 'medium') {
+/**
+ * @description create round box with image in it
+ * @param string $img_src_url <i>image url</i>
+ * @param string size <i>size of box</i>
+ * @return string
+ */
+function get_image_as_round_box($img_src_url, $size = 'medium') {
     $output .='<div class="round-box box-' . $size . ' box-colored"><span class="box-inner">';
-    $output .= '<img class="img-circle" src="' . $img_source . '">';
+    $output .= '<img class="img-circle" src="' . $img_src_url . '">';
     $output .= '</span></div>';
     return $output;
 }
 
-function hb_create_flexi_slider_themen_page($slug_or_ids, $post_type) {
+/**
+ * @description function creates flexi slider with videos from one particular taxonomy topic(term) it, used on topic page
+ * @param string $slug_or_id <i>taxonomy term slug or id</i>
+ * @return string
+ */
+function get_flexi_slider_for_taxonomy_topic_page($slug_or_id) {
     $slides = get_posts(array(
         'numberposts' => -1,
-        'post_type' => $post_type,
+        'post_type' => 'oxy_video',
         'tax_query' => array(
             array(
                 'taxonomy' => 'teaching_topics',
                 'field' => 'slug',
-                'terms' => $slug_or_ids
+                'terms' => $slug_or_id
             )
         ),
         'orderby' => 'menu_order',
         'order' => 'ASC'
     ));
-    $xtracapsclss = ' fadeup animated delayed';
-    $id = 'flexslider-' . rand(1, 100);
     if (count($slides) == 0)
         return '';
-    $output .= '<section class="section section-alt">';
+    
     $output .= '<div id="flexslider-100" class="flexslider flex-directions-fancy flex-controls-inside flex-controls-center" data-flex-animation="slide" data-flex-controlsalign="center" data-flex-controlsposition="inside" data-flex-directions="show" data-flex-speed="30000" data-flex-directions-position="inside" data-flex-controls="show" data-flex-slideshow="true">';
     $output .= '<ul class="slides">';
     foreach ($slides as $slide) {
         $output .= '<li>';
         $atts[random_posts] = false;
         $atts[post_video] = $slide;
-        $atts[taxonomy_slug] = $slug_or_ids;
+        $atts[taxonomy_slug] = $slug_or_id;
         $output .= create_hero_section_with_video($atts);
         $output .= '</li>';
     }
     $output .= '</ul>';
     $output .= '</div>';
-    $output .= '</section>';
     return $output;
 }
 
+/**
+ * @description function to video wrapper with video or image in it
+ * @param string $src_url <i>source url</i>
+ * @param string $span <i>span size of wrapper</i>
+ * @param string $width/$height <i>width, height size of wrapper</i>
+ * @return string
+ */
 function create_videowrapper_div($src_url, $span = "span8", $width = "1250", $height = "703") {
     $output = '<div class=' . $span . '>
                          <div class="entry-content">
@@ -579,6 +587,11 @@ function create_videowrapper_div($src_url, $span = "span8", $width = "1250", $he
     return $output;
 }
 
+/**
+ * @description function to get summary of custom posts
+ * @param string $post <i>post item</i>
+ * @return string
+ */
 function get_post_summary_mini($post) {
     $summary = '';
     //in order to get custom field 'summary' from post we have 
@@ -588,54 +601,37 @@ function get_post_summary_mini($post) {
             $summary = get_field('video_summary_mini', $post->ID);
             if (empty($summary)) {
                 $summary = get_field('video_summary', $post->ID);
-                $summary = hb_limit_excerpt($summary, 40);
+                $summary = hb_limit_string($summary, 40);
             }
             break;
         case 'oxy_audio':
             $summary = get_field('audio_summary_mini', $post->ID);
             if (empty($summary)) {
                 $summary = get_field('audio_summary', $post->ID);
-                $summary = hb_limit_excerpt($summary, 40);
+                $summary = hb_limit_string($summary, 40);
             }
             break;
         case 'oxy_content':
             $summary = get_field('summary_mini', $post->ID);
             if (empty($summary)) {
                 $summary = get_field('summary', $post->ID);
-                $summary = hb_limit_excerpt($summary, 40);
+                $summary = hb_limit_string($summary, 40);
             }
             break;
         default :
             break;
     }
     if (empty($summary))
-        $summary = hb_limit_excerpt($post->post_content, 40);
+        $summary = hb_limit_string($post->post_content, 40);
     return $summary;
 }
 
-function get_post_summary($post) {
-    $summary = '';
-    //in order to get custom field 'summary' from post we have 
-    //to call advanced custom fields plugin api and provide id of post
-    switch ($post->post_type) {
-        case 'oxy_video':
-            $summary = get_field('video_summary', $post->ID);
-            break;
-        case 'oxy_audio':
-            $summary = get_field('audio_summary', $post->ID);
-            break;
-        case 'oxy_content':
-            $summary = get_field('summary', $post->ID);
-            break;
-        default :
-            break;
-    }
-    if (empty($summary))
-        $summary = $post->post_content;
-    return $summary;
-}
-
-function get_corresponding_terms($post) {
+/**
+ * @description function to get list of taxonomy terms which are assigned to post
+ * @param string $post <i>post item</i>
+ * @return string
+ */
+function get_assigned_taxonomy_terms($post) {
     $output = '<div id="tag_cloud-3" class="sidebar-widget  widget_tag_cloud">';
     $output .= '<div class="tagcloud">';
     $output .= '    <div class="tagcloudThema">' . __('Go to topic', THEME_FRONT_TD) . ':' . '</div>';
@@ -646,7 +642,6 @@ function get_corresponding_terms($post) {
         foreach ($terms as $individual_term) {
             $term_link = get_term_link($individual_term);
             $output .= "<li><a href='" . $term_link . "' title='" . $individual_term->name . "'  style='font-size:" . 12 . "pt;' >" . $individual_term->name . "</a></li>";
-            ;
         }
     }
     $output .= '</ul>';
@@ -655,14 +650,19 @@ function get_corresponding_terms($post) {
     return $output;
 }
 
+/**
+ * @description function to create more text string
+ * @param string $post_type <i> post type of post </i>
+ * @return more text string
+ */
 function get_more_text($post_type) {
     $more_text = __('Read more', THEME_FRONT_TD);
     switch ($post_type) {
         case 'oxy_video':
-            $more_text = '<Strong>Перейти</Strong> к видео';
+            $more_text = __('Goto video', THEME_FRONT_TD);
             break;
         case 'oxy_audio':
-            $more_text = '<Strong>Перейти</Strong> к аудио';
+            $more_text = __('Goto audio', THEME_FRONT_TD);;
             break;
         default :
             break;
@@ -671,7 +671,6 @@ function get_more_text($post_type) {
 }
 
 //////UI_ELEMENTS///////////
-
 
 function get_hb_more_text_link($link, $more_text) {
     return get_hb_link(
@@ -709,7 +708,7 @@ function get_hb_title($atts) {
         'class' => '',
         'content' => '',
         'tag' => ''), $atts));
-
+   
     return $result = '<h' . $tag . set_attributes_hb($id, $class) . '>' . $content . '</h' . $tag . '>';
 }
 

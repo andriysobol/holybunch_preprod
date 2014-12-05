@@ -13,6 +13,6 @@
 ?>
 <?php
     $taxonomy_term = $wp_query->queried_object;
-    echo hb_create_topic_page($taxonomy_term);
+    echo get_taxonomy_topic_page($taxonomy_term);
 ?>
 

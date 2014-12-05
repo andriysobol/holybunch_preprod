@@ -319,7 +319,7 @@ function create_hero_section_with_video($atts) {
 
     if (!empty($post_video)) {
         $title = $post_video->post_title;
-        $summary = hb_limit_excerpt($post_video->post_content, 50);
+        $summary = hb_limit_string($post_video->post_content, 50);
         $shortcode = get_field('video_shortcode', $post_video->ID);
     }
 

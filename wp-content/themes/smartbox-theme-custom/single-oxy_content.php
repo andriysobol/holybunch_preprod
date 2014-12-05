@@ -22,7 +22,7 @@ $allow_comments = oxy_get_option( 'site_comments' );
             <div class="span12">
 		<a align="right" class="icon-print pf-alignright" href="<?php echo get_permalink() . '?pfstyle=wp' ; ?>" rel="nofollow"></a>
 		<?php 
-                    echo get_corresponding_terms($post);
+                    echo get_assigned_taxonomy_terms($post);
 		?>
                 <?php while ( have_posts() ) : the_post(); ?>
                     <div class="span12" style = "color:#FFA500;">

@@ -15,7 +15,7 @@ function oxy_shortcode_rtmp_player($atts) {
     $output .= '</div>';
     $output .= '<div class = "span8">';
     $output .= '<div id = "playerygRpQJGcOwEP">';
-    $output .= '<script src = "' . GetHostForJWScript() . '"></script>';
+    $output .= '<script src = "' . get_host_jw_player_script() . '"></script>';
     $output .= '<script type = \'text/javascript\'>';
     $output .= 'jwplayer(\'playerygRpQJGcOwEP\').setup({';
     $output .= 'playlist: [{';
@@ -65,7 +65,7 @@ function oxy_shortcode_js_player($atts) {
         $width = "360";
     $uniqid = "player" . uniqid();
     $output = '<div id = "' . $uniqid . '">';
-    $output .= '<script src = "' . GetHostForJWScript() . '"></script>';
+    $output .= '<script src = "' . get_host_jw_player_script() . '"></script>';
     //$output .= '<script src = "http://84.200.83.37/wp-content/themes/smartbox-theme-custom/inc/js_player/JS_Player.js' . '"></script>';
     $output .= '<script type = \'text/javascript\'>';
     $output .= 'jwplayer(\'' . $uniqid . '\').setup({';
