@@ -1,12 +1,11 @@
 <?php
-
 /**
  * @description get all taxonomies which contain posts and return as term cloud, used for (video-)archive 
  * @param string $post_type <i>type of post</i>
  * @param title $title <i>title</i>
  * @return string
  */
-function hb_get_taxonomy_terms_cloud($post_type, $title) {
+function hb_ui_taxonomy_terms_cloud($post_type, $title) {
     if (empty($post_type))
         $post_type = array('oxy_content', 'oxy_video', 'oxy_audio');
     $args = array(
@@ -15,16 +14,11 @@ function hb_get_taxonomy_terms_cloud($post_type, $title) {
         'pad_counts' => 1,
         'hierarchical' => 0
     );
-    $categories = get_categories($args);
-    $output = '<div id="tag_cloud-3" class="sidebar-widget  widget_tag_cloud">';
-    $output .= '<div class="tagcloud">';
-    $output .= '    <h3 class="sidebar-header">' . $title . '</h3>';
-    $output .= '<ul>';
-    $output .= hb_get_taxonomy_terms_as_list($categories, $post_type);
-    $output .= '</ul>';
-    $output .= '</div>';
-    $output .= '</div>';
-    echo $output;
+    return oxy_shortcode_layout(NULL, hb_ui_title(array(
+                'tag' => 3,
+                'content' => $title
+            )) .  hb_get_taxonomy_terms_as_list(get_categories($args), $post_type), 
+            "sidebar-widget widget_tag_cloud");
 }
 
 /**
@@ -72,7 +66,7 @@ function hb_get_taxonomy_terms_as_list($taxonomies, $post_type) {
         if (!empty($count))
             $output .= "<li><a href='" . $link . "' class='tag-link-22' title='" . $count . " записи'  style='font-size:10pt;' >" . $tax_name . "</a></li>";
     }
-    return $output;
+    return '<ul>' . $output . '</ul>';
 }
 
 /**
@@ -497,7 +491,7 @@ function hb_get_link($atts) {
  * @example $tag for H3 is 3
  * @return string
  */
-function hb_get_title($atts) {
+function hb_ui_title($atts) {
     extract(shortcode_atts(array(
         'id' => '',
         'class' => '',

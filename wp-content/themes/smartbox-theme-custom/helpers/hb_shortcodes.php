@@ -32,7 +32,7 @@ function hb_shortcode_latest_taxonomy_topics_as_list($atts) {
             'link' => $link,
             'class' => 'more-link',
             'content' => __('Go to topic', THEME_FRONT_TD)));
-        $title = hb_get_title(
+        $title = hb_ui_title(
                 array(
                     'tag' => 3,
                     'content' => hb_get_link(
@@ -88,12 +88,12 @@ function hb_shortcode_recent_video($atts) {
                 'icon' => $icon_class_array[1],
                 'link' => $post_link
             ));
-            $span_left .= hb_get_title(array(
+            $span_left .= hb_ui_title(array(
                 'tag' => 5,
                 'class' => 'text-center light',
                 'content' => $date));
 
-            $title_right = hb_get_title(array(
+            $title_right = hb_ui_title(array(
                 'tag' => 3,
                 'class' => 'text-center',
                 'content' => get_the_title()));
@@ -192,11 +192,11 @@ function hb_shortcode_recent_blog_posts($atts) {
 
 
             $div_avatar_left = oxy_shortcode_layout(NULL, $author_avatar, 'round-box box-small');
-            $title_autor_left = hb_get_title(array(
+            $title_autor_left = hb_ui_title(array(
                 'tag' => 5,
                 'class' => 'text-center',
                 'content' => $author));
-            $title_date_left = hb_get_title(array(
+            $title_date_left = hb_ui_title(array(
                 'tag' => 5,
                 'class' => 'text-center light',
                 'content' => $date));
@@ -205,7 +205,7 @@ function hb_shortcode_recent_blog_posts($atts) {
                 'content' => get_the_title(),
                 'link' => $post_link));
 
-            $title_right = hb_get_title(array(
+            $title_right = hb_ui_title(array(
                 'tag' => 3,
                 'content' => $link_right));
 
@@ -269,7 +269,7 @@ function hb_shortcode_recent_content($atts) {
             setup_postdata($post);
             $title_link = hb_get_link(array(
                 'link' => hb_get_linkformat(get_post_format()),
-                'content' => hb_get_title(array(
+                'content' => hb_ui_title(array(
                     'tag' => 3,
                     'class' => 'text-center',
                     'content' => get_the_title()
@@ -334,7 +334,7 @@ function hb_shortcode_hero_section_with_video($atts) {
         }
     }
 
-    $title_ui = hb_get_title(array(
+    $title_ui = hb_ui_title(array(
         'tag' => 1,
         'class' => 'animated fadeinup delayed text-center',
         'content' => $title

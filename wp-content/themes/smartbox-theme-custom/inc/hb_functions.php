@@ -199,7 +199,7 @@ Class Taxonomy_Topics extends WP_Widget {
         $title = apply_filters('widget_title', empty($instance['title']) ? __('Taxonomy Topics', THEME_FRONT_TD) : $instance['title'], $instance, $this->id_base);
         $post_type    = isset( $instance['post_type'] ) ? esc_attr( $instance['post_type'] ) : 'oxy_content';
         echo $before_widget;
-        echo hb_get_taxonomy_terms_cloud($post_type, $title);
+        echo hb_ui_taxonomy_terms_cloud($post_type, $title);
         echo $after_widget;
     }
     function form( $instance ) {
