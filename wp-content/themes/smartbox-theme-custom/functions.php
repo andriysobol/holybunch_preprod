@@ -88,8 +88,7 @@ function oxy_custom_child_search_form( $form ) {
 
 add_filter( 'get_search_form', 'oxy_custom_child_search_form' );
 
-
 require_once CUSTOM_INCLUDES_DIR . 'hb_frontend.php'; 
 require_once CUSTOM_INCLUDES_DIR . 'hb_posts.php';
 require_once CUSTOM_INCLUDES_DIR . 'hb_functions.php';
-require_once CUSTOM_INCLUDES_DIR . 'archives-for-custom-post-types.php';
+require_once CUSTOM_HELPERS_DIR . 'hb_custom_post_types_archive.php';

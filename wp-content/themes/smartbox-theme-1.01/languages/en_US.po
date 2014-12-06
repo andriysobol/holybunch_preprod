@@ -266,3 +266,7 @@ msgstr ""
 #: build/tag.php:15
 msgid "Read more"
 msgstr "<strong>Read</strong> more"
+
+#: build/tag.php:15
+msgid "Goto video"
+msgstr "<strong>Goto</strong> video"

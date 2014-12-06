@@ -26,8 +26,8 @@
         </div>
         <div class="entry-content">
             <?php
-            $content_right .= get_hb_link(array(
-                'content' => get_more_text($post->post_type),
+            $content_right .= hb_get_link(array(
+                'content' => hb_get_more_text($post->post_type),
                 'link' => get_permalink(),
                 'class' => 'more-link'));
 

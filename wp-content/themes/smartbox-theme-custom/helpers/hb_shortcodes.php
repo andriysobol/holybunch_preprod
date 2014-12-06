@@ -1,7 +1,8 @@
 <?php
 
 require_once get_template_directory() . '/inc/options/shortcodes/shortcodes.php';
-require_once CUSTOM_INCLUDES_DIR . 'hb_utility.php';
+require_once CUSTOM_HELPERS_DIR . 'hb_utility.php';
+require_once CUSTOM_HELPERS_DIR . 'hb_ui_elements.php';
 /**
  * Custom shortcode functions go here
  * @author Andriy Sobol
@@ -25,28 +26,28 @@ function get_latest_taxonomy_topics_as_list($atts) {
     $output_loop = '';
     foreach ($categories as $taxonomy) {
         $link = get_term_link($taxonomy);
-        $summary = get_taxonomy_term_summary_mini($taxonomy);
+        $summary = hb_get_taxonomy_term_summary_mini($taxonomy);
 
-        $more_text = get_hb_link(array(
+        $more_text = hb_get_link(array(
             'link' => $link,
             'class' => 'more-link',
             'content' => __('Go to topic', THEME_FRONT_TD)));
-        $title = get_hb_title(
+        $title = hb_get_title(
                 array(
                     'tag' => 3,
-                    'content' => get_hb_link(
+                    'content' => hb_get_link(
                             array(
                                 'link' => $link,
                                 'content' => $taxonomy->name))));
-        $blockquote = get_hb_oxy_shortcode_blockquote(
+        $blockquote = hb_get_blockquote(
                 array(
                     'class' => 'margin_bottom_25px_mb',
                     'content' => $summary . $more_text));
 
-        $taxonomy_image_link = get_taxonomy_image('teaching_topics', $taxonomy->slug);
-        $round_link = get_hb_link(array(
+        $taxonomy_image_link = hb_get_taxonomy_image('teaching_topics', $taxonomy->slug, hb_enum_taxonomy_image_type::image);
+        $round_link = hb_get_link(array(
             'link' => $link,
-            'content' => get_image_as_round_box($taxonomy_image_link)));
+            'content' => hb_get_image_as_round_box($taxonomy_image_link)));
 
         $output_loop .= oxy_shortcode_layout(NULL, $title . $blockquote . $round_link, 'well blockquote-well');
     }
@@ -78,7 +79,7 @@ function hb_get_recent_oxy_video($atts) {
             $my_query->the_post();
             setup_postdata($post);
             $date = get_the_time(get_option("date_format"));
-            $post_link = get_hb_linkformat(get_post_format());
+            $post_link = hb_get_linkformat(get_post_format());
             $icon_class_array = explode('"', oxy_post_icon($post->ID, false));
 
             $span_left = hb_shortcode_image(array(
@@ -87,21 +88,21 @@ function hb_get_recent_oxy_video($atts) {
                 'icon' => $icon_class_array[1],
                 'link' => $post_link
             ));
-            $span_left .= get_hb_title(array(
+            $span_left .= hb_get_title(array(
                 'tag' => 5,
                 'class' => 'text-center light',
                 'content' => $date));
 
-            $title_right = get_hb_title(array(
+            $title_right = hb_get_title(array(
                 'tag' => 3,
                 'class' => 'text-center',
                 'content' => get_the_title()));
             $content_right = '<p>' . oxy_limit_excerpt(get_the_content(), 15) . '</p>';
-            $content_right .= get_hb_link(array(
+            $content_right .= hb_get_link(array(
                 'link' => get_permalink(),
                 'class' => 'more-link',
-                'content' => get_more_text($post->post_type)));
-            $span_right = get_hb_link(array(
+                'content' => hb_get_more_text($post->post_type)));
+            $span_right = hb_get_link(array(
                 'link' => $post_link,
                 'content' => $title_right));
             $span_right .= apply_filters('the_content', $content_right);
@@ -124,7 +125,7 @@ add_shortcode('hb_recent_videos', 'hb_get_recent_oxy_video');
  * @return String
  */
 function hb_get_shortcode_blockquote($atts, $content) {
-    return get_hb_oxy_shortcode_blockquote(array(
+    return hb_get_blockquote(array(
         'content' => $content,
         'params' => $atts));
 }
@@ -187,30 +188,30 @@ function hb_get_recent_blog_posts($atts) {
             $author_avatar = get_avatar(get_the_author_meta('ID'), 300);
             $author = get_the_author();
             $date = get_the_time(get_option("date_format"));
-            $post_link = get_hb_linkformat(get_post_format());
+            $post_link = hb_get_linkformat(get_post_format());
 
 
             $div_avatar_left = oxy_shortcode_layout(NULL, $author_avatar, 'round-box box-small');
-            $title_autor_left = get_hb_title(array(
+            $title_autor_left = hb_get_title(array(
                 'tag' => 5,
                 'class' => 'text-center',
                 'content' => $author));
-            $title_date_left = get_hb_title(array(
+            $title_date_left = hb_get_title(array(
                 'tag' => 5,
                 'class' => 'text-center light',
                 'content' => $date));
 
-            $link_right = get_hb_link(array(
+            $link_right = hb_get_link(array(
                 'content' => get_the_title(),
                 'link' => $post_link));
 
-            $title_right = get_hb_title(array(
+            $title_right = hb_get_title(array(
                 'tag' => 3,
                 'content' => $link_right));
 
             $content_right = oxy_limit_excerpt(strip_tags(get_the_content()), 30);
-            $content_right .= get_hb_link(array(
-                'content' => get_more_text($post->post_type),
+            $content_right .= hb_get_link(array(
+                'content' => hb_get_more_text($post->post_type),
                 'link' => $post_link,
                 'class' => 'more-link'));
 
@@ -266,17 +267,17 @@ function hb_get_recent_oxy_content($atts) {
         while ($my_query->have_posts()) {
             $my_query->the_post();
             setup_postdata($post);
-            $title_link = get_hb_link(array(
-                'link' => get_hb_linkformat(get_post_format()),
-                'content' => get_hb_title(array(
+            $title_link = hb_get_link(array(
+                'link' => hb_get_linkformat(get_post_format()),
+                'content' => hb_get_title(array(
                     'tag' => 3,
                     'class' => 'text-center',
                     'content' => get_the_title()
                 ))
             ));
             $content = get_field('summary', $post->ID);
-            $content .= get_hb_link(array(
-                'content' => get_more_text($post->post_type),
+            $content .= hb_get_link(array(
+                'content' => hb_get_more_text($post->post_type),
                 'link' => get_permalink(),
                 'class' => 'more-link'));
             $text = apply_filters('the_content', $content);
@@ -327,22 +328,22 @@ function create_hero_section_with_video($atts) {
         $img_attachment = wp_get_attachment_image_src($image);
         $image = $img_attachment[0];
     } else {
-        $image = get_taxonomy_video_background_image('teaching_topics', $taxonomy_slug);
+        $image = hb_get_taxonomy_image('teaching_topics', $taxonomy_slug, hb_enum_taxonomy_image_type::video_background_image);
         if (empty($image)) {
             $image = CUSTOM_IMAGES_DIR . 'background_video_default.jpg';
         }
     }
 
-    $title_ui = get_hb_title(array(
+    $title_ui = hb_get_title(array(
         'tag' => 1,
         'class' => 'animated fadeinup delayed text-center',
         'content' => $title
     ));
     $text_left = oxy_shortcode_layout(NULL, do_shortcode('<p>' . $summary . '</p>'), 'span4  margin-top margin-bottom');
-    $row = oxy_shortcode_row(NULL, $text_left . create_videowrapper_div($shortcode), NULL);
+    $row = oxy_shortcode_row(NULL, $text_left . hb_create_videowrapper_div($shortcode), NULL);
     $super_hero_unit = oxy_shortcode_layout(NULL, do_shortcode($title_ui . $row), 'container-fluid super-hero-unit');
     
-    return get_hb_section_background_image_simple(
+    return hb_get_section_background_image_simple(
             array(
                 'class' => 'section section-padded section-dark',
                 'data_background' => 'url(' . $image . ') no-repeat top',
@@ -363,6 +364,6 @@ function hb_add_element_into_wrapper($atts) {
         'style' => '',
         'src_url' => ''
                     ), $atts));
-    return oxy_shortcode_section($atts, create_videowrapper_div($src_url, "span12"));
+    return oxy_shortcode_section($atts, hb_create_videowrapper_div($src_url, "span12"));
 }
 add_shortcode('hb_add_into_wrapper', 'hb_add_element_into_wrapper');

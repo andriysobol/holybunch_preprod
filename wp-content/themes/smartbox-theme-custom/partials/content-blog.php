@@ -47,7 +47,7 @@ $allow_comments = oxy_get_option( 'site_comments' );
                 echo '</figure>';
             } ?>
             <?php $content= oxy_limit_excerpt(strip_tags(get_the_content()), 100) ;
-                $more_text=  get_more_text($post->post_type);
+                $more_text=  hb_get_more_text($post->post_type);
                 $link = get_permalink();
                 $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>'; 
                 echo apply_filters('the_content', $content);?>

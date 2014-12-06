@@ -25,7 +25,7 @@ class OxyCustomTheme extends OxyTheme
     function load_shortcodes() {
         if( isset( $this->theme['shortcodes'] ) ) {
             foreach( $this->theme['shortcodes']  as $file ) {
-                require_once $this->get_custom_template_directory() . 'shortcodes/hb_shortcodes.php';
+                require_once $this->get_custom_template_directory() . 'helpers/hb_shortcodes.php';
             }
         }
     }    
@@ -45,6 +45,7 @@ class OxyCustomTheme extends OxyTheme
         // directories
         define('CUSTOM_THEME_DIR', $this->get_custom_template_directory());
         define('CUSTOM_INCLUDES_DIR', CUSTOM_THEME_DIR . '/inc/');
+        define('CUSTOM_HELPERS_DIR', CUSTOM_THEME_DIR . '/helpers/');
         define('CUSTOM_IMAGES_DIR', home_url() . '/wp-content/themes/smartbox-theme-custom/images/');
     }
 }

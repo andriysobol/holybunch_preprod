@@ -61,7 +61,7 @@ get_header();
                         <div class="entry-content">
 
                         <?php
-                        $more_text = get_more_text($post->post_type);
+                        $more_text = hb_get_more_text($post->post_type);
                         $link = get_permalink();
                         $content = relevanssi_the_excerpt();
                         $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';

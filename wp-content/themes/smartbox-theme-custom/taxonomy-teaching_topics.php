@@ -16,7 +16,7 @@ $term = $wp_query->queried_object;
 $title = $term->name;
 if ($term->slug == "god") 
     $title = "";
-oxy_create_hero_section(get_taxonomy_banner_image('teaching_topics', $term->slug), $title);
+oxy_create_hero_section(hb_get_taxonomy_image('teaching_topics', $term->slug, hb_enum_taxonomy_image_type::banner_image), $title, hb_enum_taxonomy_image_type::banner_image);
 ?>
 <?php get_template_part('partials/hb_loop_all'); ?>
 <?php get_footer();

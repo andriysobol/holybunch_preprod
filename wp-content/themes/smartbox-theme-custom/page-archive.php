@@ -32,9 +32,9 @@ if (is_day()) {
 }
 
 if(!empty($term->slug))
-    $image = get_taxonomy_banner_image('teaching_topics', $term->slug);
+    $image = hb_get_taxonomy_image('teaching_topics', $term->slug, hb_enum_taxonomy_image_type::banner_image);
 else 
-    $image = get_taxonomy_banner_image('teaching_topics', 'god');
+    $image = hb_get_taxonomy_image('teaching_topics', 'god', hb_enum_taxonomy_image_type::banner_image);
 
 if(is_page()){
     get_header();

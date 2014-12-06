@@ -13,7 +13,7 @@
 
 get_header();
 global $post;
-oxy_create_hero_section(get_post_banner_image($post), $post->post_title);
+oxy_create_hero_section(hb_get_post_banner_image($post), $post->post_title);
 $allow_comments = oxy_get_option( 'site_comments' );
 ?>
 <section class="section section-padded">
@@ -22,7 +22,7 @@ $allow_comments = oxy_get_option( 'site_comments' );
             <div class="span12">
 		<a align="right" class="icon-print pf-alignright" href="<?php echo get_permalink() . '?pfstyle=wp' ; ?>" rel="nofollow"></a>
 		<?php 
-                    echo get_assigned_taxonomy_terms($post);
+                    echo hb_get_assigned_taxonomy_terms($post);
 		?>
                 <?php while ( have_posts() ) : the_post(); ?>
                     <div class="span12" style = "color:#FFA500;">
@@ -30,7 +30,7 @@ $allow_comments = oxy_get_option( 'site_comments' );
                     </div>
                     <?php get_template_part( 'partials/content-text', get_post_format() ); ?>
                     <?php oxy_wp_link_pages(array('before' => '<div class="pagination pagination-centered">', 'after' => '</div>')); ?>
-                    <?php echo get_related_posts(get_the_ID()); ?>
+                    <?php echo hb_get_related_posts(get_the_ID()); ?>
                     <?php if( $allow_comments == 'posts' || $allow_comments == 'all' ) comments_template( '', true ); ?>
                 <?php endwhile; ?>
             </div>
