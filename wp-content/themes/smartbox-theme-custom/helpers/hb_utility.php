@@ -25,18 +25,51 @@ function hb_get_taxonomy_image($taxonomy_name, $taxonomy_slug, $image_type) {
 
     $term_details = term_exists($taxonomy_slug, $taxonomy_name);
     if (is_array($term_details)) {
-        $term_id = $term_details['term_id'];
         //in order to get custom field 'taxonomy_image' from taxonomy we have 
         //to call advanced custom fields plugin api and provide id of post which 
         //is combination of taxonomy name and id of term e.g. term 'god' => id = 39
-        $image = get_field($field_name, 'teaching_topics_' . $term_id);
-        $image_url = $image[url];
-        if (!empty($image_url)) {
+        $image = get_field($field_name, 'teaching_topics_' . $term_details['term_id']);
+        if (!empty($image[url])) {
             global $wp_embed;
-            return $image_url;
+            return $image[url];
         } 
     }
     return $taxonomy_default_image;
+}
+
+/**
+ * @description get banner image for post from custom field of post or from corresponding taxonomy term of post 
+ * @param post $post <i>post</i>
+ * @param string $taxonomy_term optional<i>taxonomy term</i>
+ * @return string
+ */
+function hb_get_post_banner_image($post, $taxonomy_term = 'teaching_topics') {
+    //in order to get custom field 'banner_image' from taxonomy we have 
+    //to call advanced custom fields plugin api and provide id of post
+    switch ($post->post_type) {
+        case 'oxy_video': $image = get_field('video_banner_image', $post->ID);
+            break;
+        case 'oxy_audio': $image = get_field('audio_banner_image', $post->ID);
+            break;
+        case 'oxy_content': $image = get_field('content_banner_image', $post->ID);
+            break;
+        default :
+            break;
+    }
+    //image found on post level return it
+    if (!empty($image[url])) {
+        global $wp_embed;
+        return $image[url];
+    }
+    //try to get image from taxonomy topic assigned to post 
+    //Returns All Term Items for taxonomy
+    $term_list = wp_get_post_terms($post->ID, $taxonomy_term, array("fields" => "all"));
+    foreach ($term_list as $term) {
+        $image = get_field('taxonomy_banner_image', 'teaching_topics_' . $term->term_id);
+        if (!empty($image[url]))
+            return $image[url];
+    }
+    return CUSTOM_IMAGES_DIR . 'banner_thema_default.jpg';
 }
 
 /**

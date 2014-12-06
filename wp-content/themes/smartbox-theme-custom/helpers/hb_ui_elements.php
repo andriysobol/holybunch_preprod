@@ -28,44 +28,6 @@ function hb_get_taxonomy_terms_cloud($post_type, $title) {
 }
 
 /**
- * @description get banner image for post from custom field of post or from corresponding taxonomy term of post 
- * @param post $post <i>post</i>
- * @param string $taxonomy_term optional<i>taxonomy term</i>
- * @return string
- */
-function hb_get_post_banner_image($post, $taxonomy_term = 'teaching_topics') {
-    //in order to get custom field 'banner_image' from taxonomy we have 
-    //to call advanced custom fields plugin api and provide id of post
-    switch ($post->post_type) {
-        case 'oxy_video': $image = get_field('video_banner_image', $post->ID);
-            break;
-        case 'oxy_audio': $image = get_field('audio_banner_image', $post->ID);
-            break;
-        case 'oxy_content': $image = get_field('content_banner_image', $post->ID);
-            break;
-        default :
-            break;
-    }
-    //image found on post level return it
-    $image_url = $image[url];
-    if (!empty($image_url)) {
-        global $wp_embed;
-        return $image_url;
-    }
-
-    //try to get image from taxonomy topic assigned to post 
-    //Returns All Term Items for taxonomy
-    $term_list = wp_get_post_terms($post->ID, $taxonomy_term, array("fields" => "all"));
-    foreach ($term_list as $term) {
-        $image = get_field('taxonomy_banner_image', 'teaching_topics_' . $term->term_id);
-        $image_url = $image[url];
-        if (!empty($image_url))
-            return $image_url;
-    }
-    return get_theme_root_uri() . '/smartbox-theme-custom/images/banner_thema_default.jpg';
-}
-
-/**
  * @description get all taxonomies which contain posts and return as list, used for (video-)archive 
  * @param array $taxonomies <i>taxonomies</i>
  * @param string $post_type <i>type of post</i>
