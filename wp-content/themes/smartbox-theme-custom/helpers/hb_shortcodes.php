@@ -13,7 +13,7 @@ require_once CUSTOM_HELPERS_DIR . 'hb_ui_elements.php';
  * @param array $atts
  * @return string
  */
-function get_latest_taxonomy_topics_as_list($atts) {
+function hb_shortcode_latest_taxonomy_topics_as_list($atts) {
     $args = array(
         'hide_empty' => 1,
         'taxonomy' => 'teaching_topics',
@@ -54,7 +54,7 @@ function get_latest_taxonomy_topics_as_list($atts) {
     $output = oxy_shortcode_layout(NULL, $output_loop, 'unstyled row-fluid');
     return oxy_shortcode_section($atts, $output);
 }
-add_shortcode('latest_taxonomy_topics', 'get_latest_taxonomy_topics_as_list');
+add_shortcode('latest_taxonomy_topics', 'hb_shortcode_latest_taxonomy_topics_as_list');
 
 /**
  * @description used on main page for latest videos
@@ -62,7 +62,7 @@ add_shortcode('latest_taxonomy_topics', 'get_latest_taxonomy_topics_as_list');
  * @param array $atts
  * @return string
  */
-function hb_get_recent_oxy_video($atts) {
+function hb_shortcode_recent_video($atts) {
     extract(shortcode_atts(array(
         'title' => '',
         'cat' => null), $atts));
@@ -116,7 +116,7 @@ function hb_get_recent_oxy_video($atts) {
     wp_reset_postdata();
     return oxy_shortcode_section($atts, $result);
 }
-add_shortcode('hb_recent_videos', 'hb_get_recent_oxy_video');
+add_shortcode('hb_recent_videos', 'hb_shortcode_recent_video');
 
 /**
  * @description overreid <b>blockquote</b> from parent template
@@ -124,12 +124,12 @@ add_shortcode('hb_recent_videos', 'hb_get_recent_oxy_video');
  * @param String $content
  * @return String
  */
-function hb_get_shortcode_blockquote($atts, $content) {
+function hb_shortcode_blockquote($atts, $content) {
     return hb_get_blockquote(array(
         'content' => $content,
         'params' => $atts));
 }
-add_shortcode('blockquote', 'hb_get_shortcode_blockquote');
+add_shortcode('blockquote', 'hb_shortcode_blockquote');
 
 /**
  * @description overreid <b>image</b> from parent template. Purpose: added new attribute alt to checkstyle
@@ -168,7 +168,7 @@ add_shortcode( 'image' , 'hb_shortcode_image');
  * @param array $atts
  * @return String
  */
-function hb_get_recent_blog_posts($atts) {
+function hb_shortcode_recent_blog_posts($atts) {
     extract(shortcode_atts(array(
         'title' => '',
         'style' => '',
@@ -224,7 +224,7 @@ function hb_get_recent_blog_posts($atts) {
     }
     return oxy_shortcode_section($atts, oxy_shortcode_layout(NULL, $output_loop, 'unstyled row-fluid'));
 }
-add_shortcode('hb_blog_posts', 'hb_get_recent_blog_posts');
+add_shortcode('hb_blog_posts', 'hb_shortcode_recent_blog_posts');
 
 /**
  * @description used on contact page, about us as contact form
@@ -232,7 +232,7 @@ add_shortcode('hb_blog_posts', 'hb_get_recent_blog_posts');
  * @param String $content
  * @return String
  */
-function hb_get_contact_form($atts, $content = null) {
+function hb_shortcode_contact_form($atts, $content = null) {
     // setup options
     extract(shortcode_atts(array(
         'title' => 'Contact us',
@@ -242,7 +242,7 @@ function hb_get_contact_form($atts, $content = null) {
     $div_right = oxy_shortcode_layout(NULL, do_shortcode('[contact-form-7 id="' . $id . '" title="ContactForm"]'), 'span7');
     return oxy_shortcode_section($atts, $div_left . $div_right);
 }
-add_shortcode('hb_contact_form', 'hb_get_contact_form');
+add_shortcode('hb_contact_form', 'hb_shortcode_contact_form');
 
 /**
  * @description used on main pages in dutch and german in order to show latest conten
@@ -250,7 +250,7 @@ add_shortcode('hb_contact_form', 'hb_get_contact_form');
  * @param array $atts
  * @return String
  */
-function hb_get_recent_oxy_content($atts) {
+function hb_shortcode_recent_content($atts) {
     extract(shortcode_atts(array(
         'title' => '',
         'cat' => null,
@@ -288,14 +288,14 @@ function hb_get_recent_oxy_content($atts) {
     wp_reset_postdata();
     return oxy_shortcode_section($atts, $output);
 }
-add_shortcode('hb_recent_content', 'hb_get_recent_oxy_content');
+add_shortcode('hb_recent_content', 'hb_shortcode_recent_content');
 
 /**
  * @description used for example on main page for section with random video
  * @param array $atts
  * @return string
  */
-function create_hero_section_with_video($atts) {
+function hb_shortcode_hero_section_with_video($atts) {
     extract(shortcode_atts(array(
         'image' => '',
         'title' => '',
@@ -351,14 +351,14 @@ function create_hero_section_with_video($atts) {
                 'content' => $super_hero_unit
     ));
 }
-add_shortcode('hero_section_with_video', 'create_hero_section_with_video');
+add_shortcode('hero_section_with_video', 'hb_shortcode_hero_section_with_video');
 
 /**
  * @description used for integration of google calendar into section
  * @param array $atts
  * @return String
  */
-function hb_add_element_into_wrapper($atts) {
+function hb_shortcode_add_element_into_wrapper($atts) {
     extract(shortcode_atts(array(
         'title' => '',
         'style' => '',
@@ -366,4 +366,4 @@ function hb_add_element_into_wrapper($atts) {
                     ), $atts));
     return oxy_shortcode_section($atts, hb_create_videowrapper_div($src_url, "span12"));
 }
-add_shortcode('hb_add_into_wrapper', 'hb_add_element_into_wrapper');
+add_shortcode('hb_add_into_wrapper', 'hb_shortcode_add_element_into_wrapper');
