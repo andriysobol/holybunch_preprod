@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @description get all taxonomies which contain posts and return as term cloud, used for (video-)archive 
  * @param string $post_type <i>type of post</i>
@@ -17,52 +18,13 @@ function hb_get_taxonomy_terms_cloud($post_type, $title) {
     $categories = get_categories($args);
     $output = '<div id="tag_cloud-3" class="sidebar-widget  widget_tag_cloud">';
     $output .= '<div class="tagcloud">';
-    $output .= '    <h3 class="sidebar-header">'.$title.'</h3>';
+    $output .= '    <h3 class="sidebar-header">' . $title . '</h3>';
     $output .= '<ul>';
     $output .= hb_get_taxonomy_terms_as_list($categories, $post_type);
     $output .= '</ul>';
     $output .= '</div>';
     $output .= '</div>';
     echo $output;
-}
-
-/**
- * @description get banner image value which is stored in custom field of taxonomy
- * @param string $taxonomy_name <i>name of taxonomy</i>
- * @param string $taxonomy_slug <i>taxonomy slug</i>
- * @param hb_enum_taxonomy_image $image_type<i>image type, coulb be image, banner image or background video image</i>
- * @return string
- */
-function hb_get_taxonomy_image($taxonomy_name, $taxonomy_slug, $image_type) {    
-    // custom field depends of image type
-    if($image_type == hb_enum_taxonomy_image_type::banner_image){
-        $field_name = 'taxonomy_banner_image';
-        $taxonomy_default_image = CUSTOM_IMAGES_DIR . 'banner_thema_default.jpg';
-    }elseif ($image_type == hb_enum_taxonomy_image_type::image){
-        $field_name = 'taxonomy_image';
-        $taxonomy_default_image = null;
-    }elseif ($image_type == hb_enum_taxonomy_image_type::video_background_image){
-        $field_name = 'taxonomy_video_background';
-        $taxonomy_default_image = null;
-    }
-    
-    $term_details = term_exists($taxonomy_slug, $taxonomy_name);
-    if (is_array($term_details)) {
-        $term_id = $term_details['term_id'];
-    } else {
-        return $taxonomy_default_image;
-    }
-    //in order to get custom field 'taxonomy_image' from taxonomy we have 
-    //to call advanced custom fields plugin api and provide id of post which 
-    //is combination of taxonomy name and id of term e.g. term 'god' => id = 39
-    $image = get_field($field_name, 'teaching_topics_' . $term_id);
-    $image_url = $image[url];
-    if (!empty($image_url)) {
-        global $wp_embed;
-        return $image_url;
-    } else {
-        return $taxonomy_default_image;
-    }
 }
 
 /**
@@ -109,7 +71,7 @@ function hb_get_post_banner_image($post, $taxonomy_term = 'teaching_topics') {
  * @param string $post_type <i>type of post</i>
  * @return string
  */
-function hb_get_taxonomy_terms_as_list($taxonomies, $post_type){
+function hb_get_taxonomy_terms_as_list($taxonomies, $post_type) {
     $add_all = true;
     foreach ($taxonomies as $category) {
         $posts_in_category = get_posts(array(
@@ -128,24 +90,24 @@ function hb_get_taxonomy_terms_as_list($taxonomies, $post_type){
             $link = home_url() . "/blog/teaching_topics/" . $category->slug;
         else
             $link = home_url() . "/blog/teaching_topics/" . $category->slug . "/?post_type=" . $post_type;
-        if($add_all){
+        if ($add_all) {
             $posts_all = get_posts(array(
-            'post_type' => $post_type,
-            'showposts' => -1,    
-            )
+                'post_type' => $post_type,
+                'showposts' => -1,
+                    )
             );
             $count_all = count($posts_all);
-            if($post_type == 'oxy_video'){
+            if ($post_type == 'oxy_video') {
                 $link_all = home_url() . "/videoarchive";
-                $title = __('Show all videos', THEME_FRONT_TD). " (" . $count_all . ") ";
-            }elseif (oxy_content){
-                $title = __('Show all articles', THEME_FRONT_TD). " (" . $count_all . ") ";
+                $title = __('Show all videos', THEME_FRONT_TD) . " (" . $count_all . ") ";
+            } elseif (oxy_content) {
+                $title = __('Show all articles', THEME_FRONT_TD) . " (" . $count_all . ") ";
                 $link_all = home_url() . "/archive";
             }
             $output = "<li><a href='" . $link_all . "' class='tag-link-22' title='" . $count_all . " записи'  style='font-size:10pt;' >" . $title . "</a></li>";
             $add_all = FALSE;
         }
-        if (!empty($count)) 
+        if (!empty($count))
             $output .= "<li><a href='" . $link . "' class='tag-link-22' title='" . $count . " записи'  style='font-size:10pt;' >" . $tax_name . "</a></li>";
     }
     return $output;
@@ -316,7 +278,7 @@ function hb_get_taxonomy_topic_page($taxonomy_term) {
         //$output . create_more_text_items($text_items);
         $output .= hb_create_section_with_text_items(new WP_Query($query));
     }
-    
+
     $atts[title] = __('In this topic ...', THEME_FRONT_TD); //'В этой теме ...';        
     $output = oxy_shortcode_section($atts, $output);
     $output .= hb_get_flexi_slider_for_taxonomy_topic_page($taxonomy_term->slug);
@@ -365,7 +327,7 @@ function hb_create_three_text_items($first_item, $second_item, $third_item) {
 
     $post = $third_item;
     $output .= hb_get_post_summary_as_quote($post);
-      
+
     $output = oxy_shortcode_layout(NULL, $output, 'container-fluid');
     return $output;
 }
@@ -444,7 +406,7 @@ function hb_get_flexi_slider_for_taxonomy_topic_page($slug_or_id) {
     ));
     if (count($slides) == 0)
         return '';
-    
+
     $output .= '<div id="flexslider-100" class="flexslider flex-directions-fancy flex-controls-inside flex-controls-center" data-flex-animation="slide" data-flex-controlsalign="center" data-flex-controlsposition="inside" data-flex-directions="show" data-flex-speed="30000" data-flex-directions-position="inside" data-flex-controls="show" data-flex-slideshow="true">';
     $output .= '<ul class="slides">';
     foreach ($slides as $slide) {
@@ -579,7 +541,7 @@ function hb_get_title($atts) {
         'class' => '',
         'content' => '',
         'tag' => ''), $atts));
-   
+
     return $result = '<h' . $tag . hb_set_attributes($id, $class) . '>' . $content . '</h' . $tag . '>';
 }
 

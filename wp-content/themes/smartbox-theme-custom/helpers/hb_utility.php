@@ -1,5 +1,43 @@
  <?php
+/**
+ * @description get banner image value which is stored in custom field of taxonomy
+ * @param string $taxonomy_name <i>name of taxonomy</i>
+ * @param string $taxonomy_slug <i>taxonomy slug</i>
+ * @param hb_enum_taxonomy_image $image_type<i>image type, coulb be image, banner image or background video image</i>
+ * @return string
+ */
+function hb_get_taxonomy_image($taxonomy_name, $taxonomy_slug, $image_type) {
+    // custom field depends of image type
+    switch ($image_type) {
+        case hb_enum_taxonomy_image_type::banner_image:
+            $field_name = 'taxonomy_banner_image';
+            $taxonomy_default_image = CUSTOM_IMAGES_DIR . 'banner_thema_default.jpg';
+            break;
+        case hb_enum_taxonomy_image_type::image:
+            $field_name = 'taxonomy_image';
+            $taxonomy_default_image = null;
+            break;
+        case hb_enum_taxonomy_image_type::image:
+            $field_name = 'taxonomy_video_background';
+            $taxonomy_default_image = null;
+            break;
+    }
 
+    $term_details = term_exists($taxonomy_slug, $taxonomy_name);
+    if (is_array($term_details)) {
+        $term_id = $term_details['term_id'];
+        //in order to get custom field 'taxonomy_image' from taxonomy we have 
+        //to call advanced custom fields plugin api and provide id of post which 
+        //is combination of taxonomy name and id of term e.g. term 'god' => id = 39
+        $image = get_field($field_name, 'teaching_topics_' . $term_id);
+        $image_url = $image[url];
+        if (!empty($image_url)) {
+            global $wp_embed;
+            return $image_url;
+        } 
+    }
+    return $taxonomy_default_image;
+}
 
 /**
  * @description teaching topic can occur in url query as term or just a topic try to get this term
