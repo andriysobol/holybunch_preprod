@@ -81,7 +81,7 @@ function hb_get_recent_oxy_video($atts) {
             $post_link = get_hb_linkformat(get_post_format());
             $icon_class_array = explode('"', oxy_post_icon($post->ID, false));
 
-            $span_left = hb_oxy_shortcode_image(array(
+            $span_left = hb_shortcode_image(array(
                 'size' => 'box-medium',
                 'source' => CUSTOM_IMAGES_DIR . 'video1.jpg',
                 'icon' => $icon_class_array[1],
@@ -137,7 +137,7 @@ add_shortcode('blockquote', 'hb_get_shortcode_blockquote');
  * @return string
  * @see oxy_shortcode_image($atts , $content = '')
  */
-function hb_oxy_shortcode_image($atts , $content = ''){
+function hb_shortcode_image($atts , $content = ''){
     extract( shortcode_atts( array(
         'size'       => 'box-medium',
         'rounded'    => 'yes',
@@ -159,7 +159,7 @@ function hb_oxy_shortcode_image($atts , $content = ''){
 
     return $output;
 }
-add_shortcode( 'image' , 'oxy_shortcode_image');
+add_shortcode( 'image' , 'hb_shortcode_image');
 
 /**
  * @description shows recents blogs on main page
