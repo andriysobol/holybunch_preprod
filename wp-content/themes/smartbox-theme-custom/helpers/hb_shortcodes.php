@@ -28,14 +28,14 @@ function hb_shortcode_latest_taxonomy_topics_as_list($atts) {
         $link = get_term_link($taxonomy);
         $summary = hb_get_taxonomy_term_summary_mini($taxonomy);
 
-        $more_text = hb_get_link(array(
+        $more_text = hb_ui_link(array(
             'link' => $link,
             'class' => 'more-link',
             'content' => __('Go to topic', THEME_FRONT_TD)));
         $title = hb_ui_title(
                 array(
                     'tag' => 3,
-                    'content' => hb_get_link(
+                    'content' => hb_ui_link(
                             array(
                                 'link' => $link,
                                 'content' => $taxonomy->name))));
@@ -45,7 +45,7 @@ function hb_shortcode_latest_taxonomy_topics_as_list($atts) {
                     'content' => $summary . $more_text));
 
         $taxonomy_image_link = hb_get_taxonomy_image('teaching_topics', $taxonomy->slug, hb_enum_taxonomy_image_type::image);
-        $round_link = hb_get_link(array(
+        $round_link = hb_ui_link(array(
             'link' => $link,
             'content' => hb_get_image_as_round_box($taxonomy_image_link)));
 
@@ -98,11 +98,11 @@ function hb_shortcode_recent_video($atts) {
                 'class' => 'text-center',
                 'content' => get_the_title()));
             $content_right = '<p>' . oxy_limit_excerpt(get_the_content(), 15) . '</p>';
-            $content_right .= hb_get_link(array(
+            $content_right .= hb_ui_link(array(
                 'link' => get_permalink(),
                 'class' => 'more-link',
                 'content' => hb_get_more_text($post->post_type)));
-            $span_right = hb_get_link(array(
+            $span_right = hb_ui_link(array(
                 'link' => $post_link,
                 'content' => $title_right));
             $span_right .= apply_filters('the_content', $content_right);
@@ -201,7 +201,7 @@ function hb_shortcode_recent_blog_posts($atts) {
                 'class' => 'text-center light',
                 'content' => $date));
 
-            $link_right = hb_get_link(array(
+            $link_right = hb_ui_link(array(
                 'content' => get_the_title(),
                 'link' => $post_link));
 
@@ -210,7 +210,7 @@ function hb_shortcode_recent_blog_posts($atts) {
                 'content' => $link_right));
 
             $content_right = oxy_limit_excerpt(strip_tags(get_the_content()), 30);
-            $content_right .= hb_get_link(array(
+            $content_right .= hb_ui_link(array(
                 'content' => hb_get_more_text($post->post_type),
                 'link' => $post_link,
                 'class' => 'more-link'));
@@ -267,7 +267,7 @@ function hb_shortcode_recent_content($atts) {
         while ($my_query->have_posts()) {
             $my_query->the_post();
             setup_postdata($post);
-            $title_link = hb_get_link(array(
+            $title_link = hb_ui_link(array(
                 'link' => hb_get_linkformat(get_post_format()),
                 'content' => hb_ui_title(array(
                     'tag' => 3,
@@ -276,7 +276,7 @@ function hb_shortcode_recent_content($atts) {
                 ))
             ));
             $content = get_field('summary', $post->ID);
-            $content .= hb_get_link(array(
+            $content .= hb_ui_link(array(
                 'content' => hb_get_more_text($post->post_type),
                 'link' => get_permalink(),
                 'class' => 'more-link'));

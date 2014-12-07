@@ -17,7 +17,7 @@ function hb_ui_taxonomy_terms_cloud($post_type, $title) {
     return oxy_shortcode_layout(NULL, hb_ui_title(array(
                 'tag' => 3,
                 'content' => $title
-            )) .  hb_get_taxonomy_terms_as_list(get_categories($args), $post_type), 
+            )) .  hb_ui_taxonomy_terms_as_list(get_categories($args), $post_type), 
             "sidebar-widget widget_tag_cloud");
 }
 
@@ -27,8 +27,8 @@ function hb_ui_taxonomy_terms_cloud($post_type, $title) {
  * @param string $post_type <i>type of post</i>
  * @return string
  */
-function hb_get_taxonomy_terms_as_list($taxonomies, $post_type) {
-    $add_all = true;
+function hb_ui_taxonomy_terms_as_list($taxonomies, $post_type) {
+    $add_all = TRUE;
     foreach ($taxonomies as $category) {
         $posts_in_category = get_posts(array(
             'showposts' => -1,
@@ -42,10 +42,10 @@ function hb_get_taxonomy_terms_as_list($taxonomies, $post_type) {
         $count = count($posts_in_category);
         $tax_name = " " . $category->name . " (" . $count . ")";
         //dont add post type for theme, but do link for all post types
-        if (is_array($post_type))
-            $link = home_url() . "/blog/teaching_topics/" . $category->slug;
-        else
-            $link = home_url() . "/blog/teaching_topics/" . $category->slug . "/?post_type=" . $post_type;
+        $link = home_url() . "/blog/teaching_topics/" . $category->slug;
+        if (!is_array($post_type)) {
+            $link .= $link . "/?post_type=" . $post_type;
+        }
         if ($add_all) {
             $posts_all = get_posts(array(
                 'post_type' => $post_type,
@@ -60,13 +60,30 @@ function hb_get_taxonomy_terms_as_list($taxonomies, $post_type) {
                 $title = __('Show all articles', THEME_FRONT_TD) . " (" . $count_all . ") ";
                 $link_all = home_url() . "/archive";
             }
-            $output = "<li><a href='" . $link_all . "' class='tag-link-22' title='" . $count_all . " записи'  style='font-size:10pt;' >" . $title . "</a></li>";
-            $add_all = FALSE;
+         
+            $output = hb_ui_list_wrapper(array(
+                'tag' => 'li',
+                'content' => hb_ui_link(array(
+                        'class' => 'hb_cloud_style',
+                        'link' => $link_all,
+                        'content' => $title
+            ))));            
+           $add_all = FALSE;
         }
-        if (!empty($count))
-            $output .= "<li><a href='" . $link . "' class='tag-link-22' title='" . $count . " записи'  style='font-size:10pt;' >" . $tax_name . "</a></li>";
+        if (!empty($count)) {
+            $output .= hb_ui_list_wrapper(array(
+                'tag' => 'li',
+                'content' => hb_ui_link(array(
+                        'class' => 'hb_cloud_style',
+                        'link' => $link,
+                        'content' => $tax_name
+            ))));
+        }
     }
-    return '<ul>' . $output . '</ul>';
+    return hb_ui_list_wrapper(array(
+        'tag' => 'ul',
+        'content' => $output
+    ));
 }
 
 /**
@@ -460,22 +477,13 @@ function hb_get_assigned_taxonomy_terms($post) {
 }
 
 //////UI_ELEMENTS///////////
-
-function hb_get_hb_more_text_link($link, $more_text) {
-    return hb_get_link(
-            array(
-                'class' => 'more-link',
-                'content' => $more_text,
-                'link' => $link));
-}
-
 /**
  * @package UI_ELEMENT_HTML
  * @description function to create a link
  * @param array $atts <i> id , class, content, link </i>
  * @return string
  */
-function hb_get_link($atts) {
+function hb_ui_link($atts) {
     extract(shortcode_atts(array(
         'id' => '',
         'class' => '',
@@ -499,6 +507,19 @@ function hb_ui_title($atts) {
         'tag' => ''), $atts));
 
     return $result = '<h' . $tag . hb_set_attributes($id, $class) . '>' . $content . '</h' . $tag . '>';
+}
+
+/**
+ * @description Content to list (<b>li</b> or <b>ul</b>)
+ * @param array $atts <i>class, content, tag(li, ul)</i>
+ * @return String
+ */
+function hb_ui_list_wrapper($atts) {
+    extract(shortcode_atts(array(
+        'class' => '',
+        'content' => '',
+        'tag' => ''), $atts));
+    return '<' . $tag . hb_set_attributes($class) . '>' . $content . '</' . $tag . '>';
 }
 
 /**
