@@ -205,7 +205,7 @@ function hb_ui_video_content($post) {
  * @param string $taxonomy term <i>term of taxonomy</i>
  * @return string
  */
-function hb_get_taxonomy_topic_page($taxonomy_term) {
+function hb_ui_taxonomy_topic_page($taxonomy_term) {
     //get post of type text
     $query = array(
         'numberposts' => -1,
@@ -225,10 +225,7 @@ function hb_get_taxonomy_topic_page($taxonomy_term) {
     $count = count($text_items);
 
     if (isset($taxonomy_term->description)) {
-        $summary = $taxonomy_term->description . '<p><br><br></p>';
-        $output = oxy_shortcode_layout(NULL, $summary, 'container-fluid');
-        $output = oxy_shortcode_layout(NULL, $output, 'row-fluid');
-        $output = oxy_shortcode_layout(NULL, $output, 'span12');
+        $output = oxy_shortcode_layout(NULL, $taxonomy_term->description, 'container-fluid hb_taxonomy_desc');
     }
 
     if ($count == 1) {
@@ -247,7 +244,6 @@ function hb_get_taxonomy_topic_page($taxonomy_term) {
         $output .= hb_create_three_text_items($text_items[0], $text_items[1], $text_items[2]);
         $output .= hb_create_three_text_items($text_items[3], $text_items[4], $text_items[5]);
     } elseif ($count > 6) {
-        //$output . create_more_text_items($text_items);
         $output .= hb_create_section_with_text_items(new WP_Query($query));
     }
 
