@@ -91,7 +91,7 @@ function hb_ui_taxonomy_terms_as_list($taxonomies, $post_type) {
  * @param array $atts <i>attributes</i>
  * @return string
  */
-function hb_get_related_posts($atts) {
+function hb_ui_related_posts($atts) {
     // setup options
     $atts = array(
         'title' => __('Also in this topic', THEME_FRONT_TD),
