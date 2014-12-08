@@ -200,4 +200,18 @@ class hb_enum_taxonomy_image_type {
     const banner_image = 'banner_image';
     const video_background_image = 'video_background_image';
 }
+
+/**
+ * @package HELPER
+ * @description get to back <b>externa link</b> or <b>permalink</b>
+ * @param string $post_format
+ * @return string
+ */
+function hb_get_linkformat($post_format) {
+    if (post_format == 'link') {
+        return oxy_get_external_link();
+    } else {
+        return get_permalink();
+    }
+}
 ?>

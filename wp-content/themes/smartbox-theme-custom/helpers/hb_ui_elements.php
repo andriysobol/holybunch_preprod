@@ -135,54 +135,58 @@ function hb_create_section_with_text_items($my_query, $atts = null) {
     $columns = $my_query->post_count > 4 ? 4 : $my_query->post_count;
     $span = $columns > 0 ? 'span' . floor(12 / $columns) : 'span3';
 
-    $output = '';
-    if ($my_query->have_posts()) :
-        $output .='<ul class="unstyled row-fluid">';
+    $output = NULL;
+    if ($my_query->have_posts()) {
         global $post;
         $item_num = 1;
         $items_per_row = $columns;
         //loop over all related posts
         while ($my_query->have_posts()) {
             $my_query->the_post();
-            setup_postdata($post);
-            if ('link' == get_post_format()) {
-                $post_link = oxy_get_external_link();
-            } else {
-                $post_link = get_permalink();
-            }
+            setup_postdata($post);            
+            $post_link = hb_get_linkformat(get_post_format());
 
-            if ($item_num > $items_per_row) {
-                $output.= '</ul><ul class="unstyled row-fluid">';
-                $item_num = 1;
-            }
-
-            $output .='<li class="' . $span . '">';
-            $output .='<div class="round-box box-medium box-colored"><a href="' . $post_link . '" class="box-inner">';
-            //get post icon
             if (has_post_thumbnail($post->ID)) {
-                $output .= get_the_post_thumbnail($post->ID, 'portfolio-thumb', array('title' => $post->post_title, 'alt' => $post->post_title, 'class' => 'img-circle'));
-                $output .= oxy_post_icon($post->ID, false);
+                $image = hb_add_image_to_text_item($post);
             } else {
-                $output .= '<img class="img-circle" src="' . IMAGES_URI . 'box-empty.gif">';
-                $output .= oxy_post_icon($post->ID, false);
-            }
-
-            $output .='</div>';
-            //$output.='</a>';
-            $output.='<a href="' . $post_link . '"> <h3 class="text-center">' . get_the_title() . '</h3></a>';
-
-            $content = hb_get_post_summary_mini($post);
-            $more_text = __('Read more', THEME_FRONT_TD);
-            $link = get_permalink();
-            $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
-            $output.='<p>' . apply_filters('the_content', $content) . '</p></li>';
+                $image = hb_get_image_as_round_box(IMAGES_URI . 'box-empty.gif');
+            }            
+            $innen = hb_ui_link(array(
+                'link' => $post_link,
+                'content' => $image
+            ));
+            
+            $innen .= hb_ui_link(array(
+                'link' => $post_link,
+                'content' => hb_ui_title(array(
+                    'tag' => 3,
+                    'class' => 'text-center',
+                    'content' => get_the_title()
+                ))
+            ));
+            
+            $innen.= apply_filters('the_content', hb_get_post_summary_mini($post) . 
+                    hb_ui_link(array(
+                'link' => get_permalink(),
+                'content' => __('Read more', THEME_FRONT_TD),
+                'class' => 'more-link'
+            )));
+          
+            $output_loop .= oxy_shortcode_layout(NULL, $innen, $span);
             $item_num++;
+            
+            if ($item_num > $items_per_row) {
+                $output .= oxy_shortcode_layout(NULL, $output_loop, 'unstyled row-fluid');
+                $item_num = 1;
+                $output_loop = NULL;
+            }
+        }        
+        if ($item_num > 1) {
+            $output .= oxy_shortcode_layout(NULL, $output_loop, 'unstyled row-fluid');
         }
-        $output .= '</ul>';
-        // reset post data
         wp_reset_postdata();
         return oxy_shortcode_section($atts, $output);
-    endif;
+    }
 }
 
 /**
@@ -574,18 +578,5 @@ function hb_get_section_background_image_simple($atts) {
             . $content . '</section>';
 }
 
-/**
- * @package HELPER
- * @description get to back <b>externa link</b> or <b>permalink</b>
- * @param string $post_format
- * @return string
- */
-function hb_get_linkformat($post_format) {
-    if (post_format == 'link') {
-        return oxy_get_external_link();
-    } else {
-        return get_permalink();
-    }
-}
 
 ?>
