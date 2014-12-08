@@ -235,6 +235,9 @@ blockquote p {
 blockquote.margin_bottom_25px_mb {
     margin-bottom: 25px;
 }
+.hb_video_archive_single {
+    margin-top: 25px;
+}
 .widget_wpb_widget_custom_search form {
 margin: 0;
 }
