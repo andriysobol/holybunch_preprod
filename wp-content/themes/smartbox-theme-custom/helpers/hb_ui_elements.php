@@ -44,7 +44,7 @@ function hb_ui_taxonomy_terms_as_list($taxonomies, $post_type) {
         //dont add post type for theme, but do link for all post types
         $link = home_url() . "/blog/teaching_topics/" . $category->slug;
         if (!is_array($post_type)) {
-            $link .= $link . "/?post_type=" . $post_type;
+            $link = $link . "/?post_type=" . $post_type;
         }
         if ($add_all) {
             $posts_all = get_posts(array(
@@ -387,7 +387,7 @@ function hb_get_flexi_slider_for_taxonomy_topic_page($slug_or_id) {
         $atts[random_posts] = false;
         $atts[post_video] = $slide;
         $atts[taxonomy_slug] = $slug_or_id;
-        $output .= create_hero_section_with_video($atts);
+        $output .= hb_shortcode_hero_section_with_video($atts);
         $output .= '</li>';
     }
     $output .= '</ul>';
