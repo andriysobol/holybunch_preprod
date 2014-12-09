@@ -1,0 +1,75 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "1d03c3b2f2f8a0f7f1641c65bbbee0cc",
+    "packages": [
+        {
+            "name": "tgm/plugin-activation",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thomasgriffin/TGM-Plugin-Activation.git",
+                "reference": "9086b9ae37c19a357265a5c4ed78b1e5ae0951ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thomasgriffin/TGM-Plugin-Activation/zipball/9086b9ae37c19a357265a5c4ed78b1e5ae0951ec",
+                "reference": "9086b9ae37c19a357265a5c4ed78b1e5ae0951ec",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "class-tgm-plugin-activation.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Griffin",
+                    "homepage": "http://thomasgriffinmedia.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Gary Jones",
+                    "homepage": "https://github.com/GaryJones",
+                    "role": "Developer"
+                }
+            ],
+            "description": "TGM Plugin Activation is a PHP library that allows you to easily require or recommend plugins for your WordPress themes (and plugins).",
+            "homepage": "http://tgmpluginactivation.com",
+            "keywords": [
+                "activation",
+                "library",
+                "plugins",
+                "theme",
+                "wordpress"
+            ],
+            "time": "2014-08-25 09:06:40"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "tgm/plugin-activation": 20
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}

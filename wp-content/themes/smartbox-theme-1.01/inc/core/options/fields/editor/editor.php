@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
+ * @version 1.5.4
  */
 
 /**
@@ -33,7 +33,7 @@ class OxyEditor extends OxyOption {
      * @return string HTML for option
      * @since 1.0
      **/
-    public function render() {
+    public function render($echo = true) {
         // add name to the editor so save works
         $settings = array(
             'textarea_name' => $this->get_attr( 'name' )

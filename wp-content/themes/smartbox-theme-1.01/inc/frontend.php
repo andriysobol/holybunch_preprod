@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
+ * @version 1.5.4
  */
 
 // Register main menu
@@ -54,7 +54,7 @@ class OxyNavWalker extends Walker_Nav_Menu {
             $hover_attr = "";
             $disabled = "";
             if( oxy_get_option( 'menu' ) == 'hover' ){
-                $hover_attr = 'data-hover="dropdown" data-delay="1000"';
+                $hover_attr = 'data-hover="dropdown" data-delay="300"';
                 $disabled = 'disabled';
             }
             $item_html = str_replace('<a', '<a class="dropdown-toggle '.$disabled.'" data-toggle="dropdown" '.$hover_attr.' data-target="#"', $item_html);
@@ -95,11 +95,11 @@ function oxy_create_logo() {
     }
     switch( oxy_get_option('logo_type') ) {
         case 'text': ?>
-            <h1 class="brand">
+            <div class="brand">
                 <a href="<?php echo $home_link; ?>">
                     <?php echo oxy_filter_title( oxy_get_option( 'logo_text' ) ); ?>
                 </a>
-            </h1>
+            </div>
 <?php   break;
         case 'image':
             $id = oxy_get_option( 'logo_image' ); ?>
@@ -316,7 +316,7 @@ function oxy_create_hero_section( $image = null, $title = null ) {
     <div class="row-fluid">
         <div class="super-hero-unit">
             <figure>
-                <img alt="some image" src="<?php echo $image; ?>">
+                <img alt="<?php echo sanitize_text_field($title); ?>" src="<?php echo $image; ?>">
                 <figcaption class="flex-caption">
                     <h1 class="super animated fadeinup delayed">
                         <?php echo oxy_filter_title( $title ); ?>
@@ -367,7 +367,7 @@ function oxy_create_flexslider( $slug_or_ids, $options = array(), $echo = true )
     ), $options ) );
 
     if( is_array( $slug_or_ids ) ){
-        $slides = get_posts( array( 'post_type' => 'attachment', 'post__in' => $slug_or_ids, 'orderby' => 'post__in' ) );
+                $slides = get_posts( array( 'post_type' => 'attachment', 'post__in' => $slug_or_ids, 'orderby' => 'post__in', 'posts_per_page' => -1 ) );
         $captions = 'hide';
     }
     else {
@@ -389,7 +389,7 @@ function oxy_create_flexslider( $slug_or_ids, $options = array(), $echo = true )
     $flex_itemwidth = ($itemwidth!=='')?' data-flex-itemwidth='.$itemwidth.'px':'';
     $id = 'flexslider-' . rand(1,100);
     $output = '';
-    $output .= '<div id="' . $id . '" class="flexslider flex-directions-fancy"'.$flex_itemwidth.' data-flex-animation="'.$animation.'" data-flex-controlsalign="center" data-flex-controlsposition="'.$controlsposition.'" data-flex-directions="'.$directionnav.'" data-flex-speed="'.$speed.'" data-flex-directions-position="'.$directionnavpos.'" data-flex-controls="'.$showcontrols.'" data-flex-slideshow="' . $autostart . '">';
+    $output .= '<div id="' . $id . '" class="flexslider flex-directions-fancy"'.$flex_itemwidth.' data-flex-animation="'.$animation.'" data-flex-controlsalign="center" data-flex-controlsposition="'.$controlsposition.'" data-flex-directions="'.$directionnav.'" data-flex-speed="'.$speed.'" data-flex-directions-position="'.$directionnavpos.'" data-flex-controls="'.$showcontrols.'" data-flex-slideshow="' . $autostart . '" data-flex-duration="'.$duration.'">';
     $output .= '<ul class="slides">';
 
     global $post;
@@ -452,6 +452,10 @@ function oxy_get_slide_link( $post ) {
             $slug = get_post_meta( $post->ID, THEME_SHORT . '_category_link', true );
             $cat = get_category_by_slug( $slug );
             return get_category_link( $cat->term_id );
+        break;
+        case 'portfolio':
+            $id = get_post_meta( $post->ID, THEME_SHORT . '_portfolio_link', true );
+            return get_permalink( $id );
         break;
         case 'url':
             return get_post_meta( $post->ID, THEME_SHORT . '_url_link', true );
@@ -538,7 +542,9 @@ function oxy_page_header() {
                 <div class="row-fluid">
                     <?php
                     $slideshow_alias = get_post_meta( $post->ID, THEME_SHORT . '_revslider', true );
-                    putRevSlider( $slideshow_alias );
+                    if (function_exists('putRevSlider')) {
+                        putRevSlider( $slideshow_alias );
+                    }
                     ?>
                 </div>
             </section>
@@ -658,7 +664,7 @@ class OxyCommentWalker extends Walker_Comment {
     <?php }
 
     /** START_EL */
-    function start_el( &$output, $comment, $depth, $args, $id = 0 ) {
+    function start_el( &$output, $comment, $depth=0, $args=array(), $id = 0 ) {
         $depth++;
         $GLOBALS['comment_depth'] = $depth;
         $GLOBALS['comment'] = $comment;
@@ -700,11 +706,22 @@ class OxyCommentWalker extends Walker_Comment {
 
     <?php }
 
-    function end_el(&$output, $comment, $depth = 0, $args = array() ) { ?>
+    function end_el(&$output, $comment, $depth = 0, $args = array() ) {
+        switch ( $comment->comment_type ) :
+            case 'pingback':
+            case 'trackback':
+             // Display trackbacks differently than normal comments.
+        ?>
+        </div>
+        <?php
+            break;
+            default:
+        ?>
             </div><!-- /media body -->
         </div><!-- /comment-->
+        <?php endswitch;
 
-    <?php }
+    }
 
     /** DESTRUCTOR
      * I just using this since we needed to use the constructor to reach the top
@@ -880,8 +897,11 @@ function oxy_limit_excerpt($string, $word_limit) {
     $words = explode(' ', $string, ($word_limit + 1));
     if( count($words) > $word_limit ) {
         array_pop($words);
+        return implode(' ', $words).'...';
     }
-    return implode(' ', $words).'...';
+    else{
+        return implode(' ', $words);
+    }
 }
 
 /* -------------------- OVERRIDE DEFAULT SEARCH WIDGET OUTPUT ------------------*/
@@ -1102,9 +1122,10 @@ function oxy_related_posts( $post_id ){
         global $post;
         $saved_post = $post;
         $related = new wp_query( $args );
+        $output = '';
         if( $related->have_posts() ) {
-            $output = '<h3 class="text-center">'. __('Related Posts', THEME_FRONT_TD ).'</h3>';
-            $output.= '<ul class="unstyled row-fluid post-navigation">';
+            $output .= '<h3 class="text-center">'. __('Related Posts', THEME_FRONT_TD ).'</h3>';
+            $output .= '<ul class="unstyled row-fluid post-navigation">';
             while( $related->have_posts() ) {
                 $related->the_post();
                 if('link' == get_post_format()){

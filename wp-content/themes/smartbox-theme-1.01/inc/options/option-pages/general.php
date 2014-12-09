@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
+ * @version 1.5.4
  */
 
 return array(
@@ -174,6 +174,7 @@ return array(
                     'id'      => 'footer_columns',
                     'type'    => 'radio',
                     'options' => array(
+                        1  => __('1', THEME_ADMIN_TD),
                         2  => __('2', THEME_ADMIN_TD),
                         3  => __('3', THEME_ADMIN_TD),
                         4  => __('4', THEME_ADMIN_TD),

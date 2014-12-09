@@ -102,6 +102,7 @@ if ( ! class_exists( 'RWMB_Taxonomy_Field' ) )
                     }
                 break;
                 case 'revslider':
+                if( class_exists( 'RevSlider' ) ) {
                     $slider = new RevSlider();
                     $sliders = $slider->getArrSliders();
                     $terms = array();
@@ -111,10 +112,18 @@ if ( ! class_exists( 'RWMB_Taxonomy_Field' ) )
                         $term->name = $slider->getTitle();
                         $terms[] =$term;
                     }
+                }
                 break;
 
                 case 'posts':
                     $terms = get_posts();
+                    foreach( $terms as $term ) {
+                        $term->slug = $term->ID;
+                        $term->name = $term->post_title;
+                    }
+                break;
+                case 'oxy_portfolio_image':
+                    $terms = get_posts( array('posts_per_page'=> -1, 'post_type'=>'oxy_portfolio_image') );
                     foreach( $terms as $term ) {
                         $term->slug = $term->ID;
                         $term->name = $term->post_title;

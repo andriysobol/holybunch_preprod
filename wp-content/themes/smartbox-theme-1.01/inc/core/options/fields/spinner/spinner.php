@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
+ * @version 1.5.4
  */
 
 /**
@@ -34,7 +34,7 @@ class OxySpinner extends OxyOption {
      * @return string HTML for option
      * @since 1.0
      **/
-    public function render() {
+    public function render($echo = true) {
         echo '<input ' . $this->create_attributes() . ' />';
     }
 

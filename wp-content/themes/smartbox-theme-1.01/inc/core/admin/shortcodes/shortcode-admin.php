@@ -8,12 +8,12 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
+ * @version 1.5.4
  */
 
 class ShortcodeAdmin
 {
-    static private $theme;
+    private $theme;
 
     function __construct( $theme ) {
         $this->theme = $theme;
@@ -32,6 +32,8 @@ class ShortcodeAdmin
 
         // enqueue scripts & styles
         add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+        // remove notice from wp-includes/functions.php
+        remove_action( 'admin_enqueue_scripts', 'wp_auth_check_load' );
         // add tinyMCE shortcode plugin
         add_action('admin_init', array( &$this, 'oxy_add_mce_shortcode') );
         // add action for loading shortcode page
@@ -105,7 +107,12 @@ class ShortcodeAdmin
     }
 
     function oxy_add_mce_shortcode_plugin( $plugin_array ) {
-        $plugin_array['shortcodes'] = ADMIN_JS_URI . 'shortcodes/editor_plugin.js';
+       if( version_compare( get_bloginfo( 'version' ), '3.9', '<' ) ) {
+            $plugin_array['shortcodes'] = ADMIN_JS_URI . 'shortcodes/editor_plugin.js';
+        }
+        else {
+            $plugin_array['shortcodes'] = ADMIN_JS_URI . 'shortcodes/plugin.js';
+        }
         return $plugin_array;
     }
 }

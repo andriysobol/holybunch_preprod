@@ -32,7 +32,7 @@ $author_id = get_the_author_meta('ID');
                 </a>
             </h4>
             <?php  
-                $content= get_the_excerpt();//oxy_limit_excerpt(get_the_content(), 60) ;
+                $content= get_the_excerpt();
                 $more_text=  hb_get_more_text($post->post_type);
                 $link = get_permalink();
                 $content .= '<a href="' . $link . '" class="more-link">' . $more_text . '</a>'; 

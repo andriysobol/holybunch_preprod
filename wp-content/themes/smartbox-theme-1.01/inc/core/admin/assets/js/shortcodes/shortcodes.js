@@ -92,7 +92,6 @@
 
         function createContent( name ) {
             var content = $( '[name="' + name + '_content"]' );
-            console.log(content);
             var returnVal = ']';
             if( content.length > 0 ) {
                 content = getInputValue( content );

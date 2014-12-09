@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license **LICENSE**
- * @version 1.4
+ * @version 1.5.4
  */
 $author_id = get_the_author_meta('ID'); ?>
 <?php if( oxy_get_option( 'blog_image_size' ) == 'normal' ): ?>

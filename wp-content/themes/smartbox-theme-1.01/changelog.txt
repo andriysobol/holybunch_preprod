@@ -86,3 +86,31 @@ Version 1.4
     - Fixed dropdown hover menu bug
     - added RTL support
     - added new Twitter widget
+
+Version 1.5 ( 2nd Oct 13 )
+    - Fixed z index issue on the flexslider and revolution slider bullets
+    - Fixed retina logo in child theme
+    - Replaced the .brand with a normal div for SEO reasons. The promo area's H1 acts as a main header now
+    - Fixed embeded youtube videos z-index
+    - Custom links in services
+    - Added wpml-config.xml for options translations
+    - flexSlider duration now works
+
+Version 1.5.1 ( 22nd April 14 )
+    - Added Section header size options
+    - Fix for Hero Section ( would break images on complex inputs )
+    - Fixed shortcode editor for wordpress 3.9
+
+Version 1.5.2 ( 3rd September 14 )
+    - Fixed issue with services icons not being linkable
+    - Updated Revolution Slider to latest version
+    - Fixed various CSS issues
+
+Version 1.5.3 ( 5th September 14 )
+    - Added TGM Plugin
+    - Fix for WPML Filtering of Custom Posts
+
+Version 1.5.4 ( 8th September 14 )
+    - Updated Revolution Slider Import File
+    - Added checks for RevSlider functions and classes
+    - Fixed bug in service images

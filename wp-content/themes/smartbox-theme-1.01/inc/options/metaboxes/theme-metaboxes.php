@@ -218,10 +218,10 @@ $meta_boxes[] = array(
     // 'id' => 'portfolio_meta',
 
     // Meta box title - Will appear at the drag and drop handle bar. Required.
-    'title' => 'Slide Link',
+    'title' => 'Link',
 
     // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
-    'pages' => array( 'oxy_slideshow_image' ),
+    'pages' => array( 'oxy_slideshow_image', 'oxy_service'),
 
     // Where the meta box appear: normal (default), advanced, side. Optional.
     'context' => 'normal',
@@ -239,6 +239,7 @@ $meta_boxes[] = array(
                 'none'     => __('No Link', THEME_ADMIN_TD),
                 'page'     => __('Page', THEME_ADMIN_TD),
                 'post'     => __('Post', THEME_ADMIN_TD),
+                'portfolio'=> __('Portfolio', THEME_ADMIN_TD),
                 'category' => __('Category',THEME_ADMIN_TD),
                 'url'      => __('URL',THEME_ADMIN_TD)
             ),
@@ -262,6 +263,16 @@ $meta_boxes[] = array(
             'settax'  =>  false,
             'options' => array(
                 'taxonomy' => 'posts',
+                'type' => 'select_advanced',
+            ),
+        ),
+        array(
+            'name'    => 'Portfolio Link',
+            'id'      => "{$prefix}portfolio_link",
+            'type'    => 'taxonomy',
+            'settax'  =>  false,
+            'options' => array(
+                'taxonomy' => 'oxy_portfolio_image',
                 'type' => 'select_advanced',
             ),
         ),

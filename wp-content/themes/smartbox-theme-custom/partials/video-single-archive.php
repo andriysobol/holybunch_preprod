@@ -5,11 +5,6 @@
  * 2 search requesr (e.g. url='.../?s=Ибо+слово+о+кресте&post_type=oxy_video'); in this case relevanssi_the_excerpt will be used
  * @package Smartbox
  * @subpackage Frontend 
- * @since 1.0
- *
- * @copyright (c) 2013 Oxygenna.com
- * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.5
  */
 global $post;
 ?>

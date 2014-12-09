@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Smartbox Frontend Translation File 1.4\n"
+"Project-Id-Version: Smartbox Frontend Translation File 1.5.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-18 15:09+0300\n"
+"POT-Creation-Date: 2014-09-08 16:16+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,112 +61,112 @@ msgstr ""
 msgid "Portfolio Thumbnail Size"
 msgstr ""
 
-#: build/inc/frontend.php:491
+#: build/inc/frontend.php:495
 msgid "Landscape 1"
 msgstr ""
 
-#: build/inc/frontend.php:497
+#: build/inc/frontend.php:501
 msgid "Landscape 2"
 msgstr ""
 
-#: build/inc/frontend.php:503
+#: build/inc/frontend.php:507
 msgid "Landscape 3"
 msgstr ""
 
-#: build/inc/frontend.php:509
+#: build/inc/frontend.php:513
 msgid "Landscape 4"
 msgstr ""
 
-#: build/inc/frontend.php:515
+#: build/inc/frontend.php:519
 msgid "Landscape 5"
 msgstr ""
 
-#: build/inc/frontend.php:673
+#: build/inc/frontend.php:679
 msgid "Pingback:"
 msgstr ""
 
-#: build/inc/frontend.php:673
+#: build/inc/frontend.php:679
 msgid "(Edit)"
 msgstr ""
 
-#: build/inc/frontend.php:693
+#: build/inc/frontend.php:699
 msgid "Reply"
 msgstr ""
 
-#: build/inc/frontend.php:739
+#: build/inc/frontend.php:756
 msgid "your name"
 msgstr ""
 
-#: build/inc/frontend.php:740
+#: build/inc/frontend.php:757
 msgid "your email address"
 msgstr ""
 
-#: build/inc/frontend.php:744
+#: build/inc/frontend.php:761
 #, php-format
 msgid "Required fields are marked %s"
 msgstr ""
 
-#: build/inc/frontend.php:747
+#: build/inc/frontend.php:764
 msgid "add your comment here"
 msgstr ""
 
-#: build/inc/frontend.php:748
+#: build/inc/frontend.php:765
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: build/inc/frontend.php:749
+#: build/inc/frontend.php:766
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
 
-#: build/inc/frontend.php:755
+#: build/inc/frontend.php:772
 msgid "Add your comment"
 msgstr ""
 
-#: build/inc/frontend.php:756
+#: build/inc/frontend.php:773
 msgid "Leave a Reply"
 msgstr ""
 
-#: build/inc/frontend.php:757
+#: build/inc/frontend.php:774
 msgid "Cancel reply"
 msgstr ""
 
-#: build/inc/frontend.php:758
+#: build/inc/frontend.php:775
 msgid "Add comment"
 msgstr ""
 
-#: build/inc/frontend.php:835
+#: build/inc/frontend.php:852
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: build/inc/frontend.php:836
+#: build/inc/frontend.php:853
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: build/inc/frontend.php:891
+#: build/inc/frontend.php:911
 msgid "search"
 msgstr ""
 
-#: build/inc/frontend.php:1021
+#: build/inc/frontend.php:1041
 msgid "Next page"
 msgstr ""
 
-#: build/inc/frontend.php:1022
+#: build/inc/frontend.php:1042
 msgid "Previous page"
 msgstr ""
 
-#: build/inc/frontend.php:1106
+#: build/inc/frontend.php:1127
 msgid "Related Posts"
 msgstr ""
 
-#: build/inc/frontend.php:1156
+#: build/inc/frontend.php:1177
 msgid "About "
 msgstr ""
 
-#: build/inc/options/shortcodes/shortcodes.php:397
+#: build/inc/options/shortcodes/shortcodes.php:388
 msgid "all"
 msgstr ""
 
@@ -180,14 +180,6 @@ msgstr ""
 
 #: build/inc/options/widgets/default_overrides.php:96
 msgid "Select Month"
-msgstr ""
-
-#: build/inc/options/widgets/default_overrides.php:117
-msgid "Categories"
-msgstr ""
-
-#: build/inc/options/widgets/default_overrides.php:129
-msgid "Select Category"
 msgstr ""
 
 #: build/inc/options/widgets/smartbox_twitter.php:25
@@ -218,6 +210,27 @@ msgstr ""
 
 #: build/partials/loop.php:33 build/search.php:32
 msgid "Nothing Found"
+msgstr ""
+
+#: build/partials/loop.php:38
+msgid "Sorry, no posts were found for this category."
+msgstr ""
+
+#: build/partials/loop.php:41
+msgid "Sorry, no posts found in that timeframe"
+msgstr ""
+
+#: build/partials/loop.php:44
+msgid "Sorry, no posts from that author were found"
+msgstr ""
+
+#: build/partials/loop.php:47
+#, php-format
+msgid "Sorry, no posts were tagged with  \"%1$s\""
+msgstr ""
+
+#: build/partials/loop.php:50
+msgid "Sorry, nothing found"
 msgstr ""
 
 #: build/partials/post-extras.php:31

@@ -1,0 +1,15 @@
+{
+    "name": "oxygenna/smartbox",
+    "description": "Oxygenna's SmartBox Wordpress Theme",
+    "license": "ThemeForest Licence",
+    "authors": [
+        {
+            "name": "John Langan",
+            "email": "john.langan@oxygenna.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "tgm/plugin-activation": "dev-develop"
+    }
+}

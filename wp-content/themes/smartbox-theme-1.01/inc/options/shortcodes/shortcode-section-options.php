@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
+ * @version 1.5.4
  */
 
   return array(
@@ -46,6 +46,19 @@
             'type'    => 'text',
             'default' => '',
             'desc'    => __('Add an optional class to the section', THEME_ADMIN_TD),
-        )
+        ),
+        array(
+            'name'    => __('Header Size', THEME_ADMIN_TD),
+            'desc'    => __('Choose between h1 and h2 tags for your section header', THEME_ADMIN_TD),
+            'id'      => 'header_size',
+            'type'    => 'radio',
+            'options' => array(
+                'h1'    => __('H1', THEME_ADMIN_TD),
+                'h2' => __('H2', THEME_ADMIN_TD),
+                'h3' => __('H3', THEME_ADMIN_TD),
+                'h4' => __('H4', THEME_ADMIN_TD),
+            ),
+            'default' => 'h1',
+        ),
     )
 );

@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
+ * @version 1.5.4
  */
 
 return array(
@@ -107,31 +107,31 @@ return array(
                     array(
                         'shortcode' => 'layout',
                         'insert'    => '[row][span6]Column1[/span6][span6]Column 2[/span6][/row]',
-                        'title'     => __('&frac12; - &frac12;', THEME_ADMIN_TD),
+                        'title'     => __('1/2 - 1/2', THEME_ADMIN_TD),
                         'insert_with' => 'insert',
                     ),
                     array(
                         'shortcode' => 'layout',
                         'insert'    => '[row][span4]Column1[/span4][span8]Column 2[/span8][/row]',
-                        'title'     => __('&#8531; - &#8532;', THEME_ADMIN_TD),
+                        'title'     => __('1/3 - 2/3', THEME_ADMIN_TD),
                         'insert_with' => 'insert',
                     ),
                     array(
                         'shortcode' => 'layout',
                         'insert'    => '[row][span8]Column1[/span8][span4]Column 2[/span4][/row]',
-                        'title'     => __('&#8532; - &#8531;', THEME_ADMIN_TD),
+                        'title'     => __('2/3 - 1/3', THEME_ADMIN_TD),
                         'insert_with' => 'insert',
                     ),
                     array(
                         'shortcode' => 'layout',
                         'insert'    => '[row][span3]Column1[/span3][span9]Column 2[/span9][/row]',
-                        'title'     => __('&frac14; - &frac34;', THEME_ADMIN_TD),
+                        'title'     => __('1/4 - 3/4', THEME_ADMIN_TD),
                         'insert_with' => 'insert',
                     ),
                     array(
                         'shortcode' => 'layout',
                         'insert'    => '[row][span9]Column1[/span9][span3]Column 2[/span3][/row]',
-                        'title'     => __('&frac34; - &frac14;', THEME_ADMIN_TD),
+                        'title'     => __('3/4 - 1/4', THEME_ADMIN_TD),
                         'insert_with' => 'insert',
                     ),
                 )
@@ -142,7 +142,7 @@ return array(
                     array(
                         'shortcode' => 'layout',
                         'insert'    => '[row][span4]Column1[/span4][span4]Column 2[/span4][span4]Column 3[/span4][/row]',
-                        'title'     => __('&#8531; - &#8531; - &#8531;', THEME_ADMIN_TD),
+                        'title'     => __('1/3 - 1/3 - 1/3', THEME_ADMIN_TD),
                         'insert_with' => 'insert',
                     ),
                 )
@@ -153,7 +153,7 @@ return array(
                     array(
                         'shortcode' => 'layout',
                         'insert'    => '[row][span3]Column1[/span3][span3]Column 2[/span3][span3]Column 3[/span3][span3]Column 4[/span3][/row]',
-                        'title'     => __('&frac14; - &frac14; - &frac14; - &frac14;', THEME_ADMIN_TD),
+                        'title'     => __('1/4 - 1/4 - 1/4 - 1/4', THEME_ADMIN_TD),
                         'insert_with' => 'insert',
                     ),
                 )
@@ -594,6 +594,38 @@ return array(
                     ),
                 )
             ),
+            array(
+                'shortcode'   => 'categories',
+                'title'       => __('Categories', THEME_ADMIN_TD),
+                'insert_with' => 'dialog',
+                'sections'    => array(
+                    array(
+                        'title'   => 'General',
+                        'fields'  => array(
+                            array(
+                                'name'      => __('Show post counts', THEME_ADMIN_TD),
+                                'id'        => 'categoriespostcount',
+                                'type'      => 'radio',
+                                'default'   =>  'on',
+                                'options' => array(
+                                    'on'   => __('On', THEME_ADMIN_TD),
+                                    'off'  => __('Off', THEME_ADMIN_TD),
+                                ),
+                            ),
+                            array(
+                                'name'      => __('Show hierarchy', THEME_ADMIN_TD),
+                                'id'        => 'categorieshierarchy',
+                                'type'      => 'radio',
+                                'default'   =>  'on',
+                                'options' => array(
+                                    'on'   => __('On', THEME_ADMIN_TD),
+                                    'off'  => __('Off', THEME_ADMIN_TD),
+                                ),
+                            ),
+                        )
+                    ),
+                ),
+            ),
         )
     ),
     /* Typography */
@@ -628,13 +660,13 @@ return array(
                         'fields'  => array(
                             array(
                                 'name'    => __('Font Size', THEME_ADMIN_TD),
-                                'desc'    => __('Size of font to use for icon', THEME_ADMIN_TD),
+                                'desc'    => __('Size of font to use for icon ( set to 0 to inhertit font size from container )', THEME_ADMIN_TD),
                                 'id'      => 'size',
                                 'type'    => 'slider',
-                                'default' => 18,
+                                'default' => 0,
                                 'attr'    => array(
                                     'max'  => 48,
-                                    'min'  => 12,
+                                    'min'  => 0,
                                     'step' => 1
                                 )
                             ),
@@ -936,9 +968,11 @@ return array(
                                 'name'    => __('Columns', THEME_ADMIN_TD),
                                 'desc'    => __('Number of columns to show posts in', THEME_ADMIN_TD),
                                 'id'      => 'columns',
-                                'type'    => 'radio',
+                                'type'    => 'select',
                                 'default' => '3',
                                 'options' => array(
+                                    '1' => __('1 Column', THEME_ADMIN_TD),
+                                    '2' => __('2 Columns', THEME_ADMIN_TD),
                                     '3' => __('3 Columns', THEME_ADMIN_TD),
                                     '4' => __('4 Columns', THEME_ADMIN_TD),
                                 ),

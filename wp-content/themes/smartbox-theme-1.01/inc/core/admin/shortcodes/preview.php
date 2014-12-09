@@ -8,7 +8,7 @@
  *
  * @copyright (c) 2013 Oxygenna.com
  * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
+ * @version 1.5.4
  */
 
 if ( !defined('ABSPATH') )
@@ -34,6 +34,8 @@ if ( !defined('ABSPATH') )
      <![endif]-->
      <script src="<?php echo JS_URI ?>bootstrap.js" type="text/javascript" ></script>
      <script src="<?php echo JS_URI ?>jquery.flexslider-min.js" type="text/javascript" ></script>
+     <script src="<?php echo JS_URI ?>jquery.fancybox.pack.js" type="text/javascript" ></script>
+     <script src="<?php echo JS_URI ?>jquery.fancybox-media.js" type="text/javascript" ></script>
      <script src="<?php echo JS_URI ?>script.js" type="text/javascript" ></script>
      <script src="<?php echo JS_URI ?>wpscript.js" type="text/javascript" ></script>
 </head>
