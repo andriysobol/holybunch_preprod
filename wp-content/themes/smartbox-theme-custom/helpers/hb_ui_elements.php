@@ -335,7 +335,6 @@ function hb_ui_image_as_round_box($img_src_url, $size = 'medium') {
 
 /**
  * @description function creates flexi slider with videos from one particular taxonomy topic(term) it, used on topic page
- * @internal am bessten benutzen  oxy_shortcode_flexslider() aber wie?
  * @param string $slug_or_id <i>taxonomy term slug or id</i>
  * @return string
  */
@@ -353,35 +352,21 @@ function hb_get_flexi_slider_for_taxonomy_topic_page($slug_or_id) {
         'orderby' => 'menu_order',
         'order' => 'ASC'
     ));
-    if (count($slides) == 0) {
+    if (count($slides) == 0)
         return '';
-    }
 
-    $output .= '<div id="flexslider-100" 
-        class="flexslider flex-directions-fancy flex-controls-inside flex-controls-center" 
-        data-flex-animation="slide" 
-        data-flex-controlsalign="center" 
-        data-flex-controlsposition="inside" 
-        data-flex-directions="show" 
-        data-flex-speed="30000" 
-        data-flex-directions-position="inside" 
-        data-flex-controls="show" 
-        data-flex-slideshow="true">';
+    $output .= '<div id="flexslider-100" class="flexslider flex-directions-fancy flex-controls-inside flex-controls-center" data-flex-animation="slide" data-flex-controlsalign="center" data-flex-controlsposition="inside" data-flex-directions="show" data-flex-speed="30000" data-flex-directions-position="inside" data-flex-controls="show" data-flex-slideshow="true">';
+    $output .= '<ul class="slides">';
     foreach ($slides as $slide) {
+        $output .= '<li>';
         $atts[random_posts] = false;
         $atts[post_video] = $slide;
-        $atts[taxonomy_slug] = $slug_or_id;         
-        $li .= hb_ui_list_wrapper(array(
-            'content' => hb_shortcode_hero_section_with_video($atts),
-            'tag' => 'li'
-        ));        
+        $atts[taxonomy_slug] = $slug_or_id;
+        $output .= hb_shortcode_hero_section_with_video($atts);
+        $output .= '</li>';
     }
-    $output .= hb_ui_list_wrapper(array(
-        'content' => $li,
-        'tag' => 'ul',
-        'class' => 'slides'
-    ));
-    $output .= '</div>';   
+    $output .= '</ul>';
+    $output .= '</div>';
     return $output;
 }
 
