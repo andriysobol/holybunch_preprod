@@ -147,9 +147,9 @@ function hb_create_section_with_text_items($my_query, $atts = null) {
             $post_link = hb_get_linkformat(get_post_format());
 
             if (has_post_thumbnail($post->ID)) {
-                $image = hb_add_image_to_text_item($post);
+                $image = hb_ui_image_in_text_item($post);
             } else {
-                $image = hb_get_image_as_round_box(IMAGES_URI . 'box-empty.gif');
+                $image = hb_ui_image_as_round_box(IMAGES_URI . 'box-empty.gif');
             }            
             $innen = hb_ui_link(array(
                 'link' => $post_link,
@@ -228,21 +228,17 @@ function hb_ui_taxonomy_topic_page($taxonomy_term) {
         $output = oxy_shortcode_layout(NULL, $taxonomy_term->description, 'container-fluid hb_taxonomy_desc');
     }
 
-    if ($count == 1) {
-        $output .= hb_create_one_text_item($text_items[0]);
-    } elseif ($count == 2) {
-        $output .= hb_create_two_text_items($text_items[0], $text_items[1]);
-    } elseif ($count == 3) {
-        $output .= hb_create_three_text_items($text_items[0], $text_items[1], $text_items[2]);
+    if ($count >= 1 && $count <= 3) {
+        $output .= hb_ui_items($text_items);
     } elseif ($count == 4) {
-        $output .= hb_create_two_text_items($text_items[0], $text_items[1]);
-        $output .= hb_create_two_text_items($text_items[2], $text_items[3]);
+        $output .= hb_ui_items(array($text_items[0], $text_items[1]));
+        $output .= hb_ui_items(array($text_items[2], $text_items[3]));
     } elseif ($count == 5) {
-        $output .= hb_create_two_text_items($text_items[0], $text_items[1]);
-        $output .= hb_create_three_text_items($text_items[2], $text_items[3], $text_items[4]);
+        $output .= hb_ui_items(array($text_items[0], $text_items[1]));
+        $output .= hb_ui_items(array($text_items[2], $text_items[3], $text_items[4]));
     } elseif ($count == 6) {
-        $output .= hb_create_three_text_items($text_items[0], $text_items[1], $text_items[2]);
-        $output .= hb_create_three_text_items($text_items[3], $text_items[4], $text_items[5]);
+        $output .= hb_ui_items(array($text_items[0], $text_items[1], $text_items[2]));
+        $output .= hb_ui_items(array($text_items[3], $text_items[4], $text_items[5]));
     } elseif ($count > 6) {
         $output .= hb_create_section_with_text_items(new WP_Query($query));
     }
@@ -254,50 +250,27 @@ function hb_ui_taxonomy_topic_page($taxonomy_term) {
 }
 
 /**
- * @description create text item as quote for taxonomy topic page
- * @param post $post <i>post</i>
- * @param string $content optional <i>optional content</i>
+ * @description create 1-3 text items as quote for taxonomy topic page
+ * @param array $text_item <i>count should be not more <b>4</b> </i> 
  * @return string
  */
-function hb_create_one_text_item($post, $content = '') {
-    $output = hb_get_post_summary_as_quote($post, 'span12', $content);
-    $output = oxy_shortcode_layout(NULL, $output, 'container-fluid');
-    return $output;
-}
-
-/**
- * @description create 2 text items as quote for taxonomy topic page
- * @param post $first_item <i>first post item</i>
- * @param post $second_item <i>second post item</i>
- * @return string
- */
-function hb_create_two_text_items($first_item, $second_item) {
-    $post = $first_item;
-    $output = hb_get_post_summary_as_quote($post, 'span6');
-    $post = $second_item;
-    $output .= hb_get_post_summary_as_quote($post, 'span6');
-    $output = oxy_shortcode_layout(NULL, $output, 'container-fluid');
-    return $output;
-}
-
-/**
- * @description create 3 text items as quote for taxonomy topic page
- * @param post $first_item <i>first post item</i>
- * @param post $second_item <i>second post item</i>
- * @param post $third_item <i>third post item</i>
- * @return string
- */
-function hb_create_three_text_items($first_item, $second_item, $third_item) {
-    $post = $first_item;
-    $output = hb_get_post_summary_as_quote($post);
-    $post = $second_item;
-    $output .= hb_get_post_summary_as_quote($post);
-
-    $post = $third_item;
-    $output .= hb_get_post_summary_as_quote($post);
-
-    $output = oxy_shortcode_layout(NULL, $output, 'container-fluid');
-    return $output;
+function hb_ui_items($text_items) {
+    $span = 'span3';
+    switch (count($text_items)) {
+        case 1:
+            $span = 'span12';
+            break;
+        case 2:
+            $span = 'span6';
+            break;
+        case 3:
+            $span = 'span4';
+            break;
+    }
+    foreach ($text_items as $value) {
+        $output .= hb_ui_posts_as_quote($value, $span);
+    }   
+    return oxy_shortcode_layout(NULL, $output, 'container-fluid');
 }
 
 /**
@@ -307,21 +280,26 @@ function hb_create_three_text_items($first_item, $second_item, $third_item) {
  * @param string $summary optional <i>summary text, default is empty</i>
  * @return string
  */
-function hb_get_post_summary_as_quote($post, $span = 'span4', $summary = '') {
-    if (empty($summary))
+function hb_ui_posts_as_quote($post, $span = 'span4', $summary = '') {
+    if (empty($summary)) {
         $summary = hb_get_post_summary_mini($post);
-    else
-        $summary = $summary;
-    $more_text = __('Read more', THEME_FRONT_TD);
-    $link = get_post_permalink($post->ID, false, false);
-    $more_text = '<a href="' . $link . '" class="more-link">' . $more_text . '</a>';
-    $output = '<h3><a href="' . get_post_permalink($post->ID, false, false) . '">' . $post->post_title . '</a></h3>
-                        <blockquote><p>' . $summary . $more_text . '</p></blockquote><a href="' . get_post_permalink($post->ID, false, false) . '">' .
-            hb_add_image_to_text_item($post) .
-            '</a>';
-    $output = oxy_shortcode_layout(NULL, $output, 'well blockquote-well well_custom_2col_mb');
-    $output = oxy_shortcode_layout(NULL, $output, $span);
-    return $output;
+    }
+    $content = hb_ui_title(array(
+                'tag' => 3,
+                'content' => hb_ui_link(array(
+                    'link' => get_post_permalink($post->ID, false, false),
+                    'content' => $post->post_title
+        )))) . hb_get_blockquote(array(
+                'content' => $summary . hb_ui_link(array(
+                    'link' => get_post_permalink($post->ID, false, false),
+                    'class' => 'more-link dddd',
+                    'content' => __('Read more', THEME_FRONT_TD)
+        )))) . hb_ui_link(array(
+            'link' => get_post_permalink($post->ID, false, false),
+            'content' => hb_ui_image_in_text_item($post)
+        ));    
+    
+    return oxy_shortcode_layout(NULL, $content, $span . ' well blockquote-well');
 }
 
 /**
@@ -330,13 +308,15 @@ function hb_get_post_summary_as_quote($post, $span = 'span4', $summary = '') {
  * @param string size <i>size of image box</i>
  * @return string
  */
-function hb_add_image_to_text_item($post, $size = 'medium') {
+function hb_ui_image_in_text_item($post, $size = 'medium') {
     if (has_post_thumbnail($post->ID)) {
-        $output .='<div class="round-box box-' . $size . ' box-colored"><span class="box-inner">';
-        $output .= get_the_post_thumbnail($post->ID, 'portfolio-thumb', array('title' => $post->post_title, 'alt' => $post->post_title, 'class' => 'img-circle'));
-        $output .= oxy_post_icon($post->ID, false);
-        $output .= '</span></div>';
-        return $output;
+        $image = get_the_post_thumbnail($post->ID, 'portfolio-thumb', array(
+            'title' => $post->post_title,
+            'alt' => $post->post_title,
+            'class' => 'img-circle'
+        ));
+        $icon = oxy_post_icon($post->ID, false);
+        return oxy_shortcode_layout(NULL, oxy_shortcode_layout(NULL, $image . $icon, 'box-inner'), 'round-box box-' . $size . ' box-colored');
     }
 }
 
@@ -346,15 +326,16 @@ function hb_add_image_to_text_item($post, $size = 'medium') {
  * @param string size <i>size of box</i>
  * @return string
  */
-function hb_get_image_as_round_box($img_src_url, $size = 'medium') {
-    $output .='<div class="round-box box-' . $size . ' box-colored"><span class="box-inner">';
-    $output .= '<img class="img-circle" src="' . $img_src_url . '">';
-    $output .= '</span></div>';
-    return $output;
+function hb_ui_image_as_round_box($img_src_url, $size = 'medium') {
+    return hb_shortcode_image(array(
+        'source' => $img_src_url,
+        'size' => $size
+    ));
 }
 
 /**
  * @description function creates flexi slider with videos from one particular taxonomy topic(term) it, used on topic page
+ * @internal am bessten benutzen  oxy_shortcode_flexslider() aber wie?
  * @param string $slug_or_id <i>taxonomy term slug or id</i>
  * @return string
  */
@@ -372,21 +353,35 @@ function hb_get_flexi_slider_for_taxonomy_topic_page($slug_or_id) {
         'orderby' => 'menu_order',
         'order' => 'ASC'
     ));
-    if (count($slides) == 0)
+    if (count($slides) == 0) {
         return '';
+    }
 
-    $output .= '<div id="flexslider-100" class="flexslider flex-directions-fancy flex-controls-inside flex-controls-center" data-flex-animation="slide" data-flex-controlsalign="center" data-flex-controlsposition="inside" data-flex-directions="show" data-flex-speed="30000" data-flex-directions-position="inside" data-flex-controls="show" data-flex-slideshow="true">';
-    $output .= '<ul class="slides">';
+    $output .= '<div id="flexslider-100" 
+        class="flexslider flex-directions-fancy flex-controls-inside flex-controls-center" 
+        data-flex-animation="slide" 
+        data-flex-controlsalign="center" 
+        data-flex-controlsposition="inside" 
+        data-flex-directions="show" 
+        data-flex-speed="30000" 
+        data-flex-directions-position="inside" 
+        data-flex-controls="show" 
+        data-flex-slideshow="true">';
     foreach ($slides as $slide) {
-        $output .= '<li>';
         $atts[random_posts] = false;
         $atts[post_video] = $slide;
-        $atts[taxonomy_slug] = $slug_or_id;
-        $output .= hb_shortcode_hero_section_with_video($atts);
-        $output .= '</li>';
+        $atts[taxonomy_slug] = $slug_or_id;         
+        $li .= hb_ui_list_wrapper(array(
+            'content' => hb_shortcode_hero_section_with_video($atts),
+            'tag' => 'li'
+        ));        
     }
-    $output .= '</ul>';
-    $output .= '</div>';
+    $ul.= hb_ui_list_wrapper(array(
+        'content' => $li,
+        'tag' => 'ul',
+        'class' => 'slides'
+    ));
+    $output .= '</div>';   
     return $output;
 }
 

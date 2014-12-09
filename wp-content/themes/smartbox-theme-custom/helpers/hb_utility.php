@@ -169,7 +169,7 @@ function hb_get_more_text($post_type) {
  * @param string $class
  * @return string
  */
-function hb_set_attributes($id, $class) {
+function hb_set_attributes($id=NULL, $class=NULL) {
     $string = ' ';
     if (hb_is_element_not_empty($id)) {
         $string .= 'id="' . $id . '" ';

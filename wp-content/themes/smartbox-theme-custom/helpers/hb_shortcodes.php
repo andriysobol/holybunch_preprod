@@ -47,7 +47,7 @@ function hb_shortcode_latest_taxonomy_topics_as_list($atts) {
         $taxonomy_image_link = hb_get_taxonomy_image('teaching_topics', $taxonomy->slug, hb_enum_taxonomy_image_type::image);
         $round_link = hb_ui_link(array(
             'link' => $link,
-            'content' => hb_get_image_as_round_box($taxonomy_image_link)));
+            'content' => hb_ui_image_as_round_box($taxonomy_image_link)));
 
         $output_loop .= oxy_shortcode_layout(NULL, $title . $blockquote . $round_link, 'well blockquote-well');
     }
@@ -133,7 +133,7 @@ add_shortcode('blockquote', 'hb_shortcode_blockquote');
 
 /**
  * @description overreid <b>image</b> from parent template. Purpose: added new attribute alt to checkstyle
- * @param array $atts
+ * @param array $atts (size, rounded, polaroid, source, icon, link, alt)
  * @param String $content
  * @return string
  * @see oxy_shortcode_image($atts , $content = '')
@@ -157,7 +157,6 @@ function hb_shortcode_image($atts , $content = ''){
 
     $output = '<div class="round-box'.$extraclass.' '.$size.'"> <'.$tag.' class="box-inner"'.$ref.'>';
     $output.= '<img class="img-circle '.$polaroidclss.'"  src="'.$source.'" alt="'.$alt.'" />'.$iconclass.'</'.$tag.'></div>';
-
     return $output;
 }
 add_shortcode( 'image' , 'hb_shortcode_image');
