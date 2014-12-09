@@ -246,3 +246,7 @@ msgstr ""
 #: build/tag.php:15
 msgid "Tag"
 msgstr ""
+
+#: 
+msgid "Read more"
+msgstr "Читать далее"

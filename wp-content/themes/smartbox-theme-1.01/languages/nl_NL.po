@@ -3,39 +3,39 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Smartbox Frontend Translation File 1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-18 15:09+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-11-15 14:00+0100\n"
+"Last-Translator: Andriy Sobol <andriy.sobol@googlemail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
 
 #: build/archive.php:15
 msgid "Day"
-msgstr ""
+msgstr "Dag"
 
 #: build/archive.php:19
 msgid "Month"
-msgstr ""
+msgstr "Maand"
 
 #: build/archive.php:23
 msgid "Year"
-msgstr ""
+msgstr "Jaar"
 
 #: build/archive.php:27
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
 #: build/author.php:22
 msgid "Author"
-msgstr ""
+msgstr "Auteur"
 
 #: build/comments.php:31
 msgid "&larr; Older"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: build/comments.php:42
 msgid "Comments are closed."
-msgstr ""
+msgstr "Reacties zijn gesloten."
 
 #: build/inc/core/theme.php:214
 msgid "Theme"
@@ -55,31 +55,31 @@ msgstr ""
 
 #: build/inc/frontend.php:16
 msgid "Primary Navigation"
-msgstr ""
+msgstr "Primaire navigatie"
 
 #: build/inc/frontend.php:343
 msgid "Portfolio Thumbnail Size"
-msgstr ""
+msgstr "Portfolio Miniatuurgrootte"
 
 #: build/inc/frontend.php:491
 msgid "Landscape 1"
-msgstr ""
+msgstr "Landschap 1"
 
 #: build/inc/frontend.php:497
 msgid "Landscape 2"
-msgstr ""
+msgstr "Landschap 2"
 
 #: build/inc/frontend.php:503
 msgid "Landscape 3"
-msgstr ""
+msgstr "Landschap 2"
 
 #: build/inc/frontend.php:509
 msgid "Landscape 4"
-msgstr ""
+msgstr "Landschap 4"
 
 #: build/inc/frontend.php:515
 msgid "Landscape 5"
-msgstr ""
+msgstr "Landschap 5"
 
 #: build/inc/frontend.php:673
 msgid "Pingback:"
@@ -87,33 +87,33 @@ msgstr ""
 
 #: build/inc/frontend.php:673
 msgid "(Edit)"
-msgstr ""
+msgstr "(Bewerk)"
 
 #: build/inc/frontend.php:693
 msgid "Reply"
-msgstr ""
+msgstr "Antwoorden"
 
 #: build/inc/frontend.php:739
 msgid "your name"
-msgstr ""
+msgstr "uw naam"
 
 #: build/inc/frontend.php:740
 msgid "your email address"
-msgstr ""
+msgstr "je e-mailadres"
 
 #: build/inc/frontend.php:744
 #, php-format
 msgid "Required fields are marked %s"
-msgstr ""
+msgstr "Verplichte velden zijn gemarkeerd %s"
 
 #: build/inc/frontend.php:747
 msgid "add your comment here"
-msgstr ""
+msgstr "Voeg hier je reactie"
 
 #: build/inc/frontend.php:748
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
+msgstr "U moet <a href=\"%s\">ingelogd </a> om een reactie te plaatsen zijn."
 
 #: build/inc/frontend.php:749
 #, php-format
@@ -121,22 +121,24 @@ msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
+"Ingelogd als as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out "
+"of this account\">Uitloggen?</a>"
 
 #: build/inc/frontend.php:755
 msgid "Add your comment"
-msgstr ""
+msgstr "Voeg je opmerking toe"
 
 #: build/inc/frontend.php:756
 msgid "Leave a Reply"
-msgstr ""
+msgstr "Laat een vervan"
 
 #: build/inc/frontend.php:757
 msgid "Cancel reply"
-msgstr ""
+msgstr "Annuleren antwoord"
 
 #: build/inc/frontend.php:758
 msgid "Add comment"
-msgstr ""
+msgstr "Commentaar toevoegen"
 
 #: build/inc/frontend.php:835
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
@@ -148,27 +150,27 @@ msgstr ""
 
 #: build/inc/frontend.php:891
 msgid "search"
-msgstr ""
+msgstr "zoeken"
 
 #: build/inc/frontend.php:1021
 msgid "Next page"
-msgstr ""
+msgstr "Volgende pagina"
 
 #: build/inc/frontend.php:1022
 msgid "Previous page"
-msgstr ""
+msgstr "Vorige Pagina"
 
 #: build/inc/frontend.php:1106
 msgid "Related Posts"
-msgstr ""
+msgstr "Realted Berichten"
 
 #: build/inc/frontend.php:1156
 msgid "About "
-msgstr ""
+msgstr "Over"
 
 #: build/inc/options/shortcodes/shortcodes.php:397
 msgid "all"
-msgstr ""
+msgstr "alle"
 
 #: build/inc/options/widgets/default_overrides.php:22
 msgid "Recent Posts"
@@ -176,7 +178,7 @@ msgstr ""
 
 #: build/inc/options/widgets/default_overrides.php:88
 msgid "Archives"
-msgstr ""
+msgstr "Archieven"
 
 #: build/inc/options/widgets/default_overrides.php:96
 msgid "Select Month"
@@ -208,7 +210,7 @@ msgstr ""
 
 #: build/partials/content-404.php:26
 msgid "Go Back Home"
-msgstr ""
+msgstr "Ga Terug naar de startpagina"
 
 #: build/partials/content-gallery.php:24 build/partials/content-video.php:24
 #: build/partials/content.php:22
@@ -218,24 +220,24 @@ msgstr ""
 
 #: build/partials/loop.php:33 build/search.php:32
 msgid "Nothing Found"
-msgstr ""
+msgstr "Niets Gevonden"
 
 #: build/partials/post-extras.php:31
 msgid "No comments"
-msgstr ""
+msgstr "Geen reacties"
 
 #: build/partials/post-extras.php:31
 msgid "1 comment"
-msgstr ""
+msgstr "1 reactie"
 
 #: build/partials/post-extras.php:31
 #, php-format
 msgid "% comments"
-msgstr ""
+msgstr "% reacties"
 
 #: build/search.php:15
 msgid "Search"
-msgstr ""
+msgstr "Zoeken"
 
 #: build/search.php:36
 msgid ""
@@ -245,4 +247,16 @@ msgstr ""
 
 #: build/tag.php:15
 msgid "Tag"
-msgstr ""
+msgstr "Tag"
+
+#: build/tag.php:15
+msgid "Read more"
+msgstr "<strong>Lees</strong> meer"
+
+#: build/tag.php:15
+msgid "In this topic ..."
+msgstr "In dit onderwerp"
+
+#: build/tag.php:15
+msgid "Go to topic"
+msgstr "<Strong>Naar thema</Strong>"

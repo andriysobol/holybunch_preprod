@@ -3,19 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Smartbox Frontend Translation File 1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-18 15:09+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-12-06 20:12+0100\n"
+"Last-Translator: Andriy Sobol <andriy.sobol@googlemail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
 
 #: build/archive.php:15
 msgid "Day"
@@ -108,7 +108,7 @@ msgstr ""
 
 #: build/inc/frontend.php:747
 msgid "add your comment here"
-msgstr ""
+msgstr "Добавь здесь свой комментарий"
 
 #: build/inc/frontend.php:748
 #, php-format
@@ -121,10 +121,12 @@ msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
+"Вы вошли как <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Выйти?</a>"
 
 #: build/inc/frontend.php:755
 msgid "Add your comment"
-msgstr ""
+msgstr "Добавь свой комментарий"
 
 #: build/inc/frontend.php:756
 msgid "Leave a Reply"
@@ -136,7 +138,7 @@ msgstr ""
 
 #: build/inc/frontend.php:758
 msgid "Add comment"
-msgstr ""
+msgstr "Добавить комментарий"
 
 #: build/inc/frontend.php:835
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
@@ -176,7 +178,7 @@ msgstr ""
 
 #: build/inc/options/widgets/default_overrides.php:88
 msgid "Archives"
-msgstr ""
+msgstr "Архив"
 
 #: build/inc/options/widgets/default_overrides.php:96
 msgid "Select Month"
@@ -222,20 +224,31 @@ msgstr ""
 
 #: build/partials/post-extras.php:31
 msgid "No comments"
-msgstr ""
+msgstr "Нет комментариев"
 
 #: build/partials/post-extras.php:31
 msgid "1 comment"
-msgstr ""
+msgstr "Комментарии (1)"
 
 #: build/partials/post-extras.php:31
-#, php-format
 msgid "% comments"
-msgstr ""
+msgstr "Комментарии (%)"
+
+#: build/partials/post-extras.php:31
+msgid "No Comments"
+msgstr "Нет комментариев"
+
+#: build/partials/post-extras.php:31
+msgid "1 Comment"
+msgstr "1 комментарий"
+
+#: build/partials/post-extras.php:31
+msgid "% Comments"
+msgstr "% комментарий"
 
 #: build/search.php:15
 msgid "Search"
-msgstr ""
+msgstr "Поиск"
 
 #: build/search.php:36
 msgid ""
@@ -246,3 +259,39 @@ msgstr ""
 #: build/tag.php:15
 msgid "Tag"
 msgstr ""
+
+#: build/tag.php:15
+msgid "In this topic ..."
+msgstr "В этой теме ..."
+
+#: build/tag.php:15
+msgid "Back to the topic"
+msgstr "Назад к теме"
+
+#: build/tag.php:15
+msgid "Also in this topic"
+msgstr "Также в теме"
+
+#: build/tag.php:15
+msgid "Go to topic"
+msgstr "<Strong>Перейти</Strong> к теме "
+
+#: build/tag.php:15
+msgid "Read more"
+msgstr "<strong>Читать</strong> далее"
+
+#: build/tag.php:15
+msgid "Enter keywords"
+msgstr "Введите ключевые слова"
+
+#: build/tag.php:15
+msgid "Show all videos"
+msgstr "Показать все видео"
+
+#: build/tag.php:15
+msgid "Show all articles"
+msgstr "Показать все статьи"
+
+#: build/tag.php:15
+msgid "Goto video"
+msgstr "<Strong>Перейти</Strong> к видео"
