@@ -376,7 +376,7 @@ function hb_get_flexi_slider_for_taxonomy_topic_page($slug_or_id) {
             'tag' => 'li'
         ));        
     }
-    $ul.= hb_ui_list_wrapper(array(
+    $output .= hb_ui_list_wrapper(array(
         'content' => $li,
         'tag' => 'ul',
         'class' => 'slides'
