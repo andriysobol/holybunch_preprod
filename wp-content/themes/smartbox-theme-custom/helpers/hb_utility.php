@@ -11,7 +11,7 @@ function hb_get_taxonomy_image($taxonomy_name, $taxonomy_slug, $image_type) {
     switch ($image_type) {
         case hb_enum_taxonomy_image_type::banner_image:
             $field_name = 'taxonomy_banner_image';
-            $taxonomy_default_image = CUSTOM_IMAGES_DIR . 'banner_thema_default.jpg';
+            $taxonomy_default_image = CUSTOM_IMAGES_DIR . 'banner_thema_default.JPG';
             break;
         case hb_enum_taxonomy_image_type::image:
             $field_name = 'taxonomy_image';
