@@ -1,14 +1,7 @@
 <?php
 /**
  * Displays a tag archive
- * @package Smartbox
- * @subpackage Frontend
- * @since 0.1
- *
- * @copyright (c) 2013 Oxygenna.com
- * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
- */
+*/
 
 get_header();
 if( is_day() ) {

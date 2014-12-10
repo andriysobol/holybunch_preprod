@@ -1,14 +1,6 @@
 <?php
 /**
  * Main Blog loop
- *
- * @package Smartbox
- * @subpackage Frontend
- * @since 1.4
- *
- * @copyright (c) 2013 Oxygenna.com
- * @license **LICENSE**
- * @version 1.4
  */
 ?>
 
@@ -34,7 +26,7 @@
     <?php if( $my_query->have_posts() ): ?>
     <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
 
-    <?php get_template_part(  'partials/content-blog'  ); ?>
+    <?php get_template_part(  'partials/archive-blog-section'  ); ?>
 
     <?php endwhile; ?>
 

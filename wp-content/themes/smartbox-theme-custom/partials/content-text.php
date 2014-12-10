@@ -1,6 +1,6 @@
 <?php
 /**
- * Shows a simple single post
+ * Shows a simple single post of type oxy_text used for example in single-oxy_content
  * @Author: andriy sobol
  * @Description: custom post template which called for all posts with format "Standart"
  * It has to be here in custom theme folder because it doesn't show author icon and author name for posts

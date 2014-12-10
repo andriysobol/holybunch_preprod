@@ -328,9 +328,6 @@ function hb_shortcode_hero_section_with_video($atts) {
         $image = $img_attachment[0];
     } else {
         $image = hb_get_taxonomy_image('teaching_topics', $taxonomy_slug, hb_enum_taxonomy_image_type::video_background_image);
-        if (empty($image)) {
-            $image = CUSTOM_IMAGES_DIR . 'background_video_default.jpg';
-        }
     }
 
     $title_ui = hb_ui_title(array(

@@ -66,7 +66,7 @@ function oxy_shortcode_js_player($atts) {
     $uniqid = "player" . uniqid();
     $output = '<div id = "' . $uniqid . '">';
     $output .= '<script src = "' . hb_get_host_jw_player_script() . '"></script>';
-    //$output .= '<script src = "http://84.200.83.37/wp-content/themes/smartbox-theme-custom/inc/js_player/JS_Player.js' . '"></script>';
+    //$output .= '<script src = "http://84.200.83.37/wp-content/themes/smartbox-theme-custom/inc/js/JS_Player.js' . '"></script>';
     $output .= '<script type = \'text/javascript\'>';
     $output .= 'jwplayer(\'' . $uniqid . '\').setup({';
     $output .= ' height: ' . $height . ',';

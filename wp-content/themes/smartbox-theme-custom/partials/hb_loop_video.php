@@ -1,6 +1,6 @@
 <?php
 /**
- * Main Blog loop
+ * Main video loop
  *
  * @package Smartbox
  * @subpackage Frontend
@@ -26,7 +26,7 @@
     }?>
     <?php if( $my_query->have_posts() ): ?>
     <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
-    <?php get_template_part(  'partials/video-single-archive'  ); ?>
+    <?php get_template_part(  'partials/archive-video-section'  ); ?>
     <?php endwhile; ?>
 
     <?php oxy_pagination($my_query->max_num_pages); ?>

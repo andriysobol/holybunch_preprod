@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays a timeline custom post
+ * Displays a excerpts of blogs by author in timeline layout
 */
 
 get_header();

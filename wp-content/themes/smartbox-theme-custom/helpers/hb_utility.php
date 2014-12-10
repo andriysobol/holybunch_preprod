@@ -17,9 +17,9 @@ function hb_get_taxonomy_image($taxonomy_name, $taxonomy_slug, $image_type) {
             $field_name = 'taxonomy_image';
             $taxonomy_default_image = null;
             break;
-        case hb_enum_taxonomy_image_type::image:
+        case hb_enum_taxonomy_image_type::video_background_image:
             $field_name = 'taxonomy_video_background';
-            $taxonomy_default_image = null;
+            $taxonomy_default_image = CUSTOM_IMAGES_DIR . 'background_video_default.jpg';
             break;
     }
 

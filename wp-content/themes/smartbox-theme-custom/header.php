@@ -1,14 +1,6 @@
 <?php
 /**
  * Displays the head section of the theme
- *
- * @package Smartbox
- * @subpackage Frontend
- * @since 0.1
- *
- * @copyright (c) 2013 Oxygenna.com
- * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
  */
 ?><!DOCTYPE html>
 <!--[if IE 8 ]> <html <?php language_attributes(); ?> class="ie8"> <![endif]-->
