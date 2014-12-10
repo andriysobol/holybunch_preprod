@@ -1,15 +1,7 @@
 <?php
 /**
- * Shows a simple single post
- *
- * @package Smartbox
- * @subpackage Frontend
- * @since 1.0
- *
- * @copyright (c) 2013 Oxygenna.com
- * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.4
- */
+ * Shows a simple single blog
+*/
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('row-fluid'); ?>>
     <?php get_template_part( 'partials/post-gutter' ); ?>

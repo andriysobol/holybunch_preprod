@@ -1,14 +1,6 @@
 <?php
 /**
  * Main Blog loop
- *
- * @package Smartbox
- * @subpackage Frontend
- * @since 1.4
- *
- * @copyright (c) 2013 Oxygenna.com
- * @license **LICENSE**
- * @version 1.5
  */
 ?>
 
