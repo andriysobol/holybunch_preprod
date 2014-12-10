@@ -378,14 +378,12 @@ function hb_get_flexi_slider_for_taxonomy_topic_page($slug_or_id) {
  * @return string
  */
 function hb_create_videowrapper_div($src_url, $span = "span8", $width = "1250", $height = "703") {
-    $output = '<div class=' . $span . '>
-                         <div class="entry-content">
-                           <div class="videoWrapper">
-                              <iframe src="' . $src_url . '" width="' . $width . '" height="' . $height . '" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-                           </div>
-                        </div>
-             </div>';
-    return $output;
+    $videoWrapperLayout = oxy_shortcode_layout(NULL, 
+            hb_ui_iframe(array(
+                'src_url' => $src_url,
+                'width' => $width,
+                'height' => $height)), 'entry-content videoWrapper');
+    return oxy_shortcode_layout(NULL, $videoWrapperLayout, $span);
 }
 
 /**
@@ -433,25 +431,27 @@ function hb_get_post_summary_mini($post) {
  * @return string
  */
 function hb_get_assigned_taxonomy_terms($post) {
-    $output = '<div id="tag_cloud-3" class="sidebar-widget  widget_tag_cloud">';
-    $output .= '<div class="tagcloud">';
-    $output .= '    <div class="tagcloudThema">' . __('Go to topic', THEME_FRONT_TD) . ':' . '</div>';
-    $output .= '<ul>';
-    $taxonomy = "teaching_topics";
-    $terms = wp_get_post_terms($post->ID, $taxonomy);
+    $terms = wp_get_post_terms($post->ID, "teaching_topics");
     if ($terms) {
+        $inhalt = oxy_shortcode_layout(NULL, __('Go to topic', THEME_FRONT_TD) . ':', 'tagcloudThema');
         foreach ($terms as $individual_term) {
-            $term_link = get_term_link($individual_term);
-            $output .= "<li><a href='" . $term_link . "' title='" . $individual_term->name . "'  style='font-size:" . 12 . "pt;' >" . $individual_term->name . "</a></li>";
+            $li .= hb_ui_list_wrapper(array(
+                'tag' => 'li',
+                'content' => hb_ui_link(array(
+                'link' => get_term_link($individual_term),
+                'content' => $individual_term->name,
+                'class' => 'hb_cloud_style'
+            ))));
         }
+        
+        $inhalt .= hb_ui_list_wrapper(array(
+            'tag' => 'ul',
+            'content' => $li
+        ));
     }
-    $output .= '</ul>';
-    $output .= '</div>';
-    $output .= '</div>';
-    return $output;
+    return oxy_shortcode_layout(NULL, $inhalt, 'widget_tag_cloud');
 }
 
-//////UI_ELEMENTS///////////
 /**
  * @package UI_ELEMENT_HTML
  * @description function to create a link
@@ -481,7 +481,22 @@ function hb_ui_title($atts) {
         'content' => '',
         'tag' => ''), $atts));
 
-    return $result = '<h' . $tag . hb_set_attributes($id, $class) . '>' . $content . '</h' . $tag . '>';
+    return '<h' . $tag . hb_set_attributes($id, $class) . '>' . $content . '</h' . $tag . '>';
+}
+
+/**
+ * @package  UI_ELEMENT_HTML
+ * @description function to create a iframe for video
+ * @param array $atts (src_url, width, height)
+ * @return String
+ */
+function hb_ui_iframe($atts) {
+    extract(shortcode_atts(array(
+        'src_url' => '',
+        'width' => '',
+        'height' => ''), $atts));
+    
+    return  '<iframe src="' . $src_url . '" width="' . $width . '" height="' . $height . '" frameborder="0"></iframe>';
 }
 
 /**
@@ -548,6 +563,4 @@ function hb_get_section_background_image_simple($atts) {
     return '<section class="' . $class . '"data-background="' . $data_background . '" style="' . $image_link . '">'
             . $content . '</section>';
 }
-
-
 ?>
