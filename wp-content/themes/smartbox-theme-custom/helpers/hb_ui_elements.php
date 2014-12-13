@@ -146,17 +146,7 @@ function hb_create_section_with_text_items($my_query, $atts = null) {
             setup_postdata($post);            
             $post_link = hb_get_linkformat(get_post_format());
 
-            if (has_post_thumbnail($post->ID)) {
-                $image = hb_ui_image_in_text_item($post);
-            } else {
-                $image = hb_ui_image_as_round_box(IMAGES_URI . 'box-empty.gif');
-            }            
             $innen = hb_ui_link(array(
-                'link' => $post_link,
-                'content' => $image
-            ));
-            
-            $innen .= hb_ui_link(array(
                 'link' => $post_link,
                 'content' => hb_ui_title(array(
                     'tag' => 3,
@@ -294,10 +284,7 @@ function hb_ui_posts_as_quote($post, $span = 'span4', $summary = '') {
                     'link' => get_post_permalink($post->ID, false, false),
                     'class' => 'more-link dddd',
                     'content' => __('Read more', THEME_FRONT_TD)
-        )))) . hb_ui_link(array(
-            'link' => get_post_permalink($post->ID, false, false),
-            'content' => hb_ui_image_in_text_item($post)
-        ));    
+        ))));    
     
     return oxy_shortcode_layout(NULL, $content, $span . ' well blockquote-well');
 }
