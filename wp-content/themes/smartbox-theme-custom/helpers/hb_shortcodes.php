@@ -44,12 +44,7 @@ function hb_shortcode_latest_taxonomy_topics_as_list($atts) {
                     'class' => 'margin_bottom_25px_mb',
                     'content' => $summary . $more_text));
 
-        $taxonomy_image_link = hb_get_taxonomy_image('teaching_topics', $taxonomy->slug, hb_enum_taxonomy_image_type::image);
-        $round_link = hb_ui_link(array(
-            'link' => $link,
-            'content' => hb_ui_image_as_round_box($taxonomy_image_link)));
-
-        $output_loop .= oxy_shortcode_layout(NULL, $title . $blockquote . $round_link, 'well blockquote-well');
+        $output_loop .= oxy_shortcode_layout(NULL, $title . $blockquote, 'well blockquote-well');
     }
     $output = oxy_shortcode_layout(NULL, $output_loop, 'unstyled row-fluid');
     return oxy_shortcode_section($atts, $output);
