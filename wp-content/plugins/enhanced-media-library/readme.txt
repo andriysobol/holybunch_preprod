@@ -1,9 +1,9 @@
 === Enhanced Media Library ===
 Contributors: webbistro
-Tags: media library, taxonomy, taxonomies, mime, mime type, attachment, media category, media categories, media tag, media tags, media taxonomy, media taxonomies, media filter, media organizer, file types, media types, media uploader, custom, media management, attachment management, files management, ux, user experience, wp-admin, admin
+Tags: media library, taxonomy, taxonomies, mime, mime type, attachment, media category, media categories, media tag, media tags, media taxonomy, media taxonomies, media filter, media organizer, file types, media types, media uploader, custom, media management, attachment management, files management, ux, user experience, wp-admin, admin, categories, category, filter,  image, images, media, upload
 Requires at least: 3.5
-Tested up to: 4.0
-Stable tag: 2.0.2.1
+Tested up to: 4.0.1
+Stable tag: 2.0.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,39 +17,42 @@ A better management for WordPress Media Library
 
 This plugin will be handy for those who need to manage a lot of media files.
 
-= Taxonomies =
+= Media Taxonomies (Categories for Media Files) =
 
 * create unlimited amount of media taxonomies (like categories and tags),
 * be in total control of your custom taxonomy parameters via admin,
 * edit and delete your custom media taxonomies,
 * assign existed taxonomies to Media Library (for example, you can use post categories as a taxonomy for your media files),
 * unassign any media taxonomy from Media Library via admin,
-* immediately set taxonomy term to any media file during upload via Media Uploader,
-* filter media files in Media Library by your custom taxonomies,
-* filter media files in Media Popup by your custom taxonomies,
-* have you attachment post type's archive page (front-end) working by default
+* immediately set categories to any media file during upload in Media Popup,
+* filter media files in Media Library / Media Popup by your custom categories,
+* get you media category archive page (front-end) working with EML activated
 
-= MIME Types =
+= MIME Types (Media File Types) =
 
-* create new MIME types (media file types),
+* create new MIME types (media file types, for example, PDFs, Documents, V-Cards, etc),
 * delete any MIME type,
-* allow/disallow uploading for any MIME type,
-* filter media files by MIME types in Media Library / Media Uploader (for example, PDFs, Documents, V-Cards, etc),
-* be in total control of the names of your MIME type filters
+* allow/disallow uploading for any file type,
+* filter media files by file types in Media Library / Media Popup,
+* be in total control of the names of your file type filters
 
-= Enhanced Media Library PRO =
+> #### Enhanced Media Library PRO
 
-&nbsp;
-**Bulk Edit**
+> * The free version of Enhanced Media Library does NOT support bulk features.
+> * The PRO version requires at least WordPress 4.0
+> * [Learn more &raquo;](http://wordpressuxsolutions.com/plugins/enhanced-media-library/)
 
-* set/unset multiple taxonomies to multiple media files at a time:
+= Bulk Attachment for Media Taxonomies (PRO only) =
+
+* Set/unset multiple taxonomies to multiple media files at a time:
     * during uploading process
     * in Media Popup during post/page editing
     * in Media Library Grid View
-* select/deselect multiple media files with a single click
-* delete multiple media files right in media popup window 
+    
+= Bulk selection/deletion of media files (PRO only) =
 
-[Learn more about Enhanced Media Library PRO &raquo;](http://wordpressuxsolutions.com/plugins/enhanced-media-library/)
+* select/deselect all media files (within a category) with a single click
+* delete all media files (within a category) right in media popup window
 
 
 = Useful Links =
@@ -84,7 +87,7 @@ EML adds its filters to ANY media popup that already contains native WordPress f
 
 If you believe that a third-party plugin shoud have filters in its Media Popup please contact its author with a request to add NATIVE WordPress filters ([example of the code](http://wordpress.org/support/topic/how-can-we-use-this-plugin-features-in-my-custom-plugin-media-uploader?replies=15#post-5753212) for theme's/plugin's authors).
 
-= How to show images per media category a webpage =
+= How to show images per media category on a webpage =
 
 Right now it is possible via WP_Query ([example of the code](http://wordpress.org/support/topic/php-displaying-an-array-of-images-per-category-or-categories)). We are working on a gallery based on EML taxonomies. 
 
@@ -92,34 +95,47 @@ Right now it is possible via WP_Query ([example of the code](http://wordpress.or
 
 == Screenshots ==
 
-1. Enhanced Media Library Taxonomies Settings
+1. Media Taxonomies Settings
 
-2. Taxonomies in Nav Menu
+2. MIME types manager
 
-3. Edit media taxonomies just like any others
+3. Create media categories just like any others
 
-4. Edit media taxonomies just like any others
+4. Use media categories in Nav Menu
 
-5. Taxonomy columns and filters, sorting by MIME types in Media Library
+5. Attach media categories to media files like to posts
 
-6. MIME type filter in Media Uploader
+6. Attach media categories to media files from Media Library grid view
 
-7. Taxonomy filter in Media Uploader
+7. Attach media categories to media files in Media Popup while editing posts and pages. Filter media files by categories and file types
 
-8. Set taxonomy term right in Media Uploader
+8. Filter media files by categories and file types in Media Library list view
 
-9. MIME type manager
+9. Filter media files by categories and file types in Media Library grid view
 
 
 
 == Changelog ==
 
 
+= 2.0.2.3 (PRO only) =
+= Bugfixes =
+Fixed the bug with ACF < 5.0 compatibility
+
+
+&nbsp;
+= 2.0.2.2 =
+= Bugfixes =
+Minor JS bug of v2.0 fixed [Support Request](https://wordpress.org/support/topic/upload-hangs-2)
+
+
+&nbsp;
 = 2.0.2.1 =
 = Bugfixes =
 Minor JS bug of v2.0.2 fixed
 
 
+&nbsp;
 = 2.0.2 =
 = Improvements =
 * Taxonomy Settings: you can now rewrite taxonomy slug and permalinks front base

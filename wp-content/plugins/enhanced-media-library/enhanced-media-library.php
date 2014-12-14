@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Enhanced Media Library
-Plugin URI: http://wordpressuxsolutions.com
+Plugin URI: http://wpUXsolutions.com
 Description: This plugin will be handy for those who need to manage a lot of media files.
-Version: 2.0.2.1
+Version: 2.0.2.2
 Author: wpUXsolutions
-Author URI: http://wordpressuxsolutions.com
+Author URI: http://wpUXsolutions.com
 Text Domain: eml
 Domain Path: /languages
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -21,7 +21,7 @@ global $wp_version;
 
 
 
-$wpuxss_eml_version     = '2.0.2.1';
+$wpuxss_eml_version     = '2.0.2.2';
 $wpuxss_eml_old_version = get_option('wpuxss_eml_version', false);
 $wpuxss_eml_dir         = plugin_dir_url( __FILE__ );
 $wpuxss_eml_path        = plugin_dir_path( __FILE__ );

@@ -40,7 +40,7 @@ window.wp = window.wp || {};
                             
                     taxFilter = content.get().toolbar.get( taxonomy+'-filter' );
                     
-                    if ( 'all' !== taxFilter.$el.val() ) {
+                    if ( ! _.isUndefined(taxFilter) && 'all' !== taxFilter.$el.val() ) {
                         taxFilter.$el.val( 'all' ).change();
                     }
                 });
