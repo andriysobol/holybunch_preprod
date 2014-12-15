@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: Smartbox Frontend Translation File 1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-18 15:09+0300\n"
-"PO-Revision-Date: 2014-12-06 20:12+0100\n"
-"Last-Translator: Andriy Sobol <andriy.sobol@googlemail.com>\n"
+"PO-Revision-Date: 2014-12-15 21:27+0100\n"
+"Last-Translator: Mihail <mihon_82@rambler.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.6.10\n"
 
 #: build/archive.php:15
 msgid "Day"
@@ -138,7 +138,7 @@ msgstr ""
 
 #: build/inc/frontend.php:758
 msgid "Add comment"
-msgstr "Добавить комментарий"
+msgstr "Отправить"
 
 #: build/inc/frontend.php:835
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
