@@ -14,12 +14,13 @@ class OxyCustomTheme extends OxyTheme
      * @param array $theme array of all theme options to use in construction this theme
      */
     function __construct( $theme ) {
-        parent::__construct($theme);
+        parent::__construct($theme);       
     }
     
     function init() {
         parent::init();
         $this->load_shortcodes();
+        $this->load_languages("frontend_smartbox_child_textdomain");
     }
     
     function load_shortcodes() {
@@ -28,8 +29,14 @@ class OxyCustomTheme extends OxyTheme
                 require_once $this->get_custom_template_directory() . 'helpers/hb_shortcodes.php';
             }
         }
-    }    
+    }   
     
+    function load_languages($domail) {
+        if(!is_admin()) {
+            load_theme_textdomain("frontend_smartbox_child_textdomain" , $this->get_custom_template_directory() .'languages');
+        }
+    }
+            
     function get_custom_template_directory() {
         $template = 'smartbox-theme-custom/';
         $theme_root = get_theme_root($template);
@@ -47,5 +54,7 @@ class OxyCustomTheme extends OxyTheme
         define('CUSTOM_INCLUDES_DIR', CUSTOM_THEME_DIR . '/inc/');
         define('CUSTOM_HELPERS_DIR', CUSTOM_THEME_DIR . '/helpers/');
         define('CUSTOM_IMAGES_DIR', home_url() . '/wp-content/themes/smartbox-theme-custom/images/');
+        
+
     }
 }
