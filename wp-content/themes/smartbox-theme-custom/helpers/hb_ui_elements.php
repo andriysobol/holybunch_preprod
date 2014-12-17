@@ -27,22 +27,22 @@ function hb_ui_taxonomy_terms_cloud($post_type, $title) {
  * @param string $post_type <i>type of post</i>
  * @return string
  */
-function hb_ui_taxonomy_terms_as_list($taxonomies, $post_type) {
+function hb_ui_taxonomy_terms_as_list($taxonomy_topics, $post_type) {
     $add_all = TRUE;
-    foreach ($taxonomies as $category) {
+    foreach ($taxonomy_topics as $taxonomy_topic) {
         $posts_in_category = get_posts(array(
             'showposts' => -1,
             'post_type' => $post_type,
             'tax_query' => array(array(
                     'taxonomy' => 'teaching_topics',
                     'field' => 'slug',
-                    'terms' => $category->slug)
+                    'terms' => $taxonomy_topic->slug)
             )
         ));
         $count = count($posts_in_category);
-        $tax_name = " " . $category->name . " (" . $count . ")";
+        $tax_name = " " . $taxonomy_topic->name . " (" . $count . ")";
         //dont add post type for theme, but do link for all post types
-        $link = home_url() . "/blog/teaching_topics/" . $category->slug;
+        $link = get_term_link( $taxonomy_topic->slug, 'teaching_topics' );
         if (!is_array($post_type)) {
             $link = $link . "/?post_type=" . $post_type;
         }

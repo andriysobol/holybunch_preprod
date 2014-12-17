@@ -5,13 +5,6 @@
  * 2 Taxonomy request of texts (e.g. url = ".../blog/teaching_topics/golgota/?post_type=oxy_content")
  * 3 Archive request of texts (e.g. url = ".../blog/2014/10/?post_type=oxy_content")
  * 4 Display all videos (e.g url = "...?post_type=oxy_content")
- * @package Smartbox
- * @subpackage Frontend
- * @since 0.1
- *
- * @copyright (c) 2013 Oxygenna.com
- * @license http://wiki.envato.com/support/legal-terms/licensing-terms/
- * @version 1.5
  */
 if (is_day()) {
     $title = get_the_date('j M Y');
